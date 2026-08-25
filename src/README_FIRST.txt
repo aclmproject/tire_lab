@@ -2,7 +2,7 @@ ACLM HISTORICAL TIRE LAB — CANONICAL SETUP
 ============================================
 
 CURRENT BUILD
-v0.5.9 Browser App + AC import
+v0.6.0 Browser App + AC import
 
 INSTALL
 1. Extract this ZIP.
@@ -22,6 +22,9 @@ INCLUDED
 - complete Assetto Corsa v10/CSP tire output
 - wear, temperature and camber LUT generation
 - output/LUT integrity validator
+- About & methodology disclaimer: public evidence only; no confidential or proprietary manufacturer information
+- resilient on-demand GitHub checks with cached offline fallback
+- installer restarts the local server and preserves verified caches
 - Supra LM regression reference
 
 RECOVERY / ACCESS
@@ -173,6 +176,6 @@ load-sensitivity, falloff, pressure, rolling-loss, high-speed and thermal
 architecture while imported car geometry/mass remain direct car-state evidence.
 
 
-v0.5.9 - SAFE DISTRIBUTION
+v0.6.0 - SAFE DISTRIBUTION
 --------------------------
 This build removes automatic application download/extract/execute behavior. Application updates are check-only and open the normal browser release page. Tire-knowledge updates remain JSON-only and SHA-256 verified. No startup persistence, hidden updater, self-deleting updater, or automatic prerequisite installer is included.

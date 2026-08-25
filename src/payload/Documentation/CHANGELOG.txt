@@ -1,6 +1,16 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.6.0
+- Stops and replaces the previous local server during installation while preserving verified caches.
+- Correctly distinguishes a lightweight knowledge check from an explicit forced synchronization.
+- Removes the automatic startup network sync; cached knowledge loads locally until the user requests an online check.
+- Adds bounded GitHub endpoint fallbacks, an application-manifest cache and clear offline status messaging.
+- Adds an online-request lock so update and knowledge operations cannot queue behind one another.
+- Adds About & methodology guidance and the concise historical tire-model whitepaper.
+- States explicitly that the project uses public evidence and does not use or imply confidential manufacturer information.
+- Extends the project header with '+ built out of spite.'
+
 2026-08-25 - v0.5.9
 - Replaced the free-text Series/class field with a persistent calibrated-class dropdown grouped by historical tire family.
 - Selecting a tire family filters the class dropdown to that family's calibrated drilldown options.

@@ -42,3 +42,11 @@ code{font-family:Consolas,Monaco,monospace}
 @media (min-width:1500px){.graph-grid{grid-template-columns:1fr 1fr}.graph-card:last-child{grid-column:1 / -1}}
 
 .historical-compounds label.historical-unavailable{opacity:.48}.historical-compounds label.historical-unavailable span{text-decoration:line-through;text-decoration-thickness:1px}.historical-compounds label:has(input:checked){font-weight:700}
+
+    .header-link{display:inline-block;background:#293442;color:#fff;border:1px solid #465669;border-radius:7px;padding:7px 10px;text-decoration:none;font-weight:650}
+    .header-link:hover{filter:brightness(1.08)}
+    .about-card{scroll-margin-top:130px}
+    .about-card a{color:#9dc3ff}
+    .methodology-list{margin:8px 0 10px;padding-left:20px}
+    .methodology-list li{margin:6px 0}
+    
