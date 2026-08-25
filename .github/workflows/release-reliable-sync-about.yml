@@ -1,0 +1,597 @@
+name: Release Tire Lab Reliable Sync and About
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-reliable-sync-about.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-tire-lab-app
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.6.0
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Add resilient sync, server lifecycle, and methodology
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+
+          def replace_once(text,old,new,label):
+              if text.count(old)!=1:
+                  raise SystemExit(f"Unexpected {label}: found {text.count(old)} anchors")
+              return text.replace(old,new)
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          if index.count("v0.5.9")!=2:
+              raise SystemExit("Unexpected index version token count")
+          index=index.replace("v0.5.9",f"v{version}")
+          old_tagline="Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation."
+          new_tagline="Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite."
+          index=replace_once(index,old_tagline,new_tagline,"header tagline")
+          old_actions='''    <span id="serverState" class="pill ok">Local browser app</span>
+              <button id="installPwa" class="primary" hidden>Install ACLM Tire Lab</button>'''
+          new_actions='''    <span id="serverState" class="pill ok">Local browser app</span>
+              <a class="header-link" href="#about-methodology">About &amp; methodology</a>
+              <button id="installPwa" class="primary" hidden>Install ACLM Tire Lab</button>'''
+          index=replace_once(index,old_actions,new_actions,"header actions")
+          old_update_note='''<div class="small muted" style="margin-top:6px">Published builds are checked against the ACLM Tire Tool Updates folder.</div>
+              </div>
+
+              <div class="card">
+              <h2>Validation</h2>'''
+          new_update_note='''<div class="small muted" style="margin-top:6px">Verified cached knowledge loads locally. Online checks run only when requested and fall back safely when GitHub is unavailable.</div>
+              </div>
+
+              <div class="card about-card" id="about-methodology">
+              <h2>About &amp; methodology</h2>
+              <p>ACLM Historical Tire Lab is an independent, evidence-guided simulation and research project. It combines public historical sources, user-supplied Assetto Corsa physics and explicitly identified modeling assumptions.</p>
+              <div class="notice small"><b>Public evidence, not confidential data.</b> Tire Lab does not use, claim access to or imply possession of confidential or proprietary manufacturer information.</div>
+              <ul class="methodology-list">
+               <li>Generated physics are historical reconstructions, not recovered manufacturer engineering models.</li>
+               <li>Manufacturer and series names are used for historical identification only; no affiliation or endorsement is implied.</li>
+               <li>Documented fitment and construction may be factual, while grip, thermal, pressure and wear values remain calibration priors unless independently measured.</li>
+               <li>Generated packs should be validated with simulation telemetry for the specific car, circuit and conditions.</li>
+              </ul>
+              <p class="small"><a href="https://github.com/aclmproject/tire_lab/blob/main/docs/ACLM_Historical_Tire_Lab_Whitepaper.md" target="_blank" rel="noopener">Read the concise technical whitepaper and evidence policy</a>.</p>
+              </div>
+
+              <div class="card">
+              <h2>Validation</h2>'''
+          index=replace_once(index,old_update_note,new_update_note,"about section anchor")
+          index_path.write_text(index,encoding="utf-8",newline="")
+
+          style_path=Path("src/payload/app/style.css")
+          style=style_path.read_text(encoding="utf-8")
+          style_marker=".header-link{display:inline-block"
+          if style_marker in style:
+              raise SystemExit("About styles already present")
+          style += '''
+              .header-link{display:inline-block;background:#293442;color:#fff;border:1px solid #465669;border-radius:7px;padding:7px 10px;text-decoration:none;font-weight:650}
+              .header-link:hover{filter:brightness(1.08)}
+              .about-card{scroll-margin-top:130px}
+              .about-card a{color:#9dc3ff}
+              .methodology-list{margin:8px 0 10px;padding-left:20px}
+              .methodology-list li{margin:6px 0}
+              '''
+          style_path.write_text(style,encoding="utf-8",newline="")
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          if app.count('const ACLM_APP_VERSION="0.5.9";')!=1:
+              raise SystemExit("Unexpected app version constant")
+          app=app.replace('const ACLM_APP_VERSION="0.5.9";',f'const ACLM_APP_VERSION="{version}";')
+          if app.count("v0.5.9")!=3:
+              raise SystemExit("Unexpected generated-output version token count")
+          app=app.replace("v0.5.9",f"v{version}")
+
+          app=replace_once(app,"let availableUpdate=null;","let availableUpdate=null;\nlet onlineRequestActive=false;","online request lock")
+
+          start=app.index("async function checkForUpdates(silent=false){")
+          end=app.index("function installAvailableUpdate(){",start)
+          new_check=r'''async function checkForUpdates(silent=false){
+           const status=$("updateStatus"),pageBtn=$("installUpdate"),checkBtn=$("checkUpdates");
+           if(onlineRequestActive){status.innerHTML='<span class="warning"><b>Another online check is already running.</b></span> Please wait or use the release-page button.';return;}
+           onlineRequestActive=true;
+           checkBtn.disabled=true;
+           pageBtn.disabled=false;
+           availableUpdate=null;
+           if(!silent)status.textContent="Checking the verified ACLM release manifest…";
+           try{
+             const r=await fetch("/api/update-info?ts="+Date.now(),{cache:"no-store"});
+             const data=await r.json();
+             if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
+             availableUpdate=data;
+             if(data.warning){
+               const cached=data.cached&&data.version?(" Cached manifest reports v"+escapeHtml(data.version)+"."):"";
+               status.innerHTML='<span class="warning"><b>Online update check unavailable:</b></span> '+escapeHtml(data.warning)+cached+' The release page remains available.';
+             }else if(isNewerVersion(data.version,ACLM_APP_VERSION)){
+               status.innerHTML='<span class="warning"><b>Update available: v'+escapeHtml(data.version)+'</b></span> — installed v'+ACLM_APP_VERSION+(data.notes?("<br>"+escapeHtml(data.notes)):"");
+             }else{
+               status.innerHTML='<span class="ok"><b>Up to date.</b></span> Installed v'+ACLM_APP_VERSION+'; stable channel v'+escapeHtml(data.version||ACLM_APP_VERSION)+'.';
+             }
+           }catch(e){
+             status.innerHTML='<span class="warning"><b>Update check unavailable:</b></span> '+escapeHtml(e.message)+' The release page remains available.';
+           }finally{
+             onlineRequestActive=false;
+             checkBtn.disabled=false;
+             pageBtn.disabled=false;
+           }
+          }
+          '''
+          app=app[:start]+new_check+app[end:]
+
+          start=app.index("async function syncKnowledge(force=false){")
+          end=app.index('$("checkKnowledge").addEventListener',start)
+          new_sync=r'''async function syncKnowledge(force=false){
+           const st=$("knowledgeStatus"),checkBtn=$("checkKnowledge"),syncBtn=$("syncKnowledge");
+           if(onlineRequestActive){st.innerHTML='<span class="warning"><b>Another online check is already running.</b></span> Verified cached knowledge remains active.';return;}
+           onlineRequestActive=true;
+           checkBtn.disabled=true;
+           syncBtn.disabled=true;
+           st.textContent=force?"Synchronizing the latest verified ACLM tire knowledge…":"Checking the ACLM knowledge manifest…";
+           try{
+             const r=await fetch("/api/knowledge-sync",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({force})});
+             const data=await r.json();if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
+             window.ACLMHistoricalCategories.loadKnowledgeRelease(data.release,data.source||"verified knowledge");
+             updateKnowledgeUi('<span class="ok"><b>Knowledge '+(data.updated?"synchronized":"checked")+':</b></span> v'+escapeHtml(data.release.releaseVersion||"?")+' · schema '+escapeHtml(data.release.schemaVersion||"?")+' · '+(data.updated?"new cache installed":"verified cache is current")+'.');
+           }catch(e){
+             const loaded=escapeHtml($("knowledgeBuild")?.textContent||"current");
+             st.innerHTML='<span class="warning"><b>Online knowledge check unavailable:</b></span> '+escapeHtml(e.message)+' Verified '+loaded+' cached/bundled knowledge remains active.';
+           }finally{
+             onlineRequestActive=false;
+             checkBtn.disabled=false;
+             syncBtn.disabled=false;
+           }
+          }
+          '''
+          app=app[:start]+new_sync+app[end:]
+
+          old_auto='setTimeout(async()=>{await loadCurrentKnowledge();syncKnowledge(false);},250);'
+          new_auto='setTimeout(loadCurrentKnowledge,250);'
+          app=replace_once(app,old_auto,new_auto,"automatic knowledge network check")
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          server=r'''$ErrorActionPreference = "Stop"
+          $AppDir = Join-Path $PSScriptRoot "app"
+          $Port = 48765
+          $CurrentVersion = "0.6.0"
+          $KnowledgeManifestUrls = @(
+            "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
+            "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
+          )
+          $AppManifestUrls = @(
+            "https://github.com/aclmproject/tire_lab/releases/latest/download/ACLM_Tire_Lab_latest.json",
+            "https://api.github.com/repos/aclmproject/tire_lab/contents/manifests/ACLM_Tire_Lab_latest.json?ref=main",
+            "https://raw.githubusercontent.com/aclmproject/tire_lab/main/manifests/ACLM_Tire_Lab_latest.json"
+          )
+          $UpdatesPage = "https://github.com/aclmproject/tire_lab/releases"
+          $KnowledgeCache = Join-Path $PSScriptRoot "knowledge_cache.json"
+          $AppManifestCache = Join-Path $PSScriptRoot "app_manifest_cache.json"
+          $KnowledgeFallback = Join-Path $AppDir "knowledge_fallback.json"
+          $GithubHeaders = @{"Cache-Control"="no-cache";"User-Agent"="ACLM-Historical-Tire-Lab/0.6.0";"Accept"="application/vnd.github+json"}
+          $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback,$Port)
+          try { $listener.Start() } catch { exit 0 }
+
+          function Mime([string]$p){switch([IO.Path]::GetExtension($p).ToLowerInvariant()){'.html'{"text/html; charset=utf-8"}'.js'{"text/javascript; charset=utf-8"}'.css'{"text/css; charset=utf-8"}'.json'{"application/json; charset=utf-8"}'.webmanifest'{"application/manifest+json; charset=utf-8"}'.png'{"image/png"}default{"application/octet-stream"}}}
+          function JsonBytes($obj){[Text.Encoding]::UTF8.GetBytes(($obj|ConvertTo-Json -Depth 12 -Compress))}
+          function HashText([string]$text){$sha=[Security.Cryptography.SHA256]::Create();try{return ([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($text)))).Replace('-','').ToLowerInvariant()}finally{$sha.Dispose()}}
+          function Write-Utf8([string]$Path,[string]$Text){[IO.File]::WriteAllText($Path,$Text,(New-Object Text.UTF8Encoding($false)))}
+          function Decode-GithubContent([string]$Raw){
+            $wrapper=$Raw|ConvertFrom-Json
+            if(!$wrapper.content -or [string]$wrapper.encoding -ne "base64"){throw "GitHub Contents response is incomplete."}
+            return [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String(([string]$wrapper.content -replace '\s','')))
+          }
+          function Get-JsonUrl([string[]]$Urls,[int]$TimeoutSec=8){
+            $errors=New-Object System.Collections.Generic.List[string]
+            foreach($Url in $Urls){
+              try{
+                $r=Invoke-WebRequest -UseBasicParsing -Uri $Url -TimeoutSec $TimeoutSec -MaximumRedirection 5 -Headers $GithubHeaders
+                $content=$r.Content
+                $raw=if($content -is [byte[]]){[Text.Encoding]::UTF8.GetString($content)}else{[string]$content}
+                if($Url -like "https://api.github.com/repos/*/contents/*"){$raw=Decode-GithubContent $raw}
+                if([string]::IsNullOrWhiteSpace($raw)){throw "Empty response."}
+                return $raw
+              }catch{
+                $errors.Add(([Uri]$Url).Host+": "+$_.Exception.Message)
+              }
+            }
+            throw "GitHub is unreachable through the current Windows network path after trying all configured endpoints. "+($errors -join " | ")
+          }
+          function Read-Knowledge([string]$Path,[string]$Source){
+            $raw=Get-Content -Raw -Encoding UTF8 $Path;$obj=$raw|ConvertFrom-Json
+            if(!$obj.schemaVersion -or !$obj.releaseVersion -or !$obj.families -or !$obj.classes){throw "Invalid ACLM knowledge release."}
+            return @{release=$obj;source=$Source}
+          }
+          function Current-Knowledge{
+            try{if(Test-Path $KnowledgeCache -PathType Leaf){return Read-Knowledge $KnowledgeCache "last-known-good cache"}}catch{}
+            return Read-Knowledge $KnowledgeFallback "bundled fallback"
+          }
+          function Sync-Knowledge([bool]$Force=$false){
+            $current=Current-Knowledge
+            $manifestRaw=Get-JsonUrl -Urls $KnowledgeManifestUrls -TimeoutSec 8
+            $m=$manifestRaw|ConvertFrom-Json
+            if(!$m.version -or !$m.download_url -or !$m.sha256){throw "Knowledge manifest is incomplete."}
+            $cv=[version]([string]$current.release.releaseVersion);$rv=[version]([string]$m.version)
+            if(!$Force -and $rv -le $cv){return @{release=$current.release;source=$current.source;updated=$false;checked_utc=[DateTime]::UtcNow.ToString("o")}}
+            $releaseUrls=@([string]$m.download_url)
+            $releaseUrls += "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/releases/ACLM_Tire_Knowledge_v$($m.version).json?ref=main"
+            $raw=Get-JsonUrl -Urls $releaseUrls -TimeoutSec 12
+            if((HashText $raw) -ne ([string]$m.sha256).ToLowerInvariant()){throw "Knowledge release failed SHA-256 verification."}
+            $obj=$raw|ConvertFrom-Json
+            if(!$obj.schemaVersion -or ([string]$obj.schemaVersion).Split('.')[0] -ne "1" -or !$obj.releaseVersion -or !$obj.families -or !$obj.classes){throw "Unsupported or invalid knowledge release."}
+            Write-Utf8 $KnowledgeCache $raw
+            return @{release=$obj;source="verified online knowledge";updated=$true;checked_utc=[DateTime]::UtcNow.ToString("o")}
+          }
+          function App-UpdateInfo{
+            $warning=$null;$cached=$false
+            try{
+              $raw=Get-JsonUrl -Urls $AppManifestUrls -TimeoutSec 8
+              $m=$raw|ConvertFrom-Json
+              if(!$m.version -or !$m.release_page){throw "Application manifest is incomplete."}
+              Write-Utf8 $AppManifestCache $raw
+            }catch{
+              $warning=$_.Exception.Message
+              try{
+                if(!(Test-Path $AppManifestCache -PathType Leaf)){throw "No cached application manifest."}
+                $m=(Get-Content -Raw -Encoding UTF8 $AppManifestCache)|ConvertFrom-Json
+                if(!$m.version){throw "Cached application manifest is invalid."}
+                $cached=$true
+              }catch{
+                return @{version=$CurrentVersion;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$UpdatesPage;warning=$warning;cached=$false}
+              }
+            }
+            $page=if($m.release_page){[string]$m.release_page}else{$UpdatesPage}
+            return @{version=$m.version;file_name=$m.file_name;published_utc=$m.published_utc;notes=$m.notes;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$page;download_url=$m.download_url;warning=$warning;cached=$cached;checked_utc=[DateTime]::UtcNow.ToString("o")}
+          }
+          function Read-RequestBody($reader,$headers){
+            if(!$headers.ContainsKey("content-length")){return ""}
+            $length=0
+            if(![int]::TryParse([string]$headers["content-length"],[ref]$length) -or $length -le 0 -or $length -gt 65536){return ""}
+            $chars=New-Object char[] $length;$read=0
+            while($read -lt $length){$n=$reader.ReadBlock($chars,$read,$length-$read);if($n -le 0){break};$read+=$n}
+            if($read -le 0){return ""}
+            return -join ($chars[0..($read-1)])
+          }
+
+          while($true){
+            $client=$listener.AcceptTcpClient()
+            try{
+              $stream=$client.GetStream()
+              $reader=New-Object IO.StreamReader($stream,[Text.Encoding]::UTF8,$false,4096,$true)
+              $line=$reader.ReadLine();if(!$line){$client.Close();continue}
+              $headers=@{}
+              while(($h=$reader.ReadLine()) -ne $null -and $h -ne ''){$ix=$h.IndexOf(':');if($ix -gt 0){$headers[$h.Substring(0,$ix).Trim().ToLowerInvariant()]=$h.Substring($ix+1).Trim()}}
+              $parts=$line.Split(' ');$method=$parts[0];$url=$parts[1].Split('?')[0]
+              $requestBody=Read-RequestBody $reader $headers
+
+              if($url -eq "/api/health"){
+                $body=JsonBytes @{product="ACLM Historical Tire Lab";server_version=$CurrentVersion;status="ok"};$code="200 OK";$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/knowledge-current"){
+                try{$k=Current-Knowledge;$body=JsonBytes @{release=$k.release;source=$k.source};$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/knowledge-sync" -and $method -eq "POST"){
+                $force=$false
+                try{if($requestBody){$request=$requestBody|ConvertFrom-Json;$force=[bool]$request.force}}catch{}
+                try{$k=Sync-Knowledge $force;$body=JsonBytes @{release=$k.release;source=$k.source;updated=$k.updated;checked_utc=$k.checked_utc};$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="503 Service Unavailable"};$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/update-info"){
+                $body=JsonBytes (App-UpdateInfo);$code="200 OK";$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/install-update"){
+                $body=JsonBytes @{error="Automatic application installation is disabled. Open the release page and download updates in your browser.";manual_only=$true;release_page=$UpdatesPage};$code="409 Conflict";$mime="application/json; charset=utf-8"
+              }else{
+                $rel=[Uri]::UnescapeDataString($url.TrimStart('/'));if([string]::IsNullOrWhiteSpace($rel)){$rel="index.html"}
+                $rel=$rel.Replace('/',[IO.Path]::DirectorySeparatorChar);$full=[IO.Path]::GetFullPath((Join-Path $AppDir $rel));$root=[IO.Path]::GetFullPath($AppDir)
+                if(!$full.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)-or !(Test-Path $full -PathType Leaf)){$body=[Text.Encoding]::UTF8.GetBytes("404");$code="404 Not Found";$mime="text/plain; charset=utf-8"}else{$body=[IO.File]::ReadAllBytes($full);$code="200 OK";$mime=Mime $full}
+              }
+              $crlf=[char]13+[char]10
+              $head="HTTP/1.1 $code"+$crlf+"Content-Type: $mime"+$crlf+"Content-Length: $($body.Length)"+$crlf+"Cache-Control: no-store"+$crlf+"Connection: close"+$crlf+$crlf
+              $hb=[Text.Encoding]::ASCII.GetBytes($head);$stream.Write($hb,0,$hb.Length);if($method -ne "HEAD"){$stream.Write($body,0,$body.Length)};$stream.Flush()
+            }catch{}finally{$client.Close()}
+          }
+          '''
+          Path("src/payload/Server_ACLM_Tire_Lab.ps1").write_text(server,encoding="utf-8",newline="")
+
+          installer=r'''@echo off
+          setlocal
+          set "APPDIR=%LOCALAPPDATA%\ACLM\Historical Tire Lab"
+          set "SOURCE=%~dp0payload"
+          set "CACHEBACK=%TEMP%\ACLM_Tire_Lab_cache_%RANDOM%_%RANDOM%"
+
+          echo ======================================================
+          echo        ACLM Historical Tire Lab - Safe Installer
+          echo ======================================================
+          echo Application build: v0.6.0
+          echo.
+          echo This installer only copies files already included in this ZIP.
+          echo It does not download or execute software from the Internet.
+          echo.
+          if not exist "%SOURCE%\app\index.html" (
+            echo ERROR: Installer payload is incomplete.
+            pause
+            exit /b 1
+          )
+
+          echo Stopping the previous Tire Lab local server, if present...
+          powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$target=[IO.Path]::GetFullPath('%APPDIR%\Server_ACLM_Tire_Lab.ps1'); Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and ($_.Name -eq 'powershell.exe' -or $_.Name -eq 'pwsh.exe') -and $_.CommandLine -and $_.CommandLine.IndexOf($target,[StringComparison]::OrdinalIgnoreCase) -ge 0 } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }" >nul 2>&1
+          timeout /t 1 /nobreak >nul
+
+          mkdir "%CACHEBACK%" >nul 2>&1
+          if exist "%APPDIR%\knowledge_cache.json" copy /Y "%APPDIR%\knowledge_cache.json" "%CACHEBACK%\knowledge_cache.json" >nul
+          if exist "%APPDIR%\app_manifest_cache.json" copy /Y "%APPDIR%\app_manifest_cache.json" "%CACHEBACK%\app_manifest_cache.json" >nul
+
+          if exist "%APPDIR%" rmdir /s /q "%APPDIR%"
+          mkdir "%APPDIR%" >nul 2>&1
+          xcopy "%SOURCE%\*" "%APPDIR%\" /E /I /H /Y >nul
+          if errorlevel 1 (
+            echo ERROR: Could not copy Tire Lab files.
+            pause
+            exit /b 1
+          )
+
+          if exist "%CACHEBACK%\knowledge_cache.json" copy /Y "%CACHEBACK%\knowledge_cache.json" "%APPDIR%\knowledge_cache.json" >nul
+          if exist "%CACHEBACK%\app_manifest_cache.json" copy /Y "%CACHEBACK%\app_manifest_cache.json" "%APPDIR%\app_manifest_cache.json" >nul
+          if exist "%CACHEBACK%" rmdir /s /q "%CACHEBACK%"
+
+          copy /Y "%APPDIR%\Launch_ACLM_Tire_Lab.cmd" "%USERPROFILE%\Desktop\ACLM Historical Tire Lab.cmd" >nul
+          echo.
+          echo Installed to: %APPDIR%
+          echo The previous local server was stopped so this build starts cleanly.
+          echo Verified knowledge and manifest caches were preserved.
+          echo A launcher was copied to your Desktop.
+          echo Application updates are manual and open in your normal browser.
+          echo Tire-knowledge JSON updates remain SHA-256 verified.
+          echo.
+          choice /C YN /N /M "Launch Tire Lab now? [Y/N] "
+          if errorlevel 2 exit /b 0
+          call "%APPDIR%\Launch_ACLM_Tire_Lab.cmd"
+          endlocal
+          '''
+          Path("src/Install_ACLM_Tire_Lab.cmd").write_text(installer,encoding="utf-8",newline="")
+
+          readme_first_path=Path("src/README_FIRST.txt")
+          readme_first=readme_first_path.read_text(encoding="utf-8")
+          if readme_first.count("v0.5.9")!=2:
+              raise SystemExit("Unexpected packaged README version count")
+          readme_first=readme_first.replace("v0.5.9",f"v{version}")
+          included="- About & methodology disclaimer: public evidence only; no confidential or proprietary manufacturer information\n- resilient on-demand GitHub checks with cached offline fallback\n- installer restarts the local server and preserves verified caches\n"
+          marker="- output/LUT integrity validator\n"
+          readme_first=replace_once(readme_first,marker,marker+included,"packaged README feature list")
+          readme_first_path.write_text(readme_first,encoding="utf-8",newline="")
+
+          whitepaper='''# From Cord Carcass to Radial Slick
+
+          ## Development of the ACLM Historical Tire Model
+
+          **Technical whitepaper — Tire Lab v0.6.0 / Knowledge v1.4.0**
+
+          ### Abstract
+
+          ACLM Historical Tire Lab generates plausible, period-sensitive Assetto Corsa tire physics without pretending that undocumented historical measurements are known. Its governing principle is to preserve factual vehicle data, use public historical evidence to select a defensible tire architecture, and treat numerical performance values as calibration priors until validated by telemetry.
+
+          The current knowledge system contains 37 tire families, 37 calibrated racing classes, 21 curated vehicle profiles and 63 cited sources. A separate 1920–1999 historical index covers 40 class eras, 46 circuits and 118 representative competition models. Track and model entries supply classification context; they are never automatic grip multipliers.
+
+          ### Method
+
+          1. **Direct vehicle evidence.** Tire Lab imports available Assetto Corsa geometry, mass, weight distribution, tire rates, reference loads, pressures, compounds and temperature settings.
+          2. **Historical classification.** Year, vehicle and racing class resolve to a tire family distinguishing bias/cross-ply, transition and radial construction, together with treaded or slick dry architecture.
+          3. **Evidence-weighted reconstruction.** Family priors cover carcass behavior, pressure, load sensitivity, grip references, camber, thermal behavior and wear. Exact documented fitments may override generic geometry; numerical physics remain reviewable priors.
+          4. **AC generation and validation.** The tool produces AC v10/CSP tire sections, lateral and longitudinal curves, pressure behavior, camber LUTs, temperature-performance curves, wear LUTs and wet metadata, then validates every referenced file.
+
+          ### Racing-tire evolution
+
+          - **1920s–30s:** narrow, tall, treaded cord tires acted as compliant structural members. Low-pressure constructions, stronger beads and improved tread integrity became significant performance technologies.
+          - **1940s–50s:** material and carcass improvements produced increasingly specialized Grand Prix, endurance and touring tires while treaded bias construction remained normal.
+          - **1960s:** wider, lower cross-ply tires and distinct dry, wet and endurance specifications emerged. Radial slick development began before it became universal.
+          - **1970s:** slicks, aerodynamic load and compound choice made qualifying, race, endurance and wet tires fundamentally different operating systems.
+          - **1980s:** radial adoption spread unevenly. Bias, radial and transitional constructions coexisted across Formula One, Group C, IMSA, touring and stock-car competition.
+          - **1990s:** radial slicks matured into highly car- and championship-specific systems, while control-tire rules and deliberate grip-reduction regulations demonstrated that tire evolution was shaped by sporting policy as well as technology.
+
+          ### Principal lessons
+
+          Racing-tire evolution was not linear. Construction cannot be inferred from year alone; vehicle, class, event and supplier context matter. A tire is also a coupled system: carcass, pressure, load, camber, temperature, grip and wear cannot be tuned independently without contradictions. Manufacturer identity is useful evidence but is not itself a physics model.
+
+          Historical records usually establish dimensions, suppliers, regulations and results more reliably than friction coefficients or temperature curves. The model therefore preserves provenance and uncertainty rather than converting every historical statement into a numerical parameter.
+
+          ### Limitations and intended use
+
+          ACLM Historical Tire Lab is an independent, evidence-guided simulation and research project. It uses public historical sources, user-supplied vehicle data and explicitly identified modeling assumptions. It does not use, claim access to or imply possession of confidential or proprietary manufacturer information.
+
+          Generated physics are historical reconstructions, not recovered manufacturer engineering models. Manufacturer and series names are used solely for historical identification; no affiliation or endorsement is implied. Documented fitments and construction may be treated as historical facts, while grip, thermal, pressure and wear values remain calibration priors unless independently measured.
+
+          Every generated pack should be validated against simulation telemetry for the specific car, circuit and conditions.
+
+          ### Conclusion
+
+          Tire Lab is not a universal tire formula. It is a structured method for avoiding anachronism: identify the correct historical family, preserve known vehicle evidence, generate internally consistent AC physics, expose uncertainty and improve the result when better evidence or telemetry becomes available.
+          '''
+          whitepaper="\n".join(line[10:] if line.startswith("          ") else line for line in whitepaper.splitlines()).strip()+"\n"
+          docs=Path("docs");docs.mkdir(exist_ok=True)
+          (docs/"ACLM_Historical_Tire_Lab_Whitepaper.md").write_text(whitepaper,encoding="utf-8",newline="")
+          (Path("src/payload/Documentation")/"ACLM_Historical_Tire_Lab_Whitepaper.md").write_text(whitepaper,encoding="utf-8",newline="")
+
+          changelog_path=Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog=changelog_path.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry=(
+              f"2026-08-25 - v{version}\n"
+              "- Stops and replaces the previous local server during installation while preserving verified caches.\n"
+              "- Correctly distinguishes a lightweight knowledge check from an explicit forced synchronization.\n"
+              "- Removes the automatic startup network sync; cached knowledge loads locally until the user requests an online check.\n"
+              "- Adds bounded GitHub endpoint fallbacks, an application-manifest cache and clear offline status messaging.\n"
+              "- Adds an online-request lock so update and knowledge operations cannot queue behind one another.\n"
+              "- Adds About & methodology guidance and the concise historical tire-model whitepaper.\n"
+              "- States explicitly that the project uses public evidence and does not use or imply confidential manufacturer information.\n"
+              "- Extends the project header with '+ built out of spite.'\n\n"
+          )
+          changelog_path.write_text(heading+entry+changelog[len(heading):],encoding="utf-8",newline="")
+
+          sw_path=Path("src/payload/app/sw.js")
+          sw=sw_path.read_text(encoding="utf-8")
+          sw=replace_once(sw,"aclm-tire-lab-shell-v059-class-supplier-menus","aclm-tire-lab-shell-v060-reliable-sync-about","service worker cache")
+          sw_path.write_text(sw,encoding="utf-8",newline="")
+
+          repo_readme=Path("README.md")
+          readme=repo_readme.read_text(encoding="utf-8")
+          readme=replace_once(readme,"Current application release: **v0.5.9**",f"Current application release: **v{version}**","repository version")
+          disclaimer='''
+
+          ## Methodology and independence
+
+          Tire Lab is an independent, evidence-guided simulation project using public historical sources, user-supplied AC physics and explicit modeling assumptions. It does not use or imply confidential or proprietary manufacturer information. Generated physics are reconstructions requiring telemetry validation.
+
+          See [the concise technical whitepaper](docs/ACLM_Historical_Tire_Lab_Whitepaper.md).
+          '''
+          disclaimer="\n".join(line[10:] if line.startswith("          ") else line for line in disclaimer.splitlines()).rstrip()+"\n"
+          if "## Methodology and independence" in readme:
+              raise SystemExit("Repository methodology section already exists")
+          repo_readme.write_text(readme.rstrip()+disclaimer,encoding="utf-8",newline="")
+          PY
+
+      - name: Test reliability and methodology changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          pwsh -NoLogo -NoProfile -Command '$null=[ScriptBlock]::Create((Get-Content -Raw "src/payload/Server_ACLM_Tire_Lab.ps1")); Write-Host "PowerShell server syntax passed"'
+          python3 - <<'PY'
+          from pathlib import Path
+          app=Path("src/payload/app/app.js").read_text(encoding="utf-8")
+          html=Path("src/payload/app/index.html").read_text(encoding="utf-8")
+          server=Path("src/payload/Server_ACLM_Tire_Lab.ps1").read_text(encoding="utf-8")
+          installer=Path("src/Install_ACLM_Tire_Lab.cmd").read_text(encoding="utf-8")
+          whitepaper=Path("docs/ACLM_Historical_Tire_Lab_Whitepaper.md").read_text(encoding="utf-8")
+
+          checks={
+            "app version":'const ACLM_APP_VERSION="0.6.0";' in app,
+            "online request lock":"let onlineRequestActive=false;" in app,
+            "no startup sync":"setTimeout(loadCurrentKnowledge,250);" in app and "setTimeout(async()=>{await loadCurrentKnowledge();syncKnowledge(false);},250);" not in app,
+            "warning-aware update UI":"Online update check unavailable:" in app and "data.warning" in app,
+            "cached knowledge fallback":"cached/bundled knowledge remains active" in app,
+            "tagline":"+ built out of spite." in html,
+            "about section":'id="about-methodology"' in html,
+            "confidential disclaimer":"does not use, claim access to or imply possession of confidential or proprietary manufacturer information" in html,
+            "server version":'$CurrentVersion = "0.6.0"' in server,
+            "force parsed":"$force=[bool]$request.force" in server and "Sync-Knowledge $force" in server,
+            "no hardcoded forced sync":"Sync-Knowledge $true" not in server,
+            "GitHub fallbacks":"releases/latest/download/ACLM_Tire_Lab_latest.json" in server and "api.github.com/repos/aclmproject/tire_lab/contents/manifests" in server and "raw.githubusercontent.com/aclmproject/tire_lab/main/manifests" in server,
+            "manifest cache":"app_manifest_cache.json" in server,
+            "health endpoint":'/api/health' in server,
+            "server restart":"Stop-Process -Id $_.ProcessId" in installer,
+            "cache preservation":installer.count("knowledge_cache.json")>=4 and installer.count("app_manifest_cache.json")>=4,
+            "whitepaper":len(whitepaper)>2500 and "Limitations and intended use" in whitepaper,
+          }
+          failed=[name for name,ok in checks.items() if not ok]
+          if failed:
+              raise SystemExit("Failed regression checks: "+", ".join(failed))
+          print("Reliability, lifecycle, About and whitepaper regression tests passed")
+          PY
+          grep -F 'v0.6.0 Browser App + AC import' src/payload/app/index.html
+          grep -F 'v0.6.0 Browser App + AC import' src/README_FIRST.txt
+          grep -F 'aclm-tire-lab-shell-v060-reliable-sync-about' src/payload/app/sw.js
+          grep -F 'Application build: v0.6.0' src/Install_ACLM_Tire_Lab.cmd
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          sums=[]
+          for path in sorted(p for p in src.rglob("*") if p.is_file() and p.name!="SHA256SUMS.txt"):
+              sums.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.relative_to(src).as_posix()}")
+          (src/"SHA256SUMS.txt").write_text("\n".join(sums)+"\n",encoding="ascii")
+
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          if archive.exists():
+              archive.unlink()
+          with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+              for path in sorted(p for p in src.rglob("*") if p.is_file()):
+                  zf.write(path,path.relative_to(src).as_posix())
+
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"Reliable on-demand update/knowledge checks, clean server restart, preserved caches, and About & methodology disclaimer."
+          }
+          manifest_path=Path("manifests/ACLM_Tire_Lab_latest.json")
+          manifest_path.write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit the v0.6.0 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: make sync resilient and add methodology in v0.6.0"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.6.0
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" "manifests/ACLM_Tire_Lab_latest.json" \
+            --repo "${{ github.repository }}" \
+            --target "$(git rev-parse HEAD)" \
+            --title "ACLM Historical Tire Lab v$APP_VERSION" \
+            --notes "Reliable sync, clean server lifecycle, and project methodology.
+
+          - ordinary knowledge checks no longer force a full redownload
+          - startup loads verified cached knowledge without making a network request
+          - app and knowledge operations cannot queue behind one another
+          - GitHub manifest endpoints have bounded fallbacks and cached offline behavior
+          - installer stops the previous server, preserves caches, and starts the new code cleanly
+          - update status distinguishes online, cached and offline results
+          - About & methodology states the public-evidence and no-confidential-information policy
+          - concise tire-model whitepaper included
+          - header now includes + built out of spite
+
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
