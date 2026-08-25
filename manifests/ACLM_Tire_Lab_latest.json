@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.5.5",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.5.5.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.5",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.5/ACLM_Tire_Lab_Setup_v0.5.5.zip",
-  "sha256": "cb7dc6ffc5651ac5f08d7e933c91de3b6853673609d67c2c66ea8d37ef1a33c2",
-  "published_utc": "2026-08-25T03:39:03Z",
-  "notes": "Corrects the Installed build label and preserves GitHub-native updates, SHA-256 verification and offline knowledge fallback behavior."
+  "version": "0.5.6",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.5.6.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.6",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.6/ACLM_Tire_Lab_Setup_v0.5.6.zip",
+  "sha256": "3f04876650e17932db6102bb90cf576d200c3af08c33f7a1676323d5008896e3",
+  "published_utc": "2026-08-25T06:29:31Z",
+  "notes": "Fixes knowledge synchronization display and refresh logic, corrects internal version constants, and forces a clean browser-app cache update."
 }

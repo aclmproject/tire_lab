@@ -9,8 +9,8 @@ Assetto Corsa historical racing-tire research, calibration and tire-pack generat
 - knowledge/ — stable knowledge manifest and immutable versioned releases
 - .github/workflows/ — reproducible migration/release automation
 
-Current application release: **v0.5.5**  
-Current knowledge release: **v1.3.0** (schema 1.0.0)
+Current application release: **v0.5.6**  
+Current knowledge release: **v1.4.0** (schema 1.0.0)
 
 Release downloads are SHA-256 verified before use. The application retains a bundled offline fallback and last-known-good knowledge cache.
 

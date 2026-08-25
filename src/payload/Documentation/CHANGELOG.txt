@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.5.6
+- Fixed knowledge synchronization UI: restored the missing updateKnowledgeUi function.
+- Knowledge release and schema labels now refresh after cache load, update check and forced sync.
+- Preserves the selected historical family while refreshing knowledge-backed menus.
+- Bumped the service-worker cache so browsers receive the repaired app.js.
+- Corrected internal application version constants used by update checks and generated manifests.
+
 2026-08-24 - v0.5.5
 - Corrected the stale Installed build label so it matches the running release.
 - Preserved GitHub-native update and independently versioned knowledge delivery.

@@ -2,7 +2,7 @@ ACLM HISTORICAL TIRE LAB — CANONICAL SETUP
 ============================================
 
 CURRENT BUILD
-v0.5.5 Browser App + AC import
+v0.5.6 Browser App + AC import
 
 INSTALL
 1. Extract this ZIP.
@@ -173,6 +173,6 @@ load-sensitivity, falloff, pressure, rolling-loss, high-speed and thermal
 architecture while imported car geometry/mass remain direct car-state evidence.
 
 
-v0.5.5 - SAFE DISTRIBUTION
+v0.5.6 - SAFE DISTRIBUTION
 --------------------------
 This build removes automatic application download/extract/execute behavior. Application updates are check-only and open the normal browser release page. Tire-knowledge updates remain JSON-only and SHA-256 verified. No startup persistence, hidden updater, self-deleting updater, or automatic prerequisite installer is included.
