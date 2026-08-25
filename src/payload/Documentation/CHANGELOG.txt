@@ -1,6 +1,12 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.5.8
+- Fixed blank Temperature to grip graphs for knowledge-backed historical tire families.
+- Dynamic PERFORMANCE_CURVE LUTs now contain real line breaks instead of literal backslash-n text.
+- Added regression coverage requiring ten finite temperature/grip points and a visible 100% plateau.
+- Bumped the browser-app cache so installed apps receive the corrected curve generator.
+
 2026-08-25 - v0.5.7
 - Wired the Check for updates and Open update download page buttons.
 - The download page now opens even before an update check or when the installed build is current.
