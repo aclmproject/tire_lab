@@ -108,14 +108,14 @@ jobs:
           assert 'const ACLM_APP_VERSION="0.6.2";' in app
           assert dynamic in app and app.count(dynamic)==1
           assert stale not in app
-          assert 'join("\n")+"\n"' in app
+          assert r'join("\n")+"\n"' in app
           assert "v0.6.2 Browser App" in index
           assert '$CurrentVersion = "0.6.2"' in server
           assert "EXPECTED_VERSION=0.6.2" in launcher and "?build=0.6.2" in launcher
           assert installer.count("CreateShortcut")==1
           assert "ACLM Historical Tire Lab (1).lnk" in installer
-          assert "Startup\ACLM Tire Lab Server.lnk" in installer
-          assert "Chrome Apps\ACLM Historical Tire Lab.lnk" in installer
+          assert r"Startup\ACLM Tire Lab Server.lnk" in installer
+          assert r"Chrome Apps\ACLM Historical Tire Lab.lnk" in installer
           assert "aclm-tire-lab-shell-v062-temperature-export" in sw
           assert changelog.startswith("ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n2026-08-25 - v0.6.2")
           print("v0.6.2 exporter and launcher regression checks passed")
