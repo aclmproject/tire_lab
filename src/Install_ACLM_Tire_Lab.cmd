@@ -1,16 +1,18 @@
-@echo off
+          @echo off
 setlocal
 set "APPDIR=%LOCALAPPDATA%\ACLM\Historical Tire Lab"
 set "SOURCE=%~dp0payload"
 set "CACHEBACK=%TEMP%\ACLM_Tire_Lab_cache_%RANDOM%_%RANDOM%"
+set "USERSTART=%APPDATA%\Microsoft\Windows\Start Menu\Programs"
+set "LAUNCHROOT=%USERPROFILE%\Desktop"
+if exist "%OneDrive%\Desktop" set "LAUNCHROOT=%OneDrive%\Desktop"
+set "LAUNCHLINK=%LAUNCHROOT%\ACLM Historical Tire Lab.lnk"
 
 echo ======================================================
-echo        ACLM Historical Tire Lab - Safe Installer
+echo     ACLM Historical Tire Lab v0.6.1 - One Launcher
 echo ======================================================
-echo Application build: v0.6.0
-echo.
-echo This installer only copies files already included in this ZIP.
-echo It does not download or execute software from the Internet.
+echo This installer removes only exact legacy Tire Lab shortcuts.
+echo It keeps one canonical launcher that starts the correct server.
 echo.
 if not exist "%SOURCE%\app\index.html" (
   echo ERROR: Installer payload is incomplete.
@@ -18,8 +20,8 @@ if not exist "%SOURCE%\app\index.html" (
   exit /b 1
 )
 
-echo Stopping the previous Tire Lab local server, if present...
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$target=[IO.Path]::GetFullPath('%APPDIR%\Server_ACLM_Tire_Lab.ps1'); Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and ($_.Name -eq 'powershell.exe' -or $_.Name -eq 'pwsh.exe') -and $_.CommandLine -and $_.CommandLine.IndexOf($target,[StringComparison]::OrdinalIgnoreCase) -ge 0 } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }" >nul 2>&1
+echo Stopping prior Tire Lab servers...
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$target=[IO.Path]::GetFullPath('%APPDIR%\Server_ACLM_Tire_Lab.ps1'); Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and ($_.Name -eq 'powershell.exe' -or $_.Name -eq 'pwsh.exe') -and $_.CommandLine -and ($_.CommandLine.IndexOf($target,[StringComparison]::OrdinalIgnoreCase) -ge 0 -or $_.CommandLine -match 'Server_ACLM_Tire_Lab.ps1') } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }" >nul 2>&1
 timeout /t 1 /nobreak >nul
 
 mkdir "%CACHEBACK%" >nul 2>&1
@@ -39,16 +41,31 @@ if exist "%CACHEBACK%\knowledge_cache.json" copy /Y "%CACHEBACK%\knowledge_cache
 if exist "%CACHEBACK%\app_manifest_cache.json" copy /Y "%CACHEBACK%\app_manifest_cache.json" "%APPDIR%\app_manifest_cache.json" >nul
 if exist "%CACHEBACK%" rmdir /s /q "%CACHEBACK%"
 
-copy /Y "%APPDIR%\Launch_ACLM_Tire_Lab.cmd" "%USERPROFILE%\Desktop\ACLM Historical Tire Lab.cmd" >nul
+echo Removing exact legacy Tire Lab launchers...
+for %%D in ("%USERPROFILE%\Desktop" "%OneDrive%\Desktop") do (
+  if exist "%%~D\ACLM Historical Tire Lab.cmd" del /f /q "%%~D\ACLM Historical Tire Lab.cmd"
+  if exist "%%~D\ACLM Historical Tire Lab.lnk" del /f /q "%%~D\ACLM Historical Tire Lab.lnk"
+  if exist "%%~D\ACLM Historical Tire Lab (1).lnk" del /f /q "%%~D\ACLM Historical Tire Lab (1).lnk"
+  if exist "%%~D\ACLM Tire Lab.lnk" del /f /q "%%~D\ACLM Tire Lab.lnk"
+)
+if exist "%USERSTART%\ACLM Historical Tire Lab.lnk" del /f /q "%USERSTART%\ACLM Historical Tire Lab.lnk"
+if exist "%USERSTART%\ACLM Tire Lab.lnk" del /f /q "%USERSTART%\ACLM Tire Lab.lnk"
+if exist "%USERSTART%\Uninstall ACLM Tire Lab.lnk" del /f /q "%USERSTART%\Uninstall ACLM Tire Lab.lnk"
+if exist "%USERSTART%\Startup\ACLM Tire Lab Server.lnk" del /f /q "%USERSTART%\Startup\ACLM Tire Lab Server.lnk"
+if exist "%USERSTART%\Chrome Apps\ACLM Historical Tire Lab.lnk" del /f /q "%USERSTART%\Chrome Apps\ACLM Historical Tire Lab.lnk"
+if exist "%USERSTART%\ACLM Historical Tire Lab" rmdir /s /q "%USERSTART%\ACLM Historical Tire Lab"
+
+echo Creating one canonical launcher...
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$w=New-Object -ComObject WScript.Shell; $s=$w.CreateShortcut('%LAUNCHLINK%'); $s.TargetPath='%APPDIR%\Launch_ACLM_Tire_Lab.cmd'; $s.WorkingDirectory='%APPDIR%'; $s.IconLocation='%APPDIR%\app\ACLM_Tire_Lab.ico,0'; $s.Description='ACLM Historical Tire Lab v0.6.1'; $s.Save()" >nul 2>&1
+if not exist "%LAUNCHLINK%" copy /Y "%APPDIR%\Launch_ACLM_Tire_Lab.cmd" "%LAUNCHROOT%\ACLM Historical Tire Lab.cmd" >nul
+
 echo.
 echo Installed to: %APPDIR%
-echo The previous local server was stopped so this build starts cleanly.
+echo Legacy ACLM launchers were removed.
+echo One canonical launcher remains in: %LAUNCHROOT%
 echo Verified knowledge and manifest caches were preserved.
-echo A launcher was copied to your Desktop.
-echo Application updates are manual and open in your normal browser.
-echo Tire-knowledge JSON updates remain SHA-256 verified.
 echo.
-choice /C YN /N /M "Launch Tire Lab now? [Y/N] "
+choice /C YN /N /M "Launch Tire Lab v0.6.1 now? [Y/N] "
 if errorlevel 2 exit /b 0
 call "%APPDIR%\Launch_ACLM_Tire_Lab.cmd"
 endlocal

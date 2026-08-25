@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $AppDir = Join-Path $PSScriptRoot "app"
 $Port = 48765
-$CurrentVersion = "0.6.0"
+$CurrentVersion = "0.6.1"
 $KnowledgeManifestUrls = @(
   "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
   "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
@@ -15,7 +15,7 @@ $UpdatesPage = "https://github.com/aclmproject/tire_lab/releases"
 $KnowledgeCache = Join-Path $PSScriptRoot "knowledge_cache.json"
 $AppManifestCache = Join-Path $PSScriptRoot "app_manifest_cache.json"
 $KnowledgeFallback = Join-Path $AppDir "knowledge_fallback.json"
-$GithubHeaders = @{"Cache-Control"="no-cache";"User-Agent"="ACLM-Historical-Tire-Lab/0.6.0";"Accept"="application/vnd.github+json"}
+$GithubHeaders = @{"Cache-Control"="no-cache";"User-Agent"="ACLM-Historical-Tire-Lab/0.6.1";"Accept"="application/vnd.github+json"}
 $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback,$Port)
 try { $listener.Start() } catch { exit 0 }
 

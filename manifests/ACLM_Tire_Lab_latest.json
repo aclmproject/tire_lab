@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.6.0",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.6.0.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.0",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.0/ACLM_Tire_Lab_Setup_v0.6.0.zip",
-  "sha256": "c332895262ea50de07a115f4e4bef9a9cf95f53099d0d95433406a1432bbf56b",
-  "published_utc": "2026-08-25T20:43:48Z",
-  "notes": "Reliable on-demand update/knowledge checks, clean server restart, preserved caches, and About & methodology disclaimer."
+  "version": "0.6.1",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.6.1.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.1",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.1/ACLM_Tire_Lab_Setup_v0.6.1.zip",
+  "sha256": "edd6d73dacf5c174c6653fe74697175bb0388198dd9fe4db576563d1c6b7256a",
+  "published_utc": "2026-08-25T21:37:45Z",
+  "notes": "One canonical launcher; stale-server detection; exact legacy shortcut cleanup; no tire-physics changes."
 }

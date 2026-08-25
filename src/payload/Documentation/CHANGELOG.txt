@@ -1,6 +1,15 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.6.1
+- Replaces duplicate legacy/PWA launch paths with one canonical desktop launcher.
+- Removes only the exact legacy ACLM shortcut names discovered during the launcher audit.
+- Launcher verifies /api/health and the expected server version before opening the browser.
+- A stale Tire Lab server is stopped and replaced with the packaged server.
+- Adds a cache-busting build query so the network-first service worker receives the installed app shell.
+- Removes the in-app PWA installer and manifest link to prevent new duplicate Windows app entries.
+- No tire physics or knowledge calibrations changed in this maintenance release.
+
 2026-08-25 - v0.6.0
 - Stops and replaces the previous local server during installation while preserving verified caches.
 - Correctly distinguishes a lightweight knowledge check from an explicit forced synchronization.
