@@ -1,0 +1,231 @@
+name: Release Tire Lab Temperature Graph Fix
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-temp-graph-fix.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-tire-lab-app
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.5.8
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Repair historical temperature-curve line breaks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+
+          old_curve=r'.join("\\n")+"\\n";'
+          new_curve=r'.join("\n")+"\n";'
+          if app.count(old_curve)!=1:
+              raise SystemExit(f"Expected one escaped temperature-curve separator; found {app.count(old_curve)}")
+          app=app.replace(old_curve,new_curve)
+
+          old_constant='const ACLM_APP_VERSION="0.5.7";'
+          if app.count(old_constant)!=1:
+              raise SystemExit("Unexpected application version constant")
+          app=app.replace(old_constant,f'const ACLM_APP_VERSION="{version}";')
+          if app.count("v0.5.7")!=3:
+              raise SystemExit("Unexpected v0.5.7 application token count")
+          app=app.replace("v0.5.7",f"v{version}")
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          if index.count("v0.5.7")!=2:
+              raise SystemExit("Unexpected index version token count")
+          index_path.write_text(index.replace("v0.5.7",f"v{version}"),encoding="utf-8",newline="")
+
+          server_path=Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server=server_path.read_text(encoding="utf-8")
+          old_server='$CurrentVersion = "0.5.7"'
+          if server.count(old_server)!=1:
+              raise SystemExit("Unexpected server version declaration")
+          server_path.write_text(server.replace(old_server,f'$CurrentVersion = "{version}"'),encoding="utf-8",newline="")
+
+          installer_path=Path("src/Install_ACLM_Tire_Lab.cmd")
+          installer=installer_path.read_text(encoding="utf-8")
+          if installer.count("v0.5.7")!=1:
+              raise SystemExit("Unexpected installer version token count")
+          installer_path.write_text(installer.replace("v0.5.7",f"v{version}"),encoding="utf-8",newline="")
+
+          readme_first_path=Path("src/README_FIRST.txt")
+          readme_first=readme_first_path.read_text(encoding="utf-8")
+          if readme_first.count("v0.5.7")!=2:
+              raise SystemExit("Unexpected packaged README version token count")
+          readme_first_path.write_text(readme_first.replace("v0.5.7",f"v{version}"),encoding="utf-8",newline="")
+
+          sw_path=Path("src/payload/app/sw.js")
+          sw=sw_path.read_text(encoding="utf-8")
+          old_cache="aclm-tire-lab-shell-v057-update-buttons"
+          if sw.count(old_cache)!=1:
+              raise SystemExit("Unexpected service-worker cache token")
+          sw_path.write_text(sw.replace(old_cache,"aclm-tire-lab-shell-v058-temp-graph"),encoding="utf-8",newline="")
+
+          changelog_path=Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog=changelog_path.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry=(
+              f"2026-08-25 - v{version}\n"
+              "- Fixed blank Temperature to grip graphs for knowledge-backed historical tire families.\n"
+              "- Dynamic PERFORMANCE_CURVE LUTs now contain real line breaks instead of literal backslash-n text.\n"
+              "- Added regression coverage requiring ten finite temperature/grip points and a visible 100% plateau.\n"
+              "- Bumped the browser-app cache so installed apps receive the corrected curve generator.\n\n"
+          )
+          changelog_path.write_text(heading+entry+changelog[len(heading):],encoding="utf-8",newline="")
+
+          repo_readme=Path("README.md")
+          readme=repo_readme.read_text(encoding="utf-8")
+          old_line="Current application release: **v0.5.7**"
+          if readme.count(old_line)!=1:
+              raise SystemExit("Unexpected repository app release line")
+          repo_readme.write_text(readme.replace(old_line,f"Current application release: **v{version}**"),encoding="utf-8",newline="")
+          PY
+
+      - name: Test generated temperature curves and graph input
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node <<'NODE'
+          const fs=require("fs");
+          const source=fs.readFileSync("src/payload/app/app.js","utf8");
+
+          function extract(name,next){
+            const start=source.indexOf("function "+name+"(");
+            const end=source.indexOf("\nfunction "+next+"(",start);
+            if(start<0||end<0)throw new Error("Could not extract "+name);
+            return source.slice(start,end);
+          }
+
+          const parseSource=extract("parseLutPoints","graphCanvas");
+          const perfStart=source.indexOf("function performanceCurveText(");
+          const perfEnd=source.indexOf("\n\nconst wearBase=",perfStart);
+          if(perfStart<0||perfEnd<0)throw new Error("Could not extract performanceCurveText");
+          const perfSource=source.slice(perfStart,perfEnd);
+
+          const api=new Function("activeFamilyPrior","dryCompound",
+            parseSource+"\n"+perfSource+"\nreturn {parseLutPoints,performanceCurveText};"
+          )(
+            ()=>({tempOpt:90,tempWidth:20}),
+            comp=>comp!=="wet"&&comp!=="intermediate"
+          );
+
+          for(const comp of ["soft","medium","hard"]){
+            const lut=api.performanceCurveText(comp);
+            if(lut.includes("\\n"))throw new Error(comp+" curve contains literal backslash-n separators");
+            if(!lut.includes("\n"))throw new Error(comp+" curve contains no real line breaks");
+            const points=api.parseLutPoints(lut);
+            if(points.length!==10)throw new Error(comp+" curve parsed "+points.length+" points instead of 10");
+            if(points.some(p=>!Number.isFinite(p.x)||!Number.isFinite(p.y)))throw new Error(comp+" curve contains non-finite points");
+            if(Math.max(...points.map(p=>p.y))!==1)throw new Error(comp+" curve lacks the 100% grip plateau");
+            if(points.some((p,i)=>i&&p.x<=points[i-1].x))throw new Error(comp+" temperatures are not strictly increasing");
+          }
+          console.log("Historical temperature-curve regression tests passed");
+          NODE
+          grep -F '.join("\n")+"\n";' src/payload/app/app.js
+          if grep -F '.join("\\n")+"\\n";' src/payload/app/app.js; then
+            echo "Literal backslash-n curve separator remains"
+            exit 1
+          fi
+          grep -F 'const ACLM_APP_VERSION="0.5.8"' src/payload/app/app.js
+          grep -F '$CurrentVersion = "0.5.8"' src/payload/Server_ACLM_Tire_Lab.ps1
+          grep -F 'id="installedBuild">v0.5.8<' src/payload/app/index.html
+          grep -F 'aclm-tire-lab-shell-v058-temp-graph' src/payload/app/sw.js
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          sums=[]
+          for path in sorted(p for p in src.rglob("*") if p.is_file() and p.name!="SHA256SUMS.txt"):
+              sums.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.relative_to(src).as_posix()}")
+          (src/"SHA256SUMS.txt").write_text("\n".join(sums)+"\n",encoding="ascii")
+
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          if archive.exists():
+              archive.unlink()
+          with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+              for path in sorted(p for p in src.rglob("*") if p.is_file()):
+                  zf.write(path,path.relative_to(src).as_posix())
+
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"Fixes blank temperature-to-grip graphs for dynamically generated knowledge-backed historical tire curves."
+          }
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit the v0.5.8 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: render historical temperature curves in Tire Lab v0.5.8"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.5.8
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip"             --repo "${{ github.repository }}"             --target "$(git rev-parse HEAD)"             --title "ACLM Historical Tire Lab v$APP_VERSION"             --notes "Fixes blank Temperature to grip graphs for knowledge-backed historical tire families.
+
+          The dynamic PERFORMANCE_CURVE generator now emits real newline-delimited LUT rows. Regression tests require ten finite, increasing temperature points and a visible 1.00 grip plateau for soft, medium and hard tires.
+
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
