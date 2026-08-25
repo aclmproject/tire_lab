@@ -1,6 +1,14 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.6.3
+- Adds per-axle light/medium/heavy thermal load-duty reconstruction from FZ0 per tread width; tire-family priors remain immutable.
+- Light duty uses cooling x0.88 and friction heat x1.08, medium x1.00/x1.00, heavy x1.06/x0.96; thresholds and provenance appear in the UI, manifest, INI comments and PDF.
+- Adds a global LUT integrity gate for literal \n, /n, literal \r, carriage returns, malformed/non-numeric rows and non-increasing X axes.
+- Removes stale v0.6.1 strings from generated headers, manifests, reports, installed-build UI and update user-agent.
+- Bundles validated Tire Knowledge v1.6.0 (73 families/classes, 145 sources, 184 measurements).
+- Retains both AC import paths, historical menus, graphs, pressure solver, terminal failure, PDF report, reliable updates and one canonical launcher.
+
 2026-08-25 - v0.6.2
 - Tire-pack ZIPs now export the active knowledge-backed PERFORMANCE_CURVE shown in the temperature/grip graph.
 - Removes the stale temporary LUT path that could leave generated tires using an older generic temperature window.

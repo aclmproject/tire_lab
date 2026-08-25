@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.6.2 Browser App + AC import</span></h1>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.6.3 Browser App + AC import</span></h1>
   <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
@@ -120,6 +120,7 @@
  <div><label>Front FZ0 override (N, 0=auto)</label><input id="fzF" type="number" value="0"></div>
  <div><label>Rear FZ0 override (N, 0=auto)</label><input id="fzR" type="number" value="0"></div>
 </div>
+<div id="loadDutyStatus" class="notice small">Thermal load duty is calculated independently for each axle from FZ0 per tread width.</div>
 </div>
 
 <div class="card">
@@ -196,7 +197,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.6.1</b></div></div>
+ <div><label>Installed build</label><div><b id="installedBuild">v0.6.3</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">

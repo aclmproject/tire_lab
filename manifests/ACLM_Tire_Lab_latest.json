@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.6.2",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.6.2.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.2",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.2/ACLM_Tire_Lab_Setup_v0.6.2.zip",
-  "sha256": "b752d093bfe01f8daf8c0d1020597fb0f6714babf7047fcecb9dbf48f39152ad",
-  "published_utc": "2026-08-25T21:44:38Z",
-  "notes": "Knowledge-backed temperature LUT export correction; retains one canonical launcher; no calibration-value changes."
+  "version": "0.6.3",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.6.3.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.3",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.3/ACLM_Tire_Lab_Setup_v0.6.3.zip",
+  "sha256": "f75579a80519ee925299e8cefee5d2a8dfb33e41ce18e8e374aa23741bba4b38",
+  "published_utc": "2026-08-25T23:38:19Z",
+  "notes": "Per-axle FZ0/width thermal duty, strict LUT integrity gate, bundled Knowledge v1.6.0, and one canonical launcher."
 }

@@ -428,6 +428,32 @@ function fz0(axle){
  const ov=n(axle==="front"?"fzF":"fzR");
  return Math.round(ov>0?ov:raw);
 }
+const LOAD_DUTY_PRIORS=Object.freeze({
+ light:Object.freeze({label:"Light",cool:0.88,friction:1.08}),
+ medium:Object.freeze({label:"Medium",cool:1.00,friction:1.00}),
+ heavy:Object.freeze({label:"Heavy",cool:1.06,friction:0.96})
+});
+function loadDuty(axle){
+ const widthMm=n(axle==="front"?"fw":"rw")*1000;
+ const loadN=fz0(axle);
+ const intensity=widthMm>0?loadN/widthMm:NaN;
+ const key=Number.isFinite(intensity)?(intensity<9?"light":intensity<=13?"medium":"heavy"):"medium";
+ return {axle,key,label:LOAD_DUTY_PRIORS[key].label,intensity,widthMm,loadN,...LOAD_DUTY_PRIORS[key]};
+}
+function applyLoadDutyThermal(base,axle){
+ const duty=loadDuty(axle);
+ return {...base,fric:clamp(Number(base.fric)*duty.friction,0.001,0.5),cool:clamp(Number(base.cool)*duty.cool,0.10,10),duty};
+}
+function loadDutySummary(){
+ return ["front","rear"].map(axle=>{
+  const d=loadDuty(axle);
+  return (axle==="front"?"F":"R")+" "+d.label.toLowerCase()+" "+(Number.isFinite(d.intensity)?d.intensity.toFixed(2):"?")+" N/mm";
+ }).join(" | ");
+}
+function refreshLoadDutyStatus(){
+ const el=$("loadDutyStatus");if(!el)return;
+ el.innerHTML="<b>Thermal load duty:</b> "+escapeHtml(loadDutySummary())+". Thresholds (&lt;9 light, 9-13 medium, &gt;13 heavy N/mm) are transparent simulation reconstruction priors; the tire-family knowledge values remain unchanged.";
+}
 function tireSection(comp,axle,index){
  const d=compDefs[comp], isF=axle==="front";
  const suffix=index===0?"":"_"+index;
@@ -512,8 +538,10 @@ function thermalSection(comp,axle,index){
     cool:Number(prior.cool),sroll:Number(prior.rollingK)*5.8
    };
  }
+ t=applyLoadDutyThermal(t,axle);
  const suffix=index===0?"":"_"+index, sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+suffix;
- return `[${sec}]
+ const dutyNote="; ACLM load-duty reconstruction: "+t.duty.key+"; "+t.duty.intensity.toFixed(2)+" N/mm; cooling x"+t.duty.cool.toFixed(3)+"; friction heat x"+t.duty.friction.toFixed(3);
+ return dutyNote+"\n"+`[${sec}]
 SURFACE_TRANSFER=${t.surf.toFixed(6)}
 PATCH_TRANSFER=${t.patch.toFixed(6)}
 CORE_TRANSFER=${t.core.toFixed(6)}
@@ -595,19 +623,21 @@ function buildHistoricalReportData(comps){
    importedUsed.length?`Imported AC package files inspected for generation: ${importedUsed.join(", ")}.`:"No imported AC physics package is attached to this current report state.",
    "Green Tire Lab fields are direct values from the imported AC package. These document the mod state, not necessarily historical truth.",
    "Amber fields are historical research/inference and are retained as reviewable evidence rather than hidden assumptions.",
-   "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values."
+   "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values.",
+    "Load-duty thermal scaling uses FZ0 per tread width for each axle. It is a transparent simulation reconstruction prior, not confidential supplier data."
  ];
  const limitations=[
    "A generated AC tire can be structurally valid while exact supplier proprietary coefficients remain unavailable.",
    "Peak friction, exact stiffness, thermal constants and wear-to-grip curves should only be described as factory-exact when primary evidence exists.",
    "Lap time and Assetto Corsa behavior are validation evidence for the simulation implementation, not standalone proof of historical tire specifications.",
-   "User-adjustable AC tire-wear multipliers can compress or extend race strategy without changing the historical baseline wear curve."
+   "User-adjustable AC tire-wear multipliers can compress or extend race strategy without changing the historical baseline wear curve.",
+    "Light/medium/heavy thermal load-duty thresholds require telemetry validation for each car, track, setup and ambient condition."
  ];
  return {
    title:"Historical Tire Accuracy & Evidence Report",
    car:v("car")||"Unknown car",
    generatedAt:new Date().toLocaleString(),
-   build:"v0.6.1",
+   build:"v"+ACLM_APP_VERSION,
    confidenceScore:reportConfidenceScore(),
    identity:[
      {label:"Car",value:v("car")||"Unknown",provenance:provenanceLabel("car")},
@@ -626,6 +656,7 @@ function buildHistoricalReportData(comps){
      {label:"Rear tire geometry",value:`${(n("rw")*1000).toFixed(0)} mm width, ${(n("rr")*2000).toFixed(0)} mm OD, rim radius ${(n("rrr")*1000).toFixed(1)} mm`},
      {label:"Vertical rate",value:`${(n("rateF")/1000).toFixed(1)} N/mm front / ${(n("rateR")/1000).toFixed(1)} N/mm rear`},
      {label:"Reference load FZ0",value:`${fz0("front")} N front / ${fz0("rear")} N rear`},
+     {label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},
      {label:"Ideal hot pressure",value:`${n("pIdeal").toFixed(1)} psi`},
      {label:"Pressure generation",value:$("autoSolvePressure")?.checked?`Auto-solved from ${n("pRefTemp").toFixed(1)} deg C reference to each compound thermal peak`:"Manual generated cold pressures"},
      {label:"Medium generated cold pressure",value:`${pressure("medium","front").toFixed(1)} psi front / ${pressure("medium","rear").toFixed(1)} psi rear`},
@@ -657,7 +688,37 @@ function buildHistoricalReportData(comps){
  };
 }
 
+function lutIntegrityErrors(name,text){
+ const errors=[];
+ if(typeof text!=="string")return [name+": LUT is not text."];
+ if(text.includes("\\n"))errors.push(name+": contains literal \\n text instead of real line breaks.");
+ if(text.includes("/n"))errors.push(name+": contains invalid /n text.");
+ if(text.includes("\\r"))errors.push(name+": contains literal \\r text.");
+ if(text.includes("\r"))errors.push(name+": contains carriage-return characters; Tire Lab exports canonical LF rows.");
+ const rows=text.split("\n").filter(line=>line.trim()&&!line.trim().startsWith(";"));
+ const xs=[];
+ for(const line of rows){
+  const parts=line.split("|");
+  if(parts.length!==2||!parts[0].trim()||!parts[1].trim()||!Number.isFinite(Number(parts[0]))||!Number.isFinite(Number(parts[1]))){
+   errors.push(name+': malformed/non-numeric LUT row "'+line+'".');
+  }else xs.push(Number(parts[0]));
+ }
+ if(xs.length<2)errors.push(name+": LUT has fewer than two numeric points.");
+ for(let i=1;i<xs.length;i++)if(xs[i]<=xs[i-1])errors.push(name+": X axis is not strictly increasing.");
+ return errors;
+}
+function collectLutIntegrityErrors(files){
+ const errors=[];
+ Object.entries(files).filter(([name])=>name.toLowerCase().endsWith(".lut")).forEach(([name,text])=>errors.push(...lutIntegrityErrors(name,text)));
+ return errors;
+}
+function assertLutIntegrity(files){
+ const errors=collectLutIntegrityErrors(files);
+ if(errors.length)throw new Error("LUT integrity gate blocked export: "+errors.join(" "));
+}
+
 function build(){
+ refreshLoadDutyStatus();
  const comps=selectedCompounds();
  if(!v("car")||/^car$/i.test(v("car")))throw new Error("Car name is required before generating a tire pack.");
  lockExportName();
@@ -666,7 +727,7 @@ function build(){
  const defaultIdx=Math.max(0,comps.indexOf("medium"));
  let ini=`; ================================================================
 ; ACLM PROJECT - HISTORICAL RACE TIRE MODEL
-; Generated by ACLM Historical Tire Lab v0.6.1
+; Generated by ACLM Historical Tire Lab v${ACLM_APP_VERSION}
 ; ${n("year")} | ${v("series")} | ${v("car")} | ${v("supplier")}
 ; Historical tire category: ${activeHistoricalContext?`${activeHistoricalContext.familyId} - ${activeHistoricalContext.familyName}`:"manual / unresolved"}
 ; Class calibration: ${activeHistoricalContext?.classId?`${activeHistoricalContext.classId} - ${activeHistoricalContext.className}`:"none"}
@@ -710,7 +771,7 @@ CAMBER_TEMP_SPREAD_K=1.4
    files[`aclm_${c}_tcurve.lut`]=performanceCurveText(c);
  });
  files["tyres.ini"]=ini;
- files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v0.6.1
+ files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v${ACLM_APP_VERSION}
 Car: ${v("car")}
 Year/class: ${n("year")} / ${v("series")}
 Supplier: ${v("supplier")}
@@ -719,6 +780,7 @@ Historical category: ${activeHistoricalContext?`${activeHistoricalContext.family
 Class calibration: ${activeHistoricalContext?.classId?`${activeHistoricalContext.classId} - ${activeHistoricalContext.className}`:"none"}
 Compounds: ${comps.map(c=>compoundDisplayName(c)).join(", ")}
 FZ0 front/rear: ${fz0("front")} / ${fz0("rear")} N
+Load-duty thermal reconstruction: ${loadDutySummary()}
 AC tire format: VERSION=10
 CSP: ${$("extended").checked?"car.ini should use VERSION=extended-2":"not required by this export"}
 Thermal: ${$("legacyThermal").checked?"legacy AC thermal model":"thermal sections omitted"}
@@ -733,6 +795,7 @@ Output ZIP: ${currentExportZipName||outputZipName()}
 NOTE: This pack is structurally complete and reference-validated. On-track grip, temperature and wear still require car-specific certification.
 Historical PDF report: ${historicalReportFileName()}
 `;
+ assertLutIntegrity(files);
  if(!window.ACLMPdf || typeof window.ACLMPdf.create!=="function") throw new Error("Historical PDF report engine is unavailable.");
  files[historicalReportFileName()]=window.ACLMPdf.create(buildHistoricalReportData(comps));
  return files;
@@ -783,15 +846,7 @@ function validate(files){
      });
    }
  });
- // Generic LUT parse/monotonic check
- Object.entries(files).filter(([fn])=>fn.endsWith(".lut")).forEach(([fn,txt])=>{
-   let xs=[]; txt.split(/\r?\n/).filter(x=>x.trim() && !x.trim().startsWith(";")).forEach(line=>{
-     const p=line.split("|"); if(p.length!==2 || !isFinite(Number(p[0])) || !isFinite(Number(p[1]))) errors.push(`${fn}: malformed LUT row "${line}".`);
-     else xs.push(Number(p[0]));
-   });
-   if(xs.length<2) errors.push(`${fn}: LUT has fewer than two numeric points.`);
-   for(let i=1;i<xs.length;i++) if(xs[i]<=xs[i-1]) errors.push(`${fn}: X axis is not strictly increasing.`);
- });
+ collectLutIntegrityErrors(files).forEach(error=>errors.push(error));
  if(!window.ACLMPressure) errors.push("Pressure solver module is unavailable.");
  else {
    selectedCompounds().forEach(comp=>{
@@ -825,6 +880,7 @@ function validate(files){
  }
  info.push(`${fronts.length} compound(s), ${Object.keys(files).length} total files.`);
  info.push(`Auto FZ0: ${fz0("front")} N front / ${fz0("rear")} N rear.`);
+ info.push("Thermal load duty: "+loadDutySummary()+".");
  info.push("All external wear, temperature and camber LUT references are resolved before export.");
  return {errors,warnings,info};
 }
@@ -1317,6 +1373,15 @@ try{
 }catch(e){}
 
 $("car").addEventListener("input",()=>{currentExportZipName="";updateOutputName();});
+["mass","frontWeight","fzFactor","fw","rw","fzF","fzR"].forEach(id=>{
+ const el=$(id);if(el)el.addEventListener("input",()=>{
+  refreshLoadDutyStatus();
+  try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
+ });
+});
+refreshLoadDutyStatus();
+
+
 ["terminalFailure","terminalNormalGrip","terminalFailureGrip","terminalFailureGap"].forEach(id=>{
  const el=$(id); if(el) el.addEventListener("change",()=>{
    try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
@@ -1340,7 +1405,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.6.2";
+const ACLM_APP_VERSION="0.6.3";
 const ACLM_RELEASES_URL="https://github.com/aclmproject/tire_lab/releases";
 let availableUpdate=null;
 let onlineRequestActive=false;
