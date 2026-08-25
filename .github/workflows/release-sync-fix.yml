@@ -1,0 +1,243 @@
+name: Release Tire Lab Knowledge Sync Fix
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-sync-fix.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-tire-lab-app
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.5.6
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Patch the missing knowledge UI function
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          version = os.environ["APP_VERSION"]
+          app_path = Path("src/payload/app/app.js")
+          app = app_path.read_text(encoding="utf-8")
+          if "function updateKnowledgeUi(" in app:
+              raise SystemExit("updateKnowledgeUi already exists; refusing an ambiguous patch")
+          anchor = 'async function loadCurrentKnowledge(){'
+          if app.count(anchor) != 1:
+              raise SystemExit("Expected exactly one loadCurrentKnowledge anchor")
+          ui_function = r'''function updateKnowledgeUi(message=""){
+           const info=window.ACLMHistoricalCategories?.knowledgeInfo?.()||{};
+           const build=$("knowledgeBuild"),schema=$("knowledgeSchema"),status=$("knowledgeStatus");
+           if(build)build.textContent=`v${info.version||"?"}`;
+           if(schema)schema.textContent=String(info.schemaVersion||"?");
+           if(status&&message)status.innerHTML=message;
+           const preset=$("preset"),selected=preset?.value||"";
+           populateHistoricalCategoryOptions();
+           if(preset&&selected&&[...preset.options].some(o=>o.value===selected))preset.value=selected;
+           renderHistoricalFamilySummary();
+          }
+
+          '''
+          app = app.replace(anchor, ui_function + anchor)
+          if app.count("v0.4.5") != 2:
+              raise SystemExit("Unexpected internal v0.4.5 token count")
+          if app.count("v0.5.5") != 2:
+              raise SystemExit("Unexpected generated-output v0.5.5 token count")
+          app = app.replace("v0.4.5", f"v{version}").replace("v0.5.5", f"v{version}")
+          app_path.write_text(app, encoding="utf-8", newline="")
+
+          index_path = Path("src/payload/app/index.html")
+          index = index_path.read_text(encoding="utf-8")
+          if index.count("v0.5.5") != 2:
+              raise SystemExit("Unexpected index v0.5.5 token count")
+          index_path.write_text(index.replace("v0.5.5", f"v{version}"), encoding="utf-8", newline="")
+
+          server_path = Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server = server_path.read_text(encoding="utf-8")
+          old_server = '$CurrentVersion = "0.5.5"'
+          if server.count(old_server) != 1:
+              raise SystemExit("Unexpected server version declaration")
+          server_path.write_text(server.replace(old_server, f'$CurrentVersion = "{version}"'), encoding="utf-8", newline="")
+
+          installer_path = Path("src/Install_ACLM_Tire_Lab.cmd")
+          installer = installer_path.read_text(encoding="utf-8")
+          if installer.count("v0.5.5") != 1:
+              raise SystemExit("Unexpected installer version token count")
+          installer_path.write_text(installer.replace("v0.5.5", f"v{version}"), encoding="utf-8", newline="")
+
+          readme_first_path = Path("src/README_FIRST.txt")
+          readme_first = readme_first_path.read_text(encoding="utf-8")
+          if readme_first.count("v0.5.5") != 2:
+              raise SystemExit("Unexpected packaged README version token count")
+          readme_first_path.write_text(readme_first.replace("v0.5.5", f"v{version}"), encoding="utf-8", newline="")
+
+          sw_path = Path("src/payload/app/sw.js")
+          sw = sw_path.read_text(encoding="utf-8")
+          old_cache = "aclm-tire-lab-shell-v053-safe"
+          if sw.count(old_cache) != 1:
+              raise SystemExit("Unexpected service-worker cache token")
+          sw_path.write_text(sw.replace(old_cache, "aclm-tire-lab-shell-v056-knowledge-sync"), encoding="utf-8", newline="")
+
+          changelog_path = Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog = changelog_path.read_text(encoding="utf-8-sig")
+          heading = "ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry = (
+              f"2026-08-25 - v{version}\n"
+              "- Fixed knowledge synchronization UI: restored the missing updateKnowledgeUi function.\n"
+              "- Knowledge release and schema labels now refresh after cache load, update check and forced sync.\n"
+              "- Preserves the selected historical family while refreshing knowledge-backed menus.\n"
+              "- Bumped the service-worker cache so browsers receive the repaired app.js.\n"
+              "- Corrected internal application version constants used by update checks and generated manifests.\n\n"
+          )
+          changelog_path.write_text(heading + entry + changelog[len(heading):], encoding="utf-8", newline="")
+
+          repo_readme = Path("README.md")
+          readme = repo_readme.read_text(encoding="utf-8")
+          if readme.count("Current application release: **v0.5.5**") != 1:
+              raise SystemExit("Unexpected repository app release line")
+          if readme.count("Current knowledge release: **v1.3.0**") != 1:
+              raise SystemExit("Unexpected repository knowledge release line")
+          readme = readme.replace("Current application release: **v0.5.5**", f"Current application release: **v{version}**")
+          readme = readme.replace("Current knowledge release: **v1.3.0**", "Current knowledge release: **v1.4.0**")
+          repo_readme.write_text(readme, encoding="utf-8", newline="")
+          PY
+
+      - name: Test the repaired knowledge UI
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node <<'NODE'
+          const fs=require("fs");
+          const source=fs.readFileSync("src/payload/app/app.js","utf8");
+          const start=source.indexOf("function updateKnowledgeUi(");
+          const end=source.indexOf("\nasync function loadCurrentKnowledge",start);
+          if(start<0||end<0)throw new Error("Could not extract updateKnowledgeUi");
+          const fnSource=source.slice(start,end);
+          const elements={
+            knowledgeBuild:{textContent:""},
+            knowledgeSchema:{textContent:""},
+            knowledgeStatus:{innerHTML:""},
+            preset:{value:"FAM002",options:[{value:"auto"},{value:"manual"},{value:"FAM002"}]}
+          };
+          let populateCalls=0,summaryCalls=0;
+          const update=new Function("$","window","populateHistoricalCategoryOptions","renderHistoricalFamilySummary",
+            fnSource+"\nreturn updateKnowledgeUi;"
+          )(
+            id=>elements[id]||null,
+            {ACLMHistoricalCategories:{knowledgeInfo:()=>({version:"1.4.0",schemaVersion:"1.0.0"})}},
+            ()=>{populateCalls++;},
+            ()=>{summaryCalls++;}
+          );
+          update('<span class="ok">Knowledge synchronized</span>');
+          if(elements.knowledgeBuild.textContent!=="v1.4.0")throw new Error("Knowledge release label did not update");
+          if(elements.knowledgeSchema.textContent!=="1.0.0")throw new Error("Knowledge schema label did not update");
+          if(!elements.knowledgeStatus.innerHTML.includes("Knowledge synchronized"))throw new Error("Knowledge status did not update");
+          if(elements.preset.value!=="FAM002")throw new Error("Selected historical family was not preserved");
+          if(populateCalls!==1||summaryCalls!==1)throw new Error("Knowledge menus were not refreshed exactly once");
+          const calls=(source.match(/updateKnowledgeUi\(/g)||[]).length;
+          if(calls!==4)throw new Error(`Expected one definition and three calls; found ${calls}`);
+          console.log("Knowledge UI regression test passed");
+          NODE
+          grep -F 'const ACLM_APP_VERSION="0.5.6"' src/payload/app/app.js
+          grep -F 'id="installedBuild">v0.5.6<' src/payload/app/index.html
+          grep -F '$CurrentVersion = "0.5.6"' src/payload/Server_ACLM_Tire_Lab.ps1
+          grep -F "aclm-tire-lab-shell-v056-knowledge-sync" src/payload/app/sw.js
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          sums=[]
+          for path in sorted(p for p in src.rglob("*") if p.is_file() and p.name!="SHA256SUMS.txt"):
+              sums.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.relative_to(src).as_posix()}")
+          (src/"SHA256SUMS.txt").write_text("\n".join(sums)+"\n",encoding="ascii")
+
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          if archive.exists():
+              archive.unlink()
+          with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+              for path in sorted(p for p in src.rglob("*") if p.is_file()):
+                  zf.write(path,path.relative_to(src).as_posix())
+
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"Fixes knowledge synchronization display and refresh logic, corrects internal version constants, and forces a clean browser-app cache update."
+          }
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit the v0.5.6 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: restore knowledge sync UI in Tire Lab v0.5.6"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.5.6
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip"             --repo "${{ github.repository }}"             --target "$(git rev-parse HEAD)"             --title "ACLM Historical Tire Lab v$APP_VERSION"             --notes "Fixes the missing updateKnowledgeUi function that made tire-knowledge sync report an error after a successful server response.
+
+          Also:
+          - refreshes the displayed knowledge release and schema
+          - preserves the selected historical tire family
+          - refreshes knowledge-backed menus and summaries
+          - bumps the browser-app cache
+          - corrects internal application version constants
+
+          Regression tests passed for v1.4.0 display, schema display, status output, family preservation and menu refresh.
+
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
