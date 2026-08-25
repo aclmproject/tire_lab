@@ -92,29 +92,14 @@ jobs:
           '''
           app=replace_once(app,fz_anchor,load_duty,"load-duty functions")
 
-          prior_anchor='''   if(prior&&dryCompound(comp)){
-              t={
-               surf:Number(prior.surfaceTransfer),patch:Number(prior.patchTransfer),core:Number(prior.coreTransfer),
-               internal:Number(prior.internalCoreTransfer),fric:Number(prior.frictionK),roll:Number(prior.rollingK),
-               cool:Number(prior.cool),sroll:Number(prior.rollingK)*5.8
-              };
-             }
-             const suffix=index===0?"":"_"+index, sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+suffix;
-             return `[${sec}]
-          '''
-          prior_new='''   if(prior&&dryCompound(comp)){
-              t={
-               surf:Number(prior.surfaceTransfer),patch:Number(prior.patchTransfer),core:Number(prior.coreTransfer),
-               internal:Number(prior.internalCoreTransfer),fric:Number(prior.frictionK),roll:Number(prior.rollingK),
-               cool:Number(prior.cool),sroll:Number(prior.rollingK)*5.8
-              };
-             }
-             t=applyLoadDutyThermal(t,axle);
-             const suffix=index===0?"":"_"+index, sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+suffix;
-             const dutyNote="; ACLM load-duty reconstruction: "+t.duty.key+"; "+t.duty.intensity.toFixed(2)+" N/mm; cooling x"+t.duty.cool.toFixed(3)+"; friction heat x"+t.duty.friction.toFixed(3);
-             return dutyNote+"\\n"+`[${sec}]
-          '''
-          app=replace_once(app,prior_anchor,prior_new,"thermal load-duty application")
+          app=replace_once(app,
+              ' const suffix=index===0?"":"_"+index, sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+suffix;',
+              ' t=applyLoadDutyThermal(t,axle);\n const suffix=index===0?"":"_"+index, sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+suffix;',
+              "thermal load-duty application")
+          app=replace_once(app,
+              ' return `[${sec}]',
+              ' const dutyNote="; ACLM load-duty reconstruction: "+t.duty.key+"; "+t.duty.intensity.toFixed(2)+" N/mm; cooling x"+t.duty.cool.toFixed(3)+"; friction heat x"+t.duty.friction.toFixed(3);\n return dutyNote+"\\n"+`[${sec}]',
+              "thermal load-duty provenance comment")
 
           manifest_anchor='''FZ0 front/rear: ${fz0("front")} / ${fz0("rear")} N
           AC tire format: VERSION=10'''
