@@ -14,7 +14,7 @@ jobs:
       APP_VERSION: 0.5.4
       KNOWLEDGE_VERSION: 1.3.0
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Download and verify authoritative Drive releases
         shell: bash
         run: |
@@ -36,7 +36,7 @@ jobs:
           from datetime import datetime, timezone
           from pathlib import Path
           repo=Path.cwd(); extracted=Path("/tmp/aclm-package"); package=extracted
-          installers=list(extracted.rglob("Install_ACLM_Tire_Lab.ps1"))
+          installers=list(extracted.rglob("Install_ACLM_Tire_Lab.cmd"))
           if len(installers)!=1: raise SystemExit(f"Expected one installer in verified package; found {len(installers)}")
           package=installers[0].parent
           src=repo/"src"
@@ -57,15 +57,13 @@ jobs:
               text=text.replace("https://drive.google.com/drive/folders/12Vm83yrs2n9cQrwhLugX7FCgwWCACCFP",releases)
               text=text.replace("Google Drive stable release","GitHub stable release")
               path.write_text(text,encoding="utf-8",newline="")
-          server=src/"payload"/"Server_ACLM_Tire_Lab.ps1"; installer=src/"Install_ACLM_Tire_Lab.ps1"
-          cached={server:server.read_text(encoding="utf-8"),installer:installer.read_text(encoding="utf-8")}
+          server=src/"payload"/"Server_ACLM_Tire_Lab.ps1"
+          cached={server:server.read_text(encoding="utf-8")}
           substitutions=[
               (server,r'(?m)^\$CurrentVersion\s*=\s*"[^"]+"',f'$CurrentVersion = "{version}"'),
               (server,r'(?m)^\$KnowledgeManifestUrl\s*=\s*"[^"]+"',f'$KnowledgeManifestUrl = "{knowledge_manifest}"'),
               (server,r'(?m)^\$ManifestUrl\s*=\s*"[^"]+"',f'$ManifestUrl = "{app_manifest}"'),
-              (server,r'(?m)^\$UpdatesFolderUrl\s*=\s*"[^"]+"',f'$UpdatesFolderUrl = "{releases}"'),
-              (installer,r'(?m)^\$PackageVersion\s*=\s*"[^"]+"',f'$PackageVersion = "{version}"'),
-              (installer,r'(?m)^\$UpdateManifestUrl\s*=\s*"[^"]+"',f'$UpdateManifestUrl = "{app_manifest}"')]
+              (server,r'(?m)^\$UpdatesFolderUrl\s*=\s*"[^"]+"',f'$UpdatesFolderUrl = "{releases}"')]
           for path,pattern,replacement in substitutions:
               text,count=re.subn(pattern,replacement,cached[path],count=1)
               if count!=1: raise SystemExit(f"Expected one updater constant in {path}: {pattern}")
