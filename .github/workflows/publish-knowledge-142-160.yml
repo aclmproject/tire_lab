@@ -164,8 +164,7 @@ jobs:
               "published_utc":published,
               "notes":"Validated Formula and Modern Endurance expansion through 73 families/classes, with source-backed series menus and reconstruction-prior guardrails."
           }
-          Path("knowledge/ACLM_Tire_Knowledge_latest.json").write_text(json.dumps(pointer,indent=2)+"
-",encoding="utf-8")
+          Path("knowledge/ACLM_Tire_Knowledge_latest.json").write_text(json.dumps(pointer,indent=2)+chr(10),encoding="utf-8")
           readme_path=Path("README.md")
           readme=readme_path.read_text(encoding="utf-8")
           old="Current knowledge release: **v1.4.0** (schema 1.0.0)"
