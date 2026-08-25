@@ -112,12 +112,12 @@ jobs:
           report_new=report_line+'''\n     {label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},'''
           app=replace_once(app,report_line,report_new,"PDF load-duty row")
           app=replace_once(app,
-              '    "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values."',
-              '    "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values.",\n    "Load-duty thermal scaling uses FZ0 per tread width for each axle. It is a transparent simulation reconstruction prior, not confidential supplier data."',
+              '"Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values."',
+              '"Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values.",\n    "Load-duty thermal scaling uses FZ0 per tread width for each axle. It is a transparent simulation reconstruction prior, not confidential supplier data."',
               "PDF load-duty provenance")
           app=replace_once(app,
-              '    "User-adjustable AC tire-wear multipliers can compress or extend race strategy without changing the historical baseline wear curve."',
-              '    "User-adjustable AC tire-wear multipliers can compress or extend race strategy without changing the historical baseline wear curve.",\n    "Light/medium/heavy thermal load-duty thresholds require telemetry validation for each car, track, setup and ambient condition."',
+              '"User-adjustable AC tire-wear multipliers can compress or extend race strategy without changing the historical baseline wear curve."',
+              '"User-adjustable AC tire-wear multipliers can compress or extend race strategy without changing the historical baseline wear curve.",\n    "Light/medium/heavy thermal load-duty thresholds require telemetry validation for each car, track, setup and ambient condition."',
               "PDF load-duty limitation")
 
           gate='''function lutIntegrityErrors(name,text){
