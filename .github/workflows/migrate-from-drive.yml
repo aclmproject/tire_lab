@@ -1,0 +1,138 @@
+name: Migrate ACLM Tire Lab from Google Drive
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_ZIP_URL: https://drive.usercontent.google.com/download?id=1_wq1pDZ6jWa6dKPUHyS08qsi3A-klHaT&export=download&confirm=t
+      SOURCE_ZIP_SHA256: 1818cf7b58328d90d11599887f18a119e1f84415b083d12fc1e4a4eaec49e39f
+      KNOWLEDGE_URL: https://drive.usercontent.google.com/download?id=1FEzF18c_NbTK6mp5mLCM3N6P_Wi7pglm&export=download&confirm=t
+      KNOWLEDGE_SHA256: 56dbc1f3cb3e9666df99e7ebda3a7a648e34e237aa06a3dd55ca468e26903c49
+      APP_VERSION: 0.5.4
+      KNOWLEDGE_VERSION: 1.3.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify authoritative Drive releases
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$SOURCE_ZIP_URL" --output /tmp/aclm-source.zip
+          echo "$SOURCE_ZIP_SHA256  /tmp/aclm-source.zip" | sha256sum --check --strict
+          rm -rf /tmp/aclm-package
+          mkdir -p /tmp/aclm-package
+          unzip -q /tmp/aclm-source.zip -d /tmp/aclm-package
+          mkdir -p knowledge/releases
+          curl --fail --location --retry 3 "$KNOWLEDGE_URL" --output "knowledge/releases/ACLM_Tire_Knowledge_v$KNOWLEDGE_VERSION.json"
+          echo "$KNOWLEDGE_SHA256  knowledge/releases/ACLM_Tire_Knowledge_v$KNOWLEDGE_VERSION.json" | sha256sum --check --strict
+      - name: Import source and create GitHub-native release metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os, re, shutil, zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+          repo=Path.cwd(); extracted=Path("/tmp/aclm-package"); children=list(extracted.iterdir()); package=extracted
+          if not (package/"Install_ACLM_Tire_Lab.ps1").exists() and len(children)==1 and children[0].is_dir(): package=children[0]
+          if not (package/"Install_ACLM_Tire_Lab.ps1").exists(): raise SystemExit("Verified package is missing the installer")
+          src=repo/"src"
+          if src.exists(): shutil.rmtree(src)
+          shutil.copytree(package,src)
+          version=os.environ["APP_VERSION"]; kv=os.environ["KNOWLEDGE_VERSION"]
+          app_manifest="https://raw.githubusercontent.com/aclmproject/tire_lab/main/manifests/ACLM_Tire_Lab_latest.json"
+          knowledge_manifest="https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
+          releases="https://github.com/aclmproject/tire_lab/releases"
+          suffixes={".ps1",".cmd",".vbs",".txt",".html",".js",".css",".json",".webmanifest"}
+          for path in src.rglob("*"):
+              if not path.is_file() or path.suffix.lower() not in suffixes: continue
+              try: text=path.read_text(encoding="utf-8-sig")
+              except UnicodeDecodeError: continue
+              text=text.replace("0.5.3",version)
+              text=text.replace("https://drive.usercontent.google.com/download?id=1fCEfN0TesgzckOCnFzw3jbOKE9Gjbvtn&export=download&confirm=t",app_manifest)
+              text=text.replace("https://drive.usercontent.google.com/download?id=1LOUFhaKkHSiZQgNSo4lI29OOpDKEya2w&export=download&confirm=t",knowledge_manifest)
+              text=text.replace("https://drive.google.com/drive/folders/12Vm83yrs2n9cQrwhLugX7FCgwWCACCFP",releases)
+              text=text.replace("Google Drive stable release","GitHub stable release")
+              path.write_text(text,encoding="utf-8",newline="")
+          server=src/"payload"/"Server_ACLM_Tire_Lab.ps1"; installer=src/"Install_ACLM_Tire_Lab.ps1"
+          cached={server:server.read_text(encoding="utf-8"),installer:installer.read_text(encoding="utf-8")}
+          substitutions=[
+              (server,r'(?m)^\$CurrentVersion\s*=\s*"[^"]+"',f'$CurrentVersion = "{version}"'),
+              (server,r'(?m)^\$KnowledgeManifestUrl\s*=\s*"[^"]+"',f'$KnowledgeManifestUrl = "{knowledge_manifest}"'),
+              (server,r'(?m)^\$ManifestUrl\s*=\s*"[^"]+"',f'$ManifestUrl = "{app_manifest}"'),
+              (server,r'(?m)^\$UpdatesFolderUrl\s*=\s*"[^"]+"',f'$UpdatesFolderUrl = "{releases}"'),
+              (installer,r'(?m)^\$PackageVersion\s*=\s*"[^"]+"',f'$PackageVersion = "{version}"'),
+              (installer,r'(?m)^\$UpdateManifestUrl\s*=\s*"[^"]+"',f'$UpdateManifestUrl = "{app_manifest}"')]
+          for path,pattern,replacement in substitutions:
+              text,count=re.subn(pattern,replacement,cached[path],count=1)
+              if count!=1: raise SystemExit(f"Expected one updater constant in {path}: {pattern}")
+              cached[path]=text
+          for path,text in cached.items(): path.write_text(text,encoding="utf-8",newline="")
+          changelog=src/"payload"/"Documentation"/"CHANGELOG.txt"; old=changelog.read_text(encoding="utf-8-sig")
+          old=re.sub(r'^ACLM HISTORICAL TIRE LAB - CHANGELOG\r?\n=+\r?\n\r?\n','',old,count=1)
+          header=("ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+                  "2026-08-24 - v0.5.4\n"
+                  "- Migrated application source, stable manifests and release delivery to GitHub.\n"
+                  "- Migrated independently versioned tire-knowledge delivery to GitHub Releases.\n"
+                  "- Retained SHA-256 verification and the bundled last-known-good knowledge fallback.\n"
+                  "- Google Drive remains only as the one-time v0.5.3-to-v0.5.4 upgrade bridge.\n\n")
+          changelog.write_text(header+old,encoding="utf-8",newline="")
+          sums=[]
+          for path in sorted(p for p in src.rglob("*") if p.is_file() and p.name!="SHA256SUMS.txt"):
+              sums.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.relative_to(src).as_posix()}")
+          (src/"SHA256SUMS.txt").write_text("\n".join(sums)+"\n",encoding="ascii")
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"; archive=Path("/tmp")/archive_name
+          if archive.exists(): archive.unlink()
+          with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+              for path in sorted(p for p in src.rglob("*") if p.is_file()): zf.write(path,path.relative_to(src).as_posix())
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifests=repo/"manifests"; manifests.mkdir(exist_ok=True)
+          app_data={"product":"ACLM Historical Tire Lab","channel":"stable","version":version,"file_name":archive_name,
+                    "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+                    "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+                    "sha256":archive_sha,"published_utc":published,
+                    "notes":"Moves application source, stable updates and independently versioned tire knowledge from Google Drive to GitHub while retaining SHA-256 verification and offline fallback behavior."}
+          (manifests/"ACLM_Tire_Lab_latest.json").write_text(json.dumps(app_data,indent=2)+"\n",encoding="utf-8")
+          knowledge=repo/"knowledge"
+          knowledge_data={"product":"ACLM Tire Knowledge","channel":"stable","schema_version":"1.0.0","version":kv,
+                          "file_name":f"ACLM_Tire_Knowledge_v{kv}.json",
+                          "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v{kv}",
+                          "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/knowledge-v{kv}/ACLM_Tire_Knowledge_v{kv}.json",
+                          "sha256":os.environ["KNOWLEDGE_SHA256"],
+                          "release_content_sha256":"7991f46f9944f3796dbd2595370f5ef74b3512c1fd85007529c171dea2669eb2",
+                          "published_utc":published,
+                          "notes":"Source-backed historical racing tire knowledge release migrated from Google Drive to GitHub without changing the verified release bytes."}
+          (knowledge/"ACLM_Tire_Knowledge_latest.json").write_text(json.dumps(knowledge_data,indent=2)+"\n",encoding="utf-8")
+          (repo/".gitignore").write_text("*.zip\n*.tmp\n.DS_Store\nThumbs.db\n",encoding="utf-8")
+          (repo/"README.md").write_text(
+              "# ACLM Historical Tire Lab\n\nAssetto Corsa historical racing-tire research, calibration and tire-pack generation tool.\n\n"
+              "## Repository layout\n\n- src/ — complete Windows installer and browser/PWA source package\n"
+              "- manifests/ — stable application update manifest\n- knowledge/ — stable knowledge manifest and immutable versioned releases\n"
+              "- .github/workflows/ — reproducible migration/release automation\n\n"
+              f"Current application release: **v{version}**  \nCurrent knowledge release: **v{kv}** (schema 1.0.0)\n\n"
+              "Release downloads are SHA-256 verified before use. The application retains a bundled offline fallback and last-known-good knowledge cache.\n\n"
+              "No software license has been declared for this repository yet.\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          PY
+      - name: Commit imported source and manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ACLM Release Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add README.md .gitignore src manifests knowledge
+          git commit -m "Migrate Tire Lab source and knowledge from Google Drive"
+          git push origin HEAD:main
+      - name: Publish immutable GitHub releases
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view "v$APP_VERSION" >/dev/null 2>&1 && { echo "Release already exists"; exit 1; } || true
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "First GitHub-native stable release. SHA-256: $(cat /tmp/app_release_sha256)"
+          gh release view "knowledge-v$KNOWLEDGE_VERSION" >/dev/null 2>&1 && { echo "Knowledge release already exists"; exit 1; } || true
+          gh release create "knowledge-v$KNOWLEDGE_VERSION" "knowledge/releases/ACLM_Tire_Knowledge_v$KNOWLEDGE_VERSION.json" --target "$(git rev-parse HEAD)" --title "ACLM Tire Knowledge v$KNOWLEDGE_VERSION" --notes "Verified knowledge release migrated byte-for-byte from Google Drive. SHA-256: $KNOWLEDGE_SHA256"
