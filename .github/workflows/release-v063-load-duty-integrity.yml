@@ -346,7 +346,7 @@ jobs:
               "function updateHistoricalCompoundLabels()", "function renderTireGraphs()",
               "function refreshSolvedPressures()", "terminalFailure",
               "window.ACLMPdf.create", "async function checkForUpdates(",
-              "async function checkKnowledge(", "async function syncKnowledge("
+              "async function loadCurrentKnowledge(", "async function syncKnowledge("
           ]:
               assert marker in app, marker
           assert "importZip" in app and "importFolder" in app
