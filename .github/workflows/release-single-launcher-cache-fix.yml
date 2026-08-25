@@ -1,0 +1,344 @@
+name: Release Tire Lab Single Canonical Launcher
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-single-launcher-cache-fix.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-tire-lab-app
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.6.1
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Build the single-launcher correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from textwrap import dedent
+
+          version=os.environ["APP_VERSION"]
+
+          def replace_once(text,old,new,label):
+              count=text.count(old)
+              if count!=1:
+                  raise SystemExit(f"Unexpected {label}: found {count} anchors")
+              return text.replace(old,new)
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          if index.count("0.6.0")!=2:
+              raise SystemExit("Unexpected index version count")
+          index=index.replace("0.6.0",version)
+          index=replace_once(index,'<link rel="manifest" href="manifest.webmanifest">\n',"","PWA manifest link")
+          index=replace_once(index,'    <button id="installPwa" class="primary" hidden>Install ACLM Tire Lab</button>\n',"","PWA install button")
+          index_path.write_text(index,encoding="utf-8",newline="")
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          if app.count("0.6.0")!=4:
+              raise SystemExit("Unexpected app version count")
+          app=app.replace("0.6.0",version)
+          app=replace_once(app,"let deferredInstallPrompt = null;\n","","deferred PWA prompt")
+          pwa_start=app.index("// PWA install flow.")
+          service_line="if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});"
+          service_start=app.index(service_line,pwa_start)
+          service_end=service_start+len(service_line)
+          if app[service_end:service_end+2]=="\r\n":
+              service_end+=2
+          elif app[service_end:service_end+1]=="\n":
+              service_end+=1
+          replacement="// Offline support only. Tire Lab uses one version-aware launcher and does not create additional browser-app shortcuts.\n"+service_line+"\n"
+          app=app[:pwa_start]+replacement+app[service_end:]
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          server_path=Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server=server_path.read_text(encoding="utf-8")
+          if server.count("0.6.0")!=2:
+              raise SystemExit("Unexpected server version count")
+          server=server.replace("0.6.0",version)
+          server_path.write_text(server,encoding="utf-8",newline="")
+
+          launcher=dedent(r'''          @echo off
+          setlocal
+          set "ROOT=%~dp0"
+          set "EXPECTED_VERSION=0.6.1"
+          set "URL=http://127.0.0.1:48765/?build=0.6.1"
+
+          powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "try { $h=Invoke-RestMethod -Uri 'http://127.0.0.1:48765/api/health' -TimeoutSec 2; if ($h.product -eq 'ACLM Historical Tire Lab' -and $h.server_version -eq '%EXPECTED_VERSION%') { exit 0 } } catch {}; exit 1" >nul 2>&1
+          if errorlevel 1 (
+            echo Starting ACLM Historical Tire Lab v%EXPECTED_VERSION%...
+            powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$connections=Get-NetTCPConnection -LocalAddress 127.0.0.1 -LocalPort 48765 -State Listen -ErrorAction SilentlyContinue; foreach($connection in $connections){ try { $p=Get-CimInstance Win32_Process -Filter ('ProcessId=' + $connection.OwningProcess); if($p.CommandLine -match 'Server_ACLM_Tire_Lab.ps1'){ Stop-Process -Id $connection.OwningProcess -Force -ErrorAction SilentlyContinue } } catch {} }" >nul 2>&1
+            timeout /t 1 /nobreak >nul
+            start "ACLM Tire Lab Local Server" /min powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%ROOT%Server_ACLM_Tire_Lab.ps1"
+            timeout /t 2 /nobreak >nul
+          )
+
+          powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "try { $h=Invoke-RestMethod -Uri 'http://127.0.0.1:48765/api/health' -TimeoutSec 4; if ($h.product -eq 'ACLM Historical Tire Lab' -and $h.server_version -eq '%EXPECTED_VERSION%') { exit 0 } } catch {}; exit 1" >nul 2>&1
+          if errorlevel 1 (
+            echo ERROR: Tire Lab v%EXPECTED_VERSION% could not start on port 48765.
+            echo Close any old Tire Lab window, then run this launcher again.
+            pause
+            exit /b 1
+          )
+
+          start "" "%URL%"
+          endlocal
+          ''')
+          Path("src/payload/Launch_ACLM_Tire_Lab.cmd").write_text(launcher,encoding="utf-8",newline="")
+
+          installer=dedent(r'''          @echo off
+          setlocal
+          set "APPDIR=%LOCALAPPDATA%\ACLM\Historical Tire Lab"
+          set "SOURCE=%~dp0payload"
+          set "CACHEBACK=%TEMP%\ACLM_Tire_Lab_cache_%RANDOM%_%RANDOM%"
+          set "USERSTART=%APPDATA%\Microsoft\Windows\Start Menu\Programs"
+          set "LAUNCHROOT=%USERPROFILE%\Desktop"
+          if exist "%OneDrive%\Desktop" set "LAUNCHROOT=%OneDrive%\Desktop"
+          set "LAUNCHLINK=%LAUNCHROOT%\ACLM Historical Tire Lab.lnk"
+
+          echo ======================================================
+          echo     ACLM Historical Tire Lab v0.6.1 - One Launcher
+          echo ======================================================
+          echo This installer removes only exact legacy Tire Lab shortcuts.
+          echo It keeps one canonical launcher that starts the correct server.
+          echo.
+          if not exist "%SOURCE%\app\index.html" (
+            echo ERROR: Installer payload is incomplete.
+            pause
+            exit /b 1
+          )
+
+          echo Stopping prior Tire Lab servers...
+          powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$target=[IO.Path]::GetFullPath('%APPDIR%\Server_ACLM_Tire_Lab.ps1'); Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and ($_.Name -eq 'powershell.exe' -or $_.Name -eq 'pwsh.exe') -and $_.CommandLine -and ($_.CommandLine.IndexOf($target,[StringComparison]::OrdinalIgnoreCase) -ge 0 -or $_.CommandLine -match 'Server_ACLM_Tire_Lab.ps1') } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }" >nul 2>&1
+          timeout /t 1 /nobreak >nul
+
+          mkdir "%CACHEBACK%" >nul 2>&1
+          if exist "%APPDIR%\knowledge_cache.json" copy /Y "%APPDIR%\knowledge_cache.json" "%CACHEBACK%\knowledge_cache.json" >nul
+          if exist "%APPDIR%\app_manifest_cache.json" copy /Y "%APPDIR%\app_manifest_cache.json" "%CACHEBACK%\app_manifest_cache.json" >nul
+
+          if exist "%APPDIR%" rmdir /s /q "%APPDIR%"
+          mkdir "%APPDIR%" >nul 2>&1
+          xcopy "%SOURCE%\*" "%APPDIR%\" /E /I /H /Y >nul
+          if errorlevel 1 (
+            echo ERROR: Could not copy Tire Lab files.
+            pause
+            exit /b 1
+          )
+
+          if exist "%CACHEBACK%\knowledge_cache.json" copy /Y "%CACHEBACK%\knowledge_cache.json" "%APPDIR%\knowledge_cache.json" >nul
+          if exist "%CACHEBACK%\app_manifest_cache.json" copy /Y "%CACHEBACK%\app_manifest_cache.json" "%APPDIR%\app_manifest_cache.json" >nul
+          if exist "%CACHEBACK%" rmdir /s /q "%CACHEBACK%"
+
+          echo Removing exact legacy Tire Lab launchers...
+          for %%D in ("%USERPROFILE%\Desktop" "%OneDrive%\Desktop") do (
+            if exist "%%~D\ACLM Historical Tire Lab.cmd" del /f /q "%%~D\ACLM Historical Tire Lab.cmd"
+            if exist "%%~D\ACLM Historical Tire Lab.lnk" del /f /q "%%~D\ACLM Historical Tire Lab.lnk"
+            if exist "%%~D\ACLM Historical Tire Lab (1).lnk" del /f /q "%%~D\ACLM Historical Tire Lab (1).lnk"
+            if exist "%%~D\ACLM Tire Lab.lnk" del /f /q "%%~D\ACLM Tire Lab.lnk"
+          )
+          if exist "%USERSTART%\ACLM Historical Tire Lab.lnk" del /f /q "%USERSTART%\ACLM Historical Tire Lab.lnk"
+          if exist "%USERSTART%\ACLM Tire Lab.lnk" del /f /q "%USERSTART%\ACLM Tire Lab.lnk"
+          if exist "%USERSTART%\Uninstall ACLM Tire Lab.lnk" del /f /q "%USERSTART%\Uninstall ACLM Tire Lab.lnk"
+          if exist "%USERSTART%\Startup\ACLM Tire Lab Server.lnk" del /f /q "%USERSTART%\Startup\ACLM Tire Lab Server.lnk"
+          if exist "%USERSTART%\Chrome Apps\ACLM Historical Tire Lab.lnk" del /f /q "%USERSTART%\Chrome Apps\ACLM Historical Tire Lab.lnk"
+          if exist "%USERSTART%\ACLM Historical Tire Lab" rmdir /s /q "%USERSTART%\ACLM Historical Tire Lab"
+
+          echo Creating one canonical launcher...
+          powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$w=New-Object -ComObject WScript.Shell; $s=$w.CreateShortcut('%LAUNCHLINK%'); $s.TargetPath='%APPDIR%\Launch_ACLM_Tire_Lab.cmd'; $s.WorkingDirectory='%APPDIR%'; $s.IconLocation='%APPDIR%\app\ACLM_Tire_Lab.ico,0'; $s.Description='ACLM Historical Tire Lab v0.6.1'; $s.Save()" >nul 2>&1
+          if not exist "%LAUNCHLINK%" copy /Y "%APPDIR%\Launch_ACLM_Tire_Lab.cmd" "%LAUNCHROOT%\ACLM Historical Tire Lab.cmd" >nul
+
+          echo.
+          echo Installed to: %APPDIR%
+          echo Legacy ACLM launchers were removed.
+          echo One canonical launcher remains in: %LAUNCHROOT%
+          echo Verified knowledge and manifest caches were preserved.
+          echo.
+          choice /C YN /N /M "Launch Tire Lab v0.6.1 now? [Y/N] "
+          if errorlevel 2 exit /b 0
+          call "%APPDIR%\Launch_ACLM_Tire_Lab.cmd"
+          endlocal
+          ''')
+          Path("src/Install_ACLM_Tire_Lab.cmd").write_text(installer,encoding="utf-8",newline="")
+
+          sw_path=Path("src/payload/app/sw.js")
+          sw=sw_path.read_text(encoding="utf-8")
+          sw=replace_once(sw,"aclm-tire-lab-shell-v060-reliable-sync-about","aclm-tire-lab-shell-v061-single-launcher","service-worker cache")
+          sw_path.write_text(sw,encoding="utf-8",newline="")
+
+          packaged_readme=Path("src/README_FIRST.txt")
+          text=packaged_readme.read_text(encoding="utf-8")
+          if text.count("v0.6.0")!=2:
+              raise SystemExit("Unexpected packaged README version count")
+          text=text.replace("v0.6.0",f"v{version}")
+          policy=dedent('''
+
+          V0.6.1 SINGLE-LAUNCHER POLICY
+          - The installer removes only exact legacy ACLM Tire Lab shortcut names.
+          - One canonical desktop launcher starts and health-checks the packaged server before opening the browser.
+          - In-app PWA installation was removed to prevent duplicate Windows launch entries.
+          ''')
+          packaged_readme.write_text(text.rstrip()+policy,encoding="utf-8",newline="")
+
+          readme_path=Path("README.md")
+          readme=readme_path.read_text(encoding="utf-8")
+          readme=replace_once(readme,"Current application release: **v0.6.0**",f"Current application release: **v{version}**","repository version")
+          launcher_note=dedent('''
+
+          ## Launcher policy
+
+          v0.6.1 uses one canonical desktop launcher. The installer removes exact legacy ACLM Tire Lab shortcuts, retires the in-app PWA installer, verifies the local server version and then opens the browser app.
+          ''')
+          if "## Launcher policy" in readme:
+              raise SystemExit("Launcher policy already exists")
+          readme_path.write_text(readme.rstrip()+launcher_note,encoding="utf-8",newline="")
+
+          changelog_path=Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog=changelog_path.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry=dedent(f'''          2026-08-25 - v{version}
+          - Replaces duplicate legacy/PWA launch paths with one canonical desktop launcher.
+          - Removes only the exact legacy ACLM shortcut names discovered during the launcher audit.
+          - Launcher verifies /api/health and the expected server version before opening the browser.
+          - A stale Tire Lab server is stopped and replaced with the packaged server.
+          - Adds a cache-busting build query so the network-first service worker receives the installed app shell.
+          - Removes the in-app PWA installer and manifest link to prevent new duplicate Windows app entries.
+          - No tire physics or knowledge calibrations changed in this maintenance release.
+
+          ''')
+          changelog_path.write_text(heading+entry+changelog[len(heading):],encoding="utf-8",newline="")
+          PY
+
+      - name: Validate the maintenance release
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node --check src/payload/app/sw.js
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors) | Out-Null; if($errors.Count){$errors | ForEach-Object { Write-Error $_ }; exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+
+          index=Path("src/payload/app/index.html").read_text(encoding="utf-8")
+          app=Path("src/payload/app/app.js").read_text(encoding="utf-8")
+          server=Path("src/payload/Server_ACLM_Tire_Lab.ps1").read_text(encoding="utf-8")
+          launcher=Path("src/payload/Launch_ACLM_Tire_Lab.cmd").read_text(encoding="utf-8")
+          installer=Path("src/Install_ACLM_Tire_Lab.cmd").read_text(encoding="utf-8")
+          sw=Path("src/payload/app/sw.js").read_text(encoding="utf-8")
+          changelog=Path("src/payload/Documentation/CHANGELOG.txt").read_text(encoding="utf-8")
+
+          assert "v0.6.1" in index and 'const ACLM_APP_VERSION="0.6.1";' in app
+          assert '$CurrentVersion = "0.6.1"' in server
+          assert "installPwa" not in index and "installPwa" not in app
+          assert "beforeinstallprompt" not in app and 'rel="manifest"' not in index
+          assert "serviceWorker.register" in app
+          assert 'join("\\n")+"\\n"' in app
+          assert "EXPECTED_VERSION=0.6.1" in launcher
+          assert "/api/health" in launcher and "?build=0.6.1" in launcher
+          assert "Server_ACLM_Tire_Lab.ps1" in launcher and "Stop-Process" in launcher
+          assert installer.count("CreateShortcut") == 1
+          assert "ACLM Historical Tire Lab (1).lnk" in installer
+          assert "Startup\\ACLM Tire Lab Server.lnk" in installer
+          assert "Chrome Apps\\ACLM Historical Tire Lab.lnk" in installer
+          assert "One canonical launcher remains" in installer
+          assert "aclm-tire-lab-shell-v061-single-launcher" in sw
+          assert changelog.startswith("ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n2026-08-25 - v0.6.1")
+          print("single-launcher maintenance checks passed")
+          PY
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import zipfile
+          from datetime import datetime,timezone
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as zf:
+              for path in sorted(src.rglob("*")):
+                  if path.is_file():
+                      zf.write(path,path.relative_to(src).as_posix())
+
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"One canonical launcher; stale-server detection; exact legacy shortcut cleanup; no tire-physics changes."
+          }
+          manifest_path=Path("manifests/ACLM_Tire_Lab_latest.json")
+          manifest_path.write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit v0.6.1 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: keep one version-aware Tire Lab launcher in v0.6.1"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.6.1
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" "manifests/ACLM_Tire_Lab_latest.json" \
+            --repo "${{ github.repository }}" \
+            --target "$(git rev-parse HEAD)" \
+            --title "ACLM Historical Tire Lab v$APP_VERSION" \
+            --notes "Single canonical launcher maintenance release.
+
+          - removes exact legacy ACLM shortcuts and the old Startup server link
+          - retires in-app PWA installation so new duplicate Windows launchers are not created
+          - leaves one desktop launcher with the Tire Lab icon
+          - verifies /api/health and server v0.6.1 before opening the browser
+          - stops a stale Tire Lab server and starts the packaged server
+          - adds a build query to refresh the app shell
+          - preserves verified knowledge and manifest caches
+          - no tire physics or knowledge calibrations changed
+
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
