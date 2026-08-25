@@ -35,9 +35,10 @@ jobs:
           import hashlib, json, os, re, shutil, zipfile
           from datetime import datetime, timezone
           from pathlib import Path
-          repo=Path.cwd(); extracted=Path("/tmp/aclm-package"); children=list(extracted.iterdir()); package=extracted
-          if not (package/"Install_ACLM_Tire_Lab.ps1").exists() and len(children)==1 and children[0].is_dir(): package=children[0]
-          if not (package/"Install_ACLM_Tire_Lab.ps1").exists(): raise SystemExit("Verified package is missing the installer")
+          repo=Path.cwd(); extracted=Path("/tmp/aclm-package"); package=extracted
+          installers=list(extracted.rglob("Install_ACLM_Tire_Lab.ps1"))
+          if len(installers)!=1: raise SystemExit(f"Expected one installer in verified package; found {len(installers)}")
+          package=installers[0].parent
           src=repo/"src"
           if src.exists(): shutil.rmtree(src)
           shutil.copytree(package,src)
