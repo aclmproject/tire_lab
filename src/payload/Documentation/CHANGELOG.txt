@@ -1,6 +1,12 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.6.2
+- Tire-pack ZIPs now export the active knowledge-backed PERFORMANCE_CURVE shown in the temperature/grip graph.
+- Removes the stale temporary LUT path that could leave generated tires using an older generic temperature window.
+- Keeps the v0.6.1 single-launcher cleanup, stale-server detection, and cache refresh behavior.
+- No tire-family calibration values or historical knowledge records changed.
+
 2026-08-25 - v0.6.1
 - Replaces duplicate legacy/PWA launch paths with one canonical desktop launcher.
 - Removes only the exact legacy ACLM shortcut names discovered during the launcher audit.

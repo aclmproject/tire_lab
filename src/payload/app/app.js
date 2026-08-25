@@ -707,7 +707,7 @@ CAMBER_TEMP_SPREAD_K=1.4
    if($("legacyThermal").checked) ini+=thermalSection(c,"front",i)+"\n"+thermalSection(c,"rear",i)+"\n";
    files[`aclm_${c}_front_wear.lut`]=wearText(c+"F");
    files[`aclm_${c}_rear_wear.lut`]=wearText(c+"R");
-   files[`aclm_${c}_tcurve.lut`]=tempCurves[c];
+   files[`aclm_${c}_tcurve.lut`]=performanceCurveText(c);
  });
  files["tyres.ini"]=ini;
  files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v0.6.1
@@ -1340,7 +1340,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.6.1";
+const ACLM_APP_VERSION="0.6.2";
 const ACLM_RELEASES_URL="https://github.com/aclmproject/tire_lab/releases";
 let availableUpdate=null;
 let onlineRequestActive=false;

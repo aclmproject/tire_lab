@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $AppDir = Join-Path $PSScriptRoot "app"
 $Port = 48765
-$CurrentVersion = "0.6.1"
+$CurrentVersion = "0.6.2"
 $KnowledgeManifestUrls = @(
   "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
   "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"

@@ -9,7 +9,7 @@ if exist "%OneDrive%\Desktop" set "LAUNCHROOT=%OneDrive%\Desktop"
 set "LAUNCHLINK=%LAUNCHROOT%\ACLM Historical Tire Lab.lnk"
 
 echo ======================================================
-echo     ACLM Historical Tire Lab v0.6.1 - One Launcher
+echo     ACLM Historical Tire Lab v0.6.2 - One Launcher
 echo ======================================================
 echo This installer removes only exact legacy Tire Lab shortcuts.
 echo It keeps one canonical launcher that starts the correct server.
@@ -56,7 +56,7 @@ if exist "%USERSTART%\Chrome Apps\ACLM Historical Tire Lab.lnk" del /f /q "%USER
 if exist "%USERSTART%\ACLM Historical Tire Lab" rmdir /s /q "%USERSTART%\ACLM Historical Tire Lab"
 
 echo Creating one canonical launcher...
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$w=New-Object -ComObject WScript.Shell; $s=$w.CreateShortcut('%LAUNCHLINK%'); $s.TargetPath='%APPDIR%\Launch_ACLM_Tire_Lab.cmd'; $s.WorkingDirectory='%APPDIR%'; $s.IconLocation='%APPDIR%\app\ACLM_Tire_Lab.ico,0'; $s.Description='ACLM Historical Tire Lab v0.6.1'; $s.Save()" >nul 2>&1
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$w=New-Object -ComObject WScript.Shell; $s=$w.CreateShortcut('%LAUNCHLINK%'); $s.TargetPath='%APPDIR%\Launch_ACLM_Tire_Lab.cmd'; $s.WorkingDirectory='%APPDIR%'; $s.IconLocation='%APPDIR%\app\ACLM_Tire_Lab.ico,0'; $s.Description='ACLM Historical Tire Lab v0.6.2'; $s.Save()" >nul 2>&1
 if not exist "%LAUNCHLINK%" copy /Y "%APPDIR%\Launch_ACLM_Tire_Lab.cmd" "%LAUNCHROOT%\ACLM Historical Tire Lab.cmd" >nul
 
 echo.
@@ -65,7 +65,7 @@ echo Legacy ACLM launchers were removed.
 echo One canonical launcher remains in: %LAUNCHROOT%
 echo Verified knowledge and manifest caches were preserved.
 echo.
-choice /C YN /N /M "Launch Tire Lab v0.6.1 now? [Y/N] "
+choice /C YN /N /M "Launch Tire Lab v0.6.2 now? [Y/N] "
 if errorlevel 2 exit /b 0
 call "%APPDIR%\Launch_ACLM_Tire_Lab.cmd"
 endlocal
