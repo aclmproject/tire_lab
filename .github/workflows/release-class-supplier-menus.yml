@@ -1,0 +1,443 @@
+name: Release Tire Lab Class and Supplier Menus
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-class-supplier-menus.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-tire-lab-app
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.5.9
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Add persistent class and tire-manufacturer menus
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          old_series='<div><label>Series / class</label><input id="series" value="1993-96 BPR / Le Mans GT"></div>'
+          new_series='''<div><label>Series / class</label><select id="series">
+            <option value="General / unknown">General / Unknown</option>
+            <option value="1993-96 BPR / Le Mans GT" selected>1993-96 BPR / Le Mans GT</option>
+           </select></div>'''
+          old_supplier='<div><label>Supplier</label><input id="supplier" value="Dunlop"></div>'
+          new_supplier='''<div><label>Tire manufacturer / supplier</label><select id="supplier">
+            <option value="General / unknown">General / Unknown</option>
+            <option value="Dunlop" selected>Dunlop</option>
+           </select></div>'''
+          if index.count(old_series)!=1 or index.count(old_supplier)!=1:
+              raise SystemExit("Unexpected series/supplier form fields")
+          index=index.replace(old_series,new_series).replace(old_supplier,new_supplier)
+          grid_end=''' <div><label>Tire manufacturer / supplier</label><select id="supplier">
+            <option value="General / unknown">General / Unknown</option>
+            <option value="Dunlop" selected>Dunlop</option>
+           </select></div>
+          </div>'''
+          grid_new=grid_end+'''
+          <div class="small muted" style="margin-top:6px">Series/class options are grouped by the selected historical tire family. A proven curated or researched supplier is selected automatically; otherwise the manufacturer remains General / Unknown for manual selection.</div>'''
+          if index.count(grid_end)!=1:
+              raise SystemExit("Could not place the menu guidance")
+          index=index.replace(grid_end,grid_new)
+          if index.count("v0.5.8")!=2:
+              raise SystemExit("Unexpected index version token count")
+          index=index.replace("v0.5.8",f"v{version}")
+          index_path.write_text(index,encoding="utf-8",newline="")
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          menu_anchor='function populateHistoricalCategoryOptions(){'
+          if app.count(menu_anchor)!=1:
+              raise SystemExit("Unexpected historical-menu anchor")
+          menu_code=r'''const GENERAL_UNKNOWN="General / unknown";
+          const TYRE_SUPPLIERS=[
+           "Dunlop","Michelin","Goodyear","Pirelli","Bridgestone","Yokohama","Firestone","Avon",
+           "BFGoodrich","Continental","Toyo","Falken","Hoosier","Hankook","Kumho","Englebert",
+           "Englebert-Colombes","Uniroyal","Cooper","Maxxis","Nitto","General Tire","CEAT","Vredestein"
+          ];
+          function runtimeClasses(){return window.ACLMHistoricalCategories?.CLASSES||[];}
+          function runtimeFamilies(){return window.ACLMHistoricalCategories?.FAMILIES||[];}
+          function appendMenuOption(parent,value,label=value){
+           const opt=document.createElement("option");opt.value=String(value);opt.textContent=String(label);parent.appendChild(opt);return opt;
+          }
+          function ensureSelectOption(select,value,label=value,groupLabel="Current / researched"){
+           const val=String(value??"").trim();if(!select||!val)return null;
+           let opt=[...select.options].find(o=>o.value===val);
+           if(!opt){
+             let group=Array.from(select.children||[]).find(x=>String(x.tagName||"").toUpperCase()==="OPTGROUP"&&x.label===groupLabel);
+             if(!group){group=document.createElement("optgroup");group.label=groupLabel;select.appendChild(group);}
+             opt=appendMenuOption(group,val,label);
+           }
+           select.value=val;return opt;
+          }
+          function setMenuValue(id,value,label=value,groupLabel="Current / researched"){
+           const el=$(id);if(!el)return false;
+           if(String(el.tagName||"").toUpperCase()==="SELECT")ensureSelectOption(el,value,label,groupLabel);
+           else el.value=String(value);
+           return true;
+          }
+          function populateSeriesClassOptions(){
+           const sel=$("series");if(!sel)return;
+           const previous=sel.value||GENERAL_UNKNOWN,presetId=$("preset")?.value||"auto";
+           const familyFilter=/^FAM\d+$/i.test(presetId)?presetId:null;
+           const allClasses=runtimeClasses().slice();
+           const shown=allClasses.filter(c=>!familyFilter||c.familyId===familyFilter)
+             .sort((a,b)=>a.from-b.from||a.name.localeCompare(b.name));
+           const families=runtimeFamilies().slice().sort((a,b)=>a.from-b.from||a.name.localeCompare(b.name));
+           sel.innerHTML="";
+           appendMenuOption(sel,GENERAL_UNKNOWN,"General / Unknown");
+           for(const family of families){
+             const classes=shown.filter(c=>c.familyId===family.id);if(!classes.length)continue;
+             const group=document.createElement("optgroup");
+             group.label=family.id+" — "+family.name+" ("+family.from+"–"+family.to+")";
+             for(const c of classes)appendMenuOption(group,c.name,c.id+" — "+c.name+" ("+c.from+"–"+c.to+")");
+             sel.appendChild(group);
+           }
+           const previousClass=allClasses.find(c=>c.name===previous);
+           if(/unknown/i.test(previous))sel.value=GENERAL_UNKNOWN;
+           else if(previousClass&&familyFilter&&previousClass.familyId!==familyFilter)sel.value=GENERAL_UNKNOWN;
+           else ensureSelectOption(sel,previous,previous,previousClass?"Calibrated class":"Current / researched");
+           if(!sel.value)sel.value=GENERAL_UNKNOWN;
+          }
+          function populateSupplierOptions(){
+           const sel=$("supplier");if(!sel)return;
+           const previous=sel.value||GENERAL_UNKNOWN;
+           sel.innerHTML="";
+           appendMenuOption(sel,GENERAL_UNKNOWN,"General / Unknown");
+           for(const supplier of TYRE_SUPPLIERS)appendMenuOption(sel,supplier,supplier);
+           if(/unknown/i.test(previous))sel.value=GENERAL_UNKNOWN;
+           else ensureSelectOption(sel,previous,previous,"Current / researched");
+           if(!sel.value)sel.value=GENERAL_UNKNOWN;
+          }
+          function clearMenuProvenance(id){
+           const el=$(id);if(!el)return;
+           el.classList.remove("imported-field","researched-field");
+           delete el.dataset.researchSource;
+           el.title="Manual selection";
+          }
+          function refreshMenuDrivenOutput(){
+           updateOutputName();refreshSolvedPressures();renderTireGraphs();
+           try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
+          }
+          function applySeriesMenuSelection(){
+           const selected=v("series"),preset=$("preset");
+           if(!selected||/unknown/i.test(selected)){
+             if(/^FAM\d+$/i.test(preset?.value||""))applyPreset(preset.value);
+             else{activeHistoricalContext=null;updateHistoricalCompoundLabels();renderHistoricalFamilySummary("Series/class remains General / Unknown.");}
+             return;
+           }
+           const cls=runtimeClasses().find(c=>c.name===selected);
+           if(cls){
+             const ctx=window.ACLMHistoricalCategories?.contextForClass?.(cls.id,v("year"));
+             if(ctx){preset.value=ctx.familyId;applyHistoricalContext(ctx,"selected calibrated series/class");populateSeriesClassOptions();return;}
+           }
+           autoApplyHistoricalContext("selected researched series/class");
+           populateSeriesClassOptions();
+          }
+
+          '''
+          app=app.replace(menu_anchor,menu_code+menu_anchor)
+
+          old_supplier_constant='const TYRE_SUPPLIERS=["Dunlop","Michelin","Goodyear","Pirelli","Bridgestone","Yokohama","Firestone","Avon","BFGoodrich","Continental","Toyo","Falken"];\n'
+          if app.count(old_supplier_constant)!=1:
+              raise SystemExit("Unexpected legacy supplier constant")
+          app=app.replace(old_supplier_constant,"")
+
+          old_initial='populateHistoricalCategoryOptions();\nfunction parseLutPoints'
+          new_initial='populateHistoricalCategoryOptions();\npopulateSeriesClassOptions();\npopulateSupplierOptions();\nfunction parseLutPoints'
+          if app.count(old_initial)!=1:
+              raise SystemExit("Unexpected initial menu population anchor")
+          app=app.replace(old_initial,new_initial)
+
+          old_preset='$("preset").addEventListener("change",e=>applyPreset(e.target.value));\n$("reset").addEventListener("click",()=>applyPreset($("preset").value));'
+          new_preset='''$("preset").addEventListener("change",e=>{applyPreset(e.target.value);populateSeriesClassOptions();});
+          $("series").addEventListener("change",()=>{clearMenuProvenance("series");applySeriesMenuSelection();refreshMenuDrivenOutput();});
+          $("supplier").addEventListener("change",()=>{clearMenuProvenance("supplier");refreshMenuDrivenOutput();});
+          $("reset").addEventListener("click",()=>{applyPreset($("preset").value);populateSeriesClassOptions();populateSupplierOptions();});'''
+          if app.count(old_preset)!=1:
+              raise SystemExit("Unexpected preset event wiring")
+          app=app.replace(old_preset,new_preset)
+
+          old_set='el.value=String(value); markResearched(id,source); return true;'
+          new_set='setMenuValue(id,String(value)); markResearched(id,source); return true;'
+          if app.count(old_set)!=1:
+              raise SystemExit("Unexpected researched-field setter")
+          app=app.replace(old_set,new_set)
+
+          old_defaults='''function setResearchDefaults(){
+           $("series").value="General / unknown";
+           $("supplier").value="Unknown";
+           $("series").classList.remove("imported-field","researched-field");
+           $("supplier").classList.remove("imported-field","researched-field");
+          }'''
+          new_defaults='''function setResearchDefaults(){
+           setMenuValue("series",GENERAL_UNKNOWN);
+           setMenuValue("supplier",GENERAL_UNKNOWN);
+           $("series").classList.remove("imported-field","researched-field");
+           $("supplier").classList.remove("imported-field","researched-field");
+          }'''
+          if app.count(old_defaults)!=1:
+              raise SystemExit("Unexpected research defaults")
+          app=app.replace(old_defaults,new_defaults)
+
+          old_unknown='else $("supplier").value="Unknown";'
+          if app.count(old_unknown)!=1:
+              raise SystemExit("Unexpected unknown-supplier fallback")
+          app=app.replace(old_unknown,'else setMenuValue("supplier",GENERAL_UNKNOWN);')
+
+          old_ui=''' populateHistoricalCategoryOptions();
+           if(preset&&selected&&[...preset.options].some(o=>o.value===selected))preset.value=selected;
+           renderHistoricalFamilySummary();'''
+          new_ui=''' populateHistoricalCategoryOptions();
+           if(preset&&selected&&[...preset.options].some(o=>o.value===selected))preset.value=selected;
+           populateSeriesClassOptions();
+           populateSupplierOptions();
+           renderHistoricalFamilySummary();'''
+          if app.count(old_ui)!=1:
+              raise SystemExit("Unexpected knowledge UI refresh block")
+          app=app.replace(old_ui,new_ui)
+
+          old_constant='const ACLM_APP_VERSION="0.5.8";'
+          if app.count(old_constant)!=1:
+              raise SystemExit("Unexpected application version constant")
+          app=app.replace(old_constant,f'const ACLM_APP_VERSION="{version}";')
+          if app.count("v0.5.8")!=3:
+              raise SystemExit("Unexpected v0.5.8 application token count")
+          app=app.replace("v0.5.8",f"v{version}")
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          server_path=Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server=server_path.read_text(encoding="utf-8")
+          old_server='$CurrentVersion = "0.5.8"'
+          if server.count(old_server)!=1:
+              raise SystemExit("Unexpected server version declaration")
+          server_path.write_text(server.replace(old_server,f'$CurrentVersion = "{version}"'),encoding="utf-8",newline="")
+
+          installer_path=Path("src/Install_ACLM_Tire_Lab.cmd")
+          installer=installer_path.read_text(encoding="utf-8")
+          if installer.count("v0.5.8")!=1:
+              raise SystemExit("Unexpected installer version token count")
+          installer_path.write_text(installer.replace("v0.5.8",f"v{version}"),encoding="utf-8",newline="")
+
+          readme_first_path=Path("src/README_FIRST.txt")
+          readme_first=readme_first_path.read_text(encoding="utf-8")
+          if readme_first.count("v0.5.8")!=2:
+              raise SystemExit("Unexpected packaged README version token count")
+          readme_first_path.write_text(readme_first.replace("v0.5.8",f"v{version}"),encoding="utf-8",newline="")
+
+          sw_path=Path("src/payload/app/sw.js")
+          sw=sw_path.read_text(encoding="utf-8")
+          old_cache="aclm-tire-lab-shell-v058-temp-graph"
+          if sw.count(old_cache)!=1:
+              raise SystemExit("Unexpected service-worker cache token")
+          sw_path.write_text(sw.replace(old_cache,"aclm-tire-lab-shell-v059-class-supplier-menus"),encoding="utf-8",newline="")
+
+          changelog_path=Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog=changelog_path.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry=(
+              f"2026-08-25 - v{version}\n"
+              "- Replaced the free-text Series/class field with a persistent calibrated-class dropdown grouped by historical tire family.\n"
+              "- Selecting a tire family filters the class dropdown to that family's calibrated drilldown options.\n"
+              "- Replaced the free-text supplier field with General / Unknown plus 24 major historical and modern racing tire manufacturers.\n"
+              "- Curated knowledge and research still auto-select a manufacturer only when supported; unresolved suppliers stay General / Unknown.\n"
+              "- Preserves researched custom values and refreshes both menus after online knowledge synchronization.\n\n"
+          )
+          changelog_path.write_text(heading+entry+changelog[len(heading):],encoding="utf-8",newline="")
+
+          repo_readme=Path("README.md")
+          readme=repo_readme.read_text(encoding="utf-8")
+          old_line="Current application release: **v0.5.8**"
+          if readme.count(old_line)!=1:
+              raise SystemExit("Unexpected repository app release line")
+          repo_readme.write_text(readme.replace(old_line,f"Current application release: **v{version}**"),encoding="utf-8",newline="")
+          PY
+
+      - name: Test class drilldown and supplier menus
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node <<'NODE'
+          const fs=require("fs");
+          const source=fs.readFileSync("src/payload/app/app.js","utf8");
+          const knowledge=JSON.parse(fs.readFileSync("src/payload/app/knowledge_fallback.json","utf8").replace(/^\uFEFF/,""));
+          const research=require("./src/payload/app/research_logic.js");
+
+          class OptionElement{constructor(){this.tagName="OPTION";this.value="";this.textContent="";}}
+          class GroupElement{constructor(){this.tagName="OPTGROUP";this.label="";this.children=[];}appendChild(x){this.children.push(x);return x;}}
+          class SelectElement{
+            constructor(value=""){this.tagName="SELECT";this.children=[];this._value=value;this.classList={remove(){}};this.dataset={};this.title="";}
+            appendChild(x){this.children.push(x);return x;}
+            get options(){return this.children.flatMap(x=>x.tagName==="OPTGROUP"?x.children:[x]);}
+            set innerHTML(v){if(v===""){this.children=[];this._value="";}}
+            get innerHTML(){return "";}
+            set value(v){const s=String(v);this._value=this.options.some(o=>o.value===s)?s:"";}
+            get value(){return this._value;}
+            addEventListener(){}
+          }
+          const createElement=tag=>tag==="optgroup"?new GroupElement():new OptionElement();
+          const elements={
+            preset:new SelectElement(),
+            series:new SelectElement(),
+            supplier:new SelectElement()
+          };
+          elements.preset.children=[Object.assign(new OptionElement(),{value:"auto"}),Object.assign(new OptionElement(),{value:"FAM010"})];
+          elements.preset.value="auto";
+          elements.series.children=[Object.assign(new OptionElement(),{value:"1993-96 BPR / Le Mans GT"})];
+          elements.series.value="1993-96 BPR / Le Mans GT";
+          elements.supplier.children=[Object.assign(new OptionElement(),{value:"Dunlop"})];
+          elements.supplier.value="Dunlop";
+
+          const start=source.indexOf('const GENERAL_UNKNOWN="General / unknown";');
+          const end=source.indexOf("function shortForHistoricalName(",start);
+          if(start<0||end<0)throw new Error("Could not extract persistent-menu block");
+          const block=source.slice(start,end);
+          const api=new Function("$","window","document",
+            block+"\nreturn {GENERAL_UNKNOWN,TYRE_SUPPLIERS,populateSeriesClassOptions,populateSupplierOptions,ensureSelectOption,setMenuValue};"
+          )(
+            id=>elements[id]||null,
+            {ACLMHistoricalCategories:{CLASSES:knowledge.classes,FAMILIES:knowledge.families},ACLMResearch:research},
+            {createElement}
+          );
+
+          api.populateSeriesClassOptions();
+          if(elements.series.options.length!==knowledge.classes.length+1)throw new Error("Auto class menu did not include every calibrated class plus General / Unknown");
+          if(elements.series.value!=="1993-96 BPR / Le Mans GT")throw new Error("Existing calibrated class selection was not preserved");
+          const familyGroups=elements.series.children.filter(x=>x.tagName==="OPTGROUP");
+          if(!familyGroups.length||familyGroups.some(g=>!/^FAM\d+ — /.test(g.label)))throw new Error("Class options were not grouped by tire family");
+
+          elements.preset.value="FAM010";
+          elements.series.value="General / unknown";
+          api.populateSeriesClassOptions();
+          const expectedF10=knowledge.classes.filter(c=>c.familyId==="FAM010");
+          if(elements.series.options.length!==expectedF10.length+1)throw new Error("Family drilldown did not filter the class menu");
+          const shown=new Set(elements.series.options.map(o=>o.value));
+          for(const cls of expectedF10)if(!shown.has(cls.name))throw new Error("Missing FAM010 class "+cls.name);
+
+          api.populateSupplierOptions();
+          const supplierValues=new Set(elements.supplier.options.map(o=>o.value));
+          for(const required of ["General / unknown","Dunlop","Michelin","Pirelli","Goodyear","Hoosier","Bridgestone","Avon","Firestone","Hankook","Kumho","Englebert"]){
+            if(!supplierValues.has(required))throw new Error("Missing supplier "+required);
+          }
+          if(api.TYRE_SUPPLIERS.length!==24)throw new Error("Expected 24 major racing tire manufacturers");
+          api.setMenuValue("supplier","Period privateer supplier");
+          if(elements.supplier.value!=="Period privateer supplier")throw new Error("Researched custom supplier was not preserved");
+          if(!elements.supplier.options.some(o=>o.value==="Period privateer supplier"))throw new Error("Custom supplier option was not created");
+
+          console.log("Class and supplier menu regression tests passed");
+          NODE
+          grep -F '<select id="series">' src/payload/app/index.html
+          grep -F '<select id="supplier">' src/payload/app/index.html
+          if grep -F '<input id="series"' src/payload/app/index.html || grep -F '<input id="supplier"' src/payload/app/index.html; then
+            echo "Legacy free-text class/supplier input remains"
+            exit 1
+          fi
+          grep -F 'populateSeriesClassOptions();' src/payload/app/app.js
+          grep -F 'populateSupplierOptions();' src/payload/app/app.js
+          grep -F 'setMenuValue(id,String(value)); markResearched' src/payload/app/app.js
+          grep -F 'const ACLM_APP_VERSION="0.5.9"' src/payload/app/app.js
+          grep -F '$CurrentVersion = "0.5.9"' src/payload/Server_ACLM_Tire_Lab.ps1
+          grep -F 'aclm-tire-lab-shell-v059-class-supplier-menus' src/payload/app/sw.js
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          sums=[]
+          for path in sorted(p for p in src.rglob("*") if p.is_file() and p.name!="SHA256SUMS.txt"):
+              sums.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.relative_to(src).as_posix()}")
+          (src/"SHA256SUMS.txt").write_text("\n".join(sums)+"\n",encoding="ascii")
+
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          if archive.exists():
+              archive.unlink()
+          with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+              for path in sorted(p for p in src.rglob("*") if p.is_file()):
+                  zf.write(path,path.relative_to(src).as_posix())
+
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"Adds persistent family-grouped Series/class and major racing tire manufacturer dropdowns with safe General / Unknown defaults."
+          }
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit the v0.5.9 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "feat: add class and tire manufacturer menus in v0.5.9"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.5.9
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip"             --repo "${{ github.repository }}"             --target "$(git rev-parse HEAD)"             --title "ACLM Historical Tire Lab v$APP_VERSION"             --notes "Adds persistent historical class and tire-manufacturer dropdowns.
+
+          - Series/class options are grouped by tire family
+          - selecting a family filters the class drilldown
+          - General / Unknown remains available
+          - 24 major historical and modern racing tire manufacturers are selectable
+          - curated/researched suppliers auto-fill only when supported
+          - unresolved suppliers remain General / Unknown
+          - custom researched values are preserved
+          - menus refresh after online knowledge sync
+
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
