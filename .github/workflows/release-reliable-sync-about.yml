@@ -32,6 +32,7 @@ jobs:
           python3 - <<'PY'
           import os
           from pathlib import Path
+          from textwrap import dedent
 
           version=os.environ["APP_VERSION"]
 
@@ -54,30 +55,26 @@ jobs:
               <a class="header-link" href="#about-methodology">About &amp; methodology</a>
               <button id="installPwa" class="primary" hidden>Install ACLM Tire Lab</button>'''
           index=replace_once(index,old_actions,new_actions,"header actions")
-          old_update_note='''<div class="small muted" style="margin-top:6px">Published builds are checked against the ACLM Tire Tool Updates folder.</div>
-              </div>
+          old_update_guidance='<div class="small muted" style="margin-top:6px">Published builds are checked against the ACLM Tire Tool Updates folder.</div>'
+          new_update_guidance='<div class="small muted" style="margin-top:6px">Verified cached knowledge loads locally. Online checks run only when requested and fall back safely when GitHub is unavailable.</div>'
+          index=replace_once(index,old_update_guidance,new_update_guidance,"update guidance")
+          about_anchor='<div class="card">\n<h2>Validation</h2>'
+          about_html=dedent('''\
+          <div class="card about-card" id="about-methodology">
+          <h2>About &amp; methodology</h2>
+          <p>ACLM Historical Tire Lab is an independent, evidence-guided simulation and research project. It combines public historical sources, user-supplied Assetto Corsa physics and explicitly identified modeling assumptions.</p>
+          <div class="notice small"><b>Public evidence, not confidential data.</b> Tire Lab does not use, claim access to or imply possession of confidential or proprietary manufacturer information.</div>
+          <ul class="methodology-list">
+           <li>Generated physics are historical reconstructions, not recovered manufacturer engineering models.</li>
+           <li>Manufacturer and series names are used for historical identification only; no affiliation or endorsement is implied.</li>
+           <li>Documented fitment and construction may be factual, while grip, thermal, pressure and wear values remain calibration priors unless independently measured.</li>
+           <li>Generated packs should be validated with simulation telemetry for the specific car, circuit and conditions.</li>
+          </ul>
+          <p class="small"><a href="https://github.com/aclmproject/tire_lab/blob/main/docs/ACLM_Historical_Tire_Lab_Whitepaper.md" target="_blank" rel="noopener">Read the concise technical whitepaper and evidence policy</a>.</p>
+          </div>
 
-              <div class="card">
-              <h2>Validation</h2>'''
-          new_update_note='''<div class="small muted" style="margin-top:6px">Verified cached knowledge loads locally. Online checks run only when requested and fall back safely when GitHub is unavailable.</div>
-              </div>
-
-              <div class="card about-card" id="about-methodology">
-              <h2>About &amp; methodology</h2>
-              <p>ACLM Historical Tire Lab is an independent, evidence-guided simulation and research project. It combines public historical sources, user-supplied Assetto Corsa physics and explicitly identified modeling assumptions.</p>
-              <div class="notice small"><b>Public evidence, not confidential data.</b> Tire Lab does not use, claim access to or imply possession of confidential or proprietary manufacturer information.</div>
-              <ul class="methodology-list">
-               <li>Generated physics are historical reconstructions, not recovered manufacturer engineering models.</li>
-               <li>Manufacturer and series names are used for historical identification only; no affiliation or endorsement is implied.</li>
-               <li>Documented fitment and construction may be factual, while grip, thermal, pressure and wear values remain calibration priors unless independently measured.</li>
-               <li>Generated packs should be validated with simulation telemetry for the specific car, circuit and conditions.</li>
-              </ul>
-              <p class="small"><a href="https://github.com/aclmproject/tire_lab/blob/main/docs/ACLM_Historical_Tire_Lab_Whitepaper.md" target="_blank" rel="noopener">Read the concise technical whitepaper and evidence policy</a>.</p>
-              </div>
-
-              <div class="card">
-              <h2>Validation</h2>'''
-          index=replace_once(index,old_update_note,new_update_note,"about section anchor")
+          ''')
+          index=replace_once(index,about_anchor,about_html+about_anchor,"about section anchor")
           index_path.write_text(index,encoding="utf-8",newline="")
 
           style_path=Path("src/payload/app/style.css")
@@ -100,7 +97,7 @@ jobs:
           if app.count('const ACLM_APP_VERSION="0.5.9";')!=1:
               raise SystemExit("Unexpected app version constant")
           app=app.replace('const ACLM_APP_VERSION="0.5.9";',f'const ACLM_APP_VERSION="{version}";')
-          if app.count("v0.5.9")!=3:
+          if app.count("v0.5.9")!=2:
               raise SystemExit("Unexpected generated-output version token count")
           app=app.replace("v0.5.9",f"v{version}")
 
