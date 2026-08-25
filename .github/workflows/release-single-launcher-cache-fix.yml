@@ -214,7 +214,7 @@ jobs:
           heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
           if not changelog.startswith(heading):
               raise SystemExit("Unexpected changelog heading")
-          entry=dedent(f'''          2026-08-25 - v{version}
+          entry=dedent(f'''2026-08-25 - v{version}
           - Replaces duplicate legacy/PWA launch paths with one canonical desktop launcher.
           - Removes only the exact legacy ACLM shortcut names discovered during the launcher audit.
           - Launcher verifies /api/health and the expected server version before opening the browser.
