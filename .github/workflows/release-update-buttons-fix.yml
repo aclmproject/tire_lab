@@ -1,0 +1,287 @@
+name: Release Tire Lab Update Buttons Fix
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-update-buttons-fix.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-tire-lab-app
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.5.7
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Wire and harden the application update buttons
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          start_token='const ACLM_APP_VERSION="0.5.6";let availableUpdate=null;'
+          end_token='function updateKnowledgeUi(message=""){'
+          if app.count(start_token)!=1 or app.count(end_token)!=1:
+              raise SystemExit("Unexpected update-control block anchors")
+          start=app.index(start_token)
+          end=app.index(end_token,start)
+          old_block=app[start:end]
+          if '$("checkUpdates").addEventListener' in old_block or '$("installUpdate").addEventListener' in old_block:
+              raise SystemExit("Update handlers already exist; refusing an ambiguous patch")
+          new_block=r'''const ACLM_APP_VERSION="0.5.7";
+          const ACLM_RELEASES_URL="https://github.com/aclmproject/tire_lab/releases";
+          let availableUpdate=null;
+          function semverParts(v){return String(v||"0").replace(/^v/i,"").split(".").map(x=>parseInt(x,10)||0);}
+          function isNewerVersion(a,b){const A=semverParts(a),B=semverParts(b),n=Math.max(A.length,B.length);for(let i=0;i<n;i++){const x=A[i]||0,y=B[i]||0;if(x>y)return true;if(x<y)return false;}return false;}
+          async function checkForUpdates(silent=false){
+           const status=$("updateStatus"),btn=$("installUpdate");
+           if(!silent)status.textContent="Checking ACLM Tire Tool Updates…";
+           btn.disabled=true;
+           availableUpdate=null;
+           try{
+             const r=await fetch("/api/update-info?ts="+Date.now(),{cache:"no-store"});
+             const data=await r.json();
+             if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
+             availableUpdate=data;
+             btn.disabled=false;
+             if(isNewerVersion(data.version,ACLM_APP_VERSION)){
+               status.innerHTML=`<span class="warning"><b>Update available: v${escapeHtml(data.version)}</b></span> — installed v${ACLM_APP_VERSION}${data.notes?`<br>${escapeHtml(data.notes)}`:""}`;
+             }else{
+               status.innerHTML=`<span class="ok"><b>Up to date.</b></span> Installed v${ACLM_APP_VERSION}; stable channel v${escapeHtml(data.version||ACLM_APP_VERSION)}.`;
+             }
+           }catch(e){
+             btn.disabled=false;
+             status.innerHTML=`<span class="warning"><b>Update check unavailable:</b></span> ${escapeHtml(e.message)}`;
+           }
+          }
+          function installAvailableUpdate(){
+           const url=availableUpdate?.release_page||availableUpdate?.updates_folder||ACLM_RELEASES_URL;
+           window.open(url,"_blank","noopener");
+           $("updateStatus").innerHTML='<span class="ok"><b>Release page opened.</b></span> Download and run the installer manually.';
+          }
+          $("checkUpdates").addEventListener("click",()=>checkForUpdates(false));
+          $("installUpdate").disabled=false;
+          $("installUpdate").addEventListener("click",installAvailableUpdate);
+
+          '''
+          app=app[:start]+new_block+app[end:]
+          if app.count("v0.5.6")!=3:
+              raise SystemExit("Unexpected v0.5.6 application token count")
+          app=app.replace("v0.5.6",f"v{version}")
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          if index.count("v0.5.6")!=2:
+              raise SystemExit("Unexpected index version token count")
+          index_path.write_text(index.replace("v0.5.6",f"v{version}"),encoding="utf-8",newline="")
+
+          server_path=Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server=server_path.read_text(encoding="utf-8")
+          old_version='$CurrentVersion = "0.5.6"'
+          old_update="function App-UpdateInfo{try{$m=(Get-JsonUrl $AppManifestUrl)|ConvertFrom-Json;return @{version=$m.version;file_name=$m.file_name;published_utc=$m.published_utc;notes=$m.notes;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$UpdatesPage}}catch{return @{version=$CurrentVersion;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$UpdatesPage;warning=$_.Exception.Message}}}"
+          new_update="function App-UpdateInfo{try{$m=(Get-JsonUrl $AppManifestUrl)|ConvertFrom-Json;$page=if($m.release_page){[string]$m.release_page}else{$UpdatesPage};return @{version=$m.version;file_name=$m.file_name;published_utc=$m.published_utc;notes=$m.notes;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$page;download_url=$m.download_url}}catch{return @{version=$CurrentVersion;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$UpdatesPage;warning=$_.Exception.Message}}}"
+          if server.count(old_version)!=1 or server.count(old_update)!=1:
+              raise SystemExit("Unexpected server update/version block")
+          server=server.replace(old_version,f'$CurrentVersion = "{version}"').replace(old_update,new_update)
+          server_path.write_text(server,encoding="utf-8",newline="")
+
+          installer_path=Path("src/Install_ACLM_Tire_Lab.cmd")
+          installer=installer_path.read_text(encoding="utf-8")
+          if installer.count("v0.5.6")!=1:
+              raise SystemExit("Unexpected installer version token count")
+          installer_path.write_text(installer.replace("v0.5.6",f"v{version}"),encoding="utf-8",newline="")
+
+          readme_first_path=Path("src/README_FIRST.txt")
+          readme_first=readme_first_path.read_text(encoding="utf-8")
+          if readme_first.count("v0.5.6")!=2:
+              raise SystemExit("Unexpected packaged README version token count")
+          readme_first_path.write_text(readme_first.replace("v0.5.6",f"v{version}"),encoding="utf-8",newline="")
+
+          sw_path=Path("src/payload/app/sw.js")
+          sw=sw_path.read_text(encoding="utf-8")
+          old_cache="aclm-tire-lab-shell-v056-knowledge-sync"
+          if sw.count(old_cache)!=1:
+              raise SystemExit("Unexpected service-worker cache token")
+          sw_path.write_text(sw.replace(old_cache,"aclm-tire-lab-shell-v057-update-buttons"),encoding="utf-8",newline="")
+
+          changelog_path=Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog=changelog_path.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry=(
+              f"2026-08-25 - v{version}\n"
+              "- Wired the Check for updates and Open update download page buttons.\n"
+              "- The download page now opens even before an update check or when the installed build is current.\n"
+              "- A successful check retains the stable manifest metadata and opens its version-specific release page.\n"
+              "- Update-check failures leave the GitHub releases fallback available.\n"
+              "- Bumped the browser-app cache so installed apps receive the corrected handlers.\n\n"
+          )
+          changelog_path.write_text(heading+entry+changelog[len(heading):],encoding="utf-8",newline="")
+
+          repo_readme=Path("README.md")
+          readme=repo_readme.read_text(encoding="utf-8")
+          old_line="Current application release: **v0.5.6**"
+          if readme.count(old_line)!=1:
+              raise SystemExit("Unexpected repository app release line")
+          repo_readme.write_text(readme.replace(old_line,f"Current application release: **v{version}**"),encoding="utf-8",newline="")
+          PY
+
+      - name: Test both application update buttons
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node <<'NODE'
+          const fs=require("fs");
+          const source=fs.readFileSync("src/payload/app/app.js","utf8");
+          const start=source.indexOf('const ACLM_APP_VERSION="0.5.7";');
+          const end=source.indexOf('function updateKnowledgeUi(message=""){',start);
+          if(start<0||end<0)throw new Error("Could not extract update-controls block");
+          const block=source.slice(start,end);
+
+          function harness(response,fail=false){
+            const listeners={};
+            const elements={
+              updateStatus:{textContent:"",innerHTML:""},
+              installUpdate:{disabled:true,addEventListener:(event,fn)=>{listeners.installUpdate={event,fn};}},
+              checkUpdates:{addEventListener:(event,fn)=>{listeners.checkUpdates={event,fn};}}
+            };
+            const opened=[];
+            const fakeFetch=async()=>{if(fail)throw new Error("offline");return {ok:true,json:async()=>response};};
+            const fakeWindow={open:(...args)=>{opened.push(args);}};
+            const api=new Function("$","fetch","window","escapeHtml",
+              block+"\nreturn {checkForUpdates,installAvailableUpdate};"
+            )(id=>elements[id]||null,fakeFetch,fakeWindow,String);
+            return {listeners,elements,opened,api};
+          }
+
+          (async()=>{
+            const current=harness({version:"0.5.7",release_page:"https://github.com/aclmproject/tire_lab/releases/tag/v0.5.7"});
+            if(current.listeners.checkUpdates?.event!=="click"||current.listeners.installUpdate?.event!=="click")throw new Error("Click handlers were not attached");
+            if(current.elements.installUpdate.disabled)throw new Error("Download button was not enabled at startup");
+            current.listeners.installUpdate.fn();
+            if(current.opened[0]?.[0]!=="https://github.com/aclmproject/tire_lab/releases")throw new Error("Pre-check fallback release page failed");
+            await current.listeners.checkUpdates.fn();
+            if(!current.elements.updateStatus.innerHTML.includes("Up to date"))throw new Error("Current-version status failed");
+            if(current.elements.installUpdate.disabled)throw new Error("Download button remained disabled after check");
+            current.listeners.installUpdate.fn();
+            if(current.opened[1]?.[0]!=="https://github.com/aclmproject/tire_lab/releases/tag/v0.5.7")throw new Error("Manifest release page was not retained");
+
+            const newer=harness({version:"0.5.8",release_page:"https://github.com/aclmproject/tire_lab/releases/tag/v0.5.8",notes:"test"});
+            await newer.listeners.checkUpdates.fn();
+            if(!newer.elements.updateStatus.innerHTML.includes("Update available: v0.5.8"))throw new Error("Newer-version status failed");
+
+            const offline=harness({},true);
+            await offline.listeners.checkUpdates.fn();
+            if(!offline.elements.updateStatus.innerHTML.includes("Update check unavailable"))throw new Error("Offline status failed");
+            if(offline.elements.installUpdate.disabled)throw new Error("Offline fallback button was disabled");
+            offline.listeners.installUpdate.fn();
+            if(offline.opened[0]?.[0]!=="https://github.com/aclmproject/tire_lab/releases")throw new Error("Offline fallback release page failed");
+
+            console.log("Application update-button regression tests passed");
+          })().catch(e=>{console.error(e);process.exit(1);});
+          NODE
+          grep -F 'const ACLM_APP_VERSION="0.5.7"' src/payload/app/app.js
+          grep -F '$("checkUpdates").addEventListener("click"' src/payload/app/app.js
+          grep -F '$("installUpdate").addEventListener("click"' src/payload/app/app.js
+          grep -F '$CurrentVersion = "0.5.7"' src/payload/Server_ACLM_Tire_Lab.ps1
+          grep -F 'release_page=$page;download_url=$m.download_url' src/payload/Server_ACLM_Tire_Lab.ps1
+          grep -F 'id="installedBuild">v0.5.7<' src/payload/app/index.html
+          grep -F 'aclm-tire-lab-shell-v057-update-buttons' src/payload/app/sw.js
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          sums=[]
+          for path in sorted(p for p in src.rglob("*") if p.is_file() and p.name!="SHA256SUMS.txt"):
+              sums.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.relative_to(src).as_posix()}")
+          (src/"SHA256SUMS.txt").write_text("\n".join(sums)+"\n",encoding="ascii")
+
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          if archive.exists():
+              archive.unlink()
+          with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+              for path in sorted(p for p in src.rglob("*") if p.is_file()):
+                  zf.write(path,path.relative_to(src).as_posix())
+
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"Wires both application update buttons, preserves the stable release link after checks, and provides an always-available GitHub releases fallback."
+          }
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit the v0.5.7 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: wire application update buttons in Tire Lab v0.5.7"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.5.7
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip"             --repo "${{ github.repository }}"             --target "$(git rev-parse HEAD)"             --title "ACLM Historical Tire Lab v$APP_VERSION"             --notes "Fixes the unresponsive application update controls.
+
+          Verified behavior:
+          - Check for updates calls the local update endpoint and reports current/newer/offline states
+          - Open update download page works before any check
+          - after a check it opens the stable manifest's version-specific GitHub release
+          - if the check fails it still opens the GitHub releases fallback
+          - the download button never remains disabled
+
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
