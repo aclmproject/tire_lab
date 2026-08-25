@@ -1,0 +1,35 @@
+ACLM TIRE LAB - CANONICAL FEATURE REGRESSION GUARD
+===================================================
+Future changes must preserve unless explicitly removed:
+- PWA/browser installer and prerequisite checks
+- AC ZIP import and unpacked folder import
+- car identity import
+- generic historical research + multi-context selection
+- complete AC v10/CSP output and LUT validation
+- automatic pressure solver; imported PRESSURE_STATIC is reference only
+- evidence-driven wear + terminal failure/puncture cliff
+- mandatory historical accuracy PDF report
+- car-specific ZIP: ACLM_<Car_Name>_TirePack.zip
+- car-specific PDF report name
+- stable canonical setup filename
+
+The installer performs a preflight feature check and aborts if these markers disappear.
+
+15. Wear / temperature / peak-grip graphs.
+16. App update checker and one-click update install.
+17. Installer newer-version check.
+18. SHA-256 update verification.
+
+19. Online ACLM Tire Knowledge sync with bundled fallback and local cache.
+20. Knowledge and app versions are independent.
+21. Generator_Priors must influence historical-family tire physics.
+22. Curated Research_Profiles must be consulted before broad web research.
+23. BOTH physicsZip and physicsFolder imports are mandatory and separately regression-checked.
+
+SAFE DISTRIBUTION RULES
+- No automatic application installer download/extraction/execution.
+- No hidden updater or startup persistence.
+- No self-deleting updater.
+- No automatic prerequisite installation.
+- Application updates open the browser release page only.
+- Knowledge sync is verified JSON data only.

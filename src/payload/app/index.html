@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACLM Historical Tire Lab</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#11161d">
+<link rel="icon" href="ACLM_Tire_Lab.png">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.5.4 Browser App + AC import</span></h1>
+  <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation.</div>
+  <div class="header-actions">
+    <span id="serverState" class="pill ok">Local browser app</span>
+    <button id="installPwa" class="primary" hidden>Install ACLM Tire Lab</button>
+  </div>
+</header>
+<main>
+<section>
+<div class="card import-card">
+<h2>1. Import existing Assetto Corsa physics</h2>
+<p class="muted">Load an existing car first. Tire Lab will populate the car/tire inputs it can prove from the installed physics instead of making you retype them.</p>
+<div class="import-grid">
+  <div class="dropbox">
+    <label>Physics ZIP / car ZIP</label>
+    <input id="physicsZip" type="file" accept=".zip,application/zip">
+    <div class="small muted">Works with a ZIP containing a <code>data</code> folder, loose physics files, or a full car folder. <code>data.acd</code> itself cannot be decoded.</div>
+  </div>
+  <div class="dropbox">
+    <label>Unpacked data folder</label>
+    <input id="physicsFolder" type="file" webkitdirectory directory multiple>
+    <div class="small muted">Choose the car's <code>data</code> folder (or full car folder). Modern Chromium browsers support folder selection.</div>
+  </div>
+</div>
+<div class="actions" style="margin-top:10px">
+  <button class="primary" id="importZip">Import ZIP + populate</button>
+  <button id="importFolder">Import selected folder</button>
+  <button id="clearImport">Clear imported data</button>
+</div>
+<div id="importStatus" class="notice small">No car physics imported yet.</div>
+<div id="importSummary"></div>
+<div class="research-panel">
+  <div class="notice small">
+    Import automatically identifies the <b>car</b> from AC metadata and fills the <b>year</b> when it can identify the racing model confidently. Series/class and tire supplier deliberately start as General/Unknown. Research can also correct construction when the historical tire designation is explicit.
+  </div>
+  <div class="actions">
+    <button id="researchProfile" type="button">Research historical tire context</button>
+  </div>
+  <div id="researchStatus" class="small muted">Historical tire-context research has not run yet.</div>
+  <div id="researchChoices" class="research-choices" hidden>
+    <div class="grid">
+      <div id="classChoiceWrap" hidden>
+        <label>Historical racing category — select the tire context</label>
+        <select id="classChoice"></select>
+      </div>
+      <div id="supplierChoiceWrap" hidden>
+        <label>Historical tire supplier</label>
+        <select id="supplierChoice"></select>
+      </div>
+    </div>
+    <div class="actions" style="margin-top:8px">
+      <button id="applyResearchChoice" type="button">Apply selected historical context</button>
+    </div>
+  </div>
+  <div id="researchSources" class="small"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>2. Historical profile</h2>
+<div class="grid">
+ <div><label>Historical tire category</label><select id="preset">
+  <option value="auto">Auto — derive from year + racing class</option>
+  <option value="manual">Manual / preserve current choices</option>
+ </select></div>
+ <div><label>Construction</label><select id="construction"><option value="radial">Radial</option><option value="bias">Bias / cross-ply</option></select></div>
+ <div><label>Year</label><input id="year" type="number" value="1995"></div>
+ <div><label>Series / class</label><input id="series" value="1993-96 BPR / Le Mans GT"></div>
+ <div><label>Car</label><input id="car" value="Toyota Supra LM"></div>
+ <div><label>Supplier</label><input id="supplier" value="Dunlop"></div>
+</div>
+<h3>Historically valid tire menu</h3>
+<div class="checkrow historical-compounds">
+<label><input id="cSoft" type="checkbox"><span id="cSoftLabel">Qualifying / Sprint</span></label>
+<label><input id="cMedium" type="checkbox" checked><span id="cMediumLabel">Race</span></label>
+<label><input id="cHard" type="checkbox"><span id="cHardLabel">Endurance</span></label>
+<label><input id="cInter" type="checkbox"><span id="cInterLabel">Intermediate</span></label>
+<label><input id="cWet" type="checkbox"><span id="cWetLabel">Wet</span></label>
+</div>
+<div id="historicalFamilySummary" class="notice small">Auto category uses the researched year + racing class to choose a Tire Lab historical family and its period-valid tire menu. It does not impose a modern Soft/Medium/Hard ladder.</div>
+<div class="notice small">Import preserves direct car/tire geometry. Historical category selection changes tire architecture, dry tire type (treaded vs slick), construction when the evidence is unambiguous, compound availability/names, and class-life wear priors. Supplier-proprietary peak grip is not invented from the category.</div>
+</div>
+
+<div class="card">
+<h2>3. Car / tire geometry and load</h2>
+<div class="grid3">
+ <div><label>Car mass incl. driver, no fuel (kg)</label><input id="mass" type="number" step="1" value="1235"></div>
+ <div><label>Front static weight (%)</label><input id="frontWeight" type="number" step=".1" value="52"></div>
+ <div><label>FZ0 operating-load factor</label><input id="fzFactor" type="number" step=".01" value="1.07"></div>
+ <div><label>Front width (m)</label><input id="fw" type="number" step=".001" value=".305"></div>
+ <div><label>Front radius (m)</label><input id="fr" type="number" step=".0001" value=".3300"></div>
+ <div><label>Front RIM_RADIUS (m)</label><input id="frr" type="number" step=".0001" value=".2213"></div>
+ <div><label>Rear width (m)</label><input id="rw" type="number" step=".001" value=".335"></div>
+ <div><label>Rear radius (m)</label><input id="rr" type="number" step=".0001" value=".3425"></div>
+ <div><label>Rear RIM_RADIUS (m)</label><input id="rrr" type="number" step=".0001" value=".2213"></div>
+</div>
+<div class="grid" style="margin-top:10px">
+ <div><label>Front RATE (N/m)</label><input id="rateF" type="number" value="345000"></div>
+ <div><label>Rear RATE (N/m)</label><input id="rateR" type="number" value="365000"></div>
+ <div><label>Front FZ0 override (N, 0=auto)</label><input id="fzF" type="number" value="0"></div>
+ <div><label>Rear FZ0 override (N, 0=auto)</label><input id="fzR" type="number" value="0"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>4. Operating setup</h2>
+<div class="checkrow">
+ <label><input id="autoSolvePressure" type="checkbox" checked>Auto-solve generated cold pressures from ideal hot pressure + compound temperature window</label>
+</div>
+<div class="grid3">
+ <div><label>Blanket temp (°C)</label><input id="blankets" type="number" value="70"></div>
+ <div><label>Ideal hot pressure (psi)</label><input id="pIdeal" type="number" step=".5" value="29"></div>
+ <div><label>Cold-pressure reference temp (°C)</label><input id="pRefTemp" type="number" step=".5" value="26"></div>
+ <div><label>Pressure temp gain</label><input id="pTempGain" type="number" step=".01" value=".15"></div>
+ <div><label>Soft generated cold F / R psi</label><div class="grid"><input id="pSF" type="number" step=".1" value="20"><input id="pSR" type="number" step=".1" value="20"></div></div>
+ <div><label>Medium generated cold F / R psi</label><div class="grid"><input id="pMF" type="number" step=".1" value="21"><input id="pMR" type="number" step=".1" value="20"></div></div>
+ <div><label>Hard generated cold F / R psi</label><div class="grid"><input id="pHF" type="number" step=".1" value="23"><input id="pHR" type="number" step=".1" value="23"></div></div>
+ <div><label>Intermediate generated cold F / R psi</label><div class="grid"><input id="pIF" type="number" step=".1" value="21"><input id="pIR" type="number" step=".1" value="20"></div></div>
+ <div><label>Wet generated cold F / R psi</label><div class="grid"><input id="pWF" type="number" step=".1" value="19"><input id="pWR" type="number" step=".1" value="18"></div></div>
+</div>
+<div id="pressureSolveStatus" class="notice small">
+Generated cold pressures are solved from absolute pressure (ideal-gas relation) at the selected reference temperature. Imported AC cold pressures are reference-only and are not copied into the new tire.
+</div>
+</div>
+
+<div class="card">
+<h2>5. AC/CSP output rules</h2>
+<div class="checkrow">
+<label><input id="extended" type="checkbox" checked>extended-2 metadata</label>
+<label><input id="legacyThermal" type="checkbox" checked>Legacy thermal model</label>
+<label><input id="wetTread" type="checkbox" checked>Wet tread-depth fields</label>
+</div>
+<div class="notice small">Legacy thermal is the default here. The generator will not silently enable CSP Thermal Model v2. This keeps the current Supra validation path intact.</div>
+<div class="grid" style="margin:10px 0">
+ <div><label>Wear calibration status</label><select id="wearStatus"><option value="provisional">Provisional / evidence-weighted</option><option value="imported">Preserve imported AC behavior as reference</option><option value="historical">Historically calibrated from stint evidence</option></select></div>
+ <div><label>Calibration note</label><input id="wearNote" value="Wear curve remains provisional until period stint/degradation evidence is mapped to virtual km."></div>
+</div>
+<h3>Terminal tire failure</h3>
+<div class="checkrow">
+ <label><input id="terminalFailure" type="checkbox" checked>Simulate terminal tire failure / puncture cliff</label>
+</div>
+<div class="grid3" style="margin:10px 0">
+ <div><label>End normal wear curve at or above grip (%)</label><input id="terminalNormalGrip" type="number" min="51" max="95" step="1" value="60"></div>
+ <div><label>Failure grip (%)</label><input id="terminalFailureGrip" type="number" min="1" max="99" step="1" value="50"></div>
+ <div><label>Failure gap after final normal point (vKm)</label><input id="terminalFailureGap" type="number" min="0.01" max="10" step="0.01" value="0.20"></div>
+</div>
+<div class="notice small">
+When enabled, Tire Lab removes the unrealistic very-low-grip tail after the final configured normal-wear point at or above the selected threshold, then adds one final point a short virtual-distance later. The default RAC-style behavior is a 0.20 vKm gap followed by 50% grip. This is a terminal casing/tread-failure simulation, not literal air-pressure loss.
+</div>
+<div class="actions">
+ <button class="primary" id="generate">Generate + validate</button>
+ <button class="good" id="downloadZip" disabled>Download AC tire pack ZIP</button>
+ <button id="reset">Re-apply historical category</button>
+</div>
+<div id="outputName" class="small muted" style="margin-top:8px">Output ZIP name follows the car name. Every exported pack includes a car-named Historical Tire Accuracy & Evidence PDF report.</div>
+</div>
+
+<div class="card">
+<h2>6. Tire curves</h2>
+<div class="grid3 graph-controls">
+ <div><label>Graph compound</label><select id="graphCompound"></select></div>
+ <div><label>Graphs update from</label><div class="small muted">Current generated compound data</div></div>
+ <div><label>Displayed curves</label><div class="small muted">Wear · temperature/grip · peak grip</div></div>
+</div>
+<div class="graph-grid">
+ <div class="graph-card"><h3>Wear → grip</h3><canvas id="wearGraph" width="640" height="300"></canvas><div class="small muted">Virtual km versus remaining grip. Front and rear shown separately, including terminal failure when enabled.</div></div>
+ <div class="graph-card"><h3>Temperature → grip</h3><canvas id="tempGraph" width="640" height="300"></canvas><div class="small muted">Compound PERFORMANCE_CURVE. The 100% plateau/window is visible directly.</div></div>
+ <div class="graph-card"><h3>Peak grip by compound</h3><canvas id="gripGraph" width="640" height="300"></canvas><div class="small muted">Generated DY_REF and DX_REF for every selected compound.</div></div>
+</div>
+</div>
+
+</section>
+
+<section>
+
+<div class="card update-card">
+<h2>Tire Lab updates</h2>
+<div class="grid">
+ <div><label>Installed build</label><div><b id="installedBuild">v0.5.0</b></div></div>
+ <div><label>Update channel</label><div>Stable</div></div>
+</div>
+<div class="actions" style="margin-top:10px">
+ <button id="checkUpdates" type="button">Check for updates</button>
+ <button id="installUpdate" class="good" type="button" disabled>Open update download page</button>
+</div>
+<div id="updateStatus" class="small muted">Update check has not run yet.</div>
+
+<div class="knowledge-status">
+ <div class="grid">
+  <div><label>Knowledge release</label><div><b id="knowledgeBuild">v1.2.0</b></div></div>
+  <div><label>Knowledge schema</label><div id="knowledgeSchema">1.0.0</div></div>
+ </div>
+ <div class="actions" style="margin-top:8px">
+  <button id="checkKnowledge" type="button">Check tire knowledge</button>
+  <button id="syncKnowledge" type="button">Sync latest knowledge</button>
+ </div>
+ <div id="knowledgeStatus" class="small muted">Bundled knowledge v1.2.0 loaded; checking local cache.</div>
+</div>
+
+<div class="small muted" style="margin-top:6px">Published builds are checked against the ACLM Tire Tool Updates folder.</div>
+</div>
+
+<div class="card">
+<h2>Validation</h2>
+<div id="status" class="muted">Generate a pack to run validation.</div>
+<div id="validation"></div>
+</div>
+
+<div class="card">
+<h2>Generated files</h2>
+<div id="files" class="muted">No output yet.</div>
+</div>
+
+<div class="card">
+<h2>tyres.ini preview</h2>
+<pre id="preview">No output yet.</pre>
+</div>
+</section>
+</main>
+
+<script src="research_logic.js"></script>
+<script src="historical_categories.js"></script>
+<script src="knowledge_fallback.js"></script>
+<script src="export_naming.js"></script>
+<script src="pressure_solver.js"></script>
+<script src="pdf_report.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

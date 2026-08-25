@@ -1,0 +1,3999 @@
+﻿{
+  "classes": [
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM001",
+      "from": 1908,
+      "id": "CLS001",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 220,
+          "name": "Race"
+        }
+      ],
+      "name": "1908-39 pre-war Grand Prix / record racing",
+      "patterns": [
+        "\\bgrand prix\\b",
+        "\\bgp\\b"
+      ],
+      "to": 1939,
+      "sourceIds": [
+        "SRC003",
+        "SRC004",
+        "SRC001",
+        "SRC047",
+        "SRC048",
+        "SRC049",
+        "SRC050",
+        "SRC051",
+        "SRC052",
+        "SRC053",
+        "SRC054",
+        "SRC055",
+        "SRC056",
+        "SRC057",
+        "SRC058",
+        "SRC059",
+        "SRC060"
+      ],
+      "confidence": 80,
+      "calibrationRule": "Exact car/event sizes and documented speed thresholds override family geometry through Fitment_Overrides. FAM001 force, thermal and wear values remain proxy priors until direct measurements exist."
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM003",
+      "from": 1959,
+      "id": "CLS002",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 450,
+          "name": "Dry period specification"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 180,
+          "name": "Wet / special compound"
+        }
+      ],
+      "name": "1959-65 Formula 1",
+      "patterns": [
+        "formula\\s*(one|1)",
+        "\\bf1\\b"
+      ],
+      "to": 1965
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM004",
+      "from": 1966,
+      "id": "CLS003",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 450,
+          "name": "Dry supplier specification"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 150,
+          "name": "Wet / high-mu specification"
+        }
+      ],
+      "name": "1966-70 Formula 1",
+      "patterns": [
+        "formula\\s*(one|1)",
+        "\\bf1\\b"
+      ],
+      "to": 1970
+    },
+    {
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM005",
+      "from": 1971,
+      "id": "CLS004",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 190,
+          "name": "Race"
+        },
+        {
+          "kind": "qualifying",
+          "lifeKm": 28,
+          "name": "Qualifying"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 100,
+          "name": "Wet"
+        }
+      ],
+      "name": "1971-73 Formula 1",
+      "patterns": [
+        "formula\\s*(one|1)",
+        "\\bf1\\b"
+      ],
+      "to": 1973
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM007",
+      "from": 1982,
+      "id": "CLS005",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 190,
+          "name": "Race"
+        },
+        {
+          "kind": "qualifying",
+          "lifeKm": 35,
+          "name": "Qualifying"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 120,
+          "name": "Wet"
+        }
+      ],
+      "name": "1982-90 Group C / IMSA GTP",
+      "patterns": [
+        "group\\s*c",
+        "imsa\\s*gtp",
+        "\\bgtp\\b"
+      ],
+      "to": 1990
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM008",
+      "from": 1986,
+      "id": "CLS006",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 150,
+          "name": "Dry Race"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Wet"
+        }
+      ],
+      "name": "1986-90 Group A",
+      "patterns": [
+        "group\\s*a"
+      ],
+      "to": 1990
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM009",
+      "from": 1990,
+      "id": "CLS007",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 120,
+          "name": "Control Slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Grooved Wet"
+        }
+      ],
+      "name": "1990 Porsche Carrera Cup 964",
+      "patterns": [
+        "carrera\\s*cup",
+        "porsche.*cup"
+      ],
+      "to": 1993
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM009",
+      "from": 1993,
+      "id": "CLS008",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 120,
+          "name": "Control Slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Wet"
+        }
+      ],
+      "name": "1993-96 Ferrari Challenge 348",
+      "patterns": [
+        "ferrari\\s*challenge",
+        "348\\s*challenge"
+      ],
+      "to": 1996
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM010",
+      "from": 1993,
+      "id": "CLS009",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeKm": 60,
+          "name": "Soft"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 90,
+          "name": "Medium"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 190,
+          "name": "Hard"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 75,
+          "name": "Intermediate"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 90,
+          "name": "Wet"
+        }
+      ],
+      "name": "1993-96 BPR / Le Mans GT",
+      "patterns": [
+        "\\bbpr\\b",
+        "le\\s*mans.*\\bgt",
+        "\\bgt1\\b",
+        "\\bgt2\\b",
+        "grand\\s*touring"
+      ],
+      "to": 1996
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM011",
+      "from": 1995,
+      "id": "CLS010",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeKm": 70,
+          "name": "Dry A"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 110,
+          "name": "Dry B"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 150,
+          "name": "Dry C"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 80,
+          "name": "Wet A"
+        },
+        {
+          "kind": "wet_hard",
+          "lifeKm": 110,
+          "name": "Wet B"
+        }
+      ],
+      "name": "1995-96 ITC / DTM",
+      "patterns": [
+        "\\bitc\\b",
+        "\\bdtm\\b"
+      ],
+      "to": 1996
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM012",
+      "from": 1997,
+      "id": "CLS011",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeKm": 65,
+          "name": "Sprint Slick"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 105,
+          "name": "Race Slick"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 85,
+          "name": "Intermediate"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Wet"
+        }
+      ],
+      "name": "1997-99 FIA GT",
+      "patterns": [
+        "fia\\s*gt",
+        "\\bgt1\\b"
+      ],
+      "to": 1999
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM013",
+      "from": 2000,
+      "id": "CLS012",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeKm": 70,
+          "name": "Sprint"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 115,
+          "name": "Race"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 210,
+          "name": "Endurance"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 90,
+          "name": "Intermediate"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 105,
+          "name": "Wet"
+        }
+      ],
+      "name": "2000-05 FIA GT / ALMS GT",
+      "patterns": [
+        "fia\\s*gt",
+        "\\balms\\b",
+        "\\bn-?gt\\b"
+      ],
+      "to": 2005
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM014",
+      "from": 2000,
+      "id": "CLS013",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 180,
+          "name": "Track Specific Dry"
+        }
+      ],
+      "name": "2000s NASCAR Cup / Busch / Truck",
+      "patterns": [
+        "\\bnascar\\b",
+        "busch",
+        "truck"
+      ],
+      "to": 2008
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM015",
+      "from": 2016,
+      "id": "CLS014",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 140,
+          "name": "Control Dry"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 105,
+          "name": "Control Wet"
+        }
+      ],
+      "name": "2016-18 Global MX-5 Cup",
+      "patterns": [
+        "mx-?5\\s*cup",
+        "mazda.*cup"
+      ],
+      "to": 2018
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM015",
+      "from": 2017,
+      "id": "CLS015",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 120,
+          "name": "Road Course Dry"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Road Course Wet"
+        }
+      ],
+      "name": "2017 Indy Lights",
+      "patterns": [
+        "indy\\s*lights"
+      ],
+      "to": 2017
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM017",
+      "from": 1950,
+      "id": "CLS016",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 180,
+          "name": "Period Race"
+        }
+      ],
+      "name": "1950-59 Touring / Saloon racing",
+      "patterns": [
+        "touring",
+        "saloon"
+      ],
+      "to": 1959
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM018",
+      "from": 1953,
+      "id": "CLS017",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 260,
+          "name": "Endurance Race"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 140,
+          "name": "Wet / Rain"
+        }
+      ],
+      "name": "1953-61 World Sports Car / Le Mans",
+      "patterns": [
+        "world\\s*sports",
+        "le\\s*mans",
+        "sports\\s*car"
+      ],
+      "to": 1961
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM019",
+      "from": 1960,
+      "id": "CLS018",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 190,
+          "name": "Dry Race"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 120,
+          "name": "Wet"
+        }
+      ],
+      "name": "1960-65 ETCC / Touring / GT",
+      "patterns": [
+        "\\betcc\\b",
+        "touring",
+        "grand\\s*touring",
+        "\\bgt\\b"
+      ],
+      "to": 1965
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM020",
+      "from": 1962,
+      "id": "CLS019",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 850,
+          "name": "Dry endurance specification"
+        },
+        {
+          "kind": "soft",
+          "lifeKm": 350,
+          "name": "Dry higher-mu / sprint specification"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 180,
+          "name": "Rain / high-mu specification"
+        }
+      ],
+      "name": "1962-65 World Sports Car / Prototype",
+      "patterns": [
+        "world\\s*sports",
+        "prototype",
+        "le\\s*mans"
+      ],
+      "to": 1965
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM021",
+      "from": 1966,
+      "id": "CLS020",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 150,
+          "name": "Dry Race"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Wet"
+        }
+      ],
+      "name": "1966-71 ETCC / Trans-Am / Touring",
+      "patterns": [
+        "\\betcc\\b",
+        "trans-?am",
+        "touring"
+      ],
+      "to": 1971
+    },
+    {
+      "construction": "mixed",
+      "dryType": "treaded",
+      "familyId": "FAM022",
+      "from": 1966,
+      "id": "CLS021",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 1100,
+          "name": "Dry endurance compound/spec"
+        },
+        {
+          "kind": "soft",
+          "lifeKm": 420,
+          "name": "Dry higher-mu / sprint spec"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 180,
+          "name": "Wet / intermediate spec"
+        }
+      ],
+      "name": "1966-71 World Sportscar / Group 4-6",
+      "patterns": [
+        "world\\s*sport",
+        "group\\s*[46]",
+        "le\\s*mans",
+        "sports\\s*prototype"
+      ],
+      "to": 1971
+    },
+    {
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM023",
+      "from": 1972,
+      "id": "CLS022",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 130,
+          "name": "Race Slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 90,
+          "name": "Wet"
+        }
+      ],
+      "name": "1972-76 Group 2 / ETCC Touring",
+      "patterns": [
+        "group\\s*2",
+        "\\betcc\\b",
+        "touring"
+      ],
+      "to": 1976
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM024",
+      "from": 1972,
+      "id": "CLS023",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 600,
+          "name": "Endurance slick"
+        },
+        {
+          "kind": "qualifying",
+          "lifeKm": 90,
+          "name": "Sprint / qualifying slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 160,
+          "name": "Wet specification"
+        }
+      ],
+      "name": "1972-76 World Championship Makes / Sports Prototype",
+      "patterns": [
+        "world\\s*championship.*makes",
+        "sports\\s*prototype",
+        "world\\s*sport",
+        "le\\s*mans"
+      ],
+      "to": 1976
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM025",
+      "from": 1977,
+      "id": "CLS024",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeKm": 55,
+          "name": "Sprint / Qualifying"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 130,
+          "name": "Race"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 230,
+          "name": "Endurance"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 105,
+          "name": "Wet"
+        }
+      ],
+      "name": "1977-81 Group 5 / DRM / World Makes",
+      "patterns": [
+        "group\\s*5",
+        "\\bdrm\\b",
+        "world.*makes"
+      ],
+      "to": 1981
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM026",
+      "from": 1977,
+      "id": "CLS025",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 135,
+          "name": "Race Slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 90,
+          "name": "Wet"
+        }
+      ],
+      "name": "1977-81 Group 2 / ETCC Touring",
+      "patterns": [
+        "group\\s*2",
+        "\\betcc\\b",
+        "touring"
+      ],
+      "to": 1981
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM027",
+      "from": 1982,
+      "id": "CLS026",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 145,
+          "name": "Dry Race"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 90,
+          "name": "Wet"
+        }
+      ],
+      "name": "1982-85 Group A Touring",
+      "patterns": [
+        "group\\s*a",
+        "touring"
+      ],
+      "to": 1985
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM028",
+      "from": 1982,
+      "id": "CLS027",
+      "menu": [
+        {
+          "kind": "qualifying",
+          "lifeKm": 38,
+          "name": "Qualifying"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 145,
+          "name": "Race"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 250,
+          "name": "Endurance"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 110,
+          "name": "Wet"
+        }
+      ],
+      "name": "1982-85 Group C / World Endurance",
+      "patterns": [
+        "group\\s*c",
+        "world\\s*endurance",
+        "\\bwec\\b"
+      ],
+      "to": 1985
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM029",
+      "from": 1986,
+      "id": "CLS028",
+      "menu": [
+        {
+          "kind": "qualifying",
+          "lifeKm": 38,
+          "name": "Qualifying"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 155,
+          "name": "Race"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 280,
+          "name": "Endurance"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 100,
+          "name": "Intermediate"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 115,
+          "name": "Wet"
+        }
+      ],
+      "name": "1986-90 Group C / WSPC",
+      "patterns": [
+        "group\\s*c",
+        "\\bwspc\\b",
+        "world\\s*sports"
+      ],
+      "to": 1990
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM030",
+      "from": 1981,
+      "id": "CLS029",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeKm": 70,
+          "name": "Sprint"
+        },
+        {
+          "kind": "race",
+          "lifeKm": 185,
+          "name": "Endurance"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 100,
+          "name": "Wet"
+        }
+      ],
+      "name": "1981-90 IMSA GTP",
+      "patterns": [
+        "imsa\\s*gtp",
+        "\\bgtp\\b"
+      ],
+      "to": 1990
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM031",
+      "from": 1980,
+      "id": "CLS030",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 140,
+          "name": "Dry Race"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 90,
+          "name": "Wet"
+        }
+      ],
+      "name": "1980-90 IMSA GT / Trans-Am",
+      "patterns": [
+        "imsa\\s*(gt|gto|gtu)",
+        "trans-?am"
+      ],
+      "to": 1990
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM009",
+      "from": 1994,
+      "id": "CLS031",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 120,
+          "name": "Control Slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 95,
+          "name": "Wet"
+        }
+      ],
+      "name": "1994-96 Porsche 993 Cup / Supercup",
+      "patterns": [
+        "993.*(cup|supercup)",
+        "porsche.*supercup",
+        "\\bsupercup\\b"
+      ],
+      "to": 1996
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM032",
+      "from": 1962,
+      "id": "CLS032",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 500,
+          "name": "Dry R6/R7 specification"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 160,
+          "name": "High-mu rain specification"
+        }
+      ],
+      "name": "1962-65 Formula 1 R6/R7 era",
+      "patterns": [
+        "formula\\s*(one|1)",
+        "\\bf1\\b",
+        "\\br6\\b",
+        "\\br7\\b"
+      ],
+      "to": 1965
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "familyId": "FAM033",
+      "from": 1968,
+      "id": "CLS033",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 320,
+          "name": "Pure-dry / dry pattern"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 280,
+          "name": "Wet-dry compromise"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 120,
+          "name": "Pure-wet / high-mu"
+        }
+      ],
+      "name": "1968-70 Formula 1 transition",
+      "patterns": [
+        "formula\\s*(one|1)",
+        "\\bf1\\b"
+      ],
+      "to": 1970
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM034",
+      "from": 1967,
+      "id": "CLS034",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 550,
+          "name": "Early slick / dry experimental spec"
+        },
+        {
+          "kind": "hard",
+          "lifeKm": 900,
+          "name": "Treaded endurance alternative"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 180,
+          "name": "Wet / treaded spec"
+        }
+      ],
+      "name": "1967-68 World Sportscar early slick branch",
+      "patterns": [
+        "world\\s*sport",
+        "prototype",
+        "le\\s*mans"
+      ],
+      "to": 1968
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM035",
+      "from": 1968,
+      "id": "CLS035",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 850,
+          "name": "Dry endurance specification"
+        },
+        {
+          "kind": "soft",
+          "lifeKm": 300,
+          "name": "Dry higher-mu / sprint specification"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 300,
+          "name": "Wet-dry compromise"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 140,
+          "name": "Pure-wet specification"
+        }
+      ],
+      "name": "1968-70 World Sportscar / Group 4-6 transition",
+      "patterns": [
+        "world\\s*sport",
+        "group\\s*[46]",
+        "le\\s*mans",
+        "prototype"
+      ],
+      "to": 1970
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "familyId": "FAM036",
+      "from": 1969,
+      "id": "CLS036",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 500,
+          "name": "Dry supplier specification"
+        },
+        {
+          "kind": "intermediate",
+          "lifeKm": 280,
+          "name": "Wet-dry / compromise specification"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 140,
+          "name": "Wet specification"
+        }
+      ],
+      "name": "1969-71 ETCC / Trans-Am / Touring transition",
+      "patterns": [
+        "\\betcc\\b",
+        "trans-?am",
+        "touring",
+        "imsa"
+      ],
+      "to": 1971
+    },
+    {
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM037",
+      "from": 1974,
+      "id": "CLS037",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeKm": 320,
+          "name": "Race slick"
+        },
+        {
+          "kind": "qualifying",
+          "lifeKm": 35,
+          "name": "Qualifying / higher-mu slick"
+        },
+        {
+          "kind": "wet",
+          "lifeKm": 150,
+          "name": "Wet"
+        }
+      ],
+      "name": "1974-76 Formula 1 mature Goodyear slick era",
+      "patterns": [
+        "formula\\s*(one|1)",
+        "\\bf1\\b"
+      ],
+      "to": 1976
+    }
+  ],
+  "families": [
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1908,
+      "id": "FAM001",
+      "name": "Pre-war GP / record racing pneumatic",
+      "to": 1939,
+      "typical": "Grand Prix / record / sports racing",
+      "constructionNote": "Period pneumatic; bias/cross-ply family proxy, tall sidewall and treaded; exact casing source-dependent",
+      "sourceIds": [
+        "SRC003",
+        "SRC004",
+        "SRC001",
+        "SRC047",
+        "SRC048",
+        "SRC049",
+        "SRC050",
+        "SRC051",
+        "SRC052",
+        "SRC053",
+        "SRC054",
+        "SRC055",
+        "SRC056",
+        "SRC057",
+        "SRC058",
+        "SRC059",
+        "SRC060"
+      ],
+      "historicalConfidence": 82,
+      "physicsConfidence": 95,
+      "remainingGap": "Period F&M, inflation pressure, casing/ply, compound and tire-life evidence remain sparse; pre-1930 numerical physics is proxy-based.",
+      "geometryRule": "Exact source-backed car/event fitments override family geometry; numerical physics priors remain unchanged."
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1950,
+      "id": "FAM002",
+      "name": "1950s GP / sports treaded bias",
+      "to": 1958,
+      "typical": "F1 / sports cars / Le Mans"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1959,
+      "id": "FAM003",
+      "name": "Dunlop RS5 nylon GP",
+      "to": 1965,
+      "typical": "Formula 1 / sports racing"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1966,
+      "id": "FAM004",
+      "name": "Late-60s tire-war F1",
+      "to": 1970,
+      "typical": "Formula 1 / top formula"
+    },
+    {
+      "construction": "bias",
+      "dryType": "slick",
+      "from": 1971,
+      "id": "FAM005",
+      "name": "1971-73 Formula slick cross-ply",
+      "to": 1973,
+      "typical": "Formula 1 / F2 / top formula"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1977,
+      "id": "FAM006",
+      "name": "Late-70s/early-80s high-load slick",
+      "to": 1983,
+      "typical": "F1 / Can-Am / Group 5 / early Group C"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1982,
+      "id": "FAM007",
+      "name": "1980s prototype radial / Group C",
+      "to": 1990,
+      "typical": "Group C / IMSA GTP"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 1986,
+      "id": "FAM008",
+      "name": "Late-80s Group A touring radial",
+      "to": 1990,
+      "typical": "Group A / touring cars"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 1990,
+      "id": "FAM009",
+      "name": "Early one-make GT radial",
+      "to": 1996,
+      "typical": "Porsche Cup / Ferrari Challenge"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 1993,
+      "id": "FAM010",
+      "name": "Early-90s BPR / Le Mans GT radial",
+      "to": 1996,
+      "typical": "BPR GT1/GT2 / Le Mans GT"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 1994,
+      "id": "FAM011",
+      "name": "ITC/DTM advanced touring radial",
+      "to": 1996,
+      "typical": "ITC / DTM"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 1997,
+      "id": "FAM012",
+      "name": "Late-90s FIA GT radial",
+      "to": 1999,
+      "typical": "FIA GT / GT1"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 2000,
+      "id": "FAM013",
+      "name": "Early-2000s FIA GT / ALMS radial",
+      "to": 2005,
+      "typical": "FIA GT / ALMS GT / N-GT"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 2000,
+      "id": "FAM014",
+      "name": "2000s NASCAR radial stock-car",
+      "to": 2008,
+      "typical": "NASCAR"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 2015,
+      "id": "FAM015",
+      "name": "Modern control road-race radial",
+      "to": 2020,
+      "typical": "MX-5 Cup / Indy Lights / USF2000"
+    },
+    {
+      "construction": "bias",
+      "dryType": "slick",
+      "from": 1970,
+      "id": "FAM016",
+      "name": "Formula Ford cross-ply control tire",
+      "to": 2026,
+      "typical": "Formula Ford / historic formula"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1950,
+      "id": "FAM017",
+      "name": "1950s touring / saloon competition bias",
+      "to": 1959,
+      "typical": "Touring / saloon / early GT"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1953,
+      "id": "FAM018",
+      "name": "1950s world sports-car / endurance bias",
+      "to": 1961,
+      "typical": "World Sports Car / Le Mans"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1960,
+      "id": "FAM019",
+      "name": "Early-60s touring / GT L-section cross-ply",
+      "to": 1965,
+      "typical": "ETCC / touring / GT"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1962,
+      "id": "FAM020",
+      "name": "Early-60s world sports-car / prototype cross-ply",
+      "to": 1965,
+      "typical": "World Sports Car / Le Mans prototype"
+    },
+    {
+      "construction": "bias",
+      "dryType": "treaded",
+      "from": 1966,
+      "id": "FAM021",
+      "name": "Late-60s touring / Trans-Am competition bias",
+      "to": 1971,
+      "typical": "ETCC / Trans-Am / touring"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "treaded",
+      "from": 1966,
+      "id": "FAM022",
+      "name": "Late-60s world sportscar / Group 4-6 cross-ply",
+      "to": 1971,
+      "typical": "World Sportscar / Group 4-6 / Le Mans"
+    },
+    {
+      "construction": "bias",
+      "dryType": "slick",
+      "from": 1972,
+      "id": "FAM023",
+      "name": "1970s Group 2 / ETCC touring slick cross-ply",
+      "to": 1976,
+      "typical": "Group 2 / ETCC / touring"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1972,
+      "id": "FAM024",
+      "name": "1970s world endurance / sports-prototype slick",
+      "to": 1976,
+      "typical": "World Championship Makes / sports prototype"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1977,
+      "id": "FAM025",
+      "name": "Late-70s Group 5 / DRM high-load slick",
+      "to": 1981,
+      "typical": "Group 5 / DRM / World Makes"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1977,
+      "id": "FAM026",
+      "name": "Late-70s touring / Group 2 slick",
+      "to": 1981,
+      "typical": "ETCC / Group 2 / touring"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1982,
+      "id": "FAM027",
+      "name": "Early-80s Group A touring transition",
+      "to": 1985,
+      "typical": "Group A / touring"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1982,
+      "id": "FAM028",
+      "name": "Early Group C / World Endurance transition",
+      "to": 1985,
+      "typical": "Group C / World Endurance"
+    },
+    {
+      "construction": "radial",
+      "dryType": "slick",
+      "from": 1986,
+      "id": "FAM029",
+      "name": "Late-80s Group C / WSPC endurance radial",
+      "to": 1990,
+      "typical": "Group C / WSPC"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1981,
+      "id": "FAM030",
+      "name": "1980s IMSA GTP prototype radial",
+      "to": 1990,
+      "typical": "IMSA GTP"
+    },
+    {
+      "construction": "mixed",
+      "dryType": "slick",
+      "from": 1980,
+      "id": "FAM031",
+      "name": "1980s IMSA GT / Trans-Am competition radial",
+      "to": 1990,
+      "typical": "IMSA GTO/GTU / Trans-Am"
+    },
+    {
+      "construction": "bias",
+      "degradationProfile": "treaded_recovery",
+      "dryType": "treaded",
+      "from": 1962,
+      "historicalAbsoluteConfidence": 84,
+      "id": "FAM032",
+      "name": "Dunlop R6/R7 synthetic-compound treaded GP evolution",
+      "physicsFamilyConfidence": 93,
+      "to": 1965,
+      "typical": "Formula 1 / high-speed formula racing"
+    },
+    {
+      "construction": "bias",
+      "degradationProfile": "treaded_recovery",
+      "dryType": "treaded",
+      "from": 1968,
+      "historicalAbsoluteConfidence": 82,
+      "id": "FAM033",
+      "name": "1968-70 Formula patterned/low-profile transition",
+      "physicsFamilyConfidence": 93,
+      "to": 1970,
+      "typical": "Formula 1 / F2 / Formula 5000"
+    },
+    {
+      "construction": "mixed",
+      "degradationProfile": "mixed_transition",
+      "dryType": "slick",
+      "from": 1967,
+      "historicalAbsoluteConfidence": 78,
+      "id": "FAM034",
+      "name": "1967-68 world sportscar early slick/radial branch",
+      "physicsFamilyConfidence": 91,
+      "to": 1968,
+      "typical": "World Sportscar / prototypes / Le Mans"
+    },
+    {
+      "construction": "mixed",
+      "degradationProfile": "mixed_transition",
+      "dryType": "slick",
+      "from": 1968,
+      "historicalAbsoluteConfidence": 82,
+      "id": "FAM035",
+      "name": "1968-70 world sportscar tread-to-slick transition",
+      "physicsFamilyConfidence": 93,
+      "to": 1970,
+      "typical": "World Sportscar / Group 4-6 / Le Mans"
+    },
+    {
+      "construction": "mixed",
+      "degradationProfile": "mixed_transition",
+      "dryType": "slick",
+      "from": 1969,
+      "historicalAbsoluteConfidence": 72,
+      "id": "FAM036",
+      "name": "1969-71 touring / Trans-Am transition",
+      "physicsFamilyConfidence": 89,
+      "to": 1971,
+      "typical": "ETCC / Trans-Am / touring / IMSA sedans"
+    },
+    {
+      "construction": "bias",
+      "degradationProfile": "slick",
+      "dryType": "slick",
+      "from": 1974,
+      "historicalAbsoluteConfidence": 88,
+      "id": "FAM037",
+      "name": "1974-76 Formula 1 mature wide slick cross-ply",
+      "physicsFamilyConfidence": 95,
+      "to": 1976,
+      "typical": "Formula 1"
+    }
+  ],
+  "generatorPriors": {
+    "FAM001": {
+      "camberGain": 0.22,
+      "coldDelta": 3,
+      "cool": 1.5,
+      "coreTransfer": 0.00012,
+      "damp": 420,
+      "dcamber0": 1.5,
+      "dcamber1": -9,
+      "falloffLevel": 0.96,
+      "falloffSpeed": 2.2,
+      "familyId": "FAM001",
+      "flex": 0.0022,
+      "flexGain": 0.095,
+      "frictionAngle": 13,
+      "frictionK": 0.032,
+      "gripLat": 0.82,
+      "gripLong": 0.78,
+      "hotPsi": 30,
+      "internalCoreTransfer": 0.001,
+      "loadX": 0.76,
+      "loadY": 0.72,
+      "patchTransfer": 0.0002,
+      "pressureGainPerMm": 14,
+      "radiusK": 0.002,
+      "ratePerWidth": 480,
+      "relax": 0.165,
+      "rollingK": 0.2,
+      "rr0": 18,
+      "rr1": 0.0012,
+      "rrSlip": 3200,
+      "speedSens": 0.001,
+      "surfaceTransfer": 0.009,
+      "tempOpt": 68,
+      "tempWidth": 26,
+      "xmu": 0.22
+    },
+    "FAM002": {
+      "camberGain": 0.21,
+      "coldDelta": 3,
+      "cool": 1.55,
+      "coreTransfer": 0.00013,
+      "damp": 450,
+      "dcamber0": 1.45,
+      "dcamber1": -9.5,
+      "falloffLevel": 0.955,
+      "falloffSpeed": 2.4,
+      "familyId": "FAM002",
+      "flex": 0.00195,
+      "flexGain": 0.09,
+      "frictionAngle": 12.5,
+      "frictionK": 0.033,
+      "gripLat": 0.92,
+      "gripLong": 0.88,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.001,
+      "loadX": 0.78,
+      "loadY": 0.74,
+      "patchTransfer": 0.00021,
+      "pressureGainPerMm": 16,
+      "radiusK": 0.0025,
+      "ratePerWidth": 520,
+      "relax": 0.15,
+      "rollingK": 0.195,
+      "rr0": 17,
+      "rr1": 0.0011,
+      "rrSlip": 3400,
+      "speedSens": 0.0011,
+      "surfaceTransfer": 0.0095,
+      "tempOpt": 72,
+      "tempWidth": 26,
+      "xmu": 0.23
+    },
+    "FAM003": {
+      "camberGain": 0.2,
+      "coldDelta": 3,
+      "cool": 1.6,
+      "coreTransfer": 0.00014,
+      "damp": 470,
+      "dcamber0": 1.42,
+      "dcamber1": -10,
+      "falloffLevel": 0.95,
+      "falloffSpeed": 2.6,
+      "familyId": "FAM003",
+      "flex": 0.00175,
+      "flexGain": 0.086,
+      "frictionAngle": 12,
+      "frictionK": 0.034,
+      "gripLat": 1.02,
+      "gripLong": 0.98,
+      "hotPsi": 26,
+      "internalCoreTransfer": 0.0011,
+      "loadX": 0.8,
+      "loadY": 0.76,
+      "patchTransfer": 0.00022,
+      "pressureGainPerMm": 18,
+      "radiusK": 0.003,
+      "ratePerWidth": 560,
+      "relax": 0.138,
+      "rollingK": 0.19,
+      "rr0": 16,
+      "rr1": 0.001,
+      "rrSlip": 3500,
+      "speedSens": 0.0012,
+      "surfaceTransfer": 0.01,
+      "tempOpt": 76,
+      "tempWidth": 25,
+      "xmu": 0.24
+    },
+    "FAM004": {
+      "camberGain": 0.19,
+      "coldDelta": 3,
+      "cool": 1.7,
+      "coreTransfer": 0.00015,
+      "damp": 500,
+      "dcamber0": 1.38,
+      "dcamber1": -10.5,
+      "falloffLevel": 0.945,
+      "falloffSpeed": 2.8,
+      "familyId": "FAM004",
+      "flex": 0.00155,
+      "flexGain": 0.082,
+      "frictionAngle": 11.5,
+      "frictionK": 0.036,
+      "gripLat": 1.15,
+      "gripLong": 1.1,
+      "hotPsi": 24,
+      "internalCoreTransfer": 0.00115,
+      "loadX": 0.82,
+      "loadY": 0.78,
+      "patchTransfer": 0.00023,
+      "pressureGainPerMm": 20,
+      "radiusK": 0.0035,
+      "ratePerWidth": 610,
+      "relax": 0.125,
+      "rollingK": 0.185,
+      "rr0": 15,
+      "rr1": 0.0009,
+      "rrSlip": 3700,
+      "speedSens": 0.0014,
+      "surfaceTransfer": 0.0105,
+      "tempOpt": 80,
+      "tempWidth": 24,
+      "xmu": 0.25
+    },
+    "FAM005": {
+      "camberGain": 0.18,
+      "coldDelta": 3,
+      "cool": 1.8,
+      "coreTransfer": 0.00016,
+      "damp": 520,
+      "dcamber0": 1.34,
+      "dcamber1": -11,
+      "falloffLevel": 0.94,
+      "falloffSpeed": 3,
+      "familyId": "FAM005",
+      "flex": 0.00138,
+      "flexGain": 0.08,
+      "frictionAngle": 11,
+      "frictionK": 0.038,
+      "gripLat": 1.32,
+      "gripLong": 1.27,
+      "hotPsi": 22,
+      "internalCoreTransfer": 0.0012,
+      "loadX": 0.84,
+      "loadY": 0.8,
+      "patchTransfer": 0.00024,
+      "pressureGainPerMm": 22,
+      "radiusK": 0.004,
+      "ratePerWidth": 660,
+      "relax": 0.115,
+      "rollingK": 0.18,
+      "rr0": 14,
+      "rr1": 0.00082,
+      "rrSlip": 3900,
+      "speedSens": 0.0016,
+      "surfaceTransfer": 0.011,
+      "tempOpt": 84,
+      "tempWidth": 23,
+      "xmu": 0.26
+    },
+    "FAM006": {
+      "camberGain": 0.17,
+      "coldDelta": 3,
+      "cool": 1.9,
+      "coreTransfer": 0.00017,
+      "damp": 560,
+      "dcamber0": 1.3,
+      "dcamber1": -11.5,
+      "falloffLevel": 0.935,
+      "falloffSpeed": 3.2,
+      "familyId": "FAM006",
+      "flex": 0.00118,
+      "flexGain": 0.078,
+      "frictionAngle": 10.5,
+      "frictionK": 0.039,
+      "gripLat": 1.45,
+      "gripLong": 1.4,
+      "hotPsi": 23,
+      "internalCoreTransfer": 0.00125,
+      "loadX": 0.85,
+      "loadY": 0.82,
+      "patchTransfer": 0.00025,
+      "pressureGainPerMm": 24,
+      "radiusK": 0.005,
+      "ratePerWidth": 750,
+      "relax": 0.105,
+      "rollingK": 0.175,
+      "rr0": 13,
+      "rr1": 0.00075,
+      "rrSlip": 4100,
+      "speedSens": 0.0019,
+      "surfaceTransfer": 0.0115,
+      "tempOpt": 86,
+      "tempWidth": 22,
+      "xmu": 0.27
+    },
+    "FAM007": {
+      "camberGain": 0.145,
+      "coldDelta": 4,
+      "cool": 2.05,
+      "coreTransfer": 0.00019,
+      "damp": 650,
+      "dcamber0": 1.22,
+      "dcamber1": -12,
+      "falloffLevel": 0.93,
+      "falloffSpeed": 3.5,
+      "familyId": "FAM007",
+      "flex": 0.00092,
+      "flexGain": 0.076,
+      "frictionAngle": 9.7,
+      "frictionK": 0.041,
+      "gripLat": 1.56,
+      "gripLong": 1.52,
+      "hotPsi": 27,
+      "internalCoreTransfer": 0.00135,
+      "loadX": 0.87,
+      "loadY": 0.84,
+      "patchTransfer": 0.00027,
+      "pressureGainPerMm": 29,
+      "radiusK": 0.007,
+      "ratePerWidth": 900,
+      "relax": 0.092,
+      "rollingK": 0.165,
+      "rr0": 11,
+      "rr1": 0.00058,
+      "rrSlip": 4500,
+      "speedSens": 0.0022,
+      "surfaceTransfer": 0.0125,
+      "tempOpt": 90,
+      "tempWidth": 21,
+      "xmu": 0.28
+    },
+    "FAM008": {
+      "camberGain": 0.15,
+      "coldDelta": 4,
+      "cool": 2,
+      "coreTransfer": 0.00018,
+      "damp": 620,
+      "dcamber0": 1.24,
+      "dcamber1": -12,
+      "falloffLevel": 0.935,
+      "falloffSpeed": 3.4,
+      "familyId": "FAM008",
+      "flex": 0.00098,
+      "flexGain": 0.075,
+      "frictionAngle": 10,
+      "frictionK": 0.04,
+      "gripLat": 1.43,
+      "gripLong": 1.4,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.0013,
+      "loadX": 0.86,
+      "loadY": 0.83,
+      "patchTransfer": 0.00026,
+      "pressureGainPerMm": 28,
+      "radiusK": 0.006,
+      "ratePerWidth": 850,
+      "relax": 0.096,
+      "rollingK": 0.17,
+      "rr0": 12,
+      "rr1": 0.00062,
+      "rrSlip": 4400,
+      "speedSens": 0.002,
+      "surfaceTransfer": 0.012,
+      "tempOpt": 88,
+      "tempWidth": 22,
+      "xmu": 0.28
+    },
+    "FAM009": {
+      "camberGain": 0.145,
+      "coldDelta": 4,
+      "cool": 2.05,
+      "coreTransfer": 0.00019,
+      "damp": 640,
+      "dcamber0": 1.2,
+      "dcamber1": -12.5,
+      "falloffLevel": 0.93,
+      "falloffSpeed": 3.5,
+      "familyId": "FAM009",
+      "flex": 0.0009,
+      "flexGain": 0.075,
+      "frictionAngle": 9.6,
+      "frictionK": 0.041,
+      "gripLat": 1.49,
+      "gripLong": 1.45,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.00135,
+      "loadX": 0.87,
+      "loadY": 0.84,
+      "patchTransfer": 0.00027,
+      "pressureGainPerMm": 30,
+      "radiusK": 0.0065,
+      "ratePerWidth": 900,
+      "relax": 0.09,
+      "rollingK": 0.165,
+      "rr0": 11,
+      "rr1": 0.00058,
+      "rrSlip": 4600,
+      "speedSens": 0.0022,
+      "surfaceTransfer": 0.0125,
+      "tempOpt": 90,
+      "tempWidth": 21,
+      "xmu": 0.28
+    },
+    "FAM010": {
+      "camberGain": 0.14,
+      "coldDelta": 7,
+      "cool": 1.72,
+      "coreTransfer": 0.0003,
+      "damp": 670,
+      "dcamber0": 1.18,
+      "dcamber1": -12.8,
+      "falloffLevel": 0.925,
+      "falloffSpeed": 3.6,
+      "familyId": "FAM010",
+      "flex": 0.00084,
+      "flexGain": 0.075,
+      "frictionAngle": 9.3,
+      "frictionK": 0.049,
+      "gripLat": 1.58,
+      "gripLong": 1.54,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.0022,
+      "loadX": 0.88,
+      "loadY": 0.85,
+      "patchTransfer": 0.00028,
+      "pressureGainPerMm": 32,
+      "radiusK": 0.007,
+      "ratePerWidth": 950,
+      "relax": 0.086,
+      "rollingK": 0.17,
+      "rr0": 10.5,
+      "rr1": 0.00054,
+      "rrSlip": 4800,
+      "speedSens": 0.0023,
+      "surfaceTransfer": 0.0165,
+      "tempOpt": 92,
+      "tempWidth": 21,
+      "xmu": 0.285
+    },
+    "FAM011": {
+      "camberGain": 0.135,
+      "coldDelta": 4,
+      "cool": 2.15,
+      "coreTransfer": 0.00021,
+      "damp": 700,
+      "dcamber0": 1.16,
+      "dcamber1": -13,
+      "falloffLevel": 0.92,
+      "falloffSpeed": 3.8,
+      "familyId": "FAM011",
+      "flex": 0.00078,
+      "flexGain": 0.072,
+      "frictionAngle": 9,
+      "frictionK": 0.043,
+      "gripLat": 1.67,
+      "gripLong": 1.62,
+      "hotPsi": 30,
+      "internalCoreTransfer": 0.00145,
+      "loadX": 0.89,
+      "loadY": 0.86,
+      "patchTransfer": 0.00029,
+      "pressureGainPerMm": 34,
+      "radiusK": 0.0075,
+      "ratePerWidth": 1000,
+      "relax": 0.082,
+      "rollingK": 0.155,
+      "rr0": 10,
+      "rr1": 0.0005,
+      "rrSlip": 5000,
+      "speedSens": 0.0025,
+      "surfaceTransfer": 0.0135,
+      "tempOpt": 94,
+      "tempWidth": 20,
+      "xmu": 0.29
+    },
+    "FAM012": {
+      "camberGain": 0.132,
+      "coldDelta": 4,
+      "cool": 2.2,
+      "coreTransfer": 0.00022,
+      "damp": 720,
+      "dcamber0": 1.14,
+      "dcamber1": -13,
+      "falloffLevel": 0.915,
+      "falloffSpeed": 4,
+      "familyId": "FAM012",
+      "flex": 0.00073,
+      "flexGain": 0.07,
+      "frictionAngle": 8.8,
+      "frictionK": 0.044,
+      "gripLat": 1.73,
+      "gripLong": 1.68,
+      "hotPsi": 30,
+      "internalCoreTransfer": 0.0015,
+      "loadX": 0.9,
+      "loadY": 0.87,
+      "patchTransfer": 0.0003,
+      "pressureGainPerMm": 35,
+      "radiusK": 0.008,
+      "ratePerWidth": 1050,
+      "relax": 0.078,
+      "rollingK": 0.15,
+      "rr0": 9.5,
+      "rr1": 0.00046,
+      "rrSlip": 5200,
+      "speedSens": 0.0026,
+      "surfaceTransfer": 0.014,
+      "tempOpt": 95,
+      "tempWidth": 20,
+      "xmu": 0.29
+    },
+    "FAM013": {
+      "camberGain": 0.128,
+      "coldDelta": 4,
+      "cool": 2.25,
+      "coreTransfer": 0.00023,
+      "damp": 740,
+      "dcamber0": 1.12,
+      "dcamber1": -13,
+      "falloffLevel": 0.91,
+      "falloffSpeed": 4.1,
+      "familyId": "FAM013",
+      "flex": 0.00069,
+      "flexGain": 0.068,
+      "frictionAngle": 8.6,
+      "frictionK": 0.045,
+      "gripLat": 1.78,
+      "gripLong": 1.73,
+      "hotPsi": 30,
+      "internalCoreTransfer": 0.00155,
+      "loadX": 0.91,
+      "loadY": 0.88,
+      "patchTransfer": 0.0003,
+      "pressureGainPerMm": 36,
+      "radiusK": 0.0085,
+      "ratePerWidth": 1100,
+      "relax": 0.074,
+      "rollingK": 0.145,
+      "rr0": 9,
+      "rr1": 0.00043,
+      "rrSlip": 5400,
+      "speedSens": 0.0027,
+      "surfaceTransfer": 0.0145,
+      "tempOpt": 96,
+      "tempWidth": 20,
+      "xmu": 0.295
+    },
+    "FAM014": {
+      "camberGain": 0.125,
+      "coldDelta": 13,
+      "cool": 2.3,
+      "coreTransfer": 0.00023,
+      "damp": 780,
+      "dcamber0": 1.18,
+      "dcamber1": -12.5,
+      "falloffLevel": 0.9,
+      "falloffSpeed": 4,
+      "familyId": "FAM014",
+      "flex": 0.00072,
+      "flexGain": 0.07,
+      "frictionAngle": 8.8,
+      "frictionK": 0.046,
+      "gripLat": 1.48,
+      "gripLong": 1.55,
+      "hotPsi": 43,
+      "internalCoreTransfer": 0.0016,
+      "loadX": 0.86,
+      "loadY": 0.82,
+      "patchTransfer": 0.0003,
+      "pressureGainPerMm": 38,
+      "radiusK": 0.008,
+      "ratePerWidth": 1080,
+      "relax": 0.08,
+      "rollingK": 0.16,
+      "rr0": 10,
+      "rr1": 0.00048,
+      "rrSlip": 5600,
+      "speedSens": 0.0024,
+      "surfaceTransfer": 0.014,
+      "tempOpt": 108,
+      "tempWidth": 15,
+      "xmu": 0.29
+    },
+    "FAM015": {
+      "camberGain": 0.125,
+      "coldDelta": 6,
+      "cool": 2.4,
+      "coreTransfer": 0.00025,
+      "damp": 760,
+      "dcamber0": 1.1,
+      "dcamber1": -13,
+      "falloffLevel": 0.91,
+      "falloffSpeed": 4.2,
+      "familyId": "FAM015",
+      "flex": 0.00062,
+      "flexGain": 0.067,
+      "frictionAngle": 8.5,
+      "frictionK": 0.045,
+      "gripLat": 1.7,
+      "gripLong": 1.66,
+      "hotPsi": 32,
+      "internalCoreTransfer": 0.0017,
+      "loadX": 0.91,
+      "loadY": 0.88,
+      "patchTransfer": 0.0003,
+      "pressureGainPerMm": 39,
+      "radiusK": 0.009,
+      "ratePerWidth": 1150,
+      "relax": 0.07,
+      "rollingK": 0.145,
+      "rr0": 9,
+      "rr1": 0.00042,
+      "rrSlip": 5500,
+      "speedSens": 0.0028,
+      "surfaceTransfer": 0.015,
+      "tempOpt": 95,
+      "tempWidth": 20,
+      "xmu": 0.295
+    },
+    "FAM016": {
+      "camberGain": 0.18,
+      "coldDelta": 3,
+      "cool": 1.8,
+      "coreTransfer": 0.00016,
+      "damp": 500,
+      "dcamber0": 1.35,
+      "dcamber1": -10.5,
+      "falloffLevel": 0.94,
+      "falloffSpeed": 3,
+      "familyId": "FAM016",
+      "flex": 0.00135,
+      "flexGain": 0.08,
+      "frictionAngle": 10.8,
+      "frictionK": 0.038,
+      "gripLat": 1.28,
+      "gripLong": 1.24,
+      "hotPsi": 22,
+      "internalCoreTransfer": 0.0012,
+      "loadX": 0.84,
+      "loadY": 0.8,
+      "patchTransfer": 0.00024,
+      "pressureGainPerMm": 22,
+      "radiusK": 0.004,
+      "ratePerWidth": 620,
+      "relax": 0.112,
+      "rollingK": 0.18,
+      "rr0": 14,
+      "rr1": 0.0008,
+      "rrSlip": 3900,
+      "speedSens": 0.0016,
+      "surfaceTransfer": 0.011,
+      "tempOpt": 82,
+      "tempWidth": 24,
+      "xmu": 0.26
+    },
+    "FAM017": {
+      "camberGain": 0.209,
+      "coldDelta": 6,
+      "cool": 1.555,
+      "coreTransfer": 0.000131,
+      "damp": 452,
+      "dcamber0": 1.447,
+      "dcamber1": -9.55,
+      "falloffLevel": 0.9545,
+      "falloffSpeed": 2.42,
+      "familyId": "FAM017",
+      "flex": 0.00193,
+      "flexGain": 0.09,
+      "frictionAngle": 12.8,
+      "frictionK": 0.0331,
+      "gripLat": 1.05,
+      "gripLong": 1.02,
+      "hotPsi": 36,
+      "internalCoreTransfer": 0.00101,
+      "loadX": 0.782,
+      "loadY": 0.742,
+      "patchTransfer": 0.000211,
+      "pressureGainPerMm": 16.2,
+      "radiusK": 0.00255,
+      "ratePerWidth": 524,
+      "relax": 0.155,
+      "rollingK": 0.1945,
+      "rr0": 16.9,
+      "rr1": 0.00109,
+      "rrSlip": 3410,
+      "speedSens": 0.00111,
+      "surfaceTransfer": 0.00955,
+      "tempOpt": 72.4,
+      "tempWidth": 25.9,
+      "xmu": 0.231
+    },
+    "FAM018": {
+      "camberGain": 0.207,
+      "coldDelta": 5,
+      "cool": 1.565,
+      "coreTransfer": 0.000133,
+      "damp": 456,
+      "dcamber0": 1.441,
+      "dcamber1": -9.65,
+      "falloffLevel": 0.9535,
+      "falloffSpeed": 2.46,
+      "familyId": "FAM018",
+      "flex": 0.00189,
+      "flexGain": 0.09,
+      "frictionAngle": 12.2,
+      "frictionK": 0.0333,
+      "gripLat": 1.12,
+      "gripLong": 1.08,
+      "hotPsi": 34,
+      "internalCoreTransfer": 0.00103,
+      "loadX": 0.786,
+      "loadY": 0.746,
+      "patchTransfer": 0.000213,
+      "pressureGainPerMm": 16.6,
+      "radiusK": 0.00265,
+      "ratePerWidth": 532,
+      "relax": 0.145,
+      "rollingK": 0.1935,
+      "rr0": 16.7,
+      "rr1": 0.00107,
+      "rrSlip": 3430,
+      "speedSens": 0.00113,
+      "surfaceTransfer": 0.00965,
+      "tempOpt": 73.2,
+      "tempWidth": 25.7,
+      "xmu": 0.233
+    },
+    "FAM019": {
+      "camberGain": 0.1975,
+      "coldDelta": 5,
+      "cool": 1.625,
+      "coreTransfer": 0.0001425,
+      "damp": 477.5,
+      "dcamber0": 1.41,
+      "dcamber1": -10.125,
+      "falloffLevel": 0.94875,
+      "falloffSpeed": 2.65,
+      "familyId": "FAM019",
+      "flex": 0.0017,
+      "flexGain": 0.086,
+      "frictionAngle": 11.6,
+      "frictionK": 0.0345,
+      "gripLat": 1.18,
+      "gripLong": 1.14,
+      "hotPsi": 31,
+      "internalCoreTransfer": 0.0011125,
+      "loadX": 0.805,
+      "loadY": 0.765,
+      "patchTransfer": 0.0002225,
+      "pressureGainPerMm": 18.5,
+      "radiusK": 0.003125,
+      "ratePerWidth": 572.5,
+      "relax": 0.132,
+      "rollingK": 0.18875,
+      "rr0": 15.75,
+      "rr1": 0.000975,
+      "rrSlip": 3550,
+      "speedSens": 0.00125,
+      "surfaceTransfer": 0.010125,
+      "tempOpt": 77,
+      "tempWidth": 24.75,
+      "xmu": 0.2425
+    },
+    "FAM020": {
+      "camberGain": 0.196,
+      "coldDelta": 5,
+      "cool": 1.64,
+      "coreTransfer": 0.000144,
+      "damp": 482,
+      "dcamber0": 1.404,
+      "dcamber1": -10.2,
+      "falloffLevel": 0.948,
+      "falloffSpeed": 2.68,
+      "familyId": "FAM020",
+      "flex": 0.00167,
+      "flexGain": 0.085,
+      "frictionAngle": 11.4,
+      "frictionK": 0.0348,
+      "gripLat": 1.23,
+      "gripLong": 1.18,
+      "hotPsi": 30,
+      "internalCoreTransfer": 0.00112,
+      "loadX": 0.808,
+      "loadY": 0.768,
+      "patchTransfer": 0.000224,
+      "pressureGainPerMm": 18.8,
+      "radiusK": 0.0032,
+      "ratePerWidth": 580,
+      "relax": 0.128,
+      "rollingK": 0.188,
+      "rr0": 15.6,
+      "rr1": 0.00096,
+      "rrSlip": 3580,
+      "speedSens": 0.00128,
+      "surfaceTransfer": 0.0102,
+      "tempOpt": 77.6,
+      "tempWidth": 24.6,
+      "xmu": 0.244
+    },
+    "FAM021": {
+      "camberGain": 0.187,
+      "coldDelta": 5,
+      "cool": 1.73,
+      "coreTransfer": 0.000153,
+      "damp": 506,
+      "dcamber0": 1.368,
+      "dcamber1": -10.65,
+      "falloffLevel": 0.9435,
+      "falloffSpeed": 2.86,
+      "familyId": "FAM021",
+      "flex": 0.001499,
+      "flexGain": 0.082,
+      "frictionAngle": 11,
+      "frictionK": 0.0366,
+      "gripLat": 1.27,
+      "gripLong": 1.23,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.001165,
+      "loadX": 0.826,
+      "loadY": 0.786,
+      "patchTransfer": 0.000233,
+      "pressureGainPerMm": 20.6,
+      "radiusK": 0.00365,
+      "ratePerWidth": 625,
+      "relax": 0.122,
+      "rollingK": 0.1835,
+      "rr0": 14.7,
+      "rr1": 0.000876,
+      "rrSlip": 3760,
+      "speedSens": 0.00146,
+      "surfaceTransfer": 0.01065,
+      "tempOpt": 81.2,
+      "tempWidth": 23.7,
+      "xmu": 0.253
+    },
+    "FAM022": {
+      "camberGain": 0.1845,
+      "coldDelta": 5,
+      "cool": 1.755,
+      "coreTransfer": 0.0001555,
+      "damp": 511,
+      "dcamber0": 1.358,
+      "dcamber1": -10.775,
+      "falloffLevel": 0.94225,
+      "falloffSpeed": 2.91,
+      "familyId": "FAM022",
+      "flex": 0.0014565,
+      "flexGain": 0.082,
+      "frictionAngle": 10.8,
+      "frictionK": 0.0371,
+      "gripLat": 1.33,
+      "gripLong": 1.29,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.0011775,
+      "loadX": 0.831,
+      "loadY": 0.791,
+      "patchTransfer": 0.0002355,
+      "pressureGainPerMm": 21.1,
+      "radiusK": 0.003775,
+      "ratePerWidth": 637.5,
+      "relax": 0.116,
+      "rollingK": 0.18225,
+      "rr0": 14.45,
+      "rr1": 0.000856,
+      "rrSlip": 3810,
+      "speedSens": 0.00151,
+      "surfaceTransfer": 0.010775,
+      "tempOpt": 82.2,
+      "tempWidth": 23.45,
+      "xmu": 0.2555
+    },
+    "FAM023": {
+      "camberGain": 0.1775,
+      "coldDelta": 5,
+      "cool": 1.825,
+      "coreTransfer": 0.0001625,
+      "damp": 530,
+      "dcamber0": 1.33,
+      "dcamber1": -11.125,
+      "falloffLevel": 0.93875,
+      "falloffSpeed": 3.05,
+      "familyId": "FAM023",
+      "flex": 0.00133,
+      "flexGain": 0.079,
+      "frictionAngle": 10.6,
+      "frictionK": 0.03825,
+      "gripLat": 1.32,
+      "gripLong": 1.29,
+      "hotPsi": 27,
+      "internalCoreTransfer": 0.0012125,
+      "loadX": 0.8425,
+      "loadY": 0.805,
+      "patchTransfer": 0.0002425,
+      "pressureGainPerMm": 22.5,
+      "radiusK": 0.00425,
+      "ratePerWidth": 682.5,
+      "relax": 0.112,
+      "rollingK": 0.17875,
+      "rr0": 13.75,
+      "rr1": 0.0008025,
+      "rrSlip": 3950,
+      "speedSens": 0.001675,
+      "surfaceTransfer": 0.011125,
+      "tempOpt": 84.5,
+      "tempWidth": 22.75,
+      "xmu": 0.2625
+    },
+    "FAM024": {
+      "camberGain": 0.1755,
+      "coldDelta": 5,
+      "cool": 1.845,
+      "coreTransfer": 0.0001645,
+      "damp": 538,
+      "dcamber0": 1.322,
+      "dcamber1": -11.225,
+      "falloffLevel": 0.93775,
+      "falloffSpeed": 3.09,
+      "familyId": "FAM024",
+      "flex": 0.00129,
+      "flexGain": 0.078,
+      "frictionAngle": 10.4,
+      "frictionK": 0.03845,
+      "gripLat": 1.38,
+      "gripLong": 1.34,
+      "hotPsi": 27,
+      "internalCoreTransfer": 0.0012225,
+      "loadX": 0.8445,
+      "loadY": 0.809,
+      "patchTransfer": 0.0002445,
+      "pressureGainPerMm": 22.9,
+      "radiusK": 0.00445,
+      "ratePerWidth": 700.5,
+      "relax": 0.106,
+      "rollingK": 0.17775,
+      "rr0": 13.55,
+      "rr1": 0.0007885,
+      "rrSlip": 3990,
+      "speedSens": 0.001735,
+      "surfaceTransfer": 0.011225,
+      "tempOpt": 84.9,
+      "tempWidth": 22.55,
+      "xmu": 0.2645
+    },
+    "FAM025": {
+      "camberGain": 0.1625,
+      "coldDelta": 4,
+      "cool": 1.945,
+      "coreTransfer": 0.000176,
+      "damp": 587,
+      "dcamber0": 1.276,
+      "dcamber1": -11.65,
+      "falloffLevel": 0.9335,
+      "falloffSpeed": 3.29,
+      "familyId": "FAM025",
+      "flex": 0.001102,
+      "flexGain": 0.076,
+      "frictionAngle": 10,
+      "frictionK": 0.0396,
+      "gripLat": 1.43,
+      "gripLong": 1.4,
+      "hotPsi": 27,
+      "internalCoreTransfer": 0.00128,
+      "loadX": 0.856,
+      "loadY": 0.826,
+      "patchTransfer": 0.000256,
+      "pressureGainPerMm": 25.5,
+      "radiusK": 0.0056,
+      "ratePerWidth": 795,
+      "relax": 0.1,
+      "rollingK": 0.172,
+      "rr0": 12.4,
+      "rr1": 0.000699,
+      "rrSlip": 4220,
+      "speedSens": 0.00199,
+      "surfaceTransfer": 0.0118,
+      "tempOpt": 87.2,
+      "tempWidth": 21.7,
+      "xmu": 0.273
+    },
+    "FAM026": {
+      "camberGain": 0.165,
+      "coldDelta": 5,
+      "cool": 1.93,
+      "coreTransfer": 0.000174,
+      "damp": 578,
+      "dcamber0": 1.284,
+      "dcamber1": -11.6,
+      "falloffLevel": 0.934,
+      "falloffSpeed": 3.26,
+      "familyId": "FAM026",
+      "flex": 0.001128,
+      "flexGain": 0.076,
+      "frictionAngle": 10.2,
+      "frictionK": 0.0394,
+      "gripLat": 1.38,
+      "gripLong": 1.35,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.00127,
+      "loadX": 0.854,
+      "loadY": 0.824,
+      "patchTransfer": 0.000254,
+      "pressureGainPerMm": 25,
+      "radiusK": 0.0054,
+      "ratePerWidth": 780,
+      "relax": 0.104,
+      "rollingK": 0.173,
+      "rr0": 12.6,
+      "rr1": 0.000716,
+      "rrSlip": 4180,
+      "speedSens": 0.00196,
+      "surfaceTransfer": 0.0117,
+      "tempOpt": 86.8,
+      "tempWidth": 21.8,
+      "xmu": 0.272
+    },
+    "FAM027": {
+      "camberGain": 0.159,
+      "coldDelta": 5,
+      "cool": 1.955,
+      "coreTransfer": 0.0001755,
+      "damp": 593,
+      "dcamber0": 1.267,
+      "dcamber1": -11.775,
+      "falloffLevel": 0.935,
+      "falloffSpeed": 3.31,
+      "familyId": "FAM027",
+      "flex": 0.00107,
+      "flexGain": 0.074,
+      "frictionAngle": 10.1,
+      "frictionK": 0.03955,
+      "gripLat": 1.39,
+      "gripLong": 1.36,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.0012775,
+      "loadX": 0.8555,
+      "loadY": 0.8255,
+      "patchTransfer": 0.0002555,
+      "pressureGainPerMm": 26.2,
+      "radiusK": 0.00555,
+      "ratePerWidth": 805,
+      "relax": 0.101,
+      "rollingK": 0.17225,
+      "rr0": 12.45,
+      "rr1": 0.0006785,
+      "rrSlip": 4265,
+      "speedSens": 0.001955,
+      "surfaceTransfer": 0.011775,
+      "tempOpt": 87.1,
+      "tempWidth": 22,
+      "xmu": 0.2755
+    },
+    "FAM028": {
+      "camberGain": 0.15375,
+      "coldDelta": 4,
+      "cool": 1.9975,
+      "coreTransfer": 0.000183,
+      "damp": 618.5,
+      "dcamber0": 1.248,
+      "dcamber1": -11.825,
+      "falloffLevel": 0.93175,
+      "falloffSpeed": 3.395,
+      "familyId": "FAM028",
+      "flex": 0.001011,
+      "flexGain": 0.073,
+      "frictionAngle": 9.9,
+      "frictionK": 0.0403,
+      "gripLat": 1.45,
+      "gripLong": 1.42,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.001315,
+      "loadX": 0.863,
+      "loadY": 0.833,
+      "patchTransfer": 0.000263,
+      "pressureGainPerMm": 27.25,
+      "radiusK": 0.0063,
+      "ratePerWidth": 847.5,
+      "relax": 0.096,
+      "rollingK": 0.1685,
+      "rr0": 11.7,
+      "rr1": 0.0006395,
+      "rrSlip": 4360,
+      "speedSens": 0.002095,
+      "surfaceTransfer": 0.01215,
+      "tempOpt": 88.6,
+      "tempWidth": 21.35,
+      "xmu": 0.2765
+    },
+    "FAM029": {
+      "camberGain": 0.14625,
+      "coldDelta": 4,
+      "cool": 2.0375,
+      "coreTransfer": 0.0001875,
+      "damp": 642.5,
+      "dcamber0": 1.225,
+      "dcamber1": -12,
+      "falloffLevel": 0.93125,
+      "falloffSpeed": 3.475,
+      "familyId": "FAM029",
+      "flex": 0.000935,
+      "flexGain": 0.072,
+      "frictionAngle": 9.6,
+      "frictionK": 0.04075,
+      "gripLat": 1.5,
+      "gripLong": 1.46,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.0013375,
+      "loadX": 0.8675,
+      "loadY": 0.8375,
+      "patchTransfer": 0.0002675,
+      "pressureGainPerMm": 28.75,
+      "radiusK": 0.00675,
+      "ratePerWidth": 887.5,
+      "relax": 0.091,
+      "rollingK": 0.16625,
+      "rr0": 11.25,
+      "rr1": 0.00059,
+      "rrSlip": 4475,
+      "speedSens": 0.00215,
+      "surfaceTransfer": 0.012375,
+      "tempOpt": 89.5,
+      "tempWidth": 21.25,
+      "xmu": 0.28
+    },
+    "FAM030": {
+      "camberGain": 0.146,
+      "coldDelta": 4,
+      "cool": 2.04,
+      "coreTransfer": 0.000188,
+      "damp": 644,
+      "dcamber0": 1.224,
+      "dcamber1": -12,
+      "falloffLevel": 0.931,
+      "falloffSpeed": 3.48,
+      "familyId": "FAM030",
+      "flex": 0.000932,
+      "flexGain": 0.072,
+      "frictionAngle": 9.7,
+      "frictionK": 0.0408,
+      "gripLat": 1.48,
+      "gripLong": 1.45,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.00134,
+      "loadX": 0.868,
+      "loadY": 0.838,
+      "patchTransfer": 0.000268,
+      "pressureGainPerMm": 28.8,
+      "radiusK": 0.0068,
+      "ratePerWidth": 890,
+      "relax": 0.093,
+      "rollingK": 0.166,
+      "rr0": 11.2,
+      "rr1": 0.000588,
+      "rrSlip": 4480,
+      "speedSens": 0.00216,
+      "surfaceTransfer": 0.0124,
+      "tempOpt": 89.6,
+      "tempWidth": 21.2,
+      "xmu": 0.28
+    },
+    "FAM031": {
+      "camberGain": 0.148,
+      "coldDelta": 4,
+      "cool": 2.02,
+      "coreTransfer": 0.000184,
+      "damp": 630,
+      "dcamber0": 1.228,
+      "dcamber1": -12.16,
+      "falloffLevel": 0.933,
+      "falloffSpeed": 3.44,
+      "familyId": "FAM031",
+      "flex": 0.000952,
+      "flexGain": 0.073,
+      "frictionAngle": 9.9,
+      "frictionK": 0.0404,
+      "gripLat": 1.45,
+      "gripLong": 1.42,
+      "hotPsi": 29,
+      "internalCoreTransfer": 0.00132,
+      "loadX": 0.864,
+      "loadY": 0.834,
+      "patchTransfer": 0.000264,
+      "pressureGainPerMm": 28.8,
+      "radiusK": 0.0062,
+      "ratePerWidth": 870,
+      "relax": 0.097,
+      "rollingK": 0.168,
+      "rr0": 11.7,
+      "rr1": 0.000604,
+      "rrSlip": 4480,
+      "speedSens": 0.00206,
+      "surfaceTransfer": 0.0122,
+      "tempOpt": 88.8,
+      "tempWidth": 21.8,
+      "xmu": 0.281
+    },
+    "FAM032": {
+      "camberGain": 0.2,
+      "coldDelta": 3,
+      "cool": 1.6,
+      "coreTransfer": 0.00014,
+      "damp": 470,
+      "dcamber0": 1.42,
+      "dcamber1": -10,
+      "falloffLevel": 0.95,
+      "falloffSpeed": 2.6,
+      "familyId": "FAM032",
+      "flex": 0.00175,
+      "flexGain": 0.086,
+      "frictionAngle": 11.8,
+      "frictionK": 0.034,
+      "gripLat": 1.07,
+      "gripLong": 1.02,
+      "hotPsi": 26,
+      "internalCoreTransfer": 0.0011,
+      "loadX": 0.8,
+      "loadY": 0.76,
+      "patchTransfer": 0.00022,
+      "pressureGainPerMm": 18,
+      "radiusK": 0.003,
+      "ratePerWidth": 575,
+      "relax": 0.138,
+      "rollingK": 0.19,
+      "rr0": 16,
+      "rr1": 0.001,
+      "rrSlip": 3500,
+      "speedSens": 0.0012,
+      "surfaceTransfer": 0.01,
+      "tempOpt": 77,
+      "tempWidth": 25,
+      "xmu": 0.24
+    },
+    "FAM033": {
+      "camberGain": 0.19,
+      "coldDelta": 3,
+      "cool": 1.7,
+      "coreTransfer": 0.00015,
+      "damp": 500,
+      "dcamber0": 1.38,
+      "dcamber1": -10.5,
+      "falloffLevel": 0.945,
+      "falloffSpeed": 2.8,
+      "familyId": "FAM033",
+      "flex": 0.00145,
+      "flexGain": 0.082,
+      "frictionAngle": 10.9,
+      "frictionK": 0.036,
+      "gripLat": 1.22,
+      "gripLong": 1.17,
+      "hotPsi": 24,
+      "internalCoreTransfer": 0.00115,
+      "loadX": 0.82,
+      "loadY": 0.78,
+      "patchTransfer": 0.00023,
+      "pressureGainPerMm": 20,
+      "radiusK": 0.0035,
+      "ratePerWidth": 635,
+      "relax": 0.118,
+      "rollingK": 0.185,
+      "rr0": 15,
+      "rr1": 0.0009,
+      "rrSlip": 3700,
+      "speedSens": 0.0014,
+      "surfaceTransfer": 0.0105,
+      "tempOpt": 82,
+      "tempWidth": 24,
+      "xmu": 0.25
+    },
+    "FAM034": {
+      "camberGain": 0.18,
+      "coldDelta": 5,
+      "cool": 1.755,
+      "coreTransfer": 0.0001555,
+      "damp": 511,
+      "dcamber0": 1.358,
+      "dcamber1": -10.775,
+      "falloffLevel": 0.94225,
+      "falloffSpeed": 2.91,
+      "familyId": "FAM034",
+      "flex": 0.00148,
+      "flexGain": 0.082,
+      "frictionAngle": 10.8,
+      "frictionK": 0.0371,
+      "gripLat": 1.24,
+      "gripLong": 1.2,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.0011775,
+      "loadX": 0.831,
+      "loadY": 0.791,
+      "patchTransfer": 0.0002355,
+      "pressureGainPerMm": 21.1,
+      "radiusK": 0.003775,
+      "ratePerWidth": 625,
+      "relax": 0.12,
+      "rollingK": 0.18225,
+      "rr0": 14.45,
+      "rr1": 0.000856,
+      "rrSlip": 3810,
+      "speedSens": 0.00151,
+      "surfaceTransfer": 0.010775,
+      "tempOpt": 80,
+      "tempWidth": 23.45,
+      "xmu": 0.2555
+    },
+    "FAM035": {
+      "camberGain": 0.18,
+      "coldDelta": 5,
+      "cool": 1.755,
+      "coreTransfer": 0.0001555,
+      "damp": 511,
+      "dcamber0": 1.358,
+      "dcamber1": -10.775,
+      "falloffLevel": 0.94225,
+      "falloffSpeed": 2.91,
+      "familyId": "FAM035",
+      "flex": 0.00138,
+      "flexGain": 0.081,
+      "frictionAngle": 10.5,
+      "frictionK": 0.0371,
+      "gripLat": 1.3,
+      "gripLong": 1.26,
+      "hotPsi": 27,
+      "internalCoreTransfer": 0.0011775,
+      "loadX": 0.831,
+      "loadY": 0.791,
+      "patchTransfer": 0.0002355,
+      "pressureGainPerMm": 21.1,
+      "radiusK": 0.003775,
+      "ratePerWidth": 655,
+      "relax": 0.112,
+      "rollingK": 0.18225,
+      "rr0": 14.45,
+      "rr1": 0.000856,
+      "rrSlip": 3810,
+      "speedSens": 0.00151,
+      "surfaceTransfer": 0.010775,
+      "tempOpt": 83,
+      "tempWidth": 23.45,
+      "xmu": 0.2555
+    },
+    "FAM036": {
+      "camberGain": 0.187,
+      "coldDelta": 5,
+      "cool": 1.73,
+      "coreTransfer": 0.000153,
+      "damp": 506,
+      "dcamber0": 1.368,
+      "dcamber1": -10.65,
+      "falloffLevel": 0.9435,
+      "falloffSpeed": 2.86,
+      "familyId": "FAM036",
+      "flex": 0.0014,
+      "flexGain": 0.081,
+      "frictionAngle": 10.7,
+      "frictionK": 0.0366,
+      "gripLat": 1.3,
+      "gripLong": 1.26,
+      "hotPsi": 28,
+      "internalCoreTransfer": 0.001165,
+      "loadX": 0.826,
+      "loadY": 0.786,
+      "patchTransfer": 0.000233,
+      "pressureGainPerMm": 20.6,
+      "radiusK": 0.00365,
+      "ratePerWidth": 650,
+      "relax": 0.116,
+      "rollingK": 0.1835,
+      "rr0": 14.7,
+      "rr1": 0.000876,
+      "rrSlip": 3760,
+      "speedSens": 0.00146,
+      "surfaceTransfer": 0.01065,
+      "tempOpt": 82,
+      "tempWidth": 23.7,
+      "xmu": 0.253
+    },
+    "FAM037": {
+      "camberGain": 0.17,
+      "coldDelta": 3,
+      "cool": 1.85,
+      "coreTransfer": 0.000165,
+      "damp": 540,
+      "dcamber0": 1.32,
+      "dcamber1": -11.3,
+      "falloffLevel": 0.935,
+      "falloffSpeed": 3.1,
+      "familyId": "FAM037",
+      "flex": 0.0013,
+      "flexGain": 0.078,
+      "frictionAngle": 10.5,
+      "frictionK": 0.039,
+      "gripLat": 1.36,
+      "gripLong": 1.31,
+      "hotPsi": 22,
+      "internalCoreTransfer": 0.00125,
+      "loadX": 0.85,
+      "loadY": 0.81,
+      "patchTransfer": 0.000245,
+      "pressureGainPerMm": 23,
+      "radiusK": 0.0045,
+      "ratePerWidth": 700,
+      "relax": 0.108,
+      "rollingK": 0.18,
+      "rr0": 13.5,
+      "rr1": 0.00078,
+      "rrSlip": 4000,
+      "speedSens": 0.0017,
+      "surfaceTransfer": 0.0115,
+      "tempOpt": 86,
+      "tempWidth": 22,
+      "xmu": 0.265
+    }
+  },
+  "policy": {
+    "promotionRule": "Auto-promote exact A/A-B source-backed fitment geometry and applicability; require explicit review for numerical physics priors.",
+    "runtimeRule": "Curated knowledge takes precedence over broad web inference. Vehicle speeds are applicability context, not tire speed ratings. Wheel-change counts are operational evidence, not direct tire life.",
+    "automaticFitmentRule": "Exact car/event axle fitments override family geometry; preserve period notation and documented speed thresholds."
+  },
+  "product": "ACLM Tire Knowledge",
+  "profiles": [
+    {
+      "aliases": [
+        "Porsche 964 Carrera Cup",
+        "964 Carrera Cup",
+        "Carrera Cup 964"
+      ],
+      "brand": "Porsche",
+      "classId": "CLS007",
+      "confidence": 93,
+      "display": "1990 Porsche 964 Carrera Cup",
+      "driveLayout": "RWD",
+      "frontSize": "245/620-17",
+      "id": "CAR001",
+      "massKg": 1120,
+      "model": "964",
+      "rearSize": "265/630-17",
+      "sourceIds": [
+        "SRC024"
+      ],
+      "supplier": "Pirelli",
+      "variant": "Carrera Cup",
+      "wheelbaseM": 2.272,
+      "year": 1990
+    },
+    {
+      "aliases": [
+        "Ferrari 348 Challenge",
+        "348 Challenge"
+      ],
+      "brand": "Ferrari",
+      "classId": "CLS008",
+      "confidence": 95,
+      "display": "1993 Ferrari 348 Challenge",
+      "driveLayout": "RWD",
+      "frontSize": "245/620-17",
+      "id": "CAR002",
+      "model": "348",
+      "rearSize": "265/640-17",
+      "sourceIds": [
+        "SRC023"
+      ],
+      "supplier": "Pirelli",
+      "variant": "Challenge",
+      "wheelbaseM": 2.45,
+      "year": 1993
+    },
+    {
+      "aliases": [
+        "Bugatti EB110 S Le Mans",
+        "EB110 Le Mans",
+        "Bugatti EB110 GT1",
+        "EB110 GT1"
+      ],
+      "brand": "Bugatti",
+      "classId": "CLS009",
+      "confidence": 91,
+      "display": "1994 Bugatti EB110 S Le Mans",
+      "driveLayout": "AWD",
+      "frontSize": "27/65-18",
+      "id": "CAR003",
+      "model": "EB110",
+      "rearSize": "30/70-18",
+      "sourceIds": [
+        "SRC037"
+      ],
+      "supplier": "Michelin",
+      "variant": "S Le Mans",
+      "wheelbaseM": 2.553,
+      "year": 1994
+    },
+    {
+      "aliases": [
+        "Jaguar XJ220C",
+        "XJ220C"
+      ],
+      "brand": "Jaguar",
+      "classId": "CLS009",
+      "confidence": 92,
+      "display": "1993 Jaguar XJ220C",
+      "driveLayout": "RWD",
+      "frontSize": "250/640R18",
+      "id": "CAR004",
+      "model": "XJ220",
+      "rearSize": "315/655R18",
+      "sourceIds": [
+        "SRC038"
+      ],
+      "supplier": "Dunlop",
+      "variant": "XJ220C",
+      "wheelbaseM": 2.642,
+      "year": 1993
+    },
+    {
+      "aliases": [
+        "Porsche 993 Cup",
+        "Porsche 993 Supercup",
+        "993 Supercup",
+        "993 Cup"
+      ],
+      "brand": "Porsche",
+      "classId": "CLS031",
+      "confidence": 86,
+      "display": "1995 Porsche 993 Cup / Supercup",
+      "driveLayout": "RWD",
+      "frontSize": "245/645-18",
+      "id": "CAR005",
+      "model": "993",
+      "rearSize": "285/645-18",
+      "sourceIds": [
+        "SRC039"
+      ],
+      "supplier": "Pirelli",
+      "variant": "Cup / Supercup",
+      "wheelbaseM": 2.272,
+      "year": 1995
+    },
+    {
+      "aliases": [
+        "McLaren F1 GTR",
+        "McLaren F1 GTR 96",
+        "Kunos McLaren F1 GTR 96"
+      ],
+      "brand": "McLaren",
+      "classId": "CLS009",
+      "confidence": 78,
+      "display": "1996 McLaren F1 GTR",
+      "driveLayout": "RWD",
+      "frontSize": "270/646-18",
+      "frontTrackM": 1.558,
+      "frontWeightPct": 43.67,
+      "id": "CAR006",
+      "massKg": 1085,
+      "model": "F1 GTR",
+      "rearSize": "310/710-18",
+      "rearTrackM": 1.488,
+      "sourceIds": [
+        "SRC040"
+      ],
+      "supplier": "",
+      "variant": "1996 GTR",
+      "wheelbaseM": 2.718,
+      "year": 1996
+    },
+    {
+      "aliases": [
+        "Maserati 8CM",
+        "1934 Maserati 8CM"
+      ],
+      "brand": "Maserati",
+      "classId": "CLS001",
+      "confidence": 70,
+      "display": "1934 Maserati 8CM",
+      "driveLayout": "RWD",
+      "frontSize": "",
+      "id": "CAR007",
+      "massKg": 785,
+      "model": "8CM",
+      "rearSize": "",
+      "sourceIds": [
+        "SRC003",
+        "SRC004"
+      ],
+      "supplier": "",
+      "variant": "1934 Grand Prix",
+      "wheelbaseM": 2.56,
+      "year": 1934
+    },
+    {
+      "id": "CAR008",
+      "display": "1908 Mercedes 140 hp Grand Prix racing car",
+      "aliases": [
+        "Mercedes 140 hp GP",
+        "1908 Mercedes Grand Prix"
+      ],
+      "year": 1908,
+      "classId": "CLS001",
+      "confidence": 82,
+      "brand": "Mercedes",
+      "model": "140 hp Grand Prix",
+      "variant": "1908",
+      "sourceIds": [
+        "SRC047"
+      ],
+      "supplier": "Michelin (removable rim-ring system only)",
+      "notes": "Operational profile only: removable rim-ring system and 11 wheel changes are documented, but exact tire sizes are not. Never convert the service count into tire life."
+    },
+    {
+      "id": "CAR009",
+      "display": "1914 Mercedes 115 hp Grand Prix racing car",
+      "aliases": [
+        "Mercedes 115 hp GP",
+        "1914 Mercedes Grand Prix"
+      ],
+      "year": 1914,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes",
+      "model": "115 hp Grand Prix",
+      "variant": "1914",
+      "sourceIds": [
+        "SRC048"
+      ],
+      "frontSize": "815 x 105",
+      "rearSize": "820 x 135",
+      "notes": "Exact front/rear archive notation. Preserve as written; no modern size conversion or supplier inference."
+    },
+    {
+      "id": "CAR010",
+      "display": "1931 Mercedes-Benz SSKL",
+      "aliases": [
+        "Mercedes-Benz SSKL",
+        "Mercedes SSKL",
+        "1931 SSKL"
+      ],
+      "year": 1931,
+      "classId": "CLS001",
+      "confidence": 95,
+      "brand": "Mercedes-Benz",
+      "model": "SSKL",
+      "variant": "1931",
+      "sourceIds": [
+        "SRC049"
+      ],
+      "frontSize": "5.00 x 30",
+      "rearSize": "5.00 x 30",
+      "notes": "Archive describes special high-pressure tires but gives no inflation pressure; geometry only."
+    },
+    {
+      "id": "CAR011",
+      "display": "1937 Mercedes-Benz W 125 Grand Prix",
+      "aliases": [
+        "Mercedes-Benz W 125",
+        "Mercedes W125",
+        "1937 W 125"
+      ],
+      "year": 1937,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 125",
+      "variant": "Grand Prix 1937",
+      "sourceIds": [
+        "SRC050"
+      ],
+      "frontSize": "5.25 x 19",
+      "rearSize": "7.00 x 19",
+      "notes": "Standard Grand Prix fitment from manufacturer technical data; supplier and compound remain unknown."
+    },
+    {
+      "id": "CAR012",
+      "display": "1937 Mercedes-Benz W 125 AVUS streamliner",
+      "aliases": [
+        "Mercedes-Benz W 125 AVUS",
+        "W125 AVUS",
+        "1937 AVUS streamliner"
+      ],
+      "year": 1937,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 125",
+      "variant": "AVUS streamliner",
+      "sourceIds": [
+        "SRC051"
+      ],
+      "frontSize": "6.20 x 22",
+      "rearSize": "7.00 x 24",
+      "notes": "AVUS high-speed/load fitment. The 261.7 km/h race average is context, not a tire speed rating."
+    },
+    {
+      "id": "CAR013",
+      "display": "1938 Mercedes-Benz W 154 Grand Prix",
+      "aliases": [
+        "Mercedes-Benz W 154",
+        "Mercedes W154",
+        "1938 W 154"
+      ],
+      "year": 1938,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 154",
+      "variant": "1938 Grand Prix",
+      "sourceIds": [
+        "SRC052",
+        "SRC053"
+      ],
+      "frontSize": "5.50 x 19",
+      "rearSize": "7.00 x 19",
+      "notes": "Default fitment applies otherwise relative to the documented >270 km/h option. Fitment_Overrides selects 6.50 x 19 front and 7.00 x 22 rear above the threshold."
+    },
+    {
+      "id": "CAR014",
+      "display": "1939 Mercedes-Benz W 165",
+      "aliases": [
+        "Mercedes-Benz W 165",
+        "Mercedes W165",
+        "1939 W 165"
+      ],
+      "year": 1939,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 165",
+      "variant": "1939",
+      "sourceIds": [
+        "SRC054"
+      ],
+      "frontSize": "5.00 x 17",
+      "rearSize": "7.00 x 17",
+      "notes": "Exact manufacturer-archive fitment; event heat is context only and does not set a tire thermal curve."
+    },
+    {
+      "id": "CAR015",
+      "display": "1924 Bugatti Type 35 family",
+      "aliases": [
+        "Bugatti Type 35",
+        "Type 35B",
+        "Type 35C",
+        "Type 35T"
+      ],
+      "year": 1924,
+      "classId": "CLS001",
+      "confidence": 90,
+      "brand": "Bugatti",
+      "model": "Type 35",
+      "variant": "35/35B/35C/35T",
+      "sourceIds": [
+        "SRC055"
+      ],
+      "frontSize": "710 x 90",
+      "rearSize": "710 x 90",
+      "notes": "Original designation on cast wheels with detachable rim. Modern 5.00 x 19 replacement remains separate."
+    },
+    {
+      "id": "CAR016",
+      "display": "1926 Bugatti Type 35A",
+      "aliases": [
+        "Bugatti Type 35A",
+        "Type 35A"
+      ],
+      "year": 1926,
+      "classId": "CLS001",
+      "confidence": 89,
+      "brand": "Bugatti",
+      "model": "Type 35A",
+      "variant": "1926-1929",
+      "sourceIds": [
+        "SRC056"
+      ],
+      "frontSize": "27 x 4.40",
+      "rearSize": "27 x 4.40",
+      "notes": "Original designation on wire wheels. Modern 4.50 x 19 replacement is not treated as identical."
+    },
+    {
+      "id": "CAR017",
+      "display": "1926 Bugatti Type 37 / 37A",
+      "aliases": [
+        "Bugatti Type 37",
+        "Bugatti Type 37A",
+        "Type 37",
+        "Type 37A"
+      ],
+      "year": 1926,
+      "classId": "CLS001",
+      "confidence": 89,
+      "brand": "Bugatti",
+      "model": "Type 37",
+      "variant": "37/37A",
+      "sourceIds": [
+        "SRC057"
+      ],
+      "frontSize": "27 x 4.40",
+      "rearSize": "27 x 4.40",
+      "notes": "Original designation; wire wheels, with alloy wheels noted for Type 37A. No casing or compound inference."
+    },
+    {
+      "id": "CAR018",
+      "display": "1934 Mercedes-Benz W 25 record car",
+      "aliases": [
+        "Mercedes-Benz W 25 record car 1934",
+        "Mercedes W25 record"
+      ],
+      "year": 1934,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 25",
+      "variant": "1934 record car",
+      "sourceIds": [
+        "SRC058"
+      ],
+      "frontSize": "5.25 x 17",
+      "rearSize": "5.25 x 19",
+      "notes": "Fitment paired with a 317.5 km/h flying-kilometre vehicle record average; speed is context, not a tire rating."
+    },
+    {
+      "id": "CAR019",
+      "display": "1936 Mercedes-Benz W 25 record car",
+      "aliases": [
+        "Mercedes-Benz W 25 record car 1936",
+        "Mercedes W25 V12 record"
+      ],
+      "year": 1936,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 25",
+      "variant": "1936 record car",
+      "sourceIds": [
+        "SRC059"
+      ],
+      "frontSize": "7.00 x 22",
+      "rearSize": "7.00 x 22",
+      "notes": "Fitment paired with a 366.918 km/h flying-mile record average; reported top speed 372.102 km/h. Neither is a tire rating."
+    },
+    {
+      "id": "CAR020",
+      "display": "1938 Mercedes-Benz W 125 record car",
+      "aliases": [
+        "Mercedes-Benz W 125 record car 1938",
+        "Mercedes W125 record"
+      ],
+      "year": 1938,
+      "classId": "CLS001",
+      "confidence": 96,
+      "brand": "Mercedes-Benz",
+      "model": "W 125",
+      "variant": "1938 record car",
+      "sourceIds": [
+        "SRC060"
+      ],
+      "frontSize": "6.25 x 22",
+      "rearSize": "7.00 x 24",
+      "notes": "Fitment paired with the 432.692 km/h flying-kilometre vehicle record average; reported top speed 437 km/h. Neither is a tire rating."
+    },
+    {
+      "id": "CAR021",
+      "display": "1976 Ligier JS5-Matra",
+      "aliases": [
+        "Ligier JS5-Matra",
+        "Ligier JS5 Matra",
+        "Ligier JS5",
+        "JS5",
+        "Ligier Gitanes JS5"
+      ],
+      "year": 1976,
+      "classId": "CLS037",
+      "confidence": 94,
+      "brand": "Ligier",
+      "model": "JS5",
+      "variant": "Matra",
+      "sourceIds": [
+        "SRC061",
+        "SRC062",
+        "SRC064",
+        "SRC065"
+      ],
+      "supplier": "Goodyear",
+      "driveLayout": "RWD",
+      "notes": "Identity, 1976 Formula One class and Goodyear supplier are high confidence. Published weight figures conflict (525 vs 605 kg), while the imported AC package reports 660 kg; do not auto-overwrite mass. Exact JS5 tire dimensions/compound codes remain unsourced, so imported geometry is retained only as car-state reference.",
+      "wheelbaseM": 2.608,
+      "frontTrackM": 1.536,
+      "rearTrackM": 1.6
+    }
+  ],
+  "publishedUtc": "2026-08-25T01:19:43Z",
+  "releaseNotes": [
+    "Adds 13 curated pre-war Mercedes-Benz and Bugatti racing/record profiles spanning 1908-1939, including exact source-backed axle fitments.",
+    "Adds 23 evidence-gated fitment overrides for period tire-size notation and the documented Mercedes-Benz W 154 fitment change above 270 km/h.",
+    "Extends FAM001/CLS001 to 1908-1939 while retaining the existing numerical grip, rate, pressure, thermal and wear priors unchanged.",
+    "Adds guardrails that vehicle record speeds are context rather than tire ratings, and wheel-change counts are not direct tire-life measurements.",
+    "Resolves source/profile ID collisions by reserving SRC047-SRC060 for pre-war evidence and remapping the Ligier/1976 records to SRC061-SRC065 and CAR021."
+  ],
+  "releaseVersion": "1.3.0",
+  "schemaVersion": "1.0.0",
+  "sourceMaster": {
+    "applicationSnapshotVersion": "0.4.4",
+    "spreadsheetId": "1bhFFj4aAiXkZj8wcOClwqe30v7KHhyeq_A0hYgP9nwY",
+    "title": "ACLM Tire Knowledge Master"
+  },
+  "sources": {
+    "SRC003": {
+      "quality": "A",
+      "title": "Tire Behavior in Steering",
+      "url": "https://saemobilus.sae.org/papers/tire-behavior-steering-390164",
+      "year": "1939"
+    },
+    "SRC004": {
+      "quality": "A",
+      "title": "Force and Moment Characteristics of Rolling Tires",
+      "url": "https://saemobilus.sae.org/papers/force-moment-characteristics-rolling-tires-640028",
+      "year": "1964"
+    },
+    "SRC023": {
+      "quality": "A",
+      "title": "Pirelli and Ferrari Challenge tire evolution",
+      "url": "https://www.pirelli.com/global/en-ww/race/racingspot/formula-1/pirelli-and-ferrari-always-together-in-the-challenge-53749/",
+      "year": "1993+"
+    },
+    "SRC024": {
+      "quality": "B",
+      "title": "Porsche Carrera Cup 964 technical feature",
+      "url": "https://www.motorsportmagazine.com/archive/article/june-1990/62/beyond-measure/",
+      "year": "1990"
+    },
+    "SRC037": {
+      "quality": "B",
+      "title": "1994 Le Mans Bugatti EB110 S #34 tire fitment",
+      "url": "https://www.24h-en-piste.com/en/AfficherDetails.php?Annee=1994&Numero=34&Type=Course",
+      "year": "1994"
+    },
+    "SRC038": {
+      "quality": "B/C",
+      "title": "Jaguar XJ220C original equipment tire-size appendix",
+      "url": "https://www.jcna.com/sites/default/files/2024_08_Appndix_B_original_Equipment_Tire_Sizes_V01-16-24%2010.30%20am.pdf",
+      "year": "1993"
+    },
+    "SRC039": {
+      "quality": "D",
+      "title": "Porsche 993 Supercup tire specification reproduction",
+      "url": "https://rennlist.com/forums/993-forum/12456-porsche-993-supercup-car.html",
+      "year": "mid-1990s"
+    },
+    "SRC040": {
+      "quality": "Reference benchmark",
+      "title": "Kunos McLaren F1 GTR 96 Assetto Corsa physics package",
+      "url": "https://www.assettocorsa.net/",
+      "year": "1996 / AC reference"
+    },
+    "SRC041": {
+      "quality": "A/B",
+      "title": "On Racing Tyres",
+      "url": "https://www.motorsportmagazine.com/archive/article/september-1970/47/racing-tyres/",
+      "year": "1970 (describes 1963-70)"
+    },
+    "SRC042": {
+      "quality": "A/B",
+      "title": "Daytona Continental 24-hour Race",
+      "url": "https://www.motorsportmagazine.com/archive/article/march-1967/26/daytona-continental-24-hour-race/",
+      "year": "1967"
+    },
+    "SRC043": {
+      "quality": "A/B",
+      "title": "24 Hours of Le Mans - Great innovations (1951-1967)",
+      "url": "https://www.24h-lemans.com/en/news/24-hours-of-le-mans-great-innovations-1951-1967-40737",
+      "year": "1967"
+    },
+    "SRC044": {
+      "quality": "A/B",
+      "title": "Michelin Motorsport - 1967 radial slick and Alpine A210",
+      "url": "https://www.michelin.com/media/magazine/explore-motorsport",
+      "year": "1967"
+    },
+    "SRC045": {
+      "quality": "B",
+      "title": "The inside story of the greatest Le Mans finish ever",
+      "url": "https://www.motorsport.com/wec/news/greatest-le-mans-finish-ever/4877229/",
+      "year": "1969"
+    },
+    "SRC046": {
+      "quality": "B",
+      "sourceType": "ACO official historical synthesis",
+      "year": "late 1960s-early 1970s",
+      "title": "24 Hours Centenary - Michelin and Dunlop’s monopoly",
+      "publisher": "Automobile Club de l’Ouest / 24h-lemans.com",
+      "summary": "Documents rapid late-1960s/early-1970s shift toward wider tires, eliminated tread/slicks, lower sidewalls, stiffer casings, softer rubber and consequently more tire changes.",
+      "url": "https://www.24h-lemans.com/en/news/24-hours-centenary-michelin-and-dunlops-monopoly-57299",
+      "limitations": "High-level transition evidence; exact supplier/car timing must remain event-specific."
+    },
+    "SRC001": {
+      "quality": "A",
+      "sourceType": "Government monograph",
+      "year": "1971",
+      "title": "Mechanics of Pneumatic Tires",
+      "publisher": "Samuel K. Clark (ed.), NBS/NHTSA",
+      "summary": "Bias/belted-bias structure, footprint, deformation, traction, rolling resistance, hydroplaning; foundational pre-radial-era mechanics",
+      "url": "https://www.govinfo.gov/content/pkg/GOVPUB-C13-a7834d3283458a60b7655045e305bd2d/pdf/GOVPUB-C13-a7834d3283458a60b7655045e305bd2d.pdf",
+      "limitations": "Foundational physics; do not use absolute road-tire grip as race-slick grip"
+    },
+    "SRC047": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1908",
+      "title": "Mercedes 140 hp Grand Prix racing car, 1908",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Michelin removable rim-ring system; front/rear dimensions differed by axle load; winner made 11 wheel changes in 6 h 46 min.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-140-hp-Grand-Prix-racing-car-1908.xhtml?oid=6756",
+      "limitations": "Wheel-change count is operational evidence, not pure tread wear or tire life; exact dimensions and casing construction are not stated."
+    },
+    "SRC048": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1914",
+      "title": "Mercedes 115 hp Grand Prix racing car, 1914",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; front 815 x 105 and rear 820 x 135 tire designations.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-115-hp-Grand-Prix-racing-car-1914.xhtml?oid=6763",
+      "limitations": "Original size notation is preserved; do not map to a modern metric or inch size without a period-standard conversion source."
+    },
+    "SRC049": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1931",
+      "title": "Mercedes-Benz SSKL, 1931",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; special high-pressure tires 5.00 x 30 front and rear.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-SSKL-1931.xhtml?oid=6807",
+      "limitations": "High-pressure is the archive description, not a recorded inflation pressure; supplier, ply count and compound are unstated."
+    },
+    "SRC050": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1937",
+      "title": "Mercedes-Benz Grand Prix racing car W 125, 1937",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; front 5.25 x 19 and rear 7.00 x 19.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-Grand-Prix-racing-car-W-125-1937.xhtml?oid=6815",
+      "limitations": "Fitment evidence only; supplier, pressure, casing details and compound are unstated."
+    },
+    "SRC051": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1937",
+      "title": "Mercedes-Benz W 125 AVUS streamliner, 1937",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Front 6.20 x 22 and rear 7.00 x 24; larger rolling circumference selected for extreme speed/load conditions.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-W-125-AVUS-racing-car-with-streamlined-body-1937.xhtml?oid=192042469",
+      "limitations": "The cited 261.7 km/h race average is vehicle performance context, not a tire speed rating or steady tire test condition."
+    },
+    "SRC052": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1938",
+      "title": "Mercedes-Benz Grand Prix racing car W 154, 1938",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Front 6.50 x 19 and rear 7.00 x 22 above 270 km/h; otherwise front 5.50 x 19 and rear 7.00 x 19.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-Grand-Prix-racing-car-W-154-1938.xhtml?oid=6831",
+      "limitations": "Speed-conditioned vehicle fitment, not a tire speed rating. Supplier, compound, pressure and ply count are unstated."
+    },
+    "SRC053": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1939",
+      "title": "Mercedes-Benz Grand Prix racing car W 154, 1939",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Independently repeats the W 154 speed-conditioned 270 km/h front/rear fitment split.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-Grand-Prix-racing-car-W-154-1939.xhtml?oid=6826",
+      "limitations": "Corroborates SRC052; avoid double-counting as an independent tire test."
+    },
+    "SRC054": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1939",
+      "title": "Mercedes-Benz W 165 racing car, 1939",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; front 5.00 x 17 and rear 7.00 x 17.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-W-165-racing-car-1939.xhtml?oid=6835",
+      "limitations": "Fitment evidence only; event heat is contextual and is not a measured tire-temperature or thermal-curve record."
+    },
+    "SRC055": {
+      "quality": "A/B",
+      "sourceType": "Marque technical archive",
+      "year": "1924–1931",
+      "title": "Bugatti Type 35, 35B, 35C and 35T",
+      "publisher": "The Bugatti Trust",
+      "summary": "Original tire size 710 x 90 on cast wheels with integral drum and detachable rim; modern replacement listed separately as 5.00 x 19.",
+      "url": "https://www.bugatti-trust.co.uk/bugatti-type-35-35b-35c-35t/",
+      "limitations": "Use the original designation for historical modeling; do not treat the modern replacement size as dimensionally identical."
+    },
+    "SRC056": {
+      "quality": "A/B",
+      "sourceType": "Marque technical archive",
+      "year": "1926–1929",
+      "title": "Bugatti Type 35A",
+      "publisher": "The Bugatti Trust",
+      "summary": "Original tire size 27 x 4.40 on wire wheels; modern replacement listed separately as 4.50 x 19.",
+      "url": "https://www.bugatti-trust.co.uk/bugatti-type-35a/",
+      "limitations": "Use the original designation for historical modeling; supplier, pressure, ply count and compound are unstated."
+    },
+    "SRC057": {
+      "quality": "A/B",
+      "sourceType": "Marque technical archive",
+      "year": "1926–1930",
+      "title": "Bugatti Type 37 and 37A",
+      "publisher": "The Bugatti Trust",
+      "summary": "Original tire size 27 x 4.40; wire wheels, with alloy wheels noted for the Type 37A; modern replacement 4.50 x 19.",
+      "url": "https://www.bugatti-trust.co.uk/bugatti-type-37-37a/",
+      "limitations": "Use the original designation for historical modeling; do not infer casing or compound from wheel type or era."
+    },
+    "SRC058": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1934",
+      "title": "Mercedes-Benz W 25 record car, 1934",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; front 5.25 x 17 and rear 5.25 x 19; flying-kilometre record average 317.5 km/h.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-W-25-record-car-1934.xhtml?oid=6852",
+      "limitations": "Record speed is vehicle-performance context, not a tire speed rating or controlled tire test; supplier, pressure and compound are unstated."
+    },
+    "SRC059": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1936",
+      "title": "Mercedes-Benz W 25 record car, 1936",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; 7.00 x 22 front and rear; flying-mile record average 366.918 km/h and reported top speed 372.102 km/h.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-W-25-record-car-1936.xhtml?oid=6847",
+      "limitations": "Record and top speeds are vehicle context, not tire ratings; the archive does not state supplier, inflation pressure, casing or compound."
+    },
+    "SRC060": {
+      "quality": "A",
+      "sourceType": "Manufacturer historical archive",
+      "year": "1938",
+      "title": "Mercedes-Benz W 125 record car, 1938",
+      "publisher": "Mercedes-Benz AG",
+      "summary": "Wire-spoke center-mount wheels; front 6.25 x 22 and rear 7.00 x 24; flying-kilometre record average 432.692 km/h.",
+      "url": "https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/Mercedes-Benz-W-125-record-car-1938.xhtml?oid=6844",
+      "limitations": "The 432.692 km/h record average and 437 km/h reported top speed are vehicle context, not tire speed ratings or steady test conditions."
+    },
+    "SRC061": {
+      "quality": "B",
+      "sourceType": "Historic racing database",
+      "year": "1976",
+      "title": "Ligier JS5 car-by-car histories",
+      "publisher": "OldRacingCars.com / Allen Brown",
+      "summary": "Confirms Ligier JS5 was raced in Formula 1 in 1976 with Matra V12; strong identity/season anchor.",
+      "url": "https://www.oldracingcars.com/ligier/js5/",
+      "limitations": "Excellent identity/race-history source; use separate tire sources for construction and exact tire specification."
+    },
+    "SRC062": {
+      "quality": "B",
+      "sourceType": "Formula 1 statistics database",
+      "year": "1976",
+      "title": "Ligier JS5 Formula One record",
+      "publisher": "STATS F1",
+      "summary": "Confirms every 1976 Ligier JS5 Grand Prix entry was on Goodyear tires and the car was a 1976 Formula One entry.",
+      "url": "https://www.statsf1.com/en/ligier-js5.aspx",
+      "limitations": "Strong supplier/season confirmation; does not provide exact tire dimensions or force data."
+    },
+    "SRC063": {
+      "quality": "A/B",
+      "sourceType": "Period Formula 1 technical report",
+      "year": "1976",
+      "title": "The Formula One scene",
+      "publisher": "Motor Sport Magazine",
+      "summary": "Goodyear engineers proposed full-tank running and tire scrubbing because teams could choose the wrong type of tire and needed race-load validation.",
+      "url": "https://www.motorsportmagazine.com/archive/article/march-1976/27/formula-one-scene/",
+      "limitations": "Period evidence for multiple Goodyear specifications, scrubbed race sets and load-sensitive race preparation; not an exact Ligier tire-size sheet."
+    },
+    "SRC064": {
+      "quality": "B",
+      "sourceType": "Technical retrospective with designer testimony",
+      "year": "1976-77",
+      "title": "P34: The real story behind Tyrrell's incredible six-wheeler F1 car",
+      "publisher": "Motor Sport Magazine / Derek Gardner",
+      "summary": "Directly describes contemporary Goodyear Formula 1 slicks as cross-ply and explains coupled carcass/sidewall stiffness behavior.",
+      "url": "https://www.motorsportmagazine.com/archive/article/february-2011/74/when-six-worked-better-four/",
+      "limitations": "Retrospective but first-person designer evidence; excellent construction-family anchor, not exact Ligier sizing."
+    },
+    "SRC065": {
+      "quality": "B",
+      "sourceType": "Driver/team technical retrospective",
+      "year": "1976",
+      "title": "John Watson on Penske's 1976 F1 win",
+      "publisher": "Motor Sport Magazine / John Watson",
+      "summary": "Watson states the 1976 field was running cross-ply Goodyears and describes circumference matching/priority issues between tire sets.",
+      "url": "https://www.motorsportmagazine.com/articles/single-seaters/f1/how-penske-went-from-tragedy-to-f1-triumph-the-irony-wasnt-lost/",
+      "limitations": "Strong period-construction and tire-matching evidence; no exact Ligier compound code or dimensions."
+    }
+  },
+  "fitmentOverrides": [
+    {
+      "measurementId": "M070",
+      "familyId": "FAM001",
+      "series": "1914 Mercedes Grand Prix",
+      "supplier": "Unknown",
+      "tireSize": "Front 815 x 105",
+      "speedKph": null,
+      "fitmentValue": "815 x 105",
+      "sourceId": "SRC048",
+      "sourceQuality": "A",
+      "sourceEra": "1914",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M071",
+      "familyId": "FAM001",
+      "series": "1914 Mercedes Grand Prix",
+      "supplier": "Unknown",
+      "tireSize": "Rear 820 x 135",
+      "speedKph": null,
+      "fitmentValue": "820 x 135",
+      "sourceId": "SRC048",
+      "sourceQuality": "A",
+      "sourceEra": "1914",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M072",
+      "familyId": "FAM001",
+      "series": "1931 Mercedes-Benz SSKL",
+      "supplier": "Unknown",
+      "tireSize": "Front 5.00 x 30",
+      "speedKph": null,
+      "fitmentValue": "5.00 x 30",
+      "sourceId": "SRC049",
+      "sourceQuality": "A",
+      "sourceEra": "1931",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M073",
+      "familyId": "FAM001",
+      "series": "1931 Mercedes-Benz SSKL",
+      "supplier": "Unknown",
+      "tireSize": "Rear 5.00 x 30",
+      "speedKph": null,
+      "fitmentValue": "5.00 x 30",
+      "sourceId": "SRC049",
+      "sourceQuality": "A",
+      "sourceEra": "1931",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M074",
+      "familyId": "FAM001",
+      "series": "1937 Mercedes-Benz W 125",
+      "supplier": "Unknown",
+      "tireSize": "Front 5.25 x 19",
+      "speedKph": null,
+      "fitmentValue": "5.25 x 19",
+      "sourceId": "SRC050",
+      "sourceQuality": "A",
+      "sourceEra": "1937",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M075",
+      "familyId": "FAM001",
+      "series": "1937 Mercedes-Benz W 125",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 19",
+      "speedKph": null,
+      "fitmentValue": "7.00 x 19",
+      "sourceId": "SRC050",
+      "sourceQuality": "A",
+      "sourceEra": "1937",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M076",
+      "familyId": "FAM001",
+      "series": "1937 Mercedes-Benz W 125 AVUS",
+      "supplier": "Unknown",
+      "tireSize": "Front 6.20 x 22",
+      "speedKph": null,
+      "fitmentValue": "6.20 x 22",
+      "sourceId": "SRC051",
+      "sourceQuality": "A",
+      "sourceEra": "1937",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M077",
+      "familyId": "FAM001",
+      "series": "1937 Mercedes-Benz W 125 AVUS",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 24",
+      "speedKph": null,
+      "fitmentValue": "7.00 x 24",
+      "sourceId": "SRC051",
+      "sourceQuality": "A",
+      "sourceEra": "1937",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M078",
+      "familyId": "FAM001",
+      "series": "1938 Mercedes-Benz W 154",
+      "supplier": "Unknown",
+      "tireSize": "Front 5.50 x 19",
+      "speedKph": 270,
+      "fitmentValue": "5.50 x 19",
+      "sourceId": "SRC052",
+      "sourceQuality": "A",
+      "sourceEra": "1938",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M079",
+      "familyId": "FAM001",
+      "series": "1938 Mercedes-Benz W 154",
+      "supplier": "Unknown",
+      "tireSize": "Front 6.50 x 19",
+      "speedKph": 270,
+      "fitmentValue": "6.50 x 19",
+      "sourceId": "SRC052",
+      "sourceQuality": "A",
+      "sourceEra": "1938",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M080",
+      "familyId": "FAM001",
+      "series": "1938 Mercedes-Benz W 154",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 19",
+      "speedKph": 270,
+      "fitmentValue": "7.00 x 19",
+      "sourceId": "SRC052",
+      "sourceQuality": "A",
+      "sourceEra": "1938",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M081",
+      "familyId": "FAM001",
+      "series": "1938 Mercedes-Benz W 154",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 22",
+      "speedKph": 270,
+      "fitmentValue": "7.00 x 22",
+      "sourceId": "SRC052",
+      "sourceQuality": "A",
+      "sourceEra": "1938",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M082",
+      "familyId": "FAM001",
+      "series": "1939 Mercedes-Benz W 165",
+      "supplier": "Unknown",
+      "tireSize": "Front 5.00 x 17",
+      "speedKph": null,
+      "fitmentValue": "5.00 x 17",
+      "sourceId": "SRC054",
+      "sourceQuality": "A",
+      "sourceEra": "1939",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M083",
+      "familyId": "FAM001",
+      "series": "1939 Mercedes-Benz W 165",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 17",
+      "speedKph": null,
+      "fitmentValue": "7.00 x 17",
+      "sourceId": "SRC054",
+      "sourceQuality": "A",
+      "sourceEra": "1939",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M084",
+      "familyId": "FAM001",
+      "series": "1924–1931 Bugatti Type 35 family",
+      "supplier": "Unknown",
+      "tireSize": "710 x 90",
+      "speedKph": null,
+      "fitmentValue": "710 x 90",
+      "sourceId": "SRC055",
+      "sourceQuality": "A/B",
+      "sourceEra": "1924–1931",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M085",
+      "familyId": "FAM001",
+      "series": "1926–1929 Bugatti Type 35A",
+      "supplier": "Unknown",
+      "tireSize": "27 x 4.40",
+      "speedKph": null,
+      "fitmentValue": "27 x 4.40",
+      "sourceId": "SRC056",
+      "sourceQuality": "A/B",
+      "sourceEra": "1926–1929",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M086",
+      "familyId": "FAM001",
+      "series": "1926–1930 Bugatti Type 37/37A",
+      "supplier": "Unknown",
+      "tireSize": "27 x 4.40",
+      "speedKph": null,
+      "fitmentValue": "27 x 4.40",
+      "sourceId": "SRC057",
+      "sourceQuality": "A/B",
+      "sourceEra": "1926–1930",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M087",
+      "familyId": "FAM001",
+      "series": "1934 Mercedes-Benz W 25 record car",
+      "supplier": "Unknown",
+      "tireSize": "Front 5.25 x 17",
+      "speedKph": 317.5,
+      "fitmentValue": "5.25 x 17",
+      "sourceId": "SRC058",
+      "sourceQuality": "A",
+      "sourceEra": "1934",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M088",
+      "familyId": "FAM001",
+      "series": "1934 Mercedes-Benz W 25 record car",
+      "supplier": "Unknown",
+      "tireSize": "Rear 5.25 x 19",
+      "speedKph": 317.5,
+      "fitmentValue": "5.25 x 19",
+      "sourceId": "SRC058",
+      "sourceQuality": "A",
+      "sourceEra": "1934",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M089",
+      "familyId": "FAM001",
+      "series": "1936 Mercedes-Benz W 25 record car",
+      "supplier": "Unknown",
+      "tireSize": "Front 7.00 x 22",
+      "speedKph": 366.918,
+      "fitmentValue": "7.00 x 22",
+      "sourceId": "SRC059",
+      "sourceQuality": "A",
+      "sourceEra": "1936",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M090",
+      "familyId": "FAM001",
+      "series": "1936 Mercedes-Benz W 25 record car",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 22",
+      "speedKph": 366.918,
+      "fitmentValue": "7.00 x 22",
+      "sourceId": "SRC059",
+      "sourceQuality": "A",
+      "sourceEra": "1936",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M091",
+      "familyId": "FAM001",
+      "series": "1938 Mercedes-Benz W 125 record car",
+      "supplier": "Unknown",
+      "tireSize": "Front 6.25 x 22",
+      "speedKph": 432.692,
+      "fitmentValue": "6.25 x 22",
+      "sourceId": "SRC060",
+      "sourceQuality": "A",
+      "sourceEra": "1938",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    },
+    {
+      "measurementId": "M092",
+      "familyId": "FAM001",
+      "series": "1938 Mercedes-Benz W 125 record car",
+      "supplier": "Unknown",
+      "tireSize": "Rear 7.00 x 24",
+      "speedKph": 432.692,
+      "fitmentValue": "7.00 x 24",
+      "sourceId": "SRC060",
+      "sourceQuality": "A",
+      "sourceEra": "1938",
+      "promotionStatus": "AUTO-PROMOTED: exact fitment",
+      "runtimeUse": "Exact match overrides family geometry",
+      "guardrail": "No grip/rate/pressure/wear/thermal inference"
+    }
+  ],
+  "scalingRules": [
+    {
+      "id": "RULE020",
+      "name": "Historical geometry notation",
+      "evidence": "Period tire-size designations must be preserved exactly and interpreted by the notation standard of that era.",
+      "implementation": "Use exact front/rear source notation as a geometry override. Do not convert 815 x 105, 710 x 90, 27 x 4.40 or inch-rim formats without a period-specific conversion source.",
+      "sourceIds": [
+        "SRC048",
+        "SRC049",
+        "SRC050",
+        "SRC051",
+        "SRC052",
+        "SRC054",
+        "SRC055",
+        "SRC056",
+        "SRC057",
+        "SRC058",
+        "SRC059",
+        "SRC060"
+      ],
+      "confidence": 99,
+      "notes": "Direct manufacturer/marque archive fitments; rule prevents false modern normalization."
+    },
+    {
+      "id": "RULE021",
+      "name": "High-speed fitment selection",
+      "evidence": "Pre-war high-speed cars could use explicitly different tire diameters/sizes for load and speed; the W 154 archive specifies a fitment change above 270 km/h.",
+      "implementation": "When historical_mode is true, select the exact car/event axle fitment and apply documented speed thresholds. Never extrapolate the W 154 threshold into a universal tire speed law or rating.",
+      "sourceIds": [
+        "SRC051",
+        "SRC052",
+        "SRC053",
+        "SRC058",
+        "SRC059",
+        "SRC060"
+      ],
+      "confidence": 98,
+      "notes": "Direct manufacturer archive evidence with corroboration; generalization beyond exact fitments is prohibited."
+    },
+    {
+      "id": "RULE022",
+      "name": "Race-service evidence",
+      "evidence": "Wheel or rim change counts are operational evidence, not direct tire-wear or tire-life measurements.",
+      "implementation": "Store service counts and duration as context. Do not change wear/life coefficients unless laps, distance, cause and tire identity are independently attributable.",
+      "sourceIds": [
+        "SRC047"
+      ],
+      "confidence": 99,
+      "notes": "The 1908 account records 11 wheel changes in 6 h 46 min but does not isolate tread life."
+    }
+  ],
+  "contentSha256": "7991f46f9944f3796dbd2595370f5ef74b3512c1fd85007529c171dea2669eb2"
+}

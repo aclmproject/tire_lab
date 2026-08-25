@@ -1,0 +1,44 @@
+:root{--bg:#0e1116;--panel:#171c24;--panel2:#1f2630;--text:#e9edf2;--muted:#9aa7b5;--line:#34404d;--accent:#f0b429;--good:#31c48d;--bad:#f05252;--warn:#f59e0b}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{padding:22px 26px;border-bottom:1px solid var(--line);background:#11161d;position:sticky;top:0;z-index:2}
+h1{font-size:23px;margin:0 0 4px} h2{font-size:18px;margin:0 0 14px} h3{font-size:15px;margin:18px 0 8px}
+.version{color:var(--accent);font-weight:700}.muted{color:var(--muted)}
+main{max-width:1500px;margin:auto;padding:20px;display:grid;grid-template-columns:minmax(380px,560px) minmax(520px,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+label{display:block;color:#cdd5df;font-size:12px;margin-bottom:4px} input,select,textarea{width:100%;background:#0f141b;color:var(--text);border:1px solid #3b4857;border-radius:6px;padding:8px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+button{background:#293442;color:#fff;border:1px solid #465669;border-radius:7px;padding:9px 12px;cursor:pointer;font-weight:650}
+button.primary{background:#9b6b00;border-color:#d29811} button.good{background:#116347;border-color:#1c966c} button:hover{filter:brightness(1.08)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.pill{display:inline-block;padding:3px 8px;border-radius:999px;font-size:12px;background:#26313d;border:1px solid #3a4858;margin:2px}
+.ok{color:var(--good)}.error{color:var(--bad)}.warning{color:var(--warn)}
+pre{white-space:pre;overflow:auto;background:#0b0f14;border:1px solid #2c3744;border-radius:7px;padding:12px;max-height:520px;font:12px/1.4 Consolas,Monaco,monospace}
+#files a{display:block;color:#9dc3ff;text-decoration:none;padding:3px 0}.notice{padding:10px;border-left:4px solid var(--accent);background:#222b35;margin:8px 0}
+.small{font-size:12px}.span2{grid-column:span 2}.checkrow{display:flex;gap:14px;flex-wrap:wrap}.checkrow label{display:flex;align-items:center;gap:6px;font-size:13px}.checkrow input{width:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #303b48;padding:7px;text-align:left}th{color:#dbe4ef}
+@media(max-width:1050px){main{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}}
+
+.header-actions{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.import-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dropbox{border:1px dashed #526477;border-radius:9px;padding:12px;background:#111821}
+.dropbox code,.notice code{color:#ffd981}
+.imported-field{border-color:#31c48d!important;box-shadow:0 0 0 1px rgba(49,196,141,.16)}
+.source-chip{display:inline-block;margin-left:5px;font-size:10px;color:#9ee6c9}
+.import-table td:first-child{width:28%;color:#cfd8e4}.import-table td:nth-child(2){font-weight:650}.import-table td:nth-child(3){color:#9aa7b5}
+code{font-family:Consolas,Monaco,monospace}
+@media(max-width:760px){.import-grid{grid-template-columns:1fr}}
+
+.research-panel{margin-top:12px;padding:10px;border:1px solid #384657;border-radius:7px;background:#131a22}
+.researched-field{border-color:#d99b20!important;box-shadow:0 0 0 1px rgba(217,155,32,.18)}
+#researchSources a{color:#9dc3ff;text-decoration:none;margin-right:10px}
+#researchSources a:hover{text-decoration:underline}
+
+.research-choices{margin-top:10px;padding:10px;border:1px dashed #59697a;border-radius:7px}
+.research-choice-needed{border-color:#d99b20!important}
+
+.graph-controls{margin-bottom:10px}.graph-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.graph-card{border:1px solid #344252;border-radius:8px;padding:10px;background:#111820}
+.graph-card h3{margin:0 0 8px}.graph-card canvas{width:100%;height:250px;display:block;background:#0b1016;border-radius:6px}
+@media (min-width:1500px){.graph-grid{grid-template-columns:1fr 1fr}.graph-card:last-child{grid-column:1 / -1}}
+
+.historical-compounds label.historical-unavailable{opacity:.48}.historical-compounds label.historical-unavailable span{text-decoration:line-through;text-decoration-thickness:1px}.historical-compounds label:has(input:checked){font-weight:700}

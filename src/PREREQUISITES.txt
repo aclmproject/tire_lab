@@ -1,0 +1,28 @@
+ACLM TIRE LAB — INSTALLER PREREQUISITES
+=======================================
+
+Required:
+- Windows PowerShell 5.1 or newer
+- Microsoft Edge 110 or newer
+
+Why Edge 110+:
+The AC physics ZIP importer relies on modern browser decompression support.
+The browser/PWA installation workflow is also tested against current Edge.
+
+Automatic handling:
+- Existing compatible Edge: use it.
+- Missing/outdated Edge + winget available: installer offers automatic install/update.
+- Missing/outdated Edge + no winget: installer opens Microsoft's official Edge page
+  and stops so Edge can be installed manually.
+- The installer also verifies the Tire Lab local server and HTTP page.
+
+Not required:
+- Python
+- Node.js
+- Java
+- .NET SDK
+- Apache/IIS
+- administrator rights for the Tire Lab itself
+
+Microsoft Edge installation/update behavior can be governed by local Windows
+or organization policy.

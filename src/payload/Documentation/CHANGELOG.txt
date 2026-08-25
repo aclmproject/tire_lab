@@ -1,0 +1,143 @@
+ACLM HISTORICAL TIRE LAB - CHANGELOG
+====================================
+
+2026-08-24 - v0.5.4
+- Migrated application source, stable manifests and release delivery to GitHub.
+- Migrated independently versioned tire-knowledge delivery to GitHub Releases.
+- Retained SHA-256 verification and the bundled last-known-good knowledge fallback.
+- Google Drive remains only as the one-time v0.5.3-to-v0.5.4 upgrade bridge.
+
+2026-08-24 - v0.5.4
+- Reworked distribution after Google Drive malware false-positive.
+- Removed app auto-download, TEMP extraction, auto-execution, hidden updater, startup VBS and self-deleting updater behavior.
+- Removed installer self-update and automatic prerequisite installation.
+- Application update control now opens the release page for manual download/install.
+- Tire-knowledge updates remain JSON-only and SHA-256 verified.
+- Bundled Tire Knowledge is v1.2.0.
+- Preserves ZIP + data-folder import, historical categories, graphs, pressure solver, terminal failure, PDF report and car-specific outputs.
+
+2026-08-24 - v0.5.0
+- Introduced independent ACLM Tire Knowledge runtime (schema 1.0.0).
+- Bundles knowledge v1.2.0 as an offline fallback.
+- Automatically loads last-known-good cache and checks Google Drive for newer knowledge.
+- Knowledge downloads are SHA-256 verified before activation.
+- Knowledge updates no longer require an application/installer update.
+- Curated car Research_Profiles are resolved before broad Wikipedia research.
+- Historical Generator_Priors now materially control dry-tire grip, vertical rate, damping, relaxation, flex, camber, load sensitivity, post-peak falloff, pressure-rate coupling, rolling losses, high-speed growth and thermal behavior.
+- Imported AC tire RATE and ideal pressure are retained as reference data rather than historical locks.
+- Preserves both AC ZIP import and unpacked data-folder import.
+- Preserves historical category menus, wear/temp/grip graphs, pressure solver, terminal failure, PDF evidence report and car-specific ZIP naming.
+
+2026-08-24 - v0.4.4
+- Restored wear, temperature/grip and peak-grip graphs.
+- Added stable-channel update checker to the installed app.
+- Added one-click download/install update flow through the local server.
+- Added SHA-256 verification before updates are installed.
+- Installer now checks the stable manifest for a newer build before installing.
+- Published installer builds now use versioned filenames.
+- Existing car-specific tire-pack export naming remains preserved.
+
+2026-08-24 - v0.4.3
+- Generalized historical research to arbitrary racing vehicles using source infobox Class/Category/Competition/Series/Championship/Regulations/Formula fields.
+- Unknown but specific source categories are preserved rather than discarded.
+- Added broad fallback recognition for prototype, LMH/LMDh/LMP, Group 4/5/6/A/B/C/N, GTP, GT, touring, rally, Formula, Indy/CART, NASCAR, Can-Am, Trans-Am and more.
+- Neutral exact-identity/motorsport/racing/competition searches replace category-biased queries.
+- Supplier lookup prioritizes source Tyres/Tires fields.
+- Re-hardened car-specific exported ZIP naming: ACLM_<Car_Name>_TirePack.zip.
+- Added installer-time feature regression guard so unrelated updates cannot silently remove working features.
+- No unrelated feature from v0.4.2 was intentionally removed.
+
+2026-08-24 - v0.4.2
+- Fixed historical research for rare/limited racers such as Aston Martin DP214.
+- Exact model identity is searched first; "racing" is fallback-only.
+- Strong identity pages are fetched as full Wikipedia wikitext, exposing specification tables omitted by intro-only lookup.
+- Year identification recognizes Production/Built/Debut evidence for limited-production and purpose-built racers.
+- Added older Grand Touring terminology for cars predating GT1/GT2 labels.
+- Supplier detection scans complete page/specification data.
+- Explicit Dunlop R5/R6 period racing references infer bias/cross-ply construction.
+- Research source pages remain attached to the PDF report.
+- Multiple genuinely distinct categories or suppliers still require user selection.
+
+2026-08-24 - v0.4.1
+- Fixed the LC2 pressure-generation regression exposed by the first Le Mans test.
+- Imported PRESSURE_STATIC values are now reference-only. They are shown in the import table/report but are not copied into generated compounds.
+- Added automatic generated-cold-pressure solver based on absolute pressure / ideal-gas temperature relation.
+- Default cold-pressure reference temperature is 26 C, matching the LC2 test condition that reproduced 24 psi -> 30.47 psi at 76 C and 27 psi -> 36.6 psi at ~95 C.
+- Each compound is solved against the center of its actual generated PERFORMANCE_CURVE peak window.
+- Soft / Medium / Hard / Intermediate / Wet therefore receive different cold pressures when their target thermal windows differ.
+- Added explicit Auto-solve generated cold pressures control; users can disable it for manual pressure calibration.
+- Added Cold-pressure reference temp input for different validation conditions.
+- Pressure validator now predicts hot pressure at the compound thermal target instead of using a crude cold/hot psi-gap rule.
+- Historical PDF report and manifest now distinguish imported AC pressure references from newly generated cold pressures.
+- The existing AC PRESSURE_IDEAL remains an import clue but is labeled as a reference rather than primary historical evidence.
+- PWA cache bumped so installed Tire Lab users receive the pressure solver.
+
+2026-08-24 - v0.4.0
+- Restored the historical tire accuracy/evidence PDF report as a mandatory part of every tire-pack export.
+- PDF filename follows the car name: ACLM_<Car>_Historical_Tire_Accuracy_Report.pdf.
+- Report includes identity/year/class/supplier provenance, construction, tire geometry, RATE, FZ0, pressure targets, compound menu, wear status, terminal-failure settings, AC implementation status, sources, limitations and next validation items.
+- Added an evidence-confidence score and explicit verdict. The score is labeled as evidence confidence, not a probability that proprietary coefficients are exact.
+- Direct AC-package data, researched context and Tire Lab reconstruction are explicitly separated in the report.
+- Historical source pages selected by the in-app research system are embedded in the PDF source section.
+- Report honestly flags unresolved class/supplier context and provisional wear data instead of presenting them as proven historical facts.
+- ZIP exporter is now binary-safe so PDFs are packaged alongside INI/LUT/TXT files.
+- Generated-file list allows the bundled PDF to be downloaded separately.
+- Validator now blocks export if the historical PDF is missing or does not have a valid PDF signature.
+- PDF engine is bundled locally and requires no internet connection or third-party PDF library at export time.
+
+2026-08-24 — v0.3.9
+- Fixed historical-profile contamination between successive imported cars.
+- A new import clears the previous Car/Year/Series/Supplier context before parsing.
+- car.ini [INFO] SCREEN_NAME / SHORT_NAME is now used when ui_car.json is absent.
+- This fixes physics-only ZIPs such as a Lancia LC2 data ZIP being left identified as the previous Toyota Supra.
+- Import now auto-fills only Car and Year identity. Series/Class is reset to "General / unknown"; Supplier is reset to "Unknown".
+- If no year exists in AC metadata, Tire Lab performs a narrow identity lookup for the imported car and only auto-fills a high-confidence racing/debut year.
+- Historical research no longer changes Car or Year.
+- Historical research query no longer hard-codes "Le Mans GT"; it uses an identity-matched exact car search to avoid GT-biased false matches.
+- Research results are restricted to pages with strong model-name identity matching.
+- Multiple racing categories trigger an in-app selection prompt instead of choosing one automatically.
+- Multiple tire suppliers also trigger selection, because supplier/construction can materially change the generated tire family.
+- Exactly one confident class or supplier candidate can be filled automatically.
+- Direct/inferred source links remain visible for review.
+
+2026-08-24 — v0.3.8
+- AC ZIP/folder import now pre-populates historical-profile fields where the package provides evidence.
+- ui_car.json name, year, tags/class and description are used before online lookup.
+- tyres.ini is scanned for explicit tire-supplier names.
+- Compound-menu checkboxes now reflect compounds actually detected in the imported tyres.ini.
+- Package/file names can provide low-confidence year/class clues.
+- Optional background public-source research runs after import for missing year/class/supplier fields.
+- Direct AC-package fields are green; researched/inferred fields are amber.
+- Background research never overwrites direct imported values.
+- Research source links are displayed in the import panel.
+- Added manual "Research historical profile now" control.
+- Ambiguous research is not auto-applied.
+
+2026-08-24 — v0.3.7
+- Added optional terminal tire-failure / puncture cliff to generated wear LUTs.
+- Default terminal behavior: end normal curve at >=60% grip, then 50% grip after +0.20 vKm.
+- Terminal failure is explicitly a grip-collapse/casing-failure simulation, not literal pressure loss.
+- Added validation for the terminal failure point.
+- Export ZIP filename now automatically includes the imported/entered car name.
+  Example: ACLM_Ferrari_348_GT-LM_TirePack.zip.
+- Added warning when Medium cold pressure is >8 psi below ideal pressure.
+- PWA service-worker cache bumped and old Tire Lab shell caches are removed on activation.
+
+2026-08-24 — v0.3.6 Browser App + AC Physics Import
+- Restored installable browser/PWA workflow served locally on 127.0.0.1.
+- Added manifest + service worker + browser Install App button.
+- Added persistent local-only server startup so an installed PWA can launch after reboot.
+- Restored AC car physics ZIP import.
+- Added unpacked data/full-car folder import.
+- Auto-populates car identity/year when available, mass, CG-derived front weight, tire geometry, RATE, FZ0,
+  ideal/cold pressure, blanket/pressure thermal settings, compound menu clues and extended-physics status.
+- Displays import provenance and highlights fields taken directly from AC physics.
+- Detects data.acd limitation and reports it clearly.
+- Retains all v0.3.5 complete AC-output/LUT-integrity fixes.
+- Adds wear-calibration status/note to the generated manifest; wear remains historically evidence-driven.
+
+2026-08-24 — v0.3.5 AC Output Completeness
+- Complete AC VERSION=10 output and reference validation.
+- DY_CURVE/DX_CURVE, camber LUTs, flex/sidewall/combined-slip fields.
+- Complete thermal/wear/camber LUT packaging and integrity checks.
+- Supra thermal baseline corrected and validated on-track.

@@ -1,0 +1,9 @@
+INSTALLER FIX — 2026-08-24
+===========================
+The previous browser-app installer failed while creating Windows shortcuts because
+its PowerShell helper used $args as a named function parameter. $args is an automatic
+PowerShell array variable, which caused the COM Shortcut.Arguments property to receive
+Object[] instead of String.
+
+This package replaces that shortcut helper with explicitly typed, non-reserved
+parameter names and verifies that the localhost server starts before reporting success.
