@@ -63,6 +63,10 @@ jobs:
           for version,spec in specs.items():
               path=root/spec["file"]
               raw=path.read_bytes()
+              if version=="1.4.2" and raw.endswith(b"\n") and hashlib.sha256(raw[:-1]).hexdigest()==spec["sha256"]:
+                  path.write_bytes(raw[:-1])
+                  raw=raw[:-1]
+                  print("Removed the web-editor final newline from 1.4.2 to restore its exact supplied bytes")
               raw_sha=hashlib.sha256(raw).hexdigest()
               if raw_sha!=spec["sha256"]: raise SystemExit(f"{version}: raw SHA-256 mismatch")
               data=json.loads(raw.decode("utf-8"))
@@ -110,6 +114,20 @@ jobs:
 
           print("Knowledge 1.4.2 -> 1.5.0 -> 1.6.0 lineage validated")
           PY
+
+      - name: Preserve exact supplied artifact bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add knowledge/releases/ACLM_Tire_Knowledge_v1.4.2.json
+          if git diff --cached --quiet; then
+            echo "All knowledge artifacts already match their supplied bytes"
+          else
+            git commit -m "fix: preserve exact Tire Knowledge v1.4.2 artifact bytes"
+            git push origin HEAD:main
+          fi
 
       - name: Publish immutable knowledge releases in order
         shell: bash
