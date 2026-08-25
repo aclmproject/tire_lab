@@ -1,0 +1,25 @@
+{
+  "1.4.2": {
+    "families": 37,
+    "classes": 37,
+    "sources": 110,
+    "measurements": 149,
+    "sha256": "a97b761fe6730a9422b214b90a72098aa0767f6e8c299b14b846bd5f7f335222"
+  },
+  "1.5.0": {
+    "families": 60,
+    "classes": 60,
+    "sources": 134,
+    "measurements": 171,
+    "sha256": "e9cf8731a6ee9f438714b20cd35cdc87e3d2753e9bf4f883ec22c4c56114595c",
+    "contentSha256": "f831d519e9461840f4c72f0bceaa6d7c99f146fc6ceb9fb2cd3772d0c5b1a3b1"
+  },
+  "1.6.0": {
+    "families": 73,
+    "classes": 73,
+    "sources": 145,
+    "measurements": 184,
+    "sha256": "8cf98a99947e2d8f9031f9310d2fbe35f6acd4aec2c131a10c8887375e6d4c1d",
+    "contentSha256": "e2cb456dfe1f959bc590c4bd4529b32c185558bd8fc5a25cb68fb6bee190ea58"
+  }
+}
