@@ -1,0 +1,3213 @@
+{
+  "id": "ACLM-HISTORICAL-SWEEP-1920-1999",
+  "scope": {
+    "from": 1920,
+    "to": 1999,
+    "focus": [
+      "racing classes",
+      "circuits and layouts",
+      "representative competition models",
+      "tire-era context"
+    ]
+  },
+  "generatedUtc": "2026-08-25T03:53:09.105Z",
+  "summary": {
+    "classes": 40,
+    "tracks": 46,
+    "models": 118,
+    "countries": 19
+  },
+  "guardrails": [
+    "Classification and historical context only: entries do not directly modify tire grip, load sensitivity, wear, pressure or thermal parameters.",
+    "No tire size, supplier or construction fact is promoted to runtime fitment without car/event-specific evidence.",
+    "Rally and mixed-surface entries require surface-specific evidence before any tire behavior is inferred.",
+    "Track entries describe historical context and must not be used as automatic grip multipliers."
+  ],
+  "classes": [
+    {
+      "id": "HCL001",
+      "name": "AIACR Grand Prix 2-litre formula",
+      "from": 1922,
+      "to": 1925,
+      "discipline": "formula",
+      "tireEra": "narrow treaded pneumatic bias",
+      "sourceIds": [
+        "SRC082",
+        "SRC083"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL002",
+      "name": "AIACR Grand Prix 1.5-litre formula",
+      "from": 1926,
+      "to": 1927,
+      "discipline": "formula",
+      "tireEra": "narrow treaded pneumatic bias",
+      "sourceIds": [
+        "SRC083"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL003",
+      "name": "Grand Prix Formula Libre era",
+      "from": 1928,
+      "to": 1933,
+      "discipline": "formula",
+      "tireEra": "treaded bias; rapidly increasing loads",
+      "sourceIds": [
+        "SRC083"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL004",
+      "name": "Grand Prix 750 kg formula",
+      "from": 1934,
+      "to": 1937,
+      "discipline": "formula",
+      "tireEra": "treaded bias; high-speed supercharged GP",
+      "sourceIds": [
+        "SRC083"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL005",
+      "name": "Grand Prix 3.0 L supercharged / 4.5 L atmospheric formula",
+      "from": 1938,
+      "to": 1939,
+      "discipline": "formula",
+      "tireEra": "treaded bias; very high load and speed",
+      "sourceIds": [
+        "SRC083"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL006",
+      "name": "European voiturette 1.5-litre racing",
+      "from": 1931,
+      "to": 1939,
+      "discipline": "formula",
+      "tireEra": "narrow treaded bias",
+      "sourceIds": [
+        "SRC073",
+        "SRC083"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL007",
+      "name": "AAA Championship Car pre-war",
+      "from": 1920,
+      "to": 1941,
+      "discipline": "oval/open-wheel",
+      "tireEra": "treaded bias; board, brick and dirt surfaces",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL008",
+      "name": "AAA Championship Car post-war",
+      "from": 1946,
+      "to": 1955,
+      "discipline": "oval/open-wheel",
+      "tireEra": "treaded bias; dirt and paved ovals",
+      "sourceIds": [
+        "SRC069",
+        "SRC070"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL009",
+      "name": "Formula 1 original 1.5 L supercharged / 4.5 L atmospheric",
+      "from": 1950,
+      "to": 1951,
+      "discipline": "formula",
+      "tireEra": "narrow treaded cross-ply",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL010",
+      "name": "World Championship run to Formula 2 regulations",
+      "from": 1952,
+      "to": 1953,
+      "discipline": "formula",
+      "tireEra": "narrow treaded cross-ply",
+      "sourceIds": [
+        "SRC086"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL011",
+      "name": "Formula 1 2.5-litre era",
+      "from": 1954,
+      "to": 1960,
+      "discipline": "formula",
+      "tireEra": "narrow treaded cross-ply; front-engine to rear-engine transition",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL012",
+      "name": "USAC Championship Car roadster era",
+      "from": 1956,
+      "to": 1964,
+      "discipline": "oval/open-wheel",
+      "tireEra": "treaded-to-slick bias transition; paved and dirt ovals",
+      "sourceIds": [
+        "SRC069",
+        "SRC070"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL013",
+      "name": "USAC Championship Car rear-engine transition",
+      "from": 1965,
+      "to": 1971,
+      "discipline": "oval/open-wheel",
+      "tireEra": "wide bias racing tires; tread-to-slick transition",
+      "sourceIds": [
+        "SRC069",
+        "SRC070"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL014",
+      "name": "USAC/CART winged turbo Indy car",
+      "from": 1972,
+      "to": 1982,
+      "discipline": "oval/open-wheel",
+      "tireEra": "wide slick bias; mixed superspeedway, short oval and road course",
+      "sourceIds": [
+        "SRC069",
+        "SRC070"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL015",
+      "name": "CART turbo Indy car",
+      "from": 1983,
+      "to": 1995,
+      "discipline": "oval/open-wheel",
+      "tireEra": "slick racing tire; radial adoption requires event-level evidence",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL016",
+      "name": "CART / IRL split-era American open wheel",
+      "from": 1996,
+      "to": 1999,
+      "discipline": "oval/open-wheel",
+      "tireEra": "slick radial; series and track-specific suppliers",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL017",
+      "name": "NASCAR Strictly Stock",
+      "from": 1949,
+      "to": 1949,
+      "discipline": "stock car",
+      "tireEra": "production-derived treaded bias",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL018",
+      "name": "NASCAR Grand National",
+      "from": 1950,
+      "to": 1970,
+      "discipline": "stock car",
+      "tireEra": "bias-ply stock-car racing tires; dirt and paved tracks",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL019",
+      "name": "NASCAR Winston Cup Grand National",
+      "from": 1971,
+      "to": 1985,
+      "discipline": "stock car",
+      "tireEra": "bias-ply slick stock-car tire",
+      "sourceIds": [
+        "SRC087"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL020",
+      "name": "NASCAR Winston Cup late bias-ply era",
+      "from": 1986,
+      "to": 1988,
+      "discipline": "stock car",
+      "tireEra": "bias-ply slick; tire-war context",
+      "sourceIds": [
+        "SRC087"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL021",
+      "name": "NASCAR Winston Cup radial transition",
+      "from": 1989,
+      "to": 1999,
+      "discipline": "stock car",
+      "tireEra": "radial slick; 1989 transition and tire-war evidence",
+      "sourceIds": [
+        "SRC072",
+        "SRC087"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL022",
+      "name": "Can-Am FIA Group 7 unlimited sports racing",
+      "from": 1966,
+      "to": 1974,
+      "discipline": "sports prototype",
+      "tireEra": "very wide high-load slick development",
+      "sourceIds": [
+        "SRC085",
+        "SRC092"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL023",
+      "name": "SCCA Formula A / Formula 5000",
+      "from": 1968,
+      "to": 1976,
+      "discipline": "formula",
+      "tireEra": "wide slick bias; high-power single-seater",
+      "sourceIds": [
+        "SRC084"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL024",
+      "name": "Single-seat Can-Am",
+      "from": 1977,
+      "to": 1986,
+      "discipline": "sports prototype",
+      "tireEra": "enclosed-wheel Formula 5000-derived slick",
+      "sourceIds": [
+        "SRC093"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL025",
+      "name": "Formula 1 ground-effect wide-slick era",
+      "from": 1977,
+      "to": 1982,
+      "discipline": "formula",
+      "tireEra": "wide slick cross-ply/radial tire-war",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL026",
+      "name": "Formula 1 flat-bottom turbo era",
+      "from": 1983,
+      "to": 1988,
+      "discipline": "formula",
+      "tireEra": "slick tire-war; high power and reduced underbody downforce",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL027",
+      "name": "Formula 1 naturally aspirated slick era",
+      "from": 1989,
+      "to": 1991,
+      "discipline": "formula",
+      "tireEra": "slick; multiple suppliers through 1991",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL028",
+      "name": "Formula 1 active-aero wide-slick era",
+      "from": 1992,
+      "to": 1997,
+      "discipline": "formula",
+      "tireEra": "slick radial; Goodyear control then supplier competition",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL029",
+      "name": "Formula 1 narrow-track grooved-tire era",
+      "from": 1998,
+      "to": 1999,
+      "discipline": "formula",
+      "tireEra": "grooved dry radial; three front grooves in 1998 and four rear",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL030",
+      "name": "World Rally Championship Group 4",
+      "from": 1973,
+      "to": 1981,
+      "discipline": "rally",
+      "tireEra": "surface-specific treaded competition tires",
+      "sourceIds": [
+        "SRC068"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL031",
+      "name": "World Rally Championship Group B",
+      "from": 1982,
+      "to": 1986,
+      "discipline": "rally",
+      "tireEra": "surface-specific high-load rally tires",
+      "sourceIds": [
+        "SRC068"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL032",
+      "name": "World Rally Championship Group A",
+      "from": 1987,
+      "to": 1996,
+      "discipline": "rally",
+      "tireEra": "surface-specific radial rally tires",
+      "sourceIds": [
+        "SRC068"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL033",
+      "name": "World Rally Car first generation",
+      "from": 1997,
+      "to": 1999,
+      "discipline": "rally",
+      "tireEra": "surface-specific radial rally tires",
+      "sourceIds": [
+        "SRC068"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL034",
+      "name": "FIA Class II / Super Touring",
+      "from": 1991,
+      "to": 1999,
+      "discipline": "touring",
+      "tireEra": "low-profile slick radial; championship-specific suppliers",
+      "sourceIds": [
+        "SRC073",
+        "SRC088"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL035",
+      "name": "Japanese Grand Touring Championship GT500/GT300",
+      "from": 1994,
+      "to": 1999,
+      "discipline": "grand touring",
+      "tireEra": "slick radial supplier competition",
+      "sourceIds": [
+        "SRC090"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL036",
+      "name": "Group C final world-championship phase",
+      "from": 1991,
+      "to": 1993,
+      "discipline": "sports prototype",
+      "tireEra": "high-downforce slick radial",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL037",
+      "name": "IMSA World Sports Car open prototype",
+      "from": 1994,
+      "to": 1999,
+      "discipline": "sports prototype",
+      "tireEra": "slick radial; open-cockpit prototype",
+      "sourceIds": [
+        "SRC073",
+        "SRC081"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL038",
+      "name": "BPR GT1 to FIA GT1 transition",
+      "from": 1993,
+      "to": 1998,
+      "discipline": "grand touring",
+      "tireEra": "large slick radial supplier competition",
+      "sourceIds": [
+        "SRC074",
+        "SRC089"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL039",
+      "name": "Formula 1 1.5-litre era",
+      "from": 1961,
+      "to": 1965,
+      "discipline": "formula",
+      "tireEra": "treaded cross-ply; Dunlop-dominant",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    },
+    {
+      "id": "HCL040",
+      "name": "Formula 1 3-litre tread-to-slick transition",
+      "from": 1966,
+      "to": 1970,
+      "discipline": "formula",
+      "tireEra": "cross-ply treaded to low-profile patterned/slick transition",
+      "sourceIds": [
+        "SRC066",
+        "SRC067",
+        "SRC094"
+      ],
+      "runtimeUse": "classification-only",
+      "physicsPromotion": "blocked pending tire-specific measurement evidence"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "TRK001",
+      "name": "Brooklands",
+      "country": "United Kingdom",
+      "opened": 1907,
+      "layout": "purpose-built banked circuit",
+      "surface": "concrete",
+      "majorClasses": "Early record, Grand Prix and club racing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 90,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK002",
+      "name": "Indianapolis Motor Speedway",
+      "country": "United States",
+      "opened": 1909,
+      "layout": "2.5-mile rectangular oval; brick surface, later asphalt except start/finish bricks",
+      "surface": "brick/asphalt",
+      "majorClasses": "AAA, USAC, CART and IRL Championship Car",
+      "sourceIds": [
+        "SRC069",
+        "SRC081"
+      ],
+      "confidence": 95,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK003",
+      "name": "AVUS",
+      "country": "Germany",
+      "opened": 1921,
+      "layout": "high-speed dual-carriageway course; 1937 brick-banked north curve",
+      "surface": "asphalt/brick",
+      "majorClasses": "Grand Prix, Formula Libre and record racing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 85,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK004",
+      "name": "Autodromo Nazionale Monza",
+      "country": "Italy",
+      "opened": 1922,
+      "layout": "road circuit plus high-speed oval configurations",
+      "surface": "asphalt/concrete",
+      "majorClasses": "Grand Prix, F1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC075"
+      ],
+      "confidence": 98,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK005",
+      "name": "Circuit de la Sarthe",
+      "country": "France",
+      "opened": 1923,
+      "layout": "public-road endurance circuit; Mulsanne chicanes added for 1990",
+      "surface": "asphalt public road",
+      "majorClasses": "Le Mans sports car, prototype and GT",
+      "sourceIds": [
+        "SRC074",
+        "SRC094"
+      ],
+      "confidence": 98,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK006",
+      "name": "Spa-Francorchamps",
+      "country": "Belgium",
+      "opened": 1921,
+      "layout": "long public-road triangle through 1970; shortened permanent circuit from 1979",
+      "surface": "asphalt public road/permanent",
+      "majorClasses": "Grand Prix, F1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081",
+        "SRC091"
+      ],
+      "confidence": 88,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK007",
+      "name": "Reims-Gueux",
+      "country": "France",
+      "opened": 1926,
+      "layout": "fast public-road triangular circuit",
+      "surface": "asphalt public road",
+      "majorClasses": "Grand Prix, F1 and sports cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 88,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK008",
+      "name": "Nürburgring Nordschleife",
+      "country": "Germany",
+      "opened": 1927,
+      "layout": "20.8 km mountain circuit with large elevation change",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix, F1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC076"
+      ],
+      "confidence": 98,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK009",
+      "name": "Circuit de Monaco",
+      "country": "Monaco",
+      "opened": 1929,
+      "layout": "tight harbour street circuit",
+      "surface": "asphalt street",
+      "majorClasses": "Grand Prix and Formula 1",
+      "sourceIds": [
+        "SRC091"
+      ],
+      "confidence": 97,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK010",
+      "name": "Pescara Circuit",
+      "country": "Italy",
+      "opened": 1924,
+      "layout": "very long public-road circuit",
+      "surface": "asphalt public road",
+      "majorClasses": "Grand Prix, F1 and sports cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 82,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK011",
+      "name": "Targa Florio / Madonie",
+      "country": "Italy",
+      "opened": 1906,
+      "layout": "multiple long Sicilian mountain-road layouts; Piccolo circuit central to 1932-77",
+      "surface": "asphalt public road",
+      "majorClasses": "sports car and endurance road racing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 90,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK012",
+      "name": "Mellaha / Tripoli",
+      "country": "Libya",
+      "opened": 1933,
+      "layout": "fast purpose-built road circuit around Lake Mellaha",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix and voiturette",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 85,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK013",
+      "name": "Bremgarten",
+      "country": "Switzerland",
+      "opened": 1931,
+      "layout": "fast tree-lined public-road circuit near Bern",
+      "surface": "asphalt public road",
+      "majorClasses": "Grand Prix, F1 and sports cars",
+      "sourceIds": [
+        "SRC081",
+        "SRC091"
+      ],
+      "confidence": 86,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK014",
+      "name": "Donington Park",
+      "country": "United Kingdom",
+      "opened": 1931,
+      "layout": "parkland permanent road circuit",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix, sports cars, touring and motorcycle racing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 90,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK015",
+      "name": "Mount Panorama / Bathurst",
+      "country": "Australia",
+      "opened": 1938,
+      "layout": "public-road mountain circuit",
+      "surface": "asphalt public road",
+      "majorClasses": "touring, sports car and endurance racing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK016",
+      "name": "Interlagos",
+      "country": "Brazil",
+      "opened": 1940,
+      "layout": "undulating permanent circuit; original long layout and shortened 1990 configuration",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix, F1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 92,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK017",
+      "name": "Silverstone",
+      "country": "United Kingdom",
+      "opened": 1948,
+      "layout": "former RAF airfield; perimeter circuit evolved through repeated revisions",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix, F1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC077",
+        "SRC091"
+      ],
+      "confidence": 98,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK018",
+      "name": "Goodwood Motor Circuit",
+      "country": "United Kingdom",
+      "opened": 1948,
+      "layout": "former RAF perimeter circuit",
+      "surface": "asphalt",
+      "majorClasses": "Formula, sports car and touring racing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 93,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK019",
+      "name": "Watkins Glen",
+      "country": "United States",
+      "opened": 1948,
+      "layout": "public-road races from 1948; permanent circuit opened 1956",
+      "surface": "asphalt road/permanent",
+      "majorClasses": "sports cars, USAC/CART and F1",
+      "sourceIds": [
+        "SRC080",
+        "SRC081"
+      ],
+      "confidence": 96,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK020",
+      "name": "Zandvoort",
+      "country": "Netherlands",
+      "opened": 1948,
+      "layout": "dune circuit with banked and flowing corners",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix, F1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081",
+        "SRC091"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK021",
+      "name": "Sebring International Raceway",
+      "country": "United States",
+      "opened": 1950,
+      "layout": "airfield circuit mixing concrete runways and asphalt",
+      "surface": "concrete/asphalt",
+      "majorClasses": "endurance sports cars, prototypes and GT",
+      "sourceIds": [
+        "SRC078"
+      ],
+      "confidence": 98,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK022",
+      "name": "Brands Hatch",
+      "country": "United Kingdom",
+      "opened": 1950,
+      "layout": "paved compact natural-terrain circuit; Grand Prix loop added 1960",
+      "surface": "asphalt",
+      "majorClasses": "formula, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 93,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK023",
+      "name": "Oulton Park",
+      "country": "United Kingdom",
+      "opened": 1953,
+      "layout": "natural-terrain parkland road course",
+      "surface": "asphalt",
+      "majorClasses": "formula, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 91,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK024",
+      "name": "Road America",
+      "country": "United States",
+      "opened": 1955,
+      "layout": "4.048-mile natural-terrain layout largely unchanged",
+      "surface": "asphalt",
+      "majorClasses": "SCCA, Can-Am, CART, IMSA and sports cars",
+      "sourceIds": [
+        "SRC079",
+        "SRC085"
+      ],
+      "confidence": 98,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK025",
+      "name": "Laguna Seca",
+      "country": "United States",
+      "opened": 1957,
+      "layout": "natural-terrain circuit with Corkscrew elevation change",
+      "surface": "asphalt",
+      "majorClasses": "sports cars, Can-Am, CART and IMSA",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK026",
+      "name": "Riverside International Raceway",
+      "country": "United States",
+      "opened": 1957,
+      "layout": "desert road course with multiple layouts",
+      "surface": "asphalt",
+      "majorClasses": "NASCAR, Can-Am, IMSA and Indy car",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 92,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK027",
+      "name": "Daytona International Speedway",
+      "country": "United States",
+      "opened": 1959,
+      "layout": "high-banked tri-oval with infield road course",
+      "surface": "asphalt",
+      "majorClasses": "NASCAR and endurance sports cars",
+      "sourceIds": [
+        "SRC071",
+        "SRC081"
+      ],
+      "confidence": 97,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK028",
+      "name": "Mosport / Canadian Tire Motorsport Park",
+      "country": "Canada",
+      "opened": 1961,
+      "layout": "fast natural-terrain road course",
+      "surface": "asphalt",
+      "majorClasses": "Can-Am, Formula 1, sports cars and IMSA",
+      "sourceIds": [
+        "SRC085",
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK029",
+      "name": "Kyalami",
+      "country": "South Africa",
+      "opened": 1961,
+      "layout": "high-altitude permanent circuit; major 1988 rebuild",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 90,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK030",
+      "name": "Suzuka Circuit",
+      "country": "Japan",
+      "opened": 1962,
+      "layout": "figure-eight permanent circuit",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars, JGTC and touring cars",
+      "sourceIds": [
+        "SRC081",
+        "SRC090"
+      ],
+      "confidence": 97,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK031",
+      "name": "Fuji Speedway",
+      "country": "Japan",
+      "opened": 1965,
+      "layout": "high-speed circuit; original banked first turn later removed",
+      "surface": "asphalt",
+      "majorClasses": "sports cars, Formula, Group C and JGTC",
+      "sourceIds": [
+        "SRC081",
+        "SRC090"
+      ],
+      "confidence": 93,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK032",
+      "name": "Hockenheimring",
+      "country": "Germany",
+      "opened": 1932,
+      "layout": "forest road circuit; high-speed 1966 layout central through 1999",
+      "surface": "asphalt",
+      "majorClasses": "Grand Prix, F1, prototypes and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK033",
+      "name": "Imola",
+      "country": "Italy",
+      "opened": 1953,
+      "layout": "fast anti-clockwise permanent road course; car racing from 1954",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 92,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK034",
+      "name": "Paul Ricard",
+      "country": "France",
+      "opened": 1970,
+      "layout": "wide modern circuit with long Mistral straight and multiple layouts",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and testing",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK035",
+      "name": "Long Beach",
+      "country": "United States",
+      "opened": 1975,
+      "layout": "street circuit with repeated layout revisions",
+      "surface": "asphalt street",
+      "majorClasses": "Formula 1, CART and IMSA",
+      "sourceIds": [
+        "SRC069",
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK036",
+      "name": "Adelaide Street Circuit",
+      "country": "Australia",
+      "opened": 1985,
+      "layout": "temporary street circuit",
+      "surface": "asphalt street",
+      "majorClasses": "Formula 1 and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 94,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK037",
+      "name": "Circuito de Jerez",
+      "country": "Spain",
+      "opened": 1985,
+      "layout": "permanent road circuit",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 92,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK038",
+      "name": "Estoril",
+      "country": "Portugal",
+      "opened": 1972,
+      "layout": "permanent road circuit; revisions before F1 debut in 1984",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 91,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK039",
+      "name": "Mid-Ohio Sports Car Course",
+      "country": "United States",
+      "opened": 1962,
+      "layout": "natural-terrain road course",
+      "surface": "asphalt",
+      "majorClasses": "SCCA, IMSA, CART and sports cars",
+      "sourceIds": [
+        "SRC069",
+        "SRC081"
+      ],
+      "confidence": 93,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK040",
+      "name": "Sears Point / Sonoma Raceway",
+      "country": "United States",
+      "opened": 1968,
+      "layout": "hilly natural-terrain road course",
+      "surface": "asphalt",
+      "majorClasses": "NASCAR, IMSA and Indy car",
+      "sourceIds": [
+        "SRC069",
+        "SRC081"
+      ],
+      "confidence": 92,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK041",
+      "name": "Circuit Mont-Tremblant",
+      "country": "Canada",
+      "opened": 1964,
+      "layout": "hilly natural-terrain road course",
+      "surface": "asphalt",
+      "majorClasses": "Can-Am, Formula 1 and sports cars",
+      "sourceIds": [
+        "SRC085",
+        "SRC081"
+      ],
+      "confidence": 90,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK042",
+      "name": "Bridgehampton Race Circuit",
+      "country": "United States",
+      "opened": 1957,
+      "layout": "natural-terrain road course on Long Island",
+      "surface": "asphalt",
+      "majorClasses": "SCCA, Can-Am and sports cars",
+      "sourceIds": [
+        "SRC085",
+        "SRC081"
+      ],
+      "confidence": 89,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK043",
+      "name": "Buenos Aires Autódromo",
+      "country": "Argentina",
+      "opened": 1952,
+      "layout": "multiple permanent configurations",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and touring cars",
+      "sourceIds": [
+        "SRC081",
+        "SRC091"
+      ],
+      "confidence": 91,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK044",
+      "name": "Magdalena Mixhuca / Mexico City",
+      "country": "Mexico",
+      "opened": 1959,
+      "layout": "high-altitude permanent circuit with Peraltada",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, sports cars and CART",
+      "sourceIds": [
+        "SRC069",
+        "SRC081"
+      ],
+      "confidence": 92,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK045",
+      "name": "Rouen-les-Essarts",
+      "country": "France",
+      "opened": 1950,
+      "layout": "fast public-road circuit with major elevation change",
+      "surface": "asphalt public road",
+      "majorClasses": "Formula 1, Formula 2 and sports cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 90,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    },
+    {
+      "id": "TRK046",
+      "name": "Charade / Clermont-Ferrand",
+      "country": "France",
+      "opened": 1958,
+      "layout": "mountain road circuit with volcanic terrain",
+      "surface": "asphalt",
+      "majorClasses": "Formula 1, Formula 2 and sports cars",
+      "sourceIds": [
+        "SRC081"
+      ],
+      "confidence": 89,
+      "runtimeUse": "context-only",
+      "physicsPromotion": "blocked; track entry must not directly scale tire grip"
+    }
+  ],
+  "models": [
+    {
+      "id": "HMD001",
+      "year": 1924,
+      "make": "Alfa Romeo",
+      "model": "P2",
+      "variant": "Grand Prix",
+      "classRef": "HCL001",
+      "competitionContext": "2-litre Grand Prix benchmark",
+      "sourceIds": [
+        "SRC073",
+        "SRC082"
+      ],
+      "confidence": 92,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD002",
+      "year": 1927,
+      "make": "Delage",
+      "model": "15 S8",
+      "variant": "Grand Prix",
+      "classRef": "HCL002",
+      "competitionContext": "1.5-litre Grand Prix benchmark",
+      "sourceIds": [
+        "SRC073",
+        "SRC083"
+      ],
+      "confidence": 90,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD003",
+      "year": 1926,
+      "make": "Miller",
+      "model": "91",
+      "variant": "front-drive Indianapolis car",
+      "classRef": "HCL007",
+      "competitionContext": "AAA Championship Car / Indianapolis",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 85,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD004",
+      "year": 1923,
+      "make": "Sunbeam",
+      "model": "Grand Prix",
+      "variant": "2-litre team car",
+      "classRef": "HCL001",
+      "competitionContext": "2-litre Grand Prix",
+      "sourceIds": [
+        "SRC082"
+      ],
+      "confidence": 84,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD005",
+      "year": 1932,
+      "make": "Alfa Romeo",
+      "model": "Tipo B",
+      "variant": "P3 monoposto",
+      "classRef": "HCL003",
+      "competitionContext": "Formula Libre and Grand Prix",
+      "sourceIds": [
+        "SRC073",
+        "SRC083"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD006",
+      "year": 1936,
+      "make": "Auto Union",
+      "model": "Type C",
+      "variant": "Grand Prix",
+      "classRef": "HCL004",
+      "competitionContext": "750 kg Grand Prix",
+      "sourceIds": [
+        "SRC073",
+        "SRC083"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD007",
+      "year": 1931,
+      "make": "Bugatti",
+      "model": "Type 51",
+      "variant": "Grand Prix",
+      "classRef": "HCL003",
+      "competitionContext": "Formula Libre Grand Prix",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 91,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD008",
+      "year": 1939,
+      "make": "Maserati",
+      "model": "4CL",
+      "variant": "voiturette",
+      "classRef": "HCL006",
+      "competitionContext": "1.5-litre voiturette",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 92,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD009",
+      "year": 1946,
+      "make": "Alfa Romeo",
+      "model": "158",
+      "variant": "Alfetta",
+      "classRef": "HCL009",
+      "competitionContext": "post-war Grand Prix and early F1",
+      "sourceIds": [
+        "SRC066",
+        "SRC073"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD010",
+      "year": 1948,
+      "make": "Maserati",
+      "model": "4CLT/48",
+      "variant": "Sanremo",
+      "classRef": "HCL009",
+      "competitionContext": "post-war Grand Prix and early F1",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 93,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD011",
+      "year": 1948,
+      "make": "Talbot-Lago",
+      "model": "T26C",
+      "variant": "Grand Prix",
+      "classRef": "HCL009",
+      "competitionContext": "post-war Grand Prix and early F1",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 92,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD012",
+      "year": 1950,
+      "make": "Ferrari",
+      "model": "375 F1",
+      "variant": "4.5-litre",
+      "classRef": "HCL009",
+      "competitionContext": "original Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD013",
+      "year": 1952,
+      "make": "Ferrari",
+      "model": "500",
+      "variant": "Formula 2",
+      "classRef": "HCL010",
+      "competitionContext": "World Championship Formula 2 regulations",
+      "sourceIds": [
+        "SRC086"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD014",
+      "year": 1954,
+      "make": "Mercedes-Benz",
+      "model": "W 196",
+      "variant": "Formula 1",
+      "classRef": "HCL011",
+      "competitionContext": "2.5-litre Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD015",
+      "year": 1954,
+      "make": "Maserati",
+      "model": "250F",
+      "variant": "Formula 1",
+      "classRef": "HCL011",
+      "competitionContext": "2.5-litre Formula 1",
+      "sourceIds": [
+        "SRC066",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD016",
+      "year": 1954,
+      "make": "Lancia",
+      "model": "D50",
+      "variant": "Formula 1",
+      "classRef": "HCL011",
+      "competitionContext": "2.5-litre Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD017",
+      "year": 1957,
+      "make": "Vanwall",
+      "model": "VW5",
+      "variant": "Formula 1",
+      "classRef": "HCL011",
+      "competitionContext": "2.5-litre Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD018",
+      "year": 1959,
+      "make": "Cooper",
+      "model": "T51",
+      "variant": "rear-engine Formula 1",
+      "classRef": "HCL011",
+      "competitionContext": "rear-engine F1 transition",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD019",
+      "year": 1953,
+      "make": "Jaguar",
+      "model": "C-Type",
+      "variant": "Le Mans",
+      "classRef": "CLS017",
+      "competitionContext": "world sports-car endurance",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD020",
+      "year": 1954,
+      "make": "Jaguar",
+      "model": "D-Type",
+      "variant": "Le Mans",
+      "classRef": "CLS017",
+      "competitionContext": "world sports-car endurance",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD021",
+      "year": 1955,
+      "make": "Mercedes-Benz",
+      "model": "300 SLR",
+      "variant": "W 196 S",
+      "classRef": "CLS017",
+      "competitionContext": "world sports-car endurance",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD022",
+      "year": 1956,
+      "make": "Aston Martin",
+      "model": "DBR1",
+      "variant": "sports racer",
+      "classRef": "CLS017",
+      "competitionContext": "world sports-car endurance",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD023",
+      "year": 1957,
+      "make": "Ferrari",
+      "model": "250 Testa Rossa",
+      "variant": "TR",
+      "classRef": "CLS017",
+      "competitionContext": "world sports-car endurance",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD024",
+      "year": 1953,
+      "make": "Porsche",
+      "model": "550",
+      "variant": "Spyder",
+      "classRef": "CLS017",
+      "competitionContext": "small-displacement sports car/endurance",
+      "sourceIds": [
+        "SRC073",
+        "SRC094"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD025",
+      "year": 1955,
+      "make": "Maserati",
+      "model": "300S",
+      "variant": "sports racer",
+      "classRef": "CLS017",
+      "competitionContext": "world sports-car endurance",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD026",
+      "year": 1952,
+      "make": "Hudson",
+      "model": "Hornet",
+      "variant": "Grand National stock car",
+      "classRef": "HCL018",
+      "competitionContext": "NASCAR Grand National",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "confidence": 90,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD027",
+      "year": 1955,
+      "make": "Chrysler",
+      "model": "C-300",
+      "variant": "Grand National stock car",
+      "classRef": "HCL018",
+      "competitionContext": "NASCAR Grand National",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "confidence": 91,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD028",
+      "year": 1953,
+      "make": "Kurtis Kraft",
+      "model": "500B",
+      "variant": "Indianapolis roadster",
+      "classRef": "HCL012",
+      "competitionContext": "AAA/USAC Championship Car",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 91,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD029",
+      "year": 1959,
+      "make": "Watson",
+      "model": "Roadster",
+      "variant": "Indianapolis",
+      "classRef": "HCL012",
+      "competitionContext": "USAC Championship Car",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD030",
+      "year": 1960,
+      "make": "Lotus",
+      "model": "18",
+      "variant": "Formula 1",
+      "classRef": "HCL039",
+      "competitionContext": "1.5-litre F1 transition",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD031",
+      "year": 1961,
+      "make": "Ferrari",
+      "model": "156",
+      "variant": "Sharknose",
+      "classRef": "HCL039",
+      "competitionContext": "1.5-litre Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD032",
+      "year": 1962,
+      "make": "Lotus",
+      "model": "25",
+      "variant": "monocoque Formula 1",
+      "classRef": "HCL039",
+      "competitionContext": "1.5-litre Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD033",
+      "year": 1966,
+      "make": "Brabham",
+      "model": "BT19",
+      "variant": "Formula 1",
+      "classRef": "HCL040",
+      "competitionContext": "3-litre Formula 1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD034",
+      "year": 1967,
+      "make": "Lotus",
+      "model": "49",
+      "variant": "Cosworth DFV Formula 1",
+      "classRef": "HCL040",
+      "competitionContext": "3-litre F1 tire-war transition",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD035",
+      "year": 1964,
+      "make": "Ford",
+      "model": "GT40",
+      "variant": "prototype/GT",
+      "classRef": "CLS020",
+      "competitionContext": "world sports-car and Le Mans",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD036",
+      "year": 1967,
+      "make": "Ferrari",
+      "model": "330 P4",
+      "variant": "sports prototype",
+      "classRef": "CLS034",
+      "competitionContext": "world sportscar early slick branch",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD037",
+      "year": 1968,
+      "make": "Porsche",
+      "model": "908",
+      "variant": "sports prototype",
+      "classRef": "CLS035",
+      "competitionContext": "world sportscar transition",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD038",
+      "year": 1965,
+      "make": "Lola",
+      "model": "T70",
+      "variant": "sports racing / Group 7",
+      "classRef": "HCL022",
+      "competitionContext": "sports prototype and Can-Am",
+      "sourceIds": [
+        "SRC085",
+        "SRC092"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD039",
+      "year": 1966,
+      "make": "Chaparral",
+      "model": "2E",
+      "variant": "Can-Am",
+      "classRef": "HCL022",
+      "competitionContext": "Group 7 Can-Am",
+      "sourceIds": [
+        "SRC085",
+        "SRC092"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD040",
+      "year": 1964,
+      "make": "Mini",
+      "model": "Cooper S",
+      "variant": "touring rally",
+      "classRef": "CLS018",
+      "competitionContext": "touring and rally",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD041",
+      "year": 1963,
+      "make": "Lotus",
+      "model": "Cortina",
+      "variant": "Mk I touring",
+      "classRef": "CLS018",
+      "competitionContext": "touring and saloon racing",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD042",
+      "year": 1966,
+      "make": "Ford",
+      "model": "Mustang",
+      "variant": "Trans-Am",
+      "classRef": "CLS020",
+      "competitionContext": "Trans-Am touring",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD043",
+      "year": 1965,
+      "make": "Alfa Romeo",
+      "model": "Giulia Sprint GTA",
+      "variant": "touring",
+      "classRef": "CLS020",
+      "competitionContext": "ETCC / touring",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD044",
+      "year": 1968,
+      "make": "McLaren",
+      "model": "M8A",
+      "variant": "Can-Am",
+      "classRef": "HCL022",
+      "competitionContext": "Group 7 Can-Am",
+      "sourceIds": [
+        "SRC085",
+        "SRC092"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD045",
+      "year": 1972,
+      "make": "Porsche",
+      "model": "917/10",
+      "variant": "Can-Am turbo",
+      "classRef": "HCL022",
+      "competitionContext": "Group 7 Can-Am",
+      "sourceIds": [
+        "SRC085",
+        "SRC092"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD046",
+      "year": 1974,
+      "make": "Lola",
+      "model": "T332",
+      "variant": "Formula 5000",
+      "classRef": "HCL023",
+      "competitionContext": "SCCA Formula 5000",
+      "sourceIds": [
+        "SRC084"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD047",
+      "year": 1965,
+      "make": "Lotus",
+      "model": "38",
+      "variant": "Indianapolis",
+      "classRef": "HCL013",
+      "competitionContext": "rear-engine USAC transition",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD048",
+      "year": 1966,
+      "make": "Eagle",
+      "model": "T1G",
+      "variant": "Indianapolis / USAC",
+      "classRef": "HCL013",
+      "competitionContext": "rear-engine Championship Car",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD049",
+      "year": 1971,
+      "make": "McLaren",
+      "model": "M16",
+      "variant": "Indianapolis",
+      "classRef": "HCL013",
+      "competitionContext": "winged rear-engine USAC transition",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD050",
+      "year": 1970,
+      "make": "Lotus",
+      "model": "72",
+      "variant": "Formula 1",
+      "classRef": "HCL040",
+      "competitionContext": "F1 tread-to-slick transition",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD051",
+      "year": 1973,
+      "make": "McLaren",
+      "model": "M23",
+      "variant": "Formula 1",
+      "classRef": "CLS004",
+      "competitionContext": "early F1 slick era",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD052",
+      "year": 1975,
+      "make": "Ferrari",
+      "model": "312T",
+      "variant": "Formula 1",
+      "classRef": "CLS037",
+      "competitionContext": "mature wide-slick F1",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD053",
+      "year": 1976,
+      "make": "Tyrrell",
+      "model": "P34",
+      "variant": "six-wheel Formula 1",
+      "classRef": "CLS037",
+      "competitionContext": "mature wide-slick F1",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD054",
+      "year": 1978,
+      "make": "Lotus",
+      "model": "79",
+      "variant": "ground-effect Formula 1",
+      "classRef": "HCL025",
+      "competitionContext": "ground-effect F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD055",
+      "year": 1970,
+      "make": "Porsche",
+      "model": "917",
+      "variant": "K / LH",
+      "classRef": "CLS021",
+      "competitionContext": "world sportscar / Le Mans",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD056",
+      "year": 1972,
+      "make": "Ferrari",
+      "model": "312 PB",
+      "variant": "sports prototype",
+      "classRef": "CLS023",
+      "competitionContext": "world championship makes",
+      "sourceIds": [
+        "SRC094"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD057",
+      "year": 1976,
+      "make": "Porsche",
+      "model": "935",
+      "variant": "Group 5",
+      "classRef": "CLS024",
+      "competitionContext": "Group 5 / DRM",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD058",
+      "year": 1973,
+      "make": "BMW",
+      "model": "3.0 CSL",
+      "variant": "Group 2",
+      "classRef": "CLS022",
+      "competitionContext": "ETCC / Group 2 touring",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD059",
+      "year": 1974,
+      "make": "Ford",
+      "model": "Capri RS3100",
+      "variant": "Group 2",
+      "classRef": "CLS022",
+      "competitionContext": "ETCC / Group 2 touring",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD060",
+      "year": 1971,
+      "make": "Alpine-Renault",
+      "model": "A110",
+      "variant": "Group 4 rally",
+      "classRef": "HCL030",
+      "competitionContext": "early WRC / Group 4",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD061",
+      "year": 1974,
+      "make": "Lancia",
+      "model": "Stratos HF",
+      "variant": "Group 4 rally",
+      "classRef": "HCL030",
+      "competitionContext": "WRC Group 4",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD062",
+      "year": 1976,
+      "make": "Fiat",
+      "model": "131 Abarth",
+      "variant": "Group 4 rally",
+      "classRef": "HCL030",
+      "competitionContext": "WRC Group 4",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD063",
+      "year": 1969,
+      "make": "Dodge",
+      "model": "Charger Daytona",
+      "variant": "NASCAR",
+      "classRef": "HCL018",
+      "competitionContext": "NASCAR Grand National aero era",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD064",
+      "year": 1979,
+      "make": "Williams",
+      "model": "FW07",
+      "variant": "ground-effect Formula 1",
+      "classRef": "HCL025",
+      "competitionContext": "ground-effect F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD065",
+      "year": 1984,
+      "make": "McLaren",
+      "model": "MP4/2",
+      "variant": "TAG-Porsche turbo Formula 1",
+      "classRef": "HCL026",
+      "competitionContext": "flat-bottom turbo F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD066",
+      "year": 1985,
+      "make": "Lotus",
+      "model": "97T",
+      "variant": "Renault turbo Formula 1",
+      "classRef": "HCL026",
+      "competitionContext": "flat-bottom turbo F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD067",
+      "year": 1986,
+      "make": "Williams",
+      "model": "FW11",
+      "variant": "Honda turbo Formula 1",
+      "classRef": "HCL026",
+      "competitionContext": "flat-bottom turbo F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD068",
+      "year": 1991,
+      "make": "McLaren",
+      "model": "MP4/6",
+      "variant": "Formula 1",
+      "classRef": "HCL027",
+      "competitionContext": "naturally aspirated slick F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD069",
+      "year": 1992,
+      "make": "Williams",
+      "model": "FW14B",
+      "variant": "active-suspension Formula 1",
+      "classRef": "HCL028",
+      "competitionContext": "active-aero slick F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD070",
+      "year": 1994,
+      "make": "Benetton",
+      "model": "B194",
+      "variant": "Formula 1",
+      "classRef": "HCL028",
+      "competitionContext": "wide-slick F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD071",
+      "year": 1997,
+      "make": "Ferrari",
+      "model": "F310B",
+      "variant": "Formula 1",
+      "classRef": "HCL028",
+      "competitionContext": "late wide-slick F1",
+      "sourceIds": [
+        "SRC066"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD072",
+      "year": 1998,
+      "make": "McLaren",
+      "model": "MP4/13",
+      "variant": "grooved-tire Formula 1",
+      "classRef": "HCL029",
+      "competitionContext": "first narrow-track grooved-tire F1 season",
+      "sourceIds": [
+        "SRC066",
+        "SRC067"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD073",
+      "year": 1982,
+      "make": "Porsche",
+      "model": "956",
+      "variant": "Group C",
+      "classRef": "CLS027",
+      "competitionContext": "early Group C / WEC",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD074",
+      "year": 1985,
+      "make": "Porsche",
+      "model": "962C",
+      "variant": "Group C",
+      "classRef": "CLS028",
+      "competitionContext": "Group C / WSPC",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD075",
+      "year": 1988,
+      "make": "Jaguar",
+      "model": "XJR-9",
+      "variant": "Group C / IMSA GTP",
+      "classRef": "CLS028",
+      "competitionContext": "WSPC and IMSA prototype",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD076",
+      "year": 1989,
+      "make": "Sauber-Mercedes",
+      "model": "C9",
+      "variant": "Group C",
+      "classRef": "CLS028",
+      "competitionContext": "WSPC Group C",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD077",
+      "year": 1991,
+      "make": "Mazda",
+      "model": "787B",
+      "variant": "Group C / GTP",
+      "classRef": "HCL036",
+      "competitionContext": "final Group C phase",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD078",
+      "year": 1992,
+      "make": "Toyota",
+      "model": "TS010",
+      "variant": "3.5-litre Group C",
+      "classRef": "HCL036",
+      "competitionContext": "final sports-car world championship",
+      "sourceIds": [
+        "SRC074"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD079",
+      "year": 1994,
+      "make": "Ferrari",
+      "model": "333 SP",
+      "variant": "World Sports Car",
+      "classRef": "HCL037",
+      "competitionContext": "IMSA WSC open prototype",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD080",
+      "year": 1997,
+      "make": "Riley & Scott",
+      "model": "Mk III",
+      "variant": "World Sports Car",
+      "classRef": "HCL037",
+      "competitionContext": "IMSA WSC open prototype",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD081",
+      "year": 1987,
+      "make": "Nissan",
+      "model": "GTP ZX-Turbo",
+      "variant": "IMSA GTP",
+      "classRef": "CLS029",
+      "competitionContext": "IMSA GTP prototype",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD082",
+      "year": 1991,
+      "make": "Eagle-Toyota",
+      "model": "MkIII",
+      "variant": "IMSA GTP",
+      "classRef": "CLS029",
+      "competitionContext": "late IMSA GTP prototype",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD083",
+      "year": 1980,
+      "make": "Audi",
+      "model": "quattro",
+      "variant": "Group 4 rally",
+      "classRef": "HCL030",
+      "competitionContext": "WRC Group 4 four-wheel-drive transition",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD084",
+      "year": 1984,
+      "make": "Audi",
+      "model": "Sport quattro S1",
+      "variant": "Group B rally",
+      "classRef": "HCL031",
+      "competitionContext": "WRC Group B",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD085",
+      "year": 1984,
+      "make": "Peugeot",
+      "model": "205 T16",
+      "variant": "Group B rally",
+      "classRef": "HCL031",
+      "competitionContext": "WRC Group B",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD086",
+      "year": 1985,
+      "make": "Lancia",
+      "model": "Delta S4",
+      "variant": "Group B rally",
+      "classRef": "HCL031",
+      "competitionContext": "WRC Group B",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD087",
+      "year": 1987,
+      "make": "Lancia",
+      "model": "Delta HF 4WD / Integrale",
+      "variant": "Group A rally",
+      "classRef": "HCL032",
+      "competitionContext": "WRC Group A",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD088",
+      "year": 1993,
+      "make": "Subaru",
+      "model": "Impreza 555",
+      "variant": "Group A rally",
+      "classRef": "HCL032",
+      "competitionContext": "WRC Group A",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD089",
+      "year": 1997,
+      "make": "Subaru",
+      "model": "Impreza WRC97",
+      "variant": "World Rally Car",
+      "classRef": "HCL033",
+      "competitionContext": "first-generation World Rally Car",
+      "sourceIds": [
+        "SRC068"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD090",
+      "year": 1997,
+      "make": "Mitsubishi",
+      "model": "Lancer Evolution IV",
+      "variant": "Group A rally",
+      "classRef": "HCL032",
+      "competitionContext": "WRC Group A during World Rally Car era",
+      "sourceIds": [
+        "SRC068",
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD091",
+      "year": 1997,
+      "make": "Ford",
+      "model": "Escort WRC",
+      "variant": "World Rally Car",
+      "classRef": "HCL033",
+      "competitionContext": "first-generation World Rally Car",
+      "sourceIds": [
+        "SRC068"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD092",
+      "year": 1987,
+      "make": "BMW",
+      "model": "M3 E30",
+      "variant": "Group A touring",
+      "classRef": "CLS006",
+      "competitionContext": "Group A touring",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD093",
+      "year": 1987,
+      "make": "Ford",
+      "model": "Sierra RS500",
+      "variant": "Group A touring",
+      "classRef": "CLS006",
+      "competitionContext": "Group A touring",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD094",
+      "year": 1993,
+      "make": "Alfa Romeo",
+      "model": "155 V6 TI",
+      "variant": "Class 1 DTM",
+      "classRef": "CLS010",
+      "competitionContext": "DTM / ITC Class 1",
+      "sourceIds": [
+        "SRC073"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD095",
+      "year": 1991,
+      "make": "BMW",
+      "model": "318is / 320i E36",
+      "variant": "Super Touring",
+      "classRef": "HCL034",
+      "competitionContext": "FIA Class II / Super Touring",
+      "sourceIds": [
+        "SRC073",
+        "SRC088"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD096",
+      "year": 1993,
+      "make": "Alfa Romeo",
+      "model": "155 TS",
+      "variant": "Super Touring",
+      "classRef": "HCL034",
+      "competitionContext": "FIA Class II / Super Touring",
+      "sourceIds": [
+        "SRC073",
+        "SRC088"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD097",
+      "year": 1994,
+      "make": "Volvo",
+      "model": "850 Estate",
+      "variant": "Super Touring",
+      "classRef": "HCL034",
+      "competitionContext": "BTCC Super Touring",
+      "sourceIds": [
+        "SRC088"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD098",
+      "year": 1996,
+      "make": "Audi",
+      "model": "A4 quattro",
+      "variant": "Super Touring",
+      "classRef": "HCL034",
+      "competitionContext": "Super Touring",
+      "sourceIds": [
+        "SRC073",
+        "SRC088"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD099",
+      "year": 1994,
+      "make": "Nissan",
+      "model": "Skyline GT-R R32",
+      "variant": "JGTC GT1/GT500",
+      "classRef": "HCL035",
+      "competitionContext": "early JGTC",
+      "sourceIds": [
+        "SRC090"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD100",
+      "year": 1995,
+      "make": "Toyota",
+      "model": "Supra GT",
+      "variant": "JGTC GT500",
+      "classRef": "HCL035",
+      "competitionContext": "JGTC GT500",
+      "sourceIds": [
+        "SRC090"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD101",
+      "year": 1997,
+      "make": "Honda",
+      "model": "NSX-GT",
+      "variant": "JGTC GT500",
+      "classRef": "HCL035",
+      "competitionContext": "JGTC GT500",
+      "sourceIds": [
+        "SRC090"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD102",
+      "year": 1998,
+      "make": "Nissan",
+      "model": "Skyline GT-R R33",
+      "variant": "JGTC GT500",
+      "classRef": "HCL035",
+      "competitionContext": "JGTC GT500",
+      "sourceIds": [
+        "SRC090"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD103",
+      "year": 1999,
+      "make": "Nissan",
+      "model": "Skyline GT-R R34",
+      "variant": "JGTC GT500",
+      "classRef": "HCL035",
+      "competitionContext": "JGTC GT500",
+      "sourceIds": [
+        "SRC090"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD104",
+      "year": 1996,
+      "make": "Porsche",
+      "model": "911 GT1",
+      "variant": "GT1",
+      "classRef": "HCL038",
+      "competitionContext": "BPR / FIA GT1 and Le Mans",
+      "sourceIds": [
+        "SRC074",
+        "SRC089"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD105",
+      "year": 1997,
+      "make": "Mercedes-Benz",
+      "model": "CLK-GTR",
+      "variant": "GT1",
+      "classRef": "HCL038",
+      "competitionContext": "FIA GT1",
+      "sourceIds": [
+        "SRC089"
+      ],
+      "confidence": 99,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD106",
+      "year": 1998,
+      "make": "Toyota",
+      "model": "GT-One TS020",
+      "variant": "GT1 / LM GTP",
+      "classRef": "HCL038",
+      "competitionContext": "Le Mans GT1-derived prototype",
+      "sourceIds": [
+        "SRC074",
+        "SRC089"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD107",
+      "year": 1997,
+      "make": "Nissan",
+      "model": "R390 GT1",
+      "variant": "GT1",
+      "classRef": "HCL038",
+      "competitionContext": "Le Mans GT1",
+      "sourceIds": [
+        "SRC074",
+        "SRC089"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD108",
+      "year": 1996,
+      "make": "Dodge",
+      "model": "Viper GTS-R",
+      "variant": "GT2",
+      "classRef": "CLS011",
+      "competitionContext": "BPR / FIA GT2",
+      "sourceIds": [
+        "SRC074",
+        "SRC089"
+      ],
+      "confidence": 98,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD109",
+      "year": 1995,
+      "make": "Ferrari",
+      "model": "F40 GTE",
+      "variant": "GT1",
+      "classRef": "HCL038",
+      "competitionContext": "BPR GT1",
+      "sourceIds": [
+        "SRC089"
+      ],
+      "confidence": 97,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD110",
+      "year": 1988,
+      "make": "Ford",
+      "model": "Thunderbird",
+      "variant": "Winston Cup",
+      "classRef": "HCL020",
+      "competitionContext": "late bias-ply NASCAR",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD111",
+      "year": 1990,
+      "make": "Chevrolet",
+      "model": "Lumina",
+      "variant": "Winston Cup",
+      "classRef": "HCL021",
+      "competitionContext": "NASCAR radial era",
+      "sourceIds": [
+        "SRC072",
+        "SRC087"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD112",
+      "year": 1988,
+      "make": "Penske",
+      "model": "PC-17",
+      "variant": "CART Indy car",
+      "classRef": "HCL015",
+      "competitionContext": "CART oval/road-course slick era",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD113",
+      "year": 1990,
+      "make": "Lola",
+      "model": "T90/00",
+      "variant": "CART Indy car",
+      "classRef": "HCL015",
+      "competitionContext": "CART oval/road-course slick era",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 94,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD114",
+      "year": 1995,
+      "make": "Reynard",
+      "model": "95I",
+      "variant": "CART Indy car",
+      "classRef": "HCL015",
+      "competitionContext": "CART oval/road-course slick era",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 96,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD115",
+      "year": 1997,
+      "make": "Dallara",
+      "model": "IR7",
+      "variant": "IRL",
+      "classRef": "HCL016",
+      "competitionContext": "IRL naturally aspirated oval car",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD116",
+      "year": 1973,
+      "make": "Chevrolet",
+      "model": "Chevelle Laguna",
+      "variant": "Winston Cup",
+      "classRef": "HCL019",
+      "competitionContext": "NASCAR Winston Cup Grand National",
+      "sourceIds": [
+        "SRC071",
+        "SRC087"
+      ],
+      "confidence": 93,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD117",
+      "year": 1981,
+      "make": "March",
+      "model": "81C",
+      "variant": "CART Indy car",
+      "classRef": "HCL014",
+      "competitionContext": "USAC/CART winged turbo era",
+      "sourceIds": [
+        "SRC069"
+      ],
+      "confidence": 95,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    },
+    {
+      "id": "HMD118",
+      "year": 1977,
+      "make": "Lola",
+      "model": "T333CS",
+      "variant": "single-seat Can-Am",
+      "classRef": "HCL024",
+      "competitionContext": "single-seat Can-Am",
+      "sourceIds": [
+        "SRC093"
+      ],
+      "confidence": 93,
+      "aliases": [],
+      "fitmentStatus": "not promoted; model/class recognition only",
+      "runtimeUse": "classification-only"
+    }
+  ]
+}
