@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.5.7
+- Wired the Check for updates and Open update download page buttons.
+- The download page now opens even before an update check or when the installed build is current.
+- A successful check retains the stable manifest metadata and opens its version-specific release page.
+- Update-check failures leave the GitHub releases fallback available.
+- Bumped the browser-app cache so installed apps receive the corrected handlers.
+
 2026-08-25 - v0.5.6
 - Fixed knowledge synchronization UI: restored the missing updateKnowledgeUi function.
 - Knowledge release and schema labels now refresh after cache load, update check and forced sync.

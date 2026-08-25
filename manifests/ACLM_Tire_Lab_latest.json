@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.5.6",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.5.6.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.6",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.6/ACLM_Tire_Lab_Setup_v0.5.6.zip",
-  "sha256": "3f04876650e17932db6102bb90cf576d200c3af08c33f7a1676323d5008896e3",
-  "published_utc": "2026-08-25T06:29:31Z",
-  "notes": "Fixes knowledge synchronization display and refresh logic, corrects internal version constants, and forces a clean browser-app cache update."
+  "version": "0.5.7",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.5.7.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.7",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.7/ACLM_Tire_Lab_Setup_v0.5.7.zip",
+  "sha256": "dfeded2d0a9a8ba0929e8dece3b75b3c018f49a907f901e1e4bce2f632861abf",
+  "published_utc": "2026-08-25T14:01:26Z",
+  "notes": "Wires both application update buttons, preserves the stable release link after checks, and provides an always-available GitHub releases fallback."
 }
