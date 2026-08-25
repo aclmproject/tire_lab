@@ -57,18 +57,6 @@ jobs:
               text=text.replace("https://drive.google.com/drive/folders/12Vm83yrs2n9cQrwhLugX7FCgwWCACCFP",releases)
               text=text.replace("Google Drive stable release","GitHub stable release")
               path.write_text(text,encoding="utf-8",newline="")
-          server=src/"payload"/"Server_ACLM_Tire_Lab.ps1"
-          cached={server:server.read_text(encoding="utf-8")}
-          substitutions=[
-              (server,r'(?m)^\$CurrentVersion\s*=\s*"[^"]+"',f'$CurrentVersion = "{version}"'),
-              (server,r'(?m)^\$KnowledgeManifestUrl\s*=\s*"[^"]+"',f'$KnowledgeManifestUrl = "{knowledge_manifest}"'),
-              (server,r'(?m)^\$ManifestUrl\s*=\s*"[^"]+"',f'$ManifestUrl = "{app_manifest}"'),
-              (server,r'(?m)^\$UpdatesFolderUrl\s*=\s*"[^"]+"',f'$UpdatesFolderUrl = "{releases}"')]
-          for path,pattern,replacement in substitutions:
-              text,count=re.subn(pattern,replacement,cached[path],count=1)
-              if count!=1: raise SystemExit(f"Expected one updater constant in {path}: {pattern}")
-              cached[path]=text
-          for path,text in cached.items(): path.write_text(text,encoding="utf-8",newline="")
           changelog=src/"payload"/"Documentation"/"CHANGELOG.txt"; old=changelog.read_text(encoding="utf-8-sig")
           old=re.sub(r'^ACLM HISTORICAL TIRE LAB - CHANGELOG\r?\n=+\r?\n\r?\n','',old,count=1)
           header=("ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
