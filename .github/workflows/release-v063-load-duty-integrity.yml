@@ -108,12 +108,9 @@ jobs:
           AC tire format: VERSION=10'''
           app=replace_once(app,manifest_anchor,manifest_new,"manifest load-duty provenance")
 
-          report_anchor='''      {label:"Reference load FZ0",value:`${fz0("front")} N front / ${fz0("rear")} N rear`},
-               {label:"Ideal hot pressure"'''
-          report_new='''      {label:"Reference load FZ0",value:`${fz0("front")} N front / ${fz0("rear")} N rear`},
-               {label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},
-               {label:"Ideal hot pressure"'''
-          app=replace_once(app,report_anchor,report_new,"PDF load-duty row")
+          report_line='''     {label:"Reference load FZ0",value:`${fz0("front")} N front / ${fz0("rear")} N rear`},'''
+          report_new=report_line+'''\n     {label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},'''
+          app=replace_once(app,report_line,report_new,"PDF load-duty row")
           app=replace_once(app,
               '    "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values."',
               '    "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values.",\n    "Load-duty thermal scaling uses FZ0 per tread width for each axle. It is a transparent simulation reconstruction prior, not confidential supplier data."',
