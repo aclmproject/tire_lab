@@ -97,7 +97,7 @@ jobs:
           if app.count('const ACLM_APP_VERSION="0.5.9";')!=1:
               raise SystemExit("Unexpected app version constant")
           app=app.replace('const ACLM_APP_VERSION="0.5.9";',f'const ACLM_APP_VERSION="{version}";')
-          if app.count("v0.5.9")!=2:
+          if app.count("v0.5.9")!=3:
               raise SystemExit("Unexpected generated-output version token count")
           app=app.replace("v0.5.9",f"v{version}")
 
