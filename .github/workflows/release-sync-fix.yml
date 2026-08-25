@@ -55,11 +55,15 @@ jobs:
 
           '''
           app = app.replace(anchor, ui_function + anchor)
-          if app.count("v0.4.5") != 2:
-              raise SystemExit("Unexpected internal v0.4.5 token count")
+          old_build = 'build:"v0.4.5"'
+          old_constant = 'const ACLM_APP_VERSION="0.4.5"'
+          if app.count(old_build) != 1 or app.count(old_constant) != 1:
+              raise SystemExit("Unexpected internal v0.4.5 version tokens")
           if app.count("v0.5.5") != 2:
               raise SystemExit("Unexpected generated-output v0.5.5 token count")
-          app = app.replace("v0.4.5", f"v{version}").replace("v0.5.5", f"v{version}")
+          app = app.replace(old_build, f'build:"v{version}"')
+          app = app.replace(old_constant, f'const ACLM_APP_VERSION="{version}"')
+          app = app.replace("v0.5.5", f"v{version}")
           app_path.write_text(app, encoding="utf-8", newline="")
 
           index_path = Path("src/payload/app/index.html")
