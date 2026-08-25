@@ -1,13 +1,13 @@
 {
   "product": "ACLM Tire Knowledge",
   "channel": "stable",
-  "schema_version": "1.0.0",
-  "version": "1.4.0",
-  "file_name": "ACLM_Tire_Knowledge_v1.4.0.json",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v1.4.0",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/knowledge-v1.4.0/ACLM_Tire_Knowledge_v1.4.0.json",
-  "sha256": "a92f5e3b6501e537ff9fa903152d55a5749289337c28bba98fa87471bcc725d3",
-  "release_content_sha256": "7eb5e0a323256b8d5cc8f0ca8ea68f48786c976b96a578899ed95523aa9d04c7",
-  "published_utc": "2026-08-25T06:11:57Z",
-  "notes": "Evidence-backed 1920-1999 models, tracks and classes sweep. Classification/context only; existing calibrated tire physics remain unchanged."
+  "schema_version": "1.2.0",
+  "version": "1.6.0",
+  "file_name": "ACLM_Tire_Knowledge_v1.6.0.json",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v1.6.0",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/knowledge-v1.6.0/ACLM_Tire_Knowledge_v1.6.0.json",
+  "sha256": "8cf98a99947e2d8f9031f9310d2fbe35f6acd4aec2c131a10c8887375e6d4c1d",
+  "release_content_sha256": "e2cb456dfe1f959bc590c4bd4529b32c185558bd8fc5a25cb68fb6bee190ea58",
+  "published_utc": "2026-08-25T23:21:17Z",
+  "notes": "Validated Formula and Modern Endurance expansion through 73 families/classes, with source-backed series menus and reconstruction-prior guardrails."
 }
