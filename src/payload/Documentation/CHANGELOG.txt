@@ -1,13 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
-2026-08-24 - v0.5.4
-- Migrated application source, stable manifests and release delivery to GitHub.
-- Migrated independently versioned tire-knowledge delivery to GitHub Releases.
+2026-08-24 - v0.5.5
+- Corrected the stale Installed build label so it matches the running release.
+- Preserved GitHub-native update and independently versioned knowledge delivery.
 - Retained SHA-256 verification and the bundled last-known-good knowledge fallback.
-- Google Drive remains only as the one-time v0.5.3-to-v0.5.4 upgrade bridge.
+- Google Drive remains only as the one-time v0.5.3-to-v0.5.5 upgrade bridge.
 
-2026-08-24 - v0.5.4
+2026-08-24 - v0.5.5
 - Reworked distribution after Google Drive malware false-positive.
 - Removed app auto-download, TEMP extraction, auto-execution, hidden updater, startup VBS and self-deleting updater behavior.
 - Removed installer self-update and automatic prerequisite installation.

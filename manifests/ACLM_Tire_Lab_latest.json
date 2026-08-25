@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.5.4",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.5.4.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.4",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.4/ACLM_Tire_Lab_Setup_v0.5.4.zip",
-  "sha256": "c1259249ca0f4ba938cede20d44e152b3f690f9345008da01584b68efeee0c42",
-  "published_utc": "2026-08-25T03:19:44Z",
-  "notes": "Moves application source, stable updates and independently versioned tire knowledge from Google Drive to GitHub while retaining SHA-256 verification and offline fallback behavior."
+  "version": "0.5.5",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.5.5.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.5",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.5/ACLM_Tire_Lab_Setup_v0.5.5.zip",
+  "sha256": "cb7dc6ffc5651ac5f08d7e933c91de3b6853673609d67c2c66ea8d37ef1a33c2",
+  "published_utc": "2026-08-25T03:39:03Z",
+  "notes": "Corrects the Installed build label and preserves GitHub-native updates, SHA-256 verification and offline knowledge fallback behavior."
 }
