@@ -1,0 +1,191 @@
+name: Release Tire Lab Temperature Export Correction
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/release-temperature-export-fix.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tire-lab-v062-temperature-export
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.6.2
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build the temperature-export correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          version="0.6.2"
+          previous="0.6.1"
+
+          def replace_once(text, old, new, label):
+              count=text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected one match, found {count}")
+              return text.replace(old,new,1)
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          app=replace_once(app,'const ACLM_APP_VERSION="0.6.1";','const ACLM_APP_VERSION="0.6.2";',"app version")
+          old_export='   files[`aclm_${c}_tcurve.lut`]=tempCurves[c];'
+          new_export='   files[`aclm_${c}_tcurve.lut`]=performanceCurveText(c);'
+          app=replace_once(app,old_export,new_export,"temperature curve export")
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          replacements=[
+              ("src/payload/app/index.html","v0.6.1 Browser App","v0.6.2 Browser App","index version"),
+              ("src/payload/Server_ACLM_Tire_Lab.ps1",'$CurrentVersion = "0.6.1"','$CurrentVersion = "0.6.2"',"server version"),
+              ("src/payload/app/sw.js","aclm-tire-lab-shell-v061-single-launcher","aclm-tire-lab-shell-v062-temperature-export","service worker cache"),
+              ("README.md","Current application release: **v0.6.1**","Current application release: **v0.6.2**","repository version"),
+          ]
+          for filename,old,new,label in replacements:
+              path=Path(filename)
+              text=path.read_text(encoding="utf-8")
+              path.write_text(replace_once(text,old,new,label),encoding="utf-8",newline="")
+
+          for filename in [
+              "src/payload/Launch_ACLM_Tire_Lab.cmd",
+              "src/Install_ACLM_Tire_Lab.cmd",
+              "src/README_FIRST.txt",
+          ]:
+              path=Path(filename)
+              text=path.read_text(encoding="utf-8")
+              if previous not in text:
+                  raise SystemExit(f"{filename}: previous version not found")
+              path.write_text(text.replace(previous,version),encoding="utf-8",newline="")
+
+          changelog_path=Path("src/payload/Documentation/CHANGELOG.txt")
+          changelog=changelog_path.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not changelog.startswith(heading):
+              raise SystemExit("Unexpected changelog heading")
+          entry=f"""2026-08-25 - v{version}
+          - Tire-pack ZIPs now export the active knowledge-backed PERFORMANCE_CURVE shown in the temperature/grip graph.
+          - Removes the stale temporary LUT path that could leave generated tires using an older generic temperature window.
+          - Keeps the v0.6.1 single-launcher cleanup, stale-server detection, and cache refresh behavior.
+          - No tire-family calibration values or historical knowledge records changed.
+
+          """
+          changelog_path.write_text(heading+entry+changelog[len(heading):],encoding="utf-8",newline="")
+          PY
+
+      - name: Validate the corrected tire exporter
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node --check src/payload/app/sw.js
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors) | Out-Null; if($errors.Count){$errors | ForEach-Object { Write-Error $_ }; exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+          app=Path("src/payload/app/app.js").read_text(encoding="utf-8")
+          index=Path("src/payload/app/index.html").read_text(encoding="utf-8")
+          server=Path("src/payload/Server_ACLM_Tire_Lab.ps1").read_text(encoding="utf-8")
+          launcher=Path("src/payload/Launch_ACLM_Tire_Lab.cmd").read_text(encoding="utf-8")
+          installer=Path("src/Install_ACLM_Tire_Lab.cmd").read_text(encoding="utf-8")
+          sw=Path("src/payload/app/sw.js").read_text(encoding="utf-8")
+          changelog=Path("src/payload/Documentation/CHANGELOG.txt").read_text(encoding="utf-8")
+          dynamic='   files[`aclm_${c}_tcurve.lut`]=performanceCurveText(c);'
+          stale='   files[`aclm_${c}_tcurve.lut`]=tempCurves[c];'
+          assert 'const ACLM_APP_VERSION="0.6.2";' in app
+          assert dynamic in app and app.count(dynamic)==1
+          assert stale not in app
+          assert 'join("\n")+"\n"' in app
+          assert "v0.6.2 Browser App" in index
+          assert '$CurrentVersion = "0.6.2"' in server
+          assert "EXPECTED_VERSION=0.6.2" in launcher and "?build=0.6.2" in launcher
+          assert installer.count("CreateShortcut")==1
+          assert "ACLM Historical Tire Lab (1).lnk" in installer
+          assert "Startup\ACLM Tire Lab Server.lnk" in installer
+          assert "Chrome Apps\ACLM Historical Tire Lab.lnk" in installer
+          assert "aclm-tire-lab-shell-v062-temperature-export" in sw
+          assert changelog.startswith("ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n2026-08-25 - v0.6.2")
+          print("v0.6.2 exporter and launcher regression checks passed")
+          PY
+
+      - name: Package app and update stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime, timezone
+          import hashlib, json, os, zipfile
+
+          version=os.environ["APP_VERSION"]
+          src=Path("src")
+          archive_name=f"ACLM_Tire_Lab_Setup_v{version}.zip"
+          archive=Path("/tmp")/archive_name
+          with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as zf:
+              for path in sorted(src.rglob("*")):
+                  if path.is_file():
+                      zf.write(path,path.relative_to(src).as_posix())
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          published=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={
+              "product":"ACLM Historical Tire Lab",
+              "channel":"stable",
+              "version":version,
+              "file_name":archive_name,
+              "release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}",
+              "download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{archive_name}",
+              "sha256":archive_sha,
+              "published_utc":published,
+              "notes":"Knowledge-backed temperature LUT export correction; retains one canonical launcher; no calibration-value changes."
+          }
+          manifest_path=Path("manifests/ACLM_Tire_Lab_latest.json")
+          manifest_path.write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+          Path("/tmp/app_release_sha256").write_text(archive_sha,encoding="ascii")
+          print(json.dumps({"version":version,"sha256":archive_sha,"archive":str(archive)},indent=2))
+          PY
+
+      - name: Commit v0.6.2 source and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: export the active temperature curve in Tire Lab v0.6.2"
+          git push origin HEAD:main
+
+      - name: Publish Tire Lab v0.6.2
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v$APP_VERSION already exists"
+            exit 1
+          fi
+          sha="$(cat /tmp/app_release_sha256)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" "manifests/ACLM_Tire_Lab_latest.json" \
+            --repo "${{ github.repository }}" \
+            --target "$(git rev-parse HEAD)" \
+            --title "ACLM Historical Tire Lab v$APP_VERSION" \
+            --notes "Temperature-curve export correction.
+          - generated tire-pack ZIPs now use the same knowledge-backed PERFORMANCE_CURVE displayed by the graph
+          - removes the stale temporary temperature-LUT export path
+          - retains the one-launcher cleanup and version-aware local-server startup from v0.6.1
+          - no tire-family calibration values or knowledge records changed
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
