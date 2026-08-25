@@ -27,6 +27,92 @@ function priorCompoundValue(comp,axis){
 function dryCompound(comp){return comp!=="wet"&&comp!=="intermediate";}
 
 
+const GENERAL_UNKNOWN="General / unknown";
+const TYRE_SUPPLIERS=[
+ "Dunlop","Michelin","Goodyear","Pirelli","Bridgestone","Yokohama","Firestone","Avon",
+ "BFGoodrich","Continental","Toyo","Falken","Hoosier","Hankook","Kumho","Englebert",
+ "Englebert-Colombes","Uniroyal","Cooper","Maxxis","Nitto","General Tire","CEAT","Vredestein"
+];
+function runtimeClasses(){return window.ACLMHistoricalCategories?.CLASSES||[];}
+function runtimeFamilies(){return window.ACLMHistoricalCategories?.FAMILIES||[];}
+function appendMenuOption(parent,value,label=value){
+ const opt=document.createElement("option");opt.value=String(value);opt.textContent=String(label);parent.appendChild(opt);return opt;
+}
+function ensureSelectOption(select,value,label=value,groupLabel="Current / researched"){
+ const val=String(value??"").trim();if(!select||!val)return null;
+ let opt=[...select.options].find(o=>o.value===val);
+ if(!opt){
+   let group=Array.from(select.children||[]).find(x=>String(x.tagName||"").toUpperCase()==="OPTGROUP"&&x.label===groupLabel);
+   if(!group){group=document.createElement("optgroup");group.label=groupLabel;select.appendChild(group);}
+   opt=appendMenuOption(group,val,label);
+ }
+ select.value=val;return opt;
+}
+function setMenuValue(id,value,label=value,groupLabel="Current / researched"){
+ const el=$(id);if(!el)return false;
+ if(String(el.tagName||"").toUpperCase()==="SELECT")ensureSelectOption(el,value,label,groupLabel);
+ else el.value=String(value);
+ return true;
+}
+function populateSeriesClassOptions(){
+ const sel=$("series");if(!sel)return;
+ const previous=sel.value||GENERAL_UNKNOWN,presetId=$("preset")?.value||"auto";
+ const familyFilter=/^FAM\d+$/i.test(presetId)?presetId:null;
+ const allClasses=runtimeClasses().slice();
+ const shown=allClasses.filter(c=>!familyFilter||c.familyId===familyFilter)
+   .sort((a,b)=>a.from-b.from||a.name.localeCompare(b.name));
+ const families=runtimeFamilies().slice().sort((a,b)=>a.from-b.from||a.name.localeCompare(b.name));
+ sel.innerHTML="";
+ appendMenuOption(sel,GENERAL_UNKNOWN,"General / Unknown");
+ for(const family of families){
+   const classes=shown.filter(c=>c.familyId===family.id);if(!classes.length)continue;
+   const group=document.createElement("optgroup");
+   group.label=family.id+" — "+family.name+" ("+family.from+"–"+family.to+")";
+   for(const c of classes)appendMenuOption(group,c.name,c.id+" — "+c.name+" ("+c.from+"–"+c.to+")");
+   sel.appendChild(group);
+ }
+ const previousClass=allClasses.find(c=>c.name===previous);
+ if(/unknown/i.test(previous))sel.value=GENERAL_UNKNOWN;
+ else if(previousClass&&familyFilter&&previousClass.familyId!==familyFilter)sel.value=GENERAL_UNKNOWN;
+ else ensureSelectOption(sel,previous,previous,previousClass?"Calibrated class":"Current / researched");
+ if(!sel.value)sel.value=GENERAL_UNKNOWN;
+}
+function populateSupplierOptions(){
+ const sel=$("supplier");if(!sel)return;
+ const previous=sel.value||GENERAL_UNKNOWN;
+ sel.innerHTML="";
+ appendMenuOption(sel,GENERAL_UNKNOWN,"General / Unknown");
+ for(const supplier of TYRE_SUPPLIERS)appendMenuOption(sel,supplier,supplier);
+ if(/unknown/i.test(previous))sel.value=GENERAL_UNKNOWN;
+ else ensureSelectOption(sel,previous,previous,"Current / researched");
+ if(!sel.value)sel.value=GENERAL_UNKNOWN;
+}
+function clearMenuProvenance(id){
+ const el=$(id);if(!el)return;
+ el.classList.remove("imported-field","researched-field");
+ delete el.dataset.researchSource;
+ el.title="Manual selection";
+}
+function refreshMenuDrivenOutput(){
+ updateOutputName();refreshSolvedPressures();renderTireGraphs();
+ try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
+}
+function applySeriesMenuSelection(){
+ const selected=v("series"),preset=$("preset");
+ if(!selected||/unknown/i.test(selected)){
+   if(/^FAM\d+$/i.test(preset?.value||""))applyPreset(preset.value);
+   else{activeHistoricalContext=null;updateHistoricalCompoundLabels();renderHistoricalFamilySummary("Series/class remains General / Unknown.");}
+   return;
+ }
+ const cls=runtimeClasses().find(c=>c.name===selected);
+ if(cls){
+   const ctx=window.ACLMHistoricalCategories?.contextForClass?.(cls.id,v("year"));
+   if(ctx){preset.value=ctx.familyId;applyHistoricalContext(ctx,"selected calibrated series/class");populateSeriesClassOptions();return;}
+ }
+ autoApplyHistoricalContext("selected researched series/class");
+ populateSeriesClassOptions();
+}
+
 function populateHistoricalCategoryOptions(){
  const sel=$("preset"); if(!sel||!window.ACLMHistoricalCategories)return;
  // Keep Auto and Manual, then expose every family from the current knowledge release.
@@ -150,6 +236,8 @@ function applyPreset(key){
  if(ctx) applyHistoricalContext(ctx,"manually selected historical tire family");
 }
 populateHistoricalCategoryOptions();
+populateSeriesClassOptions();
+populateSupplierOptions();
 function parseLutPoints(text){return String(text||"").trim().split(/\r?\n/).filter(Boolean).map(line=>{const p=line.split("|").map(Number);return{x:p[0],y:p[1]};}).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y));}
 function graphCanvas(id,title,xLabel,yLabel,series,opts={}){
  const c=$(id);if(!c)return;const rect=c.getBoundingClientRect(),dpr=window.devicePixelRatio||1,w=Math.max(320,Math.floor(rect.width||640)),h=Math.max(220,Math.floor(rect.height||250));
@@ -176,8 +264,10 @@ function renderTireGraphs(){
  graphCanvas("gripGraph","Peak grip reference","Selected compound index","μ reference",[{name:"DY_REF",points:dy},{name:"DX_REF",points:dx}],{xmin:0,xmax:Math.max(1,comps.length-1)});
 }
 
-$("preset").addEventListener("change",e=>applyPreset(e.target.value));
-$("reset").addEventListener("click",()=>applyPreset($("preset").value));
+$("preset").addEventListener("change",e=>{applyPreset(e.target.value);populateSeriesClassOptions();});
+$("series").addEventListener("change",()=>{clearMenuProvenance("series");applySeriesMenuSelection();refreshMenuDrivenOutput();});
+$("supplier").addEventListener("change",()=>{clearMenuProvenance("supplier");refreshMenuDrivenOutput();});
+$("reset").addEventListener("click",()=>{applyPreset($("preset").value);populateSeriesClassOptions();populateSupplierOptions();});
 
 function inlineCurve(base,scale){
  let pts=[];
@@ -517,7 +607,7 @@ function buildHistoricalReportData(comps){
    title:"Historical Tire Accuracy & Evidence Report",
    car:v("car")||"Unknown car",
    generatedAt:new Date().toLocaleString(),
-   build:"v0.5.8",
+   build:"v0.5.9",
    confidenceScore:reportConfidenceScore(),
    identity:[
      {label:"Car",value:v("car")||"Unknown",provenance:provenanceLabel("car")},
@@ -576,7 +666,7 @@ function build(){
  const defaultIdx=Math.max(0,comps.indexOf("medium"));
  let ini=`; ================================================================
 ; ACLM PROJECT - HISTORICAL RACE TIRE MODEL
-; Generated by ACLM Historical Tire Lab v0.5.8
+; Generated by ACLM Historical Tire Lab v0.5.9
 ; ${n("year")} | ${v("series")} | ${v("car")} | ${v("supplier")}
 ; Historical tire category: ${activeHistoricalContext?`${activeHistoricalContext.familyId} - ${activeHistoricalContext.familyName}`:"manual / unresolved"}
 ; Class calibration: ${activeHistoricalContext?.classId?`${activeHistoricalContext.classId} - ${activeHistoricalContext.className}`:"none"}
@@ -620,7 +710,7 @@ CAMBER_TEMP_SPREAD_K=1.4
    files[`aclm_${c}_tcurve.lut`]=tempCurves[c];
  });
  files["tyres.ini"]=ini;
- files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v0.5.8
+ files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v0.5.9
 Car: ${v("car")}
 Year/class: ${n("year")} / ${v("series")}
 Supplier: ${v("supplier")}
@@ -876,7 +966,6 @@ function allByBase(files,bn){return Object.keys(files).filter(k=>basename(k)===b
 function importedRow(label,value,source){return `<tr><td>${escapeHtml(label)}</td><td>${escapeHtml(value)}</td><td>${escapeHtml(source)}</td></tr>`;}
 
 
-const TYRE_SUPPLIERS=["Dunlop","Michelin","Goodyear","Pirelli","Bridgestone","Yokohama","Firestone","Avon","BFGoodrich","Continental","Toyo","Falken"];
 let lastImportLabel="";
 let lastResearchCandidates={classes:[],suppliers:[],constructions:[],pages:[]};
 
@@ -891,7 +980,7 @@ function markResearched(id,source){
 function setResearched(id,value,source){
  if(value===undefined || value===null || String(value).trim()==="" || fieldIsDirect(id)) return false;
  const el=$(id); if(!el) return false;
- el.value=String(value); markResearched(id,source); return true;
+ setMenuValue(id,String(value)); markResearched(id,source); return true;
 }
 function clearResearchChoices(){
  lastResearchCandidates={classes:[],suppliers:[],constructions:[],pages:[]};
@@ -967,8 +1056,8 @@ async function identifyImportedYear(){
  }
 }
 function setResearchDefaults(){
- $("series").value="General / unknown";
- $("supplier").value="Unknown";
+ setMenuValue("series",GENERAL_UNKNOWN);
+ setMenuValue("supplier",GENERAL_UNKNOWN);
  $("series").classList.remove("imported-field","researched-field");
  $("supplier").classList.remove("imported-field","researched-field");
 }
@@ -1059,7 +1148,7 @@ async function researchHistoricalProfile(){
    else $("series").value="General / unknown";
 
    if(suppliers.length===1) setResearched("supplier",suppliers[0],`Wikipedia: ${contextPages[0].title}`);
-   else $("supplier").value="Unknown";
+   else setMenuValue("supplier",GENERAL_UNKNOWN);
 
    if(constructions.length===1){
      $("construction").value=constructions[0];
@@ -1255,7 +1344,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.5.8";
+const ACLM_APP_VERSION="0.5.9";
 const ACLM_RELEASES_URL="https://github.com/aclmproject/tire_lab/releases";
 let availableUpdate=null;
 function semverParts(v){return String(v||"0").replace(/^v/i,"").split(".").map(x=>parseInt(x,10)||0);}
@@ -1299,6 +1388,8 @@ function updateKnowledgeUi(message=""){
  const preset=$("preset"),selected=preset?.value||"";
  populateHistoricalCategoryOptions();
  if(preset&&selected&&[...preset.options].some(o=>o.value===selected))preset.value=selected;
+ populateSeriesClassOptions();
+ populateSupplierOptions();
  renderHistoricalFamilySummary();
 }
 

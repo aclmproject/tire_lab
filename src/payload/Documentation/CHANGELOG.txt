@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-25 - v0.5.9
+- Replaced the free-text Series/class field with a persistent calibrated-class dropdown grouped by historical tire family.
+- Selecting a tire family filters the class dropdown to that family's calibrated drilldown options.
+- Replaced the free-text supplier field with General / Unknown plus 24 major historical and modern racing tire manufacturers.
+- Curated knowledge and research still auto-select a manufacturer only when supported; unresolved suppliers stay General / Unknown.
+- Preserves researched custom values and refreshes both menus after online knowledge synchronization.
+
 2026-08-25 - v0.5.8
 - Fixed blank Temperature to grip graphs for knowledge-backed historical tire families.
 - Dynamic PERFORMANCE_CURVE LUTs now contain real line breaks instead of literal backslash-n text.

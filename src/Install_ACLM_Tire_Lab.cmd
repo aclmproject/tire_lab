@@ -6,7 +6,7 @@ set "SOURCE=%~dp0payload"
 echo ======================================================
 echo        ACLM Historical Tire Lab - Safe Installer
 echo ======================================================
-echo Application build: v0.5.8
+echo Application build: v0.5.9
 echo.
 echo This installer only copies files already included in this ZIP.
 echo It does not download or execute software from the Internet.

@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.5.8",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.5.8.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.8",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.8/ACLM_Tire_Lab_Setup_v0.5.8.zip",
-  "sha256": "8ce9db4132e4d866b36f97c0ae859e40d7b3092b7bbce60a1aaba9f26e955165",
-  "published_utc": "2026-08-25T15:29:13Z",
-  "notes": "Fixes blank temperature-to-grip graphs for dynamically generated knowledge-backed historical tire curves."
+  "version": "0.5.9",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.5.9.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.5.9",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.5.9/ACLM_Tire_Lab_Setup_v0.5.9.zip",
+  "sha256": "223cf7c95eec4fea2bf7307a4fcb185f47f574f11ff3ef40352df5f71b082b43",
+  "published_utc": "2026-08-25T15:50:14Z",
+  "notes": "Adds persistent family-grouped Series/class and major racing tire manufacturer dropdowns with safe General / Unknown defaults."
 }
