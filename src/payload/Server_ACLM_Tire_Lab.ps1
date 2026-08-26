@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $AppDir = Join-Path $PSScriptRoot "app"
 $Port = 48765
-$CurrentVersion = "0.6.4"
+$CurrentVersion = "0.6.5"
 $KnowledgeManifestUrls = @(
   "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
   "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
@@ -90,10 +90,36 @@ function App-UpdateInfo{
   $page=if($m.release_page){[string]$m.release_page}else{$UpdatesPage}
   return @{version=$m.version;file_name=$m.file_name;published_utc=$m.published_utc;notes=$m.notes;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$page;download_url=$m.download_url;warning=$warning;cached=$cached;checked_utc=[DateTime]::UtcNow.ToString("o")}
 }
+
+function HashBytes([byte[]]$Bytes){$sha=[Security.Cryptography.SHA256]::Create();try{return ([BitConverter]::ToString($sha.ComputeHash($Bytes))).Replace('-','').ToLowerInvariant()}finally{$sha.Dispose()}}
+function Import-KnowledgePackage([string]$RequestBody){
+  if([string]::IsNullOrWhiteSpace($RequestBody)){throw "Knowledge package request is empty."}
+  $request=$RequestBody|ConvertFrom-Json
+  if(!$request.payload_base64 -or !$request.sha256){throw "Knowledge package request is incomplete."}
+  try{$bytes=[Convert]::FromBase64String(([string]$request.payload_base64))}catch{throw "Knowledge payload is not valid base64."}
+  if($bytes.Length -le 0 -or $bytes.Length -gt 6291456){throw "Knowledge payload size is invalid."}
+  $actual=HashBytes $bytes
+  if($actual -ne ([string]$request.sha256).ToLowerInvariant()){throw "Knowledge package SHA-256 verification failed."}
+  $raw=[Text.Encoding]::UTF8.GetString($bytes)
+  $obj=$raw|ConvertFrom-Json
+  if(!$obj.releaseVersion -or !$obj.schemaVersion -or !([string]$obj.schemaVersion).StartsWith("1.") -or !$obj.contentSha256){throw "Unsupported or incomplete knowledge release."}
+  if(!$obj.families -or !$obj.classes -or !$obj.sources -or !$obj.generatorPriors){throw "Knowledge release is missing required collections."}
+  $familyIds=@($obj.families|ForEach-Object{[string]$_.id})
+  $classIds=@($obj.classes|ForEach-Object{[string]$_.id})
+  if($familyIds.Count -ne (@($familyIds|Select-Object -Unique)).Count -or $familyIds -contains ""){throw "Family IDs are missing or duplicated."}
+  if($classIds.Count -ne (@($classIds|Select-Object -Unique)).Count -or $classIds -contains ""){throw "Class IDs are missing or duplicated."}
+  foreach($c in $obj.classes){if($familyIds -notcontains [string]$c.familyId){throw "Class $($c.id) references a missing family."};if(!$c.menu){throw "Class $($c.id) has no tire menu."}}
+  $priorIds=@($obj.generatorPriors.PSObject.Properties.Name)
+  if($priorIds.Count -ne $familyIds.Count){throw "Generator-prior coverage count is invalid."}
+  foreach($id in $familyIds){if($priorIds -notcontains $id){throw "Generator prior is missing for $id."}}
+  Write-Utf8 $KnowledgeCache $raw
+  return @{release=$obj;source="verified manual import";updated=$true;sha256=$actual;checked_utc=[DateTime]::UtcNow.ToString("o")}
+}
+
 function Read-RequestBody($reader,$headers){
   if(!$headers.ContainsKey("content-length")){return ""}
   $length=0
-  if(![int]::TryParse([string]$headers["content-length"],[ref]$length) -or $length -le 0 -or $length -gt 65536){return ""}
+  if(![int]::TryParse([string]$headers["content-length"],[ref]$length) -or $length -le 0 -or $length -gt 8388608){return ""}
   $chars=New-Object char[] $length;$read=0
   while($read -lt $length){$n=$reader.ReadBlock($chars,$read,$length-$read);if($n -le 0){break};$read+=$n}
   if($read -le 0){return ""}
@@ -119,6 +145,8 @@ while($true){
       $force=$false
       try{if($requestBody){$request=$requestBody|ConvertFrom-Json;$force=[bool]$request.force}}catch{}
       try{$k=Sync-Knowledge $force;$body=JsonBytes @{release=$k.release;source=$k.source;updated=$k.updated;checked_utc=$k.checked_utc};$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="503 Service Unavailable"};$mime="application/json; charset=utf-8"
+    }elseif($url -eq "/api/knowledge-import" -and $method -eq "POST"){
+      try{$k=Import-KnowledgePackage $requestBody;$body=JsonBytes $k;$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
     }elseif($url -eq "/api/update-info"){
       $body=JsonBytes (App-UpdateInfo);$code="200 OK";$mime="application/json; charset=utf-8"
     }elseif($url -eq "/api/install-update"){

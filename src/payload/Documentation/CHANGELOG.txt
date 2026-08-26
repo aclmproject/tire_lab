@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.6.5
+- Removes application-driven online knowledge check/sync controls and their timeout path.
+- Adds a permanent browser download link for the current signed knowledge package plus manual Verify & Import.
+- Verifies exact payload SHA-256, supported schema, IDs, source references, class menus and generator-prior coverage before activation.
+- Persists only validated imports as the local last-known-good cache; rejection leaves current knowledge active.
+- Bundles Tire Knowledge v1.7.0 and preserves all v0.6.4 tire-generation features.
+
 2026-08-26 - v0.6.4
 - Removes the unreliable application update-check request and its timeout/error state.
 - Replaces both application-update buttons with one permanent GitHub latest-release hyperlink.

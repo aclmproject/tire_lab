@@ -1405,7 +1405,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.6.4";
+const ACLM_APP_VERSION="0.6.5";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 
@@ -1428,30 +1428,64 @@ async function loadCurrentKnowledge(){
    const r=await fetch("/api/knowledge-current?ts="+Date.now(),{cache:"no-store"});const data=await r.json();
    if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
    window.ACLMHistoricalCategories.loadKnowledgeRelease(data.release,data.source||"local cache");
-   updateKnowledgeUi(`<span class="ok"><b>Knowledge loaded:</b></span> v${escapeHtml(data.release.releaseVersion||"?")} from ${escapeHtml(data.source||"cache")}.`);
- }catch(e){updateKnowledgeUi(`<span class="warning"><b>Using bundled knowledge v1.2.0.</b></span> Local cache unavailable: ${escapeHtml(e.message)}`);}
+   updateKnowledgeUi('<span class="ok"><b>Knowledge loaded:</b></span> v'+escapeHtml(data.release.releaseVersion||"?")+' from '+escapeHtml(data.source||"cache")+'.');
+ }catch(e){updateKnowledgeUi('<span class="warning"><b>Using bundled knowledge.</b></span> Local cache unavailable: '+escapeHtml(e.message));}
 }
-async function syncKnowledge(force=false){
- const st=$("knowledgeStatus"),checkBtn=$("checkKnowledge"),syncBtn=$("syncKnowledge");
- if(onlineRequestActive){st.innerHTML='<span class="warning"><b>Another online check is already running.</b></span> Verified cached knowledge remains active.';return;}
- onlineRequestActive=true;
- checkBtn.disabled=true;
- syncBtn.disabled=true;
- st.textContent=force?"Synchronizing the latest verified ACLM tire knowledge…":"Checking the ACLM knowledge manifest…";
- try{
-   const r=await fetch("/api/knowledge-sync",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({force})});
-   const data=await r.json();if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
-   window.ACLMHistoricalCategories.loadKnowledgeRelease(data.release,data.source||"verified knowledge");
-   updateKnowledgeUi('<span class="ok"><b>Knowledge '+(data.updated?"synchronized":"checked")+':</b></span> v'+escapeHtml(data.release.releaseVersion||"?")+' · schema '+escapeHtml(data.release.schemaVersion||"?")+' · '+(data.updated?"new cache installed":"verified cache is current")+'.');
- }catch(e){
-   const loaded=escapeHtml($("knowledgeBuild")?.textContent||"current");
-   st.innerHTML='<span class="warning"><b>Online knowledge check unavailable:</b></span> '+escapeHtml(e.message)+' Verified '+loaded+' cached/bundled knowledge remains active.';
- }finally{
-   onlineRequestActive=false;
-   checkBtn.disabled=false;
-   syncBtn.disabled=false;
+function bytesFromBase64(text){
+ const binary=atob(String(text||"")),bytes=new Uint8Array(binary.length);
+ for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+ return bytes;
+}
+async function sha256Bytes(bytes){
+ const digest=await crypto.subtle.digest("SHA-256",bytes);
+ return [...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,"0")).join("");
+}
+function validateKnowledgeRelease(release){
+ const errors=[],families=Array.isArray(release?.families)?release.families:[],classes=Array.isArray(release?.classes)?release.classes:[],measurements=Array.isArray(release?.measurements)?release.measurements:[];
+ const sources=release?.sources&&typeof release.sources==="object"?release.sources:{},priors=release?.generatorPriors&&typeof release.generatorPriors==="object"?release.generatorPriors:{};
+ const unique=(items,label)=>{const ids=items.map(x=>x?.id);if(ids.some(x=>!x)||new Set(ids).size!==ids.length)errors.push(label+" contain missing or duplicate IDs.");return new Set(ids.filter(Boolean));};
+ if(!String(release?.schemaVersion||"").startsWith("1."))errors.push("Unsupported knowledge schema.");
+ if(!release?.releaseVersion)errors.push("Knowledge release version is missing.");
+ if(!release?.contentSha256)errors.push("Deterministic content hash is missing.");
+ if(!families.length||!classes.length)errors.push("Families or classes are missing.");
+ const famIds=unique(families,"Families"),classIds=unique(classes,"Classes");unique(measurements,"Measurements");
+ if(classIds.size!==classes.length)errors.push("Class index is incomplete.");
+ const sourceIds=new Set(Object.keys(sources)),priorIds=new Set(Object.keys(priors));
+ if(priorIds.size!==famIds.size||[...famIds].some(id=>!priorIds.has(id)))errors.push("Generator-prior coverage does not match the family set.");
+ const allowed=new Set(["soft","qualifying","race","control","dry","hard","endurance","intermediate","wet","wet_hard"]);
+ for(const family of families)for(const id of family.sourceIds||[])if(!sourceIds.has(id))errors.push("Family "+family.id+" references missing source "+id+".");
+ for(const cls of classes){
+   if(!famIds.has(cls.familyId))errors.push("Class "+cls.id+" references missing family "+cls.familyId+".");
+   if(!Array.isArray(cls.menu)||!cls.menu.length)errors.push("Class "+cls.id+" has no tire menu.");
+   for(const item of cls.menu||[])if(!allowed.has(item.kind))errors.push("Class "+cls.id+" has unsupported menu kind "+item.kind+".");
+   for(const id of cls.sourceIds||[])if(!sourceIds.has(id))errors.push("Class "+cls.id+" references missing source "+id+".");
  }
+ for(const [id,prior] of Object.entries(priors))if(prior?.familyId!==id)errors.push("Generator prior key mismatch for "+id+".");
+ return [...new Set(errors)];
 }
-$("checkKnowledge").addEventListener("click",()=>syncKnowledge(false));
-$("syncKnowledge").addEventListener("click",()=>syncKnowledge(true));
+async function importKnowledgePackage(){
+ const input=$("knowledgeFile"),button=$("importKnowledge"),status=$("knowledgeStatus"),file=input?.files?.[0];
+ if(!file){status.innerHTML='<span class="warning"><b>Select a downloaded ACLM knowledge package first.</b></span>';return;}
+ button.disabled=true;
+ status.textContent="Verifying the downloaded knowledge package locally…";
+ try{
+   const wrapper=JSON.parse(await file.text());
+   if(wrapper.product!=="ACLM Tire Knowledge Import Package"||wrapper.package_schema!=="1.0.0"||wrapper.payload_encoding!=="base64")throw new Error("This is not a supported ACLM knowledge package.");
+   const bytes=bytesFromBase64(wrapper.payload_base64),actual=await sha256Bytes(bytes);
+   if(actual.toLowerCase()!==String(wrapper.sha256||"").toLowerCase())throw new Error("Knowledge-package SHA-256 verification failed.");
+   const release=JSON.parse(new TextDecoder("utf-8",{fatal:true}).decode(bytes));
+   if(String(wrapper.version)!==String(release.releaseVersion))throw new Error("Package and release versions do not match.");
+   const errors=validateKnowledgeRelease(release);
+   if(errors.length)throw new Error(errors.slice(0,5).join(" "));
+   const r=await fetch("/api/knowledge-import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({payload_base64:wrapper.payload_base64,sha256:wrapper.sha256})});
+   const data=await r.json();if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
+   window.ACLMHistoricalCategories.loadKnowledgeRelease(data.release,"verified manual import");
+   updateKnowledgeUi('<span class="ok"><b>Knowledge imported and preserved:</b></span> v'+escapeHtml(data.release.releaseVersion)+' · SHA-256 '+escapeHtml(actual.slice(0,12))+'…');
+   input.value="";
+ }catch(e){
+   status.innerHTML='<span class="warning"><b>Knowledge import rejected:</b></span> '+escapeHtml(e.message)+' Existing cached/bundled knowledge remains active.';
+ }finally{button.disabled=!input?.files?.length;}
+}
+$("knowledgeFile").addEventListener("change",()=>{$("importKnowledge").disabled=!$("knowledgeFile").files.length;});
+$("importKnowledge").addEventListener("click",importKnowledgePackage);
 setTimeout(loadCurrentKnowledge,250);

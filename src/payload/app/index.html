@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.6.4 Browser App + AC import</span></h1>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.6.5 Browser App + AC import</span></h1>
   <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
@@ -197,7 +197,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.6.4</b></div></div>
+ <div><label>Installed build</label><div><b id="installedBuild">v0.6.5</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">
@@ -211,13 +211,14 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
   <div><label>Knowledge schema</label><div id="knowledgeSchema">1.0.0</div></div>
  </div>
  <div class="actions" style="margin-top:8px">
-  <button id="checkKnowledge" type="button">Check tire knowledge</button>
-  <button id="syncKnowledge" type="button">Sync latest knowledge</button>
+  <a id="downloadKnowledge" class="update-link good" href="https://github.com/aclmproject/tire_lab/raw/refs/heads/main/knowledge/ACLM_Tire_Knowledge_current.package.json" target="_blank" rel="noopener noreferrer">Download latest knowledge package</a>
  </div>
- <div id="knowledgeStatus" class="small muted">Bundled knowledge v1.2.0 loaded; checking local cache.</div>
+ <div style="margin-top:8px"><label for="knowledgeFile">Downloaded ACLM knowledge package (.json)</label><input id="knowledgeFile" type="file" accept=".json,application/json"></div>
+ <div class="actions" style="margin-top:8px"><button id="importKnowledge" type="button" disabled>Verify &amp; import knowledge</button></div>
+ <div id="knowledgeStatus" class="small muted">Bundled/last-known-good knowledge loads locally. Download and import only when you want to update it.</div>
 </div>
 
-<div class="small muted" style="margin-top:6px">Verified cached knowledge loads locally. Online checks run only when requested and fall back safely when GitHub is unavailable.</div>
+<div class="small muted" style="margin-top:6px">Import verifies the package SHA-256, schema, unique IDs, source references, class menus and generator-prior coverage before replacing the last-known-good cache.</div>
 </div>
 
 <div class="card about-card" id="about-methodology">
