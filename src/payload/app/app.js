@@ -140,8 +140,39 @@ function shortForHistoricalName(name,slot){
  return slot==="soft"?"S":slot==="hard"?"E":"R";
 }
 function historicalSlot(comp){return activeHistoricalContext?.slots?.[comp]||null;}
-function compoundDisplayName(comp){return historicalSlot(comp)?.name||compDefs?.[comp]?.name||comp;}
-function compoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(compDefs?.[comp]?.short||comp.slice(0,1).toUpperCase());}
+const COMPOUND_NAME_FIELDS=Object.freeze({
+ soft:Object.freeze({name:"compoundNameSoft",short:"compoundShortSoft"}),
+ medium:Object.freeze({name:"compoundNameMedium",short:"compoundShortMedium"}),
+ hard:Object.freeze({name:"compoundNameHard",short:"compoundShortHard"}),
+ intermediate:Object.freeze({name:"compoundNameIntermediate",short:"compoundShortIntermediate"}),
+ wet:Object.freeze({name:"compoundNameWet",short:"compoundShortWet"})
+});
+function cleanCompoundText(raw,maxLength,shortCode){
+ let text=String(raw||"").replace(/[\r\n=;\[\]]/g," ").replace(/\s+/g," ").trim();
+ if(shortCode)text=text.replace(/[^A-Za-z0-9_-]/g,"").toUpperCase();
+ return text.slice(0,maxLength);
+}
+function automaticCompoundDisplayName(comp){return historicalSlot(comp)?.name||compDefs?.[comp]?.name||comp;}
+function automaticCompoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(compDefs?.[comp]?.short||comp.slice(0,1).toUpperCase());}
+function compoundDisplayName(comp){
+ const id=COMPOUND_NAME_FIELDS[comp]?.name,custom=id&&$(id)?cleanCompoundText($(id).value,48,false):"";
+ return custom||automaticCompoundDisplayName(comp);
+}
+function compoundShortName(comp){
+ const id=COMPOUND_NAME_FIELDS[comp]?.short,custom=id&&$(id)?cleanCompoundText($(id).value,5,true):"";
+ return custom||automaticCompoundShortName(comp);
+}
+function refreshCompoundNameEditor(){
+ for(const comp of Object.keys(COMPOUND_NAME_FIELDS)){
+  const ids=COMPOUND_NAME_FIELDS[comp],name=$(ids.name),short=$(ids.short);
+  if(name)name.placeholder="Auto: "+automaticCompoundDisplayName(comp);
+  if(short)short.placeholder="Auto: "+automaticCompoundShortName(comp);
+ }
+}
+function clearCompoundNameOverrides(){
+ for(const ids of Object.values(COMPOUND_NAME_FIELDS)){if($(ids.name))$(ids.name).value="";if($(ids.short))$(ids.short).value="";}
+ refreshCompoundNameEditor();renderTireGraphs();refreshLoadDutyStatus();
+}
 function historicalLifeKm(comp){const x=historicalSlot(comp);return x&&Number.isFinite(Number(x.lifeKm))?Number(x.lifeKm):null;}
 function compoundTypeHint(comp){
  if(comp==="wet")return "RAIN";
@@ -158,6 +189,7 @@ function updateHistoricalCompoundLabels(){
    const input=$({soft:"cSoft",medium:"cMedium",hard:"cHard",intermediate:"cInter",wet:"cWet"}[slot]);
    if(input) input.parentElement?.classList.toggle("historical-unavailable",!!activeHistoricalContext&&!x);
  });
+ refreshCompoundNameEditor();
 }
 function renderHistoricalFamilySummary(extra=""){
  const el=$("historicalFamilySummary");if(!el)return;
@@ -268,6 +300,11 @@ $("preset").addEventListener("change",e=>{applyPreset(e.target.value);populateSe
 $("series").addEventListener("change",()=>{clearMenuProvenance("series");applySeriesMenuSelection();refreshMenuDrivenOutput();});
 $("supplier").addEventListener("change",()=>{clearMenuProvenance("supplier");refreshMenuDrivenOutput();});
 $("reset").addEventListener("click",()=>{applyPreset($("preset").value);populateSeriesClassOptions();populateSupplierOptions();});
+for(const ids of Object.values(COMPOUND_NAME_FIELDS)){
+ for(const id of [ids.name,ids.short]){const el=$(id);if(el)el.addEventListener("input",()=>{el.value=cleanCompoundText(el.value,id===ids.short?5:48,id===ids.short);refreshCompoundNameEditor();renderTireGraphs();refreshLoadDutyStatus();});}
+}
+$("resetCompoundNames")?.addEventListener("click",clearCompoundNameOverrides);
+refreshCompoundNameEditor();
 
 function inlineCurve(base,scale){
  let pts=[];
@@ -450,9 +487,59 @@ function loadDutySummary(){
   return (axle==="front"?"F":"R")+" "+d.label.toLowerCase()+" "+(Number.isFinite(d.intensity)?d.intensity.toFixed(2):"?")+" N/mm";
  }).join(" | ");
 }
+function compoundDutyAssessment(comp){
+ const duties=["front","rear"].map(loadDuty),keys=duties.map(d=>d.key),notes=[];
+ let level="pass";
+ if(activeHistoricalContext){
+  if(!historicalSlot(comp)){level="block";notes.push("not present in the selected historical series/class menu");}
+  else notes.push("present in the selected historical series/class menu");
+ }else{level="review";notes.push("series/class menu unresolved or manual");}
+ if(comp==="soft"&&keys.includes("heavy")){if(level!=="block")level="caution";notes.push("heavy axle duty can overheat or shorten a sprint/qualifying tire");}
+ else if(comp==="hard"&&keys.every(k=>k==="light")){if(level!=="block")level="caution";notes.push("light duty can leave an endurance/hard tire below its working window");}
+ else if(comp==="medium")notes.push("race/control baseline; verify balance and stint temperature");
+ else if(comp==="soft")notes.push("warm-up favorable at this static load proxy; verify peak temperature and wear");
+ else if(comp==="hard")notes.push("load proxy is not an automatic compound recommendation");
+ if(comp==="intermediate"||comp==="wet")notes.push("surface water and tread cooling dominate any weight-only recommendation");
+ if(keys[0]!==keys[1]){if(level==="pass")level="review";notes.push("front/rear duty bands differ; inspect axle temperature balance");}
+ const target=targetTempForCompound(comp);
+ if(Number.isFinite(target))notes.push("generated target approximately "+target.toFixed(0)+" C");
+ return {comp,level,notes,duties};
+}
+function loadCompoundChecklistLines(comps=selectedCompounds()){
+ const ctx=activeHistoricalContext?(activeHistoricalContext.classId?activeHistoricalContext.classId+" - "+activeHistoricalContext.className:activeHistoricalContext.familyId+" - "+activeHistoricalContext.familyName):"unresolved/manual";
+ const lines=[
+  "ACLM LOAD / COMPOUND SUITABILITY CHECKLIST",
+  "Generated by Tire Lab v"+ACLM_APP_VERSION,
+  "",
+  "[x] Car mass and static front weight entered: "+n("mass").toFixed(0)+" kg / "+n("frontWeight").toFixed(1)+"% front.",
+  "[x] FZ0 and tread width evaluated by axle: "+loadDutySummary()+".",
+  "[x] Historical series/class context: "+ctx+".",
+  "[x] Selected compounds use the series menu when that context is resolved.",
+  "[x] Thermal heat/cooling scaling is applied independently to front and rear.",
+  "[ ] Confirm track energy, ambient and surface temperature, pressure, camber and stint length.",
+  "[ ] Validate core/surface temperatures and wear with telemetry before certification.",
+  "",
+  "COMPOUND ASSESSMENTS"
+ ];
+ for(const comp of comps){
+  const a=compoundDutyAssessment(comp);
+  lines.push("- "+compoundDisplayName(comp)+" ["+a.level.toUpperCase()+"]: "+a.notes.join("; ")+".");
+ }
+ lines.push("","LIMITATION: car weight is only one load input. This checklist is a transparent simulation reconstruction aid, not proof of a supplier's historical compound prescription.");
+ return lines;
+}
+function loadCompoundChecklistText(comps=selectedCompounds()){return loadCompoundChecklistLines(comps).join("\n")+"\n";}
+function renderCompoundLoadChecklist(){
+ const el=$("loadCompoundChecklist");if(!el)return;
+ const comps=selectedCompounds();
+ if(!comps.length){el.innerHTML="<b>Compound/load checklist:</b> select at least one compound.";return;}
+ const rows=comps.map(comp=>{const a=compoundDutyAssessment(comp);return "<li><b>"+escapeHtml(compoundDisplayName(comp))+" — "+escapeHtml(a.level.toUpperCase())+":</b> "+escapeHtml(a.notes.join("; "))+"</li>";}).join("");
+ el.innerHTML="<b>Compound/load checklist</b><ul>"+rows+"</ul><span class=\"muted\">Weight and FZ0/tread-width duty are screening inputs only. Final selection still requires track, ambient, setup, stint and telemetry validation.</span>";
+}
 function refreshLoadDutyStatus(){
- const el=$("loadDutyStatus");if(!el)return;
- el.innerHTML="<b>Thermal load duty:</b> "+escapeHtml(loadDutySummary())+". Thresholds (&lt;9 light, 9-13 medium, &gt;13 heavy N/mm) are transparent simulation reconstruction priors; the tire-family knowledge values remain unchanged.";
+ const el=$("loadDutyStatus");
+ if(el)el.innerHTML="<b>Thermal load duty:</b> "+escapeHtml(loadDutySummary())+". Thresholds (&lt;9 light, 9-13 medium, &gt;13 heavy N/mm) are transparent simulation reconstruction priors; the tire-family knowledge values remain unchanged.";
+ renderCompoundLoadChecklist();
 }
 function tireSection(comp,axle,index){
  const d=compDefs[comp], isF=axle==="front";
@@ -657,6 +744,7 @@ function buildHistoricalReportData(comps){
      {label:"Vertical rate",value:`${(n("rateF")/1000).toFixed(1)} N/mm front / ${(n("rateR")/1000).toFixed(1)} N/mm rear`},
      {label:"Reference load FZ0",value:`${fz0("front")} N front / ${fz0("rear")} N rear`},
      {label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},
+     {label:"Compound/load checklist",value:comps.map(c=>compoundDisplayName(c)+" ["+compoundDutyAssessment(c).level+"]").join(", ")},
      {label:"Ideal hot pressure",value:`${n("pIdeal").toFixed(1)} psi`},
      {label:"Pressure generation",value:$("autoSolvePressure")?.checked?`Auto-solved from ${n("pRefTemp").toFixed(1)} deg C reference to each compound thermal peak`:"Manual generated cold pressures"},
      {label:"Medium generated cold pressure",value:`${pressure("medium","front").toFixed(1)} psi front / ${pressure("medium","rear").toFixed(1)} psi rear`},
@@ -679,6 +767,7 @@ function buildHistoricalReportData(comps){
      "Assetto Corsa tire format VERSION=10.",
      "Front/rear tire sections include load curves, pressure model, FZ0, relaxation length, camber LUTs and combined-slip parameters.",
      "Every selected compound exports its front/rear wear LUT and temperature/performance LUT.",
+     "Every pack exports ACLM_LOAD_COMPOUND_CHECKLIST.txt with series-menu and axle-duty assessments.",
      "The pack validator blocks export for missing referenced LUTs, malformed LUT rows, invalid geometry or other structural errors.",
      "This PDF is generated automatically and bundled with every Tire Lab ZIP export."
    ],
@@ -771,6 +860,7 @@ CAMBER_TEMP_SPREAD_K=1.4
    files[`aclm_${c}_tcurve.lut`]=performanceCurveText(c);
  });
  files["tyres.ini"]=ini;
+ files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"]=loadCompoundChecklistText(comps);
  files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v${ACLM_APP_VERSION}
 Car: ${v("car")}
 Year/class: ${n("year")} / ${v("series")}
@@ -781,6 +871,7 @@ Class calibration: ${activeHistoricalContext?.classId?`${activeHistoricalContext
 Compounds: ${comps.map(c=>compoundDisplayName(c)).join(", ")}
 FZ0 front/rear: ${fz0("front")} / ${fz0("rear")} N
 Load-duty thermal reconstruction: ${loadDutySummary()}
+Load/compound checklist: ACLM_LOAD_COMPOUND_CHECKLIST.txt
 AC tire format: VERSION=10
 CSP: ${$("extended").checked?"car.ini should use VERSION=extended-2":"not required by this export"}
 Thermal: ${$("legacyThermal").checked?"legacy AC thermal model":"thermal sections omitted"}
@@ -846,6 +937,10 @@ function validate(files){
      });
    }
  });
+ if(!files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"])errors.push("Load/compound suitability checklist is missing.");
+ const generatedNames=fronts.map(s=>sec[s]?.NAME).filter(Boolean),generatedShorts=fronts.map(s=>sec[s]?.SHORT_NAME).filter(Boolean);
+ if(new Set(generatedNames.map(x=>x.toLowerCase())).size!==generatedNames.length)errors.push("Compound full names must be unique.");
+ if(new Set(generatedShorts.map(x=>x.toUpperCase())).size!==generatedShorts.length)errors.push("Compound short codes must be unique.");
  collectLutIntegrityErrors(files).forEach(error=>errors.push(error));
  if(!window.ACLMPressure) errors.push("Pressure solver module is unavailable.");
  else {
@@ -1401,11 +1496,11 @@ $("autoSolvePressure").addEventListener("change",()=>{
 refreshSolvedPressures();
 
 $("graphCompound").addEventListener("change",renderTireGraphs);
-["cSoft","cMedium","cHard","cInter","cWet","terminalFailure","terminalNormalGrip","terminalFailureGrip","terminalFailureGap"].forEach(id=>{const el=$(id);if(el)el.addEventListener("change",renderTireGraphs);});
+["cSoft","cMedium","cHard","cInter","cWet","terminalFailure","terminalNormalGrip","terminalFailureGap"].forEach(id=>{const el=$(id);if(el)el.addEventListener("change",()=>{renderTireGraphs();refreshLoadDutyStatus();});});
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.6.5";
+const ACLM_APP_VERSION="0.6.6";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 

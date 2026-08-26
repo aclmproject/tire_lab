@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.6.5 Browser App + AC import</span></h1>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.6.6 Browser App + AC import</span></h1>
   <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
@@ -97,6 +97,16 @@
 <label><input id="cInter" type="checkbox"><span id="cInterLabel">Intermediate</span></label>
 <label><input id="cWet" type="checkbox"><span id="cWetLabel">Wet</span></label>
 </div>
+<h3>Optional compound names</h3>
+<div class="small muted">Leave a field blank to use the researched series name. Custom names change AC NAME/SHORT_NAME and the report; they do not change the underlying physics slot.</div>
+<div class="grid" style="margin-top:8px">
+ <div><label>Sprint / soft — full name and short code</label><div class="grid"><input id="compoundNameSoft" maxlength="48"><input id="compoundShortSoft" maxlength="5"></div></div>
+ <div><label>Race / medium — full name and short code</label><div class="grid"><input id="compoundNameMedium" maxlength="48"><input id="compoundShortMedium" maxlength="5"></div></div>
+ <div><label>Endurance / hard — full name and short code</label><div class="grid"><input id="compoundNameHard" maxlength="48"><input id="compoundShortHard" maxlength="5"></div></div>
+ <div><label>Intermediate — full name and short code</label><div class="grid"><input id="compoundNameIntermediate" maxlength="48"><input id="compoundShortIntermediate" maxlength="5"></div></div>
+ <div><label>Wet — full name and short code</label><div class="grid"><input id="compoundNameWet" maxlength="48"><input id="compoundShortWet" maxlength="5"></div></div>
+</div>
+<div class="actions" style="margin-top:8px"><button id="resetCompoundNames" type="button">Use researched/default names</button></div>
 <div id="historicalFamilySummary" class="notice small">Auto category uses the researched year + racing class to choose a Tire Lab historical family and its period-valid tire menu. It does not impose a modern Soft/Medium/Hard ladder.</div>
 <div class="notice small">Import preserves direct car/tire geometry. Historical category selection changes tire architecture, dry tire type (treaded vs slick), construction when the evidence is unambiguous, compound availability/names, and class-life wear priors. Supplier-proprietary peak grip is not invented from the category.</div>
 </div>
@@ -121,6 +131,7 @@
  <div><label>Rear FZ0 override (N, 0=auto)</label><input id="fzR" type="number" value="0"></div>
 </div>
 <div id="loadDutyStatus" class="notice small">Thermal load duty is calculated independently for each axle from FZ0 per tread width.</div>
+<div id="loadCompoundChecklist" class="notice small">Compound/load suitability checklist will appear here.</div>
 </div>
 
 <div class="card">
@@ -197,7 +208,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.6.5</b></div></div>
+ <div><label>Installed build</label><div><b id="installedBuild">v0.6.6</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">

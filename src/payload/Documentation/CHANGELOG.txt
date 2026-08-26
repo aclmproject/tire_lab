@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.6.6
+- Adds editable full names and short codes for every compound slot while retaining researched/default names as the fallback.
+- Adds a visible compound/load suitability checklist tied to historical series-menu availability and axle FZ0-per-width duty.
+- Exports ACLM_LOAD_COMPOUND_CHECKLIST.txt in every tire pack and includes the assessment in the evidence report.
+- Warns about light-duty hard-tire warm-up, heavy-duty sprint-tire overheating, axle-duty mismatch and wet-surface limits without treating weight as an automatic compound selector.
+- Publishes versioned non-confidential load-duty methodology guidance and preserves the v0.6.5 verified manual knowledge-import workflow.
+
 2026-08-26 - v0.6.5
 - Removes application-driven online knowledge check/sync controls and their timeout path.
 - Adds a permanent browser download link for the current signed knowledge package plus manual Verify & Import.

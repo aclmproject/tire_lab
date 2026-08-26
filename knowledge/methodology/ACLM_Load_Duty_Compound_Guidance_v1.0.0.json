@@ -1,0 +1,61 @@
+{
+  "product": "ACLM Load-Duty and Compound Suitability Guidance",
+  "schemaVersion": "1.0.0",
+  "version": "1.0.0",
+  "status": "simulation reconstruction guidance",
+  "loadMetric": "FZ0 newtons per tread-width millimetre, evaluated independently by axle",
+  "thresholds": [
+    {
+      "id": "light",
+      "minimum": null,
+      "maximumExclusive": 9.0
+    },
+    {
+      "id": "medium",
+      "minimumInclusive": 9.0,
+      "maximumInclusive": 13.0
+    },
+    {
+      "id": "heavy",
+      "minimumExclusive": 13.0,
+      "maximum": null
+    }
+  ],
+  "compoundGuidance": {
+    "soft": {
+      "light": "warm-up favorable; validate wear",
+      "medium": "review stint energy",
+      "heavy": "overheat/rapid-wear caution"
+    },
+    "medium": {
+      "all": "race/control baseline; validate temperature balance"
+    },
+    "hard": {
+      "light": "slow warm-up caution",
+      "medium": "review stint length",
+      "heavy": "load proxy acceptable; telemetry still required"
+    },
+    "intermediate": {
+      "all": "water depth and tread cooling dominate weight-only guidance"
+    },
+    "wet": {
+      "all": "water depth and tread cooling dominate weight-only guidance"
+    }
+  },
+  "requiredChecks": [
+    "historical series/class menu",
+    "car mass and static distribution",
+    "FZ0 and tire width by axle",
+    "track energy",
+    "ambient and surface temperature",
+    "pressure and camber",
+    "stint length",
+    "surface/core temperature telemetry",
+    "wear telemetry"
+  ],
+  "limitations": [
+    "Car weight alone does not determine the correct historical compound.",
+    "Thresholds are transparent simulation reconstruction priors, not confidential or supplier-proprietary data.",
+    "Final certification is car-, track-, setup-, weather- and stint-specific."
+  ]
+}
