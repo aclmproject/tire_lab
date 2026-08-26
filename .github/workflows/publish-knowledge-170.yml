@@ -54,7 +54,8 @@ jobs:
           Path("/tmp/rsha").write_text(rsha); Path("/tmp/csha").write_text(csha); print(json.dumps(val,indent=2))
           PY
       - name: Commit and publish
-        env: {GH_TOKEN: ${{ github.token }}}
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
