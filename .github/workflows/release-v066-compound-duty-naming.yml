@@ -1,0 +1,338 @@
+name: Release Tire Lab Compound Duty Checklist and Naming
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-v066-compound-duty-naming
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: "0.6.6"
+      PREVIOUS_VERSION: "0.6.5"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add compound naming and load-duty checklist
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          version="0.6.6"
+          previous="0.6.5"
+
+          def once(text,old,new,label):
+              count=text.count(old)
+              if count!=1:
+                  raise SystemExit(f"{label}: expected one match, found {count}")
+              return text.replace(old,new,1)
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+
+          old_names='''function compoundDisplayName(comp){return historicalSlot(comp)?.name||compDefs?.[comp]?.name||comp;}
+          function compoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(compDefs?.[comp]?.short||comp.slice(0,1).toUpperCase());}'''
+          new_names=r'''const COMPOUND_NAME_FIELDS=Object.freeze({
+           soft:Object.freeze({name:"compoundNameSoft",short:"compoundShortSoft"}),
+           medium:Object.freeze({name:"compoundNameMedium",short:"compoundShortMedium"}),
+           hard:Object.freeze({name:"compoundNameHard",short:"compoundShortHard"}),
+           intermediate:Object.freeze({name:"compoundNameIntermediate",short:"compoundShortIntermediate"}),
+           wet:Object.freeze({name:"compoundNameWet",short:"compoundShortWet"})
+          });
+          function cleanCompoundText(raw,maxLength,shortCode){
+           let text=String(raw||"").replace(/[\r\n=;\[\]]/g," ").replace(/\s+/g," ").trim();
+           if(shortCode)text=text.replace(/[^A-Za-z0-9_-]/g,"").toUpperCase();
+           return text.slice(0,maxLength);
+          }
+          function automaticCompoundDisplayName(comp){return historicalSlot(comp)?.name||compDefs?.[comp]?.name||comp;}
+          function automaticCompoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(compDefs?.[comp]?.short||comp.slice(0,1).toUpperCase());}
+          function compoundDisplayName(comp){
+           const id=COMPOUND_NAME_FIELDS[comp]?.name,custom=id&&$(id)?cleanCompoundText($(id).value,48,false):"";
+           return custom||automaticCompoundDisplayName(comp);
+          }
+          function compoundShortName(comp){
+           const id=COMPOUND_NAME_FIELDS[comp]?.short,custom=id&&$(id)?cleanCompoundText($(id).value,5,true):"";
+           return custom||automaticCompoundShortName(comp);
+          }
+          function refreshCompoundNameEditor(){
+           for(const comp of Object.keys(COMPOUND_NAME_FIELDS)){
+            const ids=COMPOUND_NAME_FIELDS[comp],name=$(ids.name),short=$(ids.short);
+            if(name)name.placeholder="Auto: "+automaticCompoundDisplayName(comp);
+            if(short)short.placeholder="Auto: "+automaticCompoundShortName(comp);
+           }
+          }
+          function clearCompoundNameOverrides(){
+           for(const ids of Object.values(COMPOUND_NAME_FIELDS)){if($(ids.name))$(ids.name).value="";if($(ids.short))$(ids.short).value="";}
+           refreshCompoundNameEditor();renderTireGraphs();refreshLoadDutyStatus();
+          }'''
+          app=once(app,old_names,new_names,"compound naming functions")
+
+          old_label='''   if(input) input.parentElement?.classList.toggle("historical-unavailable",!!activeHistoricalContext&&!x);
+           });
+          }
+          function renderHistoricalFamilySummary'''
+          new_label='''   if(input) input.parentElement?.classList.toggle("historical-unavailable",!!activeHistoricalContext&&!x);
+           });
+           refreshCompoundNameEditor();
+          }
+          function renderHistoricalFamilySummary'''
+          app=once(app,old_label,new_label,"compound editor refresh")
+
+          old_status='''function refreshLoadDutyStatus(){
+           const el=$("loadDutyStatus");if(!el)return;
+           el.innerHTML="<b>Thermal load duty:</b> "+escapeHtml(loadDutySummary())+". Thresholds (&lt;9 light, 9-13 medium, &gt;13 heavy N/mm) are transparent simulation reconstruction priors; the tire-family knowledge values remain unchanged.";
+          }'''
+          new_status=r'''function compoundDutyAssessment(comp){
+           const duties=["front","rear"].map(loadDuty),keys=duties.map(d=>d.key),notes=[];
+           let level="pass";
+           if(activeHistoricalContext){
+            if(!historicalSlot(comp)){level="block";notes.push("not present in the selected historical series/class menu");}
+            else notes.push("present in the selected historical series/class menu");
+           }else{level="review";notes.push("series/class menu unresolved or manual");}
+           if(comp==="soft"&&keys.includes("heavy")){if(level!=="block")level="caution";notes.push("heavy axle duty can overheat or shorten a sprint/qualifying tire");}
+           else if(comp==="hard"&&keys.every(k=>k==="light")){if(level!=="block")level="caution";notes.push("light duty can leave an endurance/hard tire below its working window");}
+           else if(comp==="medium")notes.push("race/control baseline; verify balance and stint temperature");
+           else if(comp==="soft")notes.push("warm-up favorable at this static load proxy; verify peak temperature and wear");
+           else if(comp==="hard")notes.push("load proxy is not an automatic compound recommendation");
+           if(comp==="intermediate"||comp==="wet")notes.push("surface water and tread cooling dominate any weight-only recommendation");
+           if(keys[0]!==keys[1]){if(level==="pass")level="review";notes.push("front/rear duty bands differ; inspect axle temperature balance");}
+           const target=targetTempForCompound(comp);
+           if(Number.isFinite(target))notes.push("generated target approximately "+target.toFixed(0)+" C");
+           return {comp,level,notes,duties};
+          }
+          function loadCompoundChecklistLines(comps=selectedCompounds()){
+           const ctx=activeHistoricalContext?(activeHistoricalContext.classId?activeHistoricalContext.classId+" - "+activeHistoricalContext.className:activeHistoricalContext.familyId+" - "+activeHistoricalContext.familyName):"unresolved/manual";
+           const lines=[
+            "ACLM LOAD / COMPOUND SUITABILITY CHECKLIST",
+            "Generated by Tire Lab v"+ACLM_APP_VERSION,
+            "",
+            "[x] Car mass and static front weight entered: "+n("mass").toFixed(0)+" kg / "+n("frontWeight").toFixed(1)+"% front.",
+            "[x] FZ0 and tread width evaluated by axle: "+loadDutySummary()+".",
+            "[x] Historical series/class context: "+ctx+".",
+            "[x] Selected compounds use the series menu when that context is resolved.",
+            "[x] Thermal heat/cooling scaling is applied independently to front and rear.",
+            "[ ] Confirm track energy, ambient and surface temperature, pressure, camber and stint length.",
+            "[ ] Validate core/surface temperatures and wear with telemetry before certification.",
+            "",
+            "COMPOUND ASSESSMENTS"
+           ];
+           for(const comp of comps){
+            const a=compoundDutyAssessment(comp);
+            lines.push("- "+compoundDisplayName(comp)+" ["+a.level.toUpperCase()+"]: "+a.notes.join("; ")+".");
+           }
+           lines.push("","LIMITATION: car weight is only one load input. This checklist is a transparent simulation reconstruction aid, not proof of a supplier's historical compound prescription.");
+           return lines;
+          }
+          function loadCompoundChecklistText(comps=selectedCompounds()){return loadCompoundChecklistLines(comps).join("\n")+"\n";}
+          function renderCompoundLoadChecklist(){
+           const el=$("loadCompoundChecklist");if(!el)return;
+           const comps=selectedCompounds();
+           if(!comps.length){el.innerHTML="<b>Compound/load checklist:</b> select at least one compound.";return;}
+           const rows=comps.map(comp=>{const a=compoundDutyAssessment(comp);return "<li><b>"+escapeHtml(compoundDisplayName(comp))+" — "+escapeHtml(a.level.toUpperCase())+":</b> "+escapeHtml(a.notes.join("; "))+"</li>";}).join("");
+           el.innerHTML="<b>Compound/load checklist</b><ul>"+rows+"</ul><span class=\"muted\">Weight and FZ0/tread-width duty are screening inputs only. Final selection still requires track, ambient, setup, stint and telemetry validation.</span>";
+          }
+          function refreshLoadDutyStatus(){
+           const el=$("loadDutyStatus");
+           if(el)el.innerHTML="<b>Thermal load duty:</b> "+escapeHtml(loadDutySummary())+". Thresholds (&lt;9 light, 9-13 medium, &gt;13 heavy N/mm) are transparent simulation reconstruction priors; the tire-family knowledge values remain unchanged.";
+           renderCompoundLoadChecklist();
+          }'''
+          app=once(app,old_status,new_status,"load duty checklist")
+
+          old_events='''$("reset").addEventListener("click",()=>{applyPreset($("preset").value);populateSeriesClassOptions();populateSupplierOptions();});'''
+          new_events='''$("reset").addEventListener("click",()=>{applyPreset($("preset").value);populateSeriesClassOptions();populateSupplierOptions();});
+          for(const ids of Object.values(COMPOUND_NAME_FIELDS)){
+           for(const id of [ids.name,ids.short]){const el=$(id);if(el)el.addEventListener("input",()=>{el.value=cleanCompoundText(el.value,id===ids.short?5:48,id===ids.short);refreshCompoundNameEditor();renderTireGraphs();refreshLoadDutyStatus();});}
+          }
+          $("resetCompoundNames")?.addEventListener("click",clearCompoundNameOverrides);
+          refreshCompoundNameEditor();'''
+          app=once(app,old_events,new_events,"compound name listeners")
+
+          app=once(app,'files["tyres.ini"]=ini;','files["tyres.ini"]=ini;\n files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"]=loadCompoundChecklistText(comps);',"export checklist")
+          app=once(app,'Load-duty thermal reconstruction: ${loadDutySummary()}','Load-duty thermal reconstruction: ${loadDutySummary()}\nLoad/compound checklist: ACLM_LOAD_COMPOUND_CHECKLIST.txt',"manifest checklist")
+          app=once(app,'{label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},','{label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},\n     {label:"Compound/load checklist",value:comps.map(c=>compoundDisplayName(c)+" ["+compoundDutyAssessment(c).level+"]").join(", ")},',"report checklist")
+          app=once(app,'"Every selected compound exports its front/rear wear LUT and temperature/performance LUT.",','"Every selected compound exports its front/rear wear LUT and temperature/performance LUT.",\n     "Every pack exports ACLM_LOAD_COMPOUND_CHECKLIST.txt with series-menu and axle-duty assessments.",',"report implementation")
+          app=once(app,'collectLutIntegrityErrors(files).forEach(error=>errors.push(error));','''if(!files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"])errors.push("Load/compound suitability checklist is missing.");
+           const generatedNames=fronts.map(s=>sec[s]?.NAME).filter(Boolean),generatedShorts=fronts.map(s=>sec[s]?.SHORT_NAME).filter(Boolean);
+           if(new Set(generatedNames.map(x=>x.toLowerCase())).size!==generatedNames.length)errors.push("Compound full names must be unique.");
+           if(new Set(generatedShorts.map(x=>x.toUpperCase())).size!==generatedShorts.length)errors.push("Compound short codes must be unique.");
+           collectLutIntegrityErrors(files).forEach(error=>errors.push(error));''',"name/checklist validation")
+          app=once(app,'[\"cSoft\",\"cMedium\",\"cHard\",\"cInter\",\"cWet\",\"terminalFailure\",\"terminalNormalGrip\",\"terminalFailureGrip\",\"terminalFailureGap\"].forEach(id=>{const el=$(id);if(el)el.addEventListener(\"change\",renderTireGraphs);});','[\"cSoft\",\"cMedium\",\"cHard\",\"cInter\",\"cWet\",\"terminalFailure\",\"terminalNormalGrip\",\"terminalFailureGap\"].forEach(id=>{const el=$(id);if(el)el.addEventListener(\"change\",()=>{renderTireGraphs();refreshLoadDutyStatus();});});',"checklist change refresh")
+          app=once(app,'const ACLM_APP_VERSION="0.6.5";','const ACLM_APP_VERSION="0.6.6";',"app version")
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          index=once(index,"v0.6.5 Browser App","v0.6.6 Browser App","header version")
+          index=once(index,'<b id="installedBuild">v0.6.5</b>','<b id="installedBuild">v0.6.6</b>',"installed version")
+          old_compounds='''<div class="checkrow historical-compounds">
+          <label><input id="cSoft" type="checkbox"><span id="cSoftLabel">Qualifying / Sprint</span></label>
+          <label><input id="cMedium" type="checkbox" checked><span id="cMediumLabel">Race</span></label>
+          <label><input id="cHard" type="checkbox"><span id="cHardLabel">Endurance</span></label>
+          <label><input id="cInter" type="checkbox"><span id="cInterLabel">Intermediate</span></label>
+          <label><input id="cWet" type="checkbox"><span id="cWetLabel">Wet</span></label>
+          </div>'''
+          new_compounds='''<div class="checkrow historical-compounds">
+          <label><input id="cSoft" type="checkbox"><span id="cSoftLabel">Qualifying / Sprint</span></label>
+          <label><input id="cMedium" type="checkbox" checked><span id="cMediumLabel">Race</span></label>
+          <label><input id="cHard" type="checkbox"><span id="cHardLabel">Endurance</span></label>
+          <label><input id="cInter" type="checkbox"><span id="cInterLabel">Intermediate</span></label>
+          <label><input id="cWet" type="checkbox"><span id="cWetLabel">Wet</span></label>
+          </div>
+          <h3>Optional compound names</h3>
+          <div class="small muted">Leave a field blank to use the researched series name. Custom names change AC NAME/SHORT_NAME and the report; they do not change the underlying physics slot.</div>
+          <div class="grid" style="margin-top:8px">
+           <div><label>Sprint / soft — full name and short code</label><div class="grid"><input id="compoundNameSoft" maxlength="48"><input id="compoundShortSoft" maxlength="5"></div></div>
+           <div><label>Race / medium — full name and short code</label><div class="grid"><input id="compoundNameMedium" maxlength="48"><input id="compoundShortMedium" maxlength="5"></div></div>
+           <div><label>Endurance / hard — full name and short code</label><div class="grid"><input id="compoundNameHard" maxlength="48"><input id="compoundShortHard" maxlength="5"></div></div>
+           <div><label>Intermediate — full name and short code</label><div class="grid"><input id="compoundNameIntermediate" maxlength="48"><input id="compoundShortIntermediate" maxlength="5"></div></div>
+           <div><label>Wet — full name and short code</label><div class="grid"><input id="compoundNameWet" maxlength="48"><input id="compoundShortWet" maxlength="5"></div></div>
+          </div>
+          <div class="actions" style="margin-top:8px"><button id="resetCompoundNames" type="button">Use researched/default names</button></div>'''
+          index=once(index,old_compounds,new_compounds,"compound naming UI")
+          index=once(index,'<div id="loadDutyStatus" class="notice small">Thermal load duty is calculated independently for each axle from FZ0 per tread width.</div>','''<div id="loadDutyStatus" class="notice small">Thermal load duty is calculated independently for each axle from FZ0 per tread width.</div>
+          <div id="loadCompoundChecklist" class="notice small">Compound/load suitability checklist will appear here.</div>''',"load checklist UI")
+          index_path.write_text(index,encoding="utf-8",newline="")
+
+          server_path=Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server=server_path.read_text(encoding="utf-8")
+          server=once(server,'$CurrentVersion = "0.6.5"','$CurrentVersion = "0.6.6"',"server version")
+          server_path.write_text(server,encoding="utf-8",newline="")
+
+          sw_path=Path("src/payload/app/sw.js")
+          sw=sw_path.read_text(encoding="utf-8")
+          sw=once(sw,"aclm-tire-lab-shell-v065-manual-knowledge-import","aclm-tire-lab-shell-v066-compound-duty-naming","service worker cache")
+          sw_path.write_text(sw,encoding="utf-8",newline="")
+
+          readme=Path("README.md")
+          rt=readme.read_text(encoding="utf-8")
+          rt=once(rt,"Current application release: **v0.6.5**","Current application release: **v0.6.6**","README version")
+          readme.write_text(rt,encoding="utf-8",newline="")
+
+          for filename in ("src/payload/Launch_ACLM_Tire_Lab.cmd","src/Install_ACLM_Tire_Lab.cmd","src/README_FIRST.txt"):
+              p=Path(filename);text=p.read_text(encoding="utf-8")
+              if previous not in text:raise SystemExit(f"{filename}: previous version missing")
+              p.write_text(text.replace(previous,version),encoding="utf-8",newline="")
+
+          guidance={
+            "product":"ACLM Load-Duty and Compound Suitability Guidance",
+            "schemaVersion":"1.0.0",
+            "version":"1.0.0",
+            "status":"simulation reconstruction guidance",
+            "loadMetric":"FZ0 newtons per tread-width millimetre, evaluated independently by axle",
+            "thresholds":[
+              {"id":"light","minimum":None,"maximumExclusive":9.0},
+              {"id":"medium","minimumInclusive":9.0,"maximumInclusive":13.0},
+              {"id":"heavy","minimumExclusive":13.0,"maximum":None}
+            ],
+            "compoundGuidance":{
+              "soft":{"light":"warm-up favorable; validate wear","medium":"review stint energy","heavy":"overheat/rapid-wear caution"},
+              "medium":{"all":"race/control baseline; validate temperature balance"},
+              "hard":{"light":"slow warm-up caution","medium":"review stint length","heavy":"load proxy acceptable; telemetry still required"},
+              "intermediate":{"all":"water depth and tread cooling dominate weight-only guidance"},
+              "wet":{"all":"water depth and tread cooling dominate weight-only guidance"}
+            },
+            "requiredChecks":["historical series/class menu","car mass and static distribution","FZ0 and tire width by axle","track energy","ambient and surface temperature","pressure and camber","stint length","surface/core temperature telemetry","wear telemetry"],
+            "limitations":[
+              "Car weight alone does not determine the correct historical compound.",
+              "Thresholds are transparent simulation reconstruction priors, not confidential or supplier-proprietary data.",
+              "Final certification is car-, track-, setup-, weather- and stint-specific."
+            ]
+          }
+          gp=Path("knowledge/methodology/ACLM_Load_Duty_Compound_Guidance_v1.0.0.json")
+          gp.parent.mkdir(parents=True,exist_ok=True)
+          gp.write_text(json.dumps(guidance,indent=2)+"\n",encoding="utf-8")
+
+          cp=Path("src/payload/Documentation/CHANGELOG.txt")
+          ch=cp.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not ch.startswith(heading):raise SystemExit("changelog heading mismatch")
+          entry="""2026-08-26 - v0.6.6
+          - Adds editable full names and short codes for every compound slot while retaining researched/default names as the fallback.
+          - Adds a visible compound/load suitability checklist tied to historical series-menu availability and axle FZ0-per-width duty.
+          - Exports ACLM_LOAD_COMPOUND_CHECKLIST.txt in every tire pack and includes the assessment in the evidence report.
+          - Warns about light-duty hard-tire warm-up, heavy-duty sprint-tire overheating, axle-duty mismatch and wet-surface limits without treating weight as an automatic compound selector.
+          - Publishes versioned non-confidential load-duty methodology guidance and preserves the v0.6.5 verified manual knowledge-import workflow.
+
+          """
+          cp.write_text(heading+entry+ch[len(heading):],encoding="utf-8",newline="")
+          PY
+
+      - name: Validate v0.6.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node --check src/payload/app/sw.js
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors) | Out-Null; if($errors.Count){$errors | ForEach-Object { Write-Error $_ }; exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          app=Path("src/payload/app/app.js").read_text()
+          index=Path("src/payload/app/index.html").read_text()
+          assert 'const ACLM_APP_VERSION="0.6.6";' in app
+          for token in ("COMPOUND_NAME_FIELDS","compoundDutyAssessment","loadCompoundChecklistText","ACLM_LOAD_COMPOUND_CHECKLIST.txt","Compound full names must be unique","Compound short codes must be unique"):
+              assert token in app,token
+          for token in ("compoundNameSoft","compoundShortSoft","compoundNameWet","compoundShortWet","loadCompoundChecklist","resetCompoundNames"):
+              assert token in index,token
+          assert '<b id="installedBuild">v0.6.6</b>' in index
+          guide=json.loads(Path("knowledge/methodology/ACLM_Load_Duty_Compound_Guidance_v1.0.0.json").read_text())
+          assert guide["thresholds"][0]["maximumExclusive"]==9.0
+          assert guide["thresholds"][1]["minimumInclusive"]==9.0 and guide["thresholds"][1]["maximumInclusive"]==13.0
+          assert guide["thresholds"][2]["minimumExclusive"]==13.0
+          assert len(guide["requiredChecks"])==9
+          assert "weight alone" in guide["limitations"][0].lower()
+          print("v0.6.6 compound naming and load-duty checklist validation passed")
+          PY
+
+      - name: Package app and stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ["APP_VERSION"];src=Path("src");name=f"ACLM_Tire_Lab_Setup_v{v}.zip";archive=Path("/tmp")/name
+          with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(src.rglob("*")):
+                  if p.is_file():z.write(p,p.relative_to(src).as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          m={"product":"ACLM Historical Tire Lab","channel":"stable","version":v,"file_name":name,"release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{v}","download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}","sha256":sha,"published_utc":pub,"notes":"Compound naming plus series-aware axle load-duty suitability checklist; bundled Knowledge v1.7.0."}
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(m,indent=2)+"\n")
+          Path("/tmp/app_sha").write_text(sha)
+          print(json.dumps(m,indent=2))
+          PY
+
+      - name: Commit and publish v0.6.6
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json knowledge/methodology/ACLM_Load_Duty_Compound_Guidance_v1.0.0.json
+          git commit -m "feat: release Tire Lab v0.6.6 compound duty checklist"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json knowledge/methodology/ACLM_Load_Duty_Compound_Guidance_v1.0.0.json --repo "${{ github.repository }}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Compound duty and naming release:
+          - custom full names and short codes for every compound slot
+          - series-menu plus axle FZ0/tread-width suitability checklist
+          - exported ACLM_LOAD_COMPOUND_CHECKLIST.txt in every pack
+          - explicit warm-up, overheating, axle-balance and wet-surface cautions
+          - versioned non-confidential methodology guidance
+          - preserves Knowledge v1.7.0 and verified manual knowledge import
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
