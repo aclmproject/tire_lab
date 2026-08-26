@@ -1,0 +1,176 @@
+name: Release Tire Lab v0.6.4 Permanent Latest Link
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/release-v064-latest-link.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tire-lab-v064-latest-link
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.6.4
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Build v0.6.4 without remote application checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, shutil
+
+          version="0.6.4"
+          previous="0.6.3"
+
+          def once(text,old,new,label):
+              n=text.count(old)
+              if n!=1: raise SystemExit(f"{label}: expected one match, found {n}")
+              return text.replace(old,new,1)
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          app=once(app,'const ACLM_APP_VERSION="0.6.3";','const ACLM_APP_VERSION="0.6.4";',"app version")
+          start=app.index('const ACLM_RELEASES_URL=')
+          end=app.index('function updateKnowledgeUi',start)
+          removed=app[start:end]
+          for required in ('checkForUpdates','/api/update-info','installAvailableUpdate'):
+              if required not in removed: raise SystemExit(f"update block missing {required}")
+          app=app[:start]+'// Application updates use a permanent GitHub hyperlink in index.html; no remote version check.\nlet onlineRequestActive=false;\n\n'+app[end:]
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          index=once(index,"v0.6.3 Browser App","v0.6.4 Browser App","header version")
+          index=once(index,'<b id="installedBuild">v0.6.3</b>','<b id="installedBuild">v0.6.4</b>',"installed version")
+          old='''<div class="actions" style="margin-top:10px">
+           <button id="checkUpdates" type="button">Check for updates</button>
+           <button id="installUpdate" class="good" type="button" disabled>Open update download page</button>
+          </div>
+          <div id="updateStatus" class="small muted">Update check has not run yet.</div>'''
+          new='''<div class="actions" style="margin-top:10px">
+           <a id="latestRelease" class="update-link good" href="https://github.com/aclmproject/tire_lab/releases/latest" target="_blank" rel="noopener noreferrer">Open latest Tire Lab release</a>
+          </div>
+          <div class="small muted">Application updates are published on GitHub. This permanent link opens the latest installer release directly and does not run a version check.</div>'''
+          index=once(index,old,new,"update controls")
+          index_path.write_text(index,encoding="utf-8",newline="")
+
+          css_path=Path("src/payload/app/style.css")
+          css=css_path.read_text(encoding="utf-8")
+          rule='''.update-link{display:inline-block;background:#116347;color:#fff!important;border:1px solid #1c966c;border-radius:7px;padding:9px 12px;cursor:pointer;font-weight:650;text-decoration:none}.update-link:hover{filter:brightness(1.08)}
+          '''
+          if ".update-link{" in css: raise SystemExit("update-link style already exists")
+          css_path.write_text(css.rstrip()+"\n"+rule,encoding="utf-8",newline="")
+
+          replacements=[
+            ("src/payload/Server_ACLM_Tire_Lab.ps1",'$CurrentVersion = "0.6.3"','$CurrentVersion = "0.6.4"',"server version"),
+            ("src/payload/app/sw.js","aclm-tire-lab-shell-v063-load-duty-integrity","aclm-tire-lab-shell-v064-permanent-latest-link","service-worker cache"),
+            ("README.md","Current application release: **v0.6.3**","Current application release: **v0.6.4**","README version"),
+          ]
+          for filename,old,new,label in replacements:
+              p=Path(filename); p.write_text(once(p.read_text(encoding="utf-8"),old,new,label),encoding="utf-8",newline="")
+
+          for filename in ("src/payload/Launch_ACLM_Tire_Lab.cmd","src/Install_ACLM_Tire_Lab.cmd","src/README_FIRST.txt"):
+              p=Path(filename); text=p.read_text(encoding="utf-8")
+              if previous not in text: raise SystemExit(f"{filename}: previous version missing")
+              p.write_text(text.replace(previous,version),encoding="utf-8",newline="")
+
+          knowledge_source=Path("knowledge/releases/ACLM_Tire_Knowledge_v1.7.0.json")
+          knowledge_target=Path("src/payload/app/knowledge_fallback.json")
+          shutil.copyfile(knowledge_source,knowledge_target)
+          release=json.loads(knowledge_source.read_text(encoding="utf-8"))
+          compact=json.dumps(release,separators=(",",":"),ensure_ascii=False)
+          wrapper="(()=>{const r="+compact+";if(window.ACLMHistoricalCategories?.loadKnowledgeRelease)window.ACLMHistoricalCategories.loadKnowledgeRelease(r,'bundled fallback');})();\n"
+          Path("src/payload/app/knowledge_fallback.js").write_text(wrapper,encoding="utf-8",newline="")
+
+          cp=Path("src/payload/Documentation/CHANGELOG.txt")
+          ch=cp.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not ch.startswith(heading): raise SystemExit("changelog heading mismatch")
+          entry=f"""2026-08-26 - v{version}
+          - Removes the unreliable application update-check request and its timeout/error state.
+          - Replaces both application-update buttons with one permanent GitHub latest-release hyperlink.
+          - Keeps tire-knowledge check/sync independent and unchanged.
+          - Bundles validated Tire Knowledge v1.7.0 with 85 families, 101 selectable classes, 145 sources and 184 measurements.
+          - Preserves load-duty thermal calibration, LUT integrity gate, AC import/export, graphs, pressure solver, PDF reporting and the canonical launcher.
+
+          """
+          cp.write_text(heading+entry+ch[len(heading):],encoding="utf-8",newline="")
+          PY
+
+      - name: Validate permanent-link release
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node --check src/payload/app/sw.js
+          node --check src/payload/app/knowledge_fallback.js
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors) | Out-Null; if($errors.Count){$errors | ForEach-Object { Write-Error $_ }; exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          app=Path("src/payload/app/app.js").read_text()
+          index=Path("src/payload/app/index.html").read_text()
+          css=Path("src/payload/app/style.css").read_text()
+          assert 'const ACLM_APP_VERSION="0.6.4";' in app
+          assert "checkForUpdates" not in app and "/api/update-info" not in app and "installAvailableUpdate" not in app
+          assert 'id="checkUpdates"' not in index and 'id="installUpdate"' not in index
+          assert 'href="https://github.com/aclmproject/tire_lab/releases/latest"' in index
+          assert 'target="_blank"' in index and 'rel="noopener noreferrer"' in index
+          assert ".update-link{" in css
+          k=json.loads(Path("src/payload/app/knowledge_fallback.json").read_text())
+          assert k["releaseVersion"]=="1.7.0"
+          assert len(k["families"])==85 and len(k["classes"])==101 and len(k["sources"])==145 and len(k["measurements"])==184
+          assert 'aclm-tire-lab-shell-v064-permanent-latest-link' in Path("src/payload/app/sw.js").read_text()
+          print("v0.6.4 permanent latest-link validation passed")
+          PY
+
+      - name: Package app and stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          version=os.environ["APP_VERSION"]; src=Path("src"); name=f"ACLM_Tire_Lab_Setup_v{version}.zip"; archive=Path("/tmp")/name
+          with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(src.rglob("*")):
+                  if p.is_file(): z.write(p,p.relative_to(src).as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest(); pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          manifest={"product":"ACLM Historical Tire Lab","channel":"stable","version":version,"file_name":name,"release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{version}","download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{version}/{name}","sha256":sha,"published_utc":pub,"notes":"Permanent latest-release link with no application update-check timeout; bundled Tire Knowledge v1.7.0."}
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(manifest,indent=2)+"\n")
+          Path("/tmp/app_sha").write_text(sha); print(json.dumps(manifest,indent=2))
+          PY
+
+      - name: Commit and publish v0.6.4
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "feat: release Tire Lab v0.6.4 permanent latest link"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --repo "${{ github.repository }}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Reliable application-update handoff:
+          - removes the remote application version check and timeout path
+          - provides one permanent link to GitHub's latest Tire Lab release
+          - leaves knowledge check/sync unchanged
+          - bundles Tire Knowledge v1.7.0
+          - preserves v0.6.3 thermal/load-duty and LUT-integrity work
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
