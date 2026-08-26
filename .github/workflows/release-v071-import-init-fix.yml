@@ -1,0 +1,141 @@
+name: Release Tire Lab v0.7.1 Import Initialization Fix
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  APP_VERSION: 0.7.1
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair startup dependency ordering
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path(".")
+          app_path=root/"src/payload/app/app.js"
+          app=app_path.read_text(encoding="utf-8")
+          old='''function automaticCompoundDisplayName(comp){return historicalSlot(comp)?.name||compDefs?.[comp]?.name||comp;}
+          function automaticCompoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(compDefs?.[comp]?.short||comp.slice(0,1).toUpperCase());}'''
+          new='''const COMPOUND_NAME_DEFAULTS=Object.freeze({
+           soft:Object.freeze({name:"Soft",short:"S"}),
+           medium:Object.freeze({name:"Medium",short:"M"}),
+           hard:Object.freeze({name:"Hard",short:"H"}),
+           intermediate:Object.freeze({name:"Intermediate",short:"I"}),
+           wet:Object.freeze({name:"Wet",short:"W"})
+          });
+          function automaticCompoundDisplayName(comp){return historicalSlot(comp)?.name||COMPOUND_NAME_DEFAULTS[comp]?.name||comp;}
+          function automaticCompoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(COMPOUND_NAME_DEFAULTS[comp]?.short||comp.slice(0,1).toUpperCase());}'''
+          if old not in app: raise SystemExit("compound-name dependency block not found")
+          app=app.replace(old,new,1)
+          old_version='const ACLM_APP_VERSION="0.7.0";'
+          if old_version not in app: raise SystemExit("app version anchor missing")
+          app=app.replace(old_version,'const ACLM_APP_VERSION="0.7.1";',1)
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          def replace(path,old,new,count=None):
+           p=root/path;s=p.read_text(encoding="utf-8-sig")
+           if old not in s: raise SystemExit(f"{path}: anchor missing: {old}")
+           s=s.replace(old,new) if count is None else s.replace(old,new,count)
+           p.write_text(s,encoding="utf-8",newline="")
+
+          replace("src/payload/app/index.html","v0.7.0","v0.7.1")
+          replace("src/payload/Server_ACLM_Tire_Lab.ps1",'$CurrentVersion = "0.7.0"','$CurrentVersion = "0.7.1"',1)
+          replace("src/payload/Launch_ACLM_Tire_Lab.cmd",'set "EXPECTED_VERSION=0.7.0"','set "EXPECTED_VERSION=0.7.1"',1)
+          replace("src/payload/Launch_ACLM_Tire_Lab.cmd",'set "URL=http://127.0.0.1:48765/?build=0.7.0"','set "URL=http://127.0.0.1:48765/?build=0.7.1"',1)
+          replace("src/payload/app/sw.js","aclm-tire-lab-shell-v070-validation-workspace","aclm-tire-lab-shell-v071-import-init-fix",1)
+          replace("README.md","v0.7.0","v0.7.1",1)
+          readme=root/"src/payload/Documentation/README.txt"
+          if readme.exists():
+           s=readme.read_text(encoding="utf-8-sig")
+           if "v0.7.0" in s: readme.write_text(s.replace("v0.7.0","v0.7.1",1),encoding="utf-8",newline="")
+
+          cp=root/"src/payload/Documentation/CHANGELOG.txt"
+          ch=cp.read_text(encoding="utf-8-sig")
+          heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not ch.startswith(heading): raise SystemExit("changelog heading mismatch")
+          entry="""2026-08-26 - v0.7.1
+          - Fixes a startup dependency-order regression that prevented all app.js event handlers from being registered.
+          - Compound-name defaults no longer read compDefs before its declaration.
+          - Restores Physics ZIP/folder import and verified manual knowledge-package import.
+          - Adds release gates for initialization ordering and both import-handler registrations.
+          - Preserves all v0.7.0 validation-workspace and Knowledge v1.7.0 features.
+
+          """
+          cp.write_text(heading+entry+ch[len(heading):],encoding="utf-8",newline="")
+
+          doc=root/"docs/Import_Initialization_Fix_v071.md"
+          doc.write_text("""# Tire Lab v0.7.1 import-initialization repair
+
+          v0.7.0 initialized the compound-name editor before the compound physics table was declared. Browser JavaScript therefore raised a temporal-dead-zone ReferenceError and stopped before registering the Physics ZIP and knowledge-import buttons.
+
+          v0.7.1 gives the naming UI an independent immutable default-name table. Historical names still override those defaults and generated physics still use the complete compound definition table. No tire coefficients were changed.
+
+          Release validation checks JavaScript syntax, PowerShell syntax, dependency order, the two import-handler registrations, version consistency and preservation of the v0.7.0 Validation Workspace.
+          """,encoding="utf-8",newline="")
+          PY
+      - name: Validate startup and import handlers
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node --check src/payload/app/validation_core.js
+          node --check src/payload/app/validation_workspace.js
+          node --check src/payload/app/sw.js
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors) | Out-Null; if($errors.Count){$errors | ForEach-Object { Write-Error $_ }; exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+          app=Path("src/payload/app/app.js").read_text()
+          index=Path("src/payload/app/index.html").read_text()
+          assert 'const ACLM_APP_VERSION="0.7.1";' in app
+          assert '<b id="installedBuild">v0.7.1</b>' in index
+          assert app.index("const COMPOUND_NAME_DEFAULTS") < app.index("refreshCompoundNameEditor();")
+          segment=app[app.index("function automaticCompoundDisplayName"):app.index("function compoundDisplayName")]
+          assert "compDefs" not in segment, "naming initialization still depends on later compDefs"
+          assert "$('importZip').addEventListener('click',doZipImport)" in app
+          assert '$("importKnowledge").addEventListener("click",importKnowledgePackage)' in app
+          for token in ("validation_core.js","validation_workspace.js","trackZip","telemetryCsv","runTrackSimulation"):
+           assert token in index,token
+          print("v0.7.1 startup/import regression gates passed")
+          PY
+      - name: Package app and stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ["APP_VERSION"];src=Path("src");name=f"ACLM_Tire_Lab_Setup_v{v}.zip";archive=Path("/tmp")/name
+          with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
+           for p in sorted(src.rglob("*")):
+            if p.is_file(): z.write(p,p.relative_to(src).as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          m={"product":"ACLM Historical Tire Lab","channel":"stable","version":v,"file_name":name,"release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{v}","download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}","sha256":sha,"published_utc":pub,"notes":"Restores Physics ZIP/folder import and verified knowledge-package import by repairing startup dependency ordering; preserves the v0.7.0 Validation Workspace and Knowledge v1.7.0."}
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(m,indent=2)+"\n")
+          Path("/tmp/app_sha").write_text(sha)
+          print(json.dumps(m,indent=2))
+          PY
+      - name: Commit and publish v0.7.1
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src docs/Import_Initialization_Fix_v071.md manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: restore Tire Lab import initialization in v0.7.1"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json docs/Import_Initialization_Fix_v071.md --repo "${{ github.repository }}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Restores Physics ZIP/folder import and verified knowledge-package import. Fixes startup dependency ordering without changing tire physics. Preserves all v0.7.0 Validation Workspace features. SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
