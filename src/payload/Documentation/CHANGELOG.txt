@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.7.1
+- Fixes a startup dependency-order regression that prevented all app.js event handlers from being registered.
+- Compound-name defaults no longer read compDefs before its declaration.
+- Restores Physics ZIP/folder import and verified manual knowledge-package import.
+- Adds release gates for initialization ordering and both import-handler registrations.
+- Preserves all v0.7.0 validation-workspace and Knowledge v1.7.0 features.
+
 2026-08-26 - v0.7.0
 - Adds the integrated Validation Workspace for car + track + telemetry screening.
 - Imports AC track ZIP metadata and surfaces.ini, while separating parsed values from inferred energy.

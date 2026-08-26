@@ -152,8 +152,15 @@ function cleanCompoundText(raw,maxLength,shortCode){
  if(shortCode)text=text.replace(/[^A-Za-z0-9_-]/g,"").toUpperCase();
  return text.slice(0,maxLength);
 }
-function automaticCompoundDisplayName(comp){return historicalSlot(comp)?.name||compDefs?.[comp]?.name||comp;}
-function automaticCompoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(compDefs?.[comp]?.short||comp.slice(0,1).toUpperCase());}
+const COMPOUND_NAME_DEFAULTS=Object.freeze({
+ soft:Object.freeze({name:"Soft",short:"S"}),
+ medium:Object.freeze({name:"Medium",short:"M"}),
+ hard:Object.freeze({name:"Hard",short:"H"}),
+ intermediate:Object.freeze({name:"Intermediate",short:"I"}),
+ wet:Object.freeze({name:"Wet",short:"W"})
+});
+function automaticCompoundDisplayName(comp){return historicalSlot(comp)?.name||COMPOUND_NAME_DEFAULTS[comp]?.name||comp;}
+function automaticCompoundShortName(comp){const x=historicalSlot(comp);return x?shortForHistoricalName(x.name,comp):(COMPOUND_NAME_DEFAULTS[comp]?.short||comp.slice(0,1).toUpperCase());}
 function compoundDisplayName(comp){
  const id=COMPOUND_NAME_FIELDS[comp]?.name,custom=id&&$(id)?cleanCompoundText($(id).value,48,false):"";
  return custom||automaticCompoundDisplayName(comp);
@@ -1500,7 +1507,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.7.0";
+const ACLM_APP_VERSION="0.7.1";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 

@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.7.0",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.7.0.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.7.0",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.7.0/ACLM_Tire_Lab_Setup_v0.7.0.zip",
-  "sha256": "63ca19ee8913717284da622bce1f1f930caf36e8d1607462ca4817dab95d0cf3",
-  "published_utc": "2026-08-26T16:54:34Z",
-  "notes": "Integrated car + track + telemetry validation workspace with ten new screening and research features; bundled Knowledge v1.7.0."
+  "version": "0.7.1",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.7.1.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.7.1",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.7.1/ACLM_Tire_Lab_Setup_v0.7.1.zip",
+  "sha256": "98c76f05073bec4a87b4138ce05781978cdff0e5425528688b35ce58905617f1",
+  "published_utc": "2026-08-26T20:27:36Z",
+  "notes": "Restores Physics ZIP/folder import and verified knowledge-package import by repairing startup dependency ordering; preserves the v0.7.0 Validation Workspace and Knowledge v1.7.0."
 }
