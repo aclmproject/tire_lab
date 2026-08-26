@@ -1,0 +1,297 @@
+name: Release Tire Lab v0.6.5 Manual Verified Knowledge Import
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/release-v065-manual-knowledge-import.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tire-lab-v065-manual-knowledge-import
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      APP_VERSION: 0.6.5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Build verified manual knowledge import
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, json, shutil
+
+          version="0.6.5"; previous="0.6.4"
+          def once(text,old,new,label):
+              n=text.count(old)
+              if n!=1: raise SystemExit(f"{label}: expected one match, found {n}")
+              return text.replace(old,new,1)
+
+          release_path=Path("knowledge/releases/ACLM_Tire_Knowledge_v1.7.0.json")
+          release_bytes=release_path.read_bytes()
+          release=json.loads(release_bytes.decode("utf-8"))
+          release_sha=hashlib.sha256(release_bytes).hexdigest()
+          package={
+              "product":"ACLM Tire Knowledge Import Package",
+              "package_schema":"1.0.0",
+              "version":release["releaseVersion"],
+              "file_name":release_path.name,
+              "sha256":release_sha,
+              "payload_encoding":"base64",
+              "payload_base64":base64.b64encode(release_bytes).decode("ascii"),
+              "notes":"The embedded release bytes are SHA-256 verified locally before import."
+          }
+          package_path=Path("knowledge/ACLM_Tire_Knowledge_current.package.json")
+          package_path.write_text(json.dumps(package,indent=2)+"\n",encoding="utf-8")
+
+          app_path=Path("src/payload/app/app.js")
+          app=app_path.read_text(encoding="utf-8")
+          app=once(app,'const ACLM_APP_VERSION="0.6.4";','const ACLM_APP_VERSION="0.6.5";',"app version")
+          start=app.index("async function loadCurrentKnowledge(){")
+          anchor="setTimeout(loadCurrentKnowledge,250);"
+          end=app.index(anchor,start)+len(anchor)
+          old_block=app[start:end]
+          for required in ("syncKnowledge","checkKnowledge","/api/knowledge-sync"):
+              if required not in old_block: raise SystemExit(f"old knowledge block missing {required}")
+          new_block=r'''async function loadCurrentKnowledge(){
+           try{
+             const r=await fetch("/api/knowledge-current?ts="+Date.now(),{cache:"no-store"});const data=await r.json();
+             if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
+             window.ACLMHistoricalCategories.loadKnowledgeRelease(data.release,data.source||"local cache");
+             updateKnowledgeUi('<span class="ok"><b>Knowledge loaded:</b></span> v'+escapeHtml(data.release.releaseVersion||"?")+' from '+escapeHtml(data.source||"cache")+'.');
+           }catch(e){updateKnowledgeUi('<span class="warning"><b>Using bundled knowledge.</b></span> Local cache unavailable: '+escapeHtml(e.message));}
+          }
+          function bytesFromBase64(text){
+           const binary=atob(String(text||"")),bytes=new Uint8Array(binary.length);
+           for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+           return bytes;
+          }
+          async function sha256Bytes(bytes){
+           const digest=await crypto.subtle.digest("SHA-256",bytes);
+           return [...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,"0")).join("");
+          }
+          function validateKnowledgeRelease(release){
+           const errors=[],families=Array.isArray(release?.families)?release.families:[],classes=Array.isArray(release?.classes)?release.classes:[],measurements=Array.isArray(release?.measurements)?release.measurements:[];
+           const sources=release?.sources&&typeof release.sources==="object"?release.sources:{},priors=release?.generatorPriors&&typeof release.generatorPriors==="object"?release.generatorPriors:{};
+           const unique=(items,label)=>{const ids=items.map(x=>x?.id);if(ids.some(x=>!x)||new Set(ids).size!==ids.length)errors.push(label+" contain missing or duplicate IDs.");return new Set(ids.filter(Boolean));};
+           if(!String(release?.schemaVersion||"").startsWith("1."))errors.push("Unsupported knowledge schema.");
+           if(!release?.releaseVersion)errors.push("Knowledge release version is missing.");
+           if(!release?.contentSha256)errors.push("Deterministic content hash is missing.");
+           if(!families.length||!classes.length)errors.push("Families or classes are missing.");
+           const famIds=unique(families,"Families"),classIds=unique(classes,"Classes");unique(measurements,"Measurements");
+           if(classIds.size!==classes.length)errors.push("Class index is incomplete.");
+           const sourceIds=new Set(Object.keys(sources)),priorIds=new Set(Object.keys(priors));
+           if(priorIds.size!==famIds.size||[...famIds].some(id=>!priorIds.has(id)))errors.push("Generator-prior coverage does not match the family set.");
+           const allowed=new Set(["soft","qualifying","race","control","dry","hard","endurance","intermediate","wet","wet_hard"]);
+           for(const family of families)for(const id of family.sourceIds||[])if(!sourceIds.has(id))errors.push("Family "+family.id+" references missing source "+id+".");
+           for(const cls of classes){
+             if(!famIds.has(cls.familyId))errors.push("Class "+cls.id+" references missing family "+cls.familyId+".");
+             if(!Array.isArray(cls.menu)||!cls.menu.length)errors.push("Class "+cls.id+" has no tire menu.");
+             for(const item of cls.menu||[])if(!allowed.has(item.kind))errors.push("Class "+cls.id+" has unsupported menu kind "+item.kind+".");
+             for(const id of cls.sourceIds||[])if(!sourceIds.has(id))errors.push("Class "+cls.id+" references missing source "+id+".");
+           }
+           for(const [id,prior] of Object.entries(priors))if(prior?.familyId!==id)errors.push("Generator prior key mismatch for "+id+".");
+           return [...new Set(errors)];
+          }
+          async function importKnowledgePackage(){
+           const input=$("knowledgeFile"),button=$("importKnowledge"),status=$("knowledgeStatus"),file=input?.files?.[0];
+           if(!file){status.innerHTML='<span class="warning"><b>Select a downloaded ACLM knowledge package first.</b></span>';return;}
+           button.disabled=true;
+           status.textContent="Verifying the downloaded knowledge package locally…";
+           try{
+             const wrapper=JSON.parse(await file.text());
+             if(wrapper.product!=="ACLM Tire Knowledge Import Package"||wrapper.package_schema!=="1.0.0"||wrapper.payload_encoding!=="base64")throw new Error("This is not a supported ACLM knowledge package.");
+             const bytes=bytesFromBase64(wrapper.payload_base64),actual=await sha256Bytes(bytes);
+             if(actual.toLowerCase()!==String(wrapper.sha256||"").toLowerCase())throw new Error("Knowledge-package SHA-256 verification failed.");
+             const release=JSON.parse(new TextDecoder("utf-8",{fatal:true}).decode(bytes));
+             if(String(wrapper.version)!==String(release.releaseVersion))throw new Error("Package and release versions do not match.");
+             const errors=validateKnowledgeRelease(release);
+             if(errors.length)throw new Error(errors.slice(0,5).join(" "));
+             const r=await fetch("/api/knowledge-import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({payload_base64:wrapper.payload_base64,sha256:wrapper.sha256})});
+             const data=await r.json();if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
+             window.ACLMHistoricalCategories.loadKnowledgeRelease(data.release,"verified manual import");
+             updateKnowledgeUi('<span class="ok"><b>Knowledge imported and preserved:</b></span> v'+escapeHtml(data.release.releaseVersion)+' · SHA-256 '+escapeHtml(actual.slice(0,12))+'…');
+             input.value="";
+           }catch(e){
+             status.innerHTML='<span class="warning"><b>Knowledge import rejected:</b></span> '+escapeHtml(e.message)+' Existing cached/bundled knowledge remains active.';
+           }finally{button.disabled=!input?.files?.length;}
+          }
+          $("knowledgeFile").addEventListener("change",()=>{$("importKnowledge").disabled=!$("knowledgeFile").files.length;});
+          $("importKnowledge").addEventListener("click",importKnowledgePackage);
+          setTimeout(loadCurrentKnowledge,250);'''
+          app=app[:start]+new_block+app[end:]
+          app_path.write_text(app,encoding="utf-8",newline="")
+
+          index_path=Path("src/payload/app/index.html")
+          index=index_path.read_text(encoding="utf-8")
+          index=once(index,"v0.6.4 Browser App","v0.6.5 Browser App","header version")
+          index=once(index,'<b id="installedBuild">v0.6.4</b>','<b id="installedBuild">v0.6.5</b>',"installed version")
+          old=''' <div class="actions" style="margin-top:8px">
+            <button id="checkKnowledge" type="button">Check tire knowledge</button>
+            <button id="syncKnowledge" type="button">Sync latest knowledge</button>
+           </div>
+           <div id="knowledgeStatus" class="small muted">Bundled knowledge v1.2.0 loaded; checking local cache.</div>
+          </div>
+
+          <div class="small muted" style="margin-top:6px">Verified cached knowledge loads locally. Online checks run only when requested and fall back safely when GitHub is unavailable.</div>'''
+          new=''' <div class="actions" style="margin-top:8px">
+            <a id="downloadKnowledge" class="update-link good" href="https://github.com/aclmproject/tire_lab/raw/refs/heads/main/knowledge/ACLM_Tire_Knowledge_current.package.json" target="_blank" rel="noopener noreferrer">Download latest knowledge package</a>
+           </div>
+           <div style="margin-top:8px"><label for="knowledgeFile">Downloaded ACLM knowledge package (.json)</label><input id="knowledgeFile" type="file" accept=".json,application/json"></div>
+           <div class="actions" style="margin-top:8px"><button id="importKnowledge" type="button" disabled>Verify &amp; import knowledge</button></div>
+           <div id="knowledgeStatus" class="small muted">Bundled/last-known-good knowledge loads locally. Download and import only when you want to update it.</div>
+          </div>
+
+          <div class="small muted" style="margin-top:6px">Import verifies the package SHA-256, schema, unique IDs, source references, class menus and generator-prior coverage before replacing the last-known-good cache.</div>'''
+          index=once(index,old,new,"knowledge controls")
+          index_path.write_text(index,encoding="utf-8",newline="")
+
+          server_path=Path("src/payload/Server_ACLM_Tire_Lab.ps1")
+          server=server_path.read_text(encoding="utf-8")
+          server=once(server,'$CurrentVersion = "0.6.4"','$CurrentVersion = "0.6.5"',"server version")
+          server=once(server,'$length -gt 65536','$length -gt 8388608',"import body size")
+          import_fn=r'''
+          function HashBytes([byte[]]$Bytes){$sha=[Security.Cryptography.SHA256]::Create();try{return ([BitConverter]::ToString($sha.ComputeHash($Bytes))).Replace('-','').ToLowerInvariant()}finally{$sha.Dispose()}}
+          function Import-KnowledgePackage([string]$RequestBody){
+            if([string]::IsNullOrWhiteSpace($RequestBody)){throw "Knowledge package request is empty."}
+            $request=$RequestBody|ConvertFrom-Json
+            if(!$request.payload_base64 -or !$request.sha256){throw "Knowledge package request is incomplete."}
+            try{$bytes=[Convert]::FromBase64String(([string]$request.payload_base64))}catch{throw "Knowledge payload is not valid base64."}
+            if($bytes.Length -le 0 -or $bytes.Length -gt 6291456){throw "Knowledge payload size is invalid."}
+            $actual=HashBytes $bytes
+            if($actual -ne ([string]$request.sha256).ToLowerInvariant()){throw "Knowledge package SHA-256 verification failed."}
+            $raw=[Text.Encoding]::UTF8.GetString($bytes)
+            $obj=$raw|ConvertFrom-Json
+            if(!$obj.releaseVersion -or !$obj.schemaVersion -or !([string]$obj.schemaVersion).StartsWith("1.") -or !$obj.contentSha256){throw "Unsupported or incomplete knowledge release."}
+            if(!$obj.families -or !$obj.classes -or !$obj.sources -or !$obj.generatorPriors){throw "Knowledge release is missing required collections."}
+            $familyIds=@($obj.families|ForEach-Object{[string]$_.id})
+            $classIds=@($obj.classes|ForEach-Object{[string]$_.id})
+            if($familyIds.Count -ne (@($familyIds|Select-Object -Unique)).Count -or $familyIds -contains ""){throw "Family IDs are missing or duplicated."}
+            if($classIds.Count -ne (@($classIds|Select-Object -Unique)).Count -or $classIds -contains ""){throw "Class IDs are missing or duplicated."}
+            foreach($c in $obj.classes){if($familyIds -notcontains [string]$c.familyId){throw "Class $($c.id) references a missing family."};if(!$c.menu){throw "Class $($c.id) has no tire menu."}}
+            $priorIds=@($obj.generatorPriors.PSObject.Properties.Name)
+            if($priorIds.Count -ne $familyIds.Count){throw "Generator-prior coverage count is invalid."}
+            foreach($id in $familyIds){if($priorIds -notcontains $id){throw "Generator prior is missing for $id."}}
+            Write-Utf8 $KnowledgeCache $raw
+            return @{release=$obj;source="verified manual import";updated=$true;sha256=$actual;checked_utc=[DateTime]::UtcNow.ToString("o")}
+          }
+
+          '''
+          server=once(server,"function Read-RequestBody($reader,$headers){",import_fn+"function Read-RequestBody($reader,$headers){","import function")
+          old_route='''    }elseif($url -eq "/api/knowledge-sync" -and $method -eq "POST"){
+                $force=$false
+                try{if($requestBody){$request=$requestBody|ConvertFrom-Json;$force=[bool]$request.force}}catch{}
+                try{$k=Sync-Knowledge $force;$body=JsonBytes @{release=$k.release;source=$k.source;updated=$k.updated;checked_utc=$k.checked_utc};$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="503 Service Unavailable"};$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/update-info"){'''
+          new_route='''    }elseif($url -eq "/api/knowledge-sync" -and $method -eq "POST"){
+                $force=$false
+                try{if($requestBody){$request=$requestBody|ConvertFrom-Json;$force=[bool]$request.force}}catch{}
+                try{$k=Sync-Knowledge $force;$body=JsonBytes @{release=$k.release;source=$k.source;updated=$k.updated;checked_utc=$k.checked_utc};$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="503 Service Unavailable"};$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/knowledge-import" -and $method -eq "POST"){
+                try{$k=Import-KnowledgePackage $requestBody;$body=JsonBytes $k;$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
+              }elseif($url -eq "/api/update-info"){'''
+          server=once(server,old_route,new_route,"knowledge import route")
+          server_path.write_text(server,encoding="utf-8",newline="")
+
+          replacements=[
+            ("src/payload/app/sw.js","aclm-tire-lab-shell-v064-permanent-latest-link","aclm-tire-lab-shell-v065-manual-knowledge-import","service-worker cache"),
+            ("README.md","Current application release: **v0.6.4**","Current application release: **v0.6.5**","README version"),
+          ]
+          for filename,old,new,label in replacements:
+              p=Path(filename);p.write_text(once(p.read_text(encoding="utf-8"),old,new,label),encoding="utf-8",newline="")
+          for filename in ("src/payload/Launch_ACLM_Tire_Lab.cmd","src/Install_ACLM_Tire_Lab.cmd","src/README_FIRST.txt"):
+              p=Path(filename);text=p.read_text(encoding="utf-8")
+              if previous not in text:raise SystemExit(f"{filename}: previous version missing")
+              p.write_text(text.replace(previous,version),encoding="utf-8",newline="")
+
+          shutil.copyfile(release_path,Path("src/payload/app/knowledge_fallback.json"))
+          compact=json.dumps(release,separators=(",",":"),ensure_ascii=False)
+          Path("src/payload/app/knowledge_fallback.js").write_text("(()=>{const r="+compact+";if(window.ACLMHistoricalCategories?.loadKnowledgeRelease)window.ACLMHistoricalCategories.loadKnowledgeRelease(r,'bundled fallback');})();\n",encoding="utf-8",newline="")
+
+          cp=Path("src/payload/Documentation/CHANGELOG.txt");ch=cp.read_text(encoding="utf-8-sig");heading="ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n"
+          if not ch.startswith(heading):raise SystemExit("changelog heading mismatch")
+          entry=f"""2026-08-26 - v{version}
+          - Removes application-driven online knowledge check/sync controls and their timeout path.
+          - Adds a permanent browser download link for the current signed knowledge package plus manual Verify & Import.
+          - Verifies exact payload SHA-256, supported schema, IDs, source references, class menus and generator-prior coverage before activation.
+          - Persists only validated imports as the local last-known-good cache; rejection leaves current knowledge active.
+          - Bundles Tire Knowledge v1.7.0 and preserves all v0.6.4 tire-generation features.
+
+          """
+          cp.write_text(heading+entry+ch[len(heading):],encoding="utf-8",newline="")
+          PY
+
+      - name: Validate v0.6.5 import and persistence
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check src/payload/app/app.js
+          node --check src/payload/app/sw.js
+          node --check src/payload/app/knowledge_fallback.js
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors) | Out-Null; if($errors.Count){$errors | ForEach-Object { Write-Error $_ }; exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64,hashlib,json
+          app=Path("src/payload/app/app.js").read_text();index=Path("src/payload/app/index.html").read_text();server=Path("src/payload/Server_ACLM_Tire_Lab.ps1").read_text()
+          assert 'const ACLM_APP_VERSION="0.6.5";' in app
+          assert "syncKnowledge" not in app and "/api/knowledge-sync" not in app and "checkKnowledge" not in app
+          for token in ("importKnowledgePackage","sha256Bytes","validateKnowledgeRelease","/api/knowledge-import"):assert token in app+server
+          assert 'id="knowledgeFile"' in index and 'id="importKnowledge"' in index
+          assert "ACLM_Tire_Knowledge_current.package.json" in index
+          assert 'id="checkKnowledge"' not in index and 'id="syncKnowledge"' not in index
+          package=json.loads(Path("knowledge/ACLM_Tire_Knowledge_current.package.json").read_text());raw=base64.b64decode(package["payload_base64"])
+          assert hashlib.sha256(raw).hexdigest()==package["sha256"]
+          release=json.loads(raw);assert release["releaseVersion"]=="1.7.0"
+          assert len(release["families"])==85 and len(release["classes"])==101 and len(release["sources"])==145 and len(release["measurements"])==184
+          assert raw==Path("knowledge/releases/ACLM_Tire_Knowledge_v1.7.0.json").read_bytes()
+          assert Path("src/payload/app/knowledge_fallback.json").read_bytes()==raw
+          assert "8388608" in server and "HashBytes" in server
+          print("v0.6.5 verified manual knowledge-import validation passed")
+          PY
+
+      - name: Package app and stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ["APP_VERSION"];src=Path("src");name=f"ACLM_Tire_Lab_Setup_v{v}.zip";archive=Path("/tmp")/name
+          with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(src.rglob("*")):
+                  if p.is_file():z.write(p,p.relative_to(src).as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest();pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+          m={"product":"ACLM Historical Tire Lab","channel":"stable","version":v,"file_name":name,"release_page":f"https://github.com/aclmproject/tire_lab/releases/tag/v{v}","download_url":f"https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}","sha256":sha,"published_utc":pub,"notes":"Verified manual Tire Knowledge package import with no online knowledge timeout; bundled Knowledge v1.7.0."}
+          Path("manifests/ACLM_Tire_Lab_latest.json").write_text(json.dumps(m,indent=2)+"\n");Path("/tmp/app_sha").write_text(sha);print(json.dumps(m,indent=2))
+          PY
+
+      - name: Commit and publish v0.6.5
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]";git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src manifests/ACLM_Tire_Lab_latest.json knowledge/ACLM_Tire_Knowledge_current.package.json
+          git commit -m "feat: release Tire Lab v0.6.5 verified knowledge import"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --repo "${{ github.repository }}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Verified offline knowledge-update workflow:
+          - browser downloads one permanent current-knowledge package
+          - Tire Lab verifies exact SHA-256 and structural integrity locally
+          - only validated knowledge is saved as last-known-good
+          - no application-side online knowledge check or sync timeout
+          - bundles Tire Knowledge v1.7.0
+          SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
