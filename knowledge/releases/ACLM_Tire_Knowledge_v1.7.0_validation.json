@@ -1,0 +1,29 @@
+{
+  "version": "1.7.0",
+  "schemaVersion": "1.2.0",
+  "families": 85,
+  "classes": 101,
+  "sources": 145,
+  "measurements": 184,
+  "familiesAdded": 12,
+  "classesAdded": 28,
+  "sha256": "41e9550fe5df04476f55a6e603ea4ad0b44a4754af51c3d802beccdca6cd5317",
+  "contentSha256": "64b698985be6178b02160784cfe07b649836b9438dabc3fc94d085162a2e7702",
+  "sourceWorkbook": {
+    "workbook": "ACLM_Historical_Tire_Calibration_Library.xlsx",
+    "workbookSha256": "60c7806c73377180744f3ec3a6494c5077fa6562a0d5a54b6e5360dff28083ef",
+    "excluded": [
+      "FAM035",
+      "SUB007",
+      "SUB008"
+    ],
+    "reason": "Overlapping turbo-F1 aggregate excluded; oval/gravel normalized as classes."
+  },
+  "checks": {
+    "uniqueIds": true,
+    "references": true,
+    "priorCoverage": true,
+    "supportedMenus": true,
+    "v1.6Lineage": true
+  }
+}

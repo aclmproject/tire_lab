@@ -2,12 +2,12 @@
   "product": "ACLM Tire Knowledge",
   "channel": "stable",
   "schema_version": "1.2.0",
-  "version": "1.6.0",
-  "file_name": "ACLM_Tire_Knowledge_v1.6.0.json",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v1.6.0",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/knowledge-v1.6.0/ACLM_Tire_Knowledge_v1.6.0.json",
-  "sha256": "8cf98a99947e2d8f9031f9310d2fbe35f6acd4aec2c131a10c8887375e6d4c1d",
-  "release_content_sha256": "e2cb456dfe1f959bc590c4bd4529b32c185558bd8fc5a25cb68fb6bee190ea58",
-  "published_utc": "2026-08-25T23:21:17Z",
-  "notes": "Validated Formula and Modern Endurance expansion through 73 families/classes, with source-backed series menus and reconstruction-prior guardrails."
+  "version": "1.7.0",
+  "file_name": "ACLM_Tire_Knowledge_v1.7.0.json",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v1.7.0",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/knowledge-v1.7.0/ACLM_Tire_Knowledge_v1.7.0.json",
+  "sha256": "41e9550fe5df04476f55a6e603ea4ad0b44a4754af51c3d802beccdca6cd5317",
+  "release_content_sha256": "64b698985be6178b02160784cfe07b649836b9438dabc3fc94d085162a2e7702",
+  "published_utc": "2026-08-26T04:30:09Z",
+  "notes": "Additive historical categories: 85 families and 101 selectable classes; v1.6 lineage preserved."
 }
