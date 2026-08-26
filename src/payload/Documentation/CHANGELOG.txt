@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.6.4
+- Removes the unreliable application update-check request and its timeout/error state.
+- Replaces both application-update buttons with one permanent GitHub latest-release hyperlink.
+- Keeps tire-knowledge check/sync independent and unchanged.
+- Bundles validated Tire Knowledge v1.7.0 with 85 families, 101 selectable classes, 145 sources and 184 measurements.
+- Preserves load-duty thermal calibration, LUT integrity gate, AC import/export, graphs, pressure solver, PDF reporting and the canonical launcher.
+
 2026-08-25 - v0.6.3
 - Adds per-axle light/medium/heavy thermal load-duty reconstruction from FZ0 per tread width; tire-family priors remain immutable.
 - Light duty uses cooling x0.88 and friction heat x1.08, medium x1.00/x1.00, heavy x1.06/x0.96; thresholds and provenance appear in the UI, manifest, INI comments and PDF.

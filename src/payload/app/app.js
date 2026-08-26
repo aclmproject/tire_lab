@@ -1405,49 +1405,9 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.6.3";
-const ACLM_RELEASES_URL="https://github.com/aclmproject/tire_lab/releases";
-let availableUpdate=null;
+const ACLM_APP_VERSION="0.6.4";
+// Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
-function semverParts(v){return String(v||"0").replace(/^v/i,"").split(".").map(x=>parseInt(x,10)||0);}
-function isNewerVersion(a,b){const A=semverParts(a),B=semverParts(b),n=Math.max(A.length,B.length);for(let i=0;i<n;i++){const x=A[i]||0,y=B[i]||0;if(x>y)return true;if(x<y)return false;}return false;}
-async function checkForUpdates(silent=false){
- const status=$("updateStatus"),pageBtn=$("installUpdate"),checkBtn=$("checkUpdates");
- if(onlineRequestActive){status.innerHTML='<span class="warning"><b>Another online check is already running.</b></span> Please wait or use the release-page button.';return;}
- onlineRequestActive=true;
- checkBtn.disabled=true;
- pageBtn.disabled=false;
- availableUpdate=null;
- if(!silent)status.textContent="Checking the verified ACLM release manifest…";
- try{
-   const r=await fetch("/api/update-info?ts="+Date.now(),{cache:"no-store"});
-   const data=await r.json();
-   if(!r.ok||data.error)throw new Error(data.error||("HTTP "+r.status));
-   availableUpdate=data;
-   if(data.warning){
-     const cached=data.cached&&data.version?(" Cached manifest reports v"+escapeHtml(data.version)+"."):"";
-     status.innerHTML='<span class="warning"><b>Online update check unavailable:</b></span> '+escapeHtml(data.warning)+cached+' The release page remains available.';
-   }else if(isNewerVersion(data.version,ACLM_APP_VERSION)){
-     status.innerHTML='<span class="warning"><b>Update available: v'+escapeHtml(data.version)+'</b></span> — installed v'+ACLM_APP_VERSION+(data.notes?("<br>"+escapeHtml(data.notes)):"");
-   }else{
-     status.innerHTML='<span class="ok"><b>Up to date.</b></span> Installed v'+ACLM_APP_VERSION+'; stable channel v'+escapeHtml(data.version||ACLM_APP_VERSION)+'.';
-   }
- }catch(e){
-   status.innerHTML='<span class="warning"><b>Update check unavailable:</b></span> '+escapeHtml(e.message)+' The release page remains available.';
- }finally{
-   onlineRequestActive=false;
-   checkBtn.disabled=false;
-   pageBtn.disabled=false;
- }
-}
-function installAvailableUpdate(){
- const url=availableUpdate?.release_page||availableUpdate?.updates_folder||ACLM_RELEASES_URL;
- window.open(url,"_blank","noopener");
- $("updateStatus").innerHTML='<span class="ok"><b>Release page opened.</b></span> Download and run the installer manually.';
-}
-$("checkUpdates").addEventListener("click",()=>checkForUpdates(false));
-$("installUpdate").disabled=false;
-$("installUpdate").addEventListener("click",installAvailableUpdate);
 
 function updateKnowledgeUi(message=""){
  const info=window.ACLMHistoricalCategories?.knowledgeInfo?.()||{};

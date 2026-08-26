@@ -3081,6 +3081,1175 @@
         "SRC127"
       ],
       "to": 2030
+    },
+    {
+      "calibrationRule": "Use lower FZ0 and more compliance than late Can-Am; season evidence gates slick use Evidence status: Reconstruction prior.",
+      "confidence": 82,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM074",
+      "from": 1966,
+      "id": "CLS074",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 150,
+          "lifeRangeKm": "90; 270",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "qualifying",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 35,
+          "lifeRangeKm": "21; 63",
+          "name": "Qualifying",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1966-69 Can-Am early low-aero",
+      "patterns": [
+        "can.*am\\s*early\\s*low.*aero"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033",
+        "SRC036"
+      ],
+      "to": 1969
+    },
+    {
+      "calibrationRule": "Higher operating load, tire growth and rear thermal demand than early subclass Evidence status: Reconstruction prior.",
+      "confidence": 85,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM074",
+      "from": 1970,
+      "id": "CLS075",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 67,
+          "lifeKm": 150,
+          "lifeRangeKm": "90; 270",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "qualifying",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 67,
+          "lifeKm": 35,
+          "lifeRangeKm": "21; 63",
+          "name": "Qualifying",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 67,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1970-74 Can-Am late high-aero",
+      "patterns": [
+        "can.*am\\s*late\\s*high.*aero"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033",
+        "SRC036"
+      ],
+      "to": 1974
+    },
+    {
+      "calibrationRule": "Base FAM033 prior Evidence status: Evidence-weighted.",
+      "confidence": 86,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM075",
+      "from": 1970,
+      "id": "CLS076",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 130,
+          "lifeRangeKm": "78; 234",
+          "name": "Race Slick",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1970-76 Formula 2 1970-76",
+      "patterns": [
+        "formula\\s*2\\s*1970.*76"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033"
+      ],
+      "to": 1976
+    },
+    {
+      "calibrationRule": "Lower FZ0 and broader slip than F2 baseline Evidence status: Reconstruction prior.",
+      "confidence": 84,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM075",
+      "from": 1977,
+      "id": "CLS077",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 66,
+          "lifeKm": 140,
+          "lifeRangeKm": "84; 252",
+          "name": "Control / Race Slick",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 66,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1977-82 Formula Atlantic / Pacific",
+      "patterns": [
+        "formula\\s*atlantic\\s*.*\\s*pacific"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033"
+      ],
+      "to": 1982
+    },
+    {
+      "calibrationRule": "Lower load, narrower tire and longer life than GTO Evidence status: Reconstruction prior.",
+      "confidence": 82,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM076",
+      "from": 1971,
+      "id": "CLS078",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 150,
+          "lifeRangeKm": "90; 270",
+          "name": "Dry Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1971-79 IMSA GTU 1970s",
+      "patterns": [
+        "imsa\\s*gtu\\s*1970s"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033",
+        "SRC036"
+      ],
+      "to": 1979
+    },
+    {
+      "calibrationRule": "Higher longitudinal demand and rear wear than GTU Evidence status: Reconstruction prior.",
+      "confidence": 84,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM076",
+      "from": 1971,
+      "id": "CLS079",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 66,
+          "lifeKm": 150,
+          "lifeRangeKm": "90; 270",
+          "name": "Dry Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 66,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1971-79 IMSA GTO / Trans-Am 1970s",
+      "patterns": [
+        "imsa\\s*gto\\s*.*\\s*trans.*am\\s*1970s"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033",
+        "SRC036"
+      ],
+      "to": 1979
+    },
+    {
+      "calibrationRule": "More heat cycles and lateral slip; lower growth demand than superspeedway Evidence status: Reconstruction prior.",
+      "confidence": 85,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM077",
+      "from": 1970,
+      "id": "CLS080",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 67,
+          "lifeKm": 220,
+          "lifeRangeKm": "132; 396",
+          "name": "Track Specific Bias",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1970-88 NASCAR short track bias",
+      "patterns": [
+        "nascar\\s*short\\s*track\\s*bias"
+      ],
+      "sourceIds": [
+        "SRC006",
+        "SRC020"
+      ],
+      "to": 1988
+    },
+    {
+      "calibrationRule": "Higher pressure, growth/damping priority and inner-liner context where evidenced Evidence status: Reconstruction prior.",
+      "confidence": 86,
+      "construction": "bias",
+      "dryType": "slick",
+      "familyId": "FAM077",
+      "from": 1970,
+      "id": "CLS081",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 220,
+          "lifeRangeKm": "132; 396",
+          "name": "Track Specific Bias",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1970-88 NASCAR superspeedway bias",
+      "patterns": [
+        "nascar\\s*superspeedway\\s*bias"
+      ],
+      "sourceIds": [
+        "SRC007",
+        "SRC020"
+      ],
+      "to": 1988
+    },
+    {
+      "calibrationRule": "Use radial camber/temperature-spread logic with venue-specific life Evidence status: Evidence-weighted.",
+      "confidence": 90,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM078",
+      "from": 1989,
+      "id": "CLS082",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 72,
+          "lifeKm": 240,
+          "lifeRangeKm": "144; 432",
+          "name": "Track Specific Radial",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1989-99 NASCAR radial short/intermediate",
+      "patterns": [
+        "nascar\\s*radial\\s*short.*intermediate"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC020"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Prioritize growth, pressure, damping and shoulder temperature Evidence status: Evidence-weighted.",
+      "confidence": 91,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM078",
+      "from": 1989,
+      "id": "CLS083",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 240,
+          "lifeRangeKm": "144; 432",
+          "name": "Track Specific Radial",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1989-99 NASCAR radial superspeedway",
+      "patterns": [
+        "nascar\\s*radial\\s*superspeedway"
+      ],
+      "sourceIds": [
+        "SRC008",
+        "SRC009",
+        "SRC020"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Increase front operating-load and wear target; do not mirror axle thermal behavior Evidence status: Reconstruction prior.",
+      "confidence": 89,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM079",
+      "from": 1990,
+      "id": "CLS084",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 120,
+          "lifeRangeKm": "72; 216",
+          "name": "Control / Race Slick",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1990-00 Super Touring FWD",
+      "patterns": [
+        "super\\s*touring\\s*fwd"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC021",
+        "SRC022",
+        "SRC033"
+      ],
+      "to": 2000
+    },
+    {
+      "calibrationRule": "Lower front traction heat than FWD; AWD adds four-tire longitudinal demand Evidence status: Reconstruction prior.",
+      "confidence": 88,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM079",
+      "from": 1990,
+      "id": "CLS085",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 70,
+          "lifeKm": 120,
+          "lifeRangeKm": "72; 216",
+          "name": "Control / Race Slick",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 70,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1990-00 Super Touring RWD/AWD",
+      "patterns": [
+        "super\\s*touring\\s*rwd.*awd"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC021",
+        "SRC022",
+        "SRC033"
+      ],
+      "to": 2000
+    },
+    {
+      "calibrationRule": "Higher peak target and shorter wear plateau than endurance subclass Evidence status: Reconstruction prior.",
+      "confidence": 87,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM080",
+      "from": 1994,
+      "id": "CLS086",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 85,
+          "lifeRangeKm": "51; 153",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 170,
+          "lifeRangeKm": "102; 306",
+          "name": "Endurance",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 100,
+          "lifeRangeKm": "60; 180",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1994-99 IMSA WSC sprint",
+      "patterns": [
+        "imsa\\s*wsc\\s*sprint"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC012"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Broader temperature window and longer wear plateau; not simply lower peak grip Evidence status: Reconstruction prior.",
+      "confidence": 87,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM080",
+      "from": 1994,
+      "id": "CLS087",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 85,
+          "lifeRangeKm": "51; 153",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 170,
+          "lifeRangeKm": "102; 306",
+          "name": "Endurance",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 100,
+          "lifeRangeKm": "60; 180",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1994-99 IMSA WSC endurance",
+      "patterns": [
+        "imsa\\s*wsc\\s*endurance"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC012"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Higher FZ0, aero load and tire energy than GT300 Evidence status: Reconstruction prior.",
+      "confidence": 88,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM081",
+      "from": 1993,
+      "id": "CLS088",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 70,
+          "lifeKm": 75,
+          "lifeRangeKm": "45; 135",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 70,
+          "lifeKm": 135,
+          "lifeRangeKm": "81; 243",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 70,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1993-99 JGTC GT500",
+      "patterns": [
+        "jgtc\\s*gt500"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC021",
+        "SRC022"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Lower operating load and longer warm-up; do not reuse GT500 wear target Evidence status: Reconstruction prior.",
+      "confidence": 86,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM081",
+      "from": 1993,
+      "id": "CLS089",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 75,
+          "lifeRangeKm": "45; 135",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 135,
+          "lifeRangeKm": "81; 243",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1993-99 JGTC GT300",
+      "patterns": [
+        "jgtc\\s*gt300"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC021",
+        "SRC022"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Dry/wet road construction; transient and warm-up prioritized Evidence status: Evidence-weighted.",
+      "confidence": 89,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM082",
+      "from": 1990,
+      "id": "CLS090",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 120,
+          "lifeRangeKm": "72; 216",
+          "name": "Road / Street Dry",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Road / Street Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1990-99 CART road / street",
+      "patterns": [
+        "cart\\s*road\\s*.*\\s*street"
+      ],
+      "sourceIds": [
+        "SRC008",
+        "SRC009",
+        "SRC010",
+        "SRC014"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Asymmetric load and venue-specific pressure/life Evidence status: Reconstruction prior.",
+      "confidence": 86,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM082",
+      "from": 1990,
+      "id": "CLS091",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 200,
+          "lifeRangeKm": "120; 360",
+          "name": "Short-oval construction",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1990-99 CART short oval",
+      "patterns": [
+        "cart\\s*short\\s*oval"
+      ],
+      "sourceIds": [
+        "SRC008",
+        "SRC009",
+        "SRC010"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Growth, damping and construction stability override road-course prior Evidence status: Reconstruction prior.",
+      "confidence": 87,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM082",
+      "from": 1990,
+      "id": "CLS092",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 300,
+          "lifeRangeKm": "180; 540",
+          "name": "Superspeedway construction",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1990-99 CART superspeedway",
+      "patterns": [
+        "cart\\s*superspeedway"
+      ],
+      "sourceIds": [
+        "SRC007",
+        "SRC008",
+        "SRC009",
+        "SRC014"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Broad window; lower sustained core temperature than circuit slick Evidence status: Reconstruction prior.",
+      "confidence": 82,
+      "construction": "radial",
+      "dryType": "treaded",
+      "familyId": "FAM083",
+      "from": 1987,
+      "id": "CLS093",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 110,
+          "lifeRangeKm": "66; 198",
+          "name": "Dry Tarmac",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "intermediate",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Damp / Intermediate",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 64,
+          "lifeKm": 85,
+          "lifeRangeKm": "51; 153",
+          "name": "Wet Tarmac",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1987-99 WRC dry tarmac",
+      "patterns": [
+        "wrc\\s*dry\\s*tarmac"
+      ],
+      "sourceIds": [
+        "SRC002",
+        "SRC009",
+        "SRC010",
+        "SRC033"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Separate wet peak and aquaplaning behavior; not a dry-grip multiplier Evidence status: Reconstruction prior.",
+      "confidence": 79,
+      "construction": "radial",
+      "dryType": "treaded",
+      "familyId": "FAM083",
+      "from": 1987,
+      "id": "CLS094",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 61,
+          "lifeKm": 110,
+          "lifeRangeKm": "66; 198",
+          "name": "Dry Tarmac",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "intermediate",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 61,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Damp / Intermediate",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 61,
+          "lifeKm": 85,
+          "lifeRangeKm": "51; 153",
+          "name": "Wet Tarmac",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1987-99 WRC damp / wet tarmac",
+      "patterns": [
+        "wrc\\s*damp\\s*.*\\s*wet\\s*tarmac"
+      ],
+      "sourceIds": [
+        "SRC002",
+        "SRC026",
+        "SRC033"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "High compliance and loose-surface shear; circuit μ priors invalid Evidence status: Reconstruction prior.",
+      "confidence": 80,
+      "construction": "radial",
+      "dryType": "treaded",
+      "familyId": "FAM084",
+      "from": 1987,
+      "id": "CLS095",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 62,
+          "lifeKm": 130,
+          "lifeRangeKm": "78; 234",
+          "name": "Event-specific gravel tyre",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1987-99 WRC gravel",
+      "patterns": [
+        "wrc\\s*gravel"
+      ],
+      "sourceIds": [
+        "SRC001",
+        "SRC002",
+        "SRC005",
+        "SRC033"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Higher FZ0 and longitudinal demand than GTS-2 Evidence status: Reconstruction prior.",
+      "confidence": 87,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM085",
+      "from": 1991,
+      "id": "CLS096",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 75,
+          "lifeRangeKm": "45; 135",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 150,
+          "lifeRangeKm": "90; 270",
+          "name": "Race / Endurance",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 69,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1991-99 IMSA GTS-1 / Trans-Am",
+      "patterns": [
+        "imsa\\s*gts.*1\\s*.*\\s*trans.*am"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC012",
+        "SRC036"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Lower load and longer warm-up than GTS-1 Evidence status: Reconstruction prior.",
+      "confidence": 86,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM085",
+      "from": 1991,
+      "id": "CLS097",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 75,
+          "lifeRangeKm": "45; 135",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 150,
+          "lifeRangeKm": "90; 270",
+          "name": "Race / Endurance",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 68,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1991-99 IMSA GTS-2 / World Challenge",
+      "patterns": [
+        "imsa\\s*gts.*2\\s*.*\\s*world\\s*challenge"
+      ],
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC012",
+        "SRC033"
+      ],
+      "to": 1999
+    },
+    {
+      "calibrationRule": "Short-life sprint target; validate on Supra then R33/F40 Evidence status: Core ACLM target.",
+      "confidence": 91,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM010",
+      "from": 1993,
+      "id": "CLS098",
+      "menu": [
+        {
+          "kind": "soft",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 50,
+          "lifeRangeKm": "30; 90",
+          "name": "Sprint",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 80,
+          "lifeRangeKm": "48; 144",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1993-96 BPR / Le Mans GT1 sprint",
+      "patterns": [
+        "bpr\\s*.*\\s*le\\s*mans\\s*gt1\\s*sprint"
+      ],
+      "sourceIds": [
+        "SRC011",
+        "SRC012",
+        "SRC023",
+        "SRC024"
+      ],
+      "to": 1996
+    },
+    {
+      "calibrationRule": "Longer plateau and thermal durability; not merely a low-grip sprint tire Evidence status: Core ACLM target.",
+      "confidence": 91,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM010",
+      "from": 1993,
+      "id": "CLS099",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 80,
+          "lifeRangeKm": "48; 144",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "hard",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 160,
+          "lifeRangeKm": "96; 288",
+          "name": "Endurance",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 73,
+          "lifeKm": 90,
+          "lifeRangeKm": "54; 162",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1993-96 BPR / Le Mans GT1 endurance",
+      "patterns": [
+        "bpr\\s*.*\\s*le\\s*mans\\s*gt1\\s*endurance"
+      ],
+      "sourceIds": [
+        "SRC011",
+        "SRC012",
+        "SRC023",
+        "SRC024"
+      ],
+      "to": 1996
+    },
+    {
+      "calibrationRule": "Use GT2 operating load and power demand rather than GT1 FZ0 Evidence status: Core ACLM target.",
+      "confidence": 89,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM010",
+      "from": 1993,
+      "id": "CLS100",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 105,
+          "lifeRangeKm": "63; 189",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1993-96 BPR / Le Mans GT2 sprint",
+      "patterns": [
+        "bpr\\s*.*\\s*le\\s*mans\\s*gt2\\s*sprint"
+      ],
+      "sourceIds": [
+        "SRC011",
+        "SRC012",
+        "SRC023",
+        "SRC024"
+      ],
+      "to": 1996
+    },
+    {
+      "calibrationRule": "Longer life and broader thermal target than GT2 sprint Evidence status: Core ACLM target.",
+      "confidence": 89,
+      "construction": "radial",
+      "dryType": "slick",
+      "familyId": "FAM010",
+      "from": 1993,
+      "id": "CLS101",
+      "menu": [
+        {
+          "kind": "race",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 105,
+          "lifeRangeKm": "63; 189",
+          "name": "Race",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "hard",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 190,
+          "lifeRangeKm": "114; 342",
+          "name": "Endurance",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        },
+        {
+          "kind": "wet",
+          "lifeBasis": "Calibration-library reconstruction prior; replace with event, supplier, or telemetry evidence when available.",
+          "lifeConfidence": 71,
+          "lifeKm": 95,
+          "lifeRangeKm": "57; 171",
+          "name": "Wet",
+          "periodSpecNote": "Supplier/event codes take precedence when known."
+        }
+      ],
+      "name": "1993-96 BPR / Le Mans GT2 endurance",
+      "patterns": [
+        "bpr\\s*.*\\s*le\\s*mans\\s*gt2\\s*endurance"
+      ],
+      "sourceIds": [
+        "SRC011",
+        "SRC012",
+        "SRC023",
+        "SRC024"
+      ],
+      "to": 1996
     }
   ],
   "compatibility": {
@@ -3549,7 +4718,7 @@
       "why": "Knowledge 1.6.0 now separates the 2022+ 18-inch Next Gen architecture from the older 15-inch NASCAR radial family."
     }
   ],
-  "contentSha256": "e2cb456dfe1f959bc590c4bd4529b32c185558bd8fc5a25cb68fb6bee190ea58",
+  "contentSha256": "64b698985be6178b02160784cfe07b649836b9438dabc3fc94d085162a2e7702",
   "families": [
     {
       "construction": "bias",
@@ -4396,6 +5565,286 @@
       "physicsFamilyConfidence": 97,
       "to": 2030,
       "typical": "2022+ NASCAR Cup Next Gen 18-inch Goodyear"
+    },
+    {
+      "construction": "bias",
+      "constructionNote": "Very wide cross-ply/bias slick; treaded wet",
+      "dryType": "slick",
+      "from": 1966,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 86,
+      "id": "FAM074",
+      "name": "Can-Am / Group 7 high-power slick",
+      "physicsConfidence": 97,
+      "remainingGap": "Exact supplier construction, pressures and rear-tire growth by season",
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033",
+        "SRC036"
+      ],
+      "supplierExamples": "Goodyear, Firestone, Dunlop",
+      "to": 1974,
+      "typical": "Can-Am / Group 7 / Interserie",
+      "historicalMenuRule": "Race dry specification plus wet; qualifying variants only when documented",
+      "coreBehaviorPrior": "Extreme power and rear-tire demand with limited early aero; high slip angles, carcass compliance and heat buildup"
+    },
+    {
+      "construction": "bias",
+      "constructionNote": "Narrow-to-moderate slick cross-ply",
+      "dryType": "slick",
+      "from": 1970,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 86,
+      "id": "FAM075",
+      "name": "F2 / Formula Atlantic cross-ply slick",
+      "physicsConfidence": 96,
+      "remainingGap": "Series- and supplier-specific rates and compound windows",
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033"
+      ],
+      "supplierExamples": "Goodyear, Dunlop, Firestone, Avon",
+      "to": 1982,
+      "typical": "Formula 2 / Formula Atlantic / Formula Pacific",
+      "historicalMenuRule": "Control or supplier race slick plus wet; qualifying tire only when documented",
+      "coreBehaviorPrior": "Lower load than F1/prototypes; compliant carcass, progressive breakaway and meaningful warm-up sensitivity"
+    },
+    {
+      "construction": "bias",
+      "constructionNote": "Wide bias/cross-ply competition slick",
+      "dryType": "slick",
+      "from": 1971,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 85,
+      "id": "FAM076",
+      "name": "1970s IMSA GT / Trans-Am slick",
+      "physicsConfidence": 96,
+      "remainingGap": "Separate GTU/GTO size, load and supplier data",
+      "sourceIds": [
+        "SRC006",
+        "SRC007",
+        "SRC033",
+        "SRC036"
+      ],
+      "supplierExamples": "Goodyear, BFGoodrich, Firestone, Dunlop",
+      "to": 1979,
+      "typical": "IMSA GTU/GTO / Trans-Am / production GT",
+      "historicalMenuRule": "Supplier/event dry race specification plus wet; no universal compound ladder",
+      "coreBehaviorPrior": "Heavy production-based cars, large braking/traction energy, modest aero and axle-specific wear"
+    },
+    {
+      "construction": "bias",
+      "constructionNote": "Bias-ply stock-car tire; track-specific left/right constructions",
+      "dryType": "slick",
+      "from": 1970,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 87,
+      "id": "FAM077",
+      "name": "1970s-80s NASCAR bias-ply oval",
+      "physicsConfidence": 97,
+      "remainingGap": "Period D-number construction and track bulletin archive",
+      "sourceIds": [
+        "SRC001",
+        "SRC006",
+        "SRC020"
+      ],
+      "supplierExamples": "Goodyear, Hoosier",
+      "to": 1988,
+      "typical": "NASCAR Cup / Grand National",
+      "historicalMenuRule": "Track- and side-specific codes; no driver-selectable S/M/H",
+      "coreBehaviorPrior": "Sustained asymmetric load, high hot pressure and spring-rate interaction; progressive bias-ply slip"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "Specialized radial with track-specific left/right construction",
+      "dryType": "slick",
+      "from": 1989,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 91,
+      "id": "FAM078",
+      "name": "1990s NASCAR radial transition",
+      "physicsConfidence": 98,
+      "remainingGap": "Year-by-year radial rollout and exact track codes",
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC020"
+      ],
+      "supplierExamples": "Goodyear, Hoosier",
+      "to": 1999,
+      "typical": "NASCAR Cup / Busch / Truck",
+      "historicalMenuRule": "Track-specific codes; inner liner where required; no generic compound ladder",
+      "coreBehaviorPrior": "Stiffer transient response and camber sensitivity than bias-ply; banking, pressure and shoulder temperature dominate"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "17-19in narrow racing radial",
+      "dryType": "slick",
+      "from": 1990,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 90,
+      "id": "FAM079",
+      "name": "1990s Super Touring radial",
+      "physicsConfidence": 98,
+      "remainingGap": "Series supplier setup sheets and FWD axle temperature data",
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC021",
+        "SRC022",
+        "SRC033"
+      ],
+      "supplierExamples": "Dunlop, Michelin, Pirelli, Bridgestone, Yokohama",
+      "to": 2000,
+      "typical": "BTCC / STW / JTCC / Super Touring",
+      "historicalMenuRule": "Control or supplier dry slick plus wet; series/event specifications",
+      "coreBehaviorPrior": "High mass on narrow tires, aggressive camber, FWD traction/thermal asymmetry and limited aero"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "18in high-load open-cockpit prototype radial",
+      "dryType": "slick",
+      "from": 1994,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 88,
+      "id": "FAM080",
+      "name": "1990s IMSA WSC prototype radial",
+      "physicsConfidence": 98,
+      "remainingGap": "Direct WSC sizes, setup sheets and stint telemetry",
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC012"
+      ],
+      "supplierExamples": "Goodyear, Michelin, Dunlop",
+      "to": 1999,
+      "typical": "IMSA WSC / USRRC prototype",
+      "historicalMenuRule": "Sprint/endurance slicks plus wet; event-specific supplier solutions",
+      "coreBehaviorPrior": "High aero and braking load with shorter North-American stints than Group C; surface severity matters"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "17-18in purpose-built GT radial",
+      "dryType": "slick",
+      "from": 1993,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 88,
+      "id": "FAM081",
+      "name": "1990s JGTC GT radial",
+      "physicsConfidence": 98,
+      "remainingGap": "Supplier fitment, exact sizes and compound menus by season",
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC021",
+        "SRC022"
+      ],
+      "supplierExamples": "Bridgestone, Yokohama, Dunlop, Michelin",
+      "to": 1999,
+      "typical": "JGTC GT500 / GT300",
+      "historicalMenuRule": "Supplier/team dry specifications plus wet; sprint/endurance choices only when evidenced",
+      "coreBehaviorPrior": "Wide supplier development spread; GT500 aero/load differs materially from GT300 production-derived cars"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "Purpose-built open-wheel radial; venue-specific oval constructions",
+      "dryType": "slick",
+      "from": 1990,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 89,
+      "id": "FAM082",
+      "name": "1990s CART road/oval radial",
+      "physicsConfidence": 98,
+      "remainingGap": "Period CART setup guides, pressure ranges and oval construction data",
+      "sourceIds": [
+        "SRC007",
+        "SRC008",
+        "SRC009",
+        "SRC010",
+        "SRC014"
+      ],
+      "supplierExamples": "Goodyear, Firestone",
+      "to": 1999,
+      "typical": "CART / IndyCar",
+      "historicalMenuRule": "Road/street dry and wet; short-oval and superspeedway constructions are distinct",
+      "coreBehaviorPrior": "Low mass with very high aero and speed; oval stability/growth demands cannot be represented by road-course prior alone"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "Reinforced grooved/treaded radial; event-specific patterns",
+      "dryType": "treaded",
+      "from": 1987,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 82,
+      "id": "FAM083",
+      "name": "1990s rally tarmac radial",
+      "physicsConfidence": 95,
+      "remainingGap": "Primary rally supplier temperature, pressure and pattern data",
+      "sourceIds": [
+        "SRC002",
+        "SRC009",
+        "SRC010",
+        "SRC026",
+        "SRC033"
+      ],
+      "supplierExamples": "Michelin, Pirelli, Dunlop, Bridgestone",
+      "to": 1999,
+      "typical": "WRC / Group A rally tarmac",
+      "historicalMenuRule": "Dry tarmac, damp/intermediate and wet patterns as documented; no circuit S/M/H assumption",
+      "coreBehaviorPrior": "High transient demand, cold starts, cuts/impacts and broad road-temperature range; lower sustained carcass temperature than circuit use"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "Tall-sidewall reinforced gravel radial with block tread",
+      "dryType": "treaded",
+      "from": 1987,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 80,
+      "id": "FAM084",
+      "name": "1990s rally gravel radial",
+      "physicsConfidence": 94,
+      "remainingGap": "Loose-surface force curves, carcass rates and wear evidence",
+      "sourceIds": [
+        "SRC001",
+        "SRC002",
+        "SRC005",
+        "SRC009",
+        "SRC033"
+      ],
+      "supplierExamples": "Michelin, Pirelli, Dunlop, Bridgestone",
+      "to": 1999,
+      "typical": "WRC / Group A rally gravel",
+      "historicalMenuRule": "Hard/soft gravel choices only when event/supplier evidence supports them; wet is surface-specific",
+      "coreBehaviorPrior": "Large compliance and deformation, puncture resistance, loose-surface shear and impact heating dominate"
+    },
+    {
+      "construction": "radial",
+      "constructionNote": "Wide production-based GT racing radial",
+      "dryType": "slick",
+      "from": 1991,
+      "geometryRule": "Exact source-backed car/event fitments override family geometry. Numerical values are evidence-weighted reconstruction priors, not proprietary coefficients.",
+      "historicalConfidence": 87,
+      "id": "FAM085",
+      "name": "1990s IMSA GTS / Trans-Am radial",
+      "physicsConfidence": 98,
+      "remainingGap": "Exact class/supplier dimensions, pressures and stint falloff",
+      "sourceIds": [
+        "SRC009",
+        "SRC010",
+        "SRC011",
+        "SRC012",
+        "SRC033",
+        "SRC036"
+      ],
+      "supplierExamples": "Goodyear, Michelin, BFGoodrich, Dunlop, Pirelli",
+      "to": 1999,
+      "typical": "IMSA GTS-1/GTS-2 / Trans-Am / World Challenge",
+      "historicalMenuRule": "Supplier/event sprint or endurance slick plus wet; class-specific rather than generic",
+      "coreBehaviorPrior": "Heavy high-power GT loads and large braking energy with less aero than prototypes; GTS-1 and GTS-2 require separate load priors"
     }
   ],
   "fitmentOverrides": [
@@ -7373,6 +8822,438 @@
       "tempOpt": 95,
       "tempWidth": 22,
       "xmu": 0.29
+    },
+    "FAM074": {
+      "familyId": "FAM074",
+      "gripLat": 1.36,
+      "gripLong": 1.32,
+      "ratePerWidth": 720,
+      "pressureGainPerMm": 22.200000000000003,
+      "hotPsi": 24,
+      "coldDelta": 3,
+      "damp": 533,
+      "relax": 0.11,
+      "flex": 0.0013,
+      "camberGain": 0.175,
+      "dcamber0": 1.3359999999999999,
+      "dcamber1": -11.05,
+      "loadY": 0.802,
+      "loadX": 0.8365,
+      "falloffLevel": 0.9395,
+      "falloffSpeed": 3.02,
+      "frictionAngle": 10.95,
+      "xmu": 0.261,
+      "rr0": 13.899999999999999,
+      "rr1": 0.0008175,
+      "rrSlip": 3920,
+      "speedSens": 0.001675,
+      "radiusK": 0.004325,
+      "surfaceTransfer": 0.01105,
+      "patchTransfer": 0.000241,
+      "coreTransfer": 0.000161,
+      "internalCoreTransfer": 0.001205,
+      "frictionK": 0.037649999999999996,
+      "rollingK": 0.1795,
+      "cool": 1.8099999999999998,
+      "tempOpt": 84,
+      "tempWidth": 23,
+      "flexGain": 0.08
+    },
+    "FAM075": {
+      "familyId": "FAM075",
+      "gripLat": 1.3,
+      "gripLong": 1.26,
+      "ratePerWidth": 640,
+      "pressureGainPerMm": 22,
+      "hotPsi": 23,
+      "coldDelta": 3,
+      "damp": 509,
+      "relax": 0.112,
+      "flex": 0.00134,
+      "camberGain": 0.18,
+      "dcamber0": 1.3455000000000001,
+      "dcamber1": -10.725,
+      "loadY": 0.8,
+      "loadX": 0.84,
+      "falloffLevel": 0.94,
+      "falloffSpeed": 3,
+      "frictionAngle": 10.89,
+      "xmu": 0.26,
+      "rr0": 14,
+      "rr1": 0.000809,
+      "rrSlip": 3900,
+      "speedSens": 0.0016,
+      "radiusK": 0.004,
+      "surfaceTransfer": 0.011,
+      "patchTransfer": 0.00024,
+      "coreTransfer": 0.00016,
+      "internalCoreTransfer": 0.0012,
+      "frictionK": 0.038,
+      "rollingK": 0.18,
+      "cool": 1.8,
+      "tempOpt": 82,
+      "tempWidth": 24,
+      "flexGain": 0.08
+    },
+    "FAM076": {
+      "familyId": "FAM076",
+      "gripLat": 1.34,
+      "gripLong": 1.31,
+      "ratePerWidth": 730,
+      "pressureGainPerMm": 23.625,
+      "hotPsi": 28,
+      "coldDelta": 5,
+      "damp": 551.6,
+      "relax": 0.108,
+      "flex": 0.00122,
+      "camberGain": 0.17,
+      "dcamber0": 1.3093000000000001,
+      "dcamber1": -11.338750000000001,
+      "loadY": 0.81355,
+      "loadX": 0.847675,
+      "falloffLevel": 0.9366125000000001,
+      "falloffSpeed": 3.1445,
+      "frictionAngle": 10.42,
+      "xmu": 0.26677500000000004,
+      "rr0": 13.232500000000002,
+      "rr1": 0.0007635750000000001,
+      "rrSlip": 4053.5,
+      "speedSens": 0.0018032500000000002,
+      "radiusK": 0.004767500000000001,
+      "surfaceTransfer": 0.011383750000000002,
+      "patchTransfer": 0.00024767500000000004,
+      "coreTransfer": 0.000167675,
+      "internalCoreTransfer": 0.0012383750000000001,
+      "frictionK": 0.038767499999999996,
+      "rollingK": 0.1761625,
+      "cool": 1.8722500000000002,
+      "tempOpt": 84,
+      "tempWidth": 23,
+      "flexGain": 0.08
+    },
+    "FAM077": {
+      "familyId": "FAM077",
+      "gripLat": 1.3,
+      "gripLong": 1.36,
+      "ratePerWidth": 880,
+      "pressureGainPerMm": 30.300000000000004,
+      "hotPsi": 42,
+      "coldDelta": 12,
+      "damp": 659,
+      "relax": 0.105,
+      "flex": 0.00095,
+      "camberGain": 0.155,
+      "dcamber0": 1.246,
+      "dcamber1": -11.95,
+      "loadY": 0.8200000000000001,
+      "loadX": 0.8545,
+      "falloffLevel": 0.9192500000000001,
+      "falloffSpeed": 3.5600000000000005,
+      "frictionAngle": 9.735000000000001,
+      "xmu": 0.279,
+      "rr0": 11.65,
+      "rr1": 0.0006285,
+      "rrSlip": 4775,
+      "speedSens": 0.002125,
+      "radiusK": 0.006350000000000001,
+      "surfaceTransfer": 0.012625,
+      "patchTransfer": 0.0002725,
+      "coreTransfer": 0.00019700000000000002,
+      "internalCoreTransfer": 0.0014075000000000001,
+      "frictionK": 0.04215,
+      "rollingK": 0.16825,
+      "cool": 2.08,
+      "tempOpt": 104,
+      "tempWidth": 17,
+      "flexGain": 0.08
+    },
+    "FAM078": {
+      "familyId": "FAM078",
+      "gripLat": 1.42,
+      "gripLong": 1.49,
+      "ratePerWidth": 1010,
+      "pressureGainPerMm": 33.4,
+      "hotPsi": 43,
+      "coldDelta": 13,
+      "damp": 705,
+      "relax": 0.088,
+      "flex": 0.00075,
+      "camberGain": 0.13,
+      "dcamber0": 1.204,
+      "dcamber1": -12.33,
+      "loadY": 0.827,
+      "loadX": 0.862,
+      "falloffLevel": 0.9165000000000001,
+      "falloffSpeed": 3.7199999999999998,
+      "frictionAngle": 9.350000000000001,
+      "xmu": 0.2855,
+      "rr0": 10.85,
+      "rr1": 0.0005420000000000001,
+      "rrSlip": 5040,
+      "speedSens": 0.00223,
+      "radiusK": 0.0071,
+      "surfaceTransfer": 0.0131,
+      "patchTransfer": 0.000282,
+      "coreTransfer": 0.000207,
+      "internalCoreTransfer": 0.00146,
+      "frictionK": 0.0432,
+      "rollingK": 0.164,
+      "cool": 2.16,
+      "tempOpt": 106,
+      "tempWidth": 16,
+      "flexGain": 0.072
+    },
+    "FAM079": {
+      "familyId": "FAM079",
+      "gripLat": 1.54,
+      "gripLong": 1.5,
+      "ratePerWidth": 930,
+      "pressureGainPerMm": 30.700000000000003,
+      "hotPsi": 30,
+      "coldDelta": 4,
+      "damp": 656,
+      "relax": 0.087,
+      "flex": 0.00082,
+      "camberGain": 0.14,
+      "dcamber0": 1.2040000000000002,
+      "dcamber1": -12.450000000000001,
+      "loadY": 0.8435,
+      "loadX": 0.8735,
+      "falloffLevel": 0.9282500000000001,
+      "falloffSpeed": 3.58,
+      "frictionAngle": 9.55,
+      "xmu": 0.28450000000000003,
+      "rr0": 11.100000000000001,
+      "rr1": 0.0005660000000000001,
+      "rrSlip": 4670,
+      "speedSens": 0.0022250000000000004,
+      "radiusK": 0.006675,
+      "surfaceTransfer": 0.012675,
+      "patchTransfer": 0.0002735,
+      "coreTransfer": 0.00019350000000000001,
+      "internalCoreTransfer": 0.0013675,
+      "frictionK": 0.04135,
+      "rollingK": 0.16325,
+      "cool": 2.0675,
+      "tempOpt": 92,
+      "tempWidth": 21,
+      "flexGain": 0.072
+    },
+    "FAM080": {
+      "familyId": "FAM080",
+      "gripLat": 1.68,
+      "gripLong": 1.64,
+      "ratePerWidth": 1040,
+      "pressureGainPerMm": 31.5625,
+      "hotPsi": 30,
+      "coldDelta": 4,
+      "damp": 677.375,
+      "relax": 0.079,
+      "flex": 0.00072,
+      "camberGain": 0.132,
+      "dcamber0": 1.18675,
+      "dcamber1": -12.45,
+      "loadY": 0.852125,
+      "loadX": 0.882125,
+      "falloffLevel": 0.9239375,
+      "falloffSpeed": 3.7112499999999997,
+      "frictionAngle": 9.24,
+      "xmu": 0.2845,
+      "rr0": 10.4625,
+      "rr1": 0.0005315000000000001,
+      "rrSlip": 4801.25,
+      "speedSens": 0.0023525,
+      "radiusK": 0.0073124999999999996,
+      "surfaceTransfer": 0.01310625,
+      "patchTransfer": 0.000282125,
+      "coreTransfer": 0.000202125,
+      "internalCoreTransfer": 0.001410625,
+      "frictionK": 0.0422125,
+      "rollingK": 0.1589375,
+      "cool": 2.110625,
+      "tempOpt": 94,
+      "tempWidth": 20,
+      "flexGain": 0.072
+    },
+    "FAM081": {
+      "familyId": "FAM081",
+      "gripLat": 1.65,
+      "gripLong": 1.61,
+      "ratePerWidth": 1000,
+      "pressureGainPerMm": 33.65,
+      "hotPsi": 30,
+      "coldDelta": 4,
+      "damp": 697.5,
+      "relax": 0.081,
+      "flex": 0.00076,
+      "camberGain": 0.135,
+      "dcamber0": 1.158,
+      "dcamber1": -12.91,
+      "loadY": 0.861,
+      "loadX": 0.891,
+      "falloffLevel": 0.9195,
+      "falloffSpeed": 3.8200000000000003,
+      "frictionAngle": 9.025,
+      "xmu": 0.28774999999999995,
+      "rr0": 9.95,
+      "rr1": 0.000496,
+      "rrSlip": 5020,
+      "speedSens": 0.002465,
+      "radiusK": 0.007549999999999999,
+      "surfaceTransfer": 0.01355,
+      "patchTransfer": 0.00029099999999999997,
+      "coreTransfer": 0.000211,
+      "internalCoreTransfer": 0.0014550000000000001,
+      "frictionK": 0.0431,
+      "rollingK": 0.1545,
+      "cool": 2.1550000000000002,
+      "tempOpt": 93,
+      "tempWidth": 20,
+      "flexGain": 0.072
+    },
+    "FAM082": {
+      "familyId": "FAM082",
+      "gripLat": 1.78,
+      "gripLong": 1.73,
+      "ratePerWidth": 1180,
+      "pressureGainPerMm": 35.5,
+      "hotPsi": 29,
+      "coldDelta": 5.300000000000001,
+      "damp": 721.5,
+      "relax": 0.068,
+      "flex": 0.0006,
+      "camberGain": 0.12,
+      "dcamber0": 1.1420000000000001,
+      "dcamber1": -12.65,
+      "loadY": 0.8660000000000001,
+      "loadX": 0.896,
+      "falloffLevel": 0.917,
+      "falloffSpeed": 3.955,
+      "frictionAngle": 8.92,
+      "xmu": 0.28975,
+      "rr0": 9.7,
+      "rr1": 0.000476,
+      "rrSlip": 5150,
+      "speedSens": 0.00259,
+      "radiusK": 0.0083,
+      "surfaceTransfer": 0.014124999999999999,
+      "patchTransfer": 0.0002895,
+      "coreTransfer": 0.00022900000000000004,
+      "internalCoreTransfer": 0.0015775000000000001,
+      "frictionK": 0.0436,
+      "rollingK": 0.152,
+      "cool": 2.2775,
+      "tempOpt": 96,
+      "tempWidth": 19,
+      "flexGain": 0.072
+    },
+    "FAM083": {
+      "familyId": "FAM083",
+      "gripLat": 1.32,
+      "gripLong": 1.28,
+      "ratePerWidth": 760,
+      "pressureGainPerMm": 28.28,
+      "hotPsi": 31,
+      "coldDelta": 4,
+      "damp": 623.5,
+      "relax": 0.105,
+      "flex": 0.00112,
+      "camberGain": 0.165,
+      "dcamber0": 1.2358,
+      "dcamber1": -12.056000000000001,
+      "loadY": 0.8313999999999999,
+      "loadX": 0.8614,
+      "falloffLevel": 0.9343,
+      "falloffSpeed": 3.4139999999999997,
+      "frictionAngle": 9.965,
+      "xmu": 0.28035000000000004,
+      "rr0": 11.895,
+      "rr1": 0.0006144000000000001,
+      "rrSlip": 4428,
+      "speedSens": 0.0020210000000000002,
+      "radiusK": 0.00607,
+      "surfaceTransfer": 0.01207,
+      "patchTransfer": 0.00026139999999999996,
+      "coreTransfer": 0.00018140000000000002,
+      "internalCoreTransfer": 0.001307,
+      "frictionK": 0.04014,
+      "rollingK": 0.1693,
+      "cool": 2.007,
+      "tempOpt": 72,
+      "tempWidth": 28,
+      "flexGain": 0.072
+    },
+    "FAM084": {
+      "familyId": "FAM084",
+      "gripLat": 1.05,
+      "gripLong": 1,
+      "ratePerWidth": 620,
+      "pressureGainPerMm": 21.61,
+      "hotPsi": 30,
+      "coldDelta": 4.1,
+      "damp": 528.65,
+      "relax": 0.135,
+      "flex": 0.00165,
+      "camberGain": 0.2,
+      "dcamber0": 1.3493499999999998,
+      "dcamber1": -10.751249999999999,
+      "loadY": 0.7870250000000001,
+      "loadX": 0.8215250000000001,
+      "falloffLevel": 0.9440000000000001,
+      "falloffSpeed": 2.9005,
+      "frictionAngle": 11.18,
+      "xmu": 0.255025,
+      "rr0": 14.497499999999999,
+      "rr1": 0.000868175,
+      "rrSlip": 3875.75,
+      "speedSens": 0.0015702500000000002,
+      "radiusK": 0.004177500000000001,
+      "surfaceTransfer": 0.01075125,
+      "patchTransfer": 0.00023502499999999998,
+      "coreTransfer": 0.00015502500000000001,
+      "internalCoreTransfer": 0.001152625,
+      "frictionK": 0.0366025,
+      "rollingK": 0.1824875,
+      "cool": 1.7727499999999998,
+      "tempOpt": 62,
+      "tempWidth": 32,
+      "flexGain": 0.085
+    },
+    "FAM085": {
+      "familyId": "FAM085",
+      "gripLat": 1.54,
+      "gripLong": 1.51,
+      "ratePerWidth": 930,
+      "pressureGainPerMm": 30.560000000000002,
+      "hotPsi": 30,
+      "coldDelta": 4,
+      "damp": 652,
+      "relax": 0.087,
+      "flex": 0.00084,
+      "camberGain": 0.14,
+      "dcamber0": 1.2016,
+      "dcamber1": -12.512,
+      "loadY": 0.8428,
+      "loadX": 0.8728,
+      "falloffLevel": 0.9286000000000001,
+      "falloffSpeed": 3.5280000000000005,
+      "frictionAngle": 9.57,
+      "xmu": 0.2832,
+      "rr0": 11.04,
+      "rr1": 0.0005688000000000001,
+      "rrSlip": 4656,
+      "speedSens": 0.0021920000000000004,
+      "radiusK": 0.00664,
+      "surfaceTransfer": 0.01264,
+      "patchTransfer": 0.0002728,
+      "coreTransfer": 0.00019280000000000002,
+      "internalCoreTransfer": 0.0013640000000000002,
+      "frictionK": 0.04128,
+      "rollingK": 0.16360000000000002,
+      "cool": 2.064,
+      "tempOpt": 91,
+      "tempWidth": 21,
+      "flexGain": 0.072
     }
   },
   "measurements": [
@@ -10330,8 +12211,12 @@
       "year": 1976
     }
   ],
-  "publishedUtc": "2026-08-25T22:55:00Z",
+  "publishedUtc": "2026-08-26T04:30:09Z",
   "releaseNotes": [
+    "Workbook-derived historical category expansion: 12 new families and 28 selectable subclasses spanning 1966-2000.",
+    "Adds Can-Am, period F2/Atlantic, IMSA GTU/GTO and GTS, NASCAR venue/construction branches, Super Touring, WSC, JGTC, CART, period WRC and BPR GT1/GT2 sprint/endurance.",
+    "Aggregate turbo-F1 was excluded because v1.6.0 already has a stronger chronology; oval and gravel are separate architectures, not compound kinds.",
+    "All numerical additions are evidence-weighted reconstruction priors, not confidential or proprietary coefficients.",
     "Modern endurance release built on Knowledge 1.5.0 Formula coverage.",
     "Adds dedicated WEC LMP1, Hypercar, IMSA GTP/LMDh, LMP2, GTE, LMGT3 and IMSA GTD/GTD Pro families.",
     "Hypercar and GTP use direct official 29/71-18 front / 34/71-18 rear geometry and event pressure/camber evidence where documented.",
@@ -10340,7 +12225,7 @@
     "Also closes two adjacent high-priority modern gaps: WRC is separated into tarmac, gravel and snow/ice families, and NASCAR Next Gen receives its own 18-inch family.",
     "Numerical force, rate, transient and thermal priors remain evidence-weighted reconstructions unless explicitly tied to a measurement/source record."
   ],
-  "releaseVersion": "1.6.0",
+  "releaseVersion": "1.7.0",
   "scalingRules": [
     {
       "confidence": 99,

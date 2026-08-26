@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.6.3 Browser App + AC import</span></h1>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.6.4 Browser App + AC import</span></h1>
   <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
@@ -197,14 +197,13 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.6.3</b></div></div>
+ <div><label>Installed build</label><div><b id="installedBuild">v0.6.4</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">
- <button id="checkUpdates" type="button">Check for updates</button>
- <button id="installUpdate" class="good" type="button" disabled>Open update download page</button>
+ <a id="latestRelease" class="update-link good" href="https://github.com/aclmproject/tire_lab/releases/latest" target="_blank" rel="noopener noreferrer">Open latest Tire Lab release</a>
 </div>
-<div id="updateStatus" class="small muted">Update check has not run yet.</div>
+<div class="small muted">Application updates are published on GitHub. This permanent link opens the latest installer release directly and does not run a version check.</div>
 
 <div class="knowledge-status">
  <div class="grid">

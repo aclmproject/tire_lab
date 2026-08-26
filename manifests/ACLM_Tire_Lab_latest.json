@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.6.3",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.6.3.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.3",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.3/ACLM_Tire_Lab_Setup_v0.6.3.zip",
-  "sha256": "f75579a80519ee925299e8cefee5d2a8dfb33e41ce18e8e374aa23741bba4b38",
-  "published_utc": "2026-08-25T23:38:19Z",
-  "notes": "Per-axle FZ0/width thermal duty, strict LUT integrity gate, bundled Knowledge v1.6.0, and one canonical launcher."
+  "version": "0.6.4",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.6.4.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.4",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.4/ACLM_Tire_Lab_Setup_v0.6.4.zip",
+  "sha256": "6b98335ba69feb47061bdec3cfdbf0f6f3fce8607fc5c12ce491bdc4308052ab",
+  "published_utc": "2026-08-26T14:00:56Z",
+  "notes": "Permanent latest-release link with no application update-check timeout; bundled Tire Knowledge v1.7.0."
 }

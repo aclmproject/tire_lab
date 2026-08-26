@@ -49,4 +49,4 @@ code{font-family:Consolas,Monaco,monospace}
     .about-card a{color:#9dc3ff}
     .methodology-list{margin:8px 0 10px;padding-left:20px}
     .methodology-list li{margin:6px 0}
-    
+.update-link{display:inline-block;background:#116347;color:#fff!important;border:1px solid #1c966c;border-radius:7px;padding:9px 12px;cursor:pointer;font-weight:650;text-decoration:none}.update-link:hover{filter:brightness(1.08)}
