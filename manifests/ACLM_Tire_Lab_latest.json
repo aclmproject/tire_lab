@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.6.6",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.6.6.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.6.6",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.6.6/ACLM_Tire_Lab_Setup_v0.6.6.zip",
-  "sha256": "7ba3af00cdd21883999ae2ea921f5ffd7b7d40194388a0717731ff8352124974",
-  "published_utc": "2026-08-26T16:34:42Z",
-  "notes": "Compound naming plus series-aware axle load-duty suitability checklist; bundled Knowledge v1.7.0."
+  "version": "0.7.0",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.7.0.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.7.0",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.7.0/ACLM_Tire_Lab_Setup_v0.7.0.zip",
+  "sha256": "63ca19ee8913717284da622bce1f1f930caf36e8d1607462ca4817dab95d0cf3",
+  "published_utc": "2026-08-26T16:54:34Z",
+  "notes": "Integrated car + track + telemetry validation workspace with ten new screening and research features; bundled Knowledge v1.7.0."
 }

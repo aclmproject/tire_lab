@@ -1,6 +1,14 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.7.0
+- Adds the integrated Validation Workspace for car + track + telemetry screening.
+- Imports AC track ZIP metadata and surfaces.ini, while separating parsed values from inferred energy.
+- Adds telemetry CSV overlays, thermal lap screening, axle-balance guidance, pressure/camber sweeps and stint planning.
+- Adds tire-pack physics diff, coefficient provenance/confidence, eight repeatable test-car profiles and public-evidence review packets.
+- Every generated pack now includes ACLM_VALIDATION_WORKSPACE.json.
+- Preserves v0.6.6 compound naming, load-duty checklist, Knowledge v1.7.0 and verified manual knowledge import.
+
 2026-08-26 - v0.6.6
 - Adds editable full names and short codes for every compound slot while retaining researched/default names as the fallback.
 - Adds a visible compound/load suitability checklist tied to historical series-menu availability and axle FZ0-per-width duty.

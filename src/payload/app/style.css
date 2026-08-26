@@ -50,3 +50,5 @@ code{font-family:Consolas,Monaco,monospace}
     .methodology-list{margin:8px 0 10px;padding-left:20px}
     .methodology-list li{margin:6px 0}
 .update-link{display:inline-block;background:#116347;color:#fff!important;border:1px solid #1c966c;border-radius:7px;padding:9px 12px;cursor:pointer;font-weight:650;text-decoration:none}.update-link:hover{filter:brightness(1.08)}
+
+.validation-workspace details{border:1px solid #344252;border-radius:8px;background:#111820;margin:10px 0;padding:10px}.validation-workspace summary{cursor:pointer;font-weight:750;color:#dbe5ef}.validation-workspace details[open] summary{margin-bottom:10px}.workspace-results{overflow:auto;max-height:360px;margin-top:8px}.workspace-results table{min-width:680px}#telemetryOverlay{width:100%;height:230px;background:#0b1016;border:1px solid #344252;border-radius:7px;display:block}.check-inline{display:flex;align-items:center;gap:7px;margin:9px 0}.check-inline input{width:auto}

@@ -1500,7 +1500,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.6.6";
+const ACLM_APP_VERSION="0.7.0";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 
