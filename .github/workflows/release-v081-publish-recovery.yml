@@ -1,0 +1,57 @@
+name: Publish Tire Lab v0.8.1 Release Assets
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/release-v081-publish-recovery.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  APP_VERSION: 0.8.1
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify fixed source
+        shell: bash
+        run: |
+          set -euo pipefail
+          pwsh -NoLogo -NoProfile -File src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1 -SelfTest
+          node --check src/payload/app/app.js
+          grep -Fq '[IO.FileShare]::ReadWrite' src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1
+          grep -Fq 'Read-SharedCsvSnapshot' src/payload/Server_ACLM_Tire_Lab.ps1
+          grep -Fq 'const ACLM_APP_VERSION="0.8.1";' src/payload/app/app.js
+      - name: Build, publish, and align manifest
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ['APP_VERSION']; name=f'ACLM_Tire_Lab_Setup_v{v}.zip'; archive=Path('/tmp')/name
+          with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+           for p in sorted(Path('src').rglob('*')):
+            if p.is_file(): z.write(p,p.relative_to('src').as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
+          m={'product':'ACLM Historical Tire Lab','channel':'stable','version':v,'file_name':name,'release_page':f'https://github.com/aclmproject/tire_lab/releases/tag/v{v}','download_url':f'https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}','sha256':sha,'published_utc':pub,'notes':'Fixes Analyze Latest Log while the native logger has the CSV open.'}
+          Path('manifests/ACLM_Tire_Lab_latest.json').write_text(json.dumps(m,indent=2)+'\n')
+          Path('/tmp/app_sha').write_text(sha)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifests/ACLM_Tire_Lab_latest.json
+          git diff --cached --quiet || git commit -m "release: align v0.8.1 installer manifest"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            gh release upload "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --clobber --repo "${{ github.repository }}"
+            gh release edit "v$APP_VERSION" --latest --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Fixes Analyze Latest Log while the logger has the CSV open. Shared snapshots are trimmed to complete rows. No physics changed. SHA-256: $sha" --repo "${{ github.repository }}"
+          else
+            gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Fixes Analyze Latest Log while the logger has the CSV open. Shared snapshots are trimmed to complete rows. No physics changed. SHA-256: $sha" --latest --repo "${{ github.repository }}"
+          fi
