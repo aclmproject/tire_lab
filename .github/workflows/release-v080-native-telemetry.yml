@@ -1,0 +1,337 @@
+name: Release Tire Lab v0.8.0 Native Telemetry Logger
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/release-v080-native-telemetry.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  APP_VERSION: 0.8.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add native Assetto Corsa telemetry logger
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('.')
+          telemetry=root/'src/payload/Telemetry'
+          telemetry.mkdir(parents=True,exist_ok=True)
+          logger=r'''param(
+            [string]$OutputDirectory = (Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'ACLM Tire Lab\Telemetry'),
+            [ValidateSet(10,20,50)][int]$RateHz = 10,
+            [string]$StatusPath = (Join-Path $env:TEMP 'aclm-telemetry-status.json'),
+            [string]$StopPath = (Join-Path $env:TEMP 'aclm-telemetry-stop.signal'),
+            [switch]$SelfTest
+          )
+          $ErrorActionPreference='Stop'
+          $Invariant=[Globalization.CultureInfo]::InvariantCulture
+          $WheelNames=@('fl','fr','rl','rr')
+          $PhysicsOffsets=@{
+            packetId=0; throttle=4; brake=8; fuel=12; gear=16; rpm=20; steering=24; speedKmh=28
+            velocity=32; accG=44; wheelSlip=56; wheelLoad=72; pressure=88; wheelAngularSpeed=104
+            tyreWear=120; dirty=136; coreTemp=152; camber=168; suspensionTravel=184
+            airTemp=288; roadTemp=292; brakeTemp=348; tempInner=368; tempMiddle=384; tempOuter=400
+          }
+          $GraphicsOffsets=@{packetId=0;status=4;session=8;completedLaps=132;position=136;currentTimeMs=140;distance=156;isInPit=160;compound=176;normalizedPosition=248;surfaceGrip=280}
+          $StaticOffsets=@{carModel=68;track=134}
+
+          function New-Headers {
+            $h=[Collections.Generic.List[string]]::new()
+            @('timestamp_utc','elapsed_ms','packet_id','car','track','compound','lap','lap_time_ms','normalized_track_position','distance_traveled_m','in_pit','speed_kmh','throttle','brake','steering','gear','rpm','fuel_l','air_temp_c','road_temp_c','surface_grip','velocity_x_mps','velocity_y_mps','velocity_z_mps','accg_lat','accg_vert','accg_long')|ForEach-Object{$h.Add($_)}
+            foreach($metric in @('pressure_psi','wear_raw','core_temp_c','temp_inner_c','temp_middle_c','temp_outer_c','wheel_load_n','wheel_slip_raw','wheel_angular_speed_rad_s','camber_rad','suspension_travel_m','brake_temp_c','dirty_raw')){foreach($w in $WheelNames){$h.Add("${metric}_${w}")}}
+            return $h.ToArray()
+          }
+          $Headers=New-Headers
+          if($SelfTest){
+            if($PhysicsOffsets.tyreWear -ne 120 -or $PhysicsOffsets.coreTemp -ne 152 -or $PhysicsOffsets.tempInner -ne 368 -or $PhysicsOffsets.tempOuter -ne 400){throw 'Physics offset invariant failed.'}
+            if($GraphicsOffsets.compound -ne 176 -or $GraphicsOffsets.normalizedPosition -ne 248 -or $StaticOffsets.track -ne 134){throw 'Graphics/static offset invariant failed.'}
+            if($Headers.Count -ne 79){throw "CSV schema invariant failed: $($Headers.Count) columns."}
+            @{ok=$true;schema='ACLM native telemetry 1.0';columns=$Headers.Count;rate_hz=$RateHz}|ConvertTo-Json -Compress
+            exit 0
+          }
+
+          $script:Samples=0;$script:CsvPath=$null;$script:Car='';$script:Track='';$script:Started=[DateTime]::UtcNow;$script:LastStatus=[DateTime]::MinValue
+          function Write-Status([string]$State,[string]$Message){
+            $dir=Split-Path -Parent $StatusPath;if($dir){[IO.Directory]::CreateDirectory($dir)|Out-Null}
+            $obj=[ordered]@{state=$State;message=$Message;pid=$PID;rate_hz=$RateHz;samples=$script:Samples;file=$script:CsvPath;output_directory=$OutputDirectory;car=$script:Car;track=$script:Track;updated_utc=[DateTime]::UtcNow.ToString('o')}
+            $tmp=$StatusPath+'.tmp';[IO.File]::WriteAllText($tmp,($obj|ConvertTo-Json -Compress),(New-Object Text.UTF8Encoding($false)));Move-Item -LiteralPath $tmp -Destination $StatusPath -Force
+            $script:LastStatus=[DateTime]::UtcNow
+          }
+          function Open-Map([string]$Name){
+            foreach($candidate in @($Name,"Local\$Name")){
+              try{$mmf=[IO.MemoryMappedFiles.MemoryMappedFile]::OpenExisting($candidate,[IO.MemoryMappedFiles.MemoryMappedFileRights]::Read);return @{Map=$mmf;View=$mmf.CreateViewAccessor(0,0,[IO.MemoryMappedFiles.MemoryMappedFileAccess]::Read)}}catch{}
+            }
+            throw "Assetto Corsa shared-memory map '$Name' is not available."
+          }
+          function Close-Map($m){if($m){try{$m.View.Dispose()}catch{};try{$m.Map.Dispose()}catch{}}}
+          function F($view,[int]$offset){return $view.ReadSingle($offset)}
+          function I($view,[int]$offset){return $view.ReadInt32($offset)}
+          function FA($view,[int]$offset,[int]$count){$a=New-Object float[] $count;[void]$view.ReadArray([long]$offset,$a,0,$count);return $a}
+          function WS($view,[int]$offset,[int]$chars){$b=New-Object byte[] ($chars*2);[void]$view.ReadArray([long]$offset,$b,0,$b.Length);return ([Text.Encoding]::Unicode.GetString($b).Split([char]0)[0]).Trim()}
+          function Csv([object]$value){
+            if($null -eq $value){return ''}
+            if($value-is [float]-or $value-is [double]-or $value-is [decimal]){return ([Convert]::ToDouble($value)).ToString('0.########',$Invariant)}
+            $s=[string]$value;if($s.IndexOfAny([char[]]",`"`r`n")-ge 0){return '"'+$s.Replace('"','""')+'"'};return $s
+          }
+          function Safe-Name([string]$s){if([string]::IsNullOrWhiteSpace($s)){return 'unknown'};return (($s-replace '[^A-Za-z0-9._-]+','_').Trim('_')).Substring(0,[Math]::Min(60,(($s-replace '[^A-Za-z0-9._-]+','_').Trim('_')).Length))}
+
+          [IO.Directory]::CreateDirectory($OutputDirectory)|Out-Null
+          if(Test-Path -LiteralPath $StopPath){Remove-Item -LiteralPath $StopPath -Force}
+          Write-Status 'waiting' 'Start Assetto Corsa; recording begins automatically when a live session is available.'
+          $period=[Math]::Max(5,[int](1000/$RateHz))
+          try{
+            while(!(Test-Path -LiteralPath $StopPath)){
+              $p=$null;$g=$null;$s=$null;$writer=$null
+              try{
+                $p=Open-Map 'acpmf_physics';$g=Open-Map 'acpmf_graphics';$s=Open-Map 'acpmf_static'
+                while(!(Test-Path -LiteralPath $StopPath)){
+                  if((I $g.View $GraphicsOffsets.status)-ne 2){if(([DateTime]::UtcNow-$script:LastStatus).TotalSeconds-ge 1){Write-Status 'waiting' 'Shared memory connected; waiting for a live driving session.'};Start-Sleep -Milliseconds 250;continue}
+                  if(!$writer){
+                    $script:Car=WS $s.View $StaticOffsets.carModel 33;$script:Track=WS $s.View $StaticOffsets.track 33
+                    $stamp=[DateTime]::UtcNow.ToString('yyyyMMdd_HHmmss');$script:CsvPath=Join-Path $OutputDirectory ("ACLM_AC_${stamp}_$(Safe-Name $script:Car)_$(Safe-Name $script:Track).csv")
+                    $writer=[IO.StreamWriter]::new($script:CsvPath,$false,(New-Object Text.UTF8Encoding($false)));$writer.WriteLine(($Headers-join ','));$writer.Flush();$script:Started=[DateTime]::UtcNow
+                    Write-Status 'recording' 'Recording direct AC shared-memory telemetry.'
+                  }
+                  $packet=I $p.View $PhysicsOffsets.packetId
+                  if($packet -eq $lastPacket){Start-Sleep -Milliseconds $period;continue};$lastPacket=$packet
+                  $row=[Collections.Generic.List[object]]::new()
+                  $row.Add([DateTime]::UtcNow.ToString('o'));$row.Add([int]([DateTime]::UtcNow-$script:Started).TotalMilliseconds);$row.Add($packet);$row.Add($script:Car);$row.Add($script:Track);$row.Add((WS $g.View $GraphicsOffsets.compound 33));$row.Add((I $g.View $GraphicsOffsets.completedLaps));$row.Add((I $g.View $GraphicsOffsets.currentTimeMs));$row.Add((F $g.View $GraphicsOffsets.normalizedPosition));$row.Add((F $g.View $GraphicsOffsets.distance));$row.Add((I $g.View $GraphicsOffsets.isInPit));$row.Add((F $p.View $PhysicsOffsets.speedKmh));$row.Add((F $p.View $PhysicsOffsets.throttle));$row.Add((F $p.View $PhysicsOffsets.brake));$row.Add((F $p.View $PhysicsOffsets.steering));$row.Add((I $p.View $PhysicsOffsets.gear));$row.Add((I $p.View $PhysicsOffsets.rpm));$row.Add((F $p.View $PhysicsOffsets.fuel));$row.Add((F $p.View $PhysicsOffsets.airTemp));$row.Add((F $p.View $PhysicsOffsets.roadTemp));$row.Add((F $g.View $GraphicsOffsets.surfaceGrip))
+                  foreach($x in (FA $p.View $PhysicsOffsets.velocity 3)){$row.Add($x)};foreach($x in (FA $p.View $PhysicsOffsets.accG 3)){$row.Add($x)}
+                  foreach($offset in @($PhysicsOffsets.pressure,$PhysicsOffsets.tyreWear,$PhysicsOffsets.coreTemp,$PhysicsOffsets.tempInner,$PhysicsOffsets.tempMiddle,$PhysicsOffsets.tempOuter,$PhysicsOffsets.wheelLoad,$PhysicsOffsets.wheelSlip,$PhysicsOffsets.wheelAngularSpeed,$PhysicsOffsets.camber,$PhysicsOffsets.suspensionTravel,$PhysicsOffsets.brakeTemp,$PhysicsOffsets.dirty)){foreach($x in (FA $p.View $offset 4)){$row.Add($x)}}
+                  if($row.Count -ne $Headers.Count){throw "Row/schema mismatch: $($row.Count)/$($Headers.Count)."}
+                  $writer.WriteLine((@($row|ForEach-Object{Csv $_})-join ','));$script:Samples++
+                  if(($script:Samples%$RateHz)-eq 0){$writer.Flush();Write-Status 'recording' 'Recording direct AC shared-memory telemetry.'}
+                  Start-Sleep -Milliseconds $period
+                }
+              }catch{
+                if(!(Test-Path -LiteralPath $StopPath)){Write-Status 'waiting' ($_.Exception.Message+' Retrying...');Start-Sleep -Milliseconds 1000}
+              }finally{if($writer){$writer.Flush();$writer.Dispose()};Close-Map $p;Close-Map $g;Close-Map $s}
+            }
+            Write-Status 'stopped' 'Telemetry logger stopped cleanly.'
+          }catch{Write-Status 'error' $_.Exception.Message;exit 1}
+          finally{if(Test-Path -LiteralPath $StopPath){Remove-Item -LiteralPath $StopPath -Force -ErrorAction SilentlyContinue}}
+          '''
+          (telemetry/'ACLM_Native_Telemetry_Logger.ps1').write_text(logger,encoding='utf-8',newline='')
+
+          client=r'''"use strict";
+          (function(){
+           const e=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+           let timer=null;
+           function render(s){const state=s?.state||"stopped",running=state==="recording"||state==="waiting"||state==="starting";e("nativeTelemetryState").textContent=state;e("startNativeTelemetry").disabled=running;e("stopNativeTelemetry").disabled=!running;const file=s?.file?"<br><b>CSV:</b> "+esc(s.file):"";const car=s?.car?"<br><b>Session:</b> "+esc(s.car)+" at "+esc(s.track):"";e("nativeTelemetryStatus").innerHTML="<b>"+esc(s?.message||"Logger is stopped.")+"</b><br>Samples: "+Number(s?.samples||0).toLocaleString()+" · "+esc(s?.rate_hz||e("nativeTelemetryRate").value)+" Hz"+car+file+(s?.output_directory?"<br><b>Folder:</b> "+esc(s.output_directory):"");}
+           async function api(path,options){const r=await fetch(path,{cache:"no-store",...(options||{})});const type=r.headers.get("content-type")||"";const body=type.includes("json")?await r.json():await r.text();if(!r.ok)throw new Error(body?.error||body||("HTTP "+r.status));return body;}
+           async function poll(){try{render(await api("/api/telemetry-status"));}catch(err){e("nativeTelemetryStatus").textContent=err.message;}}
+           async function start(){try{render(await api("/api/telemetry-start",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({rate_hz:Number(e("nativeTelemetryRate").value)})}));}catch(err){e("nativeTelemetryStatus").innerHTML="<span class=\"error\">"+esc(err.message)+"</span>";}}
+           async function stop(){try{render(await api("/api/telemetry-stop",{method:"POST"}));}catch(err){e("nativeTelemetryStatus").innerHTML="<span class=\"error\">"+esc(err.message)+"</span>";}}
+           async function analyze(){try{const csv=await api("/api/telemetry-latest");if(!window.ACLMValidationWorkspace?.importTelemetryText)throw new Error("Validation workspace is not ready.");window.ACLMValidationWorkspace.importTelemetryText(csv,"latest native ACLM log");document.getElementById("telemetryCsv")?.scrollIntoView({behavior:"smooth",block:"center"});}catch(err){e("nativeTelemetryStatus").innerHTML="<span class=\"error\">"+esc(err.message)+"</span>";}}
+           e("startNativeTelemetry")?.addEventListener("click",start);e("stopNativeTelemetry")?.addEventListener("click",stop);e("analyzeNativeTelemetry")?.addEventListener("click",analyze);poll();timer=setInterval(poll,1000);window.addEventListener("beforeunload",()=>clearInterval(timer));
+          })();
+          '''
+          (root/'src/payload/app/telemetry_logger.js').write_text(client,encoding='utf-8',newline='')
+
+          def replace(path,old,new,count=1):
+           p=root/path;s=p.read_text(encoding='utf-8-sig')
+           if old not in s: raise SystemExit(f'{path}: anchor missing: {old[:80]}')
+           p.write_text(s.replace(old,new,count),encoding='utf-8',newline='')
+
+          server=root/'src/payload/Server_ACLM_Tire_Lab.ps1'
+          s=server.read_text(encoding='utf-8-sig')
+          s=s.replace('$CurrentVersion = "0.7.1"','$CurrentVersion = "0.8.0"',1)
+          anchor='$GithubHeaders = @{"Cache-Control"="no-cache";"User-Agent"="ACLM-Historical-Tire-Lab/$CurrentVersion";"Accept"="application/vnd.github+json"}\n'
+          addition=r'''$TelemetryOutput = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'ACLM Tire Lab\Telemetry'
+          $TelemetryStateDir = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'ACLM Tire Lab\Telemetry'
+          $TelemetryScript = Join-Path $PSScriptRoot 'Telemetry\ACLM_Native_Telemetry_Logger.ps1'
+          $TelemetryStatusPath = Join-Path $TelemetryStateDir 'status.json'
+          $TelemetryStopPath = Join-Path $TelemetryStateDir 'stop.signal'
+          [IO.Directory]::CreateDirectory($TelemetryStateDir)|Out-Null
+          [IO.Directory]::CreateDirectory($TelemetryOutput)|Out-Null
+          '''
+          if anchor not in s: raise SystemExit('server telemetry variable anchor missing')
+          s=s.replace(anchor,anchor+addition,1)
+          function_anchor='function HashBytes([byte[]]$Bytes)'
+          functions=r'''function Read-TelemetryStatus{
+            try{
+              if(Test-Path $TelemetryStatusPath -PathType Leaf){$x=(Get-Content -Raw -Encoding UTF8 $TelemetryStatusPath)|ConvertFrom-Json;if($x.pid){try{Get-Process -Id ([int]$x.pid) -ErrorAction Stop|Out-Null}catch{$x.state='stopped';$x.message='Logger process is not running.'}};return $x}
+            }catch{}
+            return @{state='stopped';message='Logger is stopped.';rate_hz=10;samples=0;file=$null;output_directory=$TelemetryOutput}
+          }
+          function Start-Telemetry([int]$RateHz){
+            if(@(10,20,50) -notcontains $RateHz){throw 'Sample rate must be 10, 20 or 50 Hz.'}
+            if(!(Test-Path $TelemetryScript -PathType Leaf)){throw 'The native telemetry logger is missing from this installation.'}
+            $current=Read-TelemetryStatus
+            if(@('waiting','recording','starting')-contains [string]$current.state){return $current}
+            Remove-Item $TelemetryStopPath,$TelemetryStatusPath -Force -ErrorAction SilentlyContinue
+            $exe=Join-Path $PSHOME 'powershell.exe';if(!(Test-Path $exe)){$exe='powershell.exe'}
+            $args='-NoLogo -NoProfile -ExecutionPolicy Bypass -File "'+$TelemetryScript+'" -OutputDirectory "'+$TelemetryOutput+'" -RateHz '+$RateHz+' -StatusPath "'+$TelemetryStatusPath+'" -StopPath "'+$TelemetryStopPath+'"'
+            $proc=Start-Process -FilePath $exe -ArgumentList $args -WindowStyle Hidden -PassThru
+            Start-Sleep -Milliseconds 300
+            $status=Read-TelemetryStatus;if([string]$status.state -eq 'stopped'){return @{state='starting';message='Logger process is starting.';pid=$proc.Id;rate_hz=$RateHz;samples=0;output_directory=$TelemetryOutput}}
+            return $status
+          }
+          function Stop-Telemetry{
+            [IO.File]::WriteAllText($TelemetryStopPath,[DateTime]::UtcNow.ToString('o'))
+            $s=Read-TelemetryStatus;$s.state='stopping';$s.message='Stop requested; flushing the CSV.';return $s
+          }
+          function Latest-Telemetry{
+            $file=Get-ChildItem -LiteralPath $TelemetryOutput -Filter 'ACLM_AC_*.csv' -File -ErrorAction SilentlyContinue|Sort-Object LastWriteTimeUtc -Descending|Select-Object -First 1
+            if(!$file){throw 'No ACLM native telemetry CSV has been recorded yet.'}
+            return [IO.File]::ReadAllBytes($file.FullName)
+          }
+
+          '''
+          if function_anchor not in s: raise SystemExit('server function anchor missing')
+          s=s.replace(function_anchor,functions+function_anchor,1)
+          route='''    }elseif($url -eq "/api/update-info"){
+          '''
+          routes=r'''    }elseif($url -eq "/api/telemetry-status"){
+              try{$body=JsonBytes (Read-TelemetryStatus);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
+            }elseif($url -eq "/api/telemetry-start" -and $method -eq "POST"){
+              try{$rate=10;if($requestBody){$request=$requestBody|ConvertFrom-Json;$rate=[int]$request.rate_hz};$body=JsonBytes (Start-Telemetry $rate);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
+            }elseif($url -eq "/api/telemetry-stop" -and $method -eq "POST"){
+              try{$body=JsonBytes (Stop-Telemetry);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
+            }elseif($url -eq "/api/telemetry-latest"){
+              try{$body=Latest-Telemetry;$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="404 Not Found"};$mime=if($code -eq "200 OK"){"text/csv; charset=utf-8"}else{"application/json; charset=utf-8"}
+          '''
+          if route not in s: raise SystemExit('server route anchor missing')
+          s=s.replace(route,routes+route,1)
+          server.write_text(s,encoding='utf-8',newline='')
+
+          index=root/'src/payload/app/index.html';h=index.read_text(encoding='utf-8-sig')
+          h=h.replace('v0.7.1','v0.8.0')
+          card='''<div class="card update-card">'''
+          telemetry_card='''<div class="card" id="native-telemetry-logger">
+          <h2>ACLM native telemetry logger</h2>
+          <p class="small">Records direct Assetto Corsa shared memory to a per-wheel CSV. Start it before or during a session; it waits for live driving automatically.</p>
+          <div class="grid"><div><label for="nativeTelemetryRate">Sample rate</label><select id="nativeTelemetryRate"><option value="10" selected>10 Hz — recommended</option><option value="20">20 Hz</option><option value="50">50 Hz</option></select></div><div><label>Logger state</label><div><b id="nativeTelemetryState">stopped</b></div></div></div>
+          <div class="actions" style="margin-top:10px"><button id="startNativeTelemetry" type="button" class="good">Start native logger</button><button id="stopNativeTelemetry" type="button" disabled>Stop &amp; flush CSV</button><button id="analyzeNativeTelemetry" type="button">Analyze latest log</button></div>
+          <div id="nativeTelemetryStatus" class="small muted">Checking local logger...</div>
+          <div class="notice small" style="margin-top:8px"><b>Raw evidence policy:</b> AC tyre-wear values are stored unchanged as <code>wear_*_raw</code>. Temperatures, pressures, loads and slip are likewise retained per wheel for transparent calibration.</div>
+          </div>
+
+          <div class="card update-card">'''
+          if card not in h: raise SystemExit('index card anchor missing')
+          h=h.replace(card,telemetry_card,1)
+          script='''<script src="validation_workspace.js"></script>'''
+          if script not in h: raise SystemExit('index script anchor missing')
+          h=h.replace(script,script+'\n<script src="telemetry_logger.js"></script>',1)
+          index.write_text(h,encoding='utf-8',newline='')
+
+          workspace=root/'src/payload/app/validation_workspace.js';w=workspace.read_text(encoding='utf-8-sig')
+          old=''' async function importTelemetry(){const file=e("telemetryCsv")?.files?.[0];if(!file)return;try{const parsed=core.parseTelemetry(await file.text());state.telemetry=core.telemetrySummary(parsed);const s=state.telemetry;e("telemetryStatus").innerHTML="<span class=\\"ok\\"><b>Telemetry mapped:</b></span> "+s.rows+" rows · "+s.tempHeaders.length+" temperature columns · confidence "+esc(s.mappingConfidence)+" · average "+(Number.isFinite(s.averageTemperature)?s.averageTemperature.toFixed(1)+" C":"unavailable")+".";drawTelemetry();renderEvidence();}catch(err){e("telemetryStatus").innerHTML="<span class=\\"error\\">"+esc(err.message)+"</span>";}}'''
+          new=''' function importTelemetryText(text,label){try{const parsed=core.parseTelemetry(text);state.telemetry=core.telemetrySummary(parsed);const s=state.telemetry;e("telemetryStatus").innerHTML="<span class=\\"ok\\"><b>Telemetry mapped:</b></span> "+s.rows+" rows · "+s.tempHeaders.length+" temperature columns · confidence "+esc(s.mappingConfidence)+" · average "+(Number.isFinite(s.averageTemperature)?s.averageTemperature.toFixed(1)+" C":"unavailable")+" · "+esc(label||"CSV")+".";drawTelemetry();renderEvidence();return s;}catch(err){e("telemetryStatus").innerHTML="<span class=\\"error\\">"+esc(err.message)+"</span>";throw err;}}
+           async function importTelemetry(){const file=e("telemetryCsv")?.files?.[0];if(!file)return;importTelemetryText(await file.text(),file.name);}'''
+          if old not in w: raise SystemExit('workspace telemetry anchor missing')
+          w=w.replace(old,new,1)
+          oldexport='''window.ACLMValidationWorkspace={state,runSimulation,workspaceSnapshot};'''
+          if oldexport not in w: raise SystemExit('workspace export anchor missing')
+          w=w.replace(oldexport,'''window.ACLMValidationWorkspace={state,runSimulation,workspaceSnapshot,importTelemetryText};''',1)
+          workspace.write_text(w,encoding='utf-8',newline='')
+
+          core=root/'src/payload/app/validation_core.js';c=core.read_text(encoding='utf-8-sig')
+          old_core='''const tempHeaders=h.filter(x=>/(temp|temperature)/i.test(x)&&/(tyre|tire|wheel|fl|fr|rl|rr|front|rear)/i.test(x)),frontHeaders=tempHeaders.filter(x=>/(fl|fr|front)/i.test(x)),rearHeaders=tempHeaders.filter(x=>/(rl|rr|rear)/i.test(x)),pressureHeaders=h.filter(x=>/(press|psi)/i.test(x)&&/(tyre|tire|wheel|fl|fr|rl|rr|front|rear)/i.test(x));'''
+          new_core='''const wheelPattern=/(tyre|tire|wheel|fl|fr|rl|rr|front|rear)/i,tempHeaders=h.filter(x=>/(temp|temperature)/i.test(x)&&wheelPattern.test(x)&&!/(brake|disc|rotor)/i.test(x)),frontHeaders=tempHeaders.filter(x=>/(fl|fr|front)/i.test(x)),rearHeaders=tempHeaders.filter(x=>/(rl|rr|rear)/i.test(x)),pressureHeaders=h.filter(x=>/(press|psi)/i.test(x)&&wheelPattern.test(x)),wearHeaders=h.filter(x=>/wear/i.test(x)&&wheelPattern.test(x)),loadHeaders=h.filter(x=>/load/i.test(x)&&wheelPattern.test(x)),slipHeaders=h.filter(x=>/slip/i.test(x)&&wheelPattern.test(x));'''
+          if old_core not in c: raise SystemExit('validation core telemetry-header anchor missing')
+          c=c.replace(old_core,new_core,1)
+          old_return='''pressureHeaders,points,averageSpeed'''
+          if old_return not in c: raise SystemExit('validation core summary anchor missing')
+          c=c.replace(old_return,'''pressureHeaders,wearHeaders,loadHeaders,slipHeaders,points,averageSpeed''',1)
+          core.write_text(c,encoding='utf-8',newline='')
+
+          replace('src/payload/app/app.js','const ACLM_APP_VERSION="0.7.1";','const ACLM_APP_VERSION="0.8.0";',1)
+          replace('src/payload/Launch_ACLM_Tire_Lab.cmd','set "EXPECTED_VERSION=0.7.1"','set "EXPECTED_VERSION=0.8.0"',1)
+          replace('src/payload/Launch_ACLM_Tire_Lab.cmd','set "URL=http://127.0.0.1:48765/?build=0.7.1"','set "URL=http://127.0.0.1:48765/?build=0.8.0"',1)
+          sw=root/'src/payload/app/sw.js';x=sw.read_text();x=x.replace("aclm-tire-lab-shell-v071-import-init-fix","aclm-tire-lab-shell-v080-native-telemetry",1).replace("'./validation_workspace.js'","'./validation_workspace.js','./telemetry_logger.js'",1);sw.write_text(x,encoding='utf-8',newline='')
+          replace('README.md','Current application release: **v0.7.1**','Current application release: **v0.8.0**',1)
+          readme=root/'src/payload/Documentation/README.txt'
+          if readme.exists(): readme.write_text(readme.read_text(encoding='utf-8-sig').replace('v0.7.1','v0.8.0'),encoding='utf-8',newline='')
+          cp=root/'src/payload/Documentation/CHANGELOG.txt';ch=cp.read_text(encoding='utf-8-sig');heading='ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n'
+          if not ch.startswith(heading): raise SystemExit('changelog heading mismatch')
+          entry='''2026-08-26 - v0.8.0
+          - Adds an integrated Windows telemetry logger using Assetto Corsa native shared memory.
+          - Records direct per-wheel temperature, pressure, wear, load, slip, camber, suspension and brake channels at 10/20/50 Hz.
+          - Adds Tire Lab start, stop, live status, output-path and Analyze Latest Log controls without another launcher.
+          - Waits for a live AC session, flushes CSV safely, reconnects after AC restarts and preserves raw wear values.
+          - Adds byte-offset, CSV-schema, API-route, parser and UI release gates.
+
+          '''
+          cp.write_text(heading+entry+ch[len(heading):],encoding='utf-8',newline='')
+          doc=root/'docs/Native_Telemetry_Logger_v080.md';doc.write_text('''# ACLM native telemetry logger — v0.8.0
+
+          Tire Lab can now start a Windows background logger from its local browser UI. The logger reads Assetto Corsa native shared-memory mappings and writes transparent CSV evidence under `Documents\\ACLM Tire Lab\\Telemetry`.
+
+          ## Recorded evidence
+
+          The file includes car, track, compound, lap context, speed and driver inputs plus four-wheel pressure, raw wear, core and inner/middle/outer temperatures, load, slip, angular speed, camber, suspension travel, brake temperature and dirt. `tyreWear` is deliberately stored as `wear_*_raw`; Tire Lab does not guess whether a particular car/CSP combination presents remaining condition or consumed wear.
+
+          ## Use
+
+          Open Tire Lab, select 10 Hz, click **Start native logger**, then start driving in AC. Stop and flush the CSV when the run is complete. **Analyze latest log** loads it directly into the Validation Workspace. No developer app, Python app installation or extra shortcut is required.
+
+          The field layout follows the public CSP `sim_info.py` AC shared-memory structures. The logger is an independent public-interface integration and does not access confidential tire data.
+          ''',encoding='utf-8',newline='')
+          PY
+      - name: Validate native logger and integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          pwsh -NoLogo -NoProfile -File src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1 -SelfTest
+          pwsh -NoLogo -NoProfile -Command '& { $tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$tokens,[ref]$errors)|Out-Null; if($errors.Count){$errors|ForEach-Object{Write-Error $_};exit 1} }'
+          node --check src/payload/app/app.js
+          node --check src/payload/app/validation_core.js
+          node --check src/payload/app/validation_workspace.js
+          node --check src/payload/app/telemetry_logger.js
+          node --check src/payload/app/sw.js
+          python3 - <<'PY'
+          from pathlib import Path
+          server=Path('src/payload/Server_ACLM_Tire_Lab.ps1').read_text();index=Path('src/payload/app/index.html').read_text();client=Path('src/payload/app/telemetry_logger.js').read_text();logger=Path('src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1').read_text();workspace=Path('src/payload/app/validation_workspace.js').read_text()
+          for token in ('/api/telemetry-status','/api/telemetry-start','/api/telemetry-stop','/api/telemetry-latest','Start-Telemetry','Latest-Telemetry'): assert token in server,token
+          for token in ('startNativeTelemetry','stopNativeTelemetry','analyzeNativeTelemetry','nativeTelemetryRate','telemetry_logger.js'): assert token in index,token
+          for token in ('acpmf_physics','acpmf_graphics','acpmf_static','wear_raw','temp_inner_c','wheel_load_n','wheel_slip_raw'): assert token in logger,token
+          assert 'importTelemetryText' in workspace and 'importTelemetryText(csv' in client
+          core=Path('src/payload/app/validation_core.js').read_text();assert '!/(brake|disc|rotor)/i.test(x)' in core and 'wearHeaders' in core and 'loadHeaders' in core and 'slipHeaders' in core
+          assert 'v0.8.0' in index and 'const ACLM_APP_VERSION="0.8.0";' in Path('src/payload/app/app.js').read_text()
+          print('v0.8.0 native telemetry integration gates passed')
+          PY
+      - name: Package app and stable manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ['APP_VERSION'];src=Path('src');name=f'ACLM_Tire_Lab_Setup_v{v}.zip';archive=Path('/tmp')/name
+          with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+           for p in sorted(src.rglob('*')):
+            if p.is_file():z.write(p,p.relative_to(src).as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest();pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
+          m={'product':'ACLM Historical Tire Lab','channel':'stable','version':v,'file_name':name,'release_page':f'https://github.com/aclmproject/tire_lab/releases/tag/v{v}','download_url':f'https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}','sha256':sha,'published_utc':pub,'notes':'Integrated native AC shared-memory telemetry logger with per-wheel thermal, pressure, wear, load and slip evidence; start/stop/analyze controls in Tire Lab.'}
+          Path('manifests/ACLM_Tire_Lab_latest.json').write_text(json.dumps(m,indent=2)+'\n');Path('/tmp/app_sha').write_text(sha);print(json.dumps(m,indent=2))
+          PY
+      - name: Commit and publish v0.8.0
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then echo "v$APP_VERSION already exists"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src docs/Native_Telemetry_Logger_v080.md manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "feat: add integrated native AC telemetry logger v0.8.0"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json docs/Native_Telemetry_Logger_v080.md --repo "${{ github.repository }}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Adds the integrated ACLM native Assetto Corsa telemetry logger: start/stop/status in Tire Lab, direct four-wheel thermal/pressure/wear/load/slip CSV evidence, and one-click analysis of the latest log. Raw tyreWear is preserved without reinterpretation. SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
+
+
