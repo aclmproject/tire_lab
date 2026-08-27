@@ -1,0 +1,132 @@
+name: Release Tire Lab v0.8.1 Telemetry Live Read Fix
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/release-v081-telemetry-live-read-fix.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  APP_VERSION: 0.8.1
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair live telemetry reads
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('.')
+          def rep(path,old,new,count=1):
+           p=root/path;s=p.read_text(encoding='utf-8-sig')
+           if old not in s: raise SystemExit(f'{path}: anchor missing')
+           p.write_text(s.replace(old,new,count),encoding='utf-8',newline='')
+
+          p=root/'src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1'
+          s=p.read_text(encoding='utf-8-sig')
+          old="$writer=[IO.StreamWriter]::new($script:CsvPath,$false,(New-Object Text.UTF8Encoding($false)));$writer.WriteLine(($Headers-join ','));$writer.Flush();$script:Started=[DateTime]::UtcNow"
+          new="$csvStream=[IO.FileStream]::new($script:CsvPath,[IO.FileMode]::Create,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)\n          $writer=[IO.StreamWriter]::new($csvStream,(New-Object Text.UTF8Encoding($false)));$writer.WriteLine(($Headers-join ','));$writer.Flush();$script:Started=[DateTime]::UtcNow"
+          if old not in s: raise SystemExit('logger writer anchor missing')
+          p.write_text(s.replace(old,new,1),encoding='utf-8',newline='')
+
+          p=root/'src/payload/Server_ACLM_Tire_Lab.ps1'
+          s=p.read_text(encoding='utf-8-sig')
+          old="""function Latest-Telemetry{
+            $file=Get-ChildItem -LiteralPath $TelemetryOutput -Filter 'ACLM_AC_*.csv' -File -ErrorAction SilentlyContinue|Sort-Object LastWriteTimeUtc -Descending|Select-Object -First 1
+            if(!$file){throw 'No ACLM native telemetry CSV has been recorded yet.'}
+            return [IO.File]::ReadAllBytes($file.FullName)
+          }"""
+          new="""function Read-SharedCsvSnapshot([string]$Path){
+            $source=[IO.FileStream]::new($Path,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::ReadWrite)
+            try{$memory=[IO.MemoryStream]::new();try{$source.CopyTo($memory);$bytes=$memory.ToArray()}finally{$memory.Dispose()}}finally{$source.Dispose()}
+            $lastNewline=-1
+            for($i=$bytes.Length-1;$i -ge 0;$i--){if($bytes[$i] -eq 10){$lastNewline=$i;break}}
+            if($lastNewline -lt 0){throw 'The latest telemetry file does not contain a complete CSV row yet.'}
+            if($lastNewline -eq ($bytes.Length-1)){return $bytes}
+            $complete=New-Object byte[] ($lastNewline+1)
+            [Buffer]::BlockCopy($bytes,0,$complete,0,$complete.Length)
+            return $complete
+          }
+          function Latest-Telemetry{
+            $file=Get-ChildItem -LiteralPath $TelemetryOutput -Filter 'ACLM_AC_*.csv' -File -ErrorAction SilentlyContinue|Sort-Object LastWriteTimeUtc -Descending|Select-Object -First 1
+            if(!$file){throw 'No ACLM native telemetry CSV has been recorded yet.'}
+            return Read-SharedCsvSnapshot $file.FullName
+          }"""
+          if old not in s: raise SystemExit('server read anchor missing')
+          s=s.replace(old,new,1).replace('$CurrentVersion = "0.8.0"','$CurrentVersion = "0.8.1"',1)
+          p.write_text(s,encoding='utf-8',newline='')
+
+          rep('src/payload/app/app.js','const ACLM_APP_VERSION="0.8.0";','const ACLM_APP_VERSION="0.8.1";')
+          rep('src/payload/app/index.html','v0.8.0','v0.8.1',99)
+          rep('src/payload/Launch_ACLM_Tire_Lab.cmd','set "EXPECTED_VERSION=0.8.0"','set "EXPECTED_VERSION=0.8.1"')
+          rep('src/payload/Launch_ACLM_Tire_Lab.cmd','set "URL=http://127.0.0.1:48765/?build=0.8.0"','set "URL=http://127.0.0.1:48765/?build=0.8.1"')
+          rep('src/payload/app/sw.js','aclm-tire-lab-shell-v080-native-telemetry','aclm-tire-lab-shell-v081-telemetry-live-read')
+          rep('README.md','Current application release: **v0.8.0**  ','Current application release: **v0.8.1**')
+
+          cp=root/'src/payload/Documentation/CHANGELOG.txt';ch=cp.read_text(encoding='utf-8-sig')
+          heading='ACLM HISTORICAL TIRE LAB - CHANGELOG\n====================================\n\n'
+          entry='''2026-08-26 - v0.8.1
+          - Fixes Analyze Latest Log while the logger still owns the CSV.
+          - Uses shared writer/reader handles and trims snapshots to the last complete row.
+          - Does not change telemetry values, tire physics or knowledge data.
+
+          '''
+          if not ch.startswith(heading): raise SystemExit('changelog heading mismatch')
+          cp.write_text(heading+entry+ch[len(heading):],encoding='utf-8',newline='')
+          (root/'docs/Telemetry_Live_Read_Fix_v081.md').write_text('''# Tire Lab v0.8.1 telemetry live-read repair
+
+          v0.8.1 opens logger output with FileShare.ReadWrite. Analyze Latest Log reads a shared byte snapshot and discards any incomplete final row. Analysis is safe while recording, waiting or stopped. No physics or telemetry values changed.
+          ''',encoding='utf-8',newline='')
+          PY
+      - name: Validate regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          pwsh -NoLogo -NoProfile -File src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1 -SelfTest
+          pwsh -NoLogo -NoProfile -Command '& { $t=$null;$e=$null;[Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$t,[ref]$e)|Out-Null;if($e.Count){$e|ForEach-Object{Write-Error $_};exit 1} }'
+          pwsh -NoLogo -NoProfile -Command '& { $p=Join-Path ([IO.Path]::GetTempPath()) "aclm-share-test.csv";$w=[IO.FileStream]::new($p,[IO.FileMode]::Create,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite);try{$n=[char]10;$b=[Text.Encoding]::UTF8.GetBytes(("header"+$n+"complete"+$n+"partial"));$w.Write($b,0,$b.Length);$w.Flush();$r=[IO.FileStream]::new($p,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::ReadWrite);try{$m=[IO.MemoryStream]::new();$r.CopyTo($m);if($m.Length-ne $b.Length){throw "shared read failed"};$m.Dispose()}finally{$r.Dispose()}}finally{$w.Dispose();Remove-Item $p -Force -ErrorAction SilentlyContinue} }'
+          node --check src/payload/app/app.js
+          node --check src/payload/app/telemetry_logger.js
+          node --check src/payload/app/validation_core.js
+          node --check src/payload/app/validation_workspace.js
+          node --check src/payload/app/sw.js
+          python3 - <<'PY'
+          from pathlib import Path
+          l=Path('src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1').read_text()
+          s=Path('src/payload/Server_ACLM_Tire_Lab.ps1').read_text()
+          assert '[IO.FileShare]::ReadWrite' in l and '[IO.FileShare]::ReadWrite' in s
+          assert 'Read-SharedCsvSnapshot' in s and 'ReadAllBytes($file.FullName)' not in s
+          assert '[Buffer]::BlockCopy' in s and '$lastNewline' in s
+          assert 'const ACLM_APP_VERSION="0.8.1";' in Path('src/payload/app/app.js').read_text()
+          assert '<b id="installedBuild">v0.8.1</b>' in Path('src/payload/app/index.html').read_text()
+          print('v0.8.1 telemetry live-read gates passed')
+          PY
+      - name: Package and publish
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ['APP_VERSION'];src=Path('src');name=f'ACLM_Tire_Lab_Setup_v{v}.zip';archive=Path('/tmp')/name
+          with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+           for p in sorted(src.rglob('*')):
+            if p.is_file():z.write(p,p.relative_to(src).as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest();pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
+          m={'product':'ACLM Historical Tire Lab','channel':'stable','version':v,'file_name':name,'release_page':f'https://github.com/aclmproject/tire_lab/releases/tag/v{v}','download_url':f'https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}','sha256':sha,'published_utc':pub,'notes':'Fixes Analyze Latest Log while the native logger has the CSV open.'}
+          Path('manifests/ACLM_Tire_Lab_latest.json').write_text(json.dumps(m,indent=2)+'\n');Path('/tmp/app_sha').write_text(sha)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md src docs/Telemetry_Live_Read_Fix_v081.md manifests/ACLM_Tire_Lab_latest.json
+          git commit -m "fix: allow live telemetry CSV analysis in v0.8.1"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json docs/Telemetry_Live_Read_Fix_v081.md --repo "${{ github.repository }}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Fixes Analyze Latest Log when the logger still has the CSV open. Shared snapshots are trimmed to the last complete row. No physics changed. SHA-256: $sha"
+          gh release edit "v$APP_VERSION" --repo "${{ github.repository }}" --latest
