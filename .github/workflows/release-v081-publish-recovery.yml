@@ -53,5 +53,5 @@ jobs:
             gh release upload "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --clobber --repo "${{ github.repository }}"
             gh release edit "v$APP_VERSION" --latest --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Fixes Analyze Latest Log while the logger has the CSV open. Shared snapshots are trimmed to complete rows. No physics changed. SHA-256: $sha" --repo "${{ github.repository }}"
           else
-            gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Fixes Analyze Latest Log while the logger has the CSV open. Shared snapshots are trimmed to complete rows. No physics changed. SHA-256: $sha" --latest --repo "${{ github.repository }}"
+            gh release create "v$APP_VERSION" "/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "Fixes Analyze Latest Log while the logger has the CSV open. Shared snapshots are trimmed to complete rows. No physics changed. SHA-256: $sha" --repo "${{ github.repository }}"
           fi
