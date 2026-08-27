@@ -1,0 +1,12 @@
+"use strict";
+(function(){
+ const e=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+ let timer=null;
+ function render(s){const state=s?.state||"stopped",running=state==="recording"||state==="waiting"||state==="starting";e("nativeTelemetryState").textContent=state;e("startNativeTelemetry").disabled=running;e("stopNativeTelemetry").disabled=!running;const file=s?.file?"<br><b>CSV:</b> "+esc(s.file):"";const car=s?.car?"<br><b>Session:</b> "+esc(s.car)+" at "+esc(s.track):"";e("nativeTelemetryStatus").innerHTML="<b>"+esc(s?.message||"Logger is stopped.")+"</b><br>Samples: "+Number(s?.samples||0).toLocaleString()+" · "+esc(s?.rate_hz||e("nativeTelemetryRate").value)+" Hz"+car+file+(s?.output_directory?"<br><b>Folder:</b> "+esc(s.output_directory):"");}
+ async function api(path,options){const r=await fetch(path,{cache:"no-store",...(options||{})});const type=r.headers.get("content-type")||"";const body=type.includes("json")?await r.json():await r.text();if(!r.ok)throw new Error(body?.error||body||("HTTP "+r.status));return body;}
+ async function poll(){try{render(await api("/api/telemetry-status"));}catch(err){e("nativeTelemetryStatus").textContent=err.message;}}
+ async function start(){try{render(await api("/api/telemetry-start",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({rate_hz:Number(e("nativeTelemetryRate").value)})}));}catch(err){e("nativeTelemetryStatus").innerHTML="<span class=\"error\">"+esc(err.message)+"</span>";}}
+ async function stop(){try{render(await api("/api/telemetry-stop",{method:"POST"}));}catch(err){e("nativeTelemetryStatus").innerHTML="<span class=\"error\">"+esc(err.message)+"</span>";}}
+ async function analyze(){try{const csv=await api("/api/telemetry-latest");if(!window.ACLMValidationWorkspace?.importTelemetryText)throw new Error("Validation workspace is not ready.");window.ACLMValidationWorkspace.importTelemetryText(csv,"latest native ACLM log");document.getElementById("telemetryCsv")?.scrollIntoView({behavior:"smooth",block:"center"});}catch(err){e("nativeTelemetryStatus").innerHTML="<span class=\"error\">"+esc(err.message)+"</span>";}}
+ e("startNativeTelemetry")?.addEventListener("click",start);e("stopNativeTelemetry")?.addEventListener("click",stop);e("analyzeNativeTelemetry")?.addEventListener("click",analyze);poll();timer=setInterval(poll,1000);window.addEventListener("beforeunload",()=>clearInterval(timer));
+})();

@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.8.0
+- Adds an integrated Windows telemetry logger using Assetto Corsa native shared memory.
+- Records direct per-wheel temperature, pressure, wear, load, slip, camber, suspension and brake channels at 10/20/50 Hz.
+- Adds Tire Lab start, stop, live status, output-path and Analyze Latest Log controls without another launcher.
+- Waits for a live AC session, flushes CSV safely, reconnects after AC restarts and preserves raw wear values.
+- Adds byte-offset, CSV-schema, API-route, parser and UI release gates.
+
 2026-08-26 - v0.7.1
 - Fixes a startup dependency-order regression that prevented all app.js event handlers from being registered.
 - Compound-name defaults no longer read compDefs before its declaration.

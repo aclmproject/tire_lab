@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $AppDir = Join-Path $PSScriptRoot "app"
 $Port = 48765
-$CurrentVersion = "0.7.1"
+$CurrentVersion = "0.8.0"
 $KnowledgeManifestUrls = @(
   "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
   "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
@@ -16,6 +16,13 @@ $KnowledgeCache = Join-Path $PSScriptRoot "knowledge_cache.json"
 $AppManifestCache = Join-Path $PSScriptRoot "app_manifest_cache.json"
 $KnowledgeFallback = Join-Path $AppDir "knowledge_fallback.json"
 $GithubHeaders = @{"Cache-Control"="no-cache";"User-Agent"="ACLM-Historical-Tire-Lab/$CurrentVersion";"Accept"="application/vnd.github+json"}
+$TelemetryOutput = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'ACLM Tire Lab\Telemetry'
+$TelemetryStateDir = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'ACLM Tire Lab\Telemetry'
+$TelemetryScript = Join-Path $PSScriptRoot 'Telemetry\ACLM_Native_Telemetry_Logger.ps1'
+$TelemetryStatusPath = Join-Path $TelemetryStateDir 'status.json'
+$TelemetryStopPath = Join-Path $TelemetryStateDir 'stop.signal'
+[IO.Directory]::CreateDirectory($TelemetryStateDir)|Out-Null
+[IO.Directory]::CreateDirectory($TelemetryOutput)|Out-Null
 $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback,$Port)
 try { $listener.Start() } catch { exit 0 }
 
@@ -91,6 +98,35 @@ function App-UpdateInfo{
   return @{version=$m.version;file_name=$m.file_name;published_utc=$m.published_utc;notes=$m.notes;current_version=$CurrentVersion;updates_folder=$UpdatesPage;release_page=$page;download_url=$m.download_url;warning=$warning;cached=$cached;checked_utc=[DateTime]::UtcNow.ToString("o")}
 }
 
+function Read-TelemetryStatus{
+  try{
+    if(Test-Path $TelemetryStatusPath -PathType Leaf){$x=(Get-Content -Raw -Encoding UTF8 $TelemetryStatusPath)|ConvertFrom-Json;if($x.pid){try{Get-Process -Id ([int]$x.pid) -ErrorAction Stop|Out-Null}catch{$x.state='stopped';$x.message='Logger process is not running.'}};return $x}
+  }catch{}
+  return @{state='stopped';message='Logger is stopped.';rate_hz=10;samples=0;file=$null;output_directory=$TelemetryOutput}
+}
+function Start-Telemetry([int]$RateHz){
+  if(@(10,20,50) -notcontains $RateHz){throw 'Sample rate must be 10, 20 or 50 Hz.'}
+  if(!(Test-Path $TelemetryScript -PathType Leaf)){throw 'The native telemetry logger is missing from this installation.'}
+  $current=Read-TelemetryStatus
+  if(@('waiting','recording','starting')-contains [string]$current.state){return $current}
+  Remove-Item $TelemetryStopPath,$TelemetryStatusPath -Force -ErrorAction SilentlyContinue
+  $exe=Join-Path $PSHOME 'powershell.exe';if(!(Test-Path $exe)){$exe='powershell.exe'}
+  $args='-NoLogo -NoProfile -ExecutionPolicy Bypass -File "'+$TelemetryScript+'" -OutputDirectory "'+$TelemetryOutput+'" -RateHz '+$RateHz+' -StatusPath "'+$TelemetryStatusPath+'" -StopPath "'+$TelemetryStopPath+'"'
+  $proc=Start-Process -FilePath $exe -ArgumentList $args -WindowStyle Hidden -PassThru
+  Start-Sleep -Milliseconds 300
+  $status=Read-TelemetryStatus;if([string]$status.state -eq 'stopped'){return @{state='starting';message='Logger process is starting.';pid=$proc.Id;rate_hz=$RateHz;samples=0;output_directory=$TelemetryOutput}}
+  return $status
+}
+function Stop-Telemetry{
+  [IO.File]::WriteAllText($TelemetryStopPath,[DateTime]::UtcNow.ToString('o'))
+  $s=Read-TelemetryStatus;$s.state='stopping';$s.message='Stop requested; flushing the CSV.';return $s
+}
+function Latest-Telemetry{
+  $file=Get-ChildItem -LiteralPath $TelemetryOutput -Filter 'ACLM_AC_*.csv' -File -ErrorAction SilentlyContinue|Sort-Object LastWriteTimeUtc -Descending|Select-Object -First 1
+  if(!$file){throw 'No ACLM native telemetry CSV has been recorded yet.'}
+  return [IO.File]::ReadAllBytes($file.FullName)
+}
+
 function HashBytes([byte[]]$Bytes){$sha=[Security.Cryptography.SHA256]::Create();try{return ([BitConverter]::ToString($sha.ComputeHash($Bytes))).Replace('-','').ToLowerInvariant()}finally{$sha.Dispose()}}
 function Import-KnowledgePackage([string]$RequestBody){
   if([string]::IsNullOrWhiteSpace($RequestBody)){throw "Knowledge package request is empty."}
@@ -147,6 +183,14 @@ while($true){
       try{$k=Sync-Knowledge $force;$body=JsonBytes @{release=$k.release;source=$k.source;updated=$k.updated;checked_utc=$k.checked_utc};$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="503 Service Unavailable"};$mime="application/json; charset=utf-8"
     }elseif($url -eq "/api/knowledge-import" -and $method -eq "POST"){
       try{$k=Import-KnowledgePackage $requestBody;$body=JsonBytes $k;$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
+    }elseif($url -eq "/api/telemetry-status"){
+    try{$body=JsonBytes (Read-TelemetryStatus);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
+  }elseif($url -eq "/api/telemetry-start" -and $method -eq "POST"){
+    try{$rate=10;if($requestBody){$request=$requestBody|ConvertFrom-Json;$rate=[int]$request.rate_hz};$body=JsonBytes (Start-Telemetry $rate);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
+  }elseif($url -eq "/api/telemetry-stop" -and $method -eq "POST"){
+    try{$body=JsonBytes (Stop-Telemetry);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
+  }elseif($url -eq "/api/telemetry-latest"){
+    try{$body=Latest-Telemetry;$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="404 Not Found"};$mime=if($code -eq "200 OK"){"text/csv; charset=utf-8"}else{"application/json; charset=utf-8"}
     }elseif($url -eq "/api/update-info"){
       $body=JsonBytes (App-UpdateInfo);$code="200 OK";$mime="application/json; charset=utf-8"
     }elseif($url -eq "/api/install-update"){

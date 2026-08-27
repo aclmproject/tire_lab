@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.7.1 Browser App + AC import</span></h1>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.8.0 Browser App + AC import</span></h1>
   <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
@@ -218,10 +218,19 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 
 <section>
 
+<div class="card" id="native-telemetry-logger">
+<h2>ACLM native telemetry logger</h2>
+<p class="small">Records direct Assetto Corsa shared memory to a per-wheel CSV. Start it before or during a session; it waits for live driving automatically.</p>
+<div class="grid"><div><label for="nativeTelemetryRate">Sample rate</label><select id="nativeTelemetryRate"><option value="10" selected>10 Hz — recommended</option><option value="20">20 Hz</option><option value="50">50 Hz</option></select></div><div><label>Logger state</label><div><b id="nativeTelemetryState">stopped</b></div></div></div>
+<div class="actions" style="margin-top:10px"><button id="startNativeTelemetry" type="button" class="good">Start native logger</button><button id="stopNativeTelemetry" type="button" disabled>Stop &amp; flush CSV</button><button id="analyzeNativeTelemetry" type="button">Analyze latest log</button></div>
+<div id="nativeTelemetryStatus" class="small muted">Checking local logger...</div>
+<div class="notice small" style="margin-top:8px"><b>Raw evidence policy:</b> AC tyre-wear values are stored unchanged as <code>wear_*_raw</code>. Temperatures, pressures, loads and slip are likewise retained per wheel for transparent calibration.</div>
+</div>
+
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.7.1</b></div></div>
+ <div><label>Installed build</label><div><b id="installedBuild">v0.8.0</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">
@@ -285,6 +294,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <script src="app.js"></script>
 <script src="validation_core.js"></script>
 <script src="validation_workspace.js"></script>
+<script src="telemetry_logger.js"></script>
 
 </body>
 </html>

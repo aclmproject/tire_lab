@@ -1,5 +1,5 @@
-const CACHE='aclm-tire-lab-shell-v071-import-init-fix';
-const ASSETS=['./','./index.html','./style.css','./research_logic.js','./historical_categories.js','./knowledge_fallback.js','./knowledge_fallback.json','./export_naming.js','./app.js','./validation_core.js','./validation_workspace.js','./pressure_solver.js','./pdf_report.js','./manifest.webmanifest','./ACLM_Tire_Lab.png','./ACLM_Tire_Lab_192.png','./ACLM_Tire_Lab_512.png'];
+const CACHE='aclm-tire-lab-shell-v080-native-telemetry';
+const ASSETS=['./','./index.html','./style.css','./research_logic.js','./historical_categories.js','./knowledge_fallback.js','./knowledge_fallback.json','./export_naming.js','./app.js','./validation_core.js','./validation_workspace.js','./telemetry_logger.js','./pressure_solver.js','./pdf_report.js','./manifest.webmanifest','./ACLM_Tire_Lab.png','./ACLM_Tire_Lab_192.png','./ACLM_Tire_Lab_512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE&&k.startsWith('aclm-tire-lab-shell')).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;if(new URL(e.request.url).origin!==self.location.origin)return;e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r;}).catch(()=>caches.match(e.request)));});
