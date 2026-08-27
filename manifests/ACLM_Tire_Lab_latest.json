@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.8.0",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.8.0.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.8.0",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.8.0/ACLM_Tire_Lab_Setup_v0.8.0.zip",
-  "sha256": "30390d5a326ec7639c286956133f457bd30b8bef4b42693e50fd395058e7b3a8",
-  "published_utc": "2026-08-27T01:51:12Z",
-  "notes": "Integrated native AC shared-memory telemetry logger with per-wheel thermal, pressure, wear, load and slip evidence; start/stop/analyze controls in Tire Lab."
+  "version": "0.8.1",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.8.1.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.8.1",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.8.1/ACLM_Tire_Lab_Setup_v0.8.1.zip",
+  "sha256": "b51294b9773217b368eef5688ad3e114beadb4f4a3f6289c1f10054774579f94",
+  "published_utc": "2026-08-27T05:10:53Z",
+  "notes": "Fixes Analyze Latest Log while the native logger has the CSV open."
 }

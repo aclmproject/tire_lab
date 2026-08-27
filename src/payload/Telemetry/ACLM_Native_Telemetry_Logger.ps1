@@ -82,7 +82,8 @@ try{
         if(!$writer){
           $script:Car=WS $s.View $StaticOffsets.carModel 33;$script:Track=WS $s.View $StaticOffsets.track 33
           $stamp=[DateTime]::UtcNow.ToString('yyyyMMdd_HHmmss');$script:CsvPath=Join-Path $OutputDirectory ("ACLM_AC_${stamp}_$(Safe-Name $script:Car)_$(Safe-Name $script:Track).csv")
-          $writer=[IO.StreamWriter]::new($script:CsvPath,$false,(New-Object Text.UTF8Encoding($false)));$writer.WriteLine(($Headers-join ','));$writer.Flush();$script:Started=[DateTime]::UtcNow
+          $csvStream=[IO.FileStream]::new($script:CsvPath,[IO.FileMode]::Create,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)
+          $writer=[IO.StreamWriter]::new($csvStream,(New-Object Text.UTF8Encoding($false)));$writer.WriteLine(($Headers-join ','));$writer.Flush();$script:Started=[DateTime]::UtcNow
           Write-Status 'recording' 'Recording direct AC shared-memory telemetry.'
         }
         $packet=I $p.View $PhysicsOffsets.packetId

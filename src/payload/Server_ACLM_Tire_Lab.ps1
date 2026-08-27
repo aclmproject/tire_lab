@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $AppDir = Join-Path $PSScriptRoot "app"
 $Port = 48765
-$CurrentVersion = "0.8.0"
+$CurrentVersion = "0.8.1"
 $KnowledgeManifestUrls = @(
   "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
   "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
@@ -121,10 +121,21 @@ function Stop-Telemetry{
   [IO.File]::WriteAllText($TelemetryStopPath,[DateTime]::UtcNow.ToString('o'))
   $s=Read-TelemetryStatus;$s.state='stopping';$s.message='Stop requested; flushing the CSV.';return $s
 }
+function Read-SharedCsvSnapshot([string]$Path){
+  $source=[IO.FileStream]::new($Path,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::ReadWrite)
+  try{$memory=[IO.MemoryStream]::new();try{$source.CopyTo($memory);$bytes=$memory.ToArray()}finally{$memory.Dispose()}}finally{$source.Dispose()}
+  $lastNewline=-1
+  for($i=$bytes.Length-1;$i -ge 0;$i--){if($bytes[$i] -eq 10){$lastNewline=$i;break}}
+  if($lastNewline -lt 0){throw 'The latest telemetry file does not contain a complete CSV row yet.'}
+  if($lastNewline -eq ($bytes.Length-1)){return $bytes}
+  $complete=New-Object byte[] ($lastNewline+1)
+  [Buffer]::BlockCopy($bytes,0,$complete,0,$complete.Length)
+  return $complete
+}
 function Latest-Telemetry{
   $file=Get-ChildItem -LiteralPath $TelemetryOutput -Filter 'ACLM_AC_*.csv' -File -ErrorAction SilentlyContinue|Sort-Object LastWriteTimeUtc -Descending|Select-Object -First 1
   if(!$file){throw 'No ACLM native telemetry CSV has been recorded yet.'}
-  return [IO.File]::ReadAllBytes($file.FullName)
+  return Read-SharedCsvSnapshot $file.FullName
 }
 
 function HashBytes([byte[]]$Bytes){$sha=[Security.Cryptography.SHA256]::Create();try{return ([BitConverter]::ToString($sha.ComputeHash($Bytes))).Replace('-','').ToLowerInvariant()}finally{$sha.Dispose()}}

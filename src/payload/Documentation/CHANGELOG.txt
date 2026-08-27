@@ -1,6 +1,11 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-26 - v0.8.1
+- Fixes Analyze Latest Log while the logger still owns the CSV.
+- Uses shared writer/reader handles and trims snapshots to the last complete row.
+- Does not change telemetry values, tire physics or knowledge data.
+
 2026-08-26 - v0.8.0
 - Adds an integrated Windows telemetry logger using Assetto Corsa native shared memory.
 - Records direct per-wheel temperature, pressure, wear, load, slip, camber, suspension and brake channels at 10/20/50 Hz.
