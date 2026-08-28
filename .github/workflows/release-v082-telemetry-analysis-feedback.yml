@@ -31,8 +31,9 @@ jobs:
           global.window=global;global.performance={now:()=>0};
           vm.runInThisContext(fs.readFileSync('src/payload/app/validation_core.js','utf8'));
           const csv=fs.readFileSync('tests/fixtures/telemetry-sample.csv','utf8');
-          const parsed=ACLMValidationCore.parseTelemetryCsv(csv);
-          if(parsed.rows.length!==3||parsed.tempHeaders.length!==4||parsed.confidence!=='high'||parsed.summary.average!==66){
+          const parsed=ACLMValidationCore.parseTelemetry(csv);
+          const summary=ACLMValidationCore.telemetrySummary(parsed);
+          if(parsed.rows.length!==3||summary.tempHeaders.length!==4||summary.mappingConfidence!=='high'||summary.averageTemperature!==66){
             throw new Error('telemetry fixture regression');
           }
           NODE
