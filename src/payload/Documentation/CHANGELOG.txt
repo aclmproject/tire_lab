@@ -1,6 +1,12 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-28 - v0.8.2
+- Makes latest-log analysis visibly open the telemetry panel and report progress, success or failure.
+- Adds an explicit Import & analyze selected CSV control and reports when no file is selected.
+- Keeps analysis feedback separate from the one-second logger-state poll.
+- Does not change telemetry values, tire physics or knowledge data.
+
 2026-08-26 - v0.8.1
 - Fixes Analyze Latest Log while the logger still owns the CSV.
 - Uses shared writer/reader handles and trims snapshots to the last complete row.

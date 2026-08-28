@@ -1,0 +1,4 @@
+timestamp_utc,core_temp_c_fl,core_temp_c_fr,core_temp_c_rl,core_temp_c_rr,speed_kmh,lap,distance_traveled_m
+2026-08-28T20:00:00Z,65,66,62,63,120,1,100
+2026-08-28T20:00:00.1Z,67,68,64,65,125,1,104
+2026-08-28T20:00:00.2Z,69,70,66,67,130,1,108
