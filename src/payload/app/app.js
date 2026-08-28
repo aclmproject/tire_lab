@@ -6,6 +6,7 @@ const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 let generatedFiles={};
 let importedPressureReference={};
 let importedTireReference={};
+let lastThermalCalibrations=[];
 
 const BASE_LAT=[1.98,1.88317305,1.7833464,1.68138135,1.5781392,1.47448125,1.3712688,1.26936315,1.1696256,1.07291745,0.9801,0.89203455,0.8095824,0.73360485,0.6649632,0.60451875];
 const BASE_LON=[1.9404,1.846916379,1.753112592,1.659541653,1.566756576,1.475310375,1.385756064,1.298646657,1.214535168,1.133974611,1.057518,0.985718349,0.919128672,0.858301983,0.803791296,0.756149625];
@@ -564,7 +565,8 @@ function tireSection(comp,axle,index){
  const displayName=compoundDisplayName(comp);
  const shortName=compoundShortName(comp);
  const pstatic=pressure(comp,axle);
- const inertia=(width*rad*(isF?15.0:15.5)).toFixed(3);
+ const physicalEstimate=window.ACLMThermalV2?.estimatePhysical({width,radius:rad,rimRadius:rim,construction:v("construction"),treaded:type!=="SLICK",treadDepth:comp==="wet"?.0075:comp==="intermediate"?.0035:undefined});
+ const inertia=(cspV2Enabled()?(physicalEstimate?.angularInertia??width*rad*(isF?15.0:15.5)):width*rad*(isF?15.0:15.5)).toFixed(3);
  const damp=Math.round(prior&&dryCompound(comp)&&Number.isFinite(Number(prior.damp))?Number(prior.damp):rate*0.00155);
  let lines=[
  `[${section}]`,
@@ -622,34 +624,54 @@ function tireSection(comp,axle,index){
  if(comp==="intermediate" && $("wetTread").checked) lines.push("TREAD_DEPTH=0.0035","TREAD_COVER=0.24");
  return lines.join("\n")+"\n";
 }
-function thermalSection(comp,axle,index){
- const d=compDefs[comp], prior=activeFamilyPrior();
- let t=axle==="front"?d.thF:d.thR;
- if(prior&&dryCompound(comp)){
-   t={
-    surf:Number(prior.surfaceTransfer),patch:Number(prior.patchTransfer),core:Number(prior.coreTransfer),
-    internal:Number(prior.internalCoreTransfer),fric:Number(prior.frictionK),roll:Number(prior.rollingK),
-    cool:Number(prior.cool),sroll:Number(prior.rollingK)*5.8
-   };
- }
- t=applyLoadDutyThermal(t,axle);
- const suffix=index===0?"":"_"+index, sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+suffix;
- const dutyNote="; ACLM load-duty reconstruction: "+t.duty.key+"; "+t.duty.intensity.toFixed(2)+" N/mm; cooling x"+t.duty.cool.toFixed(3)+"; friction heat x"+t.duty.friction.toFixed(3);
- return dutyNote+"\n"+`[${sec}]
-SURFACE_TRANSFER=${t.surf.toFixed(6)}
-PATCH_TRANSFER=${t.patch.toFixed(6)}
-CORE_TRANSFER=${t.core.toFixed(6)}
-INTERNAL_CORE_TRANSFER=${t.internal.toFixed(6)}
-FRICTION_K=${t.fric.toFixed(5)}
-ROLLING_K=${t.roll.toFixed(5)}
-PERFORMANCE_CURVE=aclm_${comp}_tcurve.lut
-GRAIN_GAMMA=1.000
-GRAIN_GAIN=${comp==="soft"?.50:.35}
-BLISTER_GAMMA=1.000
-BLISTER_GAIN=${comp==="soft"?.50:.35}
-COOL_FACTOR=${t.cool.toFixed(3)}
-SURFACE_ROLLING_K=${t.sroll.toFixed(4)}
-`;
+function cspV2Enabled(){return v("physicsMode")==="csp-v2";}
+function vanillaThermalSection(comp,axle,index){
+ const d=compDefs[comp],prior=activeFamilyPrior();let t=axle==="front"?d.thF:d.thR;
+ if(prior&&dryCompound(comp))t={surf:Number(prior.surfaceTransfer),patch:Number(prior.patchTransfer),core:Number(prior.coreTransfer),internal:Number(prior.internalCoreTransfer),fric:Number(prior.frictionK),roll:Number(prior.rollingK),cool:Number(prior.cool),sroll:Number(prior.rollingK)*5.8};
+ t=applyLoadDutyThermal(t,axle);const sec="THERMAL_"+(axle==="front"?"FRONT":"REAR")+(index===0?"":"_"+index);
+ return `; ACLM v0.8.2-compatible vanilla load-duty reconstruction: ${t.duty.key}; ${t.duty.intensity.toFixed(2)} N/mm\n[${sec}]\nSURFACE_TRANSFER=${t.surf.toFixed(6)}\nPATCH_TRANSFER=${t.patch.toFixed(6)}\nCORE_TRANSFER=${t.core.toFixed(6)}\nINTERNAL_CORE_TRANSFER=${t.internal.toFixed(6)}\nFRICTION_K=${t.fric.toFixed(5)}\nROLLING_K=${t.roll.toFixed(5)}\nPERFORMANCE_CURVE=aclm_${comp}_tcurve.lut\nGRAIN_GAMMA=1.000\nGRAIN_GAIN=${comp==="soft"?.50:.35}\nBLISTER_GAMMA=1.000\nBLISTER_GAIN=${comp==="soft"?.50:.35}\nCOOL_FACTOR=${t.cool.toFixed(3)}\nSURFACE_ROLLING_K=${t.sroll.toFixed(4)}\n`;
+}
+function expectedSpeedKph(){
+ const text=(v("series")+" "+v("car")).toLowerCase(),year=n("year")||1985;
+ if(/formula|grand prix|\bf1\b|group c|gt1|le mans|prototype/.test(text))return year<1970?205:year<1990?255:285;
+ if(/touring|saloon|group a|dtm|btcc/.test(text))return year<1970?155:205;
+ if(/rally/.test(text))return 125;
+ return year<1960?145:year<1985?185:225;
+}
+function importedDutyContext(){
+ let traction="unknown",frontDisc=NaN,rearDisc=NaN;
+ const drive=fileByBase(importedPhysics||{},"drivetrain.ini");
+ if(drive){const ini=parseIniText(drive.text);traction=String(ini.TRACTION?.TYPE||ini.DRIVETRAIN?.TRACTION_TYPE||ini.DRIVETRAIN?.TYPE||"unknown").toLowerCase();}
+ const brakes=fileByBase(importedPhysics||{},"brakes.ini");
+ if(brakes){const ini=parseIniText(brakes.text);frontDisc=numIni(ini.FRONT,"DISC_RADIUS");rearDisc=numIni(ini.REAR,"DISC_RADIUS");}
+ const fw=clamp(n("frontWeight")/100,.2,.8),frontBrakeDefault=clamp(fw+.14,.52,.80);
+ const discTotal=Number.isFinite(frontDisc)&&Number.isFinite(rearDisc)?frontDisc*frontDisc+rearDisc*rearDisc:NaN;
+ const frontBrake=Number.isFinite(discTotal)&&discTotal>0?clamp(frontDisc*frontDisc/discTotal,.35,.85):frontBrakeDefault;
+ return {traction,drivenFront:/fwd|awd|four/.test(traction)?1:/rwd/.test(traction)?0:.5,drivenRear:/rwd|awd|four/.test(traction)?1:/fwd/.test(traction)?0:.5,frontBrake,rearBrake:1-frontBrake,source:drive?drive.path:"class/neutral drivetrain prior"};
+}
+function thermalInput(comp,axle){
+ const front=axle==="front",d=compDefs[comp],prior=activeFamilyPrior(),duty=importedDutyContext();
+ const width=n(front?"fw":"rw"),radius=n(front?"fr":"rr"),rimRadius=n(front?"frr":"rrr"),rate=n(front?"rateF":"rateR");
+ const expectedLoad=n("mass")*9.80665*(front?n("frontWeight")/100:1-n("frontWeight")/100)/2;
+ const rr0=prior&&dryCompound(comp)&&Number.isFinite(Number(prior.rr0))?Number(prior.rr0):(comp==="wet"?14:12);
+ const rr1=prior&&dryCompound(comp)&&Number.isFinite(Number(prior.rr1))?Number(prior.rr1):(front?.00074:.00080);
+ const family=activeHistoricalContext?.familyName||"manual / unresolved",className=activeHistoricalContext?.className||v("series")||GENERAL_UNKNOWN;
+ const carcassMaterial=/nylon/i.test(family)?"nylon":/rayon/i.test(family)?"rayon":/aramid|kevlar/i.test(family)?"aramid":/steel/i.test(family)?"steel":"unknown";
+ return {familyId:activeHistoricalContext?.familyId||null,classCalibrationId:activeHistoricalContext?.classId||null,family,className,compound:comp,axle,
+  width,radius,rimRadius,rate,sidewallStiffness:d.side,fz0:fz0(axle),expectedLoad,vehicleMass:n("mass"),frontWeight:n("frontWeight"),
+  drivenDuty:front?duty.drivenFront:duty.drivenRear,brakeExposure:front?duty.frontBrake:duty.rearBrake,drivetrainSource:duty.source,
+  speedKph:expectedSpeedKph(),speedRangeKph:[0,expectedSpeedKph()],rollingResistance0:rr0,rollingResistance1:rr1,construction:v("construction"),carcassMaterial,beltConstruction:v("construction")==="radial"?"radial belt reconstruction prior":"bias-ply reconstruction prior",
+  treaded:compoundTypeHint(comp)!=="SLICK",treadDepth:comp==="wet"?.0075:comp==="intermediate"?.0035:undefined,
+  pressurePsi:pressure(comp,axle),idealHotPressurePsi:n("pIdeal"),optimumTemperatureC:targetTempForCompound(comp),era:n("year")||null,
+  supplier:v("supplier"),confidence:reportConfidenceScore()/100,evidenceConfidence:reportConfidenceScore(),
+  evidenceBasis:prior?"historical family generator prior + physical reconstruction":"class/manual physical reconstruction prior"};
+}
+function thermalSections(comp,axle,index){
+ if(!window.ACLMThermalV2)throw new Error("CSP Thermal V2 calculator is unavailable.");
+ const result=window.ACLMThermalV2.calculate(thermalInput(comp,axle));
+ lastThermalCalibrations.push({compound:comp,axle,index,...result});
+ const curve=`aclm_${comp}_tcurve.lut`;
+ return window.ACLMThermalV2.renderLegacy(result,comp,axle,index,curve)+(cspV2Enabled()?"\n"+window.ACLMThermalV2.renderV2(result,axle,index):"");
 }
 
 function provenanceLabel(id){
@@ -718,7 +740,8 @@ function buildHistoricalReportData(comps){
    "Green Tire Lab fields are direct values from the imported AC package. These document the mod state, not necessarily historical truth.",
    "Amber fields are historical research/inference and are retained as reviewable evidence rather than hidden assumptions.",
    "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values.",
-    "Load-duty thermal scaling uses FZ0 per tread width for each axle. It is a transparent simulation reconstruction prior, not confidential supplier data."
+    "Thermal V2 coefficients are physical reconstruction priors derived from geometry, load, rate, rolling resistance, construction, pressure, drivetrain/brake duty and class evidence; they are not confidential supplier data.",
+    "CSP parameter meanings and obsolete-key handling follow the official CSP Tyre Thermal Models V1/V2 documentation."
  ];
  const limitations=[
    "A generated AC tire can be structurally valid while exact supplier proprietary coefficients remain unavailable.",
@@ -757,11 +780,14 @@ function buildHistoricalReportData(comps){
      {label:"Medium generated cold pressure",value:`${pressure("medium","front").toFixed(1)} psi front / ${pressure("medium","rear").toFixed(1)} psi rear`},
      {label:"Imported AC cold-pressure reference",value:importedPressureSummary()||"None / not imported"},
      {label:"Blanket temperature",value:`${n("blankets").toFixed(0)} deg C`},
-     {label:"Thermal implementation",value:$("legacyThermal").checked?"Legacy AC thermal model":"Thermal sections omitted"},
-     {label:"Physics output",value:$("extended").checked?"AC v10 tire model with CSP extended-2 car context":"AC v10 tire model"},
+     {label:"Thermal implementation",value:cspV2Enabled()?"CSP Thermal Model V2 + required Kunos thermal sections":"Vanilla AC Kunos thermal model"},
+     {label:"Physics output",value:cspV2Enabled()?"CSP Extended Physics – Thermal V2":"Vanilla AC"},
+     {label:"Car physics requirement",value:cspV2Enabled()?"car.ini [HEADER] VERSION=extended-2":"Standard car.ini"},
+     {label:"Extended contact rays",value:cspV2Enabled()?"2 lateral / 4 longitudinal per side, 60 deg":"Disabled"},
      {label:"Knowledge release",value:`v${window.ACLMHistoricalCategories?.knowledgeInfo?.().version||"?"} / schema ${window.ACLMHistoricalCategories?.knowledgeInfo?.().schemaVersion||"?"}`},
      {label:"Historical family physics",value:activeFamilyPrior()?`${activeHistoricalContext?.familyId}: family-specific grip/load/transient/thermal priors active`:"No family Generator_Prior active"},
-     {label:"Imported old tire reference",value:`RATE ${importedTireReference.rateF??"-"} F / ${importedTireReference.rateR??"-"} R N/m; ideal pressure ${importedTireReference.idealPressure??"-"} psi (reference only)`}
+     {label:"Imported old tire reference",value:`RATE ${importedTireReference.rateF??"-"} F / ${importedTireReference.rateR??"-"} R N/m; ideal pressure ${importedTireReference.idealPressure??"-"} psi (reference only)`},
+     ...lastThermalCalibrations.map(x=>({label:`${compoundDisplayName(x.compound)} ${x.axle} Thermal V2 reconstruction`,value:`mass ${x.estimates.estimatedMass.toFixed(2)} kg; volume ${(x.estimates.internalVolume*1000).toFixed(2)} L; FRICTION_K ${x.legacy.frictionK.toFixed(6)}; CARCASS_ROLLING_K ${x.v2.carcassRollingK.toFixed(6)}; SURFACE_TO_AMBIENT ${x.v2.surfaceToAmbient.toFixed(6)}; confidence ${x.inputs.evidenceConfidence}%`}))
    ],
    findings:reportFindings(),
    wear:[
@@ -821,6 +847,18 @@ function build(){
  if(!comps.length) throw new Error("Select at least one compound.");
  // Keep Medium as default when available, otherwise first available.
  const defaultIdx=Math.max(0,comps.indexOf("medium"));
+ lastThermalCalibrations=[];
+ const thermalHeader=cspV2Enabled()?`[THERMAL_MODEL]
+VERSION=2
+
+[_EXTENSION]
+LATERAL_RAYS=${window.ACLMThermalV2.RAYS.lateral}
+LONGITUDINAL_RAYS=${window.ACLMThermalV2.RAYS.longitudinal}
+MAX_RAY_ANGLE=${window.ACLMThermalV2.RAYS.maxAngle}
+DISABLE_RAY_DOUBLING=${window.ACLMThermalV2.RAYS.disableDoubling}
+SMOOTH_LOAD_SENS=${window.ACLMThermalV2.RAYS.smoothLoadSensitivity}
+
+`:"";
  let ini=`; ================================================================
 ; ACLM PROJECT - HISTORICAL RACE TIRE MODEL
 ; Generated by ACLM Historical Tire Lab v${ACLM_APP_VERSION}
@@ -828,13 +866,15 @@ function build(){
 ; Historical tire category: ${activeHistoricalContext?`${activeHistoricalContext.familyId} - ${activeHistoricalContext.familyName}`:"manual / unresolved"}
 ; Class calibration: ${activeHistoricalContext?.classId?`${activeHistoricalContext.classId} - ${activeHistoricalContext.className}`:"none"}
 ; Complete AC v10 output: required legacy keys + v10 load curves + camber LUTs + thermal/wear LUTs.
-; Physics output: ${$("extended").checked?"CSP Extended Physics (extended-2)":"AC v10"}
+; Physics output: ${cspV2Enabled()?"CSP Extended Physics - Thermal V2":"Vanilla AC"}
+; Car physics requirement: ${cspV2Enabled()?"car.ini [HEADER] VERSION=extended-2":"standard car.ini"}
+; Tyre thermal model: ${cspV2Enabled()?"[THERMAL_MODEL] VERSION=2":"Kunos legacy"}
 ; Historical values remain evidence-weighted reconstruction unless directly documented.
 ; ================================================================
 [HEADER]
 VERSION=10
 
-[COMPOUND_DEFAULT]
+${thermalHeader}[COMPOUND_DEFAULT]
 INDEX=${defaultIdx}
 
 [VIRTUALKM]
@@ -843,17 +883,10 @@ USE_LOAD=1
 [EXPLOSION]
 TEMPERATURE=400
 
-[_EXTENSION]
-LATERAL_RAYS=1
-LONGITUDINAL_RAYS=2
-MAX_RAY_ANGLE=40
-DISABLE_RAY_DOUBLING=0
-SMOOTH_LOAD_SENS=1
-
 [ADDITIONAL1]
 BLANKETS_TEMP=${Math.round(n("blankets"))}
 PRESSURE_TEMPERATURE_GAIN=${n("pTempGain").toFixed(3)}
-CAMBER_TEMP_SPREAD_K=1.4
+CAMBER_TEMP_SPREAD_K=${cspV2Enabled()?window.ACLMThermalV2.RAYS.camberTemperatureSpread.toFixed(1):"1.4"}
 
 `;
  const files={};
@@ -861,12 +894,21 @@ CAMBER_TEMP_SPREAD_K=1.4
  files["camber_table_rear.lut"]=camberLut("rear",v("construction"));
  comps.forEach((c,i)=>{
    ini+=tireSection(c,"front",i)+"\n"+tireSection(c,"rear",i)+"\n";
-   if($("legacyThermal").checked) ini+=thermalSection(c,"front",i)+"\n"+thermalSection(c,"rear",i)+"\n";
+   ini+=(cspV2Enabled()?thermalSections(c,"front",i):vanillaThermalSection(c,"front",i))+"\n"+(cspV2Enabled()?thermalSections(c,"rear",i):vanillaThermalSection(c,"rear",i))+"\n";
    files[`aclm_${c}_front_wear.lut`]=wearText(c+"F");
    files[`aclm_${c}_rear_wear.lut`]=wearText(c+"R");
    files[`aclm_${c}_tcurve.lut`]=performanceCurveText(c);
  });
  files["tyres.ini"]=ini;
+ const importedCar=fileByBase(importedPhysics||{},"car.ini");
+ let carValidation={available:false,pass:false,version:null,action:"tire-only warning"};
+ if(cspV2Enabled()&&importedCar){
+   files["car.ini"]=window.ACLMThermalV2.updateCarIni(importedCar.text);
+   carValidation={...window.ACLMThermalV2.validateCarIni(files["car.ini"]),action:"preserved imported car.ini; changed only [HEADER] VERSION"};
+ }else if(cspV2Enabled()){
+   files["CSP_THERMAL_V2_CAR_REQUIREMENT.txt"]="CSP Thermal V2 tire generated. Car must use [HEADER] VERSION=extended-2 in car.ini.\n";
+ }
+ files["ACLM_THERMAL_V2_CALIBRATION.json"]=JSON.stringify({schema:"ACLM CSP Thermal V2 calibration manifest 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,physicsMode:cspV2Enabled()?"CSP Extended Physics - Thermal V2":"Vanilla AC",car:v("car"),year:n("year")||null,series:v("series"),supplier:v("supplier"),carIni:carValidation,rays:cspV2Enabled()?window.ACLMThermalV2.RAYS:null,cspDocumentation:["https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Thermal-Models","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Physics","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Enabling-extended-physics"],calibrations:lastThermalCalibrations},null,2)+"\n";
  files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"]=loadCompoundChecklistText(comps);
  files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v${ACLM_APP_VERSION}
 Car: ${v("car")}
@@ -880,8 +922,10 @@ FZ0 front/rear: ${fz0("front")} / ${fz0("rear")} N
 Load-duty thermal reconstruction: ${loadDutySummary()}
 Load/compound checklist: ACLM_LOAD_COMPOUND_CHECKLIST.txt
 AC tire format: VERSION=10
-CSP: ${$("extended").checked?"car.ini should use VERSION=extended-2":"not required by this export"}
-Thermal: ${$("legacyThermal").checked?"legacy AC thermal model":"thermal sections omitted"}
+CSP: ${cspV2Enabled()?"car.ini must use VERSION=extended-2":"not required by this export"}
+Thermal: ${cspV2Enabled()?"CSP Thermal Model V2 plus required Kunos THERMAL sections":"vanilla Kunos thermal model"}
+Extended contact rays: ${cspV2Enabled()?"2 lateral / 4 longitudinal per side, 60 degrees":"disabled"}
+Calibration manifest: ACLM_THERMAL_V2_CALIBRATION.json
 Pressure generation: ${$("autoSolvePressure")?.checked?`auto-solved from ${n("pRefTemp").toFixed(1)} C reference to compound peak thermal temperatures`:"manual cold pressures"}
 Imported AC cold-pressure reference: ${importedPressureSummary() || "none"}
 Medium generated cold pressure F/R: ${pressure("medium","front").toFixed(1)} / ${pressure("medium","rear").toFixed(1)} psi
@@ -922,6 +966,16 @@ function validate(files){
  }
  if(!sec.VIRTUALKM || sec.VIRTUALKM.USE_LOAD!=="1") errors.push("Missing [VIRTUALKM] USE_LOAD=1.");
  if(!sec.ADDITIONAL1) errors.push("Missing [ADDITIONAL1].");
+ const sectionHeaders=[...ini.matchAll(/^\[([^\]]+)\]/gm)].map(m=>m[1]);
+ if(new Set(sectionHeaders).size!==sectionHeaders.length)errors.push("tyres.ini contains duplicate INI section names.");
+ if(/(?:^|=)\s*(?:NaN|undefined|null)\s*$/im.test(ini))errors.push("tyres.ini contains a non-finite or missing INI value.");
+ if(cspV2Enabled()){
+   if(sec.THERMAL_MODEL?.VERSION!=="2")errors.push("CSP V2 output requires [THERMAL_MODEL] VERSION=2.");
+   const ray=window.ACLMThermalV2.RAYS,ext=sec._EXTENSION||{};
+   if(ext.LATERAL_RAYS!==String(ray.lateral)||ext.LONGITUDINAL_RAYS!==String(ray.longitudinal)||ext.MAX_RAY_ANGLE!==String(ray.maxAngle))errors.push("CSP V2 extended contact-ray settings are missing or invalid.");
+ }else{
+   if(sec.THERMAL_MODEL||Object.keys(sec).some(k=>/^THERMAL2_/.test(k)))errors.push("Vanilla AC output must not enable CSP Thermal Model V2.");
+ }
  const fronts=Object.keys(sec).filter(x=>/^FRONT(_\d+)?$/.test(x)).sort((a,b)=>(Number(a.split("_")[1]||0)-Number(b.split("_")[1]||0)));
  const rears=Object.keys(sec).filter(x=>/^REAR(_\d+)?$/.test(x));
  const required=["NAME","SHORT_NAME","TYPE_HINT","WIDTH","RADIUS","RIM_RADIUS","RATE","DY_CURVE","DX_CURVE","DY0","DY1","DX0","DX1","WEAR_CURVE","RELAXATION_LENGTH","FLEX","CAMBER_GAIN","DCAMBER_LUT","PRESSURE_STATIC","PRESSURE_IDEAL","FZ0","LS_EXPY","LS_EXPX","DY_REF","DX_REF","FLEX_GAIN","FALLOFF_LEVEL","CX_MULT","RADIUS_ANGULAR_K","BRAKE_DX_MOD","COMBINED_FACTOR"];
@@ -937,13 +991,26 @@ function validate(files){
      ["WEAR_CURVE","DCAMBER_LUT"].forEach(k=>{const fn=sec[s][k];if(fn && !(fn in files)) errors.push(`[${s}] references missing ${fn}.`)});
    });
    const tf=i===0?"THERMAL_FRONT":"THERMAL_FRONT_"+i, tr=i===0?"THERMAL_REAR":"THERMAL_REAR_"+i;
-   if($("legacyThermal").checked){
-     [tf,tr].forEach(t=>{
-       if(!sec[t]) errors.push(`Missing [${t}].`);
-       else if(!(sec[t].PERFORMANCE_CURVE in files)) errors.push(`[${t}] references missing ${sec[t].PERFORMANCE_CURVE}.`);
-     });
+   [tf,tr].forEach(t=>{
+     if(!sec[t]) errors.push(`Missing [${t}].`);
+     else {
+       if(!(sec[t].PERFORMANCE_CURVE in files)) errors.push(`[${t}] references missing ${sec[t].PERFORMANCE_CURVE}.`);
+       ["CORE_TRANSFER","INTERNAL_CORE_TRANSFER","ROLLING_K"].forEach(k=>{if(cspV2Enabled()&&Number(sec[t][k])!==0)errors.push(`[${t}] obsolete Thermal V1/V2 control ${k} must be zero.`);});
+     }
+   });
+   if(cspV2Enabled()){
+     const vf=i===0?"THERMAL2_FRONT":"THERMAL2_FRONT_"+i,vr=i===0?"THERMAL2_REAR":"THERMAL2_REAR_"+i;
+     const v2Required=["CARCASS_ROLLING_K","BRAKE_TO_CORE","SURFACE_TO_AMBIENT","SURFACE_TO_CARCASS","CARCASS_TO_SURFACE","CARCASS_TO_CORE","CORE_TO_CARCASS","CORE_TO_AMBIENT"];
+     [vf,vr].forEach(t=>{if(!sec[t])errors.push(`Missing [${t}].`);else v2Required.forEach(k=>{if(!(k in sec[t])||!Number.isFinite(Number(sec[t][k])))errors.push(`[${t}] missing/invalid ${k}.`);});});
    }
  });
+ if(!files["ACLM_THERMAL_V2_CALIBRATION.json"])errors.push("Thermal calibration manifest is missing.");
+ else {try{const m=JSON.parse(files["ACLM_THERMAL_V2_CALIBRATION.json"]);if(cspV2Enabled()&&(!Array.isArray(m.calibrations)||m.calibrations.length!==fronts.length*2))errors.push("Thermal calibration manifest does not cover every axle/compound.");}catch(e){errors.push("Thermal calibration manifest is malformed JSON.");}}
+ if(cspV2Enabled()){
+   if(files["car.ini"]){const cv=window.ACLMThermalV2.validateCarIni(files["car.ini"]);if(!cv.pass)errors.push("Imported car.ini was not safely updated to [HEADER] VERSION=extended-2.");else info.push("PASS: imported car.ini preserved and extended-2 requirement validated.");}
+   else if(!files["CSP_THERMAL_V2_CAR_REQUIREMENT.txt"])errors.push("Tire-only CSP V2 export is missing its car.ini extended-2 warning.");
+   else warnings.push("CSP Thermal V2 tire generated. Car must use [HEADER] VERSION=extended-2 in car.ini.");
+ }
  if(!files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"])errors.push("Load/compound suitability checklist is missing.");
  const generatedNames=fronts.map(s=>sec[s]?.NAME).filter(Boolean),generatedShorts=fronts.map(s=>sec[s]?.SHORT_NAME).filter(Boolean);
  if(new Set(generatedNames.map(x=>x.toLowerCase())).size!==generatedNames.length)errors.push("Compound full names must be unique.");
@@ -1382,7 +1449,7 @@ function populateFromPhysics(files,label='import'){
      if(screen){const carName=normalizeCarName(screen);$('car').value=carName;markImported('car',`${car.path} [INFO]`);populated++;rows.push(importedRow('Car',carName,`${car.path} [INFO]`));}
    }
    const mass=numIni(c.BASIC,'TOTALMASS') ?? numIni(c.BASIC,'MASS'); if(mass!==null){setImported('mass',mass,car.path,0);populated++;rows.push(importedRow('Mass',`${mass} kg`,car.path));}
-   const hv=c.HEADER?.VERSION; if(hv){$('extended').checked=String(hv).toLowerCase().includes('extended'); rows.push(importedRow('car.ini physics version',hv,car.path));}
+   const hv=c.HEADER?.VERSION; if(hv){$('physicsMode').value=String(hv).toLowerCase()==='extended-2'?'csp-v2':'vanilla'; rows.push(importedRow('car.ini physics version',hv,car.path));}
  }
  // suspensions.ini
  const sus=fileByBase(files,'suspensions.ini');
@@ -1500,6 +1567,11 @@ $("autoSolvePressure").addEventListener("change",()=>{
  refreshSolvedPressures();
  try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
 });
+$("physicsMode").addEventListener("change",()=>{
+ const enabled=cspV2Enabled();
+ $("physicsModeSummary").innerHTML=enabled?'<b>Car physics requirement:</b> car.ini VERSION=extended-2 · <b>Tyre thermal model:</b> THERMAL_MODEL VERSION=2 · <b>Extended contact rays:</b> enabled.':'<b>Physics:</b> Vanilla AC · <b>Tyre thermal model:</b> required Kunos THERMAL sections · <b>Extended contact rays:</b> disabled.';
+ try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
+});
 refreshSolvedPressures();
 
 $("graphCompound").addEventListener("change",renderTireGraphs);
@@ -1507,7 +1579,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.8.2";
+const ACLM_APP_VERSION="0.9.0";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 

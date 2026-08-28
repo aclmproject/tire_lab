@@ -1,8 +1,8 @@
           @echo off
 setlocal
 set "ROOT=%~dp0"
-set "EXPECTED_VERSION=0.8.2"
-set "URL=http://127.0.0.1:48765/?build=0.8.2"
+set "EXPECTED_VERSION=0.9.0"
+set "URL=http://127.0.0.1:48765/?build=0.9.0"
 
 powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "try { $h=Invoke-RestMethod -Uri 'http://127.0.0.1:48765/api/health' -TimeoutSec 2; if ($h.product -eq 'ACLM Historical Tire Lab' -and $h.server_version -eq '%EXPECTED_VERSION%') { exit 0 } } catch {}; exit 1" >nul 2>&1
 if errorlevel 1 (

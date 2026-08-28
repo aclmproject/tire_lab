@@ -11,8 +11,8 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.8.2 Browser App + AC import</span></h1>
-  <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP extended-2 tire-pack generation + built out of spite.</div>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.9.0 Browser App + AC import</span></h1>
+  <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP Thermal V2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
     <a class="header-link" href="#about-methodology">About &amp; methodology</a>
@@ -157,12 +157,12 @@ Generated cold pressures are solved from absolute pressure (ideal-gas relation) 
 
 <div class="card">
 <h2>5. AC/CSP output rules</h2>
-<div class="checkrow">
-<label><input id="extended" type="checkbox" checked>extended-2 metadata</label>
-<label><input id="legacyThermal" type="checkbox" checked>Legacy thermal model</label>
-<label><input id="wetTread" type="checkbox" checked>Wet tread-depth fields</label>
+<div class="grid">
+ <div><label>Physics</label><select id="physicsMode"><option value="vanilla">Vanilla AC</option><option value="csp-v2" selected>CSP Extended Physics – Thermal V2</option></select></div>
+ <div><label class="checkrow"><input id="wetTread" type="checkbox" checked>Wet tread-depth fields</label></div>
 </div>
-<div class="notice small">Legacy thermal is the default here. The generator will not silently enable CSP Thermal Model v2. This keeps the current Supra validation path intact.</div>
+<div id="physicsModeSummary" class="notice small"><b>Car physics requirement:</b> car.ini VERSION=extended-2 · <b>Tyre thermal model:</b> THERMAL_MODEL VERSION=2 · <b>Extended contact rays:</b> enabled.</div>
+<details><summary>Advanced / calibration architecture</summary><div class="notice small">Thermal V2 keeps the required Kunos THERMAL sections, adds matching THERMAL2 sections for every compound, and exports a machine-readable calibration manifest. Obsolete V1/V2 controls are emitted as zero.</div></details>
 <div class="grid" style="margin:10px 0">
  <div><label>Wear calibration status</label><select id="wearStatus"><option value="provisional">Provisional / evidence-weighted</option><option value="imported">Preserve imported AC behavior as reference</option><option value="historical">Historically calibrated from stint evidence</option></select></div>
  <div><label>Calibration note</label><input id="wearNote" value="Wear curve remains provisional until period stint/degradation evidence is mapped to virtual km."></div>
@@ -231,7 +231,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.8.2</b></div></div>
+ <div><label>Installed build</label><div><b id="installedBuild">v0.9.0</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">
@@ -292,6 +292,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <script src="export_naming.js"></script>
 <script src="pressure_solver.js"></script>
 <script src="pdf_report.js"></script>
+<script src="thermal_v2.js"></script>
 <script src="app.js"></script>
 <script src="validation_core.js"></script>
 <script src="validation_workspace.js"></script>

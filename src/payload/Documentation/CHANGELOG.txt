@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-28 - v0.9.0
+- Implements real CSP Tyre Thermal Model V2 output: THERMAL_MODEL VERSION=2, required Kunos THERMAL sections and matching THERMAL2 sections for every compound.
+- Replaces universal thermal constants with deterministic geometry/load/construction/rolling-resistance/drivetrain/brake/pressure heat-pathway reconstruction priors.
+- Sets obsolete V1/V2 CORE_TRANSFER, INTERNAL_CORE_TRANSFER and ROLLING_K controls to zero.
+- Adds preserved car.ini extended-2 updating/validation, tire-only warnings, canonical extended rays and a machine-readable calibration manifest.
+- Adds BRM, cross-era, compound-suffix, LUT, car.ini-preservation, determinism and personal-path regression tests. Wear architecture is unchanged.
+
 2026-08-28 - v0.8.2
 - Makes latest-log analysis visibly open the telemetry panel and report progress, success or failure.
 - Adds an explicit Import & analyze selected CSV control and reports when no file is selected.
