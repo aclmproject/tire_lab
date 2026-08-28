@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.8.2",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.8.2.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.8.2",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.8.2/ACLM_Tire_Lab_Setup_v0.8.2.zip",
-  "sha256": "0f3d6fded90e8e93dcf933b1eed66464c5ba28ecd855fbf9460bbdcde64da4cf",
-  "published_utc": "2026-08-28T14:22:57Z",
-  "notes": "Makes telemetry import and analysis visibly responsive, opens the results panel automatically, and keeps action feedback visible while logger status polling continues. No tire physics changed."
+  "version": "0.9.0",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.9.0.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.9.0",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.9.0/ACLM_Tire_Lab_Setup_v0.9.0.zip",
+  "sha256": "bcdd15f56981c4194a21c5d1622bf7e3667f44ce56f2686eb548a647dd8c0eb1",
+  "published_utc": "2026-08-28T20:22:31Z",
+  "notes": "Implements real CSP Thermal Model V2 output with physical heat-pathway reconstruction, matching THERMAL2 sections, car.ini extended-2 validation and calibration manifests. Vanilla and wear paths are preserved."
 }
