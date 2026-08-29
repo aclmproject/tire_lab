@@ -1,0 +1,44 @@
+{
+  "fixtureId": "ESCORT-RS1600-BRANDS-PRESSURE-AB-001",
+  "status": "baseline finding accepted; corrected B telemetry pending",
+  "car": "Ford Escort RS1600 Group 2",
+  "track": "Brands Hatch GP",
+  "tireFamilyId": "FAM023",
+  "classId": "CLS022",
+  "tire": "fresh v0.9.1 CSP Thermal V2 period reconstruction",
+  "tirePackIdentityRule": "record the same tire-pack ID or hash for A and B before the application permits a calibration decision",
+  "generatorValuesUntouched": true,
+  "baseline": {
+    "role": "A — untouched generated pressure",
+    "pressureErrorDefinition": "stabilized pressure - PRESSURE_IDEAL",
+    "approximateHotPressureErrorPsi": { "fl": -2, "fr": -3, "rl": -2, "rr": -3 },
+    "closureClassification": { "fl": "FAIL / pressure model mismatch", "fr": "FAIL / pressure model mismatch", "rl": "FAIL / pressure model mismatch", "rr": "FAIL / pressure model mismatch" },
+    "subjectiveFinding": "excessive tire/carcass compliance; car nearly rolled or tripped over the outside tires",
+    "safetyFlag": "GENERATED BASELINE UNSAFE FOR CONTINUED HIGH-SPEED VALIDATION"
+  },
+  "correctedTest": {
+    "role": "B — same generated tire; cold pressure only",
+    "coldPressureAdjustmentPsi": { "fl": 2, "fr": 3, "rl": 2, "rr": 3 },
+    "permanentGeneratorValues": false,
+    "compareTelemetry": ["stabilized pressure", "core temperature", "tread inner/middle/outer temperature", "tire load", "slip angle when a verified source provides it", "wheel slip", "lateral acceleration", "steering response", "tire-health wear signal"],
+    "subjectiveFeedback": ["carcass flex", "delayed steering response", "outside-tire rollover/tripping sensation", "stability during direction change"]
+  },
+  "closureThresholdsPsi": {
+    "GOOD": "absolute error <= 0.5",
+    "REVIEW": "absolute error > 0.5 and <= 1.5",
+    "FAIL / pressure model mismatch": "absolute error > 1.5"
+  },
+  "coupledComplianceAudit": ["RATE", "FLEX", "FLEX_GAIN", "PRESSURE_STATIC", "PRESSURE_IDEAL", "PRESSURE_SPRING_GAIN", "PRESSURE_FLEX_GAIN", "PRESSURE_D_GAIN"],
+  "decisionLogic": {
+    "ifCorrectedPressureFixesCompliance": "primary bug is cold-pressure prediction / pressure-rise calculation; revise PRESSURE_STATIC generation without unnecessary carcass changes",
+    "ifCorrectedPressureDoesNotFixCompliance": "investigate RATE, FLEX/FLEX_GAIN, pressure gains, sidewall stiffness and bias-ply construction priors",
+    "prohibited": "do not raise pressure arbitrarily above historical evidence"
+  },
+  "telemetryLimitation": "standard Assetto Corsa shared memory exposes wheelSlip but no dedicated per-wheel slip-angle array; compare slip angle only when another verified telemetry source provides it",
+  "decisions": {
+    "globalGeneratorRetune": "hold",
+    "historicalFamilyRetune": "hold",
+    "pressureStaticRetune": "hold pending corrected B telemetry",
+    "complianceRetune": "hold pending corrected B telemetry"
+  }
+}

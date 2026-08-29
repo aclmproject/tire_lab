@@ -1,6 +1,15 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-28 - v0.9.2
+- Adds per-wheel pressure closure: hot error is stabilized pressure minus PRESSURE_IDEAL; up to 0.5 psi is GOOD, 0.5-1.5 psi is REVIEW and above 1.5 psi is FAIL.
+- Records the Escort Brands Hatch baseline as approximately -2 psi left / -3 psi right and FAIL, with excessive compliance and near rollover/tripping retained as subjective evidence.
+- Adds the same-tire pressure-corrected A/B workflow with temporary +2 psi left / +3 psi right cold corrections and cold-pressure-only enforcement in the decision record.
+- Flags severe baseline rollover/tripping as GENERATED BASELINE UNSAFE FOR CONTINUED HIGH-SPEED VALIDATION.
+- Audits RATE, FLEX, FLEX_GAIN, PRESSURE_STATIC, PRESSURE_IDEAL and all three pressure gains together rather than blaming PRESSURE_STATIC alone.
+- Exports ACLM_PRESSURE_CLOSURE_REPORT.json for every axle/compound with static/ideal pressure, predicted rise/hot pressure, model scope, physical inputs and unresolved calibration factors.
+- Preserves the current first-order pressure solver and all thermal, historical-family, grip, wear and compliance coefficients pending corrected Escort telemetry.
+
 2026-08-28 - v0.9.1
 - Adds the controlled BRM P48 CSP Thermal V2 warm-start/cold-start A/B calibration fixture.
 - Recognizes convergent low cores plus strong surface transients as a coupled heat-transfer/rejection diagnostic, not automatic evidence for increasing FRICTION_K.

@@ -2,6 +2,7 @@
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
 const path=require("node:path");
+const pressure=require(path.join(__dirname,"..","src","payload","app","pressure_solver.js"));
 require(path.join(__dirname,"..","src","payload","app","validation_core.js"));
 const core=globalThis.ACLMValidationCore;
 
@@ -93,4 +94,39 @@ test("Escort validation profile requires a year-correct class match",()=>{
  assert.equal(protocol.aidTireRate,1);
  assert.equal(protocol.warmers,false);
  assert.equal(protocol.decisionGate,"Review this clean 1x dataset before running a 5x accelerated Escort test.");
+});
+
+test("Escort baseline fails per-wheel pressure closure and raises the unsafe stop flag",()=>{
+ const h=["distance_traveled_m","pressure_psi_fl","pressure_psi_fr","pressure_psi_rl","pressure_psi_rr","core_temp_c_fl","core_temp_c_fr","core_temp_c_rl","core_temp_c_rr","temp_middle_c_fl","temp_middle_c_fr","temp_middle_c_rl","temp_middle_c_rr","wheel_load_n_fl","wheel_load_n_fr","wheel_load_n_rl","wheel_load_n_rr","wheel_slip_raw_fl","wheel_slip_raw_fr","wheel_slip_raw_rl","wheel_slip_raw_rr","wear_raw_fl","wear_raw_fr","wear_raw_rl","wear_raw_rr","accg_lat","steering"];
+ const row=(d,p)=>[d,...p,58,56,62,60,61,59,66,64,3100,3000,2800,2700,.08,.09,.14,.13,100,100,100,100,1.05,.31].join(",");
+ const csv=h.join(",")+"\n"+row(0,[25,24,25,24])+"\n"+row(5000,[25,24,25,24])+"\n";
+ const base=core.telemetrySummary(core.parseTelemetry(csv),{idealPressurePsi:27,pressureAB:{role:"baseline",unsafeBaseline:true,subjectiveFeedback:"excessive carcass flex and outside-tire rollover/tripping"}});
+ assert.equal(base.pressureAudit.perWheel.fl.hotPressureErrorPsi,-2);
+ assert.equal(base.pressureAudit.perWheel.fr.hotPressureErrorPsi,-3);
+ assert.equal(base.pressureAudit.overallClosureClassification,"FAIL / pressure model mismatch");
+ assert.equal(base.pressureAudit.safetyFlag,"GENERATED BASELINE UNSAFE FOR CONTINUED HIGH-SPEED VALIDATION");
+ assert.deepEqual(base.pressureAudit.complianceAuditKeys,core.PRESSURE_COMPLIANCE_KEYS);
+});
+
+test("same-tire Escort pressure A/B closes pressure without deciding the generator prematurely",()=>{
+ const h="distance_traveled_m,pressure_psi_fl,pressure_psi_fr,pressure_psi_rl,pressure_psi_rr,core_temp_c_fl,core_temp_c_fr,core_temp_c_rl,core_temp_c_rr,temp_middle_c_fl,temp_middle_c_fr,temp_middle_c_rl,temp_middle_c_rr,wheel_load_n_fl,wheel_load_n_fr,wheel_load_n_rl,wheel_load_n_rr,wheel_slip_raw_fl,wheel_slip_raw_fr,wheel_slip_raw_rl,wheel_slip_raw_rr,wear_raw_fl,wear_raw_fr,wear_raw_rl,wear_raw_rr,accg_lat,steering";
+ const data=p=>h+"\n0,"+p.join(",")+",50,50,55,55,55,55,60,60,3000,3000,2800,2800,.1,.1,.12,.12,100,100,100,100,1,.3\n5000,"+p.join(",")+",52,52,57,57,57,57,62,62,3100,3100,2900,2900,.08,.08,.1,.1,100,100,99.99,99.99,1.1,.28\n";
+ const a=core.telemetrySummary(core.parseTelemetry(data([25,24,25,24])),{idealPressurePsi:27,pressureAB:{role:"baseline",tirePackId:"escort-fam023-pack",coldPressureAdjustmentPsi:{fl:0,fr:0,rl:0,rr:0}}});
+ const b=core.telemetrySummary(core.parseTelemetry(data([27,27,27,27])),{idealPressurePsi:27,pressureAB:{role:"corrected",tirePackId:"escort-fam023-pack",coldPressureAdjustmentPsi:{fl:2,fr:3,rl:2,rr:3}}});
+ const result=core.comparePressureAB(a,b);
+ assert.equal(result.sameTireRequired,true);
+ assert.equal(result.sameTireVerified,true);
+ assert.equal(result.allowedChange,"cold pressure only");
+ assert.equal(result.correctedPressureClosureGood,true);
+ assert.equal(result.perWheel.fr.closureImprovementPsi,3);
+ assert.match(result.decision,/prioritize cold-pressure prediction/);
+});
+
+test("generated pressure report separates static, ideal, rise and predicted hot",()=>{
+ const r=pressure.pressureReport({staticPsi:20,idealPsi:27,referenceColdC:26,targetHotC:80,inputs:{estimatedInternalAirVolumeM3:.025}});
+ assert.equal(r.generatedPressureStaticPsi,20);
+ assert.equal(r.generatedPressureIdealPsi,27);
+ assert.ok(Number.isFinite(r.predictedHotPressureRisePsi));
+ assert.ok(Number.isFinite(r.predictedStabilizedHotPressurePsi));
+ assert.ok(r.pendingCalibrationFactors.includes("internal air volume and dimensional growth"));
 });

@@ -467,6 +467,14 @@ function refreshSolvedPressures(){
    }
  }
 }
+function pressureClosureManifest(compounds){
+ const entries=[];
+ for(const comp of compounds)for(const axle of ["front","rear"]){
+  const front=axle==="front",width=n(front?"fw":"rw"),radius=n(front?"fr":"rr"),rimRadius=n(front?"frr":"rrr"),staticPsi=Number(pressure(comp,axle).toFixed(1)),idealPsi=n("pIdeal"),targetHotC=targetTempForCompound(comp),physical=window.ACLMThermalV2?.estimatePhysical({width,radius,rimRadius,construction:v("construction"),treaded:compoundTypeHint(comp)!=="SLICK",treadDepth:comp==="wet"?.0075:comp==="intermediate"?.0035:undefined});
+  entries.push({compound:comp,axle,...window.ACLMPressure.pressureReport({staticPsi,idealPsi,referenceColdC:n("pRefTemp"),targetHotC,referenceDuty:{familyId:activeHistoricalContext?.familyId||null,classId:activeHistoricalContext?.classId||null,trackDuty:"family reference calibration duty; not every circuit",compound:comp,axle},inputs:{widthM:width,radiusM:radius,rimRadiusM:rimRadius,estimatedInternalAirVolumeM3:physical?.internalVolume??null,vehicleMassKg:n("mass"),axleLoadN:fz0(axle)*2,referenceTireLoadN:fz0(axle),rateNPerM:n(front?"rateF":"rateR"),construction:v("construction"),compound:comp,rollingFlexHeating:"represented in thermal model; not yet closed into pressure-rise prediction",trackDuty:"reference duty only"}})});
+ }
+ return {schema:"ACLM pressure closure report 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,car:v("car"),year:n("year")||null,series:v("series"),generatorChangedFromV091:false,decision:"pressure prediction audit only; wait for the Escort same-tire A/B before changing PRESSURE_STATIC or compliance coefficients",closureThresholdsPsi:{good:"absolute hot error <= 0.5",review:"absolute hot error > 0.5 and <= 1.5",fail:"absolute hot error > 1.5"},entries};
+}
 function fz0(axle){
  const m=n("mass"), fw=n("frontWeight")/100, factor=n("fzFactor");
  const raw=m*9.80665*(axle==="front"?fw:(1-fw))/2*factor;
@@ -909,6 +917,7 @@ CAMBER_TEMP_SPREAD_K=${cspV2Enabled()?window.ACLMThermalV2.RAYS.camberTemperatur
    files["CSP_THERMAL_V2_CAR_REQUIREMENT.txt"]="CSP Thermal V2 tire generated. Car must use [HEADER] VERSION=extended-2 in car.ini.\n";
  }
  files["ACLM_THERMAL_V2_CALIBRATION.json"]=JSON.stringify({schema:"ACLM CSP Thermal V2 calibration manifest 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,physicsMode:cspV2Enabled()?"CSP Extended Physics - Thermal V2":"Vanilla AC",car:v("car"),year:n("year")||null,series:v("series"),supplier:v("supplier"),carIni:carValidation,rays:cspV2Enabled()?window.ACLMThermalV2.RAYS:null,cspDocumentation:["https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Thermal-Models","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Physics","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Enabling-extended-physics"],calibrations:lastThermalCalibrations},null,2)+"\n";
+ files["ACLM_PRESSURE_CLOSURE_REPORT.json"]=JSON.stringify(pressureClosureManifest(comps),null,2)+"\n";
  files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"]=loadCompoundChecklistText(comps);
  files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v${ACLM_APP_VERSION}
 Car: ${v("car")}
@@ -926,6 +935,7 @@ CSP: ${cspV2Enabled()?"car.ini must use VERSION=extended-2":"not required by thi
 Thermal: ${cspV2Enabled()?"CSP Thermal Model V2 plus required Kunos THERMAL sections":"vanilla Kunos thermal model"}
 Extended contact rays: ${cspV2Enabled()?"2 lateral / 4 longitudinal per side, 60 degrees":"disabled"}
 Calibration manifest: ACLM_THERMAL_V2_CALIBRATION.json
+Pressure closure report: ACLM_PRESSURE_CLOSURE_REPORT.json
 Pressure generation: ${$("autoSolvePressure")?.checked?`auto-solved from ${n("pRefTemp").toFixed(1)} C reference to compound peak thermal temperatures`:"manual cold pressures"}
 Imported AC cold-pressure reference: ${importedPressureSummary() || "none"}
 Medium generated cold pressure F/R: ${pressure("medium","front").toFixed(1)} / ${pressure("medium","rear").toFixed(1)} psi
@@ -1012,6 +1022,8 @@ function validate(files){
    else warnings.push("CSP Thermal V2 tire generated. Car must use [HEADER] VERSION=extended-2 in car.ini.");
  }
  if(!files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"])errors.push("Load/compound suitability checklist is missing.");
+ if(!files["ACLM_PRESSURE_CLOSURE_REPORT.json"])errors.push("Pressure closure report is missing.");
+ else {try{const p=JSON.parse(files["ACLM_PRESSURE_CLOSURE_REPORT.json"]);if(!Array.isArray(p.entries)||p.entries.length!==fronts.length*2)errors.push("Pressure closure report does not cover every axle/compound.");}catch(e){errors.push("Pressure closure report is malformed JSON.");}}
  const generatedNames=fronts.map(s=>sec[s]?.NAME).filter(Boolean),generatedShorts=fronts.map(s=>sec[s]?.SHORT_NAME).filter(Boolean);
  if(new Set(generatedNames.map(x=>x.toLowerCase())).size!==generatedNames.length)errors.push("Compound full names must be unique.");
  if(new Set(generatedShorts.map(x=>x.toUpperCase())).size!==generatedShorts.length)errors.push("Compound short codes must be unique.");
@@ -1021,7 +1033,7 @@ function validate(files){
    selectedCompounds().forEach(comp=>{
      const target=targetTempForCompound(comp);
      ["front","rear"].forEach(axle=>{
-       const cold=pressure(comp,axle);
+       const cold=Number(pressure(comp,axle).toFixed(1));
        const predicted=window.ACLMPressure.predictHotPsi(cold,target,n("pRefTemp"));
        if(!Number.isFinite(cold)||cold<=0) errors.push(`${comp} ${axle}: invalid generated cold pressure.`);
        if(Number.isFinite(predicted)){
@@ -1579,7 +1591,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.9.1";
+const ACLM_APP_VERSION="0.9.2";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 
