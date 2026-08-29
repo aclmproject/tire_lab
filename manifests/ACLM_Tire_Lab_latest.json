@@ -1,11 +1,11 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.9.0",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.9.0.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.9.0",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.9.0/ACLM_Tire_Lab_Setup_v0.9.0.zip",
-  "sha256": "bcdd15f56981c4194a21c5d1622bf7e3667f44ce56f2686eb548a647dd8c0eb1",
-  "published_utc": "2026-08-28T20:22:31Z",
-  "notes": "Implements real CSP Thermal Model V2 output with physical heat-pathway reconstruction, matching THERMAL2 sections, car.ini extended-2 validation and calibration manifests. Vanilla and wear paths are preserved."
+  "version": "0.9.1",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.9.1.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.9.1",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.9.1/ACLM_Tire_Lab_Setup_v0.9.1.zip",
+  "sha256": "f34ebbc6336a1ba4971d54d7431e56e36647f594928a1a3d3fa59abe306461f2",
+  "published_utc": "2026-08-29T02:24:35Z",
+  "notes": "Adds the controlled BRM P48 warm/cold A/B fixture and completed 5x incident/abuse wear run, coupled-network diagnostics, authoritative observed-condition storage, round-trip raw wear precision, aidTireRate logging, plateau diagnostics and non-life nominal exposure. Thermal, pressure and wear coefficients are unchanged."
 }
