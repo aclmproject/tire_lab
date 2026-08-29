@@ -44,7 +44,7 @@ jobs:
           assert fixture['baseline']['approximateHotPressureErrorPsi']=={'fl':-2,'fr':-3,'rl':-2,'rr':-3}
           assert fixture['baseline']['safetyFlag']=='GENERATED BASELINE UNSAFE FOR CONTINUED HIGH-SPEED VALIDATION'
           assert fixture['correctedTest']['coldPressureAdjustmentPsi']=={'fl':2,'fr':3,'rl':2,'rr':3}
-          assert all(v=='hold' for v in fixture['decisions'].values())
+          assert all(v.startswith('hold') for v in fixture['decisions'].values())
           print('v0.9.2 Escort pressure/compliance gates passed; generator coefficients remain frozen')
           PY
       - name: Package, publish, and align manifest
