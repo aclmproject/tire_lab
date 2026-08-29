@@ -1,6 +1,18 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-28 - v0.9.1
+- Adds the controlled BRM P48 CSP Thermal V2 warm-start/cold-start A/B calibration fixture.
+- Recognizes convergent low cores plus strong surface transients as a coupled heat-transfer/rejection diagnostic, not automatic evidence for increasing FRICTION_K.
+- Compares measured equilibrium with the FAM003 reconstruction temperature window and audits all eight coupled Thermal V2 pathways without retuning them.
+- Separates requested air/road conditions from authoritative observed AC physics temperatures; a mismatch is retained and does not reject the run.
+- Preserves raw AC wear floats using IEEE-754 round-trip CSV formatting and records aidTireRate in native telemetry schema 1.1.
+- Records the completed 5x BRM incident/abuse run, rear plateau exits and nominal multiplier exposure while blocking delta-to-life normalization for abuse data.
+- Reports wear delta from start, per-real-km and per-virtual-km change when available; clean accelerated estimates and incident/abuse evidence remain explicitly distinct.
+- Adds a BRM pressure audit: the generated ~20.2 psi cold start matches the current 500 kg Dunlop guide, while 26 psi ideal remains under review against its 24 psi hot guidance and the measured 22.2-23.5 psi equilibrium.
+- Moves the next controlled protocol to a clean 1x Ford Escort RS1600 CSP Thermal V2 stint; no further BRM wear test is requested.
+- Makes no thermal, pressure, grip, wear-LUT, historical-family or vanilla-generation changes.
+
 2026-08-28 - v0.9.0
 - Implements real CSP Tyre Thermal Model V2 output: THERMAL_MODEL VERSION=2, required Kunos THERMAL sections and matching THERMAL2 sections for every compound.
 - Replaces universal thermal constants with deterministic geometry/load/construction/rolling-resistance/drivetrain/brake/pressure heat-pathway reconstruction priors.

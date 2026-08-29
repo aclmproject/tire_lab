@@ -1,0 +1,91 @@
+name: Release Tire Lab v0.9.1 BRM Calibration Diagnostics
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/release-v091-brm-calibration.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  APP_VERSION: 0.9.1
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Thermal, telemetry, and non-retuning regression suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in src/payload/app/*.js; do node --check "$file"; done
+          node --check tests/telemetry_ui_fixture_server.mjs
+          node --test tests/thermal_v2.test.js
+          node tests/telemetry_calibration.test.js
+          logger_result="$(pwsh -NoLogo -NoProfile -File src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1 -SelfTest)"
+          echo "$logger_result"
+          grep -q 'ACLM native telemetry 1.1' <<<"$logger_result"
+          grep -q '"columns":80' <<<"$logger_result"
+          grep -q '"aid_tire_rate":true' <<<"$logger_result"
+          pwsh -NoLogo -NoProfile -Command '& { $t=$null;$e=$null;[Management.Automation.Language.Parser]::ParseFile("src/payload/Server_ACLM_Tire_Lab.ps1",[ref]$t,[ref]$e)|Out-Null;if($e.Count){$e|ForEach-Object{Write-Error $_};exit 1} }'
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          app=Path('src/payload/app/app.js').read_text()
+          html=Path('src/payload/app/index.html').read_text()
+          core=Path('src/payload/app/validation_core.js').read_text()
+          logger=Path('src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1').read_text()
+          fixture=json.loads(Path('tests/fixtures/telemetry/brm_p48_csp_v2_warm_cold_ab.json').read_text())
+          assert 'const ACLM_APP_VERSION="0.9.1";' in app
+          assert '<b id="installedBuild">v0.9.1</b>' in html
+          assert 'telemetryWearMultiplier' in html and 'telemetryWearTestClass' in html and 'telemetryConditionResults' in html
+          assert fixture['decisions']['globalThermalRetune']=='hold'
+          assert fixture['decisions']['wearCurveRetune']=='hold'
+          assert fixture['wear']['runs'][1]['classification']=='5x accelerated wear — incident/abuse test'
+          assert fixture['wear']['runs'][1]['aidTireRate']==5
+          assert fixture['wear']['runs'][1]['rawEndText']['rl']=='99.693832'
+          assert fixture['wear']['runs'][1]['rawEndText']['rr']=='99.822067'
+          assert fixture['nextTest']['car']=='Ford Escort RS1600'
+          assert fixture['expectedDiagnostic'] in core
+          assert all(k in core for k in fixture['networkAudit'])
+          assert "ToString('R',$Invariant)" in logger and 'aid_tire_rate' in logger
+          assert '[THERMAL_MODEL]' in app and 'VERSION=2' in app
+          assert 'CORE_TRANSFER=0' in Path('src/payload/app/thermal_v2.js').read_text()
+          print('v0.9.1 BRM calibration diagnostic gates passed; thermal and wear retunes remain on hold')
+          PY
+      - name: Package, publish, and align manifest
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from datetime import datetime,timezone
+          import hashlib,json,os,zipfile
+          v=os.environ['APP_VERSION'];name=f'ACLM_Tire_Lab_Setup_v{v}.zip';archive=Path('/tmp')/name
+          with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+           for p in sorted(Path('src').rglob('*')):
+            if p.is_file(): z.write(p,p.relative_to('src').as_posix())
+          sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          pub=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
+          notes='Adds the controlled BRM P48 warm/cold A/B fixture and completed 5x incident/abuse wear run, coupled-network diagnostics, authoritative observed-condition storage, round-trip raw wear precision, aidTireRate logging, plateau diagnostics and non-life nominal exposure. Thermal, pressure and wear coefficients are unchanged.'
+          manifest={'product':'ACLM Historical Tire Lab','channel':'stable','version':v,'file_name':name,'release_page':f'https://github.com/aclmproject/tire_lab/releases/tag/v{v}','download_url':f'https://github.com/aclmproject/tire_lab/releases/download/v{v}/{name}','sha256':sha,'published_utc':pub,'notes':notes}
+          Path('manifests/ACLM_Tire_Lab_latest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          Path('/tmp/app_sha').write_text(sha)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifests/ACLM_Tire_Lab_latest.json
+          git diff --cached --quiet || git commit -m "release: align v0.9.1 installer manifest"
+          git push origin HEAD:main
+          sha="$(cat /tmp/app_sha)"
+          notes="BRM P48 calibration and telemetry-diagnostic release. Warm/cold convergence is recorded as a coupled transfer/rejection audit, not a FRICTION_K conclusion. The completed 5x incident/abuse run records raw deltas, plateau exits and nominal multiplier exposure while blocking delta-to-life normalization. The next protocol is a clean 1x Escort RS1600 test. No thermal, pressure, grip or wear-family values changed. SHA-256: $sha"
+          assets=("/tmp/ACLM_Tire_Lab_Setup_v$APP_VERSION.zip" manifests/ACLM_Tire_Lab_latest.json docs/BRM_P48_CSPV2_AB_Calibration_v091.md tests/fixtures/telemetry/brm_p48_csp_v2_warm_cold_ab.json tests/fixtures/telemetry/escort_rs1600_clean_1x_protocol.json)
+          if gh release view "v$APP_VERSION" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            gh release upload "v$APP_VERSION" "${assets[@]}" --clobber --repo "${{ github.repository }}"
+            gh release edit "v$APP_VERSION" --draft=false --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "$notes" --repo "${{ github.repository }}"
+            gh release edit "v$APP_VERSION" --latest --repo "${{ github.repository }}"
+          else
+            gh release create "v$APP_VERSION" "${assets[@]}" --target "$(git rev-parse HEAD)" --title "ACLM Historical Tire Lab v$APP_VERSION" --notes "$notes" --repo "${{ github.repository }}"
+          fi

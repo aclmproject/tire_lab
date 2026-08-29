@@ -1,0 +1,161 @@
+{
+  "fixtureId": "BRM-P48-CSPV2-WARM-COLD-AB-001",
+  "fixtureType": "controlled warm-start/cold-start convergence pair",
+  "status": "calibration evidence; no coefficient retune authorized",
+  "car": "BRM P48",
+  "tireFamilyId": "FAM003",
+  "classId": "CLS002",
+  "tire": "generated CSP Thermal Model V2 Dunlop RS5 nylon GP reconstruction",
+  "controlledVariables": [
+    "same car",
+    "same generated tire",
+    "same setup",
+    "approximately identical driving conditions"
+  ],
+  "conditions": {
+    "requested": { "airTempC": 26, "roadTempC": 26 },
+    "observedAcTelemetry": { "airTempC": 26, "roadTempC": 37 },
+    "authority": "recorded AC physics telemetry is authoritative for actual conditions",
+    "mismatchIsRejection": false
+  },
+  "intendedHistoricalTemperatureWindow": {
+    "source": "FAM003 generator prior and generated PERFORMANCE_CURVE",
+    "centerC": 76,
+    "widthPriorC": 25,
+    "fullGripPlateauC": { "low": 70.5, "high": 81.5 },
+    "broadWorkingWindowC": { "low": 62.25, "high": 92.25 },
+    "status": "reconstruction prior, not a direct period measurement"
+  },
+  "runs": [
+    {
+      "id": "A",
+      "warmers": true,
+      "startingCoreC": 70,
+      "distanceKm": 14,
+      "equilibriumCoreC": { "fl": 48.7, "fr": 45.4, "rl": 55.7, "rr": 52.4 }
+    },
+    {
+      "id": "B",
+      "warmers": false,
+      "startingCoreC": 36,
+      "distanceKm": 14,
+      "equilibriumCoreC": { "fl": 47.8, "fr": 45.6, "rl": 55.0, "rr": 52.9 },
+      "extendedDistanceKm": { "low": 30, "high": 35 },
+      "extendedCoreC": { "fl": 48.6, "fr": 45.3, "rl": 56.3, "rr": 53.0 }
+    }
+  ],
+  "lateRun": {
+    "wheels": {
+      "fl": { "coreC": 48.6, "surfaceMeanC": 51.7, "surfaceP95C": 63.6, "surfacePeakC": 67, "pressurePsi": 22.6 },
+      "fr": { "coreC": 45.3, "surfaceMeanC": 48.1, "surfaceP95C": 59.1, "surfacePeakC": 69, "pressurePsi": 22.2 },
+      "rl": { "coreC": 56.3, "surfaceMeanC": 60.2, "surfaceP95C": 73.0, "surfacePeakC": 88, "pressurePsi": 23.5 },
+      "rr": { "coreC": 53.3, "surfaceMeanC": 56.6, "surfaceP95C": 65.8, "surfacePeakC": 89, "pressurePsi": 23.1 }
+    }
+  },
+  "expectedDiagnostic": "surface heating present; low core equilibrium may be caused by the surface/carcass/core transfer and/or heat rejection balance rather than insufficient friction heat generation.",
+  "networkAudit": [
+    "SURFACE_TO_CARCASS",
+    "CARCASS_TO_SURFACE",
+    "CARCASS_TO_CORE",
+    "CORE_TO_CARCASS",
+    "CORE_TO_AMBIENT",
+    "SURFACE_TO_AMBIENT",
+    "COOL_FACTOR",
+    "CARCASS_ROLLING_K"
+  ],
+  "pressureAudit": {
+    "generatedPressureIdealPsi": 26,
+    "generatedStartPressurePsi": 20.2,
+    "observedHotPsi": { "fl": 22.6, "fr": 22.2, "rl": 23.5, "rr": 23.1 },
+    "evidence": [
+      "M131: current Dunlop Vintage/R5 guide gives 20 psi cold for an approximately 500 kg vehicle",
+      "M132: the same guide gives 24 psi hot",
+      "M001-M020 and M120-M130 use about 27 psi as a controlled dimensional/homologation measurement pressure, not a historical racing-pressure measurement"
+    ],
+    "hypotheses": {
+      "A": "Current manufacturer application guidance supports approximately 24 psi hot for a 500 kg R5 application; direct 1960 BRM racing-pressure evidence remains absent.",
+      "B": "Not presently supported: the generated approximately 20.2 psi cold start closely matches M131.",
+      "C": "Leading pressure-only hypothesis: the generated 26 psi ideal is above both the 24 psi guide and the observed 22.2-23.5 psi equilibrium.",
+      "D": "Still unresolved: observed pressure rise and low core equilibrium can also expose thermal/pressure coupling error."
+    },
+    "decision": "hold all pressure and thermal coefficients; the completed 5x incident/abuse run does not resolve the pressure hypotheses"
+  },
+  "wear": {
+    "runs": [
+      {
+        "id": "BRM-WEAR-1X-CLEAN-001",
+        "classification": "1x baseline; no resolvable wear-channel change",
+        "distanceKm": 36.74,
+        "aidTireRate": 1,
+        "rawStart": { "fl": 100, "fr": 100, "rl": 100, "rr": 100 },
+        "rawEnd": { "fl": 100, "fr": 100, "rl": 100, "rr": 100 },
+        "rawDelta": { "fl": 0, "fr": 0, "rl": 0, "rr": 0 }
+      },
+      {
+        "id": "BRM-WEAR-5X-ABUSE-001",
+        "classification": "5x accelerated wear — incident/abuse test",
+        "normalStintCalibration": false,
+        "distanceKm": 32.43,
+        "aidTireRate": 5,
+        "nominalMultiplierNormalizedExposureKm": 162.15,
+        "nominalExposureLabel": "NOMINAL MULTIPLIER-NORMALIZED EXPOSURE — NOT A DIRECT HISTORICAL LIFE ESTIMATE.",
+        "rawStart": { "fl": 100.000000, "fr": 100.000000, "rl": 100.000000, "rr": 100.000000 },
+        "rawEnd": { "fl": 100.000000, "fr": 100.000000, "rl": 99.693832, "rr": 99.822067 },
+        "rawStartText": { "fl": "100.000000", "fr": "100.000000", "rl": "100.000000", "rr": "100.000000" },
+        "rawEndText": { "fl": "100.000000", "fr": "100.000000", "rl": "99.693832", "rr": "99.822067" },
+        "rawDelta": { "fl": 0, "fr": 0, "rl": -0.306168, "rr": -0.177933 },
+        "plateauExit": {
+          "fl": null,
+          "fr": null,
+          "rl": { "realKm": 23.81, "nominalMultiplierExposureKm": 119.05 },
+          "rr": { "realKm": 26.46, "nominalMultiplierExposureKm": 132.30 }
+        },
+        "incidents": "several spins/high-slip incidents, especially affecting the driven rear tires",
+        "interpretation": [
+          "front AC wear/grip-health remained on the initial 100 plateau",
+          "rear signal loss remained small despite 5x wear and significant slip",
+          "degradation accelerated during the largest rear-slip/high-temperature incidents",
+          "provisionally encouraging for USE_LOAD=1 and abuse sensitivity"
+        ],
+        "prohibitedInference": "Do not divide final grip-health loss by five or present nominal exposure/plateau distances as historical tire life. VIRTUALKM is load/stress dependent, the curve contains a plateau, incidents are nonlinear and grip changes can feed back into slip."
+      }
+    ],
+    "mechanismsToPreserve": [
+      "normal-distance wear",
+      "load-sensitive wear",
+      "slip/abuse-sensitive wear",
+      "thermal-abuse wear",
+      "WEAR_CURVE grip degradation"
+    ],
+    "historicalContext": "Period reporting describes exceptionally low wear for contemporary reinforced-nylon Dunlop racing tires, including reports of two full-scale Grands Prix on one set.",
+    "decision": "do not increase or decrease BRM wear"
+  },
+  "decisions": {
+    "globalThermalRetune": "hold",
+    "familyThermalRetune": "hold",
+    "wearCurveRetune": "hold",
+    "frictionKRetune": "not supported by this evidence",
+    "nextEvidence": "clean Ford Escort RS1600 1x CSP Thermal V2 CSV"
+  },
+  "nextTest": {
+    "car": "Ford Escort RS1600",
+    "tire": "fresh current period-correct CSP Thermal V2 generation",
+    "aidTireRate": 1,
+    "warmers": false,
+    "laps": { "low": 6, "high": 7 },
+    "generatedPressures": "unchanged",
+    "fuelConsumption": false,
+    "damage": false,
+    "weather": "controlled",
+    "record": [
+      "actual AC air and road temperature",
+      "cold warm-up rate",
+      "surface temperature",
+      "core equilibrium",
+      "pressure equilibrium",
+      "inner/middle/outer spread",
+      "AC wear/grip-health signal"
+    ],
+    "followUp": "review the clean 1x dataset before considering a 5x accelerated Escort test; do not request another BRM wear test"
+  }
+}

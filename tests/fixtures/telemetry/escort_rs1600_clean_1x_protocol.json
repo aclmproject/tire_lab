@@ -1,0 +1,32 @@
+{
+  "protocolId": "ESCORT-RS1600-CSPV2-CLEAN-1X-001",
+  "car": "Ford Escort RS1600 Group 2",
+  "year": 1972,
+  "tireFamilyId": "FAM023",
+  "classId": "CLS022",
+  "generation": "current CSP Thermal Model V2",
+  "testType": "clean controlled stint",
+  "aidTireRate": 1,
+  "warmers": false,
+  "laps": { "minimum": 6, "maximum": 7 },
+  "generatedPressures": "unchanged",
+  "fuelConsumption": false,
+  "damage": false,
+  "weather": "controlled",
+  "recordedConditionsAuthority": "recorded AC physics air and road temperatures",
+  "evaluate": [
+    "cold warm-up rate",
+    "surface temperature",
+    "core equilibrium",
+    "pressure equilibrium",
+    "inner/middle/outer temperature spread",
+    "raw AC wear/grip-health signal"
+  ],
+  "decisionGate": "Review this clean 1x dataset before running a 5x accelerated Escort test.",
+  "prohibitedChanges": [
+    "global historical thermal calculator",
+    "global historical wear calculator",
+    "BRM thermal coefficients",
+    "BRM wear family"
+  ]
+}

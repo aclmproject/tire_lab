@@ -1,0 +1,5 @@
+distance_traveled_m,air_temp_c,road_temp_c,aid_tire_rate,pressure_psi_fl,pressure_psi_fr,pressure_psi_rl,pressure_psi_rr,wear_raw_fl,wear_raw_fr,wear_raw_rl,wear_raw_rr,core_temp_c_fl,core_temp_c_fr,core_temp_c_rl,core_temp_c_rr,temp_inner_c_fl,temp_inner_c_fr,temp_inner_c_rl,temp_inner_c_rr,temp_middle_c_fl,temp_middle_c_fr,temp_middle_c_rl,temp_middle_c_rr,temp_outer_c_fl,temp_outer_c_fr,temp_outer_c_rl,temp_outer_c_rr
+0,26,37,5,20.2,20.2,20.2,20.2,100.000000,100.000000,100.000000,100.000000,36,36,36,36,38,38,40,40,39,39,41,41,38,38,40,40
+23810,26,37,5,22.5,22.1,23.3,22.9,100.000000,100.000000,99.999992,100.000000,47.9,45.2,55.4,52.5,56,53,69,64,58,55,72,66,55,52,67,63
+26460,26,37,5,22.6,22.2,23.4,23.0,100.000000,100.000000,99.920000,99.999992,48.3,45.3,55.9,52.9,58,54,75,68,61,57,81,72,57,53,73,66
+32430,26,37,5,22.6,22.2,23.5,23.1,100.000000,100.000000,99.693832,99.822067,48.6,45.3,56.3,53.3,62,57,82,72,66,63,88,89,60,56,79,70
