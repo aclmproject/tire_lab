@@ -1,0 +1,75 @@
+{
+  "schema": "ACLM historical evidence status 1.0",
+  "overall": "PARTIALLY SOURCED",
+  "categories": {
+    "carIdentity": {
+      "status": "DIRECTLY SOURCED",
+      "sourceIds": [
+        "data/car.ini [INFO]"
+      ],
+      "basis": "imported AC package identity",
+      "limitation": "AC package identity is not proof of period specification"
+    },
+    "classFamily": {
+      "status": "PARTIALLY SOURCED",
+      "sourceIds": [
+        "SRC146",
+        "SRC147"
+      ],
+      "basis": "CLS102 / FAM002",
+      "limitation": "internal FAM/CLS identifiers are not citations"
+    },
+    "construction": {
+      "status": "RECONSTRUCTED",
+      "sourceIds": [],
+      "basis": "FAMILY_DEFAULT",
+      "limitation": "profile compatibility does not prove a numerical construction model"
+    },
+    "supplier": {
+      "status": "DIRECTLY SOURCED",
+      "sourceIds": [
+        "SRC146",
+        "SRC148",
+        "SRC149"
+      ],
+      "basis": "DIRECT_HISTORICAL_EVIDENCE",
+      "limitation": "supplier stays unknown without event/car-specific evidence"
+    },
+    "geometry": {
+      "status": "PARTIALLY SOURCED",
+      "sourceIds": [
+        "data/tyres.ini"
+      ],
+      "basis": "imported AC geometry with traceable source",
+      "limitation": "sim geometry is not automatically period dimensional evidence"
+    },
+    "compound": {
+      "status": "PARTIALLY SOURCED",
+      "sourceIds": [
+        "SRC146",
+        "SRC147"
+      ],
+      "basis": "class/family compound menu",
+      "limitation": "exact compound properties remain reconstruction unless directly documented"
+    },
+    "temperature": {
+      "status": "PROVISIONAL",
+      "sourceIds": [],
+      "basis": "generator prior; no host-specific live telemetry yet",
+      "limitation": "simulator closure is not historical optimum evidence"
+    },
+    "pressure": {
+      "status": "PROVISIONAL",
+      "sourceIds": [],
+      "basis": "reference-duty pressure model only; host remains unvalidated",
+      "limitation": "a static software prediction is not a validated live result or automatically a historical racing-pressure source"
+    },
+    "wearLife": {
+      "status": "RECONSTRUCTED",
+      "sourceIds": [],
+      "basis": "generator family prior; host-specific life unresolved",
+      "limitation": "period durability evidence must not be converted directly into AC virtual-km wear without telemetry calibration"
+    }
+  },
+  "rule": "PROFILE COHERENCE checks compatibility only. Historical evidence status reports sourcing separately; internal FAM/CLS IDs are not citations."
+}

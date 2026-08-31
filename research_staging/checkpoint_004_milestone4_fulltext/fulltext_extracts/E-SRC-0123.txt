@@ -1,0 +1,2007 @@
+=== PDF PAGE 1 ===
+GEORGIA INSTITUTE OF TECmOLOGY
+School of Civil Engineering
+Atlmte, Cesrgis.
+FINAL REPORT
+PROJECT B-608
+HYDRODYNAMICS OF TIRE HYDROPLANING
+BY
+c. s. MARTIN
+GRANT NGR-11-002- 033
+1 JULY 1965 to 30 JUNE 1966
+Issued 15 June 1966
+P e r f o r m e d f o r
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+WASHINGTON, D. C.
+
+
+
+=== PDF PAGE 2 ===
+4
+FOREWORD
+This report was prepared by the School of Civil Engineering of the
+Georgia Institute of Technology under NASA Grant NGR-11-002-033. The personnel
+of the Langley Research Center of the National Aeronautics and Space Adminis-
+tration gave technical advice and assistance i n the course of this grant. Of
+especial assistance were Messrs, W. B. Home and U. T. Joyner.
+The analytical work for this grant was performed under the supervision
+of Dr. C. S. Martin, A s s i s t a n t Professor i n the School of Civil Engineeering.
+The experimental data presented for comparison was collected by the personnel
+of the Langley Research Center. The author would like to acknowledge the
+assistance of Messrs. M. M. Aikenhead, A. S. Ardila, A. E. Cardoso and
+D. L. Whitt i n the preparation of this report.
+.
+ii
+
+
+
+=== PDF PAGE 3 ===
+ABSTRACT
+The hydrodynsmics of pneumatic tire hydroplaning are explained from a
+purely analytical standpoint. L i f t and drag forces on an assumed planing
+surTace (tire) are abtained f c r an ideal f h i d -mdergeing tm-dimensional
+motion. For the condition of incipient hydroplaning the theoretical l i f t
+coefficient is found to be 0.8, compared to a value of 0.7 from experiment.
+The l i f t and drag coefficients are shown to decrease as the t i r e lifts f’urther
+off the runway. The pressure distribution on the pavement from theory compares
+favorably with the experimental results.
+iii
+
+
+
+=== PDF PAGE 4 ===
+4
+. . . . . . . . . . . . . . . . .
+DISCUSSION OF KYDRODyNclMIC VARIABL;ES. 1
+. . . . . . . . . . . . . . .
+T H E O R Y . . . . . . . . . . . . . . . . . . 6
+. . . . . . . . . . . . . . . . . . . . .
+Conformal Representation 8
+'Yi/r~. . . . . . . . . . .
+Solution i n Terms of 6 arid k l = , * 10
+. . . . . . . . . . . . . . . . . . . . . . . . .
+DISCUSSION OF RESULTS 27
+. . . . . . . . . . . . . . . .
+Resulting Shape of Planing Surface 27
+. . . . . . . . . . . . . . . . . . . .
+Comparison of L i f t Forces. 28
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+D r a g F o r c e . . 31
+. . . . . . . . . . . . . .
+Pressure Distribution on the Pavement. 31
+. . . . . . . . . . . . . . . . . . . .
+CONCLUSIONS AM) RECOMMEmTIONS 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+BIBLIOCWPHY.. 34
+. . . . . . . . . . . . . . . . . . . . . .
+APPENDIX A (ILLUSTRATIONS). 35
+. . . . . . . . . . . . . . . . . . . .
+APPENDIX B (EI;LTPTIC FUNCTIONS) 48
+. . . . . . . . . . . . . . . . . . . . .
+APPENDIX C (COMPUTER P R O W ) 55
+iv
+
+
+
+=== PDF PAGE 5 ===
+.
+I
+LIST OF FIGURES
+. . . . . . . . . . . . . . . . . . . . . .
+1. z-, or Physical, Plane. 36
+. . . . . . . . . . . . . . . . . .
+2. w-, or Compex-Potential, Plane. 36
+c-, . . . . . . . . . . . . . . . . . . . . .
+3. orHodograph, Plane. 37
+. . . . . . . . . . . . . . . .
+4. '2-, or Logaxithmlc-Hodograph Plane. 37
+. . . . . . . . . . . .
+5. Boundary Conditions for In V/U i n w-Plane , 38
+. . . . . . . . . . . . . . .
+6. Boundary Conditions for 6 i n w-plane. 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7. wl-p.-l-ane 39
+. . . . . . . . . . . . . . . . . . . .
+8. t-, or Intermediate, Plane. 39
+. . .
+9. Relationship for Function, f(cpl), Describing Planing Surface.
+40
+(Ihcipient . ) . f o . r . C u.r v . e d . S . u . rf a.c e . D . e.s c . r ib . M . b.y . S i . n e . - . . .
+D = 0.04) 41
+11. Hydroplaning fo . r .C . u rv . e d . S.u . rf a . c e . D . e . s c . ri b . e d. b . y . S . in e . - F.u n.c t . i o . n . . . . .
+(h/D = 0.14). 42
+12. Hydroplaning fo . r . C . ur v . e d . S . u . rf a . c e . D . e . sc . ri b . e d . b . y . S i.n e.- F . u n.c t.i o . n . . . . .
+(h/D = 0.21). 43
+13. Hydroplaning fo . r . C . ur v.e d . S . u . rf a . c e . D . e . s c . ri b . e d . b . y . S i . n e . - F.u n.c t . i o . n . . . . .
+(h/D=O.43). 44
+14. Hydroplaning fo . r . C . u rv . e d . S.u . rf a . c e . D . e .sc . ri b.e d. b.y .S i.n e.- F . u n.c t . i o.n . . . . .
+( h / D = O . l l ) . 45
+15. Hydroplaning fo . r . C . u rv . e d . S.u .rf a.c e . D . e . sc .ri b.e d . b . y .C . o s.in e.- F.u n . c t.i o.n . . . .
+(h/D= 0.36). 46
+16. Pressure Distri . b u . t i . o n . a.n .R u.n w.a y . * . o.m .T . h eo . ry . f.o r. S . i n.e - . F u . n c.t i.o n. . . .
+(h/D=O.lk). 47
+17. Pressure Distribution on Runw.a y. u . n d . e r . C.e . n t.er .G . ro . ov e . f.'r m. .E . x p.e r.i- . .
+mental Results of Home (8) 47
+V
+
+
+
+=== PDF PAGE 6 ===
+INTRODUCTION
+The planing or skiing of a pneumatic airplane t i r e has, on numerous
+occasions, placed pilots i n rather precarious situations. This phenomenon of
+tire hytiroplaning can also be of concern t o ziotorists cm5sing at rektively
+high speeds (50-60 mph) on flooded highway pavements. Tire hydroplaning
+results from the large water pressures developed between the t i r e and pavement
+surface. Whenever the t o t a l hydrodynamic force develop3 from the distributed
+water pressure on the t i r e equals the t o t a l load the t i r e is carrying,hydro-
+planing occurs. The t i r e then loses contact with the pavement and essentially
+skis on the water. The comprehensive experimental work on t i r e hydroplaning
+by the personnel of the Langley Research Center of the National Aeronautics
+and Space Administration is of a pioneering nature. Horne and Dreher (1)
+summarize recent experiment research on t i r e hydroplaning. The purpose of
+t h i s investigation is t o explain t i r e hydroplaning from a standpoint of
+theoretical hydrodynamics. Prior t o developing the theory, the pertinent fluid
+variables are discussed. Finally the theoretical results are compared with
+existing experimental results.
+
+
+
+=== PDF PAGE 7 ===
+DISCUSSION OF HYDRODYNAMIC VARIABLES
+A l l of the manifestations of tire hydroplaning are comprehensively
+discussed by Horne and Dreher. It is quite obvious though that not only the
+hydrcdynamics of the fiow, but also the elcsticity of the t i r e should be
+included i n a general theory. In this investigation, only the hydrodynamic
+part of the problem is considered. "he shape of the tire will be considered
+t o be fixed for this initial study.
+The hydrodynamic or lift force exerted on the t i r e by the water is a
+f'unction of the following geometric, flow, arid fluid variables
+i n which A is a characteristic area on which the water pressure acts and is
+a function of tire geometry, D is the depth of water on the pavement, U is
+the translational speed of the tire, and p, y, 0, and p are the mss density,
+specific weight, surface tension, arid dynamic viscosity of the water, re-
+spectively. The lift force can be represented by
+%3
+FL = CL A
+i n which C can be shown from dimensionzl analysis t o be a fmction of the
+L
+following variables
+CL = f' (NF, Nw, NR, T i r e Geometry)
+The quantities I!$,, Nu, and N are the dimensionless parameters Froude number,
+R
+Weber number, and Reynolds number, respectively. Each of these parameters
+
+
+
+=== PDF PAGE 8 ===
+-
+b represents the relative significance of the mass density t o each of the other
+three fluid properties. The relative significance of each of the four fluid
+properties present i n t i r e hydroplaning is discussed i n the following.
+i
+a) Mass density. The density of the water becomes an obvious
+significant fluid property i n tire hydroplaning because of the severe
+curvature of the streamlines i n the vicinity of the tire and the high
+speeds involved.
+b) Specific weight. The existence of a free surface introduces
+the effect of gravity into the problem as well as surface tension. The
+effect of gravity on fluid-flow patterns can be represented by the well-
+known Froude number, which is proportional t o the ratio of fluid-inertia
+force t o fluid-weight force, defined as
+U
+N * = - a
+i n which g is the acceleration of gravity, and L is a characteristic
+length. For t i r e hydroplaningthe suitable choice of characteristic
+velocity and length would be the translational speed of the t i r e , U,
+ami the depth of water, D, on the pavement, respectively. Inasmuch as
+6
+hydroplaning normally occurs for high speeds 40 mph) and at shallow-
+water depths the Froude number can be considered t o be quite large, As
+discussed by Rouse (2) gravity-type flows at large Froude numbers can be
+well represented from analyses for which gravity as a variable is absent.
+The effect of gravity on t i r e hydroplaning is believed t o be insignif-
+icant i n the usual situation, and w i l l not be included i n the theory.
+2
+
+
+
+=== PDF PAGE 9 ===
+l-
+L c ) Surface tension. As with specific weight, the liquid-gas
+property of surface tension is present as a variable because of the
+existence of the liquid-gas interface, the free surface. The effect of
+surface tension can be represented by the Weber number, a dimensionless
+parameter which can be defined as being proportional t o the ratio of
+fluid-inertia force t o fluid surface-tension force. The Weber number
+is defined here as
+-U
+Nw = m (5)
+For the hydroplaning problem U would logically be the translational
+speed of the tire, and L t h e depth of water on the pavement, D. Surface
+tension affects motion only for smll values of the Weber number and,
+more particularly, for snall radii of curvature of the water surface.
+Inasmuch as the velocity U is large and the depth D is small it is not
+readily apparent that the Weber number w i l l be either large or small.
+For large values of the Weber number the effect of surface tension is
+insignificant a d can be neglected i n analyses. It is believed, how-
+ever, that surface tension does not appreciably affect the pressure
+and, consequently, is not an important parameter for tire hydroplaning.
+It is true, of course, t h a t surface tension is the cause of the break-
+up of the jet that leaves the vicinity of the tire i n the form of a
+spray. This breakup is not believed, however, t o affect the magnitude
+of the lift on the tire. The theory that follows is based on the
+assumption that surface tension is insignificant.
+a) Viscosity. Since all fluids possess viscosity its inclusion
+or exclusion from a theory must be seriously considered. The well-known
+3
+
+
+
+=== PDF PAGE 10 ===
+c Reynolds number, which i s a r a t i o of fluid-inertia fGrce t o fluid-viscous
+force, represents the relative importance of the two fluid properties, mass
+density and viscosity. The Reynolds number
+The characteristic length would logically be the spacing between the
+t i r e ard pavement when t o t a l hydroplaning occurred. The translational
+speed U i s usually large and the viscosity of water is quite low,
+meaning that, except for very small values of L, the Reynolds number
+will be large. The effect of viscosity becomes insignificant for high
+Reynolds numbers and can rightly be neglected as a variable. Viscosity
+would be expected t o play somewhat of a role for slightly damp ( a d if
+seer
+oily as just a rain) pavements on which slipping from lubrication
+can take place. I n t h i s case hydroplaning or slipping is greatly
+augmented if the t i r e s are smooth. On the other extreme, that is
+flooded pavements, the density of the water would be the expected sig-
+nificant fluid property. These two extremes of thin film and viscosity
+effect a d moderate t o flooded depth and density effect have been dis-
+cussed by Horne and Dreher t o some extent. The normal situation for
+aircraft seems t o be one for which the water depth is more than thin-
+f i l m and the tire is not smooth, but grooved. The grooves allow for
+escape of the water under high pressure, thereby delaying hydroplaning.
+The mass density of the water is assumed t o be the significant and the
+only fluid property present i n the proposed theory. This assumption is
+strengthened by the experimental results of Horne a d Dreher. If the
+characteristic area of equation (2) is represented by the static footprint
+4
+
+
+
+=== PDF PAGE 11 ===
+area and U by the velocity of the vehicle at the incipient condition of the
+hydroDlaning, Horne and Dreher found that CT, is essentially a constant, 0.7.
+I
+Their results are from tests covering a range of inflation tire pressures
+from 24 psi t o 150 psi, of vehicle speeds from 45 mph t o 120 mph, a.nd of
+lift force F (which is equal a d opposite t o the vehicle weight force) from
+L
+925 lb. t o 22,000 lb. Their results prove that, for the tests run at least,
+the fluid mass density is the soie fiuid propx-ty affectlag mcticn zxl,
+furthermore, strongly indicate that the flow pattern i n the vicinity of the
+t i r e was essentially similar for all tests. The latter statement follows
+from the fact that C was essentially constant for a l l tires.
+L
+5
+
+
+
+=== PDF PAGE 12 ===
+THEORY
+The foregoing discussion on the significance of the various fiuid-
+property variables present led t o the conclusion that, for moderate water
+depths and vehicle speeds, the fluid density is the significant. fluid
+variable. Such a condition i n essence specifies the assumption of an ideal
+fluid. If such an assumption is justified no more liberty would be taken
+if, further, the flow is assumed t o be irrotational. The conditions for
+potential flow are now satisfied. The velocity potential is defined by
+4
+in which V is the velocity at any point and cp the velocity potential. In
+order that the useful tool of complex variables may be utilized the flow is
+further assumed t o be two-dimensional. Considerable liberty is taken with
+t h i s assumption as the actual flow under and around a tire is definitely
+three-dimensional. It is obvious t h a t the results of the two-dimensional
+theory w i l l have t o be interpreted with caution i n applying them t o the
+actual t hree-d imensi onal problem.
+For two-dimensional motion i n rectangular coordinates the velocity po-
+tential is defined as
+i n which u and v are the horizontal and vertical components of the t o t a l
+velocity V, i n the x- and y-directions, respectively. The stream function
+Jf is defined as
+6
+
+
+
+=== PDF PAGE 13 ===
+.
+I-
+Laplace's equation is satisfied f o r both CP ard $
+2 - a2q + a21 * p = o >
+v c p =
+ax2 aY
+and
+Tie dymamical equation of Bernoulli
+1 (u2 + v2 ) + P = P o
+2
+i n which p is the water pressure at any point and p is the reference pressure,
+0
+which i n this insdance s atmospheric. Once the potential field represented
+by cp and/or Q is found the dynamical quantities such as pressure variation,
+lift, and drag can be determined from Bernoulli's equation.
+The hydroplaning problem is one of unsteady flow t o the stationary
+observer. The problem can be transformed into one of steady motion simply by
+changing t.he axis of reference t o the tire. "he picture now seen is that of
+a jet of constant depth 1) and infinite width striking a curved surface (tire)
+which is slightly above or i n contact with a plane surface as shown i n Figure 1."
+This steady-flow problem is dynamically identical t o the unsteady-flow hydro-
+-
+planing problem of the t i r e translating at the same speed, U. When the t i r e
+is i n contact w i t h the pavement, partial hydroplaning is said t o exist; when
+A l l illustrations are i n Appendix A.
+7
+
+
+
+=== PDF PAGE 14 ===
+there is a space between the t i r e and the pavement t o t a l hydroplaning is
+to The t h e w y here is f o r the more general case of t o t a l hydro-
+planing, of which partial hydroplaning is a special case.
+The hydrodynamic problem depicted i n Figure 1 is that of free-streamline
+flow with a curved boudary. From Bernoulli's theorem the velocity everywhere
+on the water surface has the constant value of U as gravity is neglected.
+The lift force on the tire can be determined by integrating the pressure
+distribution thereon. The drag force can be either determined from the
+pressure distribution on the tire or from a simple momentum analysis involving
+the unknown downstream depth, d, and the angle of the j e t at infinity. These
+-
+two quantities are not known a priori ard depend solely on the t i r e shape and
+tire-position relative t o the pavement. The elasticity of the t i r e am3 the
+vehicle weight are not explicity nor directly taken into account. The tire
+is assumed t o be flexible and deformed out of its original circular shape
+but no dynamic balance between water pressure, air-inflation pressure, t i r e
+elasticity, tire-rotating effects, and tire shape is made. Mhermore, no
+attempt is made t o effect a dynamic balance of lift force ard vehicle weight
+force which dictates the clearance or space between tire and pavement at the
+downstream exit. The theory herein is simply a hydrodynamical one for which
+forces are determined for an assumed shape ard assumed position of the shape
+relative t o the ptvement.
+-
+Conformal Representation The theory of complex variables through the means
+of conforrnal representation is a useful technique f o r many two-dimensional
+free-streamline problems for which irrotational flow m y be assumed. The
+so-ca.lled physical plane, or z-plane
+a
+
+
+
+=== PDF PAGE 15 ===
+is depicted i n Figure 1 for the case of a jet strikirig the ci.ii--sd surface.
+Point A is at minus infinity and point B at plus infinity. A t points C a d
+E tile fluid is ass~xedt o sepamte from the tire. Point D is a stagnation
+point. Theoretically point F is also a t infinity. A t point G the velocity
+reaches its minimum value on the pavement. A t points A, B, and F the velocity
+is U.
+The complex-potential plane defined as
+is shown i n Figure 2. Point I3 is arbitrarily given a value of ‘9 of 0. The
+stream function $ is assigned a value of 0 on AB. The values of the other
+points i n the plane are self-explanatory.
+The dimensionless complex velocity
+comprises the hodograph plane, as shown i n Figure 3. The angle that the
+fluid velocity mkes with the x-axis is 6, which i s defined as
+In the hodograph plane lines AFE and BC are arcs of a circle of unit radius
+inasmuch as they are free streamlines for which V = U. The line AGB forms
+a s l i t as G is a point of minimum velocity on the pavement. Line CDE is
+curved i n the hodograph plane as both the angle 6 and the velocity V are
+changing on the curved t i r e surface. Point F can be either i n the third or
+9
+
+
+
+=== PDF PAGE 16 ===
+1- fourtk qu.adrant, deppnding on whether 6 > n/2 or ijF < n/2, respectively.
+F
+The function
+constitutes the logarithmic iicdograph plane, shown i n Figure 4. Lines AFE
+and BC are straight as In V/U = 0. Similarily lines AG and GB are straight
+as 6 = 0. On CD ard ED, how:l--r, the logarithmic-hodogrqh lines are curved
+as both 6 and In V/U are varjing. This fact extremely complicates the pro-
+blem of conformal representation as the exact shape of lines CD and DE i n the
+lcj-hodograph pla,ie are not z ~ o m-a priori. R-,*thermore the usual practice
+of using the Schmrtz-Ckristdfel transformat; on is rrecluded because of
+these non-polygonal lines i n t h e log-hodograph plane.
+Since the classical approach t o free-streamline hydrodynamics is pre-
+cluded t w e alternatives were considered. The first involved the s t r i c t l y
+head-on approach of direct numerical analysis, involving finite-difference
+equations and/or relaxation techniques. The secolld alternative was t o use
+an untried approach. The latter alternative was chosen with the idea that
+i n addition t o solving the immediate problem a possible contribution could
+be made t o the area of free-streamline theory with curved boundaries.
+-
+Solution i n Terms of 6 and In V/U The technique t o be used is based on
+the fact that a l l aimlytic functions satisfy Laplace's equation i n the
+respective planes. Since
+R = 3.n 5 = In 1-1 - d 1 w
+U dz
+10
+
+
+
+=== PDF PAGE 17 ===
+is an analytic function if only the single-valued part of the In-function is
+Q S P ~ ?Z t follows that
+-
+V 2 6 = a2g + -a2=6 o
+2
+ax aY2
+and
+These two equations constitute a boundary-value problem for 6 and/or In V/U
+i n the z-plane. Inasmuch as the location of the free-streamlines are not
+-
+known a priori this change i n dependent variables does not simplify the pro-
+blem. I n the w, or complex-potential, plane, however, the bourdaries on cp
+a d $I are known 2 priori. It is also apparent that, from the theory of
+analytic functions
+a d
+In Figures 5 and 6 the bourdary conditions for 6 and I n V/U are shown. On
+line AGB the angle of the streamline 6 = 0 whereas In V/U varies, reaching a
+minimum at G. Incidentally, point G does not necessarily have t o be
+represented as a point i n the subsequent analysis as the hodograph planes are
+
+
+
+=== PDF PAGE 18 ===
+not used. On the free-streamlines AF'E and BC I n V/U = 0 and 6 varies. On
+line CDE both 6 and In V/U are varying. It should be noted that at D I n V/U
+approaches minus infinity and 6 has a step discontinuity of rr as the fluid
+leaving D for C has the opposite direction than that leaving for E. Either
+6 or I n V/U can be arbitrarily specified on CDE. The boundary-value pro-
+blem for 6 and/or I n V/U i n the w-plane is much simpler than i n the z-plane
+because of the straight lines forming the boundaries on the v-phix. Tk.,c
+boundary-value problem can be formulated for 6 on a l l lines by use of the
+Cauchy-Riemann equations on lines AFE and BC. The equations i n t h i s instance
+are
+arid
+.
+X/a$
+On lines AFE and EC In V/U = 0. By the first Cauchy-Riemann equation =
+0 on AFE and E. The boundary-value problem for 6 i n the w-plane is shown i n
+Figure 6. On CDE 6 is specified by an arbitrary function. Since the boundary
+conditions on lines DCB a d DEF are not homogeneous, that is both Dirichlet-
+and Neumann-type boundary conditions are specified on the same line, classic
+2
+techniques for solving v 6 = 0 i n the w-plane are not very useful.
+The problem of mixed boundary conditions on DCB and DEF' can be alleviated
+by tmnsforming the w-plane into another plane for which a l l straight lines
+have only single bourdary conditions. The transfomd plane will be called
+12
+
+
+
+=== PDF PAGE 19 ===
++
+the w'-plane, where w' = cp' i$'. Its dimensionsless counterpart is the w
+1-
+p 1 a . n ~w~h ere w, = w ' / ~ p ' =~ 'pl + i$l. I n order that the w -plane satisfy the
+I 1
+above condition it m u s t have the shape of a rectangle, as shown i n Figure 7.
+On line AB the Dirichlet condition is 6 = 0. On lines AFE a& BC the Neumann
+c o d i t i o n of a6/atp1 = 0 must be satisfied. The bowdary coditions on these
+three lines can be obtained from a theorem of conformal mapping, which states
+that under transfomtion of an anaiy-tic function (G) bWUi&.q- cord?5tiolm en
+4
+a function (6) of the type 6 = constant and grad 6 = 0 remain invariant,
+Churchill (3). On CDE or EDC, however, 6 varies. The function for 6 on EDC
+will not remain invariant under transformation from the w-plane t o the wl-
+plane. Since 6 is t o be arbitrary on EDC it w i l l be specified i n terms of 'pl
+i n the w plane.
+1-
+The boundary-value problem now becomes one of a solution t o
+i n a rectangle. The technique of Fourier series will be utilized t o effect
+the solution for arbitrary functions of 6 on EDC. Since
+and
+.;;3
+dw
+,
+0 %
+
+
+
+=== PDF PAGE 20 ===
+The solution for 6 = b(cp1, q1) i n the w plane and the determination of its
+1-
+harmonic conjugate In V/U enables the determination of R as a function of wl.
+From the transformtZoii 'w' = x(vl) the derizm--tive dw,/dw can be obtained.
+1
+Upon integrating equation (24) the shape of the curved surface (tire) i n the
+z-plane can be obtained.
+I n order that the w-plane can be transformed into the w -plane an inter-
+1
+mediate plane is necessary. This plane is depicted i n Figure 8 and it called
+the t-plane. The Schwartz-Christoffel transformation can be used t o connect
+the t-plane t o both the w-plane and the w plane as the latter two planes are
+1-
+closed polygons. Since there are a t o t a l of six points i n each plane (it is
+not necessary t o include point G as it is not a corner i n either the w- or
+w -plane), and three points may be located arbitrarily i n the t-plane, three
+1
+points have t o have variable values on the real axis of the t-plane. The
+arbitrary points are chosen t o be A, B, a d E, located at 0, 1 and infinity,
+-
+respectively. Point F is located at a, where a can take on any value
+between 0 and a. Point C is located at tc. A t point D, t = b, which can
+vary from approximately tc t o m. Using the Schwartz-Christoffel transformation
+t o connect the t-plane with the w-plane
+-
+dw A ( t b)
+- d = t t(t - 1) (t + a j
+i n which A is a complex constant. By using partial fractions
+.
+
+
+
+=== PDF PAGE 21 ===
+t - b
++
+t - b
+- a t a ( 1 + a ) ( t + a j ( 1 + a ) ( t 1)
+Upon integrating a d simplifying
+i n which B is a complex constant of integration. The constant A can be
+evaluated a t point A t o be
+A t point B it is f o d that
+d a b - 1
+E = ; l+a
+At point E the constant of integration can be evaluated t o be
+The complex-potential function becomes
+or
+The l a t t e r expression is clearly the analytic function for a source of
+m/ll
+strength at A, a sink of strength Ud/n at 5, and a sink of strength
+U(D - d>/n at F, all in the t-plane.
+
+
+
+=== PDF PAGE 22 ===
+By transforming the t-plane t o the w -plane
+1
+dW
+1 A '
+- = (29)
+d t
+n
+J t C m
+C
+i n which A' is a complex constant. From the theory of elliptic functions,
+2 ,
+Bowman (41, it is a p ~ r e n ttk a t if t = l/k ir? which k is the modulus of
+C
+Jacobian elliptic functions, the above expression can be integrated i n terms
+of e l l i p t i c functions. From Byl.a ard Friedman (5) or Bowman
+w = - s n
+1 K
+i n which K is the complete elliptic integral of the first k i d and sn is the
+I
+sine-amplitude Jacobian elliptic function. The inverse relationship
+2 2
+t = sn [Kwl, k] = sn [Kwl] (31)
+In the w -plane 'pD has been made unity. It follows from the transfortnation
+1
+1
+of a rectangle into the upper half of the t-plane t h a t m c - - K /K i n which I
+I
+K' is the complementary elliptic integral of the first kind. Since K K(k)
+I
+and K' = K(k'), i n which k' is the Complementary modulus related t o the
+modulus by
+I
+it follows that by changing k the aspect ratio of the rectangle i n the w
+1-
+plane changes. The value of a an3 b i n the t-plane can be determined from the
+16
+
+
+
+=== PDF PAGE 23 ===
+location of points F and D i n the w -plane. Hence
+1
+a d
+b = sn 2 ( K b + iK’) = 1 (34 1
+k2 s2fKro )
+‘--Tl.D
+From the differentiation relationships for Jacobian elliptic flmctions
+dWl 1
+- = (35 1
+dt 2K[ sn(Kwl) cn(Kwl) dn(Kwl)]
+i n which cn is the cosine-amplitude a d dn the delta-amplitude function. The
+three functions are related by
+2 2
+sn (Kw ) + cn (Kwl) = 1
+1
+and
+2 2 + 2
+k sn (Kwl) dn (Kwl) = 1 ( 3 W
+The relationship for dw/dw can be expressed entirely i n t e r n of Jacobian
+1
+elliptic functions with Kw as the argument
+1
+The solution for n(w ) is determined by inspection once
+6 is fouIld from
+1
+
+
+
+=== PDF PAGE 24 ===
+.
+the boundary-value problem formulated i n the w -plane. Applying sepration
+1
+of variables technique t o equation (23) a possible solution is
+i n which 6 is a constant t o be determined from the boudary conditions. For
+f3 = 0 the s e p r a t e solution
+The bourdary conditions are
+AB: $,=O ; 6 = 0
+(cp,)
+i n which f is an arbitrary function, discontinuous at D; it can be related
+t o a continuous function g(q) by
+For fl = 0 the boundary condition on AB requires that b2 = 0. The Neumann
+boundary condition on AFE and BC requires that b = 0. On EDC
+3
+18
+
+
+
+=== PDF PAGE 25 ===
+.
+From the theory of Fourier series, Churchill (6)
+1 1
+For fl # 0, the boundary condition on AB requires that c2 = 0. For the boundary
+condition on AFE t o be satisfied c = 0. On BC the Neumann boundary condition
+3
+....
+means that sin A = 0. Hence A = nrr; n = l,2,3, The t o t a l solution in
+terms of Fourier series
+f
+K
+6 = A o K ' Jr, + An sinh nn$, cos nncp, (43)
+n=l
+The coefficient A i s determined from the boundary condition on EDC
+n
+il'
+An sinh(nrrK'/K) = 2 f(cpl) cos nmp1drpl
+It will 3e shmn lzter that A mst be 0 i n order that In V/U = 0 on both AFE
+0
+and BC. The boundary condition on BC w i l l fix the location of D i n the wl-
+plane.
+The function f(cp ) must be specified such that the boundary EDC has the
+1
+proper curvature and resembles the deformed portion of a tire. Three separate
+elementary functions were tried in an attempt t o produce a curved boundary on
+EDC that resembles a hydroplaning tire. The final relationship for dz i s
+
+
+
+=== PDF PAGE 26 ===
+.
+.
+expressed in terms of the solution for a flat plate times an expressim inchding
+I
+I the effect of curvature. Since the effect of curvature can be included i n one
+term the flat-plate solution w i l l be effected first. For a flzt platc iczliced
+at an angle 6 with the approaching flow
+In this case the continuous function g(cp ) is a constant, 8.
+1
+The coefficient
+/
+A =IT
+0
+0
+The coefficient A is determined from
+n
+1
+f cpu) f
+An sinh(nrrK'/K) = 2n cos nmp,dcp,- 2 0 1 cos nmp dcp
+1 1
+- -2
+- s i n nntp
+n ID
+From the theory of Jacobian elliptic functions Jacobi's nme is defined as
+q = exp(-rrK'/K) ; 0 < q < 1 (47)
+Hence,
+$
+-
+sinh(nrrK'/K) = [q-" qn]
+20
+
+
+
+=== PDF PAGE 27 ===
+<
+and
+The general solution becomes
+By inspection the harmonic conjugate
+On line AFE ln V/U is 0. On line BC, however, In V/U # 0 unless .A = 0; in
+other words
+This relationship means that the location of point D i n the w -plane is related
+1
+by the magnitude of 9.
+By inspection the logarithmic complex velocity
+The infinite series can be expressed in terms of elliptic f'unctions, Hmcock
+(7), such that
+21
+
+
+
+=== PDF PAGE 28 ===
+-
+in which ll is Legendre's incomplete elliptic integral of the third kind and Z
+is the Jacobian zeta function. For purposes of numerical computation it is
+I
+, more suitable t o relate ll and Z t o Jacobi's theta functions; from Hascock
+r 1
+Written for inclusion in equation (24)
+L J
+For a curved boundary on EDC g(tp ) i s not a constant and
+1
+1
+The first term is identical t o that for the flat-plate solution except t h a t
+will vary, depending on the expression g(v ) and the requirement that
+'PID 1
+A = 0 (in order that In V/U = 0 on BC). The expression for e -R can be written
+0
+for a curved boundary as
+L J
+in which
+1
+-
+and, in which A' sinh (nnK'/K) = 2 g(tpl) cos nnrpldcp
+n 1
+0
+22
+
+
+
+=== PDF PAGE 29 ===
+For expedient calculation of the Jacobian elliptic functions in the
+excpressiac fm dx/3g1 the relatirmships h e t ~ e e nt he Jacobian elliptic functions
+and Jacobi's eta and theta functions w i l l be used. Frm Byrd and Friedman (5)
+and
+The f i n a l expression for dz
+}
+O(Kwl + KcpD
+-
+[@(Kw~ KyD:] G(wl)dwl
+For the flat plate cp = 0/n and G(wl) = 1. The parameter cp and the function
+LD u)
+G(wl) depend solely on the function g(tp ) describing the shape of EDC.
+1
+The three curved-boundary functions w i l l be referred t o as the sine-,
+cosine-, and dn-functions.
+For the sine-function
+23
+
+
+
+=== PDF PAGE 30 ===
+in which CI and A are constants. The angle of the fluid leaving EDC at points
+E &Id c i s
+The value of must be greater than two in order that the fluid leaves E in
+the second quadrant. In order that 6 i s negative, A > 1. In order that
+C
+.A = 0
+The coefficient
+n
+A ' z - 8 9
+n 9'")
+- -
+1)(1
+and
+J
+For the cosine-function
+a
+g(cp,) = [A + cos IlqI1 ] ; A >1, CJ > 4
+The angles
+24
+
+
+
+=== PDF PAGE 31 ===
+and
+The location of D in w, -plane
+L
+The curved-boundary function
+Finally, for the dn-function
+The angles
+and
+For point D
+The expression for the effect of curvature
+25
+
+
+
+=== PDF PAGE 32 ===
++
+The curved-boundary €uictlm f(cp 1 is shmm h F5gx-e 9 for the three
+1
+functions. For the sine-function o = 3 and A = 1. For the cosine-function
+2
+cj = 6 and A = '1. For the dn-function 0 = 3 and k = 0.9999. The flat-plate
+condition is also displayed for 9 = n/3.
+The computation of Jacobi's e t a and theta functions and the numerical
+integration of equation (58) is greatly facilitated if the functions are
+expressed in terms of infinite series, as outlined i n Appendix B. A computer
+program for the numerical evaluation of the parameters involved in the theory
+i s included as Appendix C. The results of the theory are discussed in the
+fo llming.
+26
+
+
+
+=== PDF PAGE 33 ===
+DISCUSSION OF RESULTS
+The results of this investigation are discussed with reference t o the
+force exerted on the t i r e surface by the water and the pressure distribution
+on the pavement. Tne force on the tire can be resoived into its vertical arid
+horizontal cmponents, commonly called lift and drag, respectively. When the
+lift force equals the weight force transmitted t o the wheel, hydroplaning w i l l
+occur. The amount the t i r e lifts off the pavement surface depends on the t i r e
+shape, water depth, and the speed of the vehicle. There w i l l obviously be an
+equilibrium position of the t i r e for each speed greater than that required f o r
+incipient hydroplaning. The lift coefficients from this study are compared with
+experimental results of Horne and Dreher in the following. A comparison is also
+made between the theoretical and measured pressure distribution on the pavement.
+The shape of the planing surface selected t o simulate the wetted portion of a
+hydroplaning t i r e is discussed first.
+Resulting Shape of Planing Surface - The shape of the curved surface simulating
+the tire is assumed in the theoretical development. Three different functions
+were chosen t o produce shapes resembling the wetted portion of a t i r e . They are
+known as the sine-, cosine-, and dn-functions. The least satisfactory is the
+dn-function as it results in very slight curvature and too great a clearance
+between t i r e and pavement. The cosine-function results in a tire having con-
+siderable more curvature on EDC, but is not entirely adequate. The resulting
+shape of the tire, the i n i t i a l water depth, and the clearance between the t i r e
+and pavement are most realistic when the sine-function is used. For the sine-
+function the t i r e shapes and flow patterns that appear t o more closely simulate
+t i r e hydroplaning at various degrees are shown in Figures 10 through 14. One
+27
+
+
+
+=== PDF PAGE 34 ===
+pattern resulting from the cosine-function is shown in Figure 15. The physical
+variables foi- each sita8tim prese,n,ted are the clearance in terms of the water
+depth, h/D, the angle of the water leaving the tire at points E and C, the length
+of the t i r e surface referenced t o the water depth, 4/D, and, t o some degree, a
+change in t i r e shape. For the results presented the ration &/D is greater than
+4; the ratio h/D was chosen t o be less than 1/2; the angle at E was varied from
+109.3" t o 150"; and the angle at C was maintained greater than -9". The shape
+of the t i r e is seen t o change only slightly as the elliptic modulus, k, is
+varied. The theory does not include the unwetted portion of the tire; that is,
+above point E. Hence a l l resulting shapes that showed the water j e t leaving
+point E and curving severly clockwise towards the imagined continuation of the
+t i r e shape E were discarded.
+The resulting shapes do resemble the water-contact area of a hydroplaning
+tire. Figure 10 simulates essentially incipient hydroplaning as the water
+leaving under the t i r e constitutes a small fraction of the i n i t i a l depth.
+Figures 11 through 13 show the flow pattern as the hydroplaning becomes more and
+more severe. For Figure 14 the angles 6 and 6 are different than those for
+C E
+the shapes shown i n Figures 10 through 13.
+Comparison of L i f t Forces - The hydrodynamic lift force can always be related
+t o a lift coefficient through equation (2)
+zi!
+P
+FL = CLA 2
+As mentioned in the section concerning the various fluid-property effects,
+Horne and Dreher represented the characteristic area, A, by the static foot-
+print area and U by the velocity of the vehicle at the condition of incipient
+28
+
+
+
+=== PDF PAGE 35 ===
+hydroplaning. To an approximation, then, the load on the wheel can be equated
+t o pi A, in which pi is the t i r e inflation pressure. The lift coefficient
+-
+*
+associated with incipient hydroplaning can be computed from t e s t results f r c m
+As a cjf this defiiiitioii of chai-actel-istic ai-,== thzre i s oie
+value of the lift coefficient associated with incipient hydroplaning of a given
+.
+t i r e . Below incipient hydroplaning speeds C Above incipient hydroplaning
+L "Li
+speeds CL cLi . It is not apparent, however, that CLi should be a constant for
+a l l tire pressures and water depths as the flow pattern obviously depends on
+these quantities. In any case Horne and Dreher found that, from tests covering
+a range of tire-inflation pressures from 24 psi t o 150 psi, of vehicle speeds
+from 45 mph t o I20 mph, and of vehicle loads from I25 lb t o 22,000 lb, CLi 2: 0.7.
+Their tests covered values of water depths greater than those associated with
+the viscous phenomenon (lubrication).
+1-
+In comparing theoretical results w i t h those of Horne and Dreher there is a
+question as t o what characteristic area t o use. Since the theory is based on
+two-dimensional flow only one dimension needs t o be chosen for the characteristic
+area, A. The water depth, D, is not chosen as it does not appear t o be a sig-
+nificant variable i n the results of Horne and Dreher. It is believed that the
+area of the t i r e in contact with the water would most closely represent the tire
+footprint area used i n the analysis of the experimental results. The area A per
+unit width of t i r e is thence chosen t o be 4, the t o t a l length of the planing
+plate. The lift coefficient for hydroplaning is defined by
+
+
+
+=== PDF PAGE 36 ===
+in which F i n this case is the force per unit width of tire. The lift
+L
+coefficleiit s h ~ d ddc crease fsr @yen t i r e shape 2nd w a t e r d q t h as the
+clearance, h, is increased. Physically t h i s means that as the speed of the
+vehicle is increased there i s a subsequent increase in the clearance as less
+fluid has t o have i t s momentum changed t o provide the same lift force. Each of
+the tire shapes and clearances presented here simulate an assumed equilibrium
+condition; that is, the t i r e is held at its particular clearance by a balance of
+l i f t force and vehicle load for that water depth, tire-inflation pressure, and
+vehicle speed. It should be noted t h a t the tire-inflation pressure is only
+indirectly involved i n the theory by this concept of equilibrium condition.
+The flow pattern depicted by the shape of Figure 10 is believed t o most
+closely simulate incipient hydroplaning as there is a minimal amount of water
+flowing under the tire. The theoretical l i f t coefficient of approximately 0.8
+can only be compared t o the experimental one of 0.7 if the characteristic areas
+in equation (2) are identical. It is believed that the area based on the
+wet,ted length of the plate in “Uhl theory is not unlike the s t a t i c footprint
+area used in the analysis of the experimental results for the following reason.
+As shown by Horne and Dreher the actual effective area of the pavement t h a t is
+subject t o significant water pressures is a vertical projection of the static
+footprint area. To an approximation, then, the effective wetted area of the
+t i r e is the static footprint area. If the wetted area of the curved surface
+incorporated i n the theory can be assumed t o be s i m i l a r t o the static footprint
+area then the lift coefficients are similarly defined for theory and experiment.
+If t h i s similarity actually exists then it is not surprising that the l i f t
+coefficient from theory (0.8) i s greater than that from experiment (0.7) as the
+.
+three-dimensional effect precludes a uniform pressure distribution completely
+
+
+
+=== PDF PAGE 37 ===
+i
+. 1 across the tire.
+Figures 11 through 13 are considered t o simulate a t i r e undergoing t o t a l
+hydroplaning. As the clearance between the t i r e and pavement is increased the
+l i f t coefficient is seen t o decrease, meaning that, for the same wheel load,
+the vehicle speed necessarily has t o be greater than that for smaller clearances.
+In actuality the clearance automatically becomes greater as the speed is increased.
+Drag Force - The hydrodynamic drag force i s defined by
+pj'
+F = C A
+D D
+in which C is a drag coefficient, depending on the same quantities as the
+D
+l i f t Coefficient, C For the theoretical analysis the drag force is per unit
+L'
+width of t i r e and A is defined as the planing surface width, 4, times the unit
+width. Values of C are indicated i n Figures 10 through 15 for the respective
+D
+planing surfaces. As the clearance increases for the planing surface the drag
+coefficient decreases as less f l u i d has its momentum changed. Eo attempt is
+made t o compare the theoretical values of C with experiment as the characteristic
+D
+area used by Horne e t a1 (9) for the drag equation differs from the area defined
+-
+here
+-
+Pressure Distribution on the Pavement The distribution of the water pressure
+on the pavement can be computed frmBernoulli's equation. It is more significant
+t o represent the pressure distribution i n terms of a pressure coefficient
+L
+
+
+
+=== PDF PAGE 38 ===
+Where the pressure i s atmospheric C = 0; whereas at a stagnation point C = 1.
+P P
+Since the only stagnation point in the flow is on the planing surface C < 1 on
+P
+the pavement. Foi the condition of incipient hydroplaning C w i l l approach
+P
+unity somewhere orL the pavement.
+The theoretical pressure distribution on the pavement is shown i n Figure 16
+for a typical planing surface. The corresponding experimental pressure distri-
+bution, ~ r o mE" z*lie (8) i s S ~ G F ~s;s EL c~=;"r=i~~i;rn? Figxe 1-7. 13 hnt.h iKL1js-
+trations the horizontal coordinate i s i n terms of the water depth, or x/D. The
+marked similarity between theory and experiment further indicates that the
+planing surface i n effect essentially simulates a t i r e undergoing incipient t o
+t o t a l hydroplaning. Figures 16 and 17 were not superposed as there is
+actually no way t o reference the horizontal coordinates of the theoretical sur-
+face t o those of the actual t i r e . The maximum value of C = 0.91 from experi-
+P
+ment corresponding t o a maximum value of C = 0.99 from theory indicates that
+P
+the t i r e actually had a greater clearance than the planing surface displayed in
+Figure 16. The planing surfaces of Figures 1.1, E, and 13, having greater
+values of the clearance, h/D, w i l l possess maximum values of C on the pavement
+P
+less than 0.99. The negative pressure i n front of the t i r e in Figure 17 can not
+be explained by the theory.
+
+
+
+=== PDF PAGE 39 ===
+CONCLUSIONS AND RECOMMENDATIOTJS
+The object of t h i s study was t o develop a theory t o demonstrate the
+phenomenon of pneumatic t i r e hydroplaning from the standpoint of hydrodynamics.
+__
+yne strength of any theory rests in its comparison w i t h experhmtai results.
+It is concluded that the planing surface resulting from the theory exhibits
+similar hydrodynamics behavior as a hydroplaning pneumatic t i r e as (1) the l i f t
+force from theory results i n C = 0.8 at incipient hydroplaning compared with
+L
+CL = 0.7 from experiment, and (2) the theoretical pressure distribution on the
+pavement (runway) is very similar i n shape t o the measured pressure distribution.
+It i s also concluded that, for moderate water depths and grooved tires, the lift
+coefficient for incipient hydroplaning is essentially a constant. Moreover, the
+assumption of am ideal fluid for t i r e hydroplaning is justified except for the
+extreme case of smooth tires and/or t h i n films of water on the pavement.
+For future studies it is recommended that the elasticity of the t i r e as well
+as three-dimensional hjrdrodynamic effects be considered.
+33
+
+
+
+=== PDF PAGE 40 ===
+BIBLIOGRAPHY
+1. Horne, Walter B. and Robert C. Dreher, "Phenomena of Pneumatic Tire
+Wdroplaning, NASA TN D-2056, 1963, p. 52.
+"
+2. Rouse, H., Elementary Mechanics of Fluids, John Wiley and Sons, New York,
+iglc6.
+3. Churchill, R. V., Complex Variables and Applications, McGraw-Hill, New York,
+1960.
+4.
+BOWDXUI, F., Introiiuction t o Eiiiptic Functioiis, ~a,ierP G~LTCZ~TGES,
+New York, 1961.
+5. Byrd, P. F. and Friedman, M. D., Handbook of Elliptic Integrals for
+Engineers and Physicists, Springer-Verlag, Berlin, 1954.
+6. Churchill, R. V., Fourier Series and Boundary Value Problems, McGraw-Hill,
+New York, 1941.
+7. Hancock, H., Theory of Elliptic Functions, John Wiley and Sons, New York,
+1910.
+8. Horne, W. B. (private communication).
+,
+9. Horne, W. B. Joyner, U. T., and T. J. W. Leland, "Studies of the
+Retardation Force Developed on an Aircraft Tire Rolling i n Slush or Water,"
+NASA TN D-552, September 1960, p. 29.
+
+
+
+=== PDF PAGE 41 ===
+.
+i
+APPENDIX A
+35
+
+
+
+=== PDF PAGE 42 ===
+m
+\
+\
+\
+\
+\
+\
+I k
+0
+n
+I
+N
+-rl
+R
+36
+
+
+
+=== PDF PAGE 43 ===
+- V N
+3
+0
+U N
+E
+Figure 3. 5-, or Hodograph, Plane.
+t"
+P B
+G(
+' A In V N
+D R
+Figure 4. Q-, or Logarithmic Hodograph, Plane.
+37
+
+
+
+=== PDF PAGE 44 ===
+BOUNDARY CONDITION FOR In V/U
+UNKNOWN ON CDE
+InV/U=O
+/
+:
+F
+/InV/"=O
+A
+Figure 5. Boundary Conditions for In V/U i n w-Plane.
+F
+E
+D
+A
+'dS/d,b = 0
+B
+/
+4
+6 = 0
+Figure 6. Boundary Conditions f o r 6 i n w-Plane.
+38
+
+
+
+=== PDF PAGE 45 ===
+Figure 7. w -Plane.
+1
+-00 4 0 1 1 /k2 b 00
+1
+E F A B C D E
+Figure 8. t-, 31 Intemediate, Plane.
+39
+
+
+
+=== PDF PAGE 46 ===
+I
+9
+F
+z
+x
+h
+0
+-?
+0 0
+I]
+25
+z c
+P 8
+2
+3
+0
+I
+'?
+0
+2
+=l= -
+0
+0
+40
+
+
+
+=== PDF PAGE 47 ===
+m
+h
+3
+0
+0
+II
+ch(
+\
+s
+v
+r:
+0
+\
+U-
+PI
+0
+k
+a
+x
+X
+0
+rl
+e,
+k
+41
+
+
+
+=== PDF PAGE 48 ===
+I
+U-
+x
+P
+a
+e,
+a
+a,
+2
+3
+V
+rl
+PI
+0
+ak
+x
+X
+Ti
+rl
+42
+
+
+
+=== PDF PAGE 49 ===
+0
+n "'"A
+3 - 4 1
+43
+
+
+
+=== PDF PAGE 50 ===
+m
+E
+0
+u-
+x
+P
+a
+a,
+P
+-rl
+k
+V
+01
+a,
+n
+44
+
+
+
+=== PDF PAGE 51 ===
+U-
+45
+
+
+
+=== PDF PAGE 52 ===
+m
+i
+U-
+D
+46
+
+
+
+=== PDF PAGE 53 ===
+h
+a3
+v
+aJ
+G
+k
+0
+X
+k
+0
+rn
+-P
+rf
+2
+aJ
+P;
+.I!
+UJ
+-P
+c
+a,
+E
+*d
+k
+a,
+PI
+x
+w
+$
+k
+k
+a,
+G c k 0
+0
+k
+aJ
+-P
+c
+a,
+V
+k
+a,
+a
+c
+3
+3
+5
+3
+ffi
+c
+0
+c
+0
+-4
+-P
+1
+P
+4
+k
+-P
+ul
+*d
+Q
+aJ
+k
+3
+rn
+rn
+a,
+k
+Pi
+r-
+rf
+a,
+k
+5
+ho
+.d
+ET4
+47
+
+
+
+=== PDF PAGE 54 ===
+APPENDIX B
+48
+
+
+
+=== PDF PAGE 55 ===
+.@PENDM B
+ELLIPTIC FUNCTIONS -rwMERICAL TECHNIQUES OF COMPUTATION
+-
+kt2 = 1 k2 (67)
+2
+For moderate values of k Jacobi's nome can be computed from the series,
+%
+Whittaker and Watson
+in which
+The elliptic integral of the f i r s t kind is related t o q by
+2
+W
+K = .2[ 1 + 2 qn2]
+n=l
+And, by definition of the nome
+For values of k 2 near 1 (the largest chosen in t h i s study was 1 - the
+series for q does not converge rapidly enough. From Byrd and Friedman-, for
+9
+Whittaker, E. T. and G. N. Watson, A Course of Modern Analysis, Cambridge
+University Press, Cambridge, 1944.
+w
+Byrd, P. F. and M. D. Friedman, Handbook of Elliptic Integrals for Engineers
+and Fhysicists, Springer-Verlag, Berlin, 1954.
+49
+
+
+
+=== PDF PAGE 56 ===
+2
+k approaching unity the elliptic parameters are best determined by
+K = A -I kf2 [A - 11 + & k f 4 [A - 1 6 3 + 256 a k f 6 [A - $3 + - . . (72)
+4
+in which A = In p ,
+and
+q = exp(-nK'/K) (74)
+These two series give adequate convergence for values of k2 as large as
+1 - 10-5O.
+The rapidly converging infinite series for the eta and theta functions,
+Byrd and Friedman, are suitable for numerical calculations
+l 2
+H(KW~) = 2 ( - p 1q (n- 2) sin[(n - 5 1 ) m1] (754
+n=l
+n=l
+and
+OD cn
+O1(Kw1) = 1 + 2 1
+n=l
+The location of point F i n the t-plane depends on the value of the modulus,
+
+
+
+=== PDF PAGE 57 ===
+.
+-
+k, and the location of F in the w -plane. From equation (33) and the above
+1
+relations
+(9)
+The location of point D in the t-plane is computed from equation t o be
+The actual geometry of the flow pattern and the shape of the t i r e have t o
+be determined by integrating equation (58). The eta and theta functions are
+expressed i n terms of the infinite series for each line of the w -plane on
+1
+which the equation is integrated. For each streamline i n the z-plane the ex-
+pression in equation (58) is reduced t o its r e a l and imaginary parts. The
+integration is performed by using the trapezoidal rule, Simpson's rule, or a
+numerical integration equation of higher order, depending on the rate of change
+of the integrand for the conditions specified. The shape of the t i r e is deter-
+mined by integrating equation (58) from E t o C i n the w plane. As an
+1-
+example, on line EDC
+and
+51
+
+
+
+=== PDF PAGE 58 ===
+.
+i The function 9 (Kw ) on EDC i s evaluated from
+1
+n=l
+n=l
+The other fmctions in equation (58) are evaluated similarly. Caution has t o
+be taken at the sirlgular point D. The integrand of equation (58) is indeteminate
+at D. By using L'Hospital's rule the integrand is found t o be finite. The
+shape of the streamlines AFE and BC can also be determined by numerical inte-
+gration of equation (58) along the respective lines i n the w -plane.
+1
+The pressure distribution on the tire and the runway can be determined from
+equation ( 2 ) . T he t o t a l force on the t i r e can be determined by integrating the
+pressure distribution mer its surface. The lift coefficient
+D
+and the drag coefficient
+i n which C is the pressure coefficient, defined as
+P
+V 2
+c (E)
+= 1 -
+P
+52
+
+
+
+=== PDF PAGE 59 ===
+The drag coefficient can also be complted (as a check) from a simple momentum
+analysis t o be
+$1
+]
+2[1. - [l - cos 6F
+--
+cD P
+i n which 6, is the angle that the jet leaving the tire at E finally makes at
++
+F with the positive x-direction. The angle fiF is computed from equation (55).
+The water depth at d is computed from equation (27)
+-d= a , b - 1
+D b l + a
+The clearance that the trailing edge of the surface makes with the pave-
+ment, h, is computed by integrating equation (58) from B t o C i n terms of the
+. vertical coordinate, y.
+The pressure distribution on the pavement is computed from equations (55)
+and (06). The coordinates on line AB are referenced t o point C (or E) by inte-
+grating from a point near B on BC toward C. By integrating from a point near
+B on AB having the same value of the velocity potential, cp, as that at the
+corresponding point on BC the pressure distribution on AB can be referenced t o
+-
+CDE
+The parmeters i n the theory that may be varied for each of the assumed
+curved-surface functions are the modulus, k, the location of F i n the w -plane,
+1
+( ,,I and the parameters describing the curved-boundary function, and A.
+(J
+Realistic planing surfaces and clearances are obtained only if the square of
+2 ,
+the modulus, k is considerably greater than 0.99. Values chosen for $I =
+2F
+(K/K')JrlF were 0.7 and 0.9. The chosen values of 0 and A depended on the
+53
+
+
+
+=== PDF PAGE 60 ===
+curved-boundary function used. The computer program utilized for evaluating
+the e l l i p t i c functions and in integrating equation (58) is presented in
+Appendix C.
+54
+
+
+
+=== PDF PAGE 61 ===
+*
+APPENDIX c
+55
+
+
+
+=== PDF PAGE 62 ===
+c
+APPENDIX C
+DIGITAL COMPUTER P R O W
+Because of the complexity of the relationships involved and the large
+number 03 infinite series appearkg iii the theory, a high-speed digital ccqxter
+was essential i n order that numerical results may be obtained. The program was
+written in ALGOL 60 for use by the Burroughs B-5500 of the Rich Electronic
+Computer Center of the Engineering Experiment Station. The coordinates of the
+planing surface, the pressure distribution on the runway and the gross quantities
+such as lift and drag coefficients and length of the phning surface are the out-
+put. The computer time required for each planing surface assumed was approx-
+imately 250 seconds.
+56
+
+
+
+=== PDF PAGE 63 ===
+4
+n
+3:
+V
+4
+n
+0
+4
+A
+0
+4
+n
+L
+0
+a
+b.
+V
+4
+k
+4
+c
+A
+w
+c
+9
+0
+0
+a n
+a
+o n
+O X
+J O
+4
+0 -
+0
+V Y
+tnv
+k-
+z
+w
+I
+t t
+z
+t 4 W
+4 IF 2:
+a z
+Y
+a 4 0
+U w t O
+57
+
+
+
+=== PDF PAGE 64 ===
+X
+n
+n X X
+n
+n
+N
+*
+z
+U
+*
+a
+Y
+X
+z
+x
+0
+0 n
+z
+w
+c
+z
+3
+4
+Q
+hJ
+c
+v)
+&
++
+2
+a
+0
+I
+t
+z
+w z
+Y c W
+* w
+o w
+o m
+58
+
+
+
+=== PDF PAGE 65 ===
+x x
+2 t
+z z
+U
+U U W
+c a w I
+2 w a0 I
+w m 0
+0
+59
+
+
+
+=== PDF PAGE 66 ===
+.
+n- n-
+w
+I B
+s
+fL b n
+n n
+U v
+* (u (v
+i t * *
+a d,
++ + + n n
+4 r,
+m m
+n n n + +
+CL z z
+d
+X X X
+U U
+I b a Y Y
+t 8 8
+x \ - X
+U U v
+* * * Y - f i t Y
+x n i X
+5 W
+a?
+Y U
+U
+X X v
+n n X
+2 -
+nn.-hdn n n a
+X
+0.
+Y
+u
+X
+Y
+X
+e
+Y
+.
+2
+2 c
+c e 0
+z
+Lr'
+w a LL!
+a
+60
+
+
+
+=== PDF PAGE 67 ===
+X
+U
+w
+z
+t U
+A
+n
+z
+(3 0
+z
+z
+X 0
+c1
+0 c
+n 3
+U U J 0 rn
+m n
+U
+u)x a
+0 0 4 c
+o x m
+n B W
+0
+cu
+\ w
+t a
+VI 3
+a
++
+e
+W
+c a
+UJ Q.
+\
+d a
+0
+J LL
+w
+c UJ
+z w
+3 cow
+c a
+n w
+4
+.reo
+a t
+w na
+t - 0
+m U t
+2
+-e -z
+130
+O + 2-
+c
++ Y
+v a
+m a
+X t
+c z z ?- z
+z w U z z Y
+O W W 0 e o z w w e5
+ZI w z W 2-L W W
+W I m w OD W W I W m
+0 W O m
+0
+61
+
+
+
+=== PDF PAGE 68 ===
+*
+cu
+\
+n
+A
+n
+n
+c*v
+c
+Y
+Y
+X
+n
+cu V
+\ c3
+4 W
+Y
+w
++
+2
+U
+cl J
+0 4
+0 m z
+c 0
+rrl 0
+z
+8 0
+U
+c ai c
+\
+a
++
+c
+0
+a
+0 x
+Q 4
+d m
+W u u
+c C
+z Z W
+3 32
+U
+r( dJ
+0 o z
+Id W O
+c c
+Y, cncn
+W
+r( O C
+- e
+o + + z
+o n
++ z + W O
+a
+m a m a 0
+3 0 a o o
+U t X L V
+2 c t
+z z z
+Y
+(3 W W
+w 0
+a! L W z
+o m W 0
+0 0
+62
+
+
+
+=== PDF PAGE 69 ===
+.
+i
+t 4 8
+4 ii
+X
+n z
+8 A
+z
+8 u z
+v Q c
+Q a
+0 5 U 8
+0
+v X n
+n
+X n z
+N 8
+n n
+\ n v
+(u cu *
+a *
+Y z z 0
++
+Y
+Y U
+X
+4
+a
+C
+-J A 0
+c1
+t N 0
+z m
+c
+3
+J
+a z Y
+n
+W
+c
+co
+0
++
+c
+W
+I
+n
+a
+0
+L
+z
+z
+Y
+n Q
+U W
+w m
+6
+
+
+
+=== PDF PAGE 70 ===
+n
+n
+n
+z*
+0
+8
+n
+z
+(3
+8 I
+Y* +
+0
+v n
+X 4
+n U
+r. I
+a
+8 X
+w
+n Q
+(*u
+z
+X
+2 Y
+an
+Y
+X 0
+0 V
+V X
+Y n
+\ h
+rr c
+z*
+8
+0
+n
+9 c*u
+PI
+t
+n z
+z w
+W I
+I
+0
+0
+64
+
+
+
+=== PDF PAGE 71 ===
++
+D
+h A
+@3 @3
+I f
+X X
+V 0
+Y w
+m VJ
+0 0
+0 V 0 + + W
+0 +.(=t
+X X V V
+n
+au
+\e 0
+Ma A -
+-0
+m z
+0
+U
+c
+0 4
+z
++ U
+I
+-a
+w
+ac
+O W
+Ln
+.
+* z c z
+z - t u
+0 W Q 0 W Q 0
+z I W 2 I W z
+w r o e w z ~ m w
+0 0
+
+
+
+=== PDF PAGE 72 ===
+I
+J '
+w
+66

@@ -1,0 +1,102 @@
+{
+  "checkpoint": "registration + first-priority 5,000 lineage",
+  "knowledgeInput": {
+    "releaseVersion": "1.7.0",
+    "schemaVersion": "1.2.0",
+    "existingSourceCount": 145,
+    "existingMeasurementCount": 184,
+    "existingScalingRuleCount": 46
+  },
+  "corpusAccounting": {
+    "layerATasks": 55,
+    "layerBTasks": 500,
+    "layerCRegisteredPilot": 5000,
+    "layerCFullCorpusVerified": 50000,
+    "totalRegisteredAtCheckpoint": 5555
+  },
+  "layerBGroups": {
+    "current_knowledge_deep_mine": 290,
+    "previous_50_source_packet": 100,
+    "fresh_50_sources": 100,
+    "cross_source_gap_mission": 10
+  },
+  "layerCGroups": {
+    "source_deep_mining": 2800,
+    "targeted_source_discovery": 1000,
+    "cross_source_synthesis": 1200
+  },
+  "layerCDomains": {
+    "pressure": 655,
+    "thermal": 825,
+    "wear": 825,
+    "UNSPECIFIED": 1000,
+    "provenance": 111,
+    "quantitative": 108,
+    "geometry": 108,
+    "construction": 108,
+    "forces": 216,
+    "transient": 108,
+    "wet": 144,
+    "rolling": 108,
+    "high_speed": 108,
+    "setup": 108,
+    "motorsport": 108,
+    "regulation": 72,
+    "method": 108,
+    "uncertainty": 72,
+    "applicability": 108
+  },
+  "statuses": {
+    "DEFERRED_UNTIL_SOURCE_REVIEW": 2755,
+    "DEFERRED_WAITING_FOR_PARENT_EVIDENCE": 2800
+  },
+  "sourceIdentityAccounting": {
+    "uniqueBibliographicCandidates": 242,
+    "researchMissionsNotSources": 10,
+    "matchedExistingIdentities": 143,
+    "existingIdsRepresented": 145,
+    "existingBibliographicDuplicateGroups": [
+      {
+        "title": "Dunlop Vintage R5 Range",
+        "sourceIds": [
+          "SRC025",
+          "SRC098"
+        ]
+      },
+      {
+        "title": "Michelin GT tire stint behavior at Sebring",
+        "sourceIds": [
+          "SRC030",
+          "SRC081"
+        ]
+      }
+    ],
+    "candidatesNotYetReviewed": 99,
+    "note": "Identity count is not a reviewed-source count."
+  },
+  "integrity": {
+    "uniqueTaskIds": true,
+    "duplicateTaskIds": [],
+    "orphanParentCount": 0,
+    "orphanParentIds": [],
+    "layerAExpected55": true,
+    "layerBExpected500": true,
+    "layerCPilotExpected5000": true,
+    "layerCFullExpected50000": true,
+    "noEvidencePromotedBeforeReview": true,
+    "pass": true
+  },
+  "inputHashes": {
+    "layerA": "0d1da740a19fad78adcbcfe5903ba3cfa82d23621e6e46ca0b6586ce64ef19b5",
+    "layerB": "a2b8b10c7629f3e5efb61378253dd7f6df206a73f2a00288f5458b75cbe8f1f0",
+    "layerCPilot": "4a636569142209828925627841582519955014a7c86e38b3b3a4736ce0d5d2ac",
+    "layerCFull": "c113cf827f84244b188fcfe1918aebaae8efab8f70d513da20a38c37e35c0d06",
+    "qualityGates": "975c907938d989cd84b9f64b5f0dfa53deeb168e7dca0c7fffab43b10713dc68"
+  },
+  "promotion": {
+    "canonicalKnowledgeChanged": false,
+    "applicationChanged": false,
+    "numericalGeneratorChanges": [],
+    "reason": "Registration is not source review or evidence promotion."
+  }
+}

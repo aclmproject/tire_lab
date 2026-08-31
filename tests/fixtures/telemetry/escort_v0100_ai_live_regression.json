@@ -1,0 +1,18 @@
+{
+  "fixtureId": "ESCORT-RS1600-BRANDS-AI-V0100-001",
+  "classification": "SIMULATOR PRESSURE DIAGNOSTIC — PROFILE-INCOHERENT / NON-HISTORICAL",
+  "car": "Kunos Ford Escort Mk1",
+  "track": "Kunos Brands Hatch GP",
+  "referenceDriver": "AI_REFERENCE",
+  "generatedProfile": {"year": 1984, "familyId": "FAM023", "classId": "CLS022", "supplier": "Pirelli", "classPeriod": [1972, 1976], "familyPeriod": [1972, 1976]},
+  "samples": 4224,
+  "distanceKm": 18.56,
+  "requestedCondition": {"airTemperatureC": 26, "roadTemperatureC": 26, "wearMultiplier": 1, "sessionBlanketsEnabled": false, "fuelRate": 0, "damageRate": 0},
+  "observedCondition": {"airTemperatureC": 26, "roadTemperatureC": 36, "rawAidTireRate": 0},
+  "generated": {"pressureStaticPsi": {"front": 22.5, "rear": 22.5}, "pressureIdealPsi": {"front": 27, "rear": 27}, "oldColdReferenceC": 26},
+  "initial": {"pressurePsi": {"fl": 22.999, "fr": 22.999, "rl": 23.005, "rr": 23.005}, "coreC": {"fl": 34.19, "fr": 34.19, "rl": 34.24, "rr": 34.24}},
+  "final": {"pressurePsi": {"fl": 26.163, "fr": 25.077, "rl": 25.628, "rr": 24.906}, "coreC": {"fl": 60.17, "fr": 51.25, "rl": 55.77, "rr": 49.85}},
+  "fittedEquilibriumCoreC": {"fl": 64, "fr": 53, "rl": 58, "rr": 51},
+  "setupPressureControl": {"min": 15, "max": 50, "step": 1, "source": "Kunos Escort setup.ini pressure controls"},
+  "decisions": {"globalThermalRetune": false, "fam023HistoricalOptimumChange": false, "wearChange": false, "historicalCalibrationSuccess": false}
+}

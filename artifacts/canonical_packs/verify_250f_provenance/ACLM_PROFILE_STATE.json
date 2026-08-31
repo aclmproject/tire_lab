@@ -1,0 +1,201 @@
+{
+  "schema": "ACLM historical profile state 1.2",
+  "generatedBy": "ACLM Historical Tire Lab v0.10.2",
+  "state": {
+    "construction": {
+      "value": "bias",
+      "provenance": "FAMILY_DEFAULT",
+      "sourceIds": [
+        "FAM002",
+        "CLS102"
+      ],
+      "confidence": "ACLM historical class calibration",
+      "explicit": false
+    },
+    "supplier": {
+      "value": "Pirelli",
+      "provenance": "DIRECT_HISTORICAL_EVIDENCE",
+      "sourceIds": [
+        "SRC146",
+        "SRC148",
+        "SRC149"
+      ],
+      "confidence": "curated knowledge profile",
+      "reason": "supplier researched/applied",
+      "explicit": false
+    },
+    "familyId": "FAM002",
+    "classId": "CLS102",
+    "lastTransition": "supplier researched/applied"
+  },
+  "context": {
+    "classId": "CLS102",
+    "className": "1954-58 Formula 1 / Grand Prix",
+    "classFrom": 1954,
+    "classTo": 1958,
+    "familyId": "FAM002",
+    "familyName": "1950s GP / sports treaded bias",
+    "familyFrom": 1950,
+    "familyTo": 1958,
+    "construction": "bias",
+    "dryType": "treaded",
+    "menu": [
+      {
+        "name": "Period treaded race specification",
+        "kind": "race",
+        "lifeBasis": "Historical service life unresolved; this taxonomy-only entry intentionally adds no numeric life prior.",
+        "periodSpecNote": "Baseline treaded race architecture only. Supplier and exact compound remain car/event-specific."
+      }
+    ],
+    "slots": {
+      "soft": null,
+      "medium": {
+        "name": "Period treaded race specification",
+        "kind": "race",
+        "lifeBasis": "Historical service life unresolved; this taxonomy-only entry intentionally adds no numeric life prior.",
+        "periodSpecNote": "Baseline treaded race architecture only. Supplier and exact compound remain car/event-specific.",
+        "slot": "medium",
+        "short": "R"
+      },
+      "hard": null,
+      "intermediate": null,
+      "wet": null
+    },
+    "warnings": [],
+    "supportedSuppliers": [],
+    "sourceIds": [
+      "SRC146",
+      "SRC147"
+    ],
+    "confidenceSource": "ACLM historical class calibration"
+  },
+  "coherence": {
+    "pass": true,
+    "profileCoherent": true,
+    "authoritative": true,
+    "compatibilityOnly": true,
+    "title": "PROFILE COHERENCE PASS",
+    "historicalEvidenceStatus": "PARTIALLY SOURCED",
+    "evidence": {
+      "schema": "ACLM historical evidence status 1.0",
+      "overall": "PARTIALLY SOURCED",
+      "categories": {
+        "carIdentity": {
+          "status": "DIRECTLY SOURCED",
+          "sourceIds": [
+            "data/car.ini [INFO]"
+          ],
+          "basis": "imported AC package identity",
+          "limitation": "AC package identity is not proof of period specification"
+        },
+        "classFamily": {
+          "status": "PARTIALLY SOURCED",
+          "sourceIds": [
+            "SRC146",
+            "SRC147"
+          ],
+          "basis": "CLS102 / FAM002",
+          "limitation": "internal FAM/CLS identifiers are not citations"
+        },
+        "construction": {
+          "status": "RECONSTRUCTED",
+          "sourceIds": [],
+          "basis": "FAMILY_DEFAULT",
+          "limitation": "profile compatibility does not prove a numerical construction model"
+        },
+        "supplier": {
+          "status": "DIRECTLY SOURCED",
+          "sourceIds": [
+            "SRC146",
+            "SRC148",
+            "SRC149"
+          ],
+          "basis": "DIRECT_HISTORICAL_EVIDENCE",
+          "limitation": "supplier stays unknown without event/car-specific evidence"
+        },
+        "geometry": {
+          "status": "PARTIALLY SOURCED",
+          "sourceIds": [
+            "data/tyres.ini"
+          ],
+          "basis": "imported AC geometry with traceable source",
+          "limitation": "sim geometry is not automatically period dimensional evidence"
+        },
+        "compound": {
+          "status": "PARTIALLY SOURCED",
+          "sourceIds": [
+            "SRC146",
+            "SRC147"
+          ],
+          "basis": "class/family compound menu",
+          "limitation": "exact compound properties remain reconstruction unless directly documented"
+        },
+        "temperature": {
+          "status": "PROVISIONAL",
+          "sourceIds": [],
+          "basis": "generator prior; no host-specific live telemetry yet",
+          "limitation": "simulator closure is not historical optimum evidence"
+        },
+        "pressure": {
+          "status": "PROVISIONAL",
+          "sourceIds": [],
+          "basis": "reference-duty pressure model only; host remains unvalidated",
+          "limitation": "a static software prediction is not a validated live result or automatically a historical racing-pressure source"
+        },
+        "wearLife": {
+          "status": "RECONSTRUCTED",
+          "sourceIds": [],
+          "basis": "generator family prior; host-specific life unresolved",
+          "limitation": "period durability evidence must not be converted directly into AC virtual-km wear without telemetry calibration"
+        }
+      },
+      "rule": "PROFILE COHERENCE checks compatibility only. Historical evidence status reports sourcing separately; internal FAM/CLS IDs are not citations."
+    },
+    "fields": {
+      "year": 1957,
+      "classId": "CLS102",
+      "familyId": "FAM002",
+      "classPeriod": [
+        1954,
+        1958
+      ],
+      "familyPeriod": [
+        1950,
+        1958
+      ],
+      "familyConstruction": "bias",
+      "currentConstruction": "bias",
+      "constructionProvenance": "FAMILY_DEFAULT",
+      "supplier": "Pirelli",
+      "supplierProvenance": "DIRECT_HISTORICAL_EVIDENCE",
+      "compound": null,
+      "geometry": {
+        "front": {
+          "width": 0.096,
+          "radius": 0.334,
+          "rimRadius": 0.2032
+        },
+        "rear": {
+          "width": 0.124,
+          "radius": 0.3585,
+          "rimRadius": 0.2032
+        }
+      },
+      "thermalConstruction": "bias",
+      "anachronisticOverride": false
+    },
+    "issues": [],
+    "intended": {
+      "value": "bias",
+      "provenance": "FAMILY_DEFAULT",
+      "sourceIds": [
+        "FAM002",
+        "CLS102"
+      ],
+      "confidence": "ACLM historical class calibration"
+    }
+  },
+  "profileCoherent": true,
+  "compatibilityOnly": true,
+  "historicalEvidenceStatus": "PARTIALLY SOURCED"
+}

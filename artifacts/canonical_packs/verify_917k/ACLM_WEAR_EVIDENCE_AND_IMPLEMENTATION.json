@@ -1,0 +1,261 @@
+{
+  "schema": "ACLM historical life / AC wear separation 1.0",
+  "generatedBy": "ACLM Historical Tire Lab v0.10.2",
+  "referenceDuty": {
+    "schema": "ACLM reference-duty wear translation 1.0",
+    "status": "CALIBRATABLE_ARCHITECTURE_NOT_HISTORICALLY_FITTED",
+    "historicalTarget": null,
+    "acImplementation": {
+      "virtualKm": "load/stress-sensitive AC exposure coordinate",
+      "useLoad": 1,
+      "wearCurve": "maps AC virtual exposure to AC grip-health; not physical tread depth"
+    },
+    "exposureIntegrand": "contact pressure × local slip velocity/work",
+    "candidateInputs": [
+      "normalized contact pressure/load",
+      "slip velocity",
+      "slip ratio",
+      "slip angle",
+      "driven/non-driven axle",
+      "temperature",
+      "construction",
+      "compound",
+      "tire geometry",
+      "speed/duty"
+    ],
+    "separation": [
+      "PHYSICAL_ABRASION",
+      "COMPETITIVE_GRIP_DEGRADATION",
+      "AC_WEAR_GRIP_HEALTH_SIGNAL"
+    ],
+    "coefficients": "not fitted; telemetry and source-specific calibration required",
+    "incidentPolicy": "incident/abuse runs demonstrate stress sensitivity but are excluded from clean stint-life fitting"
+  },
+  "entries": [
+    {
+      "compound": "medium",
+      "axle": "front",
+      "historicalLife": {
+        "observedStintKm": null,
+        "competitiveLifeKm": null,
+        "serviceLifeKm": null,
+        "abrasionLifeKm": null,
+        "lifeRangeKm": [
+          300,
+          2000
+        ],
+        "lifeDefinition": "LEGACY_UNCLASSIFIED_PRIOR",
+        "lifeConfidence": 65,
+        "lifeBasis": "1969 GT40 axle-specific change counts anchor endurance scale",
+        "sourceRefs": [
+          "FAM035",
+          "CLS035"
+        ]
+      },
+      "acImplementation": {
+        "virtualKm": "not historical real km",
+        "useLoad": 1,
+        "wearCurve": "aclm_medium_front_wear.lut",
+        "wearCurveSha256": "23124eb12ec6e1dcaa6691fabb4830eaff2d850b24aede9d160f36cfbc901f99",
+        "landmarks": [
+          {
+            "landmark": "PLATEAU_END",
+            "grip": 100,
+            "status": "EXACT_POINT",
+            "x": 2,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_100_PERCENT",
+            "grip": 100,
+            "status": "AMBIGUOUS_PLATEAU_RANGE",
+            "x": 0,
+            "range": [
+              0,
+              2
+            ]
+          },
+          {
+            "landmark": "GRIP_99_5_PERCENT",
+            "grip": 99.5,
+            "status": "EXACT_POINT",
+            "x": 5,
+            "range": [
+              5,
+              5
+            ]
+          },
+          {
+            "landmark": "GRIP_99_PERCENT",
+            "grip": 99,
+            "status": "INTERPOLATED",
+            "x": 6.266666666666667,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_98_PERCENT",
+            "grip": 98,
+            "status": "EXACT_POINT",
+            "x": 8.8,
+            "range": [
+              8.8,
+              8.8
+            ]
+          },
+          {
+            "landmark": "GRIP_97_PERCENT",
+            "grip": 97,
+            "status": "INTERPOLATED",
+            "x": 11.733333333333333,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_95_PERCENT",
+            "grip": 95,
+            "status": "EXACT_POINT",
+            "x": 16.5,
+            "range": [
+              16.5,
+              16.5
+            ]
+          },
+          {
+            "landmark": "GRIP_90_PERCENT",
+            "grip": 90,
+            "status": "INTERPOLATED",
+            "x": 25.333333333333332,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_80_PERCENT",
+            "grip": 80,
+            "status": "EXACT_POINT",
+            "x": 40.5,
+            "range": [
+              40.5,
+              40.5
+            ]
+          },
+          {
+            "landmark": "TERMINAL_OR_FAILURE",
+            "grip": 50,
+            "status": "EXACT_POINT",
+            "x": 54.2,
+            "range": null
+          }
+        ]
+      }
+    },
+    {
+      "compound": "medium",
+      "axle": "rear",
+      "historicalLife": {
+        "observedStintKm": null,
+        "competitiveLifeKm": null,
+        "serviceLifeKm": null,
+        "abrasionLifeKm": null,
+        "lifeRangeKm": [
+          300,
+          2000
+        ],
+        "lifeDefinition": "LEGACY_UNCLASSIFIED_PRIOR",
+        "lifeConfidence": 65,
+        "lifeBasis": "1969 GT40 axle-specific change counts anchor endurance scale",
+        "sourceRefs": [
+          "FAM035",
+          "CLS035"
+        ]
+      },
+      "acImplementation": {
+        "virtualKm": "not historical real km",
+        "useLoad": 1,
+        "wearCurve": "aclm_medium_rear_wear.lut",
+        "wearCurveSha256": "ad5536b64bca4e624ce0f1924dff882044213fa7aec43886b0c077ef6104cbcc",
+        "landmarks": [
+          {
+            "landmark": "PLATEAU_END",
+            "grip": 100,
+            "status": "EXACT_POINT",
+            "x": 2,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_100_PERCENT",
+            "grip": 100,
+            "status": "AMBIGUOUS_PLATEAU_RANGE",
+            "x": 0,
+            "range": [
+              0,
+              2
+            ]
+          },
+          {
+            "landmark": "GRIP_99_5_PERCENT",
+            "grip": 99.5,
+            "status": "INTERPOLATED",
+            "x": 3.5,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_99_PERCENT",
+            "grip": 99,
+            "status": "EXACT_POINT",
+            "x": 5,
+            "range": [
+              5,
+              5
+            ]
+          },
+          {
+            "landmark": "GRIP_98_PERCENT",
+            "grip": 98,
+            "status": "INTERPOLATED",
+            "x": 6.9,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_97_PERCENT",
+            "grip": 97,
+            "status": "EXACT_POINT",
+            "x": 8.8,
+            "range": [
+              8.8,
+              8.8
+            ]
+          },
+          {
+            "landmark": "GRIP_95_PERCENT",
+            "grip": 95,
+            "status": "EXACT_POINT",
+            "x": 13.2,
+            "range": [
+              13.2,
+              13.2
+            ]
+          },
+          {
+            "landmark": "GRIP_90_PERCENT",
+            "grip": 90,
+            "status": "INTERPOLATED",
+            "x": 19.555555555555557,
+            "range": null
+          },
+          {
+            "landmark": "GRIP_80_PERCENT",
+            "grip": 80,
+            "status": "INTERPOLATED",
+            "x": 31.333333333333332,
+            "range": null
+          },
+          {
+            "landmark": "TERMINAL_OR_FAILURE",
+            "grip": 50,
+            "status": "EXACT_POINT",
+            "x": 40.7,
+            "range": null
+          }
+        ]
+      }
+    }
+  ]
+}

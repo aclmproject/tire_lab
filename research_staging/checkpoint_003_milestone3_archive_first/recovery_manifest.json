@@ -1,0 +1,43 @@
+{
+  "recoveryId": "RECOVERY-M3-2026-08-29-001",
+  "overallStatusAtRecovery": "PARTIAL_CONTINUATION_REQUIRED",
+  "exactStopPoint": "Layer E API harvest outputs had been written and 200 review rows classified ABSTRACT_ONLY. Final deduplication and reporting had not completed. Audit found 199 unique normalized titles because NASA NTRS and SAE indexed the same 1992 bias-ply/radial-belted comparison paper.",
+  "firstIncompleteCheckpoint": "MILESTONE_3_QUALITY_GATE_UNIQUE_DOCUMENT_DEDUPLICATION",
+  "authoritativeBaseline": "research_staging/checkpoint_002_milestone2_working",
+  "interruptedCheckpoint": "research_staging/checkpoint_003_milestone3_archive_first",
+  "phases": [
+    {"id":"A","phase":"curated high-priority source ingestion","status":"COMPLETE","evidence":"Milestone 1/Milestone 2 source and evidence registers preserved."},
+    {"id":"B","phase":"original 50-source research packet","status":"PARTIAL","evidence":"Layer A has 55 registered source tasks; 20 reviewed and 35 deferred."},
+    {"id":"C","phase":"500-record parent corpus","status":"COMPLETE","evidence":"500 Layer B parent records registered with lineage; registration is not source review."},
+    {"id":"D","phase":"first 5,000 priority records from 50,000 corpus","status":"PARTIAL","evidence":"5,000 Layer C tasks registered and 50,000-task corpus structurally verified; task execution remains outstanding."},
+    {"id":"E","phase":"broader abstract/source-discovery layer","status":"NEEDS_REVIEW","evidence":"200 Layer E rows written, but unique-document gate found one cross-archive duplicate."},
+    {"id":"F","phase":"deduplication","status":"NEEDS_REVIEW","evidence":"Milestone 2 duplicate groups preserved; Layer E duplicate title identified between NASA NTRS 19940035361 and SAE 922012."},
+    {"id":"G","phase":"source provenance","status":"COMPLETE","evidence":"Each Layer E row has archive, DOI/report identifiers, canonical URL, retrieval authority and abstract fingerprint."},
+    {"id":"H","phase":"full-text versus abstract-only classification","status":"COMPLETE","evidence":"All 200 interrupted Layer E rows are explicitly ABSTRACT_ONLY; none is marked full text."},
+    {"id":"I","phase":"measurement extraction","status":"PARTIAL","evidence":"Milestone 2 measurements preserved; Layer E has abstract numeric signals only and no promoted measurements."},
+    {"id":"J","phase":"observation extraction","status":"COMPLETE","evidence":"Staged typed observation candidates exist; abstract limitations remain attached."},
+    {"id":"K","phase":"scaling-rule extraction","status":"COMPLETE","evidence":"Staged relationship candidates exist; coefficient fitting remains prohibited."},
+    {"id":"L","phase":"historical constraints","status":"COMPLETE","evidence":"Milestone 1/2 historical constraints and ontology are preserved; Layer E adds no direct historical racing constraint."},
+    {"id":"M","phase":"affected family/class mappings","status":"PARTIAL","evidence":"General-mechanics mappings exist; FAM003, FAM023, FAM022 and 1993-96 GT-specific transfer remains open."},
+    {"id":"N","phase":"confidence-gap updates","status":"PARTIAL","evidence":"General-mechanics targets can be partially supported or corroborated; historical supplier targets remain open."},
+    {"id":"O","phase":"evidence-to-generator mapping","status":"NOT_STARTED","evidence":"No numerical generator prior promoted."},
+    {"id":"P","phase":"knowledge-master persistence","status":"NOT_STARTED","evidence":"No canonical Tire Knowledge promotion occurred."},
+    {"id":"Q","phase":"knowledge version/hash","status":"NOT_STARTED","evidence":"No knowledge version changed; research checkpoint output hashes exist only for audit."},
+    {"id":"R","phase":"research report","status":"PARTIAL","evidence":"Milestone 3 impact report had not been written at interruption."},
+    {"id":"S","phase":"quality-gate checks","status":"NEEDS_REVIEW","evidence":"Count gate passed but unique-title gate failed 200/199; JSON/reference/hash gates still required."},
+    {"id":"T","phase":"engineering/code changes","status":"NOT_STARTED","evidence":"No authorized application, physics, build or release change occurred. New GT40 requirements must be staged as engineering evidence only."}
+  ],
+  "protectedWorkingFiles": [
+    {"path":"src/payload/app/app.js","sha256":"af4a26adcc3d282ae6051b1f66e148ebbf8c0a1a3f43cc7a71ba14489fbdcf1e"},
+    {"path":"src/payload/app/index.html","sha256":"318fde29eefb2f487a9b8f42d7b273c6d84672fcc7117d5e5b7b00b0abb0b8ca"},
+    {"path":"src/payload/app/pressure_solver.js","sha256":"389b301f2387e2b85122055b016b37ea93013859d7e3b81d68c091c27a60e17c"}
+  ],
+  "workspaceMutationsObserved": {
+    "applicationFilesPreExistingModified": true,
+    "researchStagingUntracked": true,
+    "commitCreated": false,
+    "buildRun": false,
+    "releaseCreated": false,
+    "knowledgeVersionChanged": false
+  }
+}

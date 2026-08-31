@@ -1,0 +1,468 @@
+=== PDF PAGE 1 ===
+NASA MEMO 2-23-59L
+CASE- F_L
+COPY
+NASA
+C
+#
+MEMORANDUM
+TIRE-TO-SURFACE FRICTION ESPECIALLY UNDER WET CONDITIONS
+By Richard H. Sawyer, Sidney A. Batterson,
+and Eziaslav N. Harrin
+Langley Research Center
+Langley Field, Va.
+NATIONAL AERONAUTICS AND
+SPACE ADMINISTRATION
+WASHINGTON
+March 1959
+
+
+
+=== PDF PAGE 2 ===
+
+
+
+
+=== PDF PAGE 3 ===
+G
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+I,__ORANDUM2-23-59L
+TIRE-TO-SURFACE FRICTION ESPECIALLY UNDER WET CONDITIONS
+By Richard H. Sawyer, Sidney A. Batterson,
+and Eziaslav N. Harrin
+SUMMARY
+The results of measurements of the maximum friction available in
+braking on various runway surfaces under various conditions is shown
+for a C-123B airplane and comparisons of measurements with a tire-
+friction cart on the same runways are made. The results of studies of
+wet-surface friction made with a 12-inch-diameter low-pressure tire on
+a tire-frictlon treadmill, with an automobile tire on the tire-friction
+cart, and with a 44 × 13 extra-high-pressure type VII aircraft tire at
+the Langley landing-loads track are compared. Preliminary results of
+tests on the tire-friction treadmill under wet-surface conditions to
+determine the effect of the wiping action of the front wheel of a
+tandem-wheel arrangement on the friction available in braking for the
+rear wheel are given.
+INTRODUCTION
+The coefficient of friction which can be developed between an air-
+plane's tires and the runway surface is, in many cases, a primary factor
+in determining whether the airplane can make a safe stop in a landing
+on a given runway. Since most of the information available on tire-to-
+surface friction in braking is limited to measurements made at low
+speeds with automobile tires for the full-skid (that is locked wheel)
+condition, investigations have been undertaken by the Langley Research
+Center to provide information on tire-to-surface friction more directly
+applicable to aircraft braking. In these investigations, because of the
+increasing use on aircraft of automatic braking devices which attempt
+to prevent locking of the wheels and at the same time attempt to take
+advantage of the greater friction-coefficient values obtainable for the
+wheel in the incipient-skidding condition, particular attention has been
+paid to measuring the incipient-skidding (that is, maximum) value of the
+friction coefficient.
+
+
+
+=== PDF PAGE 4 ===
+2
+t_
+MEASUREMENOTNSACTUALRUNWAYUSNDERVARIOUSCONDITIONS -I
+k_
+kO
+The first investigation was madein actual landing runs of a
+C-123Bairplane (fig. l) on various runways under various conditions.
+The main gear of this airplane was equipped with 49-inch-diameter
+(type III, 17.00-20, 16 ply rating) low-pressure tires which were
+inflated to a pressure of 65 lb/sq in. The airplane was equipped with
+an antiskid braking system which cycled the brakes on and off at a rate
+of about
+2 cycles per second, producing traverses of the wheel slip
+ratio through the inciplent-skidding condition and thereby allowing
+measurements of the maximum friction coefficient to be made frequently
+during the braked portion of the landing run.
+Tire-to-surface friction measurements haw_ also been made with the
+friction cart shown in figure 2. This cart, which is equipped with two
+4-ply 6.70-15 automobile tires, was developed as a possible operational
+device for measuring the available friction on the runway. The two
+wheels of the cart are geared with a gear ratio less than 1.O so that
+one wheel is forced to operate near the incipient-skidding condition.
+Figure 3 presents mean values of the maximum friction coefficient
+obtained over a speed range of about 15 to ll5 knots for the airplane
+and up to about 50 knots with the cart on the _ame surfaces.
+The agreement of the airplane and cart results for the surfaces
+shown is seen to be good. For dry surfaces, values of maximum friction
+coefficient of about 0.8 were obtained. On snow-covered surfaces, val-
+ues of maximum friction coefficient ranging from about 0.24 to 0.37 were
+found, with the value apparently dependent on %he subsurface. On ice,
+values of maximum friction coefficient of 0.18 to 0.20 were obtained,
+with no effect of temperature noted at the two temperatures of the
+investigation.
+For wet surfaces, an example of comparative results with the air-
+plane and cart is shown in the lower part of f_gure 4. It can be seen
+that the apparent decrease in maximum friction coefficient with speed
+and the large variations in maximum friction co,efficient, which are
+attributed to the effect of differences in depth of water along the
+runway, made correlation of the results diffic1_it. The apparent decrease
+in maximum friction coefficient with speed is believed to be associated
+with a gradual penetration by a film of water _mder the tire. This
+gradual penetration occurs because as speed is increased the tire has
+less time to overcome the inertia and viscous _ffects of the water in
+displacing the water from the path of the tire. Therefore, with
+increasing speed, the water penetrates farther and farther under the
+tire until the whole footprint is supported on a film of water and the
+tire is in effect "aquaplaning." The extremely low values of maximum
+
+
+
+=== PDF PAGE 5 ===
+3
+friction coefficient obtained with the airplane, which are especially
+apparent at the high speeds, in the heavy rain condition shown in the
+upper part of figure 4 are believed to be associated with a considerable
+penetration by a film of water under the tire.
+An elementary analysis of this wet-surface phenomenon, based only
+on pressure and inertia-force considerations, indicates that the fric-
+tion available should decrease with increase in the dynamic pressure
+exerted by the water on the tire, decrease with decrease in the tire
+footprint bearing pressure, and decrease with increase in the depth of
+water. Other factors such as footprint shape and tread design also
+influence the friction coefficient.
+WET-SURFACE MEASUREMENTS BY VARIOUS METHODS
+To study this low-friction wet-surface phenomenon under controlled
+conditions, the apparatus shown in figure 5 was built. In testing, a
+sheet of water is flowed onto the endless belt from the nozzle at the
+same speed as the belt while the 12-inch-diameter low-pressure tire is
+braked.
+Some illustrative results of frlction-coefficient measurements with
+the treadmill taken from reference 1 are shown in figure 6. The losses
+in maximum and full-skid values of friction coefficient with increase
+in speed are as predicted by the elementary analysis of the effect of
+the dynamic pressure of the water. For speeds in the equilibrium region
+indicated in figure 6, the wheel tends to stop with no braking applied,
+reaching a condition of stable equilibrium in the stopped position. At
+these speeds it can be seen that the free-roll friction coefficient has
+increased to a value as great as or greater than the full-skid value.
+Apparently, in this condition the pressure, inertia, and viscous forces
+of the water create a torque on the wheel which is equal and opposite to
+the torque from the frictional force.
+Studies of wet-surface friction have also been made by towing the
+friction cart at various speeds through a water trough. The trough
+testing method was originated and developed by James P. Trant, Jr., at
+the Langley Research Center. The trough was constructed by simply
+erecting two low parallel walls on a concrete road surface. Some of
+the results of these measurements are given in figures 7 and 8. Figure 7
+shows the effect of the depth of water and, as predicted by the elemen-
+tary theory, the maximum friction decreases with increase in depth. It
+is interesting to note the large losses at the higher speeds, even for
+the thinnest depth of water. In figure 8, the predicted favorable
+effect of increasing the tire footprint bearing pressure is borne out
+
+
+
+=== PDF PAGE 6 ===
+4
+by the increase in the maximum friction coefficient with inflation
+pre ssure.
+To study wet-surface friction at speeds and tire pressures more
+representative of aircraft operation, some tests have been made of a
+44 x 13 extra-high-pressure, 26 ply rating, type VII tire at the Langley
+landing-loads track. For this purpose a water trough was constructed
+on the track roadbed. Preliminary results from these measurements are
+shown in figures 9 and lO.
+Figure 9 shows that the maximum friction coefficient for this air-
+craft tire decreased rapidly as water depth izcreased in a similar fash-
+ion to the results obtained with the friction cart. The large decrease
+in friction from the dry-surface value (maximtm friction coefficient of
+the order of 0.7 to 0.8) for the thinnest depth is also similar to the
+cart results.
+Measurements on the local runways indicated that in a moderate
+rain depths of water up to 0.35 inch existed in puddles several hundred
+feet long and that 90 percent of the surface was covered with a minimum
+depth of water of 0.03 inch. A depth of watex of O.1 inch was accord-
+ingly selected for the tests at several tire Iressures and speeds, and
+the results of these tests are shown in figure lO.
+The _MAX values are seen to drop rapidly with increase in speed,
+values equal to about zero occurring at a little over lO0 knots. The
+influence of inflation pressure is somewhat difficult to see, but there
+is some indication that at speeds below 80 knots the lowest tire pres-
+sure gives somewhat higher values of _MAX, whereas at speeds above
+80 knots the highest tire pressure gives somewhat higher friction.
+Since the elementary analysis indicated that the friction would be
+a function of the dynamic pressure of the water and the tire footprint
+bearing pressure, the results from the treadmill, friction cart, and
+landing-loads track are compared for one deptl_ in figure ll on the basis
+of the ratio of the dynamic pressure q to t}_e gross footprint bearing
+pressure pg. The results for the treadmill _e for 0.09 inch of water,
+while the results for the friction cart and l_ding-loads track are for
+O.1 inch of water. The treadmill and frictioiL-cart results are for the
+recommended tire inflation pressure for the wl_el loading used in each
+case. The recommended inflation pressure for the aircraft tire as
+loaded is 150 lb/sq in. The measured rolling friction has been sub-
+tracted from the treadmill results as the friction-cart and landing-
+loads-track measurements do not include rolling friction. The agreement
+of the results from the three methods, compared on the basis of q/pg,
+is seen to be fairly good. In general it appears that prediction of
+
+
+
+=== PDF PAGE 7 ===
+5
+the friction for the aircraft tire from either the treadmill or cart
+results on this basis would lead to somewhat unconservatlve results,
+with the predicted friction coefficient being somewhat high. Attempts
+to strengthen the agreement of these results by involving other parame-
+ters such as footprint shape, tread design and wheel size have not yet
+proved successful.
+The problem of low friction on wet surfaces can be alleviated, of
+course, by providing better drainage, perhaps through more crown on the
+runways, or creating escape paths for the water by better tread design
+or through use of a knobby surface. Higher bearing pressures attained
+through use of higher inflation pressures, tread design, or use of sharp
+angular-textured aggregates in the surface which give local bearing
+pressures of 2,000 to 8,000 lb/sq in. can all increase the friction
+available.
+Another possibility, removal of the water by wiping action, has
+been tried on the treadmill with the tandem-wheel arrangement shown in
+figure 12. The wheel on the right in the figure wipes a path for the
+other wheel which is braked. Tests were made with the wheels as shown
+and also with the wiper wheel lifted out of the way. Results of these
+measurements are given in figure 13.
+The favorable increase in the maximum and full-skid friction coef-
+ficients for the tandem arrangement at the higher speeds is quite evi-
+dent. Considering the maximum friction values for both the tandem- and
+single-wheel arrangements, for a bogie gear with equal loads carried
+on the front and rear wheels and both wheels braked the effective maxi-
+mum friction coefficient would be about 0.3 at the highest speed, an
+increase of 50 percent over the slngle-wheel value or the mean of two
+single-wheel values. Actually, in these tests only about 20 percent of
+the total weight was carried on the front wheel, and for such a weight
+distribution a gain of about 80 percent in the effective friction coef-
+ficient can apparently be realized. For the tandem arrangement, the
+full-skid and free-roll curves appear to indicate that the speed at
+which difficulty would be experienced in having the wheel attain the
+condition of equilibrium would be extended considerably.
+CONCLUDING REMARKS
+The effect of runway surface on the maximum friction coefficient
+has been shown for actual landings of a C-123B airplane on various sur-
+faces under various conditions. Results of measurements made with a
+friction cart were found to agree with the airplane results for dry,
+snow-covered , and icy surfaces, but correlation of airplane and cart
+
+
+
+=== PDF PAGE 8 ===
+6
+results for wet surfaces was found to be very difficult. Study of wet-
+surface friction indicated that the loss of adhesion is related to the
+dynamic pressure of the water, the tire footprint bearing pressure, and
+the depth of water. Measurements of friction obtained by three methods
+for one depth of water agreed fairly well when compared on the basis of
+the ratio of the dynamic pressure of the water to the gross footprint
+bearing pressure. The wiping action of the front wheel of a tandem-
+wheel arrangement was shown to increase considerably the friction avail-
+able on the rear tire.
+Langley Research Center,
+National Aeronautics and Space Administration,
+Langley Field, Va., November 5, 1958.
+REFERENCE
+i. Harrin, Eziaslav N.: Low Tire Friction and Cornering Forces on a
+Wet Surface. NACA TN 4406, 1958.
+
+
+
+=== PDF PAGE 9 ===
+7
+C-123B AIRPLANE
+L-94879
+Figure 1
+TIRE- FRICTION CART AND TOWING VEHICLE
+
+
+
+=== PDF PAGE 10 ===
+8
+EFFECT OF SURFACE
+C-123B AIRPLANE AND FRICTION CART
+DRY
+//////////////////////////////////////////////////L'A BITUMINOUS
+DRY
+"//////////////////////////////////////////////////_/A CONCRETE
+SNOW; ICY SUBSURFACE
+///////////////////////j SNOW; BARE PAVEMENT SUBSURFACE
+ICE; SURFACE TEMP. 19°F
+ICE; SURFACE TEMP. 3:>"F l AIRPLANE
+P7777-/-/-/_ FRICTION CART
+I I l I I I i I
+0 .2 .4 .6 .8
+MEAN VALUE OF MAX. FRICTION COEFF., _MAX
+Fl_e3
+MAXIMUM FRICTION ON WET RUNWAYS
+G-123B AIRPLANE AND FRICTION CART
+0 FRICTION CART
+• AIRPLANE
+,F8 BITUMINOUS; HEAVY RAI_
+.4 •
+• mini •
+0 n I J • m m I
+MAX.
+FRICTION
+COEFE, CONCRETE; LIGHT RAIN
+P'MAX
+.4 mm...mura-
+m mlm_ml(m
+• • mmm
+i i i i i
+0 2O 40 60 80 I00
+SPEED, KNOTS
+Figure 4
+
+
+
+=== PDF PAGE 11 ===
+2G
+TIRE-FRICTION TREADMILL
+o_
+,.-,ni-
+l
+]-,-933o3
+Figure 5
+EFFECT OF SPEED
+TREADMILL; SMOOTH TIRE; 13 LB/SQ IN.; O.O2-1N. WATER
+.8
+I--EQUILIBRIUM
+,6
+FRICTION
+COEFE,
+H- MAXIMUM _ REGION
+FREE ROLL I I I
+20 40 60
+SPEED, KNOTS
+Figure 6
+
+
+
+=== PDF PAGE 12 ===
+10
+EFFECT OF WATER DEPTH
+FRICTION CART; RIB TREAD; 40 LB/SQ IN.
+1.0
+.8
+__ DRY
+MAX. .6 _ WATER
+FRICTION
+COEFE,
+P-MAX
+.4
+.2
+0 20 4C 60
+SPEED, KNOTS
+Figure 7
+EFFECT OF INFLATION PRES_._URE
+FRICTION CART; RIB TREAD
+I.O
+.8
+DRY _ .....
+MAX. .6 { _ INFLATION PRESSURE.
+FRICTION 0.30 IN.WATER \\\ LB/SQ IN.
+COEFE,
+p-MAX
+.4 /_ 24
+/--18
+/_ 40
+.2
+\
+I I 1
+0 2O 4O 6O
+SPEED, KNOTS
+Figure 8
+
+
+
+=== PDF PAGE 13 ===
+ll
+EFFECT OF WATER DEPTH
+LANDING-LOADS TRACK; RIB TREAD; 150 LB/SQ IN.; 89 KNOTS
+.5
+.4
+.3
+MAX.
+FRICTION
+COEFF.,
+/ZMA x .2
+I I I I I I
+0 .I 2 .5 .4 .5 .6
+WATER DEPTH, IN.
+Figure 9
+EFFECT OF SPEED AND INFLATION PRESSURE
+ON WET- SURFACE FRICTION
+LANDING-LOADS TRACK; RIB TREAD; O.I-IN. WATER
+1.0
+INFLATION
+PRESSURE,
+.8 LB/SQ IN.
+o IOO
+[] 150
+.6 O 200
+MAX
+.4
+.2
+I
+20 40 60 80 I00 120
+SPEED, KNOTS
+Figure lO
+
+
+
+=== PDF PAGE 14 ===
+12
+COMPARISON OF WET-SURFACE FRICTION RESULTS FROM
+TREADMILL, FRICTION CART, AND LANDING-LOADS TRACK
+1.0 -- TREADMILL; O.09-1N. WATER
+------ FRICTION CART; O.I-IN WATER
+.8 INFLATION
+PRESSURE,
+L8/SQ IN.
+.6
+4? \ [] 15(:
+/'_MAX 9_\\_ o I00 } LANDTINRGA-CLKO;ADS
+_1\o O 20(, O.I-IN, WATER
+.4
+0 o_
+.2
+_ " e _o__... _
+I i 1 rl-.l__r_l__l
+0 .4 .8 1.2 -I.6 v2.0 2.4
+q/Pg
+Figure ii
+TANDEM WHEEL ARRANGEMENT ON TIRE'FRICTION TREADMILL
+Figure 12 L-58-41
+
+
+
+=== PDF PAGE 15 ===
+3G
+13
+EFFECT OF WHEELS IN TANDEM
+TREADMILL; TREADED TIRE; 15 LB/SQIN.; O.O9-1N. WATER
+1.0 REAR WHEEL OF
+TANDEM ARRANGEMENT
+SINGLE WHEEL
+,8
+ARRANGEMENT
+FRICTION
+COEFF., .6
+MAXIMUM
+.4
+FULL "-.
+.2 SKID _
+FREE
+ROLL .....
+I
+I I
+0 20 40 6O
+SPEED, KNOTS
+Figure 13
+
+
+
+=== PDF PAGE 16 ===
+

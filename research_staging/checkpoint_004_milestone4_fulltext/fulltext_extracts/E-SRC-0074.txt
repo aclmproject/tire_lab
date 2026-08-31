@@ -1,0 +1,1067 @@
+=== PDF PAGE 1 ===
+
+
+
+
+=== PDF PAGE 2 ===
+TECH LIBRARY KAFB, NM
+NASA
+Technical
+Paper
+21 95
+1983
+TemperatureD istribution
+ina nA ircraftT ire
+at Low GroundS peeds
+John Locke McCarty
+andJ ohn A. Tanner
+LangleyR esearchC enter
+HamptonV, irginia
+National Aeronautics
+and Space Administration
+Scientific and Technical
+Information Branch
+1983
+
+
+
+=== PDF PAGE 3 ===
+
+
+
+
+=== PDF PAGE 4 ===
+SUMMARY
+An experimentals tudy was conducted tod efinet emperaturep rofiles of 22 X 5.5,
+type V I I , biasp lya ircraft tires subjectedt of reelyr olling, yawed rolling, and
+lightb rakingc onditions.R esults of thisi nvestigationi ndicatet hatt emperatures
+along the inner wall of the freely rolling tires were greater than those near the
+outers urface. The effect of increasing tire deflection was toi ncreaset he tempera-
+turew ithint hes houldera nds idewalla reas of thet irec arcass. The effect of cor-
+nering and braking w a s toi ncreaset het readt emperature. For taxi operations at
+fixed yaw angles,t het emperaturep rofiles were not symmetric. Increasingt he ground
+speedp roducedo nlym oderatei ncreases i n treadt emperature, whereas the temperatures
+int hec arcasss houlder and sidewall were essentiallyu naffected.
+INTRODUCTION
+Becauseo f thet ransientn ature of theirs ervicer equirements,a ircraft tires
+operate under substantiallyh eavierl oadings and greater deflections than tires for
+otherv ehicles.T ypically, an aircraft tire must carry a largel oadf or a relatively
+short period of timed uringb otht akeoff and landing,a ndt heh eatg eneratedw ithin
+the tire during these operations is normallya llowed to dissipate prior to then ext
+usec ycle. With thisd esignp hilosophy,a na ircraft tire canc arryf arg reaterl oads
+than those that would normallyb e carriedi nc ontinuouss ervice where thet emperature
+buildup must be controlled due t o long-termm aterials trength and fatigue limita-
+tions.T hisp hilosophyh aso bviously been a good one ase videnced by thet housands
+of aircraftt iresc urrentlyi ns atisfactorys ervice. A majors hortcoming of t h i s
+designp hilosophy, however, is that it canb eo verextended t o allowt emperaturest o
+build up t o dangerousl evels which may damage them aterialsi nvolved( cord-rubber
+matrix) and eventuallyl eadt ot iref ailure. One condition which can precipitate
+such a failure is thel engthyt axid istancesr equireda t some airports between the
+terminal and the runway. During thesel ongt axir unsp riort ot akeofft he tire can
+generatec onsiderableh eat which may bec oupledw ithh igh tire stresses since the
+aircraft is operating at its heaviestl oad. A similart iret emperature/stressc ondi-
+tiond evelops when one tire on a dual or a dual-tandem landingg earf ailst hereby
+overloadingt her emainingt ire(s) on the same gear. This condition is discussed i n
+detaili nr eference 1. Ina nothers cenario,t emperatures may bej usth igh enough t o
+cause a slow heat degradation to take place and rendert he tire unfit for the multi-
+pler etreadingn ormally done on aircraft tires.
+Generally, tires are designedf ort hel oadings tressesa nd,b ecause of thel ack
+of availabled ata, little or no allowance is made for the reduction in structural
+integrity due tot hei nteraction of stress and temperature.A vailablea utomobile and
+truck tire temperatured ata are reviewed in reference 2 where it is pointed out that
+many tire properties( for example, fatigue life, tread wear,a nds peed potential) are
+adversely affected by hight emperature,a ndh eat is considered to be the great enemy
+of tires. It is furthers tated i n reference 2 thata ttention must be directed toward
+minimizingh eatg eneration,a voiding its concentrationi np articularz ones,a ndu sing
+materials which maintainr equiredp ropertiesa tt hea ttainedt emperatures. Heat
+generation and heat resistance are the responsibility of rubber compounders and
+textile scientists, whereash eatc oncentration is mostlyd etermined by tire design
+(ref. 2). Thus a need existst os tudyt he complex nature of thei nteraction of
+"
+
+
+
+=== PDF PAGE 5 ===
+stress andt emperatured uring a l l ground operationalp hases of an aircraft tire. To
+meet t h i s need, a research program was initiated by NASA to predict andm easure the
+temperature distribution within an aircraft tire to aid in defining the strength and
+fatigue limitations of the tire carcasss tructure.
+The purposeo f this paper is to present results froma ne xperimentals tudy t o
+define temperature profiles in the carcass of a tire undergoing free rolling, light
+braking,a nd yawed rollingc onditions. Dataf rom thiss tudy are beingu sed t o sup-
+port development of an analytical method for predicting tire temperature distribu-
+tion.A nalyticala ndl imitede xperimentale ffort is underway att heU niversity of
+Michiganu ndera NASA Granta nd some results of that effort are presented in refer-
+ences 3 and 4.
+SYMBOLS
+Values areg iveni nb oth SI and U.S. Customary Units. The measurements and
+calculations were made i n U.S. Customary Units.F actorsr elatingt he two systems are
+given i n reference 5.
+d driosltl ainncge
+T tire catrecma psse rature
+V spegerdo und
+6 tire verdteicf laelc tion
+(4 yaw angle
+APPARATUS AND TEST PROCEDURE:
+Tiresa nd Thermocouple Installation
+The tires of thisi nvestigation were size 22 X 5.5, 12-ply rating,t ype V I I ,
+bias ply aircraft tires which were instrumentedw itht hermocouples and retreaded
+witha s tandardr ubbers tock. Most of thet hermocouplei nstallation was done by
+implantingt hes ensorsi nh olesd rilledi ntot he tire carcass after the carcasses
+hadb een buffedp riort or etreading. All tires were curedi nt he same mold; thus,
+a l l tires had the same tread pattern of four circumferential grooves similar to that
+illustratedi nt hec ross-sectionals ketch of figure 1. The purpose of thisf igure
+is toi dentifyt hea pproximatep hysicall ocation of the 18 thermocouples which were
+installedt od efinet hec arcasst emperatured istribution. The 18 thermocouples were
+mounted on the inner and outer walls of the tires anda longa na pproximatem idline
+at sixs tationsl abeled A through F. Theset hermocouple locations were selectedt o
+permits tudies of thet emperatured istributionb otht hrought het hickness of the
+carcassa s w e l l asa roundt hem eridian of thec rosss ection. The insidet hermocouple
+a t eachs tation is referred to as beingi n row 1, them idlinet hermocouplei n row 2,
+and thet hermocouple on theo uterw all is consideredi n row 3. Thus, the thermo-
+couple identified as station C, row 3 is that which is along the outer wall of the
+t i r e and, as thef igure shows, in the tire shoulder area.
+2
+
+
+
+=== PDF PAGE 6 ===
+Ground Test Vehiclea ndI nstrumentation
+A photographo f the ground test vehicle employed in this investigation is shown
+as figure 2 and the tire test fixture with keyc omponents identified is shown i n
+figure 3. A close-up of a tire showing thet hermocouplec onnectionst hrought hes lip
+ring assembly is shown inf igure 4. Verticall oad was applied to the tire by means
+oft wo pneumaticc ylindersa nd this load, together with the drag load on the tire
+duringb raking tests, was measured by strain-gage beams in the tire test fixture.
+Most of the tests involved a free rolling tire; however, several tests entailed
+operating the tire at fixed slip ratios to simulate braking and others involved yaw-
+ingt he tire tod uplicatec ornering. For thef ixed-slip-ratio tests, the tire was
+drivent hrough a universalc oupling by gears whichw ere chaind riven by a driving
+wheel on thev ehicle. This operation is describedi n more detaili nr eference 6.
+For the yaw tests, the entire fixture was rotated to the preselected yaw angle and
+clamped in place.
+The output from thec arcasst hermocouples, as collectedt hroughs lipr ings, was
+recorded as the printout from a datal ogger which periodically sampled the multiple
+thermocouplec hannelsa ndc onvertedt hei nformationt oe ngineering( temperature)
+units. The instrumentedt railingw heel,s eeni nf igures 2 and 3, provideda na ccu-
+rate measurement of speed and distance to the vehicle operator and thisi nformation
+plus the outputs from the strain-gage beams were recorded on an oscillograph.
+Test Technique
+The testing technique involved driving the ground vehicle at the desired test
+speedt hel ength of ana pproximately 2743 m (9000 ft) asphalt runway a t t h e Wallops
+FlightC enterw hilem onitoringt het emperaturesa ndl oadingss ensed by the instru-
+mented test tire ina dditiont ot hev ehicles peed and distance. Dataw ere acquired
+with the tire freely rolling, yawed rolling, and at fixed slip ratios to simulate
+brakedr ollingc onditions. The t i r e was testeda td eflections of 25, 30, and 35 per-
+cent which bracket the nominal aircraft tire operational deflection of 32 percent.
+For theset ests,t he tire was loaded t o a nominal 18 kN (4000 lb) and thei nflation
+pressure was adjustedt oy ieldt hed esiredd eflections. Those inflationp ressures
+w e r e 0.86, 0.67, and 0.50 MPa (125, 97, and 73 psi). To simulatea ircraftt axi
+conditions, a l l testing was conducted a t a nominalg rounds peedo f 32 km/hr (20 mph)
+exceptf or one series where thes peedr ange was increased to 80 km/hr (50 mph).
+Whether the tire was freer olling, yawed, orb raked,t het estp rocedurer emained
+the sameT. he vehicle was first positioned at one endo f the runway and the test
+tire lowered to thes urface and loaded t o 18 kN (4000 lb). The vehicle was then
+rapidlya cceleratedt o 32 h / h r (20 mph) and drivent hel ength of the runway a t t h a t
+speed. The oscillograph, which recorded alld atae xceptt heo utputs from the thermo-
+couples, was switched on prior to the tire loading operation andr emained on until
+the test was completeda nd thel oading removed. The datal ogger was engaged when the
+vehicle commenced t o r o l l and,w hile keyed tot heo scillograph,p rovided a tempera-
+ture printout from a l l 18 thermocouplese very 10 secondst hroughoutt het estr un.
+For the unyawed free rolling and the fixed slip ratio tests, it was assumed that
+thet emperatured istribution was symmetricala boutt he tire center line (only one
+side ofe ach test tire was equippedw itht hermocouples)a ndo nly one test run was
+necessary to define the temperature buildup in the tire carcass for each test condi-
+tion. However, fort he yawed rolling tests, it was necessaryt oc onducte achr un
+3
+
+
+
+=== PDF PAGE 7 ===
+twice with the tire yawed both clockwise and counterclockwise to obtain temperature
+data on both sides of the tire and thus complete the temperature profile picture.
+For such repeat runs, the tire was cooled between runs by spraying it with cool water
+until the thermocouples registered temperatures which closely approximated initial
+values.
+Testing of a particular tire was concluded when thermocouple-wire failures
+became excessive or, in the case of the yawed and braked tests, when approximately
+half the tread rubber had been removed due to scrubbing in the tire footprint.
+RESULTS AND DISCUSSION
+The growth in tire carcass temperatures with distance traveled is typified by
+the data of figure5 . These temperatures were obtained from the data logger print-
+outs of the thermocouple responses which, in a few cases, necessitated some, but not
+extensive, fairing because of obvious erratic thermocouple behavior during the course
+of a run. In other situations, the temperature data are limited because of failures
+to individual thermocouples. The data are presented on a row-by-row basis to illus-
+trate temperature variations from crown to bead along the inside, midline, and out-
+side of the tire cross section. As expected, tire carcass temperatures increase with
+distance traveled and the rate of increase varies throughout the carcass. (See
+fig. 5.)
+The effect on the temperature distribution in a tire carcass due to extended
+roll distance, tire deflection, yaw angle, slip ratio, and ground speed is examined
+in some detail in the following paragraphs. The examination compares temperature
+levels at corresponding thermocouple locations for each variable after the test tire
+had traveled a specified distance during a run. Comparisons are made on the basis of
+the temperature distribution both around the meridian of the tire cross aste ction
+three carcass depths (rows 12,, and 3) and through the thickness of the tire carcass
+at various meridianal locations (stations A througFh). In addition, sketches are
+included to illustrate visually the differences in the temperature profiles.
+Effect of ExtendedR oll Distance
+As noted in figure5 , test distances for obtaining uninterrupted temperature
+data were limited by the length of the2. 7 km (1.7 miles) runway. Those distances
+never exceeded approximately2 .5 km (1.5 miles) since the remaining runway length was
+needed to decelerate the vehicle from it3s2 h/hr (20 mph) test speed. A review of
+the data indicated that all temperatures increased with distance but that atth e rate
+which the temperatures increased generally became less with distance traveled. This
+trend suggested that the tire carcass was approaching an equilibrium temperature
+profile, and many passes were made in both directions on the test r3u2n wha/yh ra t
+(20 mph) to establish this profile. It became apparent after the tire had traveled
+approximately 19 812 m (65 000 ft) that each thermocouple was approaching an equilib-
+rium value. The final temperature profile, obtained afte2r4 384 m (80 000 ft), is
+presented in figure6 and shows temperatures approaching 149O(C3 00OF) near the
+shoulder area (station C) in figure 6(a). It is clearly illustrated in figure 6(b)
+that temperatures along the inner wall (r1)o wo f the sidewall region from shoulder
+to bead (stations C to F), are considerably greater than those near the outer surface
+(row 3). The center-line tread temperature (stationA, row 3) is somewhat lower than
+that in the adjacent tread area (statBi,o nr ow 3 ) . Lower center-line temperatures
+were also observed from tread surface temperature measurements made with a hand-held
+pyrometer immediately following the tests.
+4
+
+
+
+=== PDF PAGE 8 ===
+Thesel owerc enter-linet readt emperaturess uggestt hatt here is less tread
+scrubbing along the center line than along the adjacent tread stations and this trend
+may be a function of theb ias-plyc onstruction of the tire. Thesel ower center-
+line temperatures may also be influenced by footprint bearing pressure distributions,
+which tend to be lower along the tread center line than at other tread locations
+(ref.7 ).
+A sketch illustrating the complete temperature profile for the extended roll
+test condition is presentedi nf igure6 (c). The equilibriumt emperature of the tire
+inner w a l l from station B to station E is above 121OC (250OF) which canl eadt o
+premature tire failures( ref. 2). The temperaturec ontourl inesi nt hiss ketcha nd
+a l l subsequentt emperaturep rofiles ketchesr epresent a hand fairing of the thermo-
+coupled ata.
+Equilibriumt emperaturesi na utomotivea ndt ruck tires haveb eenr ecordedo ver
+higher test speedsi nr eferences 2 and 7, among others,g enerally by inserting
+thermocouplen eedles intot he tire after lengthy test runs. As anticipated,e quilib-
+rium temperaturesa re shown to increase consistently with increasing speed.
+Effect of TireD eflection
+To exploret hei nfluenceo ft ired eflection on temperatureb uildup i n the car-
+cass, a series of t e s t s werer unw ith a free rolling tire, a braked tire, and a yawed
+tire, each atv ariousd eflectionv alues. For theset estst hed ifferentd eflections
+were obtained by changingt he tire inflationp ressurew hilem aintainingt he nominal
+18 kN (4000 lb)v erticall oading. The results of thoset estsa red iscussedi nt he
+paragraphs which follow.
+Free rolling tire.- The data of figure 7 illustrate the effect of tire deflec-
+tion on the distribution of temperature within the tire carcass after the tire had
+rolledf reelyf or a distance of 1524 m (5000 f t ) . Data arel acking i n thet read
+region( stations A and B), but similar tests on other tires showed l i t t l e e f f e c t of
+tire deflection on temperaturesi nt hata rea. A l l data show little differencei n
+temperatures between deflections of 25 and 30 percentb ut a significanti ncrease i n
+temperaturer esults when the deflection is extended t o 35 percent.
+Aircraft tires are designed to operate at vertical deflections ranging up t o
+32 percent and these results indicate that taxi operations at greater deflections
+canl eadt os ignificantlyh ighert iret emperatures. In figure7 (c),t his tempera-
+ture increase is more pronounceda longt hei nners urface of the tire sidewall and
+shoulder,a nd it is attributed to the more severes idewallf lexinga ssociatedw ith
+the increased tire deflection.
+Braked tire.- The effect of tire deflection on temperatureb uildupi nt he car-
+cass of a tire int heb raking mode is illustratedi nf igure 8T. he temperatured ata
+of this figure were acquired after the tire had traveled 1524 m (5000 f t ) at a
+nominal s l i p r a t i o of 10 percent and at deflections of 25, 30, and 35 percent of the
+tire crosss ection. The brakinge ffort was simulated by thet estt ruckd riving mech-
+anisma nd the test wheel was note quippedw ith a brake. The datai nt hef igurei ndi-
+cate that the temperature levels generally increase with increasing tire vertical
+deflection and these temperature increases are more pronounced in the tread and
+shoulder area. These resultsa gains uggestt hatt hei ncreased tire temperatures are
+induced by the increased carcass flexing associated with higher tire deflections.
+5
+
+
+
+=== PDF PAGE 9 ===
+I
+-
+Yawed tire. Differences in temperature buildup tdou ec hanges in the deflection
+of a yawed tire are presented in fi9g.u reD ata are provided for a tire operataitn g
+a yaw angle of6 O and deflected 25 and3 5 percent of its cross-sectional height. The
+comparison is made after the tire had traveled a distance of (27103040 fmt ). The
+tire temperature data for the entire carcass cross section are presented in fig-
+ures 9(a) and (b) to illustrate ltohses of symmetry in the temperature profile due
+to the yaw angle, and the temperature contour sketches are shown in figure 9(c).
+The temperatures in the tire sidewall and shoulder t ot ebned greater for the higher
+vertical deflections as expected, but along the carcass midline (row 2) in the
+vicinity of the tread, the opposite trend was observed.
+Summary.- Increasing tire vertical deflections generally increases the tempera-
+ture of the tire carcass regardless of the test condition. For the free rolling and
+yawed tire tests these temperature increases are more prominent in the tire shoulder
+and sidewall areas. For the braked tire test the temperature increase is more pro-
+nounced in the tread and shoulder areas. For each test, the temperature increases
+are associated with the increased carcass flexing associated with the higher tire
+deflections.
+Effect of Yaw Angle
+The effect of yaw angle on the distribution of temperature in a tirei s c arcass
+best illustrated in figure1 0 where data acquired at yaw angles Ooo,f 3O, and 6 O are
+presented after the tire had traveled a distance of m2 13(47 000 ft). Again, the
+temperature data for the entire carcass cross section are presented in figures 10(a)
+and (b) to illustrate thleo ss of symmetry as the yaw angle increases, and the tem-
+perature contour sketches are presented in figure lO(c). These data are plotted such
+that the directiono f the cornering force is to the righAt .s tudy of these figures
+shows a substantial temperature rise with increasing yaw angle in the tread area.
+These elevated tread temperatures are more pronounced along the carcass midline
+(row 2) and outer surface (row 3) than along the inner wall (1r)o. w This result
+suggests that the higher tread temperatures are due to the increased scrubbing action
+in the tire footprint associated with the increasing yaw angle. lTohses of symmetry
+in the temperature profile, which is associated with increasing yaw angle, is more
+pronounced along the carcass inner wall. This asymmetriys characterized by elevated
+temperatures in the right-hand shoulder and sidewall areas of the tire carcass and by
+slightly reduced temperatures in the left-hand shoulder and sidewall areas as the yaw
+angle is increased from zero. These trends indicate that the right-hand side of the
+tire carcass is subjected to greater flexing as the yaw angle increases and the left-
+hand side of the tire is subjected to reduced flexing.
+Effect of Slip Ratio
+The effect of slip ratio on tire temperature distribution is illustrated by the
+data of figure 11 taken from tests at nominal slip ratoifo s0 , 0.05, and 0.10 after
+the tire in each test had traveled a distance of m2 1(374 000 ft). The drag force
+friction coefficients for the braking tests were computed to be 0.29 and 0.49 for
+slip ratios of0 .05 and 0.10, respectively. It should again be emphasized that the
+braking action was simulated by the driving mechoafn itshme test truck and no brake
+was installed in the test wheel. Thus the tire bead and sidewall areas were not
+subjected to brake heating effects and the data presented in1 1 fdiegpuircet the
+thermal effects associated with the braking energy dissipated by the tire. It is
+6
+
+
+
+=== PDF PAGE 10 ===
+readily apparent from the figure that increased slip ratios increase tire tempera-
+tures in the tread area and this buildup is greatest at or near the outer surface.
+Effect of Speed
+To obtain some indication of the influence of taxi speed on trteinrdes in
+temperature growth, a serie.s of test runs were made at speed ranges h /fhrorm 32
+(20 mph) to 8h0/ hr (50 mph) The temperature distributions after the tire had
+traveled 2134 m( 7000 ft) at the different test speeds are presented in 1f2.i gure
+The figure suggests that the effect of wheel speed is small. The sidewall tempera-
+ture is essentially unaffected and only moderate increases of about( 5 43O0FO)C are
+noted in the tread temperature as the speed is increased, at least within the speed
+range examined. The rise in tread temperature at higher speeds is perhaps the result
+of the higher frequency squirming action which has been observed in the tire foot-
+print. Figure 12(b) further illustrates a trend typical of most test results
+reported herein. In general the interior carcass temperatures are higher than the
+outer edge temperatures along the tire shoulder, sidewall, and bead and the outer
+edge temperatures are higher than the interior temperatures in the tread area. These
+trends suggest that the primary heat source for the shoulder, sidewall, and bead
+areas is associated with the damping characteristics of the tire materials and the
+primary heat source for the tread area is associated with the generation of friction
+forces in the contact region.
+CONCLUDING REMARKS
+An experimental study was conducted to define the temperature profiltehse in
+carcass of 22 X 5.5, type VII, bias ply.aircraftt ires subjected to freely rolling,
+yawed rolling, and light braking conditions. The tires were instrumented with ther-
+mocouples implanted in the carcass during a retreading process. The braking tests
+consisted of gearing the tire to a driving wheel of a ground vehicle to provide oper-
+ations at fixed slip ratios on a dry runway surface. The cornering tests involved
+freely rolling the tire at fixed yaw angles 6 Ou.p to
+The results from this investigation indicate that the temperatures t haleo ng
+inner wall of the freely rolling tires were greater than those near the outer sur-
+face. The effect of increasing the tire deflection was to increase the temperature
+within the shoulder and sidewall areas of the tire carcass. The effect of cornering
+(yaw angle effects) and braking (slip ratio effects) was to increase the tire tread
+temperature. For taxi operations at fixed yaw angles the temperature profiles were
+not symmetric. Increasing the ground speed produced only moderate increases in the
+tread temperature, whereas the tire sidewall temperatures were essentially
+unaffected. Finally, the trends observed in this study suggest that the prhimeaarty
+source for the tire shoulder, sidewall, and bead areas is associated with the damping
+characteristics of the tire materials and the primary heat source for the tread area
+is associated with the generation of friction foricne'st he contact region.
+Langley Research Center
+National Aeronautics and Space Administration
+Hampton, VA 23665
+July 5, 1983
+7
+
+
+
+=== PDF PAGE 11 ===
+RE3'ERENCES
+1. mrup,P aul C.: Improvement of OverloadC apability of A i r Carrier Aircraft
+Tires. Rep. NO. FAA-RD-78-133, Oct. 1978.
+2. Conant, F. S.: Tire Temperatures. Rubber Chem. Technol.v, ol. 44, no. 2, 1971,
+pp. 397-439.
+3. Clark, Samuel K.; and Dodge, Richard N.: Heat Generationi nA ircraft Tires Under
+Free RollingC onditions. NASA CR-3629, 1982.
+4. Dodge, Richard N.; and Clark, Samuel K.: Recent Aircraft Tire Thermal Studies.
+SAF. Tech. Paper Series 821392O, ct. 1982.
+6. McCarty, John L.; Yager, Thomas J.; and Riccitiello, S. R.: Wear, Friction, and
+TemperatureC haracteristics of an AircraftT ireU ndergoingB raking and
+Cornering. NASA TP-1569, 1979.
+7. Clark, Samuel K., ed.M: echanics of Pneumatic Tires. U.S. Dep. Transp., 1981.
+8
+
+
+
+=== PDF PAGE 12 ===
+B
+Station A
+Row 1 2 3
+Figure 1.- Thermocouple identification and
+location in tire carcass.
+L-83-95
+Figure 2.- Ground test vehicle.
+9
+
+
+
+=== PDF PAGE 13 ===
+L-83-96
+Figure 3.- Tire test fixture showing major components.
+
+
+
+=== PDF PAGE 14 ===
+683-97
+Figure 4.- Close-up of test tire showing thermocouple connections througshl ip ring assembly.
+
+
+
+=== PDF PAGE 15 ===
+4 00
+Station
+2 00
+A
+"-
+B
+"-
+C
+D
+""""
+E
+""""-
+150 F 3 00
+100
+200
+T, OC
+T, OF
+100
+""""
+Row 1 I Row 2 Row 3
+I I I I I I I I I I I I
+0 .5 1 1.5 2 2.5 0 .s 1 1.5 2 2.5 0 .5 1 1.5 2 2.5
+Distancek, m Distancek ,m Distancek, m
+0
+1 I 1 I
+0 .5 1 1.5 0 .5 1 1.5 0 .5 1 1 .s
+Distancem, i Distancem, i Distancem, i
+Figure 5.- Temperature buildup with distance traveled for selected test conditions6 .= 30 percent;
+3, = 00; S l i p ratio = 0; V = 32 km/hr (20 mph).
+
+
+
+=== PDF PAGE 16 ===
+175 350
+150
+300
+125 d
+250
+100
+200 T, OF
+T, OC
+75
+150
+50
+100
+25
+Row 1 Row 2 Row 3
+50
+. u
+0 ” ”
+A B C D E F A B C D E F A B C D E F
+Station Station Station
+(a) Around tire meridian.
+Figure 6.- Tire equilibrium temperature distribution. 6 = 30 percent; 3, = 00; slip ratio = 0;
+V = 32 h/hr (20 mph); d > 24 384 m (80 000 ft).
+
+
+
+=== PDF PAGE 17 ===
+175 350
+150
+300
+/o
+0
+0’
+125
+250
+100
+200 T, OF
+T, OC
+75
+150
+50
+100
+25
+Sta. A Sta. B Sta. C Sta. D Sta. E Sta. F
+50
+0 ‘ U u u u l”l u
+1 2 3 1 2 3 1 2 3 1 2 1 3 2 1 3 2 3
+Row Row Row Row Row Row
+(b) Through tire carcass.
+-
+Figure 6. Continued.
+
+
+
+=== PDF PAGE 18 ===
+OC (OF)
+107 t o 121( 225 t o 250)
+66 to 79( 150 to 175) 121 t o 135 (250 t o 275)
+. > .,
+-:
+79 t o 93( 175 t o 200) >13(>5 2 75)
+"I, '
+. 93 t o 107 (200 t o 225)
+* I
+(c) Sketch illustrating complete temperaturep rofile.
+-
+Figure 6. Concluded.
+15
+
+
+
+=== PDF PAGE 19 ===
+6, % 350
+175
+425
+-"-CI 30
+""4 35
+150 300
+12s
+250
+100
+200 T, OF
+T, OC
+-
+Q
+75
+R
+\
+\ 150
+\ 9
+\
+\ 0
+so \
+~
+- 100
+-
+\ / \
+kl
+25
+Row 1 Row 2 R-OW 3
+50
+L-
+0 A B C D E F A B C I I E F A B C D E F
+Station Station Station
+(a) Around tire meridian.
+Figure 7.- Effect of tire deflection on temperature distributioni n free rolling tire. JI = Oo;
+Slip ratio = 0; V = 32 h/hr (20 mph); d = 1524 m (5000 ft).
+
+
+
+=== PDF PAGE 20 ===
+175 r
+-
+150
+I
+-
+125
+L
+100
+I 0 0c 0
+200 T, F
+\
+T, OC \
+\
+- \ \
+75 \ \ \ \
+\
+I =
+- 4
+50
+0-
+-
+25
+l o o
+J
+Sta. A Sta. B Sta. C Sta. D Sta. E Sta. F 50
+u u u u u u
+0-
+1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3
+Row Row Row Row Row Row
+(b) Through tirec arcass.
+-
+Figure 7. Continued.
+
+
+
+=== PDF PAGE 21 ===
+4'7 ( ~ 8 0 )
+27 t o 38 (80 t o 100)
+38 t o 49 (100 t o 120)
+49 t o 60( 120 t o 140)
+60 t o 71 (140 t o 160)
+71 t o 82 (160 t o 180)
+>82( > 180)
+r
+6 = 35 percent
+(c) Sketch illustrating complete temperature profile.
+-
+Figure 7. Concluded.
+18
+
+
+
+=== PDF PAGE 22 ===
+r 6, % 350
+175 425
+-"-""-o* 30
+t 35
+300
+150
+250
+-
+100
+200 T, OF
+T, OC I
+-
+75
+150
+-
+50
+- -
+100
+Row 1 Row 2 Row 3
+50
+R B C D f f R B C D E F R B C D E F
+Station Station Station
+(a) Around tire meridian.
+
+
+
+=== PDF PAGE 23 ===
+350
+175
+6, %
+425
+I - "_" -4 30 300
+P 0 35
+lSO
+P d/
+i
+125 250
+/
+$*
+I 7
+100 I d \ B 9 9
+\
+d
+T, OC r5 o " n \ \ \
+\
+0 7 \ ' \ 9
+75
+150
+50 e
+6,
+100
+25
+Sta. A Sta. B Sta. C Sta. D Sta. E Sta. F i
+50
+0 - L U u u u u u
+1 2 3 I 2 3 1 2 3 1 2 3 1 2 3 1 2 3
+Row Rod Row Row Row Row
+(b) Through tire carcass.
+-
+Figure 8. Continued.
+
+
+
+=== PDF PAGE 24 ===
+0
+(OF)
+
+
+
+=== PDF PAGE 25 ===
+hl
+hl
+6, %
+-
+425
+"-0 35
+Direction of corneringf orce
+& 350
+175
+150 300
+J?
+125 0-d
+\ 250
+\
+100
+-0 200 T,'F
+T,O C
+75
+150
+50
+-
+100
+25
+Row 1 Row 2 Row 3
+50
+. - uu u1 1111
+0
+F E D C B A B FCEDD ECF B A B FCEDD ECF B A B C D E F
+Station Station Station
+(a) Around tire meridian.
+
+
+
+=== PDF PAGE 26 ===
+4 %
+"-0 25
+- "-0 35
+Direction of corneringf orce
+175 - I 350
+150 - 1
+300
+9
+125 4 F
+\ 250
+\
+100 d
+T, OC 4 d - 200 T, OF
+\9 \
+15 A
+150
+t D
+50
+-
+-
+loo
+25
+Sta. F Sta. E Sta. D Sta. C Sta. B Sa. A Sta. B Sta. C Sta. D Sta. E Sta. F ] 50
+u u u u u u u u u u
+0 -
+1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 13 2 3 1 2 13 2 3 1 2 3 1 2 3
+Row Row Row Row RRooww Row Row Row Row Row
+(b) Through tire carcass.
+Figure 9.- Continued.
+
+
+
+=== PDF PAGE 27 ===
+24
+
+
+
+=== PDF PAGE 28 ===
+I -
+Direction of corneringf orce
+I
+175
+150
+125 -
+250
+100
+200
+T, OC
+T,
+OF
+75
+150
+50
+100
+25
+50
+0
+F E D C B A B C D E F F E D C B A B C D E F F E D C B A B C D E F
+Station Station Station
+(a) Around tire meridian. I
+N I
+VI
+
+
+
+=== PDF PAGE 29 ===
+-
+Direction of cornering force
+175 350
+0
+150 300
+125
+250
+00-aQ
+at 4 ?\
+100 \
+200 T,OF
+T,C'
+15 Q
+150
+50
+100
+Sta. E Sta. D Sta. C Sta. 6 Sta. A Sta. B Sta. C Sta. D Sta. E Sta. F
+50
+u u u w u !-"-I u u u
+1 2 13 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 13 2 13 2 3
+Raw Row Row Row Row Row Raw RRoaww Row Row
+(b) Through tire carcass.
+-
+Figure 1 0. Continued.
+
+
+
+=== PDF PAGE 30 ===
+OC (OF)
+<52( < 125)
+52 t o 66 (125 t o 150)
+66 t o 79( 150 t o 175)
+79 t o 93( 175 t o 200)
+93 t o 107 (200 t o 225)
+107 t o 121( 225 t o 250)
+>121( > 250)
+n
+n
+(c) Sketch illustrating complete temperaturep rofile.
+-
+Figure 10. Concluded.
+27
+
+
+
+=== PDF PAGE 31 ===
+N
+a
+Slip ratio 350
+175
+4 0
+-4 .05 0
+0 .10
+""
+150 300
+125
+250
+0
+100
+200 1, OF
+T, OC
+75
+150
+50
+b
+100
+-
+-
+25 -
+Row 1 Row 2 Row 3
+50
+-- "
+C
+R B C D E F R B C D E F R B C D E F
+Station Station Station
+(a) Around tire meridian.
+
+
+
+=== PDF PAGE 32 ===
+.II
+350
+0
+Slip ratio
+0
+I 4 0
+I
+I I -4 .05 300
+I ""-
+I 0 .lo
+I
+I
+I
+I
+- I
+125 I
+I 250
+I
+I
+I
+I
+d I 0 A
+m , f ',
+'0
+d
+200 T, OF
+0
+/
+- /
+2
+75 pi,
+150
+-
+50
+100
+-
+25
+Sta. A Sta. B Sta. C Sta. D Sta. E Sta. F
+50
+0 - L"J u u u u III
+1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3
+Row Row Row Row Row Row
+(b) Through tire carcass.
+-
+Figure 11. Continued.
+
+
+
+=== PDF PAGE 33 ===
+OC (OF)
+1 - 1 1
+<49 (a201
+[ F j
+49 t o 60 (120 t o 140)
+60 t o 71 (140 t o 160)
+slip ratio = 0.05
+71 t o 82 (160 t o 180)
+,=
+82 t o 93 (180 t o 200)
+93 t o 104 (200 t o 220)
+'104 ('220)
+S1 i p ratio = 0.10
+(c) Sketchi llustratingc ompletet emperaturep rofile.
+-
+Figure 11. Concluded.
+
+
+
+=== PDF PAGE 34 ===
+175 350
+150 300
+125
+250
+100
+-
+200 T, OF
+TI OC
+75
+-
+150
+50
+-
+- 100
+1
+25
+Row 1 ROW 2 Row 3
+.- L-
+0
+A B C D E F A B C I I E F - R B C D E F
+Station StationS tation
+(a) Around tire meridian.
+Figure 12.- Effect of speed on temperature distribution in free rolling tire. 6 = 30 percent;
+Q = 00; slip ratio = 0; d = 2134 m (7000 ft).
+
+
+
+=== PDF PAGE 35 ===
+350
+175
+V, kml hr (mph)
+"+ (203 )2
+150 300
+--"u 48 (30)
+- "0 64 (40)
+""-
+A 80 (50)
+125
+250
+100
+200 T, OF
+T, OC
+75
+1-50
+so
+100
+25
+Sta. C Sta. D Sta. F
+50
+u u
+0 L"J
+1 2 3 1 2 3 1 2 3
+Row Row Row
+(b) Through tire carcass.
+-
+Figure 12. Continued.
+
+
+
+=== PDF PAGE 36 ===
+OC (OF)
+=
+82 t o 93 (180 t o 200)
+1-1 93 t o 104( 2 00 t o 220)
+49 t o 60 (120 t o 140)
+60 t o 71 (140 t o 160)
+1
+71 t o 82 (160 t o 180)
+(c) Sketch illustrating complete temperature profile.
+.-
+Figure 12 Concluded.
+33
+. "" . .
+
+
+
+=== PDF PAGE 37 ===
+i
+B
+1. Report No. 2. Government Accession No. 3. Recipient's C a t a l o g No.
+NASA TP-2195
+4. Title and Subtitle 5. Repon Date
+August1 983
+TEMPERATURED ISTRIBUTION I N AN AIRCRAFT TIRE AT LOW
+6. Performing Organization Code
+GROUND SPEEDS 505-45-23-01
+7. Author(s1 8. Performing Organization Report No.
+-15605
+JohnL ockeM cCartya ndJ ohn A. Tanner
+, 10. Work Unit No.
+9. Performing Organization Name and Addresr
+1
+I
+NASA LangleyR esearchC enter 11. Contract or Grant No.
+Hampton, VA 23665
+13. Type of Report and Period Covered
+12. SponsoringA gencyN ame and Address TechnicalP aper
+NationalA eronauticsa ndS paceA dministration
+14. SponsoringA gencyC ode
+Washington, DC 20546
+I "
+15. SupplementaryN otes
+16. Abstract
+An experimentals tudy was conducted to definet emperaturep rofileso f 22 X 5.5,
+type VII, biasp lya ircraft tires subjected to freelyr olling, yawed rolling,a nd
+lightb rakingc onditions.T emperaturesa longt hei nner w a l l of freelyr olling tires
+were greatert hant hosen eart heo uters urface. The effecto fi ncreasing. tire
+deflection was toi ncreaset het emperaturew ithint hes houldera nds idewall areas of
+t h e tire carcass. The effecto fc orneringa ndb raking was toi ncreaset het read
+temperature.F ort axio perations a t fixed yaw angles,t emperaturep rofiles were not
+symmetric. Increasingt heg rounds peedp roducedo nlym oderatei ncreasesi nt read
+temperature,w hereast emperaturesi nt hec arcasss houldera nds idewall were essen-
+tially unaffected.
+17. Key Words( Suggested by Author(s)) 18. Distribution Statement
+-
+Aircraft tires Unclassified Unlimited
+Carcass temperatures
+Freer olling
+Yawed rolling
+Lightb raking SubjectC ategory 39
+19. Security Classif. (of this report) 20. Security Classif. (of this page) 21. No. of Pages 22. Rice . ~ ~~
+Unclassified Unclassified 34 A0 3
+For sale by thNe ationaT le chnicaIn l formatioSn erviceS , pringfieldV . lrglnla 22161 NASA-Langley, 1983

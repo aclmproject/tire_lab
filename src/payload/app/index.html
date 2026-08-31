@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-  <h1>ACLM Historical Tire Lab <span class="version">v0.9.2 Browser App + AC import</span></h1>
+  <h1>ACLM Historical Tire Lab <span class="version">v0.10.2 Browser App + AC import</span></h1>
   <div class="muted">Historical tire research + AC physics import + complete Assetto Corsa v10 / CSP Thermal V2 tire-pack generation + built out of spite.</div>
   <div class="header-actions">
     <span id="serverState" class="pill ok">Local browser app</span>
@@ -76,18 +76,16 @@
   <option value="auto">Auto — derive from year + racing class</option>
   <option value="manual">Manual / preserve current choices</option>
  </select></div>
- <div><label>Construction</label><select id="construction"><option value="radial">Radial</option><option value="bias">Bias / cross-ply</option></select></div>
- <div><label>Year</label><input id="year" type="number" value="1995"></div>
+ <div><label>Construction</label><select id="construction"><option value="radial">Radial</option><option value="bias">Bias / cross-ply</option></select><div id="constructionProvenance" class="small muted">Provenance: UNKNOWN_FALLBACK</div></div>
+ <div><label>Year</label><input id="year" type="number" value="1995"><label class="checkrow small"><input id="allowAnachronisticOverride" type="checkbox">Allow anachronistic/custom override (profile-coherence exception)</label></div>
  <div><label>Series / class</label><select id="series">
   <option value="General / unknown">General / Unknown</option>
   <option value="1993-96 BPR / Le Mans GT" selected>1993-96 BPR / Le Mans GT</option>
  </select></div>
  <div><label>Car</label><input id="car" value="Toyota Supra LM"></div>
- <div><label>Tire manufacturer / supplier</label><select id="supplier">
-  <option value="General / unknown">General / Unknown</option>
-  <option value="Dunlop" selected>Dunlop</option>
- </select></div>
+ <div><label>Tire manufacturer / supplier</label><select id="supplier"><option value="General / unknown" selected>General / Unknown</option><option value="Dunlop">Dunlop</option></select><div id="supplierProvenance" class="small muted">Provenance: UNKNOWN_FALLBACK</div></div>
 </div>
+<div id="historicalEvidenceStatus" class="notice small muted">Historical evidence status is separate from profile compatibility and will appear here.</div>
 <div class="small muted" style="margin-top:6px">Series/class options are grouped by the selected historical tire family. A proven curated or researched supplier is selected automatically; otherwise the manufacturer remains General / Unknown for manual selection.</div>
 <h3>Historically valid tire menu</h3>
 <div class="checkrow historical-compounds">
@@ -108,6 +106,7 @@
 </div>
 <div class="actions" style="margin-top:8px"><button id="resetCompoundNames" type="button">Use researched/default names</button></div>
 <div id="historicalFamilySummary" class="notice small">Auto category uses the researched year + racing class to choose a Tire Lab historical family and its period-valid tire menu. It does not impose a modern Soft/Medium/Hard ladder.</div>
+<div id="historicalCoherenceStatus" class="notice small">Historical profile coherence has not been evaluated.</div>
 <div class="notice small">Import preserves direct car/tire geometry. Historical category selection changes tire architecture, dry tire type (treaded vs slick), construction when the evidence is unambiguous, compound availability/names, and class-life wear priors. Supplier-proprietary peak grip is not invented from the category.</div>
 </div>
 
@@ -137,12 +136,18 @@
 <div class="card">
 <h2>4. Operating setup</h2>
 <div class="checkrow">
- <label><input id="autoSolvePressure" type="checkbox" checked>Auto-solve generated cold pressures from ideal hot pressure + compound temperature window</label>
+ <label><input id="autoSolvePressure" type="checkbox" checked>Auto-solve recommended setup cold pressures from ideal hot pressure + predicted internal/core temperature</label>
+ <label><input id="axleIdealPressure" type="checkbox">Use evidence-backed axle-specific ideal pressures</label>
 </div>
 <div class="grid3">
  <div><label>Blanket temp (°C)</label><input id="blankets" type="number" value="70"></div>
  <div><label>Ideal hot pressure (psi)</label><input id="pIdeal" type="number" step=".5" value="29"></div>
- <div><label>Cold-pressure reference temp (°C)</label><input id="pRefTemp" type="number" step=".5" value="26"></div>
+ <div><label>Front / rear ideal hot psi (used only when enabled)</label><div class="grid"><input id="pIdealF" type="number" step=".5" value="29"><input id="pIdealR" type="number" step=".5" value="29"></div></div>
+ <div><label>Ambient/reference setup temp (°C)</label><input id="pRefTemp" type="number" step=".5" value="26"><div class="small muted">Not automatically equated with AC tire core.</div></div>
+ <div><label>AC initial core reference (°C, optional)</label><input id="pInitialCore" type="number" step=".1" placeholder="Use validated fixture prediction"><div class="small muted">Direct telemetry or explicit setup reference overrides the family/driver prediction.</div></div>
+ <div><label>Calibration reference driver</label><select id="pReferenceDriver"><option value="AI_REFERENCE" selected>AI reference</option><option value="HUMAN_REFERENCE">Human reference</option><option value="UNKNOWN">Unknown</option></select></div>
+ <div><label>Reference track-duty factor</label><input id="pReferenceDuty" type="number" min=".75" max="1.3" step=".05" value="1"></div>
+ <div><label>Selected setup cold F / R psi (optional)</label><div class="grid"><input id="pSelectedF" type="number" step=".1" placeholder="unknown"><input id="pSelectedR" type="number" step=".1" placeholder="unknown"></div><div class="small muted">Records the setup actually selected in AC/Content Manager. It does not alter generated physics.</div></div>
  <div><label>Pressure temp gain</label><input id="pTempGain" type="number" step=".01" value=".15"></div>
  <div><label>Soft generated cold F / R psi</label><div class="grid"><input id="pSF" type="number" step=".1" value="20"><input id="pSR" type="number" step=".1" value="20"></div></div>
  <div><label>Medium generated cold F / R psi</label><div class="grid"><input id="pMF" type="number" step=".1" value="21"><input id="pMR" type="number" step=".1" value="20"></div></div>
@@ -151,7 +156,7 @@
  <div><label>Wet generated cold F / R psi</label><div class="grid"><input id="pWF" type="number" step=".1" value="19"><input id="pWR" type="number" step=".1" value="18"></div></div>
 </div>
 <div id="pressureSolveStatus" class="notice small">
-Generated cold pressures use a first-order constant-volume ideal-gas prediction, not a universal fixed offset. Every export reports the predicted rise and hot closure plus the volume/load/construction/duty factors still awaiting telemetry calibration.
+Recommended setup cold pressure uses a pressure-response calculation and a separate stabilized internal/core-temperature prediction. PRESSURE_STATIC, desired hot PRESSURE_IDEAL, and the setup recommendation are reported separately. It is not a universal fixed offset.
 </div>
 </div>
 
@@ -162,7 +167,7 @@ Generated cold pressures use a first-order constant-volume ideal-gas prediction,
  <div><label class="checkrow"><input id="wetTread" type="checkbox" checked>Wet tread-depth fields</label></div>
 </div>
 <div id="physicsModeSummary" class="notice small"><b>Car physics requirement:</b> car.ini VERSION=extended-2 · <b>Tyre thermal model:</b> THERMAL_MODEL VERSION=2 · <b>Extended contact rays:</b> enabled.</div>
-<details><summary>Advanced / calibration architecture</summary><div class="notice small">Thermal V2 keeps the required Kunos THERMAL sections, adds matching THERMAL2 sections for every compound, and exports a machine-readable calibration manifest. Obsolete V1/V2 controls are emitted as zero.</div></details>
+<details><summary>Advanced / calibration architecture</summary><div class="notice small">Thermal V2 keeps the required Kunos THERMAL sections, adds matching THERMAL2 sections for every compound, and exports a machine-readable calibration manifest. Obsolete V1/V2 controls are emitted as zero.</div><div id="engineeringProvenance" class="workspace-results small muted">Generate a pack to inspect value/source/formula/construction-prior/telemetry/confidence/status provenance.</div></details>
 <div class="grid" style="margin:10px 0">
  <div><label>Wear calibration status</label><select id="wearStatus"><option value="provisional">Provisional / evidence-weighted</option><option value="imported">Preserve imported AC behavior as reference</option><option value="historical">Historically calibrated from stint evidence</option></select></div>
  <div><label>Calibration note</label><input id="wearNote" value="Wear curve remains provisional until period stint/degradation evidence is mapped to virtual km."></div>
@@ -205,6 +210,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <h2>7. Integrated validation workspace</h2><p class="muted">Combine car physics, track physics, telemetry and historical tire knowledge. Parsed evidence and inferred screening results remain visibly separate.</p>
 <details open><summary>Track ZIP + track-energy profile</summary><div class="dropbox"><label>Assetto Corsa track ZIP</label><input id="trackZip" type="file" accept=".zip,application/zip"><div class="small muted">Reads ui_track.json, surfaces.ini and text metadata. KN5 geometry and binary AI lines are not decoded.</div></div><div class="grid3" style="margin-top:8px"><div><label>Track name</label><input id="trackName" value="Manual circuit"></div><div><label>Length (km)</label><input id="trackLength" type="number" step=".001" value="4.000"></div><div><label>Energy factor</label><input id="trackEnergy" type="number" step=".05" value="1.00"></div></div><div id="trackStatus" class="notice small">No track ZIP imported. Manual length and energy values are active.</div></details>
 <details open><summary>Warm-up / overheating simulation + axle optimizer</summary><div class="grid3"><div><label>Laps</label><input id="simLaps" type="number" value="12"></div><div><label>Average speed (km/h)</label><input id="simSpeed" type="number" value="125"></div><div><label>Driver aggression</label><input id="simAggression" type="number" step=".05" value="1.00"></div><div><label>Ambient °C</label><input id="simAmbient" type="number" value="22"></div><div><label>Track °C</label><input id="simTrackTemp" type="number" value="30"></div></div><div class="actions" style="margin-top:8px"><button class="primary" id="runTrackSimulation">Simulate selected tires</button></div><div id="simulationResults" class="workspace-results small muted">Run the screening simulation.</div><h3>Front/rear thermal balance optimizer</h3><div id="balanceResults" class="workspace-results small muted">Simulation required.</div></details>
+<details><summary>Requested live-session metadata</summary><div class="grid3"><div><label>Requested fuel rate (optional)</label><input id="telemetryRequestedFuelRate" type="number" step="0.1" placeholder="e.g. 0"></div><div><label>Requested damage rate (optional)</label><input id="telemetryRequestedDamageRate" type="number" step="0.1" placeholder="e.g. 0"></div><div><label>Starting fuel litres (optional)</label><input id="telemetryStartingFuel" type="number" step="0.1"></div><div><label class="checkrow"><input id="telemetrySessionBlankets" type="checkbox">Session tyre warmers enabled</label><div class="small muted">Independent of tyres.ini BLANKETS_TEMP capability.</div></div></div><div class="notice small">Requested settings are preserved separately from raw shared-memory values. A raw aid_tire_rate value of 0 does not overwrite the requested 1x wear setting.</div></details>
 <details id="telemetryDetails"><summary>Telemetry CSV overlay + thermal/wear diagnostics</summary><div class="actions"><input id="telemetryCsv" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values"><button id="importTelemetryCsv" type="button">Import &amp; analyze selected CSV</button></div><div class="grid3" style="margin-top:8px"><div><label>Fallback tyre-wear multiplier</label><input id="telemetryWearMultiplier" type="number" min="0.1" step="0.1" value="1"><div class="small muted">Used only if the CSV lacks recorded aid_tire_rate.</div></div><div><label>Wear-test classification</label><select id="telemetryWearTestClass"><option value="clean-stint" selected>Clean controlled stint</option><option value="incident-abuse">Incident / abuse test</option></select></div><div><label>Requested air °C</label><input id="telemetryRequestedAir" type="number" step="0.5" value="26"></div><div><label>Requested road °C</label><input id="telemetryRequestedRoad" type="number" step="0.5" value="26"></div></div><h3>Pressure-corrected A/B test</h3><div class="grid3"><div><label>Run role</label><select id="pressureABRole"><option value="unclassified">Not an A/B run</option><option value="baseline">A — untouched generated pressure</option><option value="corrected">B — cold-pressure corrected</option></select></div><div><label>Identical tire-pack ID / hash</label><input id="pressureABTireId" placeholder="Use the same value for A and B"></div><div><label>Cold correction FL / FR (psi)</label><div class="grid"><input id="pressureCorrectionFL" type="number" step=".1" value="0"><input id="pressureCorrectionFR" type="number" step=".1" value="0"></div></div><div><label>Cold correction RL / RR (psi)</label><div class="grid"><input id="pressureCorrectionRL" type="number" step=".1" value="0"><input id="pressureCorrectionRR" type="number" step=".1" value="0"></div></div><div><label class="checkrow"><input id="pressureUnsafeBaseline" type="checkbox">Severe rollover/tripping sensation</label></div><div><label>Subjective driver feedback</label><input id="pressureSubjectiveFeedback" placeholder="Carcass flex, delayed steering, rollover/tripping, direction-change stability"></div></div><div class="notice small muted">For the Escort A/B, keep the identical generated tire and change only setup cold pressure: approximately +2 psi left and +3 psi right. These are temporary test corrections, not generator values.</div><div id="telemetryStatus" class="notice small">No telemetry loaded. Recorded AC physics conditions are authoritative; requested and observed conditions are retained separately.</div><div id="telemetryConditionResults" class="notice small muted">Requested versus observed conditions will appear here.</div><div id="thermalDiagnosticResults" class="notice small muted">Thermal-network diagnostic will appear here. It does not retune coefficients.</div><div id="pressureDiagnosticResults" class="notice small muted">Per-wheel hot-pressure closure will appear here.</div><div id="pressureABResults" class="notice small muted">Import an A baseline and B corrected CSV to compare pressure, temperatures, load, slip, lateral response, steering and wear.</div><div id="wearDiagnosticResults" class="notice small muted">Raw wear deltas, plateau exits, distance rates and multiplier exposure will appear here.</div><canvas id="telemetryOverlay" width="680" height="230"></canvas></details>
 <details><summary>Pressure and camber recommendation sweep</summary><div class="grid3"><div><label>Compound slot</label><select id="sweepCompound"><option value="soft">Sprint/soft</option><option value="medium" selected>Race/medium</option><option value="hard">Endurance/hard</option><option value="intermediate">Intermediate</option><option value="wet">Wet</option></select></div><div><label>Axle</label><select id="sweepAxle"><option value="front">Front</option><option value="rear">Rear</option></select></div><div><label>Validation camber F (deg)</label><input id="validationCamberF" type="number" step=".1" value="-2.0"></div><div><label>Validation camber R (deg)</label><input id="validationCamberR" type="number" step=".1" value="-1.5"></div></div><div class="actions" style="margin-top:8px"><button id="runSweep">Run pressure/camber sweep</button></div><div id="sweepResults" class="workspace-results small"></div></details>
 <details><summary>Stint and degradation strategy</summary><div class="actions"><button id="runStrategy">Calculate stint windows</button></div><div id="strategyResults" class="workspace-results small muted">Uses class-life priors when available; otherwise clearly labeled fallback estimates.</div></details>
@@ -231,7 +237,7 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <div class="card update-card">
 <h2>Tire Lab updates</h2>
 <div class="grid">
- <div><label>Installed build</label><div><b id="installedBuild">v0.9.2</b></div></div>
+  <div><label>Installed build</label><div><b id="installedBuild">v0.10.2</b></div></div>
  <div><label>Update channel</label><div>Stable</div></div>
 </div>
 <div class="actions" style="margin-top:10px">
@@ -290,6 +296,9 @@ When enabled, Tire Lab removes the unrealistic very-low-grip tail after the fina
 <script src="historical_categories.js"></script>
 <script src="knowledge_fallback.js"></script>
 <script src="export_naming.js"></script>
+<script src="profile_state.js"></script>
+<script src="wear_model.js"></script>
+<script src="integrity.js"></script>
 <script src="pressure_solver.js"></script>
 <script src="pdf_report.js"></script>
 <script src="thermal_v2.js"></script>

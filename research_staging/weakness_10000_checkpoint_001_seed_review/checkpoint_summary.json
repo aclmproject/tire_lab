@@ -1,0 +1,58 @@
+{
+  "checkpoint": "Weakness corpus high-value seed review; P0 milestone not complete",
+  "packageAudit": {
+    "manifestTargets": 10000,
+    "p0Targets": 1000,
+    "temporalConflicts": 443,
+    "partialTemporalOverlaps": 140
+  },
+  "sourceResolution": {
+    "uniqueRealDocumentsBibliographicallyResolved": 7,
+    "fullTextReviewed": 6,
+    "inaccessible": 1,
+    "p0TargetsSatisfied": 0,
+    "remainingSeedRows": 43,
+    "remainingP0Targets": 1000
+  },
+  "evidence": {
+    "candidateCount": 13,
+    "byType": {
+      "MEASUREMENT": 4,
+      "HISTORICAL_OBSERVATION": 4,
+      "EVENT_SUPPLIER_EVIDENCE": 3,
+      "SCALING_RULE": 2
+    },
+    "byWeakness": {
+      "W01_PRESSURE_TEMP_SETUP": 2,
+      "W10_RR_HYSTERESIS_THERMAL": 1,
+      "W09_HEAT_CYCLE_AGING_DAMAGE": 2,
+      "W04_WET_INTERMEDIATE": 5,
+      "W06_SUPPLIER_COMPOUNDS": 1,
+      "W05_CONSTRUCTION_MATERIALS": 1,
+      "W07_FITMENT_GEOMETRY_REGS": 1
+    }
+  },
+  "mostImportantImpact": [
+    "Direct period evidence supports car/load-specific intermediate menus: a light Porsche 908 and heavier Matra could not safely use the same mixed-weather choice as conditions dried.",
+    "A heavy Group 2 Camaro reportedly needed two or three intermediate types where lighter saloons could use one, reinforcing vehicle-load-specific menus.",
+    "The new seeds do not yet close the Escort/FAM023 pressure or temperature gap; the previously reviewed 1971 Escort fitment report remains non-numeric.",
+    "The 1953 BRM measurements are useful external-heat and failure evidence but are a secondary quotation, apply to the V16 rather than the P48, and do not justify changing FAM021/FAM023 physics."
+  ],
+  "numericalGeneratorChanges": [],
+  "integrity": {
+    "uniqueDocumentIds": true,
+    "uniqueEvidenceIds": true,
+    "orphanEvidenceDocumentIds": [],
+    "pass": true
+  },
+  "disposition": {
+    "canonicalKnowledgeChanged": false,
+    "applicationChanged": false,
+    "p0ImpactReportAuthorized": false,
+    "reason": "The requested P0 milestone requires resolving the first 1,000 targets. This checkpoint exposed target-quality defects and reviewed only high-value seeds."
+  },
+  "outputHashes": {
+    "sourceReviews": "90980f7df9a57ed6dd48f3655be60c5ef5d6313d257e3204571089d64ec01d89",
+    "evidenceCandidates": "5f679505d34f3f493d034492a40e7f971fc89430990d7e92b55adc4db97da20b"
+  }
+}

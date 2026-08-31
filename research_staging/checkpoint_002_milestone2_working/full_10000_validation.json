@@ -1,0 +1,11 @@
+{
+  "activeTargets": 10000,
+  "invalidClassEra": 0,
+  "invalidRepositoryType": 0,
+  "duplicateIntent": 0,
+  "duplicateActiveTargetIds": 0,
+  "originalTargetIdsUnique": true,
+  "replacementTargets": 10000,
+  "activeIntendedAcquisitionsPreserved": true,
+  "pass": true
+}

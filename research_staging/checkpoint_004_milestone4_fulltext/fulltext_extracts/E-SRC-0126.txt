@@ -1,0 +1,425 @@
+=== PDF PAGE 1 ===
+(cid:0)ILl .._...:,.._
+NASA Technical Memorandum 110186 h _J
+NASA Tire/Runway Friction Projects
+Thomas J. Yager
+Langley Research Center, Hampton, Virginia
+(NASA-TM-110,186) NASA TIRE/RUNWAY N96-13392
+FRICTION PROJECTS (NASA. Langley
+Research Center) 20 p
+Unclas
+G3/05 0064076
+June 1995
+National Aeronautics and
+Space Administration
+Langley Research Center
+Hampton, Virginia 23681-0001
+
+
+
+=== PDF PAGE 2 ===
+
+
+
+
+=== PDF PAGE 3 ===
+NASA TIRE/RUNWAY FRICTION PROJECTS
+by
+Thomas J. Yager
+SUMMARY
+This paper describes several NASA Langley Research Center tire/runway friction
+projects including:
+-Second annual NASA tire/runway friction workshop
+-Shuttle runway surface modification
+-Improved tire life program
+-C-17 aircraft soil runway tests
+-Joint winter runway friction measurement program
+Test equipment and procedures are discussed and some test results are reviewed
+from the Shuttle runway evaluation and the improved tire life program. The
+presentation concludes with an overview of a proposed comprehensive 5-year
+winter runway friction measurement program.
+
+
+
+=== PDF PAGE 4 ===
+INTRODUCTION
+Research findings and technological advances in recent years have helped alleviate,
+but not eliminate, the hazards associated with adverse weather aircraft operations.
+Conversely, better avionics, growth in aircraft fleet, airport/runway congestion, and
+economics are factors which have increased the frequency of aircraft ground
+operations during inclement weather. However, to a pilot, happiness is still landing
+into the wind on a long, clean, dry runway keeping to a minimum the number of
+challenging situations which can arise during operations on slippery runways with
+fluctuating crosswinds. Improvements in aircraft braking systems, pilot simulator
+training programs, and runway surface treatments have tended to increase safety
+margins but weather-related aircraft accidents continue to occur. Unpredictable and
+rapidly changing weather conditions that may be encountered at a given airport
+further complicate the problems associated with aircraft takeoff and landing
+maneuvers.
+Gaining a better understanding of the many factors influencing the tire/runway
+interface is the aim of several NASA Langley research programs described in this
+paper. The workshop activities and test programs have added greatly to NASA
+Langley's tire friction, wear and runway properties data base. The proposed joint
+winter runway friction measurement program is expected to produce new data to
+enhance the safety of aircraft ground operations in adverse weather conditions.
+2
+
+
+
+=== PDF PAGE 5 ===
+Figure 1
+The Second Annual NASA Tire/Runway Friction Workshop was held at Wallops
+Flight Facility on the eastern shore of Virginia, May 15-19, 1995. Over 60 engineers
+participated from 35 organizations representing 11 different countries. Twelve
+friction measuring devices collected data during over 500 test runs on 15 different
+surfaces. Six texture methods were also used to obtain over 200 texture data sets.
+Initial friction and texture measurements were collected on three reference panel
+surfaces designed for low, medium, and high friction values. Runway roughness
+profile data were obtained and data comparisons to last year's workshop will be
+made. A shot peening treatment to enhance surface texture using skidabrader
+equipment was demonstrated successfully.
+3
+
+
+
+=== PDF PAGE 6 ===
+Figure 2
+The range of friction and texture measuring equipment used during the NASA
+Tire/Runway Friction Workshop includes 12 different friction devices and four
+texture measurement techniques. The available friction/speed gradient data and
+texture measurements suggests that the friction speed gradient slope is a function of
+macro-texture (large scale) and the magnitude is a function of micro-texture (small
+scale). The NASA data reduction and analysis effort involves determining the
+correlation between the different friction and texture measurement equipment.
+4
+
+
+
+=== PDF PAGE 7 ===
+Figure 3
+In early 1994, an extensive effort was started to determine a suitable Kennedy Space
+Center Shuttle Landing Facility (SLF) runway modification that would permit
+Shuttle landings to occur safely up to 20 knots crosswinds from the current 15 knots
+crosswind limitation. NASA Langley's Instrumented Tire Test Vehicle (ITTV) and
+NASA Dryden's Landing System Research Aircraft (LSRA) CV-990, were involved
+in evaluating several different surface modifications. Four different techniques
+were tried which included grinding, shot peening, rotopeening, and a methacrylate
+coating. On the basis of both friction and tire wear performance, the shot peening
+modification produced by the Skidabrader equipment was selected the best, and the
+SLF runway modification was completed in September 1994.
+
+
+
+=== PDF PAGE 8 ===
+Energy Energy
+required required
+;'or 15 k1 for 20 kl
+crosswinds crosswinds
+Tire wear,
+cords
+Figure 4
+The variation of Space Shuttle main gear tire wear with side energy, produced
+during crosswind landing operations, is plotted in figure 4. The 6 cord, flight tire
+wear limit is indicated together with the side energy required to accommodate 15
+and 20 knot crosswinds. The existing early 1994 Kennedy Space Center runway was
+found to wear the Shuttle tires beyond the 6 cord limit at side energy levels
+equivalent to 20 knots but the modified Skidabrader surface did not permit the tires
+to reach 6 cords wear until side energies exceed that produced at 20 knots. Hence,
+the entire 4575 m long, 91 m wide Shuttle Landing Facility runway was modified
+using the Skidabrader in September 1994.
+6
+
+
+
+=== PDF PAGE 9 ===
+Figure 5
+NASA Langley's Instrumented Tire Test Vehicle (ITTV) is a specially designed test
+device with an instrumented tire test fixture mounted on the rear and the data
+acquisition system located in the cab behind the operators. The test fixture can
+accommodate loads up to 22.2kN and test tire friction and wear performance can be
+evaluated in straight ahead rolling, yawed rolling, fixed slip braking, and cambered
+rolling. The maximum forward speed is 105 km/h. The ITFV speed and elapsed
+distance traveled are displayed on digital meters to the operators and also recorded
+on the onboard computer/CRT display data acquisition system. The ITTV
+performed over 800 test runs in a recently completed joint NASA/USAF/Industry
+Improved Tire Life Program.
+7
+
+
+
+=== PDF PAGE 10 ===
+Yawed Tire Tread Wear Performance
+Dry Ungrooved Asphalt; Speed, 65 KM/H; Vertical Load, 12-13 kN;
+Inflation Pressure, 1.28- 1.56 MPa
+5OO
+_. 26 x 6.6 bias ply
+4O0 • 26 x 6.6 radial belted /
+.i 20 x 4.4 bias ply J •
+Tire Tread (2-groove)
+Wear Rate, 300
+GM/KM ._J t _
+200 S/..;
+//-"
+f;.-
+lOO
+! !
+0 2 4 6 8 lO 12 14
+Yaw Angle, Degrees
+h
+Figure 6
+The effect of cornering measured by yaw angle on tread wear performance of three
+different aircraft nose gear tires is shown in figure 6. On the dry ungrooved asphalt
+at 65 kin/h, the 26x6.6 radial-belted tire produced the best wear performance. One
+possible explanation for this result is that the tire tread temperature data indicated a
+difference in peak tread temperature of 100 degrees C (188 vs 88 degrees C) between
+the bias-ply and radial-belted tires operating at 12 degrees yaw with the radial-belted
+tire exhibiting the lowest temperature. Similar yawed tire tread wear performance
+data trends were observed throughout the range of loading, inflation pressure and
+speed values as well as on concrete test surfaces.
+8
+
+
+
+=== PDF PAGE 11 ===
+Braked Tire Tread Wear Performance
+Dry Ungrooved Asphalt; Speed, 65 KM/H; Vertical Load, 12-13 kN;
+Inflation Pressure, 1.28- 1.56 MPa
+1200[ e 26 x 6"6 bias ply /
+1000 I- • 26 x 6.6 radial belted /
+/ /
+/ •
+20 x 4.4 bias ply _1/
+Tire Tread 800 (2-groove)
+Wear Rate,
+GM/KM
+60O
+400
+200
+! ! f ! f I f I
+0 2 4 6 8 10 12 14 16 18
+Braking Slip, Percent
+Figure 7
+Figure 7 shows the effect of braking on tread wear performance of three different
+aircraft nose gear tires at 65 km/h on dry ungrooved asphalt at similar load and
+inflation pressure ranges. These braking data suggest that tire wear is independent
+of tire size, tread design, and construction and is directly dependent on percent
+braking slip. The ambient weather conditions during these braking tests were nearly
+the same in air temperature, humidity, cloud cover and wind.
+
+
+
+=== PDF PAGE 12 ===
+Surface Texture Effect on Tread Wear
+Speed, 65 KM/H; Vertical Load, 12 kN; Inflation Pressure, 1.28 - 1.56 MPa
+1400 20 x 4.4 Bias Ply Tire (2-groove)
+Grooved Concrete
+Ungrooved Asphalt I
+1200 /- 14% Braking _ -_
+Jngrooved / _ I
+1000
+Tire Tread
+•I I
+Wear Rate, 800
+GM/KM
+600
+/- 8 Degrees Yaw
+I
+20O
+Jl l I I I I v I Ij I
+0 0.2 0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8 2.0
+Average Texture Depth, MM
+Figure 8
+The effect of pavement surface texture on tread wear performance of the 20x4.4 bias-
+ply nose gear tire is shown in figure 8 for three different dry test surfaces. The
+general data trend of tire tread wear rate increasing with average surface texture
+depth is apparent for both 8 degree yawed rolling as well as 14 percent fixed braking
+slip at 65 km/h. Similar data trends were found for the two 26x6.6 test tires
+evaluated in the Improved Tire Wear Program.
+10
+
+
+
+=== PDF PAGE 13 ===
+Figures 9
+The photograph in figure 9 shows a head-on view of the United States Air Force
+C-17 transport aircraft on an unprepared soil runway at Pope AFB, North Carolina,
+in March 1995. The ambient weather conditions for these landing and takeoff
+performance tests at aircraft gross weights varying from 1557 to 1860 kN were
+approximately 24 degrees C air temperature, light winds, partly cloudy, and no
+precipitation in previous 24 hours. The top 13cm soil layer consisted of a very dense
+clay soil which produced California bearing ratios close to 30 (very hard, e.g. brick).
+11
+
+
+
+=== PDF PAGE 14 ===
+Figure 10
+The undercarriage configuration on the C-17 transport aircraft is shown in figure 10.
+The aircraft uses two, 40x16-14, 26PR nose gear tires and twelve, 50x21.0-20,30PR
+main gear tires. The tire inflation pressures were 0.79 MPa for the nose gear and
+0.71MPa for the main gear.
+12
+
+
+
+=== PDF PAGE 15 ===
+Figure 11
+Two different portable decelerometer devices, shown in figure 11, were used in
+evaluating both the C-17 transport aircraft and the NASA Diagonal-Braked Vehicle
+stopping performance on the dry soil runway at Pope AFB, North Carolina. The
+Bowmonk Skidman unit, left side of figure, is an electronic decelerometer which
+provides a permanent time history record of vehicle acceleration/deceleration up to
+1.0 g's. The Tapley decelerometer shown on the right side of figure 11 is a manually
+operated decelerometer which can indicate the peak deceleration value obtained
+during a vehicle braking run. Both these decelerometers were used in the ground
+test vehicles and they measured similar values. Only the Skidman unit was placed
+on the C-17 aircraft and deceleration values recorded by the Skidman were similar to
+that recorded by the C-17 data acquisition system.
+13
+
+
+
+=== PDF PAGE 16 ===
+Figure 12
+The NASA Diagonal-Braked Vehicle (DBV) is shown in figure 12 during a typical
+test run on the hard, dry soil runway at Pope AFB, North Carolina. The normal test
+procedure for evaluating runway friction performance is to conduct a series of DBV
+test runs with the operator applying brakes at 95km/h, locking a diagonal pair of
+wheels equipped with smooth tread test tires, and maintaining locked wheels down
+to a complete stop. The onboard DBV data acquisition systems provides a
+permanent time history record of deceleration, distance, and speed from which
+locked wheel friction coefficient data can be obtained together with Runway
+Condition Readings (RCR'S).
+14
+
+
+
+=== PDF PAGE 17 ===
+Figure 13
+The photograph in figure 13 clearly shows the locked wheel tire tracks on the dry,
+hard, soil runway at Pope AFB after a Diagonal-Braked Vehicle(DBV) test run has
+been completed. In all the DBV test runs performed on this approximately 1200
+meter long runway, the deepest tire penetration into the clay top soil was 6 mm.
+The C-17 transport aircraft left main gear tires traveled over a relatively small (15
+meters) soft spot and that produced 10 cm deep ruts. Most other runway locations
+showed little evidence of tire tracks or soil penetration from either the C-17 airplane
+or the ground test vehicles.
+15
+
+
+
+=== PDF PAGE 18 ===
+Figure 14
+Comparable Diagonal-Braked Vehicle stopping test runs at approximately 35km/h
+were performed with an Army "Humvee" vehicle equipped with both the Skidman
+and Tapley meters to record deceleration values. This particular humvee vehicle
+was similar in weight to the DBV with both vehicles closeto 22.2kN. There was a
+significant difference, however, in the humvee all terrain tires compared to the
+smooth tread DBV test tires. Despite this tire tread difference, both the vehicles
+produced similar deceleration measurements at 35 km/h on the dry, hard soil
+runway and hence,the Runway Condition Reading (RCR) values were equivalent
+at 22.
+16
+
+
+
+=== PDF PAGE 19 ===
+PROPOSED JOINT WINTER RUNWAY
+FRICTION MEASUREMENT PROGRAM
+PARTICIPANTS: NASA, FAA, USAF, Transport Canada. Joint Aviation Authority,
+and other aviation organizations
+OBJECTIVES/SCOPE:
+- Evaluate instrumented aircraft and ground vehicle friction harmonization
+- Assess effects of both aircraft and runway anti- and de-icing chemicals
+- Conduct parameter study at Langley's Aircraft Landing Dynamics Facility
+- Configure test run matrices to optimize information useful to pilots, airport
+operators, equipment manufacturers, and airframe companies
+- Implement many of the recommendations from White Paper prepared by
+Government/Industry Winter Runway Friction Measurement and
+Reporting Working Group
+SCHEDULE: Five (5) years
+FUNDING: Estimated $2 -3 M dependent on number of test aircraft
+NASA portion approximately $1M
+Figure 15
+With possibly four major government agencies, the military and several aviation
+organizations participating in this joint 5-year program, a considerable amount of
+useful information should be produced to enhance safety of aircraft ground
+handling operations. The necessary interagency agreements are currently being
+approved with NASA as lead agency. Testing of instrumented aircraft and ground
+friction measuring vehicles could commence as early as fall of 1995.
+17
+
+
+
+=== PDF PAGE 20 ===
+CONCLUDING REMARKS
+Considerable progress has been acheived in recent years in gaining a clearer
+understanding of tire/runway friction performance. The influence of several
+different factors including tire design and construction, inflation pressure, speed,
+surface type and texture together with surface contaminant and amount on both tire
+wear and friction has been better defined. An overview of NASA Langley projects
+including an annual tire/runway friction workshop, Space Shuttle landing runway
+modifications to reduce wear and enable landings at higher crosswind limits, an
+improved tire life program, C-17 transport aircraft and ground vehicle soil runway
+tests, and a proposed joint winter runway friction measurement program has been
+given. Some recent test results have been discussed together with future research
+activities. As new aircraft and ground friction measuring vehicles are introduced
+together with development of improved tire and pavement surface designs,
+additional testing, correlation, and evaluation projects will be required.
+18
+
+
+
+=== PDF PAGE 21 ===
+FormApproved
+REPORT DOCUMENTATION PAGE OMBNo.o7o_-o188
+Public reporting burden for this oo_ection of iniormltion a estimated to average 1hour per response, including the time for revie_ng instruct_ns, mroheg Ixilting dlt* sou_as,
+gathering and maintaining the data needed, and oompleting lad reviewlng the oollec_ort of information. Send oommerds regarding this burden estimate or any o(her aspect of this
+collection o_information, including suggestions for reducing th _,burden, to Washington Headquallers Services, DIre_orete for Information Operefions and Reports, 121,_ Jefferson Davis
+Highway, Suite 1204, Arlington, VA 22202-4302, and to the Office of Management and Budget, Paperwork Reduction Project (0704-0188), Washington, I)(3 20503.
+1. AGENCYUSEONLY (Leaveblank) 2. REPORTDATE 3. REPORTTYPEANDDATESCOVERED
+June 1995 Technical Memorandum
+4. TITLEANDSUBTITLE
+5. FUNDING NUMBERS
+NASA Tire/Runway FrictionProjects
+6. AUTHOR(S) WU 505-63-50-19
+Thomas JoYager
+7. PERFORMING ORGANIZATION NAME(S) AND ADDRESS(ES) 8. PERFORMING ORGANIZATION
+REPORT NUMBER
+NASA Langley Research Center
+Hampton,VA 23681-0001
+9. SPONSORING / MONITORING AGENCY NAME(S) AND ADDRESS(ES) 10. SPONSORING/MONITORING
+AGENCY REPORT NUMBER
+NationalAeronauticsandSpace Administration NASA TM - 110186
+Washington, DC. 20546-0001
+_11. SUPPLEMENTARY NOTES
+1211. Di_¥HiBUTION I AVAILABILITY STATEMENT 12b. DISTRIBUTION CODE
+Unclassified- Unlimited
+SubjectCategory - 05
+Availability: NASA CASI, (301) 621-0390
+13. ABSTRACT (Maximum 200 w_r_)
+The paper reviewsseveralaspects of NASA Langley Research Center'stire/runwayfriction evaluationsdirected
+towards improvingthe safety andeconomy ofaircraftgroundoperations. The facilities andtestequipmentused
+inimplementingdifferentaircrafttirefriction studiesandother relatedaircraftground performanceinvestigations
+are describedtogetherwithrecent workshopactivitiesat NASA Wallops FlightFacility. An overviewofthe
+pendingJoint NASNTransport Canada/FAA Winter Runway FrictionProgramwill be given. Other NASA
+ongoingstudies andon-sitefieldtestsare discussedincludingtirewear performanceand new surface
+treatments. The paper concludeswithadescriptionof future research plans.
+14. SUBJECTTERMS
+15. NUMBER OF PAGES
+runwaysurfacetreatments, aircraftground handlingperformance,tirewear, 19
+unpreparedrunwaysurfaces
+16. PRICE CODE
+A03
+17. SECURITY CLASSIFICATION 18. SECURITY CLASSIFICATION 19. SECURITY CLASSIFICATION 20. LIMITATION OF ABSTRACT
+OF REPORT OF THIS PAGE OF ABSTRACT
+Unclassified Unclassified
+NSN 7540-01-280-5500
+Standard Form 298 (Rev. 2-89)
+Prescribed by ANSI Std. 7.39-18
+298-102
+
+
+
+=== PDF PAGE 22 ===
+

@@ -1,6 +1,39 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-08-30 - v0.10.2
+- Makes the native logger hash the active installed car physics and referenced tire LUTs when a session starts.
+- Separates the generated TirePack configuration from the active installed physics and observed AC runtime state in each telemetry sidecar.
+- Marks stale handoffs as STALE/HASH_MISMATCH and treats installed hashes, the observed compound string, actual track and actual starting state as authoritative.
+- Separates the short pressure screen from extended thermal observation; engineering stability thresholds are diagnostic and are not historical targets.
+- Adds the 198.576 km GT40 long-run pressure/thermal analysis and wear fixture as STORE, DO NOT FIT evidence.
+- Leaves Thermal V2 coefficients, wear curves, VIRTUALKM and production Tire Knowledge v1.7.0 numerical priors unchanged.
+
+2026-08-29 - v0.10.1
+- Corrects the pressure reference workflow: ambient, requested setup temperature, predicted/observed AC initial core and hot contained-air temperature are now distinct states.
+- Adds AI_REFERENCE and HUMAN_REFERENCE calibration-duty metadata. The live Escort AI fixture is retained as a simulator pressure diagnostic, not historical FAM023 temperature evidence.
+- Reports continuous axle recommendations, imported setup.ini pressure quantization and observed session starting pressure separately; track-specific per-corner tuning remains a post-run validation output.
+- Blocks year/class/family conflicts such as 1984 with CLS022/FAM023 unless a visible anachronistic/custom, non-authoritative override is selected.
+- Adds supplier provenance and clears unsupported stale supplier state on profile transitions.
+- Makes logger start materialize and validate the generated TirePack manifest, then merges it into each runtime sidecar instead of silently producing an unknown/minimal sidecar.
+- Separates BLANKETS_TEMP capability from requested session warmers, and requested wear/fuel/damage settings from observed AC shared-memory fields.
+- Preserves requested 26/26 conditions alongside authoritative observed AC 26/36 conditions.
+- Leaves production Knowledge v1.7.0, Thermal V2 coefficients, historical FAM023 temperature optimum and wear scaling unchanged.
+
+2026-08-29 - v0.10.0
+- Adds evidence-bearing historical profile state with six provenance classes and a pre-generation coherence gate.
+- Fixes the GT40/FAM022 stale-radial path: normal resolution generates bias/cross-ply; deliberate radial override remains a visible historical conflict.
+- Replaces the old tread-optimum pressure shortcut with absolute-pressure gas math using a distinct contained-air estimate and explicit hot/cold volume ratio.
+- Separates PRESSURE_STATIC, PRESSURE_IDEAL and reference-duty setup-cold concepts; unknown volume growth is reported as assumed unity with low confidence.
+- Preserves the Escort pressure A/B closure and GT40 pressure failure regressions without hard-coding track-side asymmetry or fitting contaminated thermal evidence.
+- Separates observed, competitive, service and abrasion life from provisional priors and from AC virtual-km/grip-health implementation.
+- Adds interpolated wear landmarks, an unfitted reference-duty exposure architecture and explicit incident/abuse handling.
+- Adds logger-cumulative, session, stint and current-tire-set distance bases; wear calibration excludes persistent logger distance.
+- Adds a JSON sidecar for every native telemetry CSV with requested/observed conditions, profile provenance, run metadata and exact tire/LUT hashes.
+- Adds generated family audit, pressure/wear/provenance/telemetry manifests and five static cross-era CSP/vanilla fixtures.
+- Preserves global thermal coefficients and distinct flex/slip heat pathways; no global thermal or FRICTION_K multiplier is introduced.
+- Production Tire Knowledge remains v1.7.0; no Milestone 4 numerical prior is promoted.
+
 2026-08-28 - v0.9.2
 - Adds per-wheel pressure closure: hot error is stabilized pressure minus PRESSURE_IDEAL; up to 0.5 psi is GOOD, 0.5-1.5 psi is REVIEW and above 1.5 psi is FAIL.
 - Records the Escort Brands Hatch baseline as approximately -2 psi left / -3 psi right and FAIL, with excessive compliance and near rollover/tripping retained as subjective evidence.

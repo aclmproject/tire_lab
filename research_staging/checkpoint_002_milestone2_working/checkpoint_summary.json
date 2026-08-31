@@ -1,0 +1,126 @@
+{
+  "checkpoint": "MILESTONE 2 — WEAKNESS CLOSURE / ONTOLOGY / FIRST 250 DOCUMENTS",
+  "status": "MILESTONE_2_STAGING_CHECKPOINT_COMPLETE",
+  "layers": {
+    "A": {
+      "registered": 55,
+      "reviewed": 20,
+      "deferred": 35
+    },
+    "B": {
+      "registered": 500
+    },
+    "C": {
+      "pilotRegistered": 5000,
+      "fullCorpusVerified": 50000
+    },
+    "D": {
+      "original": 10000,
+      "quarantined": 10000,
+      "correctedReplacements": 10000,
+      "active": 10000,
+      "p0Active": 1000,
+      "executed": 250,
+      "queuedForExecution": 0,
+      "linkedToReviewedDocuments": 7,
+      "noDocumentFound": 243
+    }
+  },
+  "p0Validation": {
+    "activeTargets": 1000,
+    "invalidClassEra": 0,
+    "invalidRepositoryType": 0,
+    "duplicateIntent": 0,
+    "duplicateActiveTargetIds": 0,
+    "targetsWithoutWeakness": 0,
+    "replacementLineageValid": true,
+    "pass": true
+  },
+  "fullValidation": {
+    "activeTargets": 10000,
+    "invalidClassEra": 0,
+    "invalidRepositoryType": 0,
+    "duplicateIntent": 0,
+    "duplicateActiveTargetIds": 0,
+    "originalTargetIdsUnique": true,
+    "replacementTargets": 10000,
+    "activeIntendedAcquisitionsPreserved": true,
+    "pass": true
+  },
+  "targetExecutionValidation": {
+    "queuedTargets": 250,
+    "resultRows": 250,
+    "uniqueTargetIds": 250,
+    "allQueueTargetsResolvedToDisposition": true,
+    "allowedStatusesOnly": true,
+    "targetsLinkedToReviewedDocuments": 7,
+    "uniqueReviewedDocumentsLinked": 3,
+    "noDocumentFound": 243,
+    "pass": true
+  },
+  "sourceIdentity": {
+    "unifiedIdentityRows": 317,
+    "milestone1Rows": 252,
+    "layerDSeedRows": 50,
+    "newLayerDSeedDocumentsReviewed": 8,
+    "layerDSeedAccessBlocked": 1,
+    "acquisitionBatchDocuments": 27,
+    "acquisitionBatchReviewStatuses": {
+      "SECONDARY_RETROSPECTIVE": 10,
+      "PRIMARY_PERIOD_PAGE_REVIEWED": 5,
+      "ABSTRACT_ONLY": 7,
+      "PRIMARY_SCAN_REVIEWED": 5
+    },
+    "uniqueAcquisitionSourceIdentities": 27,
+    "preservedKnownDuplicateGroups": [
+      [
+        "SRC025",
+        "SRC098"
+      ],
+      [
+        "SRC030",
+        "SRC081"
+      ]
+    ]
+  },
+  "evidence": {
+    "milestone1Candidates": 26,
+    "weaknessSeedCandidates": 13,
+    "acquisitionBatchCandidates": 34,
+    "architecturalCandidates": 1,
+    "unifiedCandidates": 74,
+    "exactClaimDuplicatesMerged": 0,
+    "byType": {
+      "OBSERVATION": 24,
+      "MEASUREMENT": 12,
+      "SCALING_RULE": 8,
+      "EVENT_SUPPLIER_EVIDENCE": 5,
+      "CALIBRATION_METHOD": 4,
+      "HISTORICAL_CONSTRAINT": 13,
+      "COMPOUND_APPLICABILITY": 3,
+      "SOURCE_METHODOLOGY": 5
+    }
+  },
+  "conflicts": {
+    "carriedForward": 1,
+    "new": 0,
+    "resolved": 0,
+    "unresolved": 1
+  },
+  "safeguards": {
+    "milestone1Duplicated": false,
+    "originalLayerDRowsModified": false,
+    "canonicalKnowledgeChanged": false,
+    "applicationChanged": false,
+    "physicsChanged": false,
+    "buildRun": false,
+    "releaseCreated": false,
+    "preExistingUncommittedPhysicsWork": "PRESERVED_OUT_OF_SCOPE"
+  },
+  "limitations": [
+    "The top 250 active targets were processed to an allowed disposition. This does not mean 250 documents were found: unmatched exact intents remain NO_DOCUMENT_FOUND.",
+    "Deferred Layer A and weakness seed rows remain unreviewed unless an explicit acquisition review superseded their metadata-only status; they are not counted as evidence.",
+    "Curated period subdivisions in the ontology remain terminology guards; they are not tire-physics claims.",
+    "No numerical model change is supported or implemented by this checkpoint."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "checkpoint": "MILESTONE 5 - EVIDENCE-CONSTRAINED ENGINEERING",
+  "status": "COMPLETE",
+  "applicationVersion": "0.10.0",
+  "knowledgeVersion": "1.7.0",
+  "productionKnowledgeChanged": false,
+  "numericalGeneratorPriorsChanged": 0,
+  "crossEraFixtures": 5,
+  "canonicalInstaller": {
+    "path": "../../dist/ACLM_Tire_Lab_Setup_v0.10.0.zip",
+    "sha256": "c677ed5c8df73ad4121a9f4a56dd2dcde7d545015421f6b94439e00b58b4c132",
+    "files": 36
+  },
+  "finalRegression": {
+    "nodeTap": "29/29 PASS",
+    "legacyTelemetryAssertions": "8/8 PASS",
+    "loggerSchema": "PASS - 84 columns",
+    "package": "PASS",
+    "liveBrowser": "GT40 and Escort gates PASS",
+    "unexplainedFailures": 0
+  },
+  "report": "../../docs/Engineering_Report_Milestone_5_v0100.md",
+  "researchStatus": "PARTIAL_CONTINUATION_REQUIRED"
+}

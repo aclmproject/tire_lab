@@ -1,0 +1,1360 @@
+=== PDF PAGE 1 ===
+1
+.. "----=I
+c- ~ I
+HYDRODYNAMICS OF AIRCRAFT
+TIRE HYDROPLANING
+NATIONAAL E RONAUTICAS N SD P ACAE D MINISTRAT1,ON WASHINGTON, 0. C. AUGUST 1968
+-A
+
+
+
+=== PDF PAGE 2 ===
+NASA CR- 112 5
+TECH LIBRARY KAFB, NM
+HYDRODYNAMICS OF AIRCRAFT TIRE HYDROPLANING
+By S. Tsakonas, C. J. Henry,
+and W. R. Jacobs
+Distribution of this report is provided in the interest of
+informatione xchange.R esponsibility for thec ontents
+resides in the author or organization that prepared it.
+Issued by Originator as Report No. 1238
+Prepared under Contract No. NSR, 31-003-016 by
+STEVENS INSTITUTE OF TECHNOLOGY
+Hoboken, N.J.
+for
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+~ ~ ~ ." .. .~
+For sale by the Clearinghouse for Federal Scientific and Technical Information
+Springfield,V irginia 22151 - CFSTI price $3.00
+
+
+
+=== PDF PAGE 3 ===
+
+
+
+
+=== PDF PAGE 4 ===
+ABSTRACT
+An approximatet heoryh as been developed for a studyo ft heh ydro-
+planingt ire by considering it as a planings urface of smalla spectr atio
+ine xtremelys halloww ater. The resultso f t hisa pproximatione xhibit
+hydrodynamicb ehaviors imilart ot hato fh ydroplaningp neumatict ires and
+thusi ndicatet hatt het ireh ydroplaning phenomenon can be describedf rom
+thes tandpointo fi n viscidh ydrodynamics. The analysisf urnishesf amilies
+o f curvesw hich can be consideredt or epresent,q ualitatively,t hes tart
+ofh ydroplaning and thusg iveq ualitativeg uidancef ora voidingt he un-
+desirableh ydroplaningc ondition.
+iii
+
+
+
+=== PDF PAGE 5 ===
+"
+
+
+
+=== PDF PAGE 6 ===
+TABLE OF CONTENTS
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ABSTRACT iii
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+NOMENCLATURE v i i
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+INTRODUCTION 1
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+THEORY 3
+. . . . . . . . . . . . . . . . . .
+SIMPLIFIED MATHEMATICAL MODEL 8
+. . . . . . . . . . . . . .
+a) Ground PressurDe i stribution 8
+. . . . . . . . . . . . . .
+b) Low AspecRt atioA pproximation 9
+. . . . . . . .
+cE) valuation of thGe round-InduceVd elocity 12
+. . . . . . . . . . . . . . .
+Sd p) anwise L i fDt i s t r i b u t i o n 14
+. . . . . . . . . . .
+eT) otal L i f t ont h eH ydroplaningT ire 17
+. . . . . . . . .
+NUMERICACL A LCULATIONS AND DISCUSSION ORF E SULTS 23
+. . . . . . . . . . . . .
+aE )f fectoVs f a rious Parameters 23
+. . . . . . . . . . . . . .
+Inb c) epHtioo yf dn r oplaning 26
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+CONCLUSIONS 30
+. . . . . . . . . . . . . . . . . . . . . . . . .
+ACKNOWLEDGEMENT 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+REFERENCES 33
+FIGURES (1-10)
+APPENDIX A
+APPEND I X B
+V
+
+
+
+=== PDF PAGE 7 ===
+
+
+
+
+=== PDF PAGE 8 ===
+NOMENCLATURE
+d
+A = - aspectr atioo fp lanings urface
+b
+b half-length of wetted surface of plate
+longitudinald imensiono ff ootprintf rom wheel axle
+bl
+t o t r a i1 ing edge
+longitudinald imensiono ff ootprint from wheel axle
+b2
+to lead ing edge
+coefficiento ft otal l i f t definedi n Eq. (37)
+cL
+d clearance of trailing edge of tirew etteds urface
+fromg round
+functionsd efinedi n Eq. (38)
+depth o f water onr unway or ground
+kernelf unctionr epresentingi nducedv elocityo n
+element j due tou nita mplitudel oad on element i
+L total 1 i f t onh ydroplaningt ire
+load i ng on ground
+LG
+loadingo nt ire
+LT
+L ' cumulativel oadingd istribution
+R half-width of footprint and of wetted surface of tire
+n index o f summation
+tirei nflationp ressure
+1 ifting surface
+forward velocity of vehicle
+units tepf unction
+downwash velocityd istribution normal to ground
+downwash velocityd istributionn oma1t ot ire
+vi i
+
+
+
+=== PDF PAGE 9 ===
+coordinateso fc ontrolp ointo ng round
+coordinateso fc ontrolp ointo nt irew etteds urface
+chordwisev ariableo fi ntegration
+camber o f ti re surface
+angle of attack of planing surface
+angularc hordwisel ocation
+variousi n tegrals
+definedi n (29) and (30)
+coordinateso fl oadingp ointo ng round
+coordinateso fl oadingp oint on tires urface
+mass density of fluid
+angularc hordwisel ocation
+function (see Eqs. (15) and (16))
+definedi n (31)
+viii
+
+
+
+=== PDF PAGE 10 ===
+INTRODUCTION
+Pneumatic tires roll ing on a wet runway may reach a speedw here the
+t i r e becomes completelyd etachedf romt heg round and skidsa long on a
+thin f i l m ofw ater. A t thats tage,d irectionals tability and control,
+as well asb rakingt raction,a rec ompletelyl ost. When t i r e and surface
+are no longeri nc ontact,t het irei ss aidt o be hydroplaning. I t no
+longer rol Is buts li desw ithoutc ontrola crosst hes urface.
+A serieso ft heoreticals tudies hasb een made, basedo n one o f the
+fundamentala ssumptions, eithert hatt heh ydroplaning phenomenon could be
+1,2
+reasonablye xplainedi nt ermso ff luidd ensitya lone( hydrodynamicp ressure)
+ort hat i t isb asically one o f l ~ b r i c a t i o n . ~ A t the same timee xperimental
+studi es 495'6 haveb een conducted i n an effort to reveal the physical mecha-
+nismo ft heh ydroplaningt ire as well ast hei mportantp arametersa ffect-
+ingt he phenomenon.
+Admittedlyt het ire-hydroplaning phenomenon isq uitec omplicated.
+Perhaps a t one staget heh ydrodynamica spects o f the phenomenon are
+dominated by viscouse ffects (hence lubrication),a ta nother by inertia
+effects and a t a laters tage byt hermodynamic effects( reversiono ft he
+rubber and formationo f steam pocket). A t eacha nd everys tage,o fc ourse,
+the elastic properties of tires and theirt exture and geometry,a s well
+ast he relative roughness o f thew et pavement, enteri ntot hep roblem.
+Fort hosec ases of hydroplan ing where veloci ty is quite high and
+thew ateri sr elatively deep, it seems rather reasonab l e t o assume that
+thev iscositye ffects become insignificant'f or such h ighR eynolds numbers
+as exist at that stage.
+The presents tudyh as beenb asedo n thep remiset hatt hef luidi nertia
+e f f e c ti s thep redominanpt roperty. The three-dimensionacl haracter o f
+the phenomenon hasb een preserved and thee ffectso nt ireh ydroplaning
+will be obtained due toa spectr atio ands hape o f thep lanings urface and
+1
+
+
+
+=== PDF PAGE 11 ===
+tod epth of water,t ogetherw ithv ehicle speed. The generalf ormulation
+o f theh ydrodynamica spect o f then on-viscoush ydroplaningp robleml eads.
+to a pairo fs urfacei ntegrale quationsw ith unknown loadingd istribution
+on the t i r e ando nt heg round. However, due tot he 1 imitationso ft he
+contractf ort hisi nitials tudy an approximates olution will be obtained
+basedo nt h e followinga ssumptions:a )t het irei sr egarded as a low-
+aspectr atio 1 iftings urface, b)t hep ressured istribution on the pavement
+i s approximatedb y a stepf unctiono fm agnitudeg iven by experimental
+measurements. The results of thisi nitiali nvestigationi ndicatet hatt he
+approximate solutionc orrectlyp redictst het rendb utn ott hem agnitude
+o f theh ydrodynamic 1 i f t and confirmsq ualitativelyt hei mportantc har-
+acteristics observed int het ire-hydroplaning phenomenon. Forf u ture
+studies it is recommended to improvet h em athematical model so thatt he
+three-dimensionaln on-viscousc ontribution mayb e defined as accurately
+as possible and thent hee lasticityo ft het ire may be incorporated.
+2
+
+
+
+=== PDF PAGE 12 ===
+THEORY
+A t thes tage o f completed etachment o f theh ydroplaningt iref rom
+thew et pavement, thec ontacta reao ft het irei s assumed to have i n f i n i t e
+radius of curvature as shown inF igure 1 and att hats taget het otalw eight
+o f thev ehicle will be sustainedb yt heh ydrodynamicp ressured istribution
+developed int he f i l m ofw ater betweent h e t i r e and theg round.T his
+situationi ss imulated by a mathematical model presentedi nF igure 2, where
+thea reao ft irei nc ontactw itht hef luid will be considered as a l i f t i n g
+surface of finite aspect ratio planing at thef rees urfaceo fe xtremely
+shalloww atera th igh Froude number, sincet hev ehicle speed isc onsidered
+very high.
+The right-handedC artesianc oordinates ystemi ss electedw ithp ositive
+x-axisi nt hed irectiono ff luidm otion( oppositet hato fv ehicle) and
+positivez -axisi nt he downward direction. The presents tudyu tilizes
+the 1 inearized 1 iftings urfacet heoryw hichi s based on a smallp ertur-
+bationa pproximationt ogetherw itht hea ssumption of thins urfacesi n
+uniformf low of an incompressiblei nviscidf luid.
+The pressuref ieldg enerated by a 1 ifting surface S has been shown
+to be givenb yd istributedd oubletsw itha xisp ara1l e1t ot hel ocal normal
+and strengthp roportionalt ot hep ressure jumpa crosst h es urface S. I f
+these unknown loadings on the t i r e and grounda red esignatdb yL T(cTyTT)
+and L (5 ) respectively,t hent hek inematicc onditionsw hiche xista t
+G Gy l lG
+both 1 iftings urfaces( tirep lane and ground) will be expressed mathe-
+matically ont heb asiso f 1 ineara pproximation( i.e.,s mallp erturbation
+theory) as fol lows:
+-m
+3
+
+
+
+=== PDF PAGE 13 ===
+wh(exr Te, yTY 0)
+and (TTy y,, 0) = coordinateocs fo ntrol and loadinpg o int,
+respectively,l ocatedo nt het ires urface
+(xG,yG,h) and (qGyTG7h)c oordinateso fc ontrol and loadingp oint,
+respectively,l ocatedo nt heg roundp late
+the knownd ownwash velocity distribution
+‘T( and ‘G(
+normal tot het ire and ground plate,r espectively
+kernefl unctionw hichr epresentst hei n duced
+velocity ona ne lement j due t o a unita mplitude
+loado ne lement i. Subscripts i and j designate
+t i r e o r ground plate.
+Fort hec ase of rigid plates the knownd ownwash distribution will be
+givenb y
+and
+where the f i r s t expressest hef actt hatt hef lowr emainsa lwayst angent
+to the tires urfacew hich has camber givenb yz (x,y), and the second
+imposes the same requi rernent a t theg roundw hich has been assumed to be
+f l a t .
+4
+
+
+
+=== PDF PAGE 14 ===
+The two equations (1) and (2) constitute a pairo fs urfacei ntegral
+equationsw itht he,unknownl oadingf unctions LT(cT,llT) and LG(SG,llG) to
+be determined i n terms ofs pecifiedv elocityd istributions. It should be
+notedt hatt hisf ormulation can accommodate any downwash velocity distri-
+bution,e vent hatf ort hee lastict ire.
+The development oft he.variousk ernelf unctionsi so mittedi nt he
+presents tudys ince it can be easilyo btainedf romR eference 7. Inf act,
+KTT iso btainedf romE quation (74) int hatr eferenceb yp utting d = h = 0,
+KGG fromE quation (75) for d = h,a ndt he resta reo btainedi n a fashion
+similart ot hatg iveni n Reference 7.
+Because tireh ydroplaningi sc onsidered a high-speed phenomenon,
+thesek ernelf unctionsa red etermineda th ighF roude number so thatt he
+frees urfacee ffecti sc onsideredt o be equivalentt ot hato ft he" bi-plane"
+where thev elaci,typ otentiala cquiresz erov aluea tt hef rees urface.
+The bottome ffecti st akeni ntoa ccount as theu sual" walle ffect."
+Thus thek ernelf unctionsa reg ivenb y
+1 1 X GG 1
+= -
+K~~ 2 2
++ yGG+ (2h)2
+YGG
+X
+.
+.-,
+K~~ - - - y2 L 2 - & X TG
+TG + h 2TG -+
+X
+h2 TG
+- 2 ( 2 - + +
+G :Y + [x;G Gy: h2]3'2
+5
+
+
+
+=== PDF PAGE 15 ===
+and
+whe re
+When Equations 3, 4, 5, 6, 7 ares ubstitutedi nE quations 1 and 2,
+the pairo fi ntegrale quationsi sb roughtt oi tsd esiredw orkingf orm.
+I t should be notedt hatt hek ernelf unctions KTT and KGG whichr epresent
+thes elf-inducedv elocity on a point of the lifting surface by a unit
+amp1 itudel oadingl ocated on the same surface, haves econd orders ingu-
+l a r i t y whose "Hadamard" finite contribution can be extractedb y means o f
+Lagrange'sI nterpolationm eth~d.~ An analyticals olutiono ft hep airo f
+integrale quations seems impossiblei nt hep resents tate-of-the-art,
+however, a numericals olution can be soughta longt hel ines uggestedb y
+8
+Watkins, e ta l . To applyt h isp roceduret, h el o adingf u nctionsa re
+assumed made up of mode shapes dictated by certainp hysicalc onsiderations
+(leading and t r a i l i n g edge and tipc onditions) whose unknown coefficients
+will be determined by satisfyingt heb oundaryc onditionsa t an equivalent
+number ofc ontrolp oints on the 1 iftings urfaces.T his method isd escribed
+as the "Mode Approach" inc onjunctionw itht he" CollocationM ethod.''
+6
+
+
+
+=== PDF PAGE 16 ===
+But, i n thep resentp roblemt hee xtensiono ft heg roundp latet oi nfinity
+excludest hep ossibilityo fu tilizingt he Birnbaumc hordwise modes, viz.,
+(Aocot + A sinn e), as well ats h pe o lynomiar le presentatioont f h e
+2 n=l n
+spanwise distributionw ithi nfinites lopea tt he t ips. However, from
+experimentalo bservations 4y5y6 it i s seen thatt he pressured istribution
+on theg round a t the time of hyd ropl an ing of the t irei sm ainlyc onfined
+within the footprint of the tire, outside of which thep ressured ecays
+.
+extreme 1 y fast It appears thatt his fundamental characteristico ft he
+groundp ressure should be incorporatedi n tot h ep roblemT. his can be
+eas i 1 y ach ieved byp roperc ombinationo fu nits tepf unctions. Thus the
+stepf unction w ill be considered as thef u ndamental mode inb oth chordw is e
+and spanwise directions, on whichs inusoidal modes withp roper decay factor
+can be superimposed tog ivet hed etailedp ressured istributiono nt he
+.
+ground p la te
+Such mode shapes fort heg roundp ressurea rec onjectural andh ence
+a careful and systematics tudym ust be undertaken. Howevera, s a f i r s t
+attemptt he“ step-1i ke” mode shapes inb othc hordwisea nds panwise
+directiona re< onsidereda dvisable and real istic.
+7
+
+
+
+=== PDF PAGE 17 ===
+SIMPLIFIED MATHEMATICALM ODEL
+A) Ground Pressure Distribution
+In accordance witht hep reviousd iscussions and inc onformityw ith
+experimentalo bservation,t hep ressured istribution on theg roundp late
+will be assumed to be approximated by a step-typef unction,a symmetrically
+extendeda boutt hec enter o f the original footprint of the pneumatic tire,
+withi ntensitye qualt ot het irei nflationp ressure p (see Figure 3A).
+0
+Thus thep ressured istributiono nt heg roundp late will be givenb y
+where u( ) isu nits tepf unction. By insertiono f a factoro f 2 i t is
+stipulatedt hatt hep ressure jump acrosst he 1 iftings urface( i.e., ground
+plate)i si nf act, doub l e thep ressure on one sideo ft hes urface.
+I t iso bvioust hen that,i ne ffect,t hep airo fi ntegrale quations
+is reduced to a single integrale quation (Eq. 1) with unknown loading
+function on thep laning tireI. n f a ctt h ei n tegrael quationw hich will
+be solved i s
+, P P
+m
+.
+where KTT and K areg iven by Eqs 4 and 6 and -Up i s thes lopeo ft he
+GT
+planings urfacet ot heh orizontalp lane (see Eq. 3 ) .
+The integrael quationr educest o:
+a
+
+
+
+=== PDF PAGE 18 ===
+A b
+is the downwash distributionp lust he induced velocitya tt hep laningt ire
+due tot he assumed groundp ressured istribution.
+Hence the unknown loadingd istribution LT(ST,BT) on theh ydroplaning
+t i r e will be determined i n terms o f thea ngleo fa ttack, 8, (i.e., camber
+distribution = a z h x and thei n duced velocity byt h ep ressurep atch on
+theg round.
+6 ) Low AspectR atioA pproximation
+From theg eometry of a typicalt iref ootprint i t can be surmisedt hat
+the t i r e i n theh ydroplaningc ondition can be approximated by a lowa spect
+ratiow ing. Hence, it will be assumed thati n theg reatestp ortiono ft he
+liftings urfacet he spanwised istances I yT - 7 1 have smallm agnitudes
+T
+compared with chordwised istances I xT - ST], i .e.,m ost oft het imet he
+followingc ondition
+prevails.
+Thus thek ernelo f.t hei ntegrale quation (see Eq. 9) i s approximated
+by
+9
+
+
+
+=== PDF PAGE 19 ===
+Upon substitutiono f Eq. (11)' Eq. (9) becomes
+Thisi ntegrale quationr ef lectst hea pproximationt hat cond ition s at a
+givenp oint on thep laning tirea rei nfluencedo nlyb yw hat takesp lace
+upstreanfromt hatp oint.
+On introducingt hef unctionL '(x 7,) as thec umulativel oadingd is-
+T T'
+tributiond efined by
+f
+XT
+thei n tegrael quation (12) becomes
+whose inversioni sg ivenb y (seeA ppendix A)
+d
+-
+L ' ( x ~ , Y ~= ) PU w(x-j"y') y(YT'Y')dY'
+10
+
+
+
+=== PDF PAGE 20 ===
+providedt hatt hel oadingf unctionL '(xT,nT)v anishesa tt het ips,i .e.,
+-
+L I (XT, a) = L' (XT, a) = 0
+The total 1 ift developedo nt heh ydroplaning t i r e will then be
+givenb y
+o r
+I t should be notedt hatt he above solutiono ft hei ntegrale quation
+(12) should be considered as the f i r s t approximationo ft hes olutiono f
+the more generali ntegrale quation (9) whichi ncorporatest hef ull-fledged
+f i n i t e aspectr atioe ffect.T his can be easily seenb y writingE quation 9
+in thef ollowingf orm
+which upon multiplication byt hef unctionY (yyy') and integrationf rom
+-A to R (seeA ppendix B) yields
+whe re
+11
+
+
+
+=== PDF PAGE 21 ===
+Equation (18) i s a Fredholmi ntegrale quationo ft hes econdk indw ith
+.
+unknown L ' (tTn,T )
+Int hep resentp reliminarys tudy,h owever,t hea ssumptiont hatt he
+t i r e a t theh ydroplanings tagei s a lowa spectr atiol iftings urface
+will be utili zed andh ence thei ntegrale quationg ivenb y Eq. 12 w i t h i t s
+correspondings olutiong ivenb y Eq. 15 will be consideredt hef undamental
+relationt o be used. The integrale quation (18) will be leftf orp ossible
+futures tudies.
+C) Eva1 uation of the Ground-Induced Velocity
+~
+The downwash d i s t r i b u t i o n a t thep laningt irei sg iven by Eq. 10
+whose f i r s t termr epresentst hea ngle of attackc ondition and whose second
+termt hev elocityi nducedb yt hep ressured istributiona tt heg round.
+The downwash distribution (Eq. 10) isw ritt en as
+w = w1 + w2
+whe re
+whicha fters traight-forwardi ntegrationsw ithr espectt o 5, and nT yields
+12
+.. . .. .. - .. . " .. .
+
+
+
+=== PDF PAGE 22 ===
+h 2 /&x,+k?) 2 +)xT+b2) 2+h2 h2 /dyT-A) 2+ (xT+b2)+h 2
+-+ -
+yT+!p-h/(x,+A)2+ (xT+b2)2+h2 yT-Ad(YT-A)2+ (xT+bp) 2+h 2
+Utilizingt her equirements of thes malla spectr atioa ssumption
+13
+
+
+
+=== PDF PAGE 23 ===
+I
+togetherw itht hef actt hat
+I 1
+xT + b2 = xT + bp and that h i s extreme l y sma 11, i.e., h -? <1
+yields
+{x
+' I
+-PO h2 1
+w2
+-- -
+TP U [yT+4+xT+b2 y T- 1+x T+b 2
+The above equationh oldst rueo nly when h << 1. If h (deepw ater)
+03
+then it ise asily seen that W -, 0 (Eq. 21) and thei n tegrael quation( 12)
+2
+reduces tot hato f a planings urfacei n deep water.
+D) Spanwise L i f tD i s t r i b u t i o n
+The evaluation of spanwise lift distribution (Eq. 15) requirest he
+integration
+which can be considerablyf acilitatedb yu singt het rigonometrict rans-
+format ion
+y' = -1 coso)
+y = -1 cose
+Thisy ields
+14
+
+
+
+=== PDF PAGE 24 ===
+I 1 - cos9cosco - sinesince I
+rr'Y(YT,Y') = An -
+cos9 cos@
+W nsin ne
+= 2 c sin ncp
+n= 1
+Thus
+rr
+r
+2~ sin ne
+A = - c- W(xT,- Acoscp)sin ncp sincp dcp
+rr n=l n J
+0
+and final ly
+A = A l + A 2 + A
+3
+where
+A, = -XUBs i d
+11
+- - - 03
+A2 = ?G xT-bl\ (xT+b2) (bl+b2)] 2 sin n9
+rrpu
+n= 1
++
+1
+(n2-12)(n 2-3 2 -3 . . . .
+for n odd 1 8
+5 -
+= 0 for n even
+whe re
+-~~ ~
+x +b +A -d(xT+b2+R) A2 I R
+- T 2
+- p rov id ed
+hl a R+xT+b2
+15
+
+
+
+=== PDF PAGE 25 ===
+-
+xT+b2-R +z/(xT+b2-A)2 Q2
+-
+- p rov i ded
+12 a
+A l l thep rovisionsa re met for the low aspectr atio 1 iftings urface,i .e.,
+R/b 1. For h either
+4
+or
+n
+h4 = cos nJI
+where
+p rov i ded
+The first conditionf ort hee valuation of 1 i s satisfied
+4
+for
+bl bl R
+"< 1 and - < 1 - 2 -
+b b b
+or bl bl R
+"> 1 and - > 1 + 2 -
+b b b
+16
+
+
+
+=== PDF PAGE 26 ===
+whereast h es econd conditioni ss atisfiedf or
+bl bl 2R
+- e 1 and " > 1 "
+b b b
+o r
+" b > l 1 and - b e l 1 + -2 1
+b b b
+Thus thev alueo f l4 has two differente xpressionsd ependingo nt he
+imposed geometricc ondition on botht het ire and itsf ootprint. The
+realizability of the imposed geometricc ondition can only be decidedf rom
+experimentaol bservations. As i s seenf r om Figure 12 oRf eference (4) the
+pneumatic t i r e keeps i t s symmetricalp ositionw ithr espectt ot he wheel
+axled uringt hee ntirep rocessf romt hes taticc onditionu ntilt hes tage
+of completed etachment. A t the finals taget hel eading edge o f the
+-
+footprinto ft heh ydroplaningt ire remainsa pproximately a t the same
+distancef romt he wheel axle,i .e. b b2, whereas the t r a i l i n g edge o f
+thel iftings urface movesa way from itso riginalp osition towardst he
+wheeal xle,i . e., bl > b.
+Under thosec ircumstances h4 is given either by Equation 30 when
+a .
+bl/b > 1 + 2 orb yE quation 31 when bl/b C 1 + 2
+b
+E) Total L i f t ont h eH ydroplaningT ire
+The total l i f t can be calculatedf rom Eq. (17) afters ubstitu I t i on
+o f Eqs. (25)(, 2 6)(, 2 7) and (28), so that
+-
+where with yT = R cos0 and dyT = R s in0 d0 and xT = b
+17
+
+
+
+=== PDF PAGE 27 ===
+a
+ll
+P P
+Then
+Letting R/b = A (aspectr atio)t hen
+,/=
+b+b R 2 (A ’ - A ) I + = b2 - I - /+b b 2 ~ 2 /b J 1 +-T - 1 + b2/b (34)
+and when
+or when
+18
+
+
+
+=== PDF PAGE 28 ===
+o r when
+If the 1 ift coefficient is defined as
+- L
+c = (37)
+g
+p U2 (2b) (2A)
+and use i s made o f the factt hata t theh ydroplanings taget hef orce
+exerted on theg round must be balanced byt he forcee xerted on thet ire,
+I .e.
+PO cL 2b
+" 2 - - - 2 bl + b2
+i P U
+where thef actor 5 (of C ) i s introducedt oa ccountf ort hed epth
+L
+corrections uggestedb y Wad1 in and Christopheri nR eference (g), then
+Eqs. (33) to (37) yield
+o r
+19
+
+
+
+=== PDF PAGE 29 ===
+whe re
+1) for
+F(A) = F~ (A) =
+2) and for
+F(A) = FZ(A) =
+When bl < b ,
+and
+20
+
+
+
+=== PDF PAGE 30 ===
+whe re
+-
+when bl/b < 1 2A
+-
+when b,/b > 1 2A
+When bl > b ,
+bl
+and
++
+b2
+bl -b
+- ( h 2-) Ab
++ F (A)
+1+ b2 b+l b2
+where
+F1w (Ah e) n bl/b > 1 + 2A
+F(A) =
+F2 (A) when bl/b 1 + 2A
+The orientation and positiono ft hep laningt irer elativet ot he
+runway is more convenientlyd escribedi nt ermso fl eading and t r a i l i n g
+edge clearance( h and d, respectively) and aspectr atio A, rathert han
+angle ofa ttack B and leading edge clearanceh . As i s seen fromF igure 36,
+thea ngle B inr adians can be expresseda sf ollows:
+21
+
+
+
+=== PDF PAGE 31 ===
+Equation (39) or (40s) hould be used inc onjunctionw ith (41) in
+evaluatingt he l i f t coefficienti n theh ydroplanings tage.
+22
+
+
+
+=== PDF PAGE 32 ===
+NUMERICALC ALCULATIONS AND DISCUSSION OF RESULTS
+The purpose oft hisp reliminaryi nvestigationi st od evolop a
+theoreticala pproacht o the. hydroplaningo f a pneumatic t i r e fromt he
+standpointo fi n viscidh ydrodynamics. The theoryf urnishesa ne xpression
+for the 1 ift coefficient in terms oft hea spectr atioo ft hew ettedp or-
+t i o n o f theh ydroplaningt ire,t heg eometryo ft hef ootprint,t he shape
+oft hed eflectedt irei nc ontactw itht hew ater,i tsp ositionr elative
+tot he pavementa, nd thed epth ofw atero nt he runway.
+Int hisf irsta ttempt thew ettedp ortiono ft het irei sa pproxi-
+matedb y a rigidp lateo fs malla spectr atio and thep ressured istribution
+ont heg round footprint i s assumed to be representedb y a uniformd is-
+tributioni ns tep-likef ashioni nb othd irections( longitudinal and
+transverse)w ith amp1 itudee qualt ot hato ft hei nternalp ressureo ft he
+pneumatic t i r ei n accordance withe xperimentael vidence. Thus thep roblem
+reduces tot hat analogous top laningo f a smalla spectr atios urface on
+extremelys halloww ater, when i t s e f f e c t on theb ottom( runway) isa pproxi-
+mated int his way.
+A) Effectso fV ariousP arameters
+A serieso fc alculations hasb een performed for a variety of t i r e
+positions relative to the runway atd ifferentd epthso fw aterw ithv arious
+t i r e aspectr atios and footprint geometry. These systematicc alculations
+bringo utt her elativei mportanceo ft hev ariousp arametersw hichd escribe
+theh ydroplaning phenomenon fromt hes tandpointo fh ydrodynamics.F urther-
+more, generallyf avorableq ualitativec omparisono ft her esultsw itht hose
+of experimentsu nders imilarc onditionss trengthenst hev alidityo ft he
+mathematical modeal nd substantiatest hep rimarya ssumptiont hatt he
+problem i s a hydrodynamicaol ne. It should be kepti n mind thatt he
+results must be used only for a qualitative description of the hydroplaning
+tire,s incet hep roblemh as been analyzedo nlya pproximately.
+23
+
+
+
+=== PDF PAGE 33 ===
+Figures 4 and 5 presentt he computed total 1 ift coeffi-cient C o f
+L
+a planing tire in terms ofd eptho fw ater,h ,f orv ariousa spectr atios,
+A, and atv arioush eights,d ,o ft het railing edge o f the t i r e above the
+ground. The t i r e hasb een assumed to be a rigidf lats urfacep laninga t
+a fixed t r i m angled efinedb yE quation (41). Figure 4 i s f o r a r a t i oo f
+ground footprinta reat oh orizontalp rojectedt irew etteda reao f 1.17,
+whileF igure 5 i sf o r an arear atioo f 1.25. Inb oth cases it i s assumed
+thatt hel eading edges o f thef ootprint and t i r e 1 ie ont he same perpen-
+dicular 1 ine,i .e., b2 = b whereas the trail ing edge o f thef ootprint
+i s a f t of the t r a i l i n g edge o f theh ydroplaningt ire.I nt hef irst case
+bl/b = 4/3 and int he second bl/b = 3/2. The curvese xhibitedi nF igures
+4 and 5 can be consideredt or epresentt heb oundaryb etweent heh ydro-
+planing and non-hydroplaningr egimes.I nf act,t heyr epresentt he 1 ift
+coefficient C ,ati ncipienth ydroplaning. Thus i f CL o f a givent ire
+Li
+configurationw ith known loading and footprint geometry can be estimated,
+<
+thent hec ondition CL > CL (i.e.,s mallero rg reatert han 1 ift coefficient
+i
+ofi ncipienth ydroplaning)a t a givend eptho fw atero nt he runway will
+determinew hether orn ott het ire will hydroplaneu ndert heseC onditions.
+Severali nterestingr esultsa ree videntf rom an examinationo fF igures 4
+--
+and 5 thesea red escribedb elow.
+Effect of AspectR atio (A): For a givent hicknesso fw aterl ayer,h ,
+and height,d ,o ft iret railing edgea bove the runway, therei s a rapid
+increasei nh ydroplaning 1 i f t coefficient as thea spectr atio, A, isi n-
+creasedT. his effecti sp articularlye vident as thew aterl ayert hickness
+i s increased. The normaal spect r a t i oo fa i r c r a f tt i r e si so f theo rder
+o f 0.75. Thus i t appears to be o f some benefitt o reducet he t i r e aspect
+ratio so as too btains mallerp laning l i f t coefficients andh ence higher
+speeds ofp laningi nception.
+Effecto f WaterD epth( h):F or a givena spectr atio and tireh eight
+above the runway, it is seen, inF igures 4 and 5, thatt hep laning 1 i f t
+--
+coefficienti ncreasesr apidlyw ithi ncreasingw aterd epth h thisi s
+especiallyt ruef ort hel argerv alueso fa spectr atio. Hence, a1 1 other
+conditionsb einge qual,t hep ossibilityo fh ydroplaningi ncreasess igni-
+ficantlyw ithi ncreasingt hicknesso fw aterl ayer.T hisc onclusioni sn ot
+24
+
+
+
+=== PDF PAGE 34 ===
+consideredt o be atv ariancew itht her esultso ft hee xperimentalp rogram
+describedb yD ugoff and Ehrli ch,"s incet herea re more constraints imposed
+ont het heoreticalv ariationst hani nt hee xperiments. The lengtho ft he
+footprint for example,w hicha ppears t o have a greate ffect, was held con-
+stant as h/21 was variedi nt hec alculationsw hilei nt hee xperimentst his
+parameter isn ecessarilya llowedt ot ake ona nyv alue.
+Effect of TireC learance (d) : For a givena spectr atio and water
+depth,t herei s a relativelys mall decrease i n 1 i f t coefficientf orr ather
+--
+largei ncreasesi nt irec learance especiallyf orh igha spectr atios
+and largew aterd epths.F ore xample, atw aterd epthh /21 = .3O, and aspect
+r a t i o 0.80, the 1 i f t coefficient decreaseso nly 20% for a 500% increase
+in groundc learance( fromd /h = 0.05 to d/h = 0.30). Sincet heh ydroSLaning
+*-
+speed variesi nverselya st hes quarer ooto ft hep laning 1 i f t coefficient,
+the speed ofi ncipienth ydroplaning will increaseo nlya bout 10% for a
+500% increasei ng roundc learance,a llo therf actorsb einge qual.F or a
+givens eto fe nvironmentalc onditionst hen,t heser esultsi ndicatet hat
+the 1 i f t coefficient will be nearlyc onstantd uringh ydroplaning.
+To illustratet hisp ointf urther,F igures 6 and 7 have bee prepared
+to show ther elativei mportanceo ft irec learance and waterd eptho n C
+L'
+For a wider ange ofa spectr atios it is seen that,t om aintain a constant
+C ofe i ther 0.7 or 0.8, a 500% increasei nt irec learanced /hc orres-
+L
+ponds to only a 10-15% increasei nw aterd epth h/2R o r a 5-10%d ecrease
+inw etteda rea of the tire.T hisi ndicatest hat once t i r e hydroplaning
+occurs it isr atheri nsensitivet o groundc learance so that a nearly con-
+stant CL resultsf or a given h and A. Inf act,e xperimentald ata( Ref.
+4,5) and two-dimensionatl heory( Ref. 1) do indicatea ne ssentiallyc onstant
+CL duringh ydroplaningf or a wider ange o f d/hv alues.
+Effecto fF ootprint/Tireprint AreaR atio( bl/b):F igure 4 presents
+resultsf orb l/b = 4/3 whilet her esultsi nF igure 5 aref or b,/b = 3/2.
+It isi nterestingt on otet hat as the t r a i l i n g edge o f thef ootprint moves
+farthera ft (bl/bi ncreasing) C, decreases orh ydroplaning speed increases.
+L
+Alsot hef amily ofp arametricc urvesi s" stretched"t owardsg reaterd epth
+of water on the runwaya nd thes tretchingi s more pronounced withs maller
+aspectr atio.
+25
+
+
+
+=== PDF PAGE 35 ===
+It isi nterestingt o compare ther esultso ft hep resenta nalysis
+witht hee xperimentalr esultso fC hristopher( Ref. 10) who studiest he
+effect of shallow water ont heh ydrodynamicc haracteristicso f a f l a t
+planings urface. Among hise xperimentalc onfigurationst hosew ithc lear-
+ances d/2R = 0.20 to 0.25, for a range o f A, ares electedf orc omparison
+witht hep resentt heory because theyr epresent more closelyt hec onditions
+o f them athematicaml odel. The theoreticalc alculations were performed
+forv alueso f b /b = 2 basedo n Christopher'se xperimentalo bservation
+1
+thatt her oacho ft he wakem oves a f t o f the t r a i l i n g edge of the flat
+plate ast hed epth o f thew ateri si ncreased. As i s seen fromF igure 1 1
+o f Ref. 10, ther oaching o f thes tream1i n e a f t o f the test model is accom-
+paniedb y a pronouncedt roughw hich, int urn,i ndicatest hee xtento ft he
+highp ressurer egiona fto ft hes urface. It isb elievedt hatt he wake
+o f a flatp lanings urfacei ns halloww ater will extend much farther aft
+thant hato f a t i r e w i t h the same aspectr atio and withi tsc haracteristic
+curvature when hydroplaningi ne xtremelys halloww ater. The comparison
+witht heoreticarl esultsi s e xhibitedi n F igure 8. It is seen thatt h eory
+and experimenta rei ns atisfactory agreement fors mallv alueso f A up to
+0.4f ort hee ntire range o f h/2R. As A increases,t her egiono ff avorable
+agreement moves towards smal l e r values o f h/2R. However, i t should be
+notedt hat i f a higherv alueo fb l/b had been taken fort heh ighera spect
+ratio range,t hea greementw ouldh aveb een better.
+B) inceptiono fH ydroplaning
+The previousr esults can be used top redicth ydroplaningi nception
+speedsE. quatingt h ei n tegratedp ressurel o ado nt h e runway to thei n te-
+gratedp ressurel oado nt he ti re
+C
+$
+po(bl + b2)2R = 4 pU2 ' 2b ' 2R
+resul ts in
+&-
+--
+"incept ion
+cL
+26
+
+
+
+=== PDF PAGE 36 ===
+wherep o i s the tirep ressurei nl b/ft2, K = (bl + b2)/2b,p /2 M 1 .
+Forg ivenv alueso fe nvironmentalc onditions,i .e.,,h , A, K, it
+hasb een previously shown experimentally,t hat CL is essential ly constant
+so thatt hei nception speed ofp laningi sp roportionalt ot hes quarer oot
+oft irep ressure.T hisr esulti si n accordance witht hee xperimental
+observationso fR eference (4',5). Theoreticall y, howevert, h ec onstancy
+o f C. fora llc onditions cannot be explained as yet.
+L
+i
+To compare thep resentt heoreticalr esultsw ith experimentadl ata,
+thep lan ingi ncepti on speedh asb een computed for the test cond i t ions
+reported inF igure 4 of Reference (4) ands ummarized int he Tableb elow.
+Table 1
+Planinq-P arameters of Tires of Reference 1
+"" ~ "~~~ ~ "
+Ti re W, in. 2~ " : r 'in. 2bTin. A h, in. -h
+No. width = .84W = .&D = R/b wa te r 2 a
+depth
+-
+"- " ~ ~
+l a 8.8 7 -4 14.1 0.52 0.65 0.088
+l b 8.8 7.4 14.1 0.52 1 .o 0 -1 35
+2 13.0 10.9 19.4 0.56 0.1 0.009
+3 17.0 14.3 21.6 0.66 0.4 0.028
+4 13.0 10.9 17.2 0.63 0.3 0.027
+5a 12.5 10.5 16.7 0.62 0.3 0.028
+-
+5b 12 -5 10.5 16.7 0.62 0.3 0 028
+5c 12.5 10.5 16.7 0.62 0.3 0.028
+6a 6-7 5 -6 12.3 0.45 0.3 0 * 053
+6b 6.7 5.6 12.3 0.45 0.3 0.053
+~~
+9:
+Estimated by the method o f Reference (6).
+Sincet hee xperimentsw erec onducted ine xtremelys halloww ater (h less
+than one inch),t he 1 i f t coefficients were calculatedf or two additional
+valueso fb l/b, 1.1 and 1.03. These are shown inF igures 9 and 10.
+27
+I
+
+
+
+=== PDF PAGE 37 ===
+The valueso fe stimatedh ydroplaningi nception speed U. are compared
+I
+below with thee xperimentalv aluesr eportedi nR eference (4).
+Table 2
+Experimental Ui and Ui Estimatedb yt heP resent
+Theory f o r bl/b = 1.1 and bl/b = 1.03
+Ti re 0 W Ui ft/sec -Ui , ft/sec, I estimated from
+No. in. in- exP b,/b = 1.1 b,/b = 1.03
+l a 32 8.8 160 236
+I b 32 8.8 132 1 1 1
+2 44 13.0 175 808
+3 49 17.0 120 3 04
+4 39 13.0 200 473
+5a 38 12.5 67 1 93
+5b 38 12.5 100 2 73
+5c 38 12.5 120 334
+6a 28 6.7 86 1 93
+6b 28 6-7 100 2 44
+“r
+“Cannot be estimated for thesec ombinations of bl/b, A andh /2R.
+Thisc omparisoni ndicatest hatw ith a properc hoiceo f b /b
+1
+i t isp ossiblet oo btain thee xperimental speed of hydroplaningi nception.
+It isa pparentt hat b /b i s a veryd ecisivep arameterf ort hed escription
+1
+of them athematicalm odel, and furthermoret hatb l/bm ust be a function
+of depth h o f thew ater f i l m ont he runway, tirec learance,d , speed o f ad-
+vance,etc. As thed epthd ecreases, bl approaches b; ino ther wordst, h e
+areao f groundp ressure comes closert ot hew etteda reao ft heh ydroplaning
+t i r e .
+The resultsp resentedi nT able 2 confirma gaint hev ali dityo f
+theb asica ssumptiont hatt heh ydroplaningt ire phenomenon can be studied
+fromt hes tandpointo fi nviscidh ydrodynamics. However, theya lsop oint up
+28
+
+
+
+=== PDF PAGE 38 ===
+thes hortcomings o f thep resenta pproximatet heory i n i t s i n a b i l i t y t o
+specifyb l/b. It could be arguedt h att h ea greement isf ortuitous and
+thereforet her esultss hould be used onlyf org uidance and qualitative
+descriptiono ft he phenomenon. I t isd esirablet hereforet oe xtendt he
+presents tudyo ft heh ydroplaningt ire so as toe valuatea ccuratelyt he
+three-dimensionalh ydrodynamice ffecti nt his phenomenon.
+29
+
+
+
+=== PDF PAGE 39 ===
+CONCLUS IONS
+An approximatet heoryh as been developedf ors tudyingt heh ydro-
+planingt ire byc onsidering i t as a planings urfaceo fs malla spectr atio
+ine xtremelys halloww ater. The resultso btained on theb asiso ft his
+approximatione xhibith ydrodynamicb ehaviors imilart ot hato f a hydro-
+planingp neumatict ire and furnish some qualitative guidance fora voiding
+thisu ndesiredc ondition.
+The presenta pproximatet heoryi ndicatest hatt he phenomenon o f
+hydroplaningo f a t i r e can be describedf romt hes tandpointo fi nviscid
+hydrodynamics. The analysisf urnishesf amilieso fc urvesw hichd etermine
+theb oundaryb etweent heh ydroplaning and non-hydroplaningc ondition,
+dependingo nt heg eometry o f thep lanings urface,i tsp ositionr elative
+to the runway, theg eometry o f the footprintp ressured istribution and
+thed epth ofw ater on the runway. These curvesw hich can be considered
+tor epresent" incipienth ydroplaning"e stabli shc riteriaf ora voiding
+theu ndesiredh ydroplaningc onditionT. heoryi n dicatess pecificallyt h at:
+a)A voidance ofh ydroplaningi se xtendedt oh igherd eptho f
+waterf ors mallera spectr atios, whereas forh igha spect
+ratioh ydroplaning can be avoidedo nlyf ors mallerd epths.
+b)C onstancy oft he 1 i f t coefficient can be obtainedw ith a
+large number o f combinations ofa spectr atios,d eptho f
+water on the runway and clearance (gap) o f the tra i 1 ing
+edge o f the 1 i f t ings urfacef romt heg round.
+c)I ncreasingv alueso fc learance (gap) yieldd ecreasingv alues
+o f CL*
+d) Even when therei s a drastici ncreasei nv alueso fc learances
+the 1 i f t coefficient remainsc onstantw ithu nnoticeable
+changes o f thew ettedp ortiono ft hep neumatict ireo rd epth
+ofw ater on the runway.
+30
+.
+
+
+
+=== PDF PAGE 40 ===
+e) As the horizontal d istance of the t ra i 1 ing edge o f the
+hydroplaningt ire moves closert ot hep erpendicular
+throught hea xle,t hep ossibilityo fa voidingt heh ydro-
+planingc onditioni se xtendedt oh igherd eptho fw ater.
+Interpretingt heser esultsf romt hev iewpointo f speed a t which
+hydroplanings tartsy ieldst hef ollowingf undamentalc onclusions:
+a) The incipienth ydroplaning speed Ui decreases withi ncreasing
+aspect'r atioo ri ncreasingd eptho fw ater. A givenl arge
+valueo f U isa ttainede ither by smallera spectr atioa t
+i
+larger depth of water or larger aspect ratio at smaller depth
+of water.
+b)I ncreasingv alueso fc learance( gap)y ieldi ncreasingv alues
+o f speed ofi ncipienth ydroplaning.
+c)H ydroplaningo f a t i r e can be delayed o r avoided by increasing
+Ui which can be achievedb yd ecreasingt hea spectr atioo ft he
+wetteds urface.
+Finally, i t should be emphasized thatt her esults must be used
+merely as a qualitatived escriptiono ft heh ydroplaning t i r e , sincet he
+problem hasb een analyzedo nlya pproximately on theb asis o f two assump-
+tions:a )t hew etteds urfaceo ft het irei s a low aspectr atiop laning
+surface andb ) thep ressured istribution ont heg roundc an be approxi-
+mated by a uniforms tep-function.
+Forf utures tudies it i s recommended tou ndertaket het asko f
+evaluatinga ccuratelyt het hree-dimensionalh ydrodynamice ffecti nt he
+hydroplaningo ft het ireb eforea ttemptingt oi ncorporatet hee lasticity
+o f the tirei nt hem athematicalm odel. It woulda lso be advisable,a s a
+checko nt het heory,t oc onduct a seto fe xperimentsw ithr igidf lat
+platest os imulatet hef lat-platep laningc onditionst reatedt heoreti-
+cally.T his can be done a t DavidsonL aboratoryo nt hee xistings imulator
+fort estingt iresi nt heh ydroplanings tage.
+31
+
+
+
+=== PDF PAGE 41 ===
+ACKNOWLEDGEMENT
+The authorsa rei ndebtedt o Mr. DanielS avitsky, Manager of the
+AppliedM echanics Group of DavidsonL aboratory,f orh isv aluables uggestions.
+32
+
+
+
+=== PDF PAGE 42 ===
+REFERENCES
+1. Martin, C.S.: "Hydrodynamics of Tire Hydroplaning," NASA CR-601,
+September 1966
+2. Moore, D.F.: "A Study ofT ire-SurfaceI nteractionf ort he Case
+of Rolling ona Wet Surface,"C ornel1 Aero. Lab. Report YD-1969-V-2,
+1965
+3. Gross, W.A., Stahler, A. and Wildman, M.: "A Comparison of Charac-
+t e r i s t i c s of Self-ActingF oilB earings and PneumaticT ires," Ampex
+Report RB 65-32, 1965
+4. Horne, W.B. and Dreher, R.C.: "Phenomena of Pneumatic T i r e Hydro-
+planing, '' NASA TN D-2056, November 1963
+5.
+6. Smiley, R.F. and Horne, W.B.: "MechanicaPl ropertieso Pf neumatic
+Tires with SpecialR eference to Modern Aircraft Tires," NASA
+TR- R-64, 1960
+7. Tsakonas, S. and Henry, C.J.: "Finite AspectR atioC onfigurations
+i n a FreeS urface Wave System," DL Report 111 8, June 1966
+8. Watkins, C.E., Woolston, D. and Cunningham, H.: "A Systematic
+KernelF unctionP roceduref orD eterminingA erodynamicF orceso n
+Oscillating or Steady F i n i t e Wings a t Subsonic Speeds," NASA
+TR-R-48, 1959
+9. Wadlin, K.L. and Christopher, K.W.: "A Method forC alculationo f
+Hydrodynamic L i f t f o r Submerged and PlaningR ectangularL ifting
+Surfaces," NASA-TR-R-14, 19%
+10. Christopher, K.W.: "Effecto fS hallow Wateor n theH ydrodynamic
+Characteristicso f a Flat-BottomP laningS urface," NACA Tech. Note
+3642, Apri 11 956
+1 1 . Dugoff, H. and Ehrli ch, R., "Laboratory-Scale Model Experiments to
+InvestigateA ircraftT ireH ydroplaning,"P roceedingso ft he7 th
+AnnualC onferenceo nE nvironmentalE ffectso n A i rcraft and Propulsion
+Sys terns, September 1967.
+33
+
+
+
+=== PDF PAGE 43 ===
+.. .. ". . .. . . . . . .. . . . ...
+
+
+
+=== PDF PAGE 44 ===
+FIGURE I- PNEUMATICT IRE AT HYDROPLANINGS TAGE
+FIGURE 2. HYDRODYNAMIC EQUIVALENT OF HYDROPLANINGT IRE
+35
+
+
+
+=== PDF PAGE 45 ===
+P
+2 b d _ l
+t z h
++TIRE-FOOT PRINT+
+SPANWISEP RESSURE - , PLAN INGT IRE
+DISTRIBUTION ON GROUND
+PLATE 7 [TIRE-FOOTP RINT
+I
+J
+k p o 4
+rCHORDWlSEP RESSURE
+DISTRIBUTION ON GROUND
+PLATE
+FIGURE 3A.R EPRESENTATION OF SIMPLIFIEDM ATHEMATICAL MODEL
+FIGURE 3B. POSITION OF PLANING SURFACE RELATIVE TO RUNWAY
+36
+
+
+
+=== PDF PAGE 46 ===
+5;0
+6.0
+7.0
+8.0
+9.01A
+4.1 2.1
+LC
+0.1
+W
+4
+BO 6.0 4.0 2.0 n
+o.
+I
+8.0
+6.0
+4.0
+2.0
+0"
+Pz/h
+GNIMUSSA
+A
+DNA
+d,h
+FO
+SMRET
+NI
+ERIT
+GNINALPORDYH
+FO
+TNEICIFFEOC
+TFIL
+.4
+ERUGIF
+3/4=
+b
+/lb
+
+
+
+=== PDF PAGE 47 ===
+I
+r
+4.0
+=A
+i
+5.0
+=A
+6.0-A
+7.0k
+8.0-A
+9.0.A
+2.2
+o.
+I
+8.0
+6.0
+4.0
+2.0
+0
+Qe/h
+GNIMUSSA
+A
+DNA
+d,h
+FO
+SMRET
+NI
+ERI
+'T
+GNINALPORDYH
+FO
+TNEI
+CIFFEOC
+TF
+IL
+.5
+ERUGIF
+2/3=
+b
+/
+,b
+
+
+
+=== PDF PAGE 48 ===
+2.0-A
+3.0.A
+4.0-A
+3/4=b/lb
+DNA
+,C
+TNATSNOC
+ROF
+A
+DNA
+h
+FO
+SMRET
+NI
+d
+ECNARAELC
+.6
+ERUGIF
+-
+W DC
+h/d
+P
+2/h
+2/3
+=b/,b
+DNA
+,C
+TNATSNOC
+ROF
+A
+DNA
+h
+FO
+SMRET
+NI
+d
+ECNARAELC
+.7
+ERUGIF
+
+
+
+=== PDF PAGE 49 ===
+r
+FIGURE 8. COMPARISON OF THEORETICALL IFTC OEFFICIENTS FOR
+b,/b=2 WITH EXPERIMENTAL DATA FOR FLAT PLANING
+SURFACES (REF. 10 1
+40
+
+
+
+=== PDF PAGE 50 ===
+7.0
+:A
+3.0
+:A
+I
+-
+8.0
+2.0.A
+-
+6a
+I.0
+=A
+I
+4.0
+3.0
+2.0
+I.0
+0
+Q
+2/h
+GNIMUSSA
+A
+DNA
+h
+FO
+SMRET
+N
+IERIT
+GNINALPORDYH
+FO
+TNEICIFFEOC
+TFIL
+.9
+ERUGIF
+I.l=b/,b
+
+
+
+=== PDF PAGE 51 ===
+c.3
+4
+.O:A
+5
+0.0
+40.0
+30.0
+20.0
+I0.0
+0
+/h
+P2
+GNIMUSSA
+A
+DNA
+h
+FO
+SMRET
+NI
+ERIT
+GNINALPORDYH
+FO
+TNEICIFFEOC
+TFIL
+.OI
+ERUGIF
+30.1=
+b
+/lb
+
+
+
+=== PDF PAGE 52 ===
+"
+APPENDIX A
+The so lution of the integral equati on
+f(z) =
+is known in the literature. For the sake of completeness of this
+study, however, a derivation of the solution is presented here which
+was independently arrived at by the authors.
+The form of the kernel functioni n Eq. (A-I) suggests integra-
+tion by parts. This yields
+With the assumption that
+which, in fact, corresponds to the desired tip conditions, the result
+i s
+-R
+The auxi 1 iary condition
+-
+-a 1,
+resulting from the assumedt ip condition (A-2) secures a unique solution
+of the integral equation (A-3) with Cauchy-type singular kernel. The
+solution is given by
+or
+A-l
+
+
+
+=== PDF PAGE 53 ===
+Sincei nterchangingt heo rdero fi ntegration i s permissiblef or a
+Cauchy kernel, the z-integration i s performed first:
+Hence, Eq. (A-4) reduces to
+A-2
+
+
+
+=== PDF PAGE 54 ===
+APPENDIX B
+When thel owa spectr atioa ssumptioni s abandoned, thei ntegral
+equation ( 9 ) will be shown t o reduce tot heF redholmi ntegrale quation
+of the second kin d.
+The integrale quation canb e written as
+If thei nneri ntegrali si ntegratedb yp artsb yi dentifying
+x - 5
+u = andd v = L(<,q)d<
+2/(X-5l2+ (Y-17I2
+so that
+e
+then it becomes
+The integrale quation cant henb ew ritten as
+Multiplyingb oths ideso f Eq. B-3 byt he$ -function( see Eq. 16) and
+integratingw ithr e spectt oy o ' vetr h e range -,e t o L yields
+a
+-& -a -b
+B-1
+
+
+
+=== PDF PAGE 55 ===
+whichi st heF redholmi ntegral of the second kindw here
+k
+and L'(<,TJ) i s the unknown functiont o b ed etermined.
+B -2

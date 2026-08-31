@@ -1,0 +1,1864 @@
+{
+  "schema": "ACLM v0.10.1 static cross-era fixture 1.1",
+  "appVersion": "0.10.1",
+  "knowledgeVersion": "1.7.0",
+  "identity": {
+    "car": "1990s BPR GT radial fixture",
+    "year": 1995,
+    "familyId": "FAM010",
+    "classId": "CLS009",
+    "familyName": "Early-90s BPR / Le Mans GT radial",
+    "className": "1993-96 BPR / Le Mans GT"
+  },
+  "historicalProfile": {
+    "construction": "radial",
+    "constructionProvenance": {
+      "value": "radial",
+      "provenance": "FAMILY_DEFAULT",
+      "sourceIds": [
+        "FAM010",
+        "CLS009"
+      ],
+      "confidence": "knowledge-family default",
+      "explicit": false
+    },
+    "supplier": "General / unknown",
+    "supplierProvenance": {
+      "value": "General / unknown",
+      "provenance": "UNKNOWN_FALLBACK",
+      "sourceIds": [
+        "FAM010",
+        "CLS009"
+      ],
+      "confidence": "cleared on class/family transition; no supplier evidence for the new context",
+      "reason": "v0.10.1 static fixture",
+      "explicit": false
+    },
+    "coherence": {
+      "pass": true,
+      "profileCoherent": true,
+      "authoritative": true,
+      "compatibilityOnly": true,
+      "title": "PROFILE COHERENCE PASS",
+      "historicalEvidenceStatus": "RECONSTRUCTED",
+      "evidence": {
+        "schema": "ACLM historical evidence status 1.0",
+        "overall": "RECONSTRUCTED",
+        "categories": {
+          "carIdentity": {
+            "status": "PROVISIONAL",
+            "sourceIds": [],
+            "basis": "user-entered or inferred identity",
+            "limitation": "AC package identity is not proof of period specification"
+          },
+          "classFamily": {
+            "status": "RECONSTRUCTED",
+            "sourceIds": [],
+            "basis": "CLS009 / FAM010",
+            "limitation": "internal FAM/CLS identifiers are not citations"
+          },
+          "construction": {
+            "status": "RECONSTRUCTED",
+            "sourceIds": [],
+            "basis": "FAMILY_DEFAULT",
+            "limitation": "profile compatibility does not prove a numerical construction model"
+          },
+          "supplier": {
+            "status": "UNKNOWN",
+            "sourceIds": [],
+            "basis": "UNKNOWN_FALLBACK",
+            "limitation": "supplier stays unknown without event/car-specific evidence"
+          },
+          "geometry": {
+            "status": "PROVISIONAL",
+            "sourceIds": [],
+            "basis": "generator/imported reconstruction",
+            "limitation": "sim geometry is not automatically period dimensional evidence"
+          },
+          "compound": {
+            "status": "RECONSTRUCTED",
+            "sourceIds": [],
+            "basis": "class/family compound menu",
+            "limitation": "exact compound properties remain reconstruction unless directly documented"
+          },
+          "temperature": {
+            "status": "PROVISIONAL",
+            "sourceIds": [],
+            "basis": "generator prior; no host-specific live telemetry yet",
+            "limitation": "simulator closure is not historical optimum evidence"
+          },
+          "pressure": {
+            "status": "PROVISIONAL",
+            "sourceIds": [],
+            "basis": "reference-duty pressure model only; host remains unvalidated",
+            "limitation": "a static software prediction is not a validated live result or automatically a historical racing-pressure source"
+          },
+          "wearLife": {
+            "status": "RECONSTRUCTED",
+            "sourceIds": [],
+            "basis": "generator family prior; host-specific life unresolved",
+            "limitation": "period durability evidence must not be converted directly into AC virtual-km wear without telemetry calibration"
+          }
+        },
+        "rule": "PROFILE COHERENCE checks compatibility only. Historical evidence status reports sourcing separately; internal FAM/CLS IDs are not citations."
+      },
+      "fields": {
+        "year": 1995,
+        "classId": "CLS009",
+        "familyId": "FAM010",
+        "classPeriod": [
+          1993,
+          1996
+        ],
+        "familyPeriod": [
+          1993,
+          1996
+        ],
+        "familyConstruction": "radial",
+        "currentConstruction": "radial",
+        "constructionProvenance": "FAMILY_DEFAULT",
+        "supplier": "General / unknown",
+        "supplierProvenance": "UNKNOWN_FALLBACK",
+        "compound": null,
+        "geometry": null,
+        "thermalConstruction": "radial",
+        "anachronisticOverride": false
+      },
+      "issues": [],
+      "intended": {
+        "value": "radial",
+        "provenance": "FAMILY_DEFAULT",
+        "sourceIds": [
+          "FAM010",
+          "CLS009"
+        ],
+        "confidence": "knowledge-family default"
+      }
+    }
+  },
+  "geometry": {
+    "vehicleMassKg": 1200,
+    "frontWeightPercent": 43,
+    "front": {
+      "width": 0.285,
+      "radius": 0.335,
+      "rimRadius": 0.2286
+    },
+    "rear": {
+      "width": 0.335,
+      "radius": 0.35,
+      "rimRadius": 0.2286
+    }
+  },
+  "pressure": {
+    "front": {
+      "continuousColdPressurePsi": 25.324597550178453,
+      "achievableSetupPressurePsi": 25.324597550178453,
+      "observedSessionStartingPressurePsi": null,
+      "idealPressurePsi": 29,
+      "containedAirEstimateC": 53.47333766866706,
+      "initialStateEstimate": {
+        "temperatureC": 26,
+        "source": "AMBIENT_PROXY_UNRESOLVED",
+        "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+        "sourceIds": []
+      },
+      "volumeRatio": 1,
+      "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+      "pressureUncertaintyC": 12,
+      "referenceDriver": "UNKNOWN",
+      "model": {
+        "recommendedColdPsi": 25.324597550178453,
+        "achievableSetupColdPsi": 25.324597550178453,
+        "setupQuantization": {
+          "continuousPsi": 25.324597550178453,
+          "achievablePsi": 25.324597550178453,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "predictedHotPsi": 29,
+        "predictedHotFromAchievablePsi": 29,
+        "predictedHotPressureErrorPsi": 0,
+        "predictedAchievableHotPressureErrorPsi": 0,
+        "predictedContainedAirC": 53.47333766866706,
+        "predictedInternalCoreC": 53.47333766866706,
+        "initialThermalState": {
+          "temperatureC": 26,
+          "source": "AMBIENT_PROXY_UNRESOLVED",
+          "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+          "sourceIds": []
+        },
+        "referenceColdC": 26,
+        "containedAirModel": {
+          "temperatureC": 53.47333766866706,
+          "mode": "reference-duty thermal-network screening estimate",
+          "confidence": "low/provisional; contained-air telemetry required",
+          "uncertaintyC": 12,
+          "sourceIds": [
+            "E-SRC-0113",
+            "M4-FORMULA-007",
+            "M4-FORMULA-008"
+          ],
+          "factors": {
+            "loadDensityNPerMm": 8.877598947368421,
+            "internalVolumeScale": 1.9296708761927852,
+            "trackDutyFactor": 1,
+            "construction": {
+              "construction": "radial",
+              "mechanicalResponse": "belted response must be retained",
+              "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+              "sourceIds": [
+                "E-SRC-0096",
+                "M4-FORMULA-009"
+              ]
+            },
+            "constructionCavityTemperatureAdjustmentC": -0.5,
+            "constructionPrior": {
+              "bias": 1.5,
+              "radial": -0.5,
+              "unknown": 0,
+              "provenance": "CONSTRUCTION_PRIOR",
+              "confidence": "low bounded engineering prior; direction is evidence-supported, magnitude requires telemetry",
+              "sourceIds": [
+                "E-SRC-0096",
+                "E-SRC-0098"
+              ]
+            }
+          }
+        },
+        "volumeModel": {
+          "hotToColdVolumeRatio": 1,
+          "provenance": "UNKNOWN_ASSUMED_UNITY",
+          "confidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+          "sourceIds": [
+            "M4-FORMULA-009"
+          ]
+        },
+        "pressureTemperatureGain": 1,
+        "pressureResponseFactor": 1,
+        "legacyColdPsi": 21.10206928659455,
+        "rawPhysicalColdPsi": 25.324597550178453,
+        "guardrail": "none",
+        "classification": "PASS",
+        "achievableClassification": "PASS",
+        "constructionModel": {
+          "construction": "radial",
+          "mechanicalResponse": "belted response must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        }
+      },
+      "report": {
+        "generatedPressureStaticPsi": 25.324597550178453,
+        "acPhysicsReferencePressurePsi": 25.324597550178453,
+        "recommendedSetupColdPressurePsi": 25.324597550178453,
+        "achievableSetupColdPressurePsi": 25.324597550178453,
+        "setupPressureQuantization": {
+          "continuousPsi": 25.324597550178453,
+          "achievablePsi": 25.324597550178453,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "setupDefaultColdPressurePsi": null,
+        "selectedSetupColdPressurePsi": null,
+        "observedSessionStartingPressurePsi": null,
+        "pressureConcepts": {
+          "physicsReference": "PRESSURE_STATIC in tyres.ini",
+          "continuousRecommendation": "reference-duty solver output",
+          "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+          "setupDefault": "DEFAULT from setup.ini when the host defines it",
+          "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+          "observedStart": "authoritative recorded AC shared-memory pressure",
+          "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+        },
+        "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+        "generatedPressureIdealPsi": 29,
+        "ambientAirTemperatureC": 26,
+        "roadTemperatureC": 36,
+        "referenceSetupTemperatureC": null,
+        "acInitialCoreTemperatureC": 26,
+        "initialThermalState": {
+          "temperatureC": 26,
+          "source": "AMBIENT_PROXY_UNRESOLVED",
+          "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+          "sourceIds": []
+        },
+        "referenceColdTemperatureC": 26,
+        "predictedContainedAirHotTemperatureC": 53.47333766866706,
+        "containedAirTemperatureUncertaintyC": 12,
+        "treadGripCurveOptimumTemperatureC": 92,
+        "predictedHotToColdVolumeRatio": 1,
+        "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+        "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+        "predictedHotPressureRisePsi": 3.675402449821547,
+        "predictedStabilizedHotPressurePsi": 29,
+        "predictedHotPressureErrorPsi": 0,
+        "closureClassification": "PASS",
+        "pressureTemperatureGain": 1,
+        "oldV092ColdPredictionPsi": 21.10206928659455,
+        "coldPredictionChangePsi": 4.222528263583904,
+        "predictionMode": "reference-duty thermal-network screening estimate",
+        "guardrail": "none",
+        "constructionModel": {
+          "construction": "radial",
+          "mechanicalResponse": "belted response must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        },
+        "calibrationStatus": {
+          "pressure": "provisional physical reconstruction",
+          "temperature": "historical absolute target unresolved"
+        },
+        "provenance": null,
+        "referenceDuty": {
+          "familyId": "FAM010",
+          "classId": "CLS009",
+          "driver": "UNKNOWN"
+        },
+        "inputs": {
+          "construction": "radial",
+          "compound": "race",
+          "widthM": 0.285,
+          "estimatedInternalAirVolumeM3": 0.05789012628578356,
+          "referenceTireLoadN": 2530.1157
+        },
+        "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+        "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+        "acParameterAudit": {
+          "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+          "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+          "PRESSURE_IDEAL": "grip-optimum pressure",
+          "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+        },
+        "pendingCalibrationFactors": [
+          "internal air volume and dimensional growth",
+          "measured racing hot/cold cavity-volume ratio",
+          "contained-air temperature by family and duty",
+          "construction-specific pressure/compliance telemetry",
+          "AC pressure-gain parameter closure"
+        ],
+        "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+      }
+    },
+    "rear": {
+      "continuousColdPressurePsi": 25.426639212105172,
+      "achievableSetupPressurePsi": 25.426639212105172,
+      "observedSessionStartingPressurePsi": null,
+      "idealPressurePsi": 29,
+      "containedAirEstimateC": 52.64265275055729,
+      "initialStateEstimate": {
+        "temperatureC": 26,
+        "source": "AMBIENT_PROXY_UNRESOLVED",
+        "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+        "sourceIds": []
+      },
+      "volumeRatio": 1,
+      "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+      "pressureUncertaintyC": 12,
+      "referenceDriver": "UNKNOWN",
+      "model": {
+        "recommendedColdPsi": 25.426639212105172,
+        "achievableSetupColdPsi": 25.426639212105172,
+        "setupQuantization": {
+          "continuousPsi": 25.426639212105172,
+          "achievablePsi": 25.426639212105172,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "predictedHotPsi": 29,
+        "predictedHotFromAchievablePsi": 29,
+        "predictedHotPressureErrorPsi": 0,
+        "predictedAchievableHotPressureErrorPsi": 0,
+        "predictedContainedAirC": 52.64265275055729,
+        "predictedInternalCoreC": 52.64265275055729,
+        "initialThermalState": {
+          "temperatureC": 26,
+          "source": "AMBIENT_PROXY_UNRESOLVED",
+          "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+          "sourceIds": []
+        },
+        "referenceColdC": 26,
+        "containedAirModel": {
+          "temperatureC": 52.64265275055729,
+          "mode": "reference-duty thermal-network screening estimate",
+          "confidence": "low/provisional; contained-air telemetry required",
+          "uncertaintyC": 12,
+          "sourceIds": [
+            "E-SRC-0113",
+            "M4-FORMULA-007",
+            "M4-FORMULA-008"
+          ],
+          "factors": {
+            "loadDensityNPerMm": 10.011565074626866,
+            "internalVolumeScale": 2.656854020243746,
+            "trackDutyFactor": 1,
+            "construction": {
+              "construction": "radial",
+              "mechanicalResponse": "belted response must be retained",
+              "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+              "sourceIds": [
+                "E-SRC-0096",
+                "M4-FORMULA-009"
+              ]
+            },
+            "constructionCavityTemperatureAdjustmentC": -0.5,
+            "constructionPrior": {
+              "bias": 1.5,
+              "radial": -0.5,
+              "unknown": 0,
+              "provenance": "CONSTRUCTION_PRIOR",
+              "confidence": "low bounded engineering prior; direction is evidence-supported, magnitude requires telemetry",
+              "sourceIds": [
+                "E-SRC-0096",
+                "E-SRC-0098"
+              ]
+            }
+          }
+        },
+        "volumeModel": {
+          "hotToColdVolumeRatio": 1,
+          "provenance": "UNKNOWN_ASSUMED_UNITY",
+          "confidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+          "sourceIds": [
+            "M4-FORMULA-009"
+          ]
+        },
+        "pressureTemperatureGain": 1,
+        "pressureResponseFactor": 1,
+        "legacyColdPsi": 21.10206928659455,
+        "rawPhysicalColdPsi": 25.426639212105172,
+        "guardrail": "none",
+        "classification": "PASS",
+        "achievableClassification": "PASS",
+        "constructionModel": {
+          "construction": "radial",
+          "mechanicalResponse": "belted response must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        }
+      },
+      "report": {
+        "generatedPressureStaticPsi": 25.426639212105172,
+        "acPhysicsReferencePressurePsi": 25.426639212105172,
+        "recommendedSetupColdPressurePsi": 25.426639212105172,
+        "achievableSetupColdPressurePsi": 25.426639212105172,
+        "setupPressureQuantization": {
+          "continuousPsi": 25.426639212105172,
+          "achievablePsi": 25.426639212105172,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "setupDefaultColdPressurePsi": null,
+        "selectedSetupColdPressurePsi": null,
+        "observedSessionStartingPressurePsi": null,
+        "pressureConcepts": {
+          "physicsReference": "PRESSURE_STATIC in tyres.ini",
+          "continuousRecommendation": "reference-duty solver output",
+          "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+          "setupDefault": "DEFAULT from setup.ini when the host defines it",
+          "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+          "observedStart": "authoritative recorded AC shared-memory pressure",
+          "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+        },
+        "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+        "generatedPressureIdealPsi": 29,
+        "ambientAirTemperatureC": 26,
+        "roadTemperatureC": 36,
+        "referenceSetupTemperatureC": null,
+        "acInitialCoreTemperatureC": 26,
+        "initialThermalState": {
+          "temperatureC": 26,
+          "source": "AMBIENT_PROXY_UNRESOLVED",
+          "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+          "sourceIds": []
+        },
+        "referenceColdTemperatureC": 26,
+        "predictedContainedAirHotTemperatureC": 52.64265275055729,
+        "containedAirTemperatureUncertaintyC": 12,
+        "treadGripCurveOptimumTemperatureC": 92,
+        "predictedHotToColdVolumeRatio": 1,
+        "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+        "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+        "predictedHotPressureRisePsi": 3.5733607878948277,
+        "predictedStabilizedHotPressurePsi": 29,
+        "predictedHotPressureErrorPsi": 0,
+        "closureClassification": "PASS",
+        "pressureTemperatureGain": 1,
+        "oldV092ColdPredictionPsi": 21.10206928659455,
+        "coldPredictionChangePsi": 4.324569925510623,
+        "predictionMode": "reference-duty thermal-network screening estimate",
+        "guardrail": "none",
+        "constructionModel": {
+          "construction": "radial",
+          "mechanicalResponse": "belted response must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        },
+        "calibrationStatus": {
+          "pressure": "provisional physical reconstruction",
+          "temperature": "historical absolute target unresolved"
+        },
+        "provenance": null,
+        "referenceDuty": {
+          "familyId": "FAM010",
+          "classId": "CLS009",
+          "driver": "UNKNOWN"
+        },
+        "inputs": {
+          "construction": "radial",
+          "compound": "race",
+          "widthM": 0.335,
+          "estimatedInternalAirVolumeM3": 0.07970562060731237,
+          "referenceTireLoadN": 3353.8743
+        },
+        "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+        "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+        "acParameterAudit": {
+          "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+          "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+          "PRESSURE_IDEAL": "grip-optimum pressure",
+          "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+        },
+        "pendingCalibrationFactors": [
+          "internal air volume and dimensional growth",
+          "measured racing hot/cold cavity-volume ratio",
+          "contained-air temperature by family and duty",
+          "construction-specific pressure/compliance telemetry",
+          "AC pressure-gain parameter closure"
+        ],
+        "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+      }
+    }
+  },
+  "regressionAnchors": null,
+  "thermalConstruction": "radial",
+  "thermal": {
+    "front": {
+      "schema": "ACLM CSP Thermal V2 calibration 1.0",
+      "inputs": {
+        "vehicleMass": 1200,
+        "frontWeight": 43,
+        "construction": "radial",
+        "era": 1995,
+        "compound": "race",
+        "speedKph": 300,
+        "confidence": 0.65,
+        "rollingResistance0": 10.5,
+        "rollingResistance1": 0.00054,
+        "idealHotPressurePsi": 29,
+        "optimumTemperatureC": 92,
+        "axle": "front",
+        "width": 0.285,
+        "radius": 0.335,
+        "rimRadius": 0.2286,
+        "rate": 270750,
+        "sidewallStiffness": 1,
+        "fz0": 2277.1041299999997,
+        "expectedLoad": 2530.1157,
+        "drivenDuty": 0,
+        "brakeExposure": 0.65,
+        "pressurePsi": 22,
+        "loadRatio": 1.1111111111111112,
+        "loadDensity": 8.877598947368421,
+        "rateDensity": 950,
+        "rr0": 10.5,
+        "rr1": 0.00054,
+        "sidewall": 1,
+        "driven": 0,
+        "brake": 0.65,
+        "speed": 300,
+        "pressure": 22
+      },
+      "estimates": {
+        "width": 0.285,
+        "radius": 0.335,
+        "rimRadius": 0.2286,
+        "sectionHeight": 0.10640000000000002,
+        "internalVolume": 0.05789012628578356,
+        "casingArea": 1.1712148251906827,
+        "treadDepth": 0.0045,
+        "treadVolume": 0.002321563143575497,
+        "materialVolume": 0.006706591449089413,
+        "estimatedMass": 7.060699477601334,
+        "angularInertia": 0.5806823748731607,
+        "construction": "radial",
+        "material": "unspecified material prior"
+      },
+      "legacy": {
+        "surfaceTransfer": 1.0325853039014496,
+        "patchTransfer": 0.0021275,
+        "coreTransfer": 0,
+        "internalCoreTransfer": 0,
+        "rollingK": 0,
+        "frictionK": 0.012349888370126317,
+        "coolFactor": 8.094174366157652,
+        "surfaceRollingK": 0.0009130488888888889,
+        "grainGamma": 1,
+        "grainGain": 0.35,
+        "blisterGamma": 1,
+        "blisterGain": 0.35
+      },
+      "v2": {
+        "carcassRollingK": 0.12535676049382716,
+        "brakeToCore": 0.0003676845007104238,
+        "surfaceToAmbient": 0.08289838523796489,
+        "surfaceToCarcass": 0.04481279701792473,
+        "carcassToSurface": 0.5313606692192098,
+        "carcassToCore": 0.010803201264669618,
+        "coreToCarcass": 0.001081422507438334,
+        "coreToAmbient": 0.002312481645979243
+      },
+      "rays": {
+        "lateral": 2,
+        "longitudinal": 4,
+        "maxAngle": 60,
+        "disableDoubling": 0,
+        "smoothLoadSensitivity": 1,
+        "camberTemperatureSpread": 1.6
+      },
+      "formulas": {
+        "estimates": "elliptical torus internal volume; casing area × construction thickness + tread volume; 1120 kg/m³ material prior",
+        "surfaceHeat": "FRICTION_K from compound, load ratio/density and driven duty; PERFORMANCE_CURVE is not used as a heat source",
+        "rollingHeat": "SURFACE_ROLLING_K and CARCASS_ROLLING_K from rolling resistance, construction flex, load and driven duty",
+        "cooling": "COOL_FACTOR × SURFACE_TO_AMBIENT is solved as one speed/area/volume-coupled pathway",
+        "conduction": "bidirectional surface/carcass/core paths from geometry, construction, volume, pressure and area",
+        "brake": "BRAKE_TO_CORE from imported/derived axle brake exposure and internal volume",
+        "evidence": "coefficients are reconstruction priors; confidence affects reporting only, never secretly scales physics"
+      },
+      "sources": {
+        "schema": "CSP Cars – Tyre Thermal Models (V1/V2), revised 2026-06-06",
+        "rays": "CSP Cars – Tyre Physics extended-ray schema; ACLM uses 2 lateral and 4 longitudinal rays per side as a bounded V2 thermal-distribution compromise",
+        "geometry": "ACLM annular elliptical-section geometry reconstruction",
+        "pathways": "ACLM evidence-marked heat-pathway reconstruction prior; telemetry calibration required"
+      }
+    },
+    "rear": {
+      "schema": "ACLM CSP Thermal V2 calibration 1.0",
+      "inputs": {
+        "vehicleMass": 1200,
+        "frontWeight": 43,
+        "construction": "radial",
+        "era": 1995,
+        "compound": "race",
+        "speedKph": 300,
+        "confidence": 0.65,
+        "rollingResistance0": 10.5,
+        "rollingResistance1": 0.00054,
+        "idealHotPressurePsi": 29,
+        "optimumTemperatureC": 92,
+        "axle": "rear",
+        "width": 0.335,
+        "radius": 0.35,
+        "rimRadius": 0.2286,
+        "rate": 318250,
+        "sidewallStiffness": 1,
+        "fz0": 3018.48687,
+        "expectedLoad": 3353.8743,
+        "drivenDuty": 1,
+        "brakeExposure": 0.35,
+        "pressurePsi": 22,
+        "loadRatio": 1.111111111111111,
+        "loadDensity": 10.011565074626866,
+        "rateDensity": 950,
+        "rr0": 10.5,
+        "rr1": 0.00054,
+        "sidewall": 1,
+        "driven": 1,
+        "brake": 0.35,
+        "speed": 300,
+        "pressure": 22
+      },
+      "estimates": {
+        "width": 0.335,
+        "radius": 0.35,
+        "rimRadius": 0.2286,
+        "sectionHeight": 0.12139999999999998,
+        "internalVolume": 0.07970562060731237,
+        "casingArea": 1.3989109497584908,
+        "treadDepth": 0.0045,
+        "treadVolume": 0.0028510424570225407,
+        "materialVolume": 0.00808856505291833,
+        "estimatedMass": 8.515641287712418,
+        "angularInertia": 0.7440880497661976,
+        "construction": "radial",
+        "material": "unspecified material prior"
+      },
+      "legacy": {
+        "surfaceTransfer": 1.0310736048022977,
+        "patchTransfer": 0.0022025,
+        "coreTransfer": 0,
+        "internalCoreTransfer": 0,
+        "rollingK": 0,
+        "frictionK": 0.013376772663555582,
+        "coolFactor": 8.251810144704596,
+        "surfaceRollingK": 0.0011248762311111113,
+        "grainGamma": 1,
+        "grainGain": 0.35,
+        "blisterGamma": 1,
+        "blisterGain": 0.35
+      },
+      "v2": {
+        "carcassRollingK": 0.1378924365432099,
+        "brakeToCore": 0.0002428,
+        "surfaceToAmbient": 0.09064677772306862,
+        "surfaceToCarcass": 0.043874553815102635,
+        "carcassToSurface": 0.512474388585026,
+        "carcassToCore": 0.01195172124255203,
+        "coreToCarcass": 0.0009775014630031135,
+        "coreToAmbient": 0.0025583283449183277
+      },
+      "rays": {
+        "lateral": 2,
+        "longitudinal": 4,
+        "maxAngle": 60,
+        "disableDoubling": 0,
+        "smoothLoadSensitivity": 1,
+        "camberTemperatureSpread": 1.6
+      },
+      "formulas": {
+        "estimates": "elliptical torus internal volume; casing area × construction thickness + tread volume; 1120 kg/m³ material prior",
+        "surfaceHeat": "FRICTION_K from compound, load ratio/density and driven duty; PERFORMANCE_CURVE is not used as a heat source",
+        "rollingHeat": "SURFACE_ROLLING_K and CARCASS_ROLLING_K from rolling resistance, construction flex, load and driven duty",
+        "cooling": "COOL_FACTOR × SURFACE_TO_AMBIENT is solved as one speed/area/volume-coupled pathway",
+        "conduction": "bidirectional surface/carcass/core paths from geometry, construction, volume, pressure and area",
+        "brake": "BRAKE_TO_CORE from imported/derived axle brake exposure and internal volume",
+        "evidence": "coefficients are reconstruction priors; confidence affects reporting only, never secretly scales physics"
+      },
+      "sources": {
+        "schema": "CSP Cars – Tyre Thermal Models (V1/V2), revised 2026-06-06",
+        "rays": "CSP Cars – Tyre Physics extended-ray schema; ACLM uses 2 lateral and 4 longitudinal rays per side as a bounded V2 thermal-distribution compromise",
+        "geometry": "ACLM annular elliptical-section geometry reconstruction",
+        "pathways": "ACLM evidence-marked heat-pathway reconstruction prior; telemetry calibration required"
+      }
+    }
+  },
+  "wear": {
+    "historicalLife": {
+      "observedStintKm": null,
+      "competitiveLifeKm": null,
+      "serviceLifeKm": null,
+      "abrasionLifeKm": null,
+      "lifeRangeKm": [
+        40,
+        110
+      ],
+      "lifeDefinition": "PROVISIONAL_GENERATOR_PRIOR",
+      "lifeConfidence": 65,
+      "lifeBasis": "ACLM 1990s GT calibration prior; preserve validated 3-4 Le Mans-lap race envelope while supplier-specific life remains evidence-weighted",
+      "sourceRefs": [
+        "FAM010",
+        "CLS009"
+      ]
+    },
+    "referenceDuty": {
+      "schema": "ACLM reference-duty wear translation 1.0",
+      "status": "CALIBRATABLE_ARCHITECTURE_NOT_HISTORICALLY_FITTED",
+      "historicalTarget": null,
+      "acImplementation": {
+        "virtualKm": "load/stress-sensitive AC exposure coordinate",
+        "useLoad": 1,
+        "wearCurve": "maps AC virtual exposure to AC grip-health; not physical tread depth"
+      },
+      "exposureIntegrand": "contact pressure × local slip velocity/work",
+      "candidateInputs": [
+        "normalized contact pressure/load",
+        "slip velocity",
+        "slip ratio",
+        "slip angle",
+        "driven/non-driven axle",
+        "temperature",
+        "construction",
+        "compound",
+        "tire geometry",
+        "speed/duty"
+      ],
+      "separation": [
+        "PHYSICAL_ABRASION",
+        "COMPETITIVE_GRIP_DEGRADATION",
+        "AC_WEAR_GRIP_HEALTH_SIGNAL"
+      ],
+      "coefficients": "not fitted; telemetry and source-specific calibration required",
+      "incidentPolicy": "incident/abuse runs demonstrate stress sensitivity but are excluded from clean stint-life fitting"
+    },
+    "frozen": true
+  },
+  "lutReferences": {
+    "temperature": [
+      "temperature.lut"
+    ],
+    "wear": "generated application wear LUT; v0.10.0 shape is frozen by regression hash"
+  },
+  "telemetrySidecarCompatibility": {
+    "schema": "ACLM telemetry calibration manifest 1.1",
+    "manifestFields": {
+      "appVersion": "0.10.1",
+      "knowledgeVersion": "1.7.0",
+      "loggerVersion": "0.10.1",
+      "year": 1995,
+      "family": "FAM010",
+      "class": "CLS009",
+      "compound": [
+        "race"
+      ],
+      "construction": "radial",
+      "constructionProvenance": {
+        "value": "radial",
+        "provenance": "FAMILY_DEFAULT",
+        "sourceIds": [
+          "FAM010",
+          "CLS009"
+        ],
+        "confidence": "knowledge-family default",
+        "explicit": false
+      },
+      "supplier": "General / unknown",
+      "supplierProvenance": {
+        "value": "General / unknown",
+        "provenance": "UNKNOWN_FALLBACK",
+        "sourceIds": [
+          "FAM010",
+          "CLS009"
+        ],
+        "confidence": "cleared on class/family transition; no supplier evidence for the new context",
+        "reason": "v0.10.1 static fixture",
+        "explicit": false
+      },
+      "profileState": {
+        "authoritative": true,
+        "coherence": {
+          "pass": true,
+          "profileCoherent": true,
+          "authoritative": true,
+          "compatibilityOnly": true,
+          "title": "PROFILE COHERENCE PASS",
+          "historicalEvidenceStatus": "RECONSTRUCTED",
+          "evidence": {
+            "schema": "ACLM historical evidence status 1.0",
+            "overall": "RECONSTRUCTED",
+            "categories": {
+              "carIdentity": {
+                "status": "PROVISIONAL",
+                "sourceIds": [],
+                "basis": "user-entered or inferred identity",
+                "limitation": "AC package identity is not proof of period specification"
+              },
+              "classFamily": {
+                "status": "RECONSTRUCTED",
+                "sourceIds": [],
+                "basis": "CLS009 / FAM010",
+                "limitation": "internal FAM/CLS identifiers are not citations"
+              },
+              "construction": {
+                "status": "RECONSTRUCTED",
+                "sourceIds": [],
+                "basis": "FAMILY_DEFAULT",
+                "limitation": "profile compatibility does not prove a numerical construction model"
+              },
+              "supplier": {
+                "status": "UNKNOWN",
+                "sourceIds": [],
+                "basis": "UNKNOWN_FALLBACK",
+                "limitation": "supplier stays unknown without event/car-specific evidence"
+              },
+              "geometry": {
+                "status": "PROVISIONAL",
+                "sourceIds": [],
+                "basis": "generator/imported reconstruction",
+                "limitation": "sim geometry is not automatically period dimensional evidence"
+              },
+              "compound": {
+                "status": "RECONSTRUCTED",
+                "sourceIds": [],
+                "basis": "class/family compound menu",
+                "limitation": "exact compound properties remain reconstruction unless directly documented"
+              },
+              "temperature": {
+                "status": "PROVISIONAL",
+                "sourceIds": [],
+                "basis": "generator prior; no host-specific live telemetry yet",
+                "limitation": "simulator closure is not historical optimum evidence"
+              },
+              "pressure": {
+                "status": "PROVISIONAL",
+                "sourceIds": [],
+                "basis": "reference-duty pressure model only; host remains unvalidated",
+                "limitation": "a static software prediction is not a validated live result or automatically a historical racing-pressure source"
+              },
+              "wearLife": {
+                "status": "RECONSTRUCTED",
+                "sourceIds": [],
+                "basis": "generator family prior; host-specific life unresolved",
+                "limitation": "period durability evidence must not be converted directly into AC virtual-km wear without telemetry calibration"
+              }
+            },
+            "rule": "PROFILE COHERENCE checks compatibility only. Historical evidence status reports sourcing separately; internal FAM/CLS IDs are not citations."
+          },
+          "fields": {
+            "year": 1995,
+            "classId": "CLS009",
+            "familyId": "FAM010",
+            "classPeriod": [
+              1993,
+              1996
+            ],
+            "familyPeriod": [
+              1993,
+              1996
+            ],
+            "familyConstruction": "radial",
+            "currentConstruction": "radial",
+            "constructionProvenance": "FAMILY_DEFAULT",
+            "supplier": "General / unknown",
+            "supplierProvenance": "UNKNOWN_FALLBACK",
+            "compound": null,
+            "geometry": null,
+            "thermalConstruction": "radial",
+            "anachronisticOverride": false
+          },
+          "issues": [],
+          "intended": {
+            "value": "radial",
+            "provenance": "FAMILY_DEFAULT",
+            "sourceIds": [
+              "FAM010",
+              "CLS009"
+            ],
+            "confidence": "knowledge-family default"
+          }
+        }
+      },
+      "requestedCondition": {
+        "airTemperatureC": 26,
+        "roadTemperatureC": 26,
+        "wearMultiplier": 1,
+        "fuelRate": 0,
+        "damageRate": 0,
+        "sessionBlanketsEnabled": false
+      },
+      "requestedTyreWearMultiplier": 1,
+      "rawAidTireRate": null,
+      "aidTireRateInterpretation": "UNKNOWN",
+      "tireBlanketCapabilityTemperatureC": 70,
+      "historicalBlanketRecommendation": {
+        "status": "UNRESOLVED"
+      },
+      "requestedSessionBlanketsEnabled": false,
+      "carIniPhysicsVersion": "extended-2",
+      "tyresIniThermalVersion": 2,
+      "tireFileSha256": "af42fb5214cbbaf6ceeaede6bd13843677a1df7653e28c69c8cf4d5fef765dad",
+      "wearLutSha256": {
+        "representative": "FROZEN_BY_REGRESSION_TEST"
+      },
+      "temperatureLutSha256": {
+        "temperature.lut": "3e02e75140ecac34678d24d6fd2b2947ab759e18f36bc147f07c28d27bbfa2e8"
+      },
+      "referenceDuty": {
+        "driver": "UNKNOWN"
+      },
+      "recommendedPressures": {
+        "front": {
+          "generatedPressureStaticPsi": 25.324597550178453,
+          "acPhysicsReferencePressurePsi": 25.324597550178453,
+          "recommendedSetupColdPressurePsi": 25.324597550178453,
+          "achievableSetupColdPressurePsi": 25.324597550178453,
+          "setupPressureQuantization": {
+            "continuousPsi": 25.324597550178453,
+            "achievablePsi": 25.324597550178453,
+            "quantized": false,
+            "control": {
+              "min": null,
+              "max": null,
+              "step": null,
+              "default": null,
+              "source": null,
+              "section": null
+            },
+            "deltaPsi": 0
+          },
+          "setupDefaultColdPressurePsi": null,
+          "selectedSetupColdPressurePsi": null,
+          "observedSessionStartingPressurePsi": null,
+          "pressureConcepts": {
+            "physicsReference": "PRESSURE_STATIC in tyres.ini",
+            "continuousRecommendation": "reference-duty solver output",
+            "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+            "setupDefault": "DEFAULT from setup.ini when the host defines it",
+            "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+            "observedStart": "authoritative recorded AC shared-memory pressure",
+            "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+          },
+          "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+          "generatedPressureIdealPsi": 29,
+          "ambientAirTemperatureC": 26,
+          "roadTemperatureC": 36,
+          "referenceSetupTemperatureC": null,
+          "acInitialCoreTemperatureC": 26,
+          "initialThermalState": {
+            "temperatureC": 26,
+            "source": "AMBIENT_PROXY_UNRESOLVED",
+            "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+            "sourceIds": []
+          },
+          "referenceColdTemperatureC": 26,
+          "predictedContainedAirHotTemperatureC": 53.47333766866706,
+          "containedAirTemperatureUncertaintyC": 12,
+          "treadGripCurveOptimumTemperatureC": 92,
+          "predictedHotToColdVolumeRatio": 1,
+          "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+          "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+          "predictedHotPressureRisePsi": 3.675402449821547,
+          "predictedStabilizedHotPressurePsi": 29,
+          "predictedHotPressureErrorPsi": 0,
+          "closureClassification": "PASS",
+          "pressureTemperatureGain": 1,
+          "oldV092ColdPredictionPsi": 21.10206928659455,
+          "coldPredictionChangePsi": 4.222528263583904,
+          "predictionMode": "reference-duty thermal-network screening estimate",
+          "guardrail": "none",
+          "constructionModel": {
+            "construction": "radial",
+            "mechanicalResponse": "belted response must be retained",
+            "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+            "sourceIds": [
+              "E-SRC-0096",
+              "M4-FORMULA-009"
+            ]
+          },
+          "calibrationStatus": {
+            "pressure": "provisional physical reconstruction",
+            "temperature": "historical absolute target unresolved"
+          },
+          "provenance": null,
+          "referenceDuty": {
+            "familyId": "FAM010",
+            "classId": "CLS009",
+            "driver": "UNKNOWN"
+          },
+          "inputs": {
+            "construction": "radial",
+            "compound": "race",
+            "widthM": 0.285,
+            "estimatedInternalAirVolumeM3": 0.05789012628578356,
+            "referenceTireLoadN": 2530.1157
+          },
+          "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+          "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+          "acParameterAudit": {
+            "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+            "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+            "PRESSURE_IDEAL": "grip-optimum pressure",
+            "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+            "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+            "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+            "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+          },
+          "pendingCalibrationFactors": [
+            "internal air volume and dimensional growth",
+            "measured racing hot/cold cavity-volume ratio",
+            "contained-air temperature by family and duty",
+            "construction-specific pressure/compliance telemetry",
+            "AC pressure-gain parameter closure"
+          ],
+          "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+        },
+        "rear": {
+          "generatedPressureStaticPsi": 25.426639212105172,
+          "acPhysicsReferencePressurePsi": 25.426639212105172,
+          "recommendedSetupColdPressurePsi": 25.426639212105172,
+          "achievableSetupColdPressurePsi": 25.426639212105172,
+          "setupPressureQuantization": {
+            "continuousPsi": 25.426639212105172,
+            "achievablePsi": 25.426639212105172,
+            "quantized": false,
+            "control": {
+              "min": null,
+              "max": null,
+              "step": null,
+              "default": null,
+              "source": null,
+              "section": null
+            },
+            "deltaPsi": 0
+          },
+          "setupDefaultColdPressurePsi": null,
+          "selectedSetupColdPressurePsi": null,
+          "observedSessionStartingPressurePsi": null,
+          "pressureConcepts": {
+            "physicsReference": "PRESSURE_STATIC in tyres.ini",
+            "continuousRecommendation": "reference-duty solver output",
+            "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+            "setupDefault": "DEFAULT from setup.ini when the host defines it",
+            "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+            "observedStart": "authoritative recorded AC shared-memory pressure",
+            "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+          },
+          "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+          "generatedPressureIdealPsi": 29,
+          "ambientAirTemperatureC": 26,
+          "roadTemperatureC": 36,
+          "referenceSetupTemperatureC": null,
+          "acInitialCoreTemperatureC": 26,
+          "initialThermalState": {
+            "temperatureC": 26,
+            "source": "AMBIENT_PROXY_UNRESOLVED",
+            "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+            "sourceIds": []
+          },
+          "referenceColdTemperatureC": 26,
+          "predictedContainedAirHotTemperatureC": 52.64265275055729,
+          "containedAirTemperatureUncertaintyC": 12,
+          "treadGripCurveOptimumTemperatureC": 92,
+          "predictedHotToColdVolumeRatio": 1,
+          "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+          "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+          "predictedHotPressureRisePsi": 3.5733607878948277,
+          "predictedStabilizedHotPressurePsi": 29,
+          "predictedHotPressureErrorPsi": 0,
+          "closureClassification": "PASS",
+          "pressureTemperatureGain": 1,
+          "oldV092ColdPredictionPsi": 21.10206928659455,
+          "coldPredictionChangePsi": 4.324569925510623,
+          "predictionMode": "reference-duty thermal-network screening estimate",
+          "guardrail": "none",
+          "constructionModel": {
+            "construction": "radial",
+            "mechanicalResponse": "belted response must be retained",
+            "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+            "sourceIds": [
+              "E-SRC-0096",
+              "M4-FORMULA-009"
+            ]
+          },
+          "calibrationStatus": {
+            "pressure": "provisional physical reconstruction",
+            "temperature": "historical absolute target unresolved"
+          },
+          "provenance": null,
+          "referenceDuty": {
+            "familyId": "FAM010",
+            "classId": "CLS009",
+            "driver": "UNKNOWN"
+          },
+          "inputs": {
+            "construction": "radial",
+            "compound": "race",
+            "widthM": 0.335,
+            "estimatedInternalAirVolumeM3": 0.07970562060731237,
+            "referenceTireLoadN": 3353.8743
+          },
+          "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+          "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+          "acParameterAudit": {
+            "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+            "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+            "PRESSURE_IDEAL": "grip-optimum pressure",
+            "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+            "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+            "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+            "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+          },
+          "pendingCalibrationFactors": [
+            "internal air volume and dimensional growth",
+            "measured racing hot/cold cavity-volume ratio",
+            "contained-air temperature by family and duty",
+            "construction-specific pressure/compliance telemetry",
+            "AC pressure-gain parameter closure"
+          ],
+          "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+        }
+      },
+      "pressureQuantizationMetadata": {
+        "front": {
+          "continuousPsi": 25.324597550178453,
+          "achievablePsi": 25.324597550178453,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "rear": {
+          "continuousPsi": 25.426639212105172,
+          "achievablePsi": 25.426639212105172,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        }
+      }
+    }
+  },
+  "packageManifest": {
+    "appVersion": "0.10.1",
+    "knowledgeVersion": "1.7.0",
+    "loggerVersion": "0.10.1",
+    "year": 1995,
+    "family": "FAM010",
+    "class": "CLS009",
+    "compound": [
+      "race"
+    ],
+    "construction": "radial",
+    "constructionProvenance": {
+      "value": "radial",
+      "provenance": "FAMILY_DEFAULT",
+      "sourceIds": [
+        "FAM010",
+        "CLS009"
+      ],
+      "confidence": "knowledge-family default",
+      "explicit": false
+    },
+    "supplier": "General / unknown",
+    "supplierProvenance": {
+      "value": "General / unknown",
+      "provenance": "UNKNOWN_FALLBACK",
+      "sourceIds": [
+        "FAM010",
+        "CLS009"
+      ],
+      "confidence": "cleared on class/family transition; no supplier evidence for the new context",
+      "reason": "v0.10.1 static fixture",
+      "explicit": false
+    },
+    "profileState": {
+      "authoritative": true,
+      "coherence": {
+        "pass": true,
+        "profileCoherent": true,
+        "authoritative": true,
+        "compatibilityOnly": true,
+        "title": "PROFILE COHERENCE PASS",
+        "historicalEvidenceStatus": "RECONSTRUCTED",
+        "evidence": {
+          "schema": "ACLM historical evidence status 1.0",
+          "overall": "RECONSTRUCTED",
+          "categories": {
+            "carIdentity": {
+              "status": "PROVISIONAL",
+              "sourceIds": [],
+              "basis": "user-entered or inferred identity",
+              "limitation": "AC package identity is not proof of period specification"
+            },
+            "classFamily": {
+              "status": "RECONSTRUCTED",
+              "sourceIds": [],
+              "basis": "CLS009 / FAM010",
+              "limitation": "internal FAM/CLS identifiers are not citations"
+            },
+            "construction": {
+              "status": "RECONSTRUCTED",
+              "sourceIds": [],
+              "basis": "FAMILY_DEFAULT",
+              "limitation": "profile compatibility does not prove a numerical construction model"
+            },
+            "supplier": {
+              "status": "UNKNOWN",
+              "sourceIds": [],
+              "basis": "UNKNOWN_FALLBACK",
+              "limitation": "supplier stays unknown without event/car-specific evidence"
+            },
+            "geometry": {
+              "status": "PROVISIONAL",
+              "sourceIds": [],
+              "basis": "generator/imported reconstruction",
+              "limitation": "sim geometry is not automatically period dimensional evidence"
+            },
+            "compound": {
+              "status": "RECONSTRUCTED",
+              "sourceIds": [],
+              "basis": "class/family compound menu",
+              "limitation": "exact compound properties remain reconstruction unless directly documented"
+            },
+            "temperature": {
+              "status": "PROVISIONAL",
+              "sourceIds": [],
+              "basis": "generator prior; no host-specific live telemetry yet",
+              "limitation": "simulator closure is not historical optimum evidence"
+            },
+            "pressure": {
+              "status": "PROVISIONAL",
+              "sourceIds": [],
+              "basis": "reference-duty pressure model only; host remains unvalidated",
+              "limitation": "a static software prediction is not a validated live result or automatically a historical racing-pressure source"
+            },
+            "wearLife": {
+              "status": "RECONSTRUCTED",
+              "sourceIds": [],
+              "basis": "generator family prior; host-specific life unresolved",
+              "limitation": "period durability evidence must not be converted directly into AC virtual-km wear without telemetry calibration"
+            }
+          },
+          "rule": "PROFILE COHERENCE checks compatibility only. Historical evidence status reports sourcing separately; internal FAM/CLS IDs are not citations."
+        },
+        "fields": {
+          "year": 1995,
+          "classId": "CLS009",
+          "familyId": "FAM010",
+          "classPeriod": [
+            1993,
+            1996
+          ],
+          "familyPeriod": [
+            1993,
+            1996
+          ],
+          "familyConstruction": "radial",
+          "currentConstruction": "radial",
+          "constructionProvenance": "FAMILY_DEFAULT",
+          "supplier": "General / unknown",
+          "supplierProvenance": "UNKNOWN_FALLBACK",
+          "compound": null,
+          "geometry": null,
+          "thermalConstruction": "radial",
+          "anachronisticOverride": false
+        },
+        "issues": [],
+        "intended": {
+          "value": "radial",
+          "provenance": "FAMILY_DEFAULT",
+          "sourceIds": [
+            "FAM010",
+            "CLS009"
+          ],
+          "confidence": "knowledge-family default"
+        }
+      }
+    },
+    "requestedCondition": {
+      "airTemperatureC": 26,
+      "roadTemperatureC": 26,
+      "wearMultiplier": 1,
+      "fuelRate": 0,
+      "damageRate": 0,
+      "sessionBlanketsEnabled": false
+    },
+    "requestedTyreWearMultiplier": 1,
+    "rawAidTireRate": null,
+    "aidTireRateInterpretation": "UNKNOWN",
+    "tireBlanketCapabilityTemperatureC": 70,
+    "historicalBlanketRecommendation": {
+      "status": "UNRESOLVED"
+    },
+    "requestedSessionBlanketsEnabled": false,
+    "carIniPhysicsVersion": "extended-2",
+    "tyresIniThermalVersion": 2,
+    "tireFileSha256": "af42fb5214cbbaf6ceeaede6bd13843677a1df7653e28c69c8cf4d5fef765dad",
+    "wearLutSha256": {
+      "representative": "FROZEN_BY_REGRESSION_TEST"
+    },
+    "temperatureLutSha256": {
+      "temperature.lut": "3e02e75140ecac34678d24d6fd2b2947ab759e18f36bc147f07c28d27bbfa2e8"
+    },
+    "referenceDuty": {
+      "driver": "UNKNOWN"
+    },
+    "recommendedPressures": {
+      "front": {
+        "generatedPressureStaticPsi": 25.324597550178453,
+        "acPhysicsReferencePressurePsi": 25.324597550178453,
+        "recommendedSetupColdPressurePsi": 25.324597550178453,
+        "achievableSetupColdPressurePsi": 25.324597550178453,
+        "setupPressureQuantization": {
+          "continuousPsi": 25.324597550178453,
+          "achievablePsi": 25.324597550178453,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "setupDefaultColdPressurePsi": null,
+        "selectedSetupColdPressurePsi": null,
+        "observedSessionStartingPressurePsi": null,
+        "pressureConcepts": {
+          "physicsReference": "PRESSURE_STATIC in tyres.ini",
+          "continuousRecommendation": "reference-duty solver output",
+          "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+          "setupDefault": "DEFAULT from setup.ini when the host defines it",
+          "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+          "observedStart": "authoritative recorded AC shared-memory pressure",
+          "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+        },
+        "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+        "generatedPressureIdealPsi": 29,
+        "ambientAirTemperatureC": 26,
+        "roadTemperatureC": 36,
+        "referenceSetupTemperatureC": null,
+        "acInitialCoreTemperatureC": 26,
+        "initialThermalState": {
+          "temperatureC": 26,
+          "source": "AMBIENT_PROXY_UNRESOLVED",
+          "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+          "sourceIds": []
+        },
+        "referenceColdTemperatureC": 26,
+        "predictedContainedAirHotTemperatureC": 53.47333766866706,
+        "containedAirTemperatureUncertaintyC": 12,
+        "treadGripCurveOptimumTemperatureC": 92,
+        "predictedHotToColdVolumeRatio": 1,
+        "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+        "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+        "predictedHotPressureRisePsi": 3.675402449821547,
+        "predictedStabilizedHotPressurePsi": 29,
+        "predictedHotPressureErrorPsi": 0,
+        "closureClassification": "PASS",
+        "pressureTemperatureGain": 1,
+        "oldV092ColdPredictionPsi": 21.10206928659455,
+        "coldPredictionChangePsi": 4.222528263583904,
+        "predictionMode": "reference-duty thermal-network screening estimate",
+        "guardrail": "none",
+        "constructionModel": {
+          "construction": "radial",
+          "mechanicalResponse": "belted response must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        },
+        "calibrationStatus": {
+          "pressure": "provisional physical reconstruction",
+          "temperature": "historical absolute target unresolved"
+        },
+        "provenance": null,
+        "referenceDuty": {
+          "familyId": "FAM010",
+          "classId": "CLS009",
+          "driver": "UNKNOWN"
+        },
+        "inputs": {
+          "construction": "radial",
+          "compound": "race",
+          "widthM": 0.285,
+          "estimatedInternalAirVolumeM3": 0.05789012628578356,
+          "referenceTireLoadN": 2530.1157
+        },
+        "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+        "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+        "acParameterAudit": {
+          "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+          "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+          "PRESSURE_IDEAL": "grip-optimum pressure",
+          "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+        },
+        "pendingCalibrationFactors": [
+          "internal air volume and dimensional growth",
+          "measured racing hot/cold cavity-volume ratio",
+          "contained-air temperature by family and duty",
+          "construction-specific pressure/compliance telemetry",
+          "AC pressure-gain parameter closure"
+        ],
+        "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+      },
+      "rear": {
+        "generatedPressureStaticPsi": 25.426639212105172,
+        "acPhysicsReferencePressurePsi": 25.426639212105172,
+        "recommendedSetupColdPressurePsi": 25.426639212105172,
+        "achievableSetupColdPressurePsi": 25.426639212105172,
+        "setupPressureQuantization": {
+          "continuousPsi": 25.426639212105172,
+          "achievablePsi": 25.426639212105172,
+          "quantized": false,
+          "control": {
+            "min": null,
+            "max": null,
+            "step": null,
+            "default": null,
+            "source": null,
+            "section": null
+          },
+          "deltaPsi": 0
+        },
+        "setupDefaultColdPressurePsi": null,
+        "selectedSetupColdPressurePsi": null,
+        "observedSessionStartingPressurePsi": null,
+        "pressureConcepts": {
+          "physicsReference": "PRESSURE_STATIC in tyres.ini",
+          "continuousRecommendation": "reference-duty solver output",
+          "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+          "setupDefault": "DEFAULT from setup.ini when the host defines it",
+          "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+          "observedStart": "authoritative recorded AC shared-memory pressure",
+          "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+        },
+        "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+        "generatedPressureIdealPsi": 29,
+        "ambientAirTemperatureC": 26,
+        "roadTemperatureC": 36,
+        "referenceSetupTemperatureC": null,
+        "acInitialCoreTemperatureC": 26,
+        "initialThermalState": {
+          "temperatureC": 26,
+          "source": "AMBIENT_PROXY_UNRESOLVED",
+          "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+          "sourceIds": []
+        },
+        "referenceColdTemperatureC": 26,
+        "predictedContainedAirHotTemperatureC": 52.64265275055729,
+        "containedAirTemperatureUncertaintyC": 12,
+        "treadGripCurveOptimumTemperatureC": 92,
+        "predictedHotToColdVolumeRatio": 1,
+        "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+        "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+        "predictedHotPressureRisePsi": 3.5733607878948277,
+        "predictedStabilizedHotPressurePsi": 29,
+        "predictedHotPressureErrorPsi": 0,
+        "closureClassification": "PASS",
+        "pressureTemperatureGain": 1,
+        "oldV092ColdPredictionPsi": 21.10206928659455,
+        "coldPredictionChangePsi": 4.324569925510623,
+        "predictionMode": "reference-duty thermal-network screening estimate",
+        "guardrail": "none",
+        "constructionModel": {
+          "construction": "radial",
+          "mechanicalResponse": "belted response must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        },
+        "calibrationStatus": {
+          "pressure": "provisional physical reconstruction",
+          "temperature": "historical absolute target unresolved"
+        },
+        "provenance": null,
+        "referenceDuty": {
+          "familyId": "FAM010",
+          "classId": "CLS009",
+          "driver": "UNKNOWN"
+        },
+        "inputs": {
+          "construction": "radial",
+          "compound": "race",
+          "widthM": 0.335,
+          "estimatedInternalAirVolumeM3": 0.07970562060731237,
+          "referenceTireLoadN": 3353.8743
+        },
+        "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+        "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+        "acParameterAudit": {
+          "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+          "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+          "PRESSURE_IDEAL": "grip-optimum pressure",
+          "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+          "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+        },
+        "pendingCalibrationFactors": [
+          "internal air volume and dimensional growth",
+          "measured racing hot/cold cavity-volume ratio",
+          "contained-air temperature by family and duty",
+          "construction-specific pressure/compliance telemetry",
+          "AC pressure-gain parameter closure"
+        ],
+        "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+      }
+    },
+    "pressureQuantizationMetadata": {
+      "front": {
+        "continuousPsi": 25.324597550178453,
+        "achievablePsi": 25.324597550178453,
+        "quantized": false,
+        "control": {
+          "min": null,
+          "max": null,
+          "step": null,
+          "default": null,
+          "source": null,
+          "section": null
+        },
+        "deltaPsi": 0
+      },
+      "rear": {
+        "continuousPsi": 25.426639212105172,
+        "achievablePsi": 25.426639212105172,
+        "quantized": false,
+        "control": {
+          "min": null,
+          "max": null,
+          "step": null,
+          "default": null,
+          "source": null,
+          "section": null
+        },
+        "deltaPsi": 0
+      }
+    }
+  },
+  "diagnosticPrint": {
+    "profileYear": 1995,
+    "class": "CLS009 1993-96 BPR / Le Mans GT",
+    "family": "FAM010 Early-90s BPR / Le Mans GT radial",
+    "construction": "radial",
+    "constructionProvenance": {
+      "value": "radial",
+      "provenance": "FAMILY_DEFAULT",
+      "sourceIds": [
+        "FAM010",
+        "CLS009"
+      ],
+      "confidence": "knowledge-family default",
+      "explicit": false
+    },
+    "supplier": "General / unknown",
+    "supplierProvenance": {
+      "value": "General / unknown",
+      "provenance": "UNKNOWN_FALLBACK",
+      "sourceIds": [
+        "FAM010",
+        "CLS009"
+      ],
+      "confidence": "cleared on class/family transition; no supplier evidence for the new context",
+      "reason": "v0.10.1 static fixture",
+      "explicit": false
+    },
+    "front": {
+      "continuousColdPressurePsi": 25.324597550178453,
+      "achievableSetupPressurePsi": 25.324597550178453,
+      "idealPressurePsi": 29,
+      "containedAirEstimateC": 53.47333766866706,
+      "initialStateEstimate": {
+        "temperatureC": 26,
+        "source": "AMBIENT_PROXY_UNRESOLVED",
+        "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+        "sourceIds": []
+      },
+      "volumeRatio": 1,
+      "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+      "pressureUncertaintyC": 12
+    },
+    "rear": {
+      "continuousColdPressurePsi": 25.426639212105172,
+      "achievableSetupPressurePsi": 25.426639212105172,
+      "idealPressurePsi": 29,
+      "containedAirEstimateC": 52.64265275055729,
+      "initialStateEstimate": {
+        "temperatureC": 26,
+        "source": "AMBIENT_PROXY_UNRESOLVED",
+        "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+        "sourceIds": []
+      },
+      "volumeRatio": 1,
+      "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+      "pressureUncertaintyC": 12
+    },
+    "thermalV2Architecture": "legacy thermal sections plus CSP THERMAL_MODEL VERSION=2 and 2x4 ray network",
+    "lifeSemantics": "PROVISIONAL_GENERATOR_PRIOR",
+    "manifestFields": [
+      "appVersion",
+      "knowledgeVersion",
+      "loggerVersion",
+      "year",
+      "family",
+      "class",
+      "compound",
+      "construction",
+      "constructionProvenance",
+      "supplier",
+      "supplierProvenance",
+      "profileState",
+      "requestedCondition",
+      "requestedTyreWearMultiplier",
+      "rawAidTireRate",
+      "aidTireRateInterpretation",
+      "tireBlanketCapabilityTemperatureC",
+      "historicalBlanketRecommendation",
+      "requestedSessionBlanketsEnabled",
+      "carIniPhysicsVersion",
+      "tyresIniThermalVersion",
+      "tireFileSha256",
+      "wearLutSha256",
+      "temperatureLutSha256",
+      "referenceDuty",
+      "recommendedPressures",
+      "pressureQuantizationMetadata"
+    ]
+  },
+  "packageAudits": {
+    "csp": {
+      "pass": true,
+      "errors": [],
+      "sections": {
+        "HEADER": {
+          "VERSION": "10"
+        },
+        "THERMAL_MODEL": {
+          "VERSION": "2"
+        },
+        "_EXTENSION": {
+          "LATERAL_RAYS": "2",
+          "LONGITUDINAL_RAYS": "4",
+          "MAX_RAY_ANGLE": "60",
+          "DISABLE_RAY_DOUBLING": "0",
+          "SMOOTH_LOAD_SENS": "1"
+        },
+        "THERMAL_FRONT": {
+          "SURFACE_TRANSFER": "1.032585",
+          "PATCH_TRANSFER": "0.002128",
+          "CORE_TRANSFER": "0",
+          "INTERNAL_CORE_TRANSFER": "0",
+          "FRICTION_K": "0.012350",
+          "ROLLING_K": "0",
+          "PERFORMANCE_CURVE": "temperature.lut",
+          "GRAIN_GAMMA": "1.000",
+          "GRAIN_GAIN": "0.350",
+          "BLISTER_GAMMA": "1.000",
+          "BLISTER_GAIN": "0.350",
+          "COOL_FACTOR": "8.0942",
+          "SURFACE_ROLLING_K": "0.000913"
+        },
+        "THERMAL2_FRONT": {
+          "CARCASS_ROLLING_K": "0.125357",
+          "BRAKE_TO_CORE": "0.0003677",
+          "SURFACE_TO_AMBIENT": "0.082898",
+          "SURFACE_TO_CARCASS": "0.044813",
+          "CARCASS_TO_SURFACE": "0.531361",
+          "CARCASS_TO_CORE": "0.010803",
+          "CORE_TO_CARCASS": "0.0010814",
+          "CORE_TO_AMBIENT": "0.0023125"
+        },
+        "THERMAL_REAR": {
+          "SURFACE_TRANSFER": "1.031074",
+          "PATCH_TRANSFER": "0.002203",
+          "CORE_TRANSFER": "0",
+          "INTERNAL_CORE_TRANSFER": "0",
+          "FRICTION_K": "0.013377",
+          "ROLLING_K": "0",
+          "PERFORMANCE_CURVE": "temperature.lut",
+          "GRAIN_GAMMA": "1.000",
+          "GRAIN_GAIN": "0.350",
+          "BLISTER_GAMMA": "1.000",
+          "BLISTER_GAIN": "0.350",
+          "COOL_FACTOR": "8.2518",
+          "SURFACE_ROLLING_K": "0.001125"
+        },
+        "THERMAL2_REAR": {
+          "CARCASS_ROLLING_K": "0.137892",
+          "BRAKE_TO_CORE": "0.0002428",
+          "SURFACE_TO_AMBIENT": "0.090647",
+          "SURFACE_TO_CARCASS": "0.043875",
+          "CARCASS_TO_SURFACE": "0.512474",
+          "CARCASS_TO_CORE": "0.011952",
+          "CORE_TO_CARCASS": "0.0009775",
+          "CORE_TO_AMBIENT": "0.0025583"
+        }
+      }
+    },
+    "vanilla": {
+      "pass": true,
+      "errors": [],
+      "sections": {
+        "HEADER": {
+          "VERSION": "10"
+        },
+        "THERMAL_FRONT": {
+          "SURFACE_TRANSFER": "1.032585",
+          "PATCH_TRANSFER": "0.002128",
+          "CORE_TRANSFER": "0",
+          "INTERNAL_CORE_TRANSFER": "0",
+          "FRICTION_K": "0.012350",
+          "ROLLING_K": "0",
+          "PERFORMANCE_CURVE": "temperature.lut",
+          "GRAIN_GAMMA": "1.000",
+          "GRAIN_GAIN": "0.350",
+          "BLISTER_GAMMA": "1.000",
+          "BLISTER_GAIN": "0.350",
+          "COOL_FACTOR": "8.0942",
+          "SURFACE_ROLLING_K": "0.000913"
+        },
+        "THERMAL_REAR": {
+          "SURFACE_TRANSFER": "1.031074",
+          "PATCH_TRANSFER": "0.002203",
+          "CORE_TRANSFER": "0",
+          "INTERNAL_CORE_TRANSFER": "0",
+          "FRICTION_K": "0.013377",
+          "ROLLING_K": "0",
+          "PERFORMANCE_CURVE": "temperature.lut",
+          "GRAIN_GAMMA": "1.000",
+          "GRAIN_GAIN": "0.350",
+          "BLISTER_GAMMA": "1.000",
+          "BLISTER_GAIN": "0.350",
+          "COOL_FACTOR": "8.2518",
+          "SURFACE_ROLLING_K": "0.001125"
+        }
+      }
+    }
+  },
+  "generatedIni": {
+    "csp": "[HEADER]\nVERSION=10\n\n[THERMAL_MODEL]\nVERSION=2\n\n[_EXTENSION]\nLATERAL_RAYS=2\nLONGITUDINAL_RAYS=4\nMAX_RAY_ANGLE=60\nDISABLE_RAY_DOUBLING=0\nSMOOTH_LOAD_SENS=1\n[THERMAL_FRONT]\nSURFACE_TRANSFER=1.032585\nPATCH_TRANSFER=0.002128\nCORE_TRANSFER=0\nINTERNAL_CORE_TRANSFER=0\nFRICTION_K=0.012350\nROLLING_K=0\nPERFORMANCE_CURVE=temperature.lut\nGRAIN_GAMMA=1.000\nGRAIN_GAIN=0.350\nBLISTER_GAMMA=1.000\nBLISTER_GAIN=0.350\nCOOL_FACTOR=8.0942\nSURFACE_ROLLING_K=0.000913\n\n[THERMAL2_FRONT]\nCARCASS_ROLLING_K=0.125357\nBRAKE_TO_CORE=0.0003677\nSURFACE_TO_AMBIENT=0.082898\nSURFACE_TO_CARCASS=0.044813\nCARCASS_TO_SURFACE=0.531361\nCARCASS_TO_CORE=0.010803\nCORE_TO_CARCASS=0.0010814\nCORE_TO_AMBIENT=0.0023125\n\n[THERMAL_REAR]\nSURFACE_TRANSFER=1.031074\nPATCH_TRANSFER=0.002203\nCORE_TRANSFER=0\nINTERNAL_CORE_TRANSFER=0\nFRICTION_K=0.013377\nROLLING_K=0\nPERFORMANCE_CURVE=temperature.lut\nGRAIN_GAMMA=1.000\nGRAIN_GAIN=0.350\nBLISTER_GAMMA=1.000\nBLISTER_GAIN=0.350\nCOOL_FACTOR=8.2518\nSURFACE_ROLLING_K=0.001125\n\n[THERMAL2_REAR]\nCARCASS_ROLLING_K=0.137892\nBRAKE_TO_CORE=0.0002428\nSURFACE_TO_AMBIENT=0.090647\nSURFACE_TO_CARCASS=0.043875\nCARCASS_TO_SURFACE=0.512474\nCARCASS_TO_CORE=0.011952\nCORE_TO_CARCASS=0.0009775\nCORE_TO_AMBIENT=0.0025583\n\n",
+    "vanilla": "[HEADER]\nVERSION=10\n\n[THERMAL_FRONT]\nSURFACE_TRANSFER=1.032585\nPATCH_TRANSFER=0.002128\nCORE_TRANSFER=0\nINTERNAL_CORE_TRANSFER=0\nFRICTION_K=0.012350\nROLLING_K=0\nPERFORMANCE_CURVE=temperature.lut\nGRAIN_GAMMA=1.000\nGRAIN_GAIN=0.350\nBLISTER_GAMMA=1.000\nBLISTER_GAIN=0.350\nCOOL_FACTOR=8.0942\nSURFACE_ROLLING_K=0.000913\n\n\n[THERMAL_REAR]\nSURFACE_TRANSFER=1.031074\nPATCH_TRANSFER=0.002203\nCORE_TRANSFER=0\nINTERNAL_CORE_TRANSFER=0\nFRICTION_K=0.013377\nROLLING_K=0\nPERFORMANCE_CURVE=temperature.lut\nGRAIN_GAMMA=1.000\nGRAIN_GAIN=0.350\nBLISTER_GAMMA=1.000\nBLISTER_GAIN=0.350\nCOOL_FACTOR=8.2518\nSURFACE_ROLLING_K=0.001125\n\n"
+  },
+  "fixtureSha256": "3e6d176b042f72e2a6eba967a5cbbeb62f7687771419c92a29fe98cd7260ebe0"
+}

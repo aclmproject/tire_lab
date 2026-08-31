@@ -1,0 +1,1988 @@
+=== PDF PAGE 1 ===
+N A SA C O N T R A C T OR N A SA C R - 2 2 20
+R E P O RT
+C-4
+STRUCTURAL MODELING
+OF AIRCRAFT TIRES
+by 5. X. Clark, R. N. Dodge, J. I. Lackey,
+and G. H. Nybakken
+Prepared by
+THE UNIVERSITY OF MICHIGAN
+Ann Arbor, Mich. 48105
+for Langley Research Center
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION • WASHINGTON, D. C. • MARCH 1973
+
+
+
+=== PDF PAGE 2 ===
+1. Report No. 2. Government Accession No. 3. Recipient's Catalog No."
+NASA CR-2220
+4. Title and Subtitle 5. Report Date
+March 1975
+STRUCTURAL MODELING OF AIRCRAFT TIRES
+6. Performing Organization Code
+7. Author(s) 8. Performing Organization Report No.
+S. K. Clark, R. N. Dodge, J. I. Lackey, and G. H. Hybakken 05608-16-T (Revised)
+10. Work Unit No.
+9. Performing Organization Name and Address 501-38-12-02
+The University of Michigan 11. Contract or Grant No.
+Ann Arbor, Michigan I»8l05 NGL-23-005-010
+13. Type of Report and Period Covered
+12. Sponsoring Agency Name and Address Contractor Report
+National Aeronautics and Space Administration
+14. Sponsoring Agency Code
+Washington, B.C.
+15. Supplementary Notes
+16. Abstract
+A theoretical and experimental investigation of the feasibility of determining the
+mechanical properties of aircraft tires from small-scale model tires was accomplished. The
+theoretical results indicate that the macroscopic static and dynamic mechanical properties
+of aircraft tires can be accurately determined from the scale model tires although the
+microscopic and thermal properties of aircraft tires can not. The experimental investigation
+was conducted on a scale model of a Uo x 12, lU ply rated, type VII aircraft tire with a
+scaling factor of 8.65. The experimental results-vindicate that the scale model tire exhibited
+the same static mechanical properties as the prototype tire when compared on a dimensionless.
+basis. The structural modeling concept discussed in this report is believed to be exact for
+mechanical properties of aircraft tires under static, rolling, and transient conditions.
+17. Key Words (Suggested by Author(s)) 18. Distribution Statement
+Aircraft tires
+Structural modeling Unclassified - Unlimited
+Tire mechanical properties
+19. Security dassif. (of this report) 20. Security Ctassif. (of this page) 21. No. of Pages 22. Price'
+Unclassified Unclassified 79 $3.00
+For sale by the National Technical I nformation Service, Springfield, Virginia 22151
+
+
+
+=== PDF PAGE 3 ===
+",,rage Intentionally Left Blank
+
+
+
+=== PDF PAGE 4 ===
+TABLE OF CONTENTS
+Page
+LIST OF ILLUSTRATIONS iv
+SYMBOLS . . vii
+SUMMARY . -1
+INTRODUCTION 2
+THEORY OF MODELING k
+Modeling of Tire Mechanical Properties k
+Modeling of Tire Stress Levels 10
+Modeling of Tire Equilibrium Temperature lU
+4
+STATIC LOAD-DEFLECTION- PROPERTIES OF MODEL AND PROTOTYPE TIRES 17
+GEOMETRIC AND SLOW-ROLLING PROPERTIES OF MODEL AND PROTOTYPE TIRES 26
+MEASUREMENT OF STATIC LOAD-DEFLECTION PROPERTIES 35
+MEASUREMENT OF GEOMETRIC AND SLOW-ROLLING PROPERTIES " kl
+CONCLUDING REMARKS ' • 52
+APPENDIX • 53
+REFERENCES 73
+iii
+
+
+
+=== PDF PAGE 5 ===
+LIST OF ILLUSTRATIONS
+Table Page
+I. Tire Operating Conditions . 20
+II. Specification Sheet for Tire A-lh 58
+III. Properties of Typical Model Tires 70
+Figure
+1. Tire geometry and nomenclature. k
+2. Tire co-ordinate directions. 17
+3- Vertical load-vertical deflection data for model and proto-
+type tires. 22
+4. Lateral -load-lateral.deflection data ,for model and prototype
+tires. 23
+5« Fore-aft load-deflection data for model tires. 2k
+6. Twisting moment-rotation data for model and prototype tires. 25
+7. Tire half contact-patch length data for model and prototype
+tires. 27
+8. Lateral damping coefficient data for model and prototype
+tires, (TI ) based on force ratio. 28
+y F
+9. Lateral damping coefficient data for model and prototype
+tires, (r| ) based on energy ratio. 29
+y E
+10. Yawed-rolling relaxation length data for model and prototype
+tires. . 30
+11. Side force, self-aligning torque and pneumatic trail data
+for model and prototype tires. Surface No. 9. 31
+12. Normal side force, self-aligning torque and pneumatic trail
+data for model and prototype tires. Surface No. 10. 32
+IV
+
+
+
+=== PDF PAGE 6 ===
+LIST OF ILLUSTRATIONS (Continued)
+Figure Page
+1J. Vertical load-vertical deflection test for model tire. 35
+14. Fore-aft load-deflection test for model tire. 36
+15. Close-up of fore-aft test showing brake. 36
+16. Lateral load-deflection test for model tire. 37
+IT- Twisting moment-rotation test for model tire. 37
+18- Typical model tire footprint. Ul
+19. Components of lateral damping test apparatus. U2
+20. Lateral damping test apparatus. k2
+21. Typical lateral hysteresis curve. hk
+22. Model tire roadwheel, yoke and arm assembly. ^5
+23- Transducers for measuring side force and self-aligning
+torque. 1*5
+2k. Yawed-rolling relaxation-length test apparatus. if-6
+25- Typical data and data reduction for determining yawed-rolling
+relaxation length. . 1+8
+26. Variations in side force and self-aligning torque due to
+circumferential variations of model tire. 1*9
+27. Variations in side force and self-aligning torque caused by
+side to side variations of model tire. 51
+28- Loom for stringing tire cord. 5^
+29- Mold inserts and holder. 5^-
+30. Unmounted model tire, rim and spanner for dis-assembly. 56
+31. Mold and tire cross-section for model of kO x 12 tire. 56
+32. First step in rubberizing the tire cord. 60
+
+
+
+=== PDF PAGE 7 ===
+LIST OF ILLUSTRATIONS (Concluded)
+Figure Page
+33. Completing the rubberized fabric. 6l
+jU. Finished fabric cut to a bias angle. 6l
+35. Mandrel for laying up the tire. 62
+36. Rubber liner on building drum. 62
+37. First ply of fabric on building drum. 63
+38- Ply 2 and tread on building drum. 63
+39. Rolling on the tread cover. ' 6U
+UO. Completed green tire and mold inserts. 6U
+Ul. Bladder inserted in green tire. ~ 65
+k2. Bladder and green tire inserted into one half the mold. 65
+1+3. Mold assembly with green tire just visible, prior to lifting. 67
+M*. Completed tire A-6 after removal from mold and trimming. 67
+U5- Tire A-6 mounted on rim. 68
+1|6. Comparison of model tires static load-deflection at 12.5 Psi
+inflation. 71
+VI
+
+
+
+=== PDF PAGE 8 ===
+SYMBOLS
+English Letters
+C - Couple or moment
+c - specific heat of tire material
+D - tire nominal diameter
+E - tire carcass modulus of elasticity in the plane of the shell
+F - force on tire
+h - heat transfer coefficient between tire and surrounding air
+K - thermal conductivity of tire material
+k - radius of gyration of tire about its axis of rotation
+Is. ,1s. ,... ,1s. - numerical exponents
+k .k ,k - tire elastic stiffnesses, or spring rates
+x' y z '
+L - length
+1 - contact patch half length
+M - mass
+p - tire inflation pressure
+o
+q. - pneumatic trail
+T - time
+V - wheel forward velocity
+w - tire section width
+VI1
+
+
+
+=== PDF PAGE 9 ===
+SYMBOLS (Concluded)
+Greek Letters
+6 - tire deflection
+0 - temperature
+TI - tire damping coefficient
+X - tire relaxation length
+|i - Poisson's ratio of tire materials
+II - dimensionless factors
+p - tire material density
+a - tire stress
+\|r - yaw angle or angle of rotation of tire about a vertical, or
+steer, axis
+Subscripts
+m - model
+p - prototype
+x,y,z - co-ordinate directions according to Figure 2
+\|r - direction normal to wheel plane
+E - energy
+F - force
+
+
+
+=== PDF PAGE 10 ===
+STRUCTURAL MODELING OF AIRCRAFT TIRES
+By
+S. K. Clark, E. N. Dodge, J. I. Lackey, and G. H. Nybakken
+SUMMARY
+Techniques have been developed for producing small scale models of air-
+craft tires. It has been shown that such a scaling can be achieved in theory
+for the mechanical properties of aircraft tires, both static and dynamic, as
+well as for the overall or macroscopic stress state of such tires but not for
+their detailed or microscopic stress state. The question of thermal modeling
+is still unresolved but theoretical indications are that tire temperature
+distributions will not be similar or analogous between model and prototype.
+Experiments have been conducted on a small scale model of a 1*0 x 12, lU
+PR, Type VII aircraft tire, with a scaling factor of 8. 65. Agreement is ex-
+cellent between the basic static tire mechanical characteristics in model
+and prototype, referred to a dimensionless basis.
+The structural modeling concept discussed in this report is believed to
+be exact for mechanical properties of an aircraft tire, including static,
+rolling and transient conditions.
+
+
+
+=== PDF PAGE 11 ===
+INTRODUCTION
+Measurement of the mechanical properties of aircraft tires is an expensive
+and lengthy process. Such tires normally tend to be rather heavily loaded
+as compared with conventional automobile and truck tires, and to be run at quite
+high speeds, so that equipment to simulate field operating conditions is large
+and expensive. Only one major facility exists in the United States for the con-
+trolled study of aircraft tire characteristics under landing conditions. This
+is the well known Landing Loads Simulator track at NASA, Langley Field, Virginia.
+Considerable interest exists in obtaining dynamic or transient properties
+of aircraft tires for use in shimmy analysis work. A number of recent attempts
+at shimmy analysis followed by actual landing gear experience lead one to be-
+lieve that current shimmy theories, using static mechanical properties of air-
+craft tires, are not now capable of clearly defining the shimmy characteristics
+of an aircraft landing gear system. There seems to be no obvious flaw in the
+theoretical formulation of shimmy calculations. One possible short-coming lies
+in the use of the elastic properties of tires as determined by static tests.
+If such properties could be determined under dynamic conditions, the values
+might be different enough so that better agreement between shimmy theory and
+experience would ensue. Such data is difficult to obtain on full size tires,
+again due to the size and complexity of the equipment needed to produce the ap-
+propriate operating conditions for the tires.
+In addition, problems occur from time to time in aircraft tire operation
+which can only be solved by tests involving specific conditions. Such tests
+
+
+
+=== PDF PAGE 12 ===
+may be difficult and expensive due to limited facilities, or due to the size
+and complexity of the equipment needed at these facilities, or due to safety
+considerations.
+It was felt desirable to review the possibility of structural modeling
+of aircraft tires, with the general thought that if such models could be de-
+veloped then they-could be used to predict the effect of dynamic factors
+upon static mechanical tire data by reproducing the actual operating condi-
+tions of the aircraft tire. Such simulation, done on a small scale, should
+be much easier and more economical to carry out than actual full scale mea-
+surements. In addition, there would be available a scale modeling tool
+which could be useful in supplementing full scale tests, and in some limited
+cases even replacing such tests. It would appear that the ability to produce
+a scale model aircraft tire which is capable of quantitative interpretation
+would be a valuable contribution to aircraft preliminary design, as well as
+to many practical operating problems.
+
+
+
+=== PDF PAGE 13 ===
+THEORY OF MODELING
+The theory of tire modeling may be divided into three separate categories
+or sets of modeling requirements, involving tire mechanical properties, tire
+stresses and tire temperatures. These will be discussed separately.
+MODELING OF TIRE MECHANICAL PROPERTIES
+The first, and least restrictive^ case is modeling of tire mechanical pro-
+perties, which is the primary concern of this report. For that purpose, con-
+sider the tire mechanical properties, both static and dynamic, to be defined
+by the following engineering variables, as illustrated in Figure 1.
+Figure 1. Tire geometry and nomenclature.
+where F = load on the tire
+C = moment on the tire
+D = tire diameter, a characteristic length*
+E = Young's modulus for the tire material
+u = Poisson's ratio for the -tire material
+Any characteristic length is satisfactory, but tire diameter is a readily
+available measure of size.
+
+
+
+=== PDF PAGE 14 ===
+p = tire inflation pressure
+o
+6 = tire deflection
+p = tire material density
+k = radius of gyration of tire and wheel
+o
+It should be noted that the tire carcass properties are represented as
+single quantities E and u, although in actuality they are distributions of
+elastic properties throughout the carcass. This dimensionless distribution
+must be maintained in the model tire exactly as in the full size tire .in order
+for modeling to be exact. This is a requirement which is analogous to the need
+for geometric similarity between model and prototype, a well known and univer-
+sally accepted condition.
+Several obvious dimensionless variables may be identified by inspection.
+These are
+II = complete geometric similarity between model and prototype,
+including the dimensionless distribution of elastic pro-
+perties between model and prototype for the tire carcass.
+n = B/D
+2
+k
+o
+3 ~ D
+
+
+
+=== PDF PAGE 15 ===
+The remaining terms may be written in a general functional relation using
+a typical dependent property, the relaxation length X of the tire. One may
+express this as a function of the pertinent engineering variables remaining as
+(-) = f(F, V, p , D, p) (1)
+o
+The method used to obtain the dimensionless variables from a relationship
+such as Eq. (l) will be taken from Langhaar [1], and will not be derived here.
+Using Langhaar's notation, the dimensional matrix for the pertinent engineering
+variables is given by Eq. (2):
+F V p Dp
+o
+M 1 0 1 0 1
+(2)
+L 1 1 -1 1 -3
+T -2 -1 -2 0 0
+Let the functional relationship between the relaxation length and the
+other variables be of the form
+k k k k, k.
+(3)
+Then the exponents are related through the expressions
+k + k + k = 0
+1 35
+= 0
+
+
+
+=== PDF PAGE 16 ===
+In Eq. (k) , the unknown exponents k , k, , k may be expressed in terms of
+k and k in the form
+^ = ~ \ - S - - "l + kl+ Ik 2 = \ k2
+(5)
+The dimensionless terms governing the relaxation length may now be expressed
+as a dimensionless matrix of coefficients:
+\k2 S \
+1 0 - 1 - 20
+(6)
+0 1 -1/2 0 1/2
+From this, one obtains two additional II terms which must be held constant in
+order that the model and prototype are identical:
+\
+Of these terms, IL> is the ratio of tire velocity to a characteristic wave
+velocity, and is similar in concept to a Mach number. II_ is, however, the im-
+portant scaling parameter since it relates the tire inflation pressure p , tire
+diameter D and the force acting on the tire between model and prototype. In
+view of the fact that complete geometric similarity is an additional requirement,
+
+
+
+=== PDF PAGE 17 ===
+then any appropriate tire section width, tire diameter, or tire section height
+could be used in place of the diameter D in II so long as the dimensional char-
+acter of that term remains the same. The Russian R. K. Gordon [2] has arrived
+at IT by a somewhat different line of reasoning.
+A short discussion of the scaling parameter II is in order. If the
+inflation pressures for model and prototype are known, and if the relative
+sizes of model and prototype are known, then the appropriate forces between
+model and prototype may be determined by the fact that IT must be equal for
+model and prototype in a given test situation. The scale ratio or model'diam-
+eter D is at the choice of the experimenter. The pressure p must, however,
+be determined in conjunction with the required equality for II. . This latter
+term demands that the ratio of inflation pressure of the model tire to its
+modulus of elasticity must be identical to that ratio in the full size proto-
+type. Under those conditions, it may be seen that one may construct the small
+size model of a large aircraft tire using a purposely lower modulus of elas-
+ticity in the small model. This will allow a lower inflation pressure p ,
+since in the model the ratio (p /E) must remain the same as in the prototype.
+This further means that in evaluating the dimensionless terra Jin, the influence
+of velocity of travel will be amplified in the model. For example, if in the
+model it is possible to use a low modulus of elasticity and a relatively low
+pressure, reference to Eq. (7) shows that the model velocity can be made sig-
+nificantly higher. This is seen by equating IL, for the model and prototype,
+and solving for the model velocity. This gives
+'E \ /p \
+,,JS -E) (8)
+vm B ^ ' vp
+
+
+
+=== PDF PAGE 18 ===
+where the subscripts ra and p refer to model and prototype, respectively.
+If the material densities of the prototype and model are essentially the
+same, Eq. (8) shows that the model velocity V needed to obtain an equivalent
+prototype velocity V may be substantially less than the prototype velocity
+P
+by the ratio of the square root of the model tire modulus to the prototype
+modulus. Methods of controlling tire modulus are available and may be used to
+advantage here. In effect, high speed tire testing on the model can be con-
+ducted at relatively low speeds.
+In general, this dimensional analysis shows that a typical tire response
+quantity, relaxation length \, is related to the dimensionless II terms through
+the relationship
+5 = fdV n , HQ) (9)
+2
+If the dimensionless relaxation length \/D is to be the same in both model
+and prototype, then each of the terms H through IL. must be the same in model
+and prototype. As discussed, this can be achieved by the use of geometric
+similarity, by the use of the same materials, but with the degree of freedom that
+the model tire elastic modulus may be substantially reduced over that of the pro-
+totype provided that the modulus distribution is analogous or geometrically
+similar in both cases. This will allow all n terms to remain the same and will
+allow enhancement of velocity effects, which is desirable for high speed tire
+testing. In effect, IT, = p /E represents the primary independent variable of
+this analysis, since the modulus of elasticity of the tire carcass materials
+represents one distinct input decision. The second basic variable is II = 6/D,
+
+
+
+=== PDF PAGE 19 ===
+which defines a length scaling. From this, it may be concluded that tire
+mechanical properties may be readily modeled between full size tire and small
+scale tire provided that one learns how to use tire materials in such a way
+that the distribution of carcass stiffness or elastic constants is the same
+between model and prototype, and that preferably the absolute level of the
+elastic constants be significantly reduced in the.model compared to the proto-
+type, without changing the relative or dimensionless distribution.
+MODELING OF TIRE STRESS LEVELS
+A second level of sophistication in tire modeling theory may be brought
+about by attempting to model the internal stress state between small scale
+model and prototype, in addition to the appropriate mechanical properties.
+Let us in this case imagine that the tire stress state is governed by the same
+engineering variables as shown in Figure 1, where all symbols are the same as
+before except for the stress level a.
+It is recognized from the previous dimensional analysis that six dimension-
+less products must be automatically satisfied by any model. These are
+II = complete geometric similarity, including distribution
+of elastic constants (10)
+\
+(12)
+10
+
+
+
+=== PDF PAGE 20 ===
+n = (j.(Poisson's ratio)
+H = FD/C (15)
+6
+Assuming these to be true, the stress state in the moving tire may now be ex-
+pressed in the general functional form
+r- = f(p , D, v, F, p) (16)
+o .
+The right-hand side of Eq. (l6) is identical to that of Eq. (l), so that
+the dimensionless quantities governing this are identical to those previously
+gotten in Eq. (7), i.e.,
+= -^ (17)
+n = ^ (18)
+Q
+Wow one may write
+a = P^Y n , Hg) (19)
+2
+Equation (19) shows that if one wishes to maintain the same stress level
+in model and prototype, then all terms II , - - - - - IL> must be held identical,
+and in addition the inflation pressure p must be the same in both model and
+o
+full size tire. Since p must be constant, then from H, (Eq. (13)) it is
+seen that modulus of elasticity E of both model and full size tire must also
+be the same. In effect, this forces one to use the same materials for the
+model as the full size tire.
+11
+
+
+
+=== PDF PAGE 21 ===
+The rules for one form of modeling a full size tire to small scale can now
+be seen by a study of Eqs. (10) through (19). For example, the requirement of
+complete geometric similarity again means that the small scale tire should be
+geometrically proportional in all respects to the original tire. Since it is
+necessary to use the same inflation pressure in the small scale tire as in the
+full size tire, Eq. (lj) requires that the modulus of elasticity E remain the
+same in the model as in the prototype. Then the stress level expressed in Eq.
+(19) will remain the same between the small scale and full size tire. Equation
+(ll) shows that the dimensionless deflection of the tire should be the same on
+the model as on the full size tire. Equation (14) shows that the Poisson's
+ratio of the material used to make the model tire should be the same as that
+of the full sized tire, and this will of course be automatically satisfied if
+the same materials are used. In addition, the distribution of cord angles and
+materials should be identical between model and prototype. Equation (IT) shows
+that under these conditions, the load applied to the model tire should be in
+the ratio of the square of the scale factor. For example, if the model tire
+is one fifth of the size of the full tire, then a load equal to one twenty-
+fifth of the full scale load should be applied to the model tire. Finally,
+Eq. (l8) shows that the model tire should be run at the same surface speed as
+the full size tire, since both the material density p and the Young's modulus
+E of the material will be the same in both model and full size tire.
+If all of these conditions are met, then Eq. (19) predicts that the over-
+all or macroscopic stress state in the model tire will be the same as in the
+full size tire.
+12
+
+
+
+=== PDF PAGE 22 ===
+It should be noted that this set of requirements is somewhat stricter and
+more confining than the previous set which dealt with mechanical properties of
+the tire alone. Here, the pressure is specified as is the modulus of elasticity
+of the model tire material. This was not the case in the previous analysis
+describing only mechanical properties, where it was possible to reduce modulus
+and pressure simultaneously and still retain dimensional similarity. This
+simply means that in the previous case, the stress levels in the model tire
+were not equal to those in the prototype. Here, where equal stress levels are
+desired, the additional restrictions of pressure and modulus equality are neces-
+sary.
+In order that this situation be understood more clearly, it should be men-
+tioned that in a practical sense it is essentially impossible to insure that a
+textile-cord structure be made in small scale that is identical in all respects
+to a similar structure in large size. Textile cords are manufactured only in
+discrete sizes and in general cannot be scaled downward arbitrarily. The de-
+tails of aircraft tire construction are sometimes so numerous as to render the
+construction of a completely similar small model almost impossible, even though
+the overall, macroscopic constants of the tire carcass material may be success-
+fully modeled. For these reasons it is very probable that such effects as
+durability and failure will be very difficult to assess on a scale model with
+any significant scale ratio simply due to the basic unavailability of the proper
+materials, and the great difficulty of producing a completely geometrically
+similar structure. Put in other terms, the detailed construction cannot be
+modeled practically, so that the microscopic or local stress state will not be
+equal between model and prototype.
+13
+
+
+
+=== PDF PAGE 23 ===
+In the event that such tire stress comparisons are desired, it should again
+be emphasized that the modulus of elasticity, or elastic constants, of the model
+and full size tire must be held the same, that the inflation pressure of the model
+must be identical to that of the prototype, and that the surface speeds must also
+be equal between the two. Under these conditions, forces proportional to the
+square of the scale factor arise between model and prototype, as indicated by
+Eq. (17), while the overall or macroscopic internal stress state of the model
+tire is the same as the full size tire.
+MODELING OF TIRE EQUILIBRIUM TEMPERATURE
+Now consider the somewhat more complex case of including in the analysis
+the quantities which determine the equilibrium temperature of the running tire.
+In order to do this, we adopt Eq. (20) as a basic statement of functional de-
+pendence.
+R0
+— = f(p D, V, F, p, c , K, h) (20)
+where the new symbols are as follows :
+K = thermal conductivity of tire material
+9 = temperature
+c = specific heat of tire material
+h = heat transfer coefficient between tire and atmosphere.
+The particular form of the left-hand side of Eq. (20 ) is chosen so as to repre-
+sent temperature in a dimensionless fashion. Other representations are possible,
+but do not lead to anything different. The dimensional matrix involving these
+Ik
+
+
+
+=== PDF PAGE 24 ===
+variables is shown in the table below, where temperature 9 is taken as a basic
+physical variable.
+F Vp D pc Kh
+o p
+M 1 0 1 0 1 0 1 1
+L 1 1 -1 1 -3 . 2 1 0
+(21)
+T -2 -1 -2 0 0 -2 -3 -3
+9 0 0 0 0 0 -1 -1 -1
+A dimensional analysis of these variables leads to the following dimension-
+less characteristics which must be equal between model and prototype, over and
+above those given by Eqs. (10) through (19), previously derived:
+(22)
+Dh
+h
+(23)
+V- p-c
+Of these two dimensionless quantities, Eq. (23) will be automatically
+satisfied provided that the conditions described in the previous dimensionless
+analysis are fulfilled, that is, the velocity of running and density of the
+tire material are the same between model and prototype. The heat transfer co-
+efficient h and the material specific heat c will be approximately the same
+P
+in the full size tire as in the model, so that Eq. (23) will be automatically
+the same for both model and prototype.
+• However, IT very probably will not be equal between model and prototype,
+since the heat transfer coefficient h and thermal conductivity K of both model
+and full size tires will be approximately the same, while the characteristic
+15
+
+
+
+=== PDF PAGE 25 ===
+length D will vary as the scale factor. Based on this, Eq. (20) may be rewritten
+as
+e . £
+C
+P
+From this, it may be seen that the temperature 9 of the model tire will be
+the same as that of the prototype provided that the velocity of travel and the
+specific heat of the tire material are the same as in the full size tire, and
+in addition that all of the dimensionless factors II through IL. are held con-
+stant between the scale model and the full size tire. As was just discussed,
+it is possible to do this with the exception of the single dimensionless factor
+IL. Its influence on the equilibrium temperature is not known but may be sub-
+stantial, since in effect it represents the ratio between the volume of the
+tire which generates heat due to hysteresis loss, and the convective heat trans-
+fer surface area of the tire. It is possible under particularly fortuitous
+conditions that a good approximation of the full size equilibrium temperature
+may be obtained from a model tire, but it appears that no guarantee of this
+exists. Therefore, it is concluded that in general thermal modeling of air-
+craft tire temperature rise may not be possible without extensive experimenta-
+tion and the development of suitable scaling factors based on experimental
+data.
+16
+
+
+
+=== PDF PAGE 26 ===
+STATIC LOAD-DEFLECTION PROPERTIES OF MODEL AND PROTOTYPE TIRES-
+From the discussion in the previous section, it is seen that the structural
+modeling of an aircraft tire can only be assured if the pertinent dimensionles.s
+variables are the same for both model and prototype. In general this means that
+such quantities must be measured for both tires and compared. In this work, the
+method used to do this relies on the measurement of several force-deflection and
+geometric relationships in the model, followed by comparison with known full-size
+tire data for these same properties.
+In accordance with the previous section, all models are geometrically simi-
+lar dimensionally and are approximately scaled in their cord content, although
+the individual cord size has not been so scaled.
+To facilitate an understanding of the various loading situations used in
+this report, a co-ordinate system as shown in Figure 2 has been chosen.
+(Rotation
+about z-axis)
+Figure 2. Tire co-ordinate directions.
+17
+
+
+
+=== PDF PAGE 27 ===
+With this co-ordinate system, then, fore-aft, lateral, and vertical forces
+applied to the tire's contact patch have been denoted by F , F , and F , respec-
+x y z
+tively. A similar notation is used for the appropriate deflections, & , & , and
+8 . A couple or twisting moment about the z-axis has been termed C , and the
+z z
+resultant angle of rotation, ty.
+It is possible to use H_, II,, and n to describe basic load-deflection re-
+lations in a dimensionless way so as to compare the prototype tire with the model
+tire. Four basic mechanical properties have been chosen since they can be easily
+measured:
+(1) Vertical Load-Vertical Deflection -- (F vs. 5 )
+z z
+(2) Lateral Load-Lateral Deflection -- (F vs. 6 )
+y y
+(3) Fore-Aft Load-Fore-Aft Deflection -- (F vs. 5 )
+X X
+(k) Twisting Moment-Rotation — (C vs. ty) .
+z
+Each of these quantities may be expressed in a dimensionless way using the
+dimensionless variables n , IL., and IL :
+F &
+(1) Vertical Load-Vertical Deflection — ( — ^- vs. -^)
+PoD
+(2) Lateral Load-Lateral Deflection . — ( — ^- vs.
+PoD
+F 8
+y- \r
+(3) Fore-Aft Load-Fore-Aft Deflection — ( - - vs. — )
+C
+n
+(k) Twisting Moment -Rot at ion — ( - - vs.
+18
+
+
+
+=== PDF PAGE 28 ===
+Using these dimensionless parameters, comparisons with the prototype can be
+made to gauge how well the model tire matches it.
+These four load-deflection relations are extremely important since they
+span a wide range of tire deformation effects, from that of an inflated mem-
+brane to that of an elastic sheet. Some previous analytical and experimental
+studies by the authors [j], [U], [5] lead us to believe that most tire mechan-
+ical properties may be viewed as the sum or interaction of contributions from
+the inflated nature of the tire, acting as a gas envelope, and from the elas-
+tic nature of its carcass. If the four load-deflection relations just listed
+are the same, on a dimensionless basis, between model and prototype, then it
+is strong evidence that all tire mechanical properties are adequately modeled.
+This is because:
+(1) Vertical load-deflection appears to be primarily an inflation pres-
+sure effect for aircraft tires. See Ref. [3].
+(2) Lateral load-deflection, twisting moment-rotation, and fore-aft
+load-deflection appear to be a mixture of'both inflation and carcass
+elasticity effects. See Refs. [U] and [5].
+Because tire structural differences, mostly cord angle differences, in-
+fluenced fore-aft load-deflection data, all the model tires were normalized
+to one fore-aft load-deflection curve. Using n and n
+(k ) (D)
+P • (P ) (25)
+Then using this (p ) and II again, we have
+o m 7
+ZB zp
+( ) = . ( ) (26)
+F F
+19
+
+
+
+=== PDF PAGE 29 ===
+These two equations outline a procedure to find rated inflation and vertical
+load for all other tests.
+The heuristic estimate of 6800 Ib/in. for (k ) was used in Eq. (25) to
+x p
+find the rated inflation pressure. Then Eq. (26) was used to find rated load.
+These conditions for the four model test tires are given in Table I. This
+procedure insures that the fore-aft load-deflection data for the four model
+tires will coincide with the estimated reference stiffness. It then remains
+to check other mechanical properties to see if one has attained a successful
+modeling of the prototype.
+TABLE I
+TIRE OPERATING CONDITIONS
+F
+Po D w*
+Tire
+(psi) Ub) (in.) (in.)
+40 x 12 - Ik PR Type \EII
+95 1^500 390 12.12
+Prototype
+Model A-18
+25 1*8.2 U.57 1.6?
+(2 Ply, 840/2 Nylon, 10 EPI)
+Model A-15
+23 1(8.2 4.58 1.66
+(2 Ply, 81*0/2 Nylon, 10 EPl)
+Model A-14 38.2
+19 4.58 1. 6k
+(2 Ply, 8UO/2 Nylon, 10 EPl)
+Model A-13 38,2
+20 4.56 1.62
+(2 Ply, 840/2 Nylon, 10 EPl)
+w = Section Width
+It is worth noting at this point that all data given for the model tires
+in this report are for exercised tires. It was discovered very early in the
+20
+
+
+
+=== PDF PAGE 30 ===
+project that the mechanical properties of the model tires became stable only
+after they had been exercised for a period of time on a road wheel. These
+changes were most pronounced at low inflation pressures, as one would expect.
+Consequently, every tire was "run in" for three or four hours at fairly mod-
+erate conditions, being the scaled equivalent of about 60 mph speed, 6000 Ib
+vertical load, and 60 psi inflation pressure.
+Static load-deflection properties of several model tires, specially con-
+structed to scale the kO x 12 lU PR prototype (see Appendix), are shown in
+Figures J through 6. Table I lists the operating conditions for each of the
+models as well as for the prototype. The vertical load F shown in the table
+z
+was that used when obtaining twist, fore-aft, and lateral data.
+21
+
+
+
+=== PDF PAGE 31 ===
+i
+1
+1 1 1 1 1
+pp PROTOTYPE' 40XI2-M^ PR TYPE VTT
+.C.C-
+O MODEL A- 8
+PO
+,C.\J
+n
+MODEL A- 5
+1 ft
+. 1 O
+A MODEL A- 4
+.
+1
+1
+A
+O
+MmUOUHCP-IL AA- •O2
+•
+1 A.
+. 1 *T •
+1 2. /|CW
+-W
+Pn D'
+. ii n\j d\*ri
+Clf*
+.\JO rL*^
+to*
+nc
+.UD
+*$
+O4
+US^*
+Mir
+n?
+.we. (
+^ . i
+n 1 1 , 1 1
+0 .01 .02 .03 .04 .05 .06 .07 .08 .09 .10 .11
+8 /D
+Z
+Figure J. Vertical load-vertical deflection data for model
+and prototype tires.
+22
+
+
+
+=== PDF PAGE 32 ===
+I 1 I 1 I
+.022 — —
+«fc V
+.020
+D
+.018
+•
+A 0
+.016
+V
+D
+?
+.014 — —
+.012
+6?
+.010
+_ D 4 PROTOTYPE 40x12--4PR
+&Q T TYPE 3JH
+.008
+^v 6 MODEL A- 18
+0
+.006 D MODEL A -15
+&
+V
+{
+n°0 ^ MODEL A- 14
+.004
+7 MODEL A -13
+.002 /'
+ff ' '
+1 1 1 1
+n
+0 .005 .010 .015 .020 .025 .030 .035 .040 .045
+S /D
+y
+Figure k. Lateral load-lateral deflection data for model
+and prototype tires.
+
+
+
+=== PDF PAGE 33 ===
+i
+I
+1 1 1
+.020 — REFERENCE SLOPE^^^
+O MODEL A- 18 ^^^
+^\
+.018
+~~ D MODEL A-15
+.016 AM ODEL A- 14L
+^^
+*/
+V M(DDEL A - 12
+—
+.014 3
+"/
+/&
+n
+.012
+A>
+y
+.010
+.008 Ow VV7 ^] /
+n/
+.006
+]/
+.004
+—
+.002 \ i
+i
+7 1 i 1
+n
+^
+S /D
+X
+Figure 5. Fore-aft load-deflection data for model tires.
+
+
+
+=== PDF PAGE 34 ===
+4I PROTOPfPE 40x12 -14 PR TY PE 301
+.006 O MODEL A- 18 A (
+V
+D MODEL A- 15
+A MODEL A- 14 C
+.005 « \ - 7 MODEL A 1\-o3. Q
+A
+V0
+n
+.004
+£ 0
+Po D3 V
+•
+n
+.003
+•
+J>
+*
+.002
+qf
+tf1
+.001
+0
+Figure 6. Twisting moment-rotation data for model and prototype tires.
+
+
+
+=== PDF PAGE 35 ===
+GEOMETRIC AND SLOW-ROLLING PROPERTIES OF MODEL AND PROTOTYPE TIRES
+A previous section has shown that elastic modeling of an aircraft tire
+can only be assured if certain dimensionless quantities are the same in both
+model and prototype. In order to assure a comparable basis for comparison
+of data, the following dimensionless variables are used in discussing the
+mechanical properties measured in this section:
+(a) The tire contact patch half length is expressed by the dimensionless
+ratio £/D, where D is the tire characteristic length, in this case
+the outside tire diameter.
+(b) Lateral damping coefficient r\ is by definition dimensionless.
+«y
+(c) Yawed-rolling relaxation length X /D.
+(d) Self-aligning torque (C /p IT).
+z o
+(e) Side force (F /p D ).
+\|f O
+(f) Pneumatic trail (q/D).
+Summaries of the comparisons of the six tire mechanical properties, mea-
+sured on four different model tires, with the full size data taken from
+UO x 12 tire are shown in Figures 7 through 12. The model tires used for
+these measurements were previously used in determining the static load-
+deflection properties in the previous section.
+The tire contact patch half length is shown for the model and full size
+tires in Figure 7- This is a static tire property and generally the model
+tires tested show contact patch lengths which agree well with the full size
+tire, the variation between model tires probably being due to minor structural
+variations.
+26
+
+
+
+=== PDF PAGE 36 ===
+.200
+.180
+.160
+D .120
+.100
+.080
+.060
+.040
+.020
+0
+cr m <fr in co
+Q- T T i i
+"j uj UJ UJ UJ
+™ a: or K o:
+O H H H h-
+* i - Mnnn TIRFQ '
+PROTOTYPE
+TIRE
+Figure 7. Tire half contact-patch length
+data for model and prototype tires:
+27
+
+
+
+=== PDF PAGE 37 ===
+.It
+.10
+.09
+.08
+.07
+.06
+.05
+.04
+.03
+.02
+.01
+0
+a: ro ^ in co
+^ T ~ T T
+^- < < < <
+T LJ LJ LJ LJ
+w o: a: oc cr.
+3 . »- - - t-
+^f- L. Mnnn TIOPC .... i
+PROTOTYPE
+TIRE
+Figure 8. Lateral damping coefficient data for model
+and prototype tires, (r\ ) based on force ratio.
+F
+28
+
+
+
+=== PDF PAGE 38 ===
+.£U
+.18
+.16
+.14
+.12
+.10
+.08
+.06
+.04
+.02
+0
+ir ro *fr m oo
+Q_ "|" ~|~ | ~p
+_^ ^tf ^3 ^f ^3
+^j ^** ^^ ^^ ^^
+"~ UJ LJ LJ UJ
+cvj tr. oc. cc oc
+x H H- h- 1-
+2 I ... _ Mnnn TIPPC., ,, ,J
+PROTOTYPE
+TIRE
+Figure 9. Lateral damping coefficient data for model
+and prototype tires, ™ based °n energy ratio.
+
+
+
+=== PDF PAGE 39 ===
+.400
+.300
+.200
+.100
+or m
+GO
+i
+< <
+<
+LJ LJ UJ LJ
+fr
+a: DC
+o
+MODEL TIRES
+PROTOTYPE
+TIRE
+Figure 10. Yawed-rolling relaxation length
+data for model and prototype tires.
+
+
+
+=== PDF PAGE 40 ===
+_3_ .100
+D
+.005
+.003
+.100
+.010 7^
+34 56 7 89 10 II 12 13 14 15 16 17 18
+\\f DEGREES
+TIRE A-13
+STANDARD CONDITIONS
+O 40x12 PROTOTYPE
+A SURFACE I-CAST IRON
+'SURFACE 2- WORN SANDPAPER
+SURFACE 3-SCOTCH TREAD (T.M.)
+SURFACE 4- SCOTCH TREAD COATED
+WITH DENTAL STONE
+SURFACE 5- SAFETY WALK (T.M.)
+SURFACE 6- SAFETY WALK COATED
+WITH ROX, A CEMENT BASE PAINT
+SURFACE 7- SAFETY WALK COATED
+WITH DENTAL STONE
+SURFACE 8- SAFETY WALK SANDED
+SURFACE 9- SAME AS SURFACE 8 BUT
+;
+WITH COAT OF ROX
+1 SURFACE 10- SAME AS SURFACE 8 BUT
+WITH COAT OF POR-ROK, A
+s^ CEMENT BASE PAINT
+Figure 11. Side force, self-aligning torque and pneumatic
+trail data for model and prototype tires. Surface No. 9-
+
+
+
+=== PDF PAGE 41 ===
+STANDARD CONDITIONS
+O 40x12 PROTOTYPE
+D A-13
+• A-14
+A A-15
+A A-18
+3 4 56 7 8 9 10 II 12 13 14 15 16 17 18
+«!/ DEGREES
+Figure 12. Normal side force, self-aligning torque and pneumatic
+trail data for model and prototype tires. Surface No. 10.
+
+
+
+=== PDF PAGE 42 ===
+A tire mechanical property which is also quite important in shimmy
+analysis is the tire lateral damping coefficient. Two comparisons between
+model and prototype tires for this property are shown in Figures 8 and 9-
+As can be seen, the agreement is very good in Figure 8, where the lateral
+damping coefficient is defined as the ratio of the maximum half-height of
+the corresponding force-deflection hysteresis loop to the maximum total
+force, as defined by Home and Smiley [6]. The agreement is also good in
+Figure 9, where the lateral damping coefficient is alternately defined as
+the ratio of the energy loss per cycle to the energy contained in the area
+beneath the loading portion of the load-deflection curve.
+An important tire rolling property used in shimmy analysis is the
+yawed-rolling relaxation length. This is defined as the distance a yawed
+tire must roll to produce a side force equal to (l - 1/e) of the maximum
+side force developed at the steady-state steer angle condition. A compari-
+son of such measurements on the model tires with those taken on the proto-
+type is shown in Figure 10. Again, agreement is good between the two sets
+of data.
+There are two additional tire mechanical properties important to shimmy
+analysis which require a rolling tire for their definition. They are tire
+side force and self-aligning torque caused by operating the tire at various
+slip angles. These two properties were measured for the model tires used
+here, and from this measured data the pneumatic trail was gotten by taking
+the ratio of self-aligning torque to side force for a particular set of con-
+ditions. All three of these properties are presented in the subsequent
+graphs.
+33
+
+
+
+=== PDF PAGE 43 ===
+One important characteristic of these three tire properties is imme-
+diately evident. This is their strong dependence on the type of surface on
+which the tire rolls. A total of ten surfaces were used in the experimental
+measurement of side force and self-aligning torque. The range of values
+gotten from these tests is shown in Figure 11, where it is seen that the
+spread of data is quite significant, and illustrates a strong influence of
+surface conditions. Generally the full size prototype tire data lies inside
+the ranges shown, with the exception of the peak self-aligning torque. This
+is possibly lower in these model tests since they were done against a cylin-
+drical roadwheel, while the prototype data was taken on the runway. Our
+contact patch will generally be somewhat shorter and our pressure distribution
+somewhat less favorable for developing peak self-aligning torque than the flat
+runway surface.
+Figure 12 shows this data for four model tires, and for the prototype
+tire, for a specific roadwheel surface. There is some variation among the
+model tires due to structural difference, particularly in the self-aligning
+torque. However, this surface is not particularly the best one for model
+tire mechanical measurements, and "sharper" surfaces, with more asperities,
+may tend to reduce this scatter.
+This entire comparison represents an interesting and we feel fruitful
+observation, applicable in general to the determination of tire mechanical
+properties, since it seems to indicate that different observers and experi-
+menters can only expect complete agreement between tire mechanical property
+data taken on identical runway surfaces. This clearly has application to
+cooperative testing programs where various agencies participate.
+
+
+
+=== PDF PAGE 44 ===
+MEASUREMENT OF STATIC LOAD-DEFLECTION PROPERTIES
+All static load-deflection data was collected on what will hereafter be
+referred to as the Static Testing Device. This device was designed so that the
+model tire could be tested to obtain each of the four basic mechanical spring
+constants previously mentioned in this report, vertical load-deflection, lateral
+load-deflection, fore-aft load-deflection, and twisting moment-rotation.
+Construction of the device is very simple, consisting of a wooden base, two
+steel loading plates, a tubular steel 90°-elbow arm,a rotating yoke, a steel
+point hinge, and a counterweight. Figures 13 through 17 show different views of
+a model tire under test in it. The bottom steel loading plate was attached to
+Figure 1J. Vertical load-vertical deflection test for model tire.
+55
+
+
+
+=== PDF PAGE 45 ===
+Figure 14. Fore-aft load-deflection test for model tire.
+Figure 15. Close-up of fore-aft test showing brake.
+36
+
+
+
+=== PDF PAGE 46 ===
+Figure 16. Lateral load-lateral deflection test for model tire.
+Figure !?• Twisting moment-rotation test for model tire.
+
+
+
+=== PDF PAGE 47 ===
+the wooden base, and the top loading plate had three . 1*37 in. dia. bearing balls
+sandwiched between it and the bottom plate. The top plate had a high friction
+surface bonded to it with contact cement so that tire slippage was held to a
+minimum during loading.
+The tires were inflated through a small hole along the axis of the axle,
+opening into the interior of the rim with oil seals inserted within to main-
+tain pressure. The pressure was regulated by a low-pressure regulator, which
+was monitored periodically so that proper pressure was maintained. Inflation
+pressures could be held to within ± 1/2 psi. with this regulator. It is
+important to have close pressure control in these experiments due to the
+large scale ratio, in this case 8.65.
+Experimental reproducability was good for vertical load-deflection where,
+on the average, data could be reproduced to within ± 5^- For twisting moment-
+rotation, data variation was as high as ± 8$>,& nd for lateral and fore-aft
+experiments, it was as high as ± 10$. To compensate for this, the tires were
+tested a minimum of three times and also rotated to a new position before each
+run. This amount of variation in properties is not particularly large, since
+studies on full size tires indicate a similar set of variations.
+As a matter of record, all the deflection data collected was taken at
+"apparent equilibrium"; i.e., when all creep had ceased.
+The first measurement on a model tire was that of its basic fore-aft
+spring rate, as previously discussed. This was generally done at a relatively
+high pressure (e.g., 20-25 psi). Then after obtaining (k ) , Eq. (25) was
+x in
+used to calculate the reference pressure for the model tire:
+38
+
+
+
+=== PDF PAGE 48 ===
+(k ) (D) ' (P ' (25)
+Using the appropriate values for each of the variables the prototype,
+(25) becomes:
+(po}m = ToT"
+m 6800
+(Vm
+m
+Using this calculated reference pressure, one may use IT = ( —) to cal-
+culate the proper vertical load that should be used for the model tire to sim-
+ulate the 1^,500 Ib rated load of the kO x 12 prototype. This gives
+(F ) = (p ) (D2) Ib , or
+1 m (95)(390)2
+m (Po}m (l))m "
+Z
+For example, tire A-lU had a fore-aft stiffness (k ) = 160 Ib/in. From
+x m
+Eqs. (25a) and(26a), one would find that the reference pressure and vertical
+load should be:
+(p ) - 19Psi
+o n
+(F ) - 39-8
+z m
+With these new parameters, a second fore-aft measurement would be made to verify
+39
+
+
+
+=== PDF PAGE 49 ===
+that the correct (k ) had been determined. When this had been done, then the
+x m
+other mechanical properties were measured and compared with the prototype.
+It is worth listing some of the principles and techniques used in measur-
+ing the various mechanical properties:
+(1) All loads applied to the contact patch in the xy-plane were applied
+away from the hinge of the static testing device to keep side move-
+rs
+ment of the hinge-arm to a minimum.
+(2) The model tire was always relieved of vertical and side loads, i.e.,
+allowed to relax in a free static position, a few minutes before pro-
+ceeding with the next run for any particular test.
+(j) The dial gauge was mounted between the moveable top plate and the
+axle to obtain both lateral and fore-aft deflections. Yoke and rim
+movement were observed to be negligible.
+(k) The zero point for vertical deflection was defined as that point when
+the tire just touched the top loading plate.
+(5) Inflated dimensions of the model tires were obtained by averaging read-
+ings taken at five places around the tire circumference. Both the
+width and diameter were measured directly.
+
+
+
+=== PDF PAGE 50 ===
+MEASUREMENT OF GEOMETRIC AND SLOW-ROLLING PROPERTIES
+STATIC PROPERTIES
+Model tire footprints were taken by the ink and paper method at standard
+conditions of inflation pressure and vertical load. The contact length was
+measured from the footprint. Figure 18 shows a typical footprint.
+STANDARD
+CONDITIONS
+0 I 2
+INCHES
+Figure 18. Typical model tire footprint.
+Lateral damping cycles were taken on the apparatus shown in Figures 19
+and 20. This apparatus basically consists of the static testing device dis-
+cussed in the previous section. Here the lateral force is generated by a Lead
+screw and transmitted through a strain ring force-transducer to the movable
+plate. The plate rests on three steel balls and translates with almost no
+friction. The plate displacement relative to the rim of the tire is measured
+by a LVDT inserted between the tire yoke and the plate. Both displacement and
+
+
+
+=== PDF PAGE 51 ===
+Figure 19. Components of lateral damping test apparatus.
+Figure 20- Lateral damping test apparatus.
+
+
+
+=== PDF PAGE 52 ===
+force signals are fed into Sanborn carrier amplifiers with the outputs of the
+amplifiers going into an X-Y recorder. Figure 19 shows the movable plate, tire
+and transducers. Figure 20 shows an overall view of the testing machine,
+Sanborn recorder and amplifiers and the X-Y recorder.
+A typical lateral hysteresis loop is shown in Figure 21. Because of the
+dimensionless nature of most damping coefficients, no scales are needed for
+the axes. One definition of a lateral damping factor, used by Smiley and
+Home [6], is the ratio of the maximum half-height of the force-deflection
+hysteresis loop to the maximum total force. Referring to Figure 21, (T\ ) is
+y F
+equal to the ratio A/B of the forces. Another definition of damping factors
+is based on energy or area measurements. The definition used in the preceding
+section is the ratio of the energy loss per cycle to the energy per cycle
+defined by the triangular area under the top curve. Referring to Figure 21,
+is equal to the ratio of the areas AE/E.
+SLOW ROLLING PROPERTIES
+The slow rolling tests were performed on a JO-in. diameter, k-in. wide
+cast iron roadwheel. Different adhesive surface are attached to the polished
+cast iron surface to simulate different roadways. The tire and rim assembly
+are mounted in a yoke such that forces normal to the plane of the wheel and
+moments about the vertical axis can be measured. The yoke is mounted in
+bearings attached to the end of a horizontal hinged arm, so that the whole
+assembly can easily be swung up off the roadwheel and out of contact. The
+roadwheel, yoke and arm are shown in Figure 22. The normal or side force,
+EL , is measured by a strain ring force transducer shown in Figure 23 . The
+
+
+
+=== PDF PAGE 53 ===
+o
+CO
+•H
+w
+0)
+•P
+Jw?
+0)
+-p
+oj
+H
+cd
+o
+•H
+C\J
+(D
+
+
+
+=== PDF PAGE 54 ===
+Figure 22. Model tire roadwheel, yoke and arm assembly.
+Figure 2J. Transducers for measuring
+side force and self-aligning torque.
+
+
+
+=== PDF PAGE 55 ===
+model wheel bearings are mounted in the rim so that the non-rotating axles
+can be mounted in linear ball bushings and attached to the force transducer.
+The force transducer butts against a rigid harness attached to the yoke and
+measures side force perpendicular to the wheel plane. The torque c about the
+z
+vertical axis is measured by a drag link transducer shown in Figure 23. The
+yoke is mounted in ball bearings to allow rotation about the vertical axis. A
+drag link with a built-in end at the arm and a pin joint at the yoke is
+instrumented with strain gages. The pin joint is attached to a slider which
+can be clamped at the desired yaw angle.
+Relaxation length, \y, was measured by placing the tire at a yaw angle,
+rotating the roadwheel one tire contact length and measuring the side force
+build-up. The roadwheel displacement is measured by a precision potentiometer
+circuit. The tire side force measurement is accomplished by the strain ring.
+Both roadwheel displacement and side force are recorded by an X-Y plotter, as
+shown in Figure 2h.
+Figure 2U. Yawed-rolling relaxation-length test apparatus.
+46
+
+
+
+=== PDF PAGE 56 ===
+Figure 25 shows a typical side force build-up curve obtained by this
+system. The tire rotates one contact length, 21, the axle and force trans-
+ducer rest against the rigid harness and the side force build-up is recorded.
+The first horizontal slope is taken as the maximum side force. Variations
+after this point are due to maximum side force variation around the circum-
+ference of the tire. As shown in Figure 25, the maximum amplitude A is mul-
+tiplied by (1 - 1/e) = .632. The distance the tire rolls to produce a side
+force of . 6J2A is the measured relaxation length, Xy. A few tests using self-
+aligning torque in place of side force gave basically the same relaxation
+lengths.
+Three other slow rolling quantities were measured on a steady state
+basis. Side force, F^, self-aligning torque, C , and pneumatic trail, q =
+z
+, , were measured while the roadwheel was rotated by hand at a speed of
+about 0.8 ft/sec. Figure 22 shows the test in progress. An individual pro-
+cedure for finding zero yaw angle was used on each tire, and allowed it to
+be located to within 1/U°. Once zero yaw angle is known, the tire was run at
+increasing yaw angles while the steady state values of F^ and C , were recorded
+z
+on an oscillograph. Variations in these quantities, which at small yaw angles
+could be very significant, were usually due to circumferential tire structure
+variation and difference in tire mounting. To eliminate the effect of these
+variations, the average value was computed using three measurements taken in
+one direction of rolling. Then the tire was dismounted, turned around and the
+procedure duplicated. Then averages of both sides of the tire were averaged
+together to get the values used in the preceding section. Figure 2.6 shows
+
+
+
+=== PDF PAGE 57 ===
+a s
+o -P
+•H bO
+-P C
+O <U
+3 H
+T3
+m c
+JH O
+•H
+oJ -P
+-P ai
+1 2
+oj a
+4^ -H
+a r-j
+T3 r-i
+O
+rH ^
+ai i
+O T3
+•H <U
+PM g
+r** CO
+OJ
+pi 0)
+M -P
+•H a)
+w
+
+
+
+=== PDF PAGE 58 ===
+TIRE A-13
+SURFACE 10 (See Fig. 7)
+F =38.25 Ibs. P *20psi
+z 0
+O 40x12 F.S.
+D MAX. AMPL.
+• MIN. AMPL.
+8 9 10 II 13 14 15 16 17
+DEGREES
+Figure 26. Variations in side force and self-aligning
+torque due to circumferential variations of model tire.
+
+
+
+=== PDF PAGE 59 ===
+the circumferential side force and self-aligning torque variation for one
+side, while Figure 27 shows the variation in maximum amplitude from one side
+of the tire to the other.
+Another important variation in these three slow rolling properties is
+due to roadwheel surface variations, as previously discussed. Many different
+kinds of surfaces were tried. Figure 11 shows the variation in maximum ampli-
+tude due to ten different surfaces. Rough surfaces, such as sandpaper, Safety
+Walk and Safety Walk coated with dental stone, gave high forces and moments at
+high yaw angles and tended to abrade the tires. Smooth surfaces, such as
+clean cast iron, Scotch Tread and Scotch Tread coated with dental stone, gave
+low forces and moments, but did no apparent damage to the tire Compromise
+0
+surfaces, such as Safety Walk coated with Rox and dental stone, gave the high-
+est forces and moments which did not damage the tires. It is these smoother
+surfaces which were used to obtain the data in the preceding section.
+50
+
+
+
+=== PDF PAGE 60 ===
+SURFACE 10 TIRE A-13
+(SEE FIG. 7) F -38.216*. P -20p«i
+z 0
+• LEFT SIDE
+D RIGHT SIDE
+O 40x12 FULL SIZE
+0 3 4 5 6 7 89 10 12 13 14 15 16 17 18
+Figure 27. Variations in side force and self-aligning torque
+caused by side to side variations of model tire.
+51
+
+
+
+=== PDF PAGE 61 ===
+CONCLUDING REMARKS
+The research program described in this paper has produced data showing
+that good correlation exists between the mechanical properties of carefully
+made aircraft tire models and full size aircraft tires. It is anticipated
+that this correlation could be useful in studying such diverse topics as
+shimmy of aircraft landing gear, the action of anti-skid systems, and the
+influence of tire construction and design variables on tire operating char-
+acteristics.
+
+
+
+=== PDF PAGE 62 ===
+APPENDIX
+MODEL TIRE CONSTRUCTION AND DEVELOPMENT
+GENERAL COMMENTS
+The initial model tire experiments were carried out with a commercial
+Veco model airplane tire of U.5 in. diameter. These experiments demonstrated
+the general feasibility of small scale tire modeling, but also exposed serious
+shortcomings in the Veco tire. These tires tended to creep, or grow with time,
+so that their dimensions and mechanical stiffness properties changed slowly.
+They had no cord structure, and so did not truly represent the elastic pro-
+perties of an aircraft tire. Since scale modeling was our objective, it ap-
+peared necessary to find ways of obtaining or making a model tire similar in
+structure to a real tire.
+Experiments showed that it was possible to form a small cord-structure
+tire of model size using an inflatable bladder, similar to commercial tire
+practice. Equipment was manufactured or purchased for making such tires.
+The most important elements of this equipment were:
+(a) A loom for hand winding tire carcass fabric, with provision for
+variable cord end count. This is shown in Figure 28.
+(b) A mold frame, or holder, in which the actual tire molds are in-
+serted, and which serves to hold the two mold halves tightly to-
+gether. This is shown in Figure 29.
+
+
+
+=== PDF PAGE 63 ===
+Figure 28. Loom for stringing tire cord.
+Figure 29. Mold inserts and holder.
+
+
+
+=== PDF PAGE 64 ===
+(c) A tire mold, which forms the outer surface of the tire as also shown
+in Figure 29.
+(d) A bladder for forming the tire against the mold.
+(e) A laboratory oven for curing the tire.
+The materials used for these tires were conventional tire cord, dipped into
+an adhesion promoter, and unvulcanized rubber sheet stock.
+The bead of a tire is an area where considerable hand work is done in fabri-
+cating a commercial, full size tire. It did not appear possible to be able to
+duplicate bead constructions readily in small scale tires, nor did it seem par-
+ticularly important to do so since the bead does not enter into any of the
+mechanical properties of the tire. These considerations led to a choice of a
+beadless tire design, which greatly simplifies tire construction and molding
+but at the expense of a somewhat more complicated wheel and rim. This is be-
+cause the rim must now center, locate and grip the tire, functions which nor-
+mally are at least in part performed by the bead. Figure 30 shows the rim with
+a dismounted tire. This rim has two side caps which screw inward and clamp
+the tire against a flange, one side cap being shown separately on the right
+hand side of Figure 30, along with its spanner.
+Using this rim design, inflation is carried out through one hollow axle,
+which is stationary, while the wheel is mounted on the axle with bearings and
+seals. Leakage is minimal. This design allows various force transducers to
+be built into the nonrotating axle without the use of slip rings.
+SCALE MODELING OF 40 x 12 TIRE
+The UO x 12 ±k PR Type VII tire was chosen as a specific prototype since
+55
+
+
+
+=== PDF PAGE 65 ===
+Figure JO. Unmounted model tire, rim and spanner for dis-assembly.
+DISTANCE
+FROM
+MOLD
+EDGE
+'.5 .4 .3 .2 .1 0 .1 .2 .3 .4 .5
+DISTANCE FROM <|_
+1.16
+Figure 31. Mold and tire cross-section for model of kO x 12 tire.
+
+
+
+=== PDF PAGE 66 ===
+it had been the subject of extensive mechanical property measurements by Home
+and Smiley [6]. The mold was designed to be geometrically similar to the deflated
+outside cross-section of this tire, but with additional section height as dic-
+tated by the beadless design. Figure 31 shows the mold contour used. The
+mounted section height would, of course, be geometrically similar due to the
+presence of the rim flanges. Table I in a previous section shows the inflated
+dimensions of the model tires to be approximately correct, although model tire
+widths tend to be slightly high.
+Molds were contour machined from aluminum, and wire inserts used to form
+the tread grooves.
+The first step in building a model tire is writing a specification sheet.
+This is done so that a permanent construction record is available. A typical
+specification sheet is given in Table II for a two ply bias tire.
+Next, cord must be selected and the tire carcass fabric made up. Three
+different cords were tested during this development, these being:
+(a) An 8^0/2 nylon, which is the most common cord now used in full
+size aircraft tire construction
+(b) One strand of the two-stranded QkO/2 cord
+(c) A single strand from a three strand special elastic r-.ord. The
+single strand had a strong helical winding set, and exhibited
+a very low modulus
+Of these three, it was found that the full QkO/2 nylon cord appeared to be
+most adequate, and is further desirable since it is readily available commercially.
+57
+
+
+
+=== PDF PAGE 67 ===
+TABLE II ,
+SPECIFICATION SHEET'FOR TIRE A-14
+Ply Stock: Cord - 840/2 nylon dipped cord
+Rubber - .012" USR on each side
+Loom - 10 cords/inch
+Green cord angle - 60°
+Ply width - 6-5/8"
+Green Tire:
+No. of pieces Location Width x Thickness Rubber
+(1) Liner
+1 on £ 2-3/4 " x .024" BFG soft
+2 5/8" from £ 5/8" x .024" BFG soft
+(2) Ply 1
+(3) Separator
+1 on £ 6-5/8" x .02V BFG soft
+on £ 2" x .02k" BFG soft
+(4) Ply 2
+(5) Tread
+2 3/4" from £ 3/8" x .024" BFG soft
+1 on £ 2-1/2" x .024" USR
+2 1-7/8" from £ 1/2" x .024" USR
+Final Width - 6-1/2"
+Bladder - made from bicycle tube
+Curing: 2:40 PM -80 °F in oven
+3:40 PM 270°F "I
+1/6
+3=55 PM 300°F 4
+•1/3
+4:10 PM 320°F i
+•1/2
+4:25 PM 320°F 1
+1/4
+4:33 PM 320°F •* out
+-
+58
+
+
+
+=== PDF PAGE 68 ===
+The first step of the actual construction is the fabrication of the ply-
+stock. The loom is strung as previously shown in Figure 28. A cord count of
+10 ends per inch was chosen for the model tires used in this report, since two
+plies of this material are approximately equal in elastic stiffness to one ply
+of the actual tire fabric used in the prototype tire. A thin sheet of unvul-
+canized rubber is laid on either side of the parallel cords, as shown in Figures
+32 and 33 and is rolled down tightly. The completed ply fabric is then cut
+to the proper bias angle as shown in Figure 3^-
+The tread, liner and separator rubber pieces are cut to size, as given
+in the specifications, from unvulcanized rubber sheet of the proper thickness°
+As shown in Figure 35> a two-inch tube mounted in a metal-working lathe
+serves as the building drum. The tube is covered with Saran Wrap to allow the
+green tire to be removed easily after building. Typical is the layup of tire
+A-6. First, a rubber liner is rolled on and stiched down, shown in Figure 36.
+Then ply 1 is rolled on, Figure 37> followed by ply 2 and the first layer of
+tread, Figure 38- Finally, after the tread is completed, a tread cover is
+rolled on with the lathe knurling tool, Figure 39. The green tire cylinder
+is then cut to desired length and labeled with a silver ink pen, which -.-'hen cured,
+leaves a permanent identification marking. Figure kO shows the finished green
+tire flanked by the mold inserts.
+The tire is now ready for molding and curing. First the tire is covered
+with talcum powder which serves as a mold release agent. The bladder is then
+made ready by stretching it over its tapered end plugs, and is then inserted
+into the uncured tire. This is shown in Figure hi. The most successful bladders
+59
+
+
+
+=== PDF PAGE 69 ===
+Figure J2. First step in rubberizing the tire cord.
+60
+
+
+
+=== PDF PAGE 70 ===
+Figure 33. Completing the rubberized fabric.
+Figure J^. Finished fabric cut to a bias angle.
+61
+
+
+
+=== PDF PAGE 71 ===
+Figure 35* Mandrel for laying up the tire.
+Figure 36. Rubber liner on building drum.
+62
+
+
+
+=== PDF PAGE 72 ===
+Figure 37. First ply of fabric on building drum.
+Figure 38. Ply 2 and tread on building drum.
+
+
+
+=== PDF PAGE 73 ===
+Figure 39- Rolling on the tread cover.
+•-.
+ft
+Figure UO. Completed green tire and mold inserts.
+
+
+
+=== PDF PAGE 74 ===
+Figure kl. Bladder inserted in green tire.
+Figure 1*2. Bladder and green tire inserted into one half the mold.
+
+
+
+=== PDF PAGE 75 ===
+found for this work were short lengths of bicycle inner tube, although other
+materials were occasionally used. In commercial tire production a bladder is
+especially molded for this purpose, and that would undoubtedly be the best
+solution for the model tire.
+The uncured tire and bladder are carfully positioned in the mold halves
+as shown in Figures U2 and Vj, where in the latter photograph the two halves
+are partially closed together.
+The partially closed mold halves are placed in a laboratory oven and at-
+tached to an air line. The bladder is slowly inflated as the mold halves are
+brought together. When they are completely closed, the air pressure is raised
+to 60 to 100 psi and the oven temperature to j600F. The mold temperature is
+monitored with a contact pyrometer, and the time-temperature curve of the
+mold is integrated in an approximate, step-wise fashion to obtain the proper
+total cure.
+The cured tire is removed from the mold and finished by cutting off the
+vents and end caps formed by the tapered plugs. Figure kk shows tire A-6
+after curing. The tire is then mounted on the rim, Figure ^5, and exercised
+on the road wheel for three to four hours. The tire is now ready for mechan-
+ical property tests.
+66
+
+
+
+=== PDF PAGE 76 ===
+Figure ^3- Mold assembly with green tire just visible, prior to lifting.
+Figure W*. Completed tire A-6 after removal from mold and trimming.
+67
+
+
+
+=== PDF PAGE 77 ===
+Figure Tire A-6 mounted on rim.
+TIRE DEVELOPMENT
+A number of tires were built and tested in order to develop the techniques
+described in this report. A complete description of this work would be pro-
+hibitively long. However, several important conclusions can be gleaned from
+the mass of accumulated experience. These are given below:
+A. The most important single property which the model tire builder must
+control is modulus of elasticity of the tire carcass, since this con-
+trols inflation pressures, loads and model test speeds.
+B. Tire carcass elasticity can be controlled by:
+1. End count of the fabric
+2. Number of plies used
+68
+
+
+
+=== PDF PAGE 78 ===
+3. Cord denier or modulus
+k. Rubber modulus
+5- Ply decoupling by means of a separator
+6. Cord angle
+All of these factors have been interplayed in the present work to
+produce a low modulus model tire, yet one whose modulus distribution
+is similar to that of the full size prototype.
+C. Design changes can be readily seen in the model tires. For example,
+Table III describes a set of eight model tires, one purchased com-
+mercially and the other seven built especially for this project. Wide
+variations in structure are present, from conventional bias-ply to
+radial to pure rubber tires. Their dimensions are not too different
+from one another, yet their mechanical properties differ widely, as
+shown in Figure 46.
+In general, it appears that the influence of tire structure should be as
+readily apparent in these model tires as in their full sized counterparts.
+69
+
+
+
+=== PDF PAGE 79 ===
+OJ
+33 o o VJ3 rH
+** m -=(• 0 ITN O rH O S CO i?N vo
+OO -* rH
+0 £
+O c CO KN OJ
+W 4: 1 1 1 b- a) t-- OO
+« -* rH
+rH
+M C S O < £ - ^ r O 3 H - 0 - H 0 H } o fc o o rH o CO v c £ i ) o f- j
+OO CU r* -* rH
+fl
+J
+I r-H rH
+OJ OJ
+a rH -rH £) o o fO, ON
+^ 1 -O*O 0 ON O ON O rH > 0 H ) - O * O rH -*
+ca
+co rH
+<; C < — -pH o q J c5~ o v O O J o O O IfN J H ca I r<N OO
+OO -J H
+H rH
+PH <; -H o OJ 0 O ITN ca ON rH
+pq Joo" MD _^" fO\ tK -#• H•
+CQ co OJ
+< rO - p o H 3 q _ O ^- o OJ O K ir " \ \ _ O ^ J - 0 - I = P t W O D J
+GO -^ H
+co OJ
+OJ oS o o Cir\\j virO\
+< -pHq
+_
+Q
+j-
+OJ
+J
+O
+- f
+fO
+—
+\
+£
+0
+5
+• •
+oo
+-* rH
+•H
+te i co
+ft
+1
+0*)
+C b
+o CO ^^.
+b co 13
+O CP O ^ rl
+•H CU
+£ PH -p CO -P
+0) ft CU X!
+b -a g
+Oi UN aJ T3
+r c H u O • r P f C 4 j_ ^ ( oj h is
+bD H^>j PH Cd N r ~ H -'
+1 d) d)
+G -p -p ^ CQ
+O cd o
+rH 0) S CH g
+£>5 0) •H •iH •H
+C V X bo 1 CO
+1 C5 0 0 C C
+T3 b fe -H CU
+O
+O urj ft fft t aCO
+H
+c b u •H
+* °
+70
+
+
+
+=== PDF PAGE 80 ===
+30
+A17 (
+A14 AI2
+as I
+VECO
+30
+(fo)
+IO
+.010 .080 .ISO .160 .200 .840 280 .320 /SCO rtOO
+Cm)
+VERTICAL LOAD
+ZO Ib
+CIW)
+O .020 .040 .O6O .080 .100 .120 .HO .160 .fSO ZOO .220
+Figure U6. Comparison of model tires static load-deflection
+at 12.5 psi inflation.
+71
+
+
+
+=== PDF PAGE 81 ===
+A3 AT Al«
+VERTICAL. UOAO
+SO II
+3 4 ST 6 7 6 9 <0 //
+VERTICAL LOAD
+20 It,
+.OIO .020 .O3O .O4O -OSO .060 .070 O80 .O9O .COO .I/O
+Figure 46. Concluded.
+
+
+
+=== PDF PAGE 82 ===
+REFERENCES
+[1] Langhaar, H. L., "Dimensional Analysis and Theory of Models," John Wiley
+and Sons, New York, 1951.
+[2] Gordon, R. K., "Modeling of Tires," Soviet Rubber Technology, v. 2k,
+n. 6, p. 30, 1965-
+[3] Nybakken, G. H. and S. K. Clark, "Vertical and Lateral Stiffness Char-
+acteristics of Aircraft Tires," NASA CR-1U88, National Aeronautics and
+Space Administration, Washington, D.C., 1969-
+[k] Dodge, R. M., S. K. Clark, and K. L. Johnson, "An Analytical Model for
+Lateral Stiffness of Pneumatic Tires," The University of Michigan,
+Office of Research Administration, Report 02957-JO-T, February 1967,
+Ann Arbor, Michigan.
+[5] Dodge, R. N., D. Orne, and S. K. Clark, "Fore-and-Aft Stiffness Char-
+acteristics of Pneumatic Tires," NASA CR-9/00, National Aeronautics and
+Space Administration, Washington, B.C., October 1967.
+[6] Home, W. B., and R. F. Smiley, "Low Speed Yawed Rolling Characteristics
+and Other Elastic Properties of a Pair of kO Inch Diameter Ik Ply Rating
+Type VII Aircraft Tires," N.A.C.A. Technical Note 4109, Washington, D.C.,
+January 1958-
+NASA-Langley, 1973 2 CR-2220 73
+
+
+
+=== PDF PAGE 83 ===
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+WASHINGTON. D.C. 2OS46
+POSTAGE AND FEES PAID
+NATIONAL AERONAUTICS AND
+OFFICIAL BUSINESS SPACE ADMINISTRATION
+PENALTY FOR PRIVATE USE $3OO SPECIAL FOURTH-CLASS RATE 451
+BOOK
+If Undelivernble (Section 158
+POSTMASTER: Postal Miiiniiil) I>" Not Return
+"The aeronautical and space activities of the United States shall be
+conducted in <it fo contribute . . . Is the expansion uj 'unman knowl-
+edge of phenomena in the atmosphere and space. The Administration
+shall provide for the widest practicable and appropriate dissemination
+of information concerning its activities and the results thereof."
+—NATIONAL AERONAUTICS AND SPACE ACT OF 1958
+NASA SCIENTIFIC AND TECHNICAL PUBLICATIONS
+TECHNICAL REPORTS: Scientific and TECHNICAL TRANSLATIONS: Information
+technical information considered important, published in a foreign language considered
+complete, and a lasting contribution to existing to merit NASA distribution in English.
+knowledge.
+SPECIAL PUBLICATIONS: Information
+TECHNICAL NOTES: Information less broad
+in scope but nevertheless of importance as a derived from or of value to NASA activities.
+contribution to existing knowledge. Publications include final reports of major
+projects, monographs, data compilations,
+TECHNICAL MEMORANDUMS:
+handbooks, sourcebooks, and special
+Information receiving limited distribution
+bibliographies.
+because of preliminary data, security classifica-
+tion, or other reasons. Also includes conference
+TECHNOLOGY UTILIZATION
+proceedings with either limited or unlimited
+PUBLICATIONS: Information on technology-
+distribution.
+used by NASA that may be of particular
+CONTRACTOR REPORTS: Scientific and interest in commercial and other non-aerospace
+technical information generated under a NASA applications. Publications include Tech Briefs,
+contract or grant and considered an important Technology Utilization Reports and
+contribution to existing knowledge. Technology Surveys.
+Details on the availability of these publications may be obtained from:
+SCIENTIFIC AND TECHNICAL INFORMATION OFFICE
+N A T I O N AL A E R O N A U T I CS A ND S P A CE A D M I N I S T R A T I ON
+Washington, D.C. 20546

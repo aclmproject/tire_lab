@@ -1,0 +1,180 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 4055 >>
+stream
+0.75 w 0.82 G 54 744 m 558 744 l S
+0 g BT /F2 9 Tf 1 0 0 1 54 734 Tm (ACLM PROJECT) Tj ET
+0 g BT /F2 21 Tf 1 0 0 1 54 721 Tm (Historical Tire Accuracy & Evidence Report) Tj ET
+0 g BT /F2 14 Tf 1 0 0 1 54 695 Tm (Maserati 250F 6 cylinder) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 676 Tm (Generated 8/31/2026, 8:42:05 AM | Tire Lab v0.10.2) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 650 Tm (OVERALL ASSESSMENT) Tj ET
+0 g BT /F2 16 Tf 1 0 0 1 54 632 Tm (Historical evidence confidence: 77 / 100) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 610 Tm (Verdict: Good evidence-weighted historical reconstruction) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 596 Tm (This score describes evidence completeness and confidence in the selected historical tire context.) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 583 Tm (It is not a probability that proprietary factory coefficients are exact.) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 557 Tm (1. Historical identity and context) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 539 Tm (Car: Maserati 250F 6 cylinder [Direct AC package]) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 525 Tm (Racing year: 1957 [Historical research / inferred]) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 511 Tm (Series / class: 1954-58 Formula 1 / Grand Prix [Historical research / inferred]) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 497 Tm (Tire supplier: Pirelli [Historical research / inferred]) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 483 Tm (Construction: bias [Selected historical/tire-family context]) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 456 Tm (2. Current generated tire model) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 438 Tm (Historical tire category: FAM002 - 1950s GP / sports treaded bias) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 424 Tm (Class calibration: CLS102 - 1954-58 Formula 1 / Grand Prix) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 410 Tm (Compounds: Period Treaded Race) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 396 Tm (Vehicle mass used: 700 kg) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 382 Tm (Static front weight used: 51.0%) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 368 Tm (Front tire geometry: 96 mm width, 668 mm OD, rim radius 203.2 mm) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 354 Tm (Rear tire geometry: 124 mm width, 717 mm OD, rim radius 203.2 mm) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 340 Tm (Vertical rate: 49.9 N/mm front / 64.5 N/mm rear) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 326 Tm (Reference load FZ0: 1107 N front / 1385 N rear) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 312 Tm (Thermal load duty: F medium 11.53 N/mm | R medium 11.17 N/mm; transparent N/mm) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 298 Tm (reconstruction thresholds) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 284 Tm (Compound/load checklist: Period Treaded Race [pass]) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 270 Tm (Ideal hot pressure: 28.0 psi front / 28.0 psi rear) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 256 Tm (Pressure generation: Auto-solved using AMBIENT_PROXY_UNRESOLVED initial core; ambient 26.0) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 242 Tm (deg C retained separately) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 228 Tm (Medium generated cold pressure: 23.7 psi front / 23.9 psi rear) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 214 Tm (Imported AC cold-pressure reference: None / not imported) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 200 Tm (Blanket temperature: 70 deg C) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 186 Tm (Thermal implementation: CSP Thermal Model V2 + required Kunos thermal sections) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 172 Tm (Physics output: CSP Extended Physics - Thermal V2) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 158 Tm (Car physics requirement: car.ini [HEADER] VERSION=extended-2) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 144 Tm (Extended contact rays: 2 lateral / 4 longitudinal per side, 60 deg) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 130 Tm (Knowledge release: v1.7.1 / schema 1.2.0) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 116 Tm (Historical family physics: FAM002: family-specific grip/load/transient/thermal priors active) Tj ET
+0.75 w 0.85 G 54 38 m 558 38 l S
+0.4 g BT /F1 7.5 Tf 1 0 0 1 54 24 Tm (ACLM Historical Tire Lab | Historical Tire Accuracy & Evidence Report) Tj ET
+0.4 g BT /F1 7.5 Tf 1 0 0 1 520 24 Tm (Page 1/3) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4627 >>
+stream
+0.75 w 0.82 G 54 744 m 558 744 l S
+0 g BT /F1 10 Tf 1 0 0 1 54 734 Tm (Imported old tire reference: RATE 283800 F / 273800 R N/m; ideal pressure 40 psi \(reference) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 720 Tm (only\)) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 706 Tm (Period Treaded Race front Thermal V2 reconstruction: mass 5.35 kg; volume 22.85 L;) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 692 Tm (FRICTION_K 0.013924; CARCASS_ROLLING_K 0.285351; SURFACE_TO_AMBIENT 0.077082; confidence 77%) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 678 Tm (Period Treaded Race rear Thermal V2 reconstruction: mass 6.88 kg; volume 36.64 L; FRICTION_K) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 664 Tm (0.013798; CARCASS_ROLLING_K 0.286149; SURFACE_TO_AMBIENT 0.075426; confidence 77%) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 650 Tm (Validation track: Manual circuit / energy 1.00) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 623 Tm (3. Historical-accuracy findings) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 605 Tm (- Car identity used for this tire pack: Maserati 250F 6 cylinder.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 591 Tm (- Selected historical racing context: 1954-58 Formula 1 / Grand Prix.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 577 Tm (- Selected supplier context: Pirelli.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 563 Tm (- Historical tire category FAM002 \(1950s GP / sports treaded bias\) is active; it controls) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 549 Tm (construction/type, period menu and class-life wear priors without inventing) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 535 Tm (supplier-proprietary peak grip.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 521 Tm (- Tire construction \(bias/cross-ply\) was inferred from the researched historical tire) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 507 Tm (designation.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 493 Tm (- Wear-to-grip behavior remains provisional/evidence-weighted rather than historically) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 479 Tm (certified from period stint data.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 465 Tm (- Terminal tire failure is a simulation layer: 50% grip after +0.20 vKm beyond the final) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 451 Tm (normal-wear point. It is not direct historical puncture evidence.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 437 Tm (- Generated cold pressures use an explicit AC initial-core state \(26.0 deg C,) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 423 Tm (AMBIENT_PROXY_UNRESOLVED\); ambient 26.0 deg C is retained separately and is not silently) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 409 Tm (equated with tire core.) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 382 Tm (4. Wear and degradation status) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 364 Tm (Wear calibration status: provisional) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 350 Tm (Wear calibration note: ACLM historical class-life prior: Soft 60 km, Medium 90 km, Hard 190) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 336 Tm (km, Intermediate 75 km, Wet 90 km. Wear shape remains evidence-weighted and should be) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 322 Tm (telemetry-certified for the specific car/track.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 308 Tm (Terminal failure: Enabled: 50% grip after +0.20 vKm) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 294 Tm (Wear philosophy: 100% AC wear represents the best historical baseline; users can use AC wear) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 280 Tm (multipliers to compress race strategy.) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 253 Tm (5. Assetto Corsa implementation status) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 235 Tm (- Assetto Corsa tire format VERSION=10.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 221 Tm (- Front/rear tire sections include load curves, pressure model, FZ0, relaxation length,) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 207 Tm (camber LUTs and combined-slip parameters.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 193 Tm (- Every selected compound exports its front/rear wear LUT and temperature/performance LUT.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 179 Tm (- Every pack exports ACLM_LOAD_COMPOUND_CHECKLIST.txt with series-menu and axle-duty) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 165 Tm (assessments.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 151 Tm (- The pack validator blocks export for missing referenced LUTs, malformed LUT rows, invalid) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 137 Tm (geometry or other structural errors.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 123 Tm (- This PDF is generated automatically and bundled with every Tire Lab ZIP export.) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 96 Tm (6. Evidence provenance) Tj ET
+0.75 w 0.85 G 54 38 m 558 38 l S
+0.4 g BT /F1 7.5 Tf 1 0 0 1 54 24 Tm (ACLM Historical Tire Lab | Historical Tire Accuracy & Evidence Report) Tj ET
+0.4 g BT /F1 7.5 Tf 1 0 0 1 520 24 Tm (Page 2/3) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3489 >>
+stream
+0.75 w 0.82 G 54 744 m 558 744 l S
+0.35 g BT /F1 9 Tf 1 0 0 1 54 734 Tm (Direct AC-package data describes what the imported mod currently contains; it is not automatically) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 721 Tm (historical proof. Researched context is public historical evidence. Reconstructed values are Tire) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 708 Tm (Lab engineering/calibration choices.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 695 Tm (- Imported AC package files inspected for generation: ui_car.json, car.ini, tyres.ini,) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 681 Tm (suspensions.ini, setup.ini.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 667 Tm (- Green Tire Lab fields are direct values from the imported AC package. These document the) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 653 Tm (mod state, not necessarily historical truth.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 639 Tm (- Amber fields are historical research/inference and are retained as reviewable evidence) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 625 Tm (rather than hidden assumptions.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 611 Tm (- Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 597 Tm (values.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 583 Tm (- Thermal V2 coefficients are physical reconstruction priors derived from geometry, load,) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 569 Tm (rate, rolling resistance, construction, pressure, drivetrain/brake duty and class evidence;) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 555 Tm (they are not confidential supplier data.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 541 Tm (- CSP parameter meanings and obsolete-key handling follow the official CSP Tyre Thermal) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 527 Tm (Models V1/V2 documentation.) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 500 Tm (7. Sources) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 482 Tm (No public historical source pages were attached to this export. Run Historical Research in Tire Lab) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 54 469 Tm (before export if you want researched class/supplier sources embedded in the report.) Tj ET
+0 g BT /F2 13 Tf 1 0 0 1 54 443 Tm (8. Known limitations / next validation) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 425 Tm (- A generated AC tire can be structurally valid while exact supplier proprietary) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 411 Tm (coefficients remain unavailable.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 397 Tm (- Peak friction, exact stiffness, thermal constants and wear-to-grip curves should only be) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 383 Tm (described as factory-exact when primary evidence exists.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 369 Tm (- Lap time and Assetto Corsa behavior are validation evidence for the simulation) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 355 Tm (implementation, not standalone proof of historical tire specifications.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 341 Tm (- User-adjustable AC tire-wear multipliers can compress or extend race strategy without) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 327 Tm (changing the historical baseline wear curve.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 313 Tm (- Light/medium/heavy thermal load-duty thresholds require telemetry validation for each car,) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 54 299 Tm (track, setup and ambient condition.) Tj ET
+0.75 w 0.85 G 54 38 m 558 38 l S
+0.4 g BT /F1 7.5 Tf 1 0 0 1 54 24 Tm (ACLM Historical Tire Lab | Historical Tire Accuracy & Evidence Report) Tj ET
+0.4 g BT /F1 7.5 Tf 1 0 0 1 520 24 Tm (Page 3/3) Tj ET
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000137 00000 n 
+0000000207 00000 n 
+0000000282 00000 n 
+0000000418 00000 n 
+0000004524 00000 n 
+0000004660 00000 n 
+0000009338 00000 n 
+0000009475 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+13016
+%%EOF

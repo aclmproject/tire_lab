@@ -1,0 +1,1107 @@
+=== PDF PAGE 1 ===
+N A S A C O N T R A C T O R N A S A CR-1074
+R E P O R T
+d
+GPO PRICE $
+h
+0
+CFSii PRiZEiSj 3
+7
+a
+PL
+U
+Hard copy (HC)
+4
+m
+4 Microfiche (MF)
+z
+ff 653 July65
+A LABORATORY SCALE MODEL
+TECHNIQUE FOR INVESTIGATING
+PNEUMATIC TIRE HYDROPLANING
+by H. Divgoff and 1. R. Ehrlich
+Prepared by
+STEVENS INSTITUTE OF TECHNOLOGY
+Hoboken, N. J.
+for
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION WASHINGTON, D. C. MAY 1968
+
+
+
+=== PDF PAGE 2 ===
+NASA CR-1074
+A LABORATORY SCALE MODEL TECHNIQUE FOR INVESTIGATING
+PNEUMATIC TIRE HYDROPLANING
+I By H. Dugoff and I. R. Ehrlich
+Distribution of this report is provided in the interest of
+information exchange. Responsibility for the contents
+resides in the author or organization that prepared it.
+Issued by Originator as Report No. 1223
+Prepared under Contract No. NSR 31-003-016 by
+STEVENS INSTITUTE OF TECHNOLOGY
+Hoboken, N. J.
+for
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+For sale by the Clearinghouse for Federal Scientific and Technical Information
+-
+Springfield, Virginia 22151 CFSTI price $3.00
+
+
+
+=== PDF PAGE 3 ===
+PRECEDING PAGE BLANK NOT FiLEcf,ED.
+TABLE OF CONTENTS
+I Page
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+SUMMARY V
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+INTRODUCT ION v i i
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+NOMENCLATURE ix
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ANALYSIS 1
+. . . . . . . . . . . . . . . . .
+t TEST EQUIPMENT AND INSTRUMENTATION 5
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+I Roll ing Road 5
+. . . . . . . . . . . . . . . . . . . . . . .
+Water-Supply System 7
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+T i r e R i g 8
+. . . . . . . . . . . . . . . . . . . . . . . . .
+i Instrumentation 9
+. . . . . . . . . . . . . . . . . . . . .
+STATIC TESTS OF MODEL TIRES 11
+I
+, . . . . . . . . . . . . . . . . . . . . . . . . . .
+Test Procedure 12
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+Test Results 13
+. . . . . . . . . . . . .
+Vertical-Force-Deflection Variations 13
+I
+. . . . . . . . . . . .
+I Geometric Properties of Footprint Area 15
+. . . . . . . . . . . . . . . . . . . . . . . . .
+CONCLUDING REMARKS 17
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+REFERENCES 18
+, . . . . . . . . . . . . . . . . . . . . . . .
+FIGURES (1 through 15) 19-29
+i i i
+
+
+
+=== PDF PAGE 4 ===
+PRECEDING PAGE BLANK NOT ff U D .
+1
+SUMMARY
+A new technique i s developed f o r laboratory investigation o f pneumatic-tire
+hydroplaning through experiment with small-scale t i r e s on a treadmill runway-
+simulator. The ti res are mounted on a modified aircraft-landing-gear assembly
+which permits freedom i n heave under variable vertical load and allows measure-
+ment o f the longitudinal force exerted on the t i r e . The treadmill i s capable
+o f speeds up to 90 feet per second, and i s o u t f i t t e d with a water-supply system
+and a nozzle which delivers a water layer 1-foot wide, o f variable thickness,
+I
+a t matching speed.
+The model t i r e s are fabricated o f polyurethane foam the density o f which i s
+varied to simulate variations in pneumatic-tire i n f l a t i o n pressure. Correlation
+~
+I
+1 i of detailed load-deformation data f o r model and prototype t i r e s demonstrates
+that geometric s i m i l a r i t y i s achieved under s t a t i c conditions. Dimensional
+1
+1 analysis has been employed to derive additional requirements f o r dynamic simi-
+l a r i t y and to develop a design for the i n i t i a l series of experiments.
+KEYWORDS
+Hyd rop1 an i ng
+T ires
+Scale Models
+V
+
+
+
+=== PDF PAGE 5 ===
+PFECEDING PAGE BLARiR NOT FfU%@;
+I N TRODU CT I ON
+It i s by now a well-known fact that a pneumatic t i r e r o l l i n g o r sliding over
+a water-covered surface may encounter a condition which results i n i t s cbmplete
+detachment from the surface; i t then skis along on a f i l m o f water, a pheno-
+menon known as hydroplaning. The hydroplaning o f landing gear has been con-
+sidered a causitive factor i n a substantial number o f a i r c r a f t runway acci-
+dents, and automotive engineers are beginning to recognize that even highway
+vehicles may be susceptible to hydroplaning a t speeds well below legal limits.
+Valuable experimental studies o f the hydroplaning phenomenon have been
+carried out by personnel o f the NASA Langley Research Center, on the full-scale
+hydroplaning test track and instrumented wheel fixture a t that f a c i l i t y . These
+studies have led to the identification o f many factors which a f f e c t hydroplaning
+and to the suggestion o f various practical methods f o r i t s alleviation. l S 2As
+of the present time, however, basic understanding o f the hydroplaning pheno-
+menon remains qualitative, intuitive,and essentially fragmentary.
+One practical way to gain basic insight into the hydroplaning phenomenon
+would be through the conduct o f a systematic experimental program in which the
+quantitative influence of each o f the parameters reckoned to be o f significance
+would be investigated. Such a program would naturally involve the conduct o f
+a great many tests over a wide range o f varying test conditions. For reasons
+of economics, the Langley test f a c i l i t y i s clearly not suitable f o r such an
+exhaustive test program. It would appear, i n fact, that any r e a l i s t i c tech-
+nique for conducting such tests i n f u l l scale would involve prohibitive expense
+and, accordingly, that some model approach would be i n order.
+The Davidson Laboratory has previously performed scale-model simulations
+of pneumatic-tire performance i n connection with various experimental studies
+.3
+of automo t iv e-veh i c le dynam i cs 94 In one such application, the model tests
+it^.^
+were conducted on a treadmi 1 1 " r o l l ing road" faci 1 The encouraging out-
+come o f these tests suggested the possibility that a similar setup might
+profitably be u t i 1 ized for scale-model hydroplaning studies. A hydroplaning
+v i i
+
+
+
+=== PDF PAGE 6 ===
+research program based on systematic r o l l ing-road model tests was accordingly
+proposed to NASA, and i t s i n i t i a l phases were implemented under NASA Contract
+DA 31003016. A t the time this report was written, the development o f the
+necessary test apparatus and procedures had been completed and actual testing
+was about to get underway. This interim report describes the test f a c i l i t i e s
+and equipment, discusses the relevant scale-model ing theory i n relation to the
+present program, and describes the development o f smal I-scale t i r e s fabricated
+o f polyurethane foam, which are shown to possess s t a t i c mechanical properties
+s imu 1 a t i ng f u 1 1 -s ca 1 e pneuma t i c a i rcraf t t i res.
+The authors would l i k e to express t h e i r thanks t o Messrs. S. A. Batterson,
+W. B. Horne, and U. T. Joyner o f NASA Langley Research Center f o r t h e i r advice
+and cooperation throughout the course o f t h i s work. Important contributions
+by Messrs. D. M. Uygur, A. R. Schaefer, Jr., G. Wray, and 1 . 0. Kamm of
+Davidson Laboratory, to the development o f the experimental apparatus, the
+conduct of the s t a t i c t i r e tests, and the preparation of this report, are
+also gratefully acknowledged.
+v i i i
+
+
+
+=== PDF PAGE 7 ===
+NOME N C LATURE
+A gross i r e foo p r i rea
+b width o f tire-ground contact area (footprint)
+emp i r i cal coefficient re1a ted to ti re vertical -force-def l e c t ion
+cz
+characteristics; see Eq. (15)
+D outside diameter o f free t i r e
+f coefficient o f f r i c t i o n between t i r e and adjacent surface
+9 a cce 1 era t ion o f g rav i t y
+H horizontal force acting on t i r e
+h depth o f undisturbed f l u i d on ground
+R length o f t i re-ground contact area (footprint)
+P t i r e i n f l a t i o n pressure
+P "equivalent total pressure" of polyurethane-foam t i r e ; see Eq. (16)
+eq
+rated pressure o f t i r e
+'r
+total pressure (P + 0.08Pr)
+Pt
+V linear speed o f t i r e
+V hyd roplan ing incept ion speed
+c r
+W vertical force acting on t i r e
+W maximum width o f undeflected t i r e
+6 vertical t i r e deflection
+h geometrical scale factor; r a t i o between corresponding ! inear dimensions
+of model and prototype
+II f l u i d viscosity
+P f l u i d density
+0 surface tens ion o f f 1 u id
+w rotational speed o f t i r e
+Subscripts
+denotes quantities relating to model
+( )m
+0
+denotes quantities relating to prototype
+P
+i x
+
+
+
+=== PDF PAGE 8 ===
+Dimensionless Coefficients
+Froude number = V/&
+Reynolds number = pVh/p
+2
+Weber number = p V h/o
+X
+
+
+
+=== PDF PAGE 9 ===
+ANALYS IS
+There are two common systematic methods whereby model ing laws f o r a
+6
+particular physical system may be derived. The "equations approach'' requires
+knowledge o f the characteristic equations which govern the behavior o f the
+system and therefore i s manifestly not appropriate f o r the study o f any pheno-
+mena involv ng the dynamics o f pneumatic t res. The "parameters approach''
+requi res on y that the complete set o f a l l variables affecting the system-
+behav io r be specified. A variation o f the second approach i s employed here.
+Much o f the d i f f i c u l t y associated with the description o f t i r e dynamics i s
+s ides tepped for the moment by an assumption o f geometrical s i m i l a r i t y (including
+s i m i l a r i t y o f t i r e deformation). This assumption obviously i s equivalent to
+the imposition o f constraining relationships between certain parameters govern-
+ing the dynamics of the model and prototype t i r e s and, as w i l l be seen sub-
+sequently, merely defers the problem of establ ishing the appropriate relation-
+ships to a l a t e r stage i n the modeling process.
+Below are the independent variables considered to a f f e c t the hydroplaning
+phenomenon:
+9 :
+D Tire diameter
+h Fluid depth
+W Ti re load
+v
+Linear speed o f t i re
+w Rotational speed o f t i r e
+P Fluid viscosity
+P Fluid density
+CJ Surface tens ion of f 1 uid
+f Coefficient of f r i c t i o n between t i r e and adjacent surface
+9 Acceleration o f gravity
+,.
+-1,
+I n view o f the assumption o f geometrical similarity, D represents the
+usual "characteristic 1 inear dimension" of the t i r e .
+
+
+
+=== PDF PAGE 10 ===
+The dependent variable presently considered i s the horizontal force exerted
+on the t i r e by the ground, H. By application o f conventional techniques o f
+dimensional analysis ,7 the relation expressing i t s dependence upon the above
+independent variables may be obtained i n the form
+- w H = F ( h i , f, - w V D ' -PD W 2V 2 ' V 3 P p V ' h ' P V cr 2h)
+The model design conditions follow d i r e c t l y from Equation (1). Letting
+the subscript m denote quantities relating to the model, and the subscript p
+denote quantities relating to the prototype, sufficient conditions f o r the
+equal i t y o f Hm/Wm and H /W are
+P P
+h h
+m = 2
+D
+Dm P
+f = f
+m P
+v
+- =m- vP
+m D
+mmDm p p
+p D2V2 p D2V2
+m m m PPP
+(5)
+w W
+m P
+a"m =vP -
+(Froude number)
+Pmvmhm - PpVphp (Reynol ds number)
+m' pP
+2
+
+
+
+=== PDF PAGE 11 ===
+(Weber number)
+U U
+m P
+The conditions given by Equat ons (2) through (5) are easily met under a
+wide variety o f test constraints. Equations (6) through (8), however, present
+a problem long famil i a r to scale-i..odel experimenters i n the f i e l d o f hydro-
+"
+rn)
+dynamics: the incompatibil i t y o f Froude-number ( J 97; ) , Reynolds-number ( ,
+P
+and Weber-number
+(E m)
+s cal ing. Because of t h i s problem, i t i s not practically
+0
+feasible t o conduct a hydrodynamic model test without some measure o f model
+distortion. Empirical methods o f correcting f o r model distortion in conven-
+8
+tional ship-model testing have been used by naval architects f o r many years,
+and a systematic technique to account f o r i t s effects under more general condi-
+tions has been developed by M ~ r p h y . ~F or purposes o f this study, i t i s f i r s t
+assumed that the influence o f both viscosity and surface tension may be
+neglected, i .e., i n i t i a l consideration i s given to "dynamic hydroplaning.'I1 An
+important aspect of the analysis o f resulting experimental data i s therefore
+the d e f i n i t i o n of the l i m i t s of applicability o f this assumption i n terms of
+both Reynolds number and Weber number.
+Under the assumption of negligible viscous and surface-tension effects, the
+model design conditions are reduced t o Equations (2) through (6), which can be
+simul taneously satisfied even under the convenient constraints
+-
+(9)
+-
+9m 9p
+and
+That is, the model can be tested w i t h the same f l u i d as the prototype under the
+same gravitational cond i t ions. S imul taneous sol u t ion o f Equations (2) through
+(61, (9) and (10) results i n the following set o f simplified design conditions:
+3
+
+
+
+=== PDF PAGE 12 ===
+h = Ah
+m P
+dAr
+vm vp
+=
+w = h3 wp
+rn
+f = f (Equation 3 )
+r n P
+where h = D,/D i s the geometrical scale r a t i o for the experiment.
+P
+4
+
+
+
+=== PDF PAGE 13 ===
+TEST EQUIPMENT AND INSTRUMENTATION
+Construction and instrumentation o f the test apparatus comprised the major
+effort of t h i s phase of the study. To conduct the required tests, i t was neces-
+sary t o provide a simulated runway surface, an adequate water supply, a r i g on
+which t o mount the test tires, and instrumentation t o measure t e s t conditions.
+Figure 1 i s a photograph o f the completed hydroplaning-model-test f a c i l i t y .
+Roll ing Road
+To simulate the runway surface, an existing conveyor-bel t apparatus called
+the " r o l l ing road" was upgraded to have operating characteristics appropriate
+for hydroplaning testing. Figure 2 illustrates the basic principle o f operation
+of the r o l l i n g road. The moving belt, 3 feet i n width, i s stretched over a
+parallel p a i r o f 20-in.-OD hollow cylindrical drums. Power i s supplied t o the
+system through torque acting on one o f these drums. Friction between the rubber-
+coated drum surface and the t i g h t l y stretched nylon b e l t causes the b e l t to
+move over the powered drum without s l ipping. More general information concern-
+5
+ing the r o l l ing road may be found in an earl i e r pub1 ication.
+For purposes o f this study, the following modifications were made:
+(a) Increased Power
+The existing 5-hp drive motor was replaced by a 40-hp direct-
+current u n i t powered and controlled by the output from a closed-loop, 50-kw
+motor-generator set. The d-c generator i s driven by a 440-v a-c motor. The
+d-c generator f i e l d i s excited by a d-c amp1 i f i e r of variable output, and the
+armatures o f the generator and r o l l ing-road drive motor are coupled. The f i e l d
+o f the rolling-road drive motor i s excited by a constant source. To maintain
+constant speed, there i s a feedback which closes the loop between the drive
+motor and the d-c amplifier input.
+The e x i s t i n g rubber "timing belt" power-transmission system was replaced
+by a heavier-duty system of the same type and the r o l l ing-road drums were dynami-
+c a l l y balanced for operation a t higher rotative speeds.
+
+
+
+=== PDF PAGE 14 ===
+The up-powered drive system i s capable o f providing rolling-road speeds i n
+excess o f 90 feet per second.
+(b) Installation of a Translucent Belt
+I t was f e l t that pictures o f the tire-road contact patch, taken
+from below, would be a valuable complement to the quantitative data obtained
+during the program. Investigation disclosed that belts o f available trans-
+parent materials were not suitable f o r the present appl ication, because of
+insufficient strength, particularly a t the transverse seam. Oriented nylon,
+a1 though not transparent, i s translucent and permits reasonably clear pictures
+to be taken o f objects within about one inch of the surface. This material was
+therefore considered acceptable from an optical standpoint. Stress tests de-
+monstrated that i t could be fabricated with the requisite strength properties.
+The existing rubber-bel t system was therefore replaced by a translucent,
+oriented nylon b e l t 0.060-in. thick, 36-in. wide, and 28-ft long. The extreme
+longitudinal s t a b i l i t y o f the oriented nylon caused the b e l t to buckle under
+the non-uniform tension appl ied by the crowned, steel i d l e r pulley, but bands
+of thick rubber, mounted near the outside rims o f the idler drum, eliminated
+this effect and have been generally successful i n providing a level, f l a t
+.
+tes t-surface
+Heat generated by f r i c t i o n between the nylon b e l t and the teflon-coated
+support table is low enough to be dissipated without recourse to lubrication
+or to the use of a secondary belting system as i n the original rubber-belting
+setups5 A i r entrainment between the b e l t and the teflon surface sometimes
+causes the b e l t to Ilhop" s l i g h t l y . If t h i s condition proves detrimental during
+future testing, grooves i n the surface may be required f o r re1 ief.
+A plexiglass-mirror system t o permit observation and photography of the
+t i r e footprint was designed but has not yet been constructed. Installation
+is being delayed pending completion o f experiments t o determine the optimum
+section o f the r o l l i n g road for hydroplaning tests.
+6
+
+
+
+=== PDF PAGE 15 ===
+Wate r-Supp 1 y Sys tem
+The water system installed t o simulate wet and flooded runways (Figures 1,
+3, 4, and 5) is designed t o deposit on the r o l l i n g road a 12-in.-wide layer o f
+water o f variable thickness, flowing a t a speed the same as the b e l t speed.
+(a) Wa ter-Ci rcula t ion System
+The water-circulation system consists o f a centrifugal pump,
+capable o f generating a 150-ft head, with an integral 25-hp, 100-v a-c power
+pack. It draws water from a reservoir with a capacity o f 373 cubic feet,
+through b i n . piping, and delivers i t to the nozzle. A 3-in. bypass l i n e f om
+the o u t l e t o f the pump returns water to the reservoir. Water-flow rate i s
+grossly controlled by adjusting gate valves which control the flow to the
+nozzle and through the bypass line. Maximum flow i s obtained when the nozz e
+valve i s f u l l y open and the bypass valve i s f u l l y closed. A 1-in. ine con-
+t r o l l e d by a gate valve, i n parallel with the supply 1 ine, provides for fine
+adjustment o f the flow. A totalizing type o f flow meter i s instal ed j u s t
+ahead of the nozzle to measure the flow. Water discharged from the end o f the
+r o l l ing road i s collected by a scoop and returned to the reservoir. A stainless-
+steel diatomite spin f i l t e r i s used to remove foreign particles from the water
+reservoir and hence prevent nozzle clogging and e r r a t i c flow control.
+The water system i s able to del iver 340 gallons o f water per minute, crest-
+ing a water layer 12-in. wide and 0.1-in. thick, flowing a t a speed o f 90 feet
+per second.
+(b) Nozzle
+Figure 3 i s a closeup view o f the nozzle. The f i r s t section o f
+the nozzle i s a transient device which connects the 3-in.-diam circular pipe
+to the rectangularly shaped i n l e t of the second nozzle section, the thickness-
+adjusting box. The transient section i s 28-3/4 inches in length; i t has an
+inside diameter of 3 inches on one end and a t the other a rectangular cross-
+section 12-in. long and 0.50-in. wide. The thickness-adjusting box contains a
+metal plate hinged a t one end and free a t the other. The distance between the
+7
+
+
+
+=== PDF PAGE 16 ===
+free end of the plate and the bottom part o f the nozzle i s adjusted by inserting
+rods o f various thickness between the hinged plate and the top o f the thickness-
+adjusting box. There i s a groove on the top face o f the hinged plate t o accom-
+modate these rods. Since standard rods are available in increments of 0.01
+inches, almost any desired opening within the l i m i t s o f the nozzle (approxi-
+mately 0.5 inch) may be obtained. Under normal operating conditions the water
+pressure within the adjusting box is more than sufficient t o keep the hinged
+plate from f a l l i n g (at 150-ft head, the force is near 5,000 lb); however, two
+thumb screws are provided t o p u l l the plate firmly against the rod.
+The bottom (non-movable) plate o f the thickness-adjust ing box i s a1 igned
+t o be tangent with the test section o f the r o l l i n g road so that the water j e t
+and road meet smoothly.
+T i r e Rig
+The test t i r e s are mounted on a nose-wheel assembly from a Grumman MOHAWK
+a i r c r a f t modified to accommodate t i r e s up to 12 inches i n diameter and 7 inches in
+width, and t o allow f o r instrumentation. Figures 6 and 7 show, respectively,
+front and back views o f the t i r e rig.
+The upper part o f the s t r u t which guides the wheel cy1 inder i s fixed t o a
+structure above the r o l l ing road. This structure can be located anywhere along
+the r o l l i n g road. The wheel fork and i t s cy1 inder are free t o heave (move
+vertical ly). To provide minimum heave f r i c t i o n , a lubricated brass sleeve i s
+inserted between the male and female members o f the vertical s t r u t . During
+operation this sleeve i s rotated by a 1/4-hp motor. The effect i s to provide
+lubricated dynamic f r i c t i o n rather than s t a t i c f r i c t i o n between the members.
+The entire movable section i s counterbalanced by an appropriate counterweight-
+A shaft capable o f accommodating t i r e s o f various sizes i s mounted a t the
+end of the fork. The wheel i s installed parallel t o the longitudinal axis of
+the r o l l i n g road and i s not free t o move l a t e r a l l y . The rotation of the wheel
+shaft i s transmitted through a timing b e l t t o an upper shaft i n which an elec-
+t r i c brake is mounted. A symmetrical loading platform i s installed on the fork.
+8
+
+
+
+=== PDF PAGE 17 ===
+The entire t i r e r i g i s mounted on bearings which allow the r i g freedom t o
+swing, pendulum fashion, along the longitudinal axis o f the road. Restricting
+this,motion, however, is a parallelogram linkage system connected t o a force
+transducer (see discuss ion under "Instrumentation").
+i n s t rumen ta t ion
+(a) Horizontal (Longitudinal) Force Exerted on the Tire (H)
+A spring beam, fixed a t one end, restrains the parallelogram
+linkage o f the t i r e rig. Connected t o this spring beam is a linear vari-
+able d i f f e r e n t i a l transformer which measures the deflection o f the beam
+and, correspondingly, the longitudinal force on the t i r e r i g (the measure-
+ment signal i s electronically recorded on paper tape). This device is
+accurate to within f 0.1 lb.
+(b) T i re Load (W)
+Tire load i s maintained constant by counterbalancing the weight
+on the t i r e and then placing known weights on the load platform. When the
+sleeve insert i s rotating, vertical f r i c t i o n i s less than 0.3 lb.
+(c) Linear Road Speed (V)
+Linear road speed i s measured by a tachometer-generator attached
+to the i d l e r pulley o f the r o l l i n g road. Tach Gutput I s recorded on paper
+tape. Water velocity, which must match b e l t speed, i s presently computed
+by dividing the volume flow, as measured i n the nozzle entrance pipe, by
+the e x i t area of the nozzle. The accuracy o f this method i s s t i l l to be
+proved; however, no a1 ternative techniques which are satisfactory have yet
+been found.
+(d) Tire Rotational Speed (u)
+A tachometer-generator i s attached to the upper shaft o f the t i r e
+r i g . A timing b e l t ensures turning o f upper shaft and t i r e a t the same speed.
+9
+
+
+
+=== PDF PAGE 18 ===
+(e) Fluid Viscosity (p), Density (p) and Surface Tension (0)
+These a re ob ta in ed from standard tab 1 es a f te r water- tempe rat ur e
+-
+measurements
+(f) Upstream F uid Depth (h)
+A modified micrometer, attached so that i t can be pos i t ioned both
+longitudinally and aterally across the belt, i s installed above the r o l l -
+ing road. A feeler attached to the micrometer i s able to measure surface-
+.
+he ig h t d i f fe rences This device has not proved e n t i r e l y satisfactory,
+since there i s a small hop i n the b e l t and there are some surface waves
+on the water. Improved measurement techniques are being investigated.
+Correlation o f water height with nozzle opening has not yet been estab-
+1 ished.
+(9) Tire Diameter (D)
+In a l l cases this represents the undeflected dimension a t the
+point o f maximum diameter.
+(h) Tire-Road Friction (f)
+This i s computed as the r a t i o o f the measured horizontal force
+exerted on a f u l l y braked (locked) t i r e , when the road i s moving a t a
+constant slow speed, to the imposed load.
+10
+
+
+
+=== PDF PAGE 19 ===
+STATIC TESTS OF MODEL TIRES
+One o f the prime requisites for the conduct o f the hydroplaning model-test
+program planned here i s a selection of model t i r e s o f systematically varying
+dimensions, whose mechanical properties simulate accurately those o f repre-
+sentative a i r c r a f t tires. It was discovered a t an early stage that the avail-
+able selection o f commercial pneumatic tires under 12 inches in diameter i s
+extremely limited, and that the cost o f fabricating such t i r e s to specifications
+would be prohibitive. Semi-pneumatic t i r e s were available i n much greater
+variety i n the sizes o f interest; but these, not unexpectedly, were found t o
+possess mechanical properties very dissimilar to those desired.
+Earl i e r studies conducted a t the Davidson had demonstrated
+that a t i r e fabricated o f solid polyurethane foam performs, in many respects,
+l i k e an inflated pneumatic t i r e . By changing the density o f the foam (con-
+t r o l l e d by the mix used i n manufacturing), different t i r e pressures may be
+simulated. Also, the size and tightness of metal side plates can be varied to
+simulate the effects o f sidewall stiffness. By careful machining on a lathe,
+a polyurethane cylinder can be given a reasonable t i r e contour. Absorption o f
+water by the (open cell) polyurethane foam can be controlled by the application
+o f a p l a s t i c waterproof coating without materially a1 tering deformation char-
+.
+acte ris t i cs
+TO explore further the f e a s i b i l i t y o f simulating pneumatic a i r c r a f t t i r e s
+with polyurethane-foam models, a series of prel iminary tests was conducted
+3
+with models fabricated o f foams o f various densities (between I3 l b / f t and
+3
+16 l b / f t ) , plus a single small industrial pneumatic t i r e f o r comparison.
+Measurements taken of s t a t i c load-deformation characteristics (see below) were
+compared w i t h various empirical formulas shown by Smiley and Horne to describe
+the properties of modern pneumatic aircraft tires.’ Some dynamic tests were
+also conducted, but no quantitative data were taken. Qualitatively, however,
+the urethane t i r e s appeared i n a l l respects to behave very similarly to the
+pneuma t i c control ti re.
+1 1
+
+
+
+=== PDF PAGE 20 ===
+Test Procedure
+Expe r ime n t s we re conducted with the t i r e s shown in the following table.
+Size (Diarn x Width) Descr i p t ion
+3 9;
+6" x 2" Polyurethane foam; density 15.9 l b / f t ; Type I p r o f i l e
+9.d:
+6" x 2" Polyurethane foam; density 15.2 lb/ft3 (estimated );
+e l l i p t i c p r o f i l e
+3 9:
+6" x 2" Polyurethane foam; density 14.6 l b / f t ; Type I l l prof l e
+6'' x 2" Polyurethane foam; density 13.0 lb/ft3; e l l i p t i c prof l e
+8.5" x 3" Industrial pneumatic 280/250-4 (see Ref. 10)
+The tests were conducted with the t i r e r i g shown in Figure 8. The t i r e was
+loaded vertically by placing weights on a loading platform over the axle. To
+eliminate possible irregularities around the t i r e , four points 90-degrees apart
+were tested and measurements a t these four points were averaged f o r every v e r t i -
+cal load.
+For footprint geometry measurements, the t i r e surfaces were coated w i t h
+black ink. The painted surface o f the t i r e was then rested on a white sheet
+of paper so as t o produce an ink impression o f the footprint area. From these
+prints the over-all length ( A ) and width (b) o f the footprint were measured.
+The surface area (A) o f the footprint was measured w i t h a planimeter. Vertical
+t i r e deflection (6) was measured with a mechanic's height gage (shown i n Figure
+-
+8)
+The pneumatic t i r e was tested with three d i f f e r e n t i n f l a t i o n pressures: 15,
+32, and 55 p s i . Polyurethane t i r e s were tested both with 4- and 5-in.-diam
+aluminum side plates and without side plates.
+9:
+Aircraft tires are type-classif ied according to general appearance and p r o f i l e
+geometry. Type definitions may be found i n Reference 9.
+9ak
+This t i r e was accidentally destroyed before weight/volume measurements were taken
+and i t s density therefore had to be estimated from the results-
+12
+
+
+
+=== PDF PAGE 21 ===
+Test Results
+-
+Vertical-Force-Deflection Variations. Figure 9 i s a plot o f the vertical-
+force-def lect ion measurements for each of the polyurethane model t i'r'es .tested
+with h-in.-diam side plates. The curves a l l have the same general form and,
+as might be expected, the resistance t o deformation increases uniformly with
+increasing foam density. This indicates qualitatively how the effect o f
+pneumatic-tire inflation pressure may be simulated with the foam-model tires.
+The effect o f side-plate diameter on the foam-tire deflection characteristics
+is shown i n Figure 10. Qualitatively again, the similarity t o the effect o f
+pneumat ic-t i r e carcass stiffness is apparent.
+The quantitative relationship between the load-deflection properties of
+the polyurethane foam t i r e s and modern pneumatic a i r c r a f t t i r e s was investi-
+gated on the basis o f the following empirical formulas developed by Smiley and
+9
+Horne.
+o'21E(6/w) 2
+W = o.g6(6/~) t (For: 6/w 710 cz)
+(P + 0 . 0 8 P r ) w 6 Z
+W = 2.4 [(6/w) - Cz ] (For: 6/w 2 3 10 cz)
+(P + O.08Pr)w&
+where (P + 0.08Pr) t o t a l pressure
+pt
+P i n f l a t i o n pressure o f t i r e
+P rated pressure of t i r e
+r
+0.02 f o r Type I a i r c r a f t t i r e s
+0.03 for Types I l l and VI1 a i r c r a f t t i r e s
+W vertical load on t i r e
+6 vertica deflection
+D outside diameter o f free t i r e
+W maximum width o f undeflected t i r e
+13
+
+
+
+=== PDF PAGE 22 ===
+The data of Figures 9 and 10 were f i t t e d to the following modified form o f
+Equations (15).
+]
+W
+= 2.4 [(S/w)
+-
+C (For: 6/w 2
+-10
+C )
+P w$iD z 3 2
+eq
+where P , the "equivalent total pressure'' o f a polyurethane foam t i r e , i s a
+eq
+function of both foam density and side-plate diameter.
+The P values derived i n this manner for each t i r e , given in the table below,
+eq
+W
+were then used t o compute the values of the vertical-force parameter
+Ptq W J Z
+plotted in Figures 1 1 and 12 along with the corresponding curves derived from
+9;
+Equat ion (16).
+EQUIVALENT TOTAL PRESSURE OF POLYURETHANE-FOAM MODEL TI RES
+Foam Density Side Plate P
+eq
+TY Pe (1 b/f t3) diam (in.) - (PS i 1
+I 15.9 4 23 -5
+E l 1 i p t i c 15.2 5 19.8
+E l 1 i p t i c 15.2 4 18.2
+E l 1 i p t i c 15.2 0 18.2
+I l l 14.6 4 12.1
+E l 1 i p t i c 13.0 4 6.6
+E l 1 i p t i c 13.0 0 5.6
+These graphs show that the measured data are i n excellent agreement with
+the f i t t i n g equation. In fact, the degree of scatter from the curves appears
+9i
+The value of Cz for e l l i p t i c p r o f i l e t i r e s was determined from the data
+analysis to be equal t o 0.02 (the same as for the Type I tires).
+14
+
+
+
+=== PDF PAGE 23 ===
+t o be even less than that exhibited by the a i r c r a f t - t i r e data from which
+Equations (15) were o r i g i n a l l y derived. Thus it may be concluded that the
+s t a t i c vertical-load-deflection characteristics o f the polyurethane t i r e s are
+indeed similar t o those o f the modern pneumatic a i r c r a f t t i r e , and that the
+"equivalent t o t a l pressure" o f one o f the foam t i r e s represents the t o t a l pres-
+sure o f a pneumatic a i r c r a f t t i r e o f the same geometry and with the same v e r t i -
+cal-load-deflection characteristics.
+Insufficient data are available a t this time t o establish precisely the
+general quantitative relationship o f pneumatic-tire i n f l a t i o n and carcass
+pressures t o foam-tire density and side-plate diameter. An indication o f the
+general nature o f such a relationship, however, may be seen i n Figure 13, which
+is a p l o t o f equivalent t o t a l pressure vs. foam density for each o f the poly-
+urethane t i r e s tested with b-in.-diarn side plates.
+-
+Geometric Properties of Footprint Area. Measured geometric footprint
+properties o f each of the a i r c r a f t - p r o f i l e polyurethane tires, with 4-in.-diam
+side plates, are shown i n graphical form in Figure 14. Plots are given o f the
+footprint-length parameter, A/D, vs. the v e r t ical-def lection parameter, 6/D;
+and o f the footpr int-width parameter, b/w, and footpr int-area parameter,
+A/wfi, vs. the vert ical-def lect ion parameter, 6/w. Plotted on the same graphs
+are lines corresponding t o the equations below, shown by Smiley and Horne t o
+describe the geometric footprint properties o f representative pneumatic a i r -
+9
+craft t i r e s under pure vertical loading.
+1 . 7 d m -
+A/D =
+A = 2.3 6 f i
+where 1 = length of t ire-ground contact area (footprint)
+b = width o f tire-ground contact area (footprint)
+A = gross footprint area
+and the other symbols are as defined earlier.
+15
+
+
+
+=== PDF PAGE 24 ===
+The graphs of Figure 14 show that the measured geometric footprint pro-
+perties of the polyurethane t i r e s agree quite well with the relations derived
+from data for the full-scale pneumatic a i r c r a f t t i r e .
+16
+
+
+
+=== PDF PAGE 25 ===
+CONCLUD I NG REMARKS
+A laboratory setup has been developed for the conduct o f scale-model experi-
+ments to investigate the tire-hydroplaning phenomenon. Model tires' fabricated
+o f pol yure thane foam have been shown to exh ib i t stat i c 1 oad-def 1 ect ion char-
+acteristics which accurately simulate the properties o f f u l 1-scale pneumatic
+a i r c r a f t tires. It i s f e l t that the logical next step in the program i s the
+verification o f the basic experimental approach on the basis o f comparisons o f
+actual test data with appropriate full-scale resul ts generated previously a t
+NASA Langley. To t h i s end, an i n i t i a l test program has been formulated to
+measure hydroplaning inception speed (V ) as a function o f tire-loading and
+c r
+.
+t i re- geometry
+The experiment w i l l consist o f an investigation o f the effects o f each o f
+the independent variables h/D, w/D, and 6/D on the " c r i t i c a l dynamic hydroplan-
+2 2
+ing parameter'' pD (V ) /W, f o r a systematic series o f model t i r e s with rectan-
+c r
+gular cross-section and no tread. Figure 15 illustrates the experimental design
+i n terms o f a sample data sheet.
+The experimental results w i l l be compared with the data for full-scale
+pneumatic a i r c r a f t t i r e s presented by Horne and Joyner,' and w i l l also be
+analyzed t o determine Froude number, Reynolds number, and Weber number effects
+(see discussions under "Analysis"). On the basis o f these investigations,
+general conclusions w i l l be drawn regarding the Val i d i t y o f the experimental
+approach, and recommendations w i l l be made f e r the future course o f work under
+this program.
+Dav id son Laboratory,
+Stevens Ins t i tute o f Techno1o gy
+Hoboken, N. J., August 29, 1967.
+
+
+
+=== PDF PAGE 26 ===
+REFERENCES
+1. Horne, W. B.; and Dreher, R. C.: Phenomena o f Pneumatic T i r e Hydroplaning.
+NASA TN D-2056, 1963.
+2. Horne, W. B.; and Joyner, U. T.: Pneumatic T i r e Hydroplaning and Some
+E f f e c t s on Vehicle Performance. Society o f Automotive Engineers, 970C,
+January 1965.
+3 . Dugoff, H., e t a l : Coupled Mobility Devices. Davidson Laboratory Report
+1164, Stevens I n s t i t u t e of Technology, December 1964.
+4. Jurkat, M. J.; and Starrett, J. A,: Automobile-Barrier Impact Studies
+Using Scale Model Vehicles. Highway Research Record No. 174, HRB Publica-
+tion 1505, 1967.
+5. Dugoff, H.: l?he Davidson Laboratory Rolling Road Facility.'l Journal of
+Terramechanics, Vol. 1, No. 4, 1964.
+6. Soper, W. G.: "Scale Modeling." International Science and Technology,
+No. 62, February 1967.
+7. Murphy, G . : Similitude in Engineering. Ronald Press, New York, 1950.
+8. Todd, F. H.: The Fundamentals of Ship Model Testing. Society o f Naval
+Architects and Marine Engineers, 1951.
+9. Smiley, R. F.; and Horne, W. B.: Mechanical Properties o f Pneumatic T i r e s
+with Special Reference t o Modern A i r c r a f t Tires. NASA TR R-64, 1960.
+10. T i r e and R i m Association Year Book, 1963.
+18
+
+
+
+=== PDF PAGE 27 ===
+Figure 1. General View o f the Davidson La bora tory
+Ti re-Hydroplaning Test Fac 1 ity
+Oriented-Nylon Belt-, ,-Teflon-Covered Platform
+I
+1 I
+Figure 2. Schematic Illustrating Operation of Rolling Road
+
+
+
+=== PDF PAGE 28 ===
+Figure 3 . Close-up View o f Water-Supply Nozzle
+I
+Figure 4. Over-a1 1 View of Water-Supply System
+I 20
+
+
+
+=== PDF PAGE 29 ===
+Figure 5. Water-Return Scoop, Reservoir, and Piping
+Figure 6. Front View of Tire Test Rig With Polyurethane Model Tire
+21
+
+
+
+=== PDF PAGE 30 ===
+Figure 7. Rear View o f Tire Test Rig With Polyurethane Model Tire
+'1
+igure 8. S t a t i c Tire-Test Setup
+I LZ
+
+
+
+=== PDF PAGE 31 ===
+70
+0 15.9L B/FT' FOAM, TYPE I PROFILE
++
+15.2 LB/FT~F OAM, ELLIPTIC PROFILE
+- x
+60 14.6L B / F T ~F OAM, TYPE^ PROFILE
+0 13.0 LB/FT3 FOAM, ELLIPTIC PROFILE
+4"DIAM SiDE PLATES
+-
+50
+m
+4
+40
+6
+a
+0
+-1
+-1
+U
+0
+;3 0
+a
+W
+>
+20
+10
+0
+0 0.2 0.4 0.6 0.8 I .o
+VERTICAL DEFLECTION, 8, INCH
+FIGURE 9. VERTICAL- LOAD-DEFLECT1 ON VARIATION FOR
+POLYURETHANE TIRES WITH 4" DIAMETER SIDE
+PLATES, VARIOUS FOAM DENSITIES AND PROFILES
+23
+
+
+
+=== PDF PAGE 32 ===
+70 ~~~ ~~ ~
+-
+0 15.2 LB/FT' FOAM, 5"DlAM SIDE PLATES
++
+15.2 LB/FT' FOAM, ~ " D I A MS IDE PLATES
+x
+- 15.2 LB/FT3 FOAM, NO SIDE PLATES
+60 0 13.0 LB/FT3 FOAM, 4" DlAM SIDE PLATES
+A 13.0 LB/FT3FOAM, NO SIDE PLATES
+ELLIPTIC PROF1 LE
+50
+PD
+3'
+40
+n
+a
+0
+J
+-J
+U
+0
+F 3c
+[I:
+W>
+2(
+I(
+(
+VERTICAL DEFLECTION, 6, INCH
+FIGURE IO. EFFECT OF SIDE-PLATE DIAMETER ON VERTICAL-
+LOAD-DEFLECTION VARIATION OF POLYURETHANE
+TIRES
+24
+
+
+
+=== PDF PAGE 33 ===
+1.4
+EQUATION (16)
+0 15.9 LB/FTS FOAM, TYPE I 4"DlAM SIDE PLATES, Peq-23.5 Psi
+-k 15.2LB/FTSFOAM, ELLIPTIC, 5"DlAM SIDE PLATES,peq=l9.8pSi
+X 15.2 LB/FTa FOAM, ELLIPTIC, 4" DlAM SIDE PLATES,peq = 18.2 psi
+1.2 0 15.2 LB/FTS FOAM, ELLIPTIC, NO SIDE PLATES,peq- 18.2psi
+A 13.0 LB/FT3 FOAM, ELLIPTIC, 4"DIAM SIDE PLATES,peq= 6.6psi
+v
+13.0 LB/FT3 FOAM, ELLIPTIC, NO SIDE PLATES,peq= 5.6psi
+1.0
+s
+0-
+Q
+n
+3
+a- 0.8
+W
+c
+W
+I
+a
+a
+if
+W
+0 0.6
+a
+B
+I
+-I
+Uu
+I-
+a
+w 0.4
+>
+0.2
+0 0. I 0.2 0.3 0.4 0.5
+VERTICAL- DE FLE CTlON PA RAM ETER , 8/ W
+FIGURE I I. VARIATION OF VERTICAL-FORCE PARAMETER WITH
+VERTICAL DEFLECTION PARAMETER FOR TYPE I AND
+ELLIPTIC-PROF1 LE POLYURETHANE MODEL TIRES
+25
+
+
+
+=== PDF PAGE 34 ===
+1.4
+- EOUATION (16)
+0 14.6 LB/FT3 FOAM, TYPEm, 4"DIAM SIDE PLATES,p,q=12.1 psi
+1.2
+t
+3
+CT
+cQs )
+\
+3
+a- 0.8
+W
+I-
+W
+I
+U
+K
+2
+0.6
+a
+2
+I
+-I
+a
+0
+l-
+a
+w 0.4
+>
+0.2
+0
+0.I 0.2 0.3 0.4 0.5
+VERTICAL-DEFLECTION PARAMETER, 8 / W
+FIGURE 12. VARIATION OF VERTICAL-FORCE PARAMETER WITH
+VERTICAL DEFLECTION PARAMETER FOR TYPEIU
+POLYURETHANE MODEL TIRE
+26
+
+
+
+=== PDF PAGE 35 ===
+Io c
+50
+30
+20
+IO
+5
+3
+2
+I
+0
+0 13.0 13.5 14.0 14.5 15.0 15.5 16.0
+FOAM DENSITY, LB/FT
+FIGURE 13. VARIATION OF EQUIVALENT TOTAL PRESSURE WITH
+FOAM DENSITY FOR POLYURETHANE TIRES WITH 4"
+DIAMETER SIDE PLATES
+27
+
+
+
+=== PDF PAGE 36 ===
+0 + 14.6L B/FT' FOAM, TYPE m
+- 15.9 LWFT* FOAM, TYPE I
+a
+-\- EMPIRICAL CURVES BASED ON FULL SCALE
+PNEUMATIC-AIRCRAFT-TIRE DATA (REF.9)
+A 0.6 r
+I
+I I 1
+I I I I
+Q 0 4 a08 0.12 ais
+8
+VERTICAL-DEFLECTION PARAMETER, 8/D
+LL
+1.0 r
+n
+-
+.- 0.8
+f
+4
+1
+0 0.00 a16 0.24 0.32
+v E R T Ic A L - DE F L E CT ION PAR A M ET E R , 8 / w
+i -
+i 0.6
+-
+4
+a
+B -
+a4
+a
+-
+W
+a
+4: -
+0.2
+f -
+a
+a * I I I I
++ o I 1 I
+8
+-
+LL VERTICAL - DE FLECTION PAR A METE R , 8/ w
+FIGURE 14. GEOMETRIC PROPERTIES OF FOOTPRINT
+AREA, POLYURETHANE MODEL TIRE WITH
+4" DIAMETER SIDE PLATES
+28
+
+
+
+=== PDF PAGE 37 ===
+-
+-W 6 /D w/D -hl/D - V cr h2/D v c r h3/D - V cr -h4/D
+W S1/D
+W 62/D 0.668
+W 63/D
+W fjl/D
+W 62/D 0.400 I- t- I- I-
+z z z z
+W 6/D a a a a
+I- I- I- I-
+in in in in
+W 6/D z z z z
+0 0 0 0
+W 62/D 0.285 V V V V
+W 63/D
+W 61/D
+W 62/D 0.222
+k' 6 i D
+3
+-
+'igure 15. Sample Data Sheet for I n i t i a l Test Program
+29

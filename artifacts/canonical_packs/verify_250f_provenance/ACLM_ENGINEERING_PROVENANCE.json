@@ -1,0 +1,96 @@
+{
+  "schema": "ACLM engineering provenance 1.0",
+  "generatedBy": "ACLM Historical Tire Lab v0.10.2",
+  "fields": [
+    "VALUE",
+    "SOURCE TYPE",
+    "SOURCE IDS",
+    "FORMULA",
+    "CONSTRUCTION PRIOR",
+    "TELEMETRY SUPPORT",
+    "CONFIDENCE",
+    "STATUS"
+  ],
+  "rows": [
+    {
+      "parameter": "construction",
+      "value": "bias",
+      "sourceType": "FAMILY_DEFAULT",
+      "sourceIds": [
+        "FAM002",
+        "CLS102"
+      ],
+      "formula": "historical context dependency resolution",
+      "constructionPrior": {
+        "value": "bias",
+        "provenance": "FAMILY_DEFAULT",
+        "sourceIds": [
+          "FAM002",
+          "CLS102"
+        ],
+        "confidence": "ACLM historical class calibration"
+      },
+      "telemetrySupport": null,
+      "confidence": "ACLM historical class calibration",
+      "status": "COHERENT"
+    },
+    {
+      "parameter": "PRESSURE_IDEAL",
+      "value": "28 F / 28 R psi",
+      "sourceType": "KNOWLEDGE_GENERATOR_PRIOR_OR_USER_INPUT",
+      "sourceIds": [
+        "FAM002"
+      ],
+      "formula": "grip optimum; separate from setup cold recommendation",
+      "constructionPrior": null,
+      "telemetrySupport": "unresolved",
+      "confidence": "provisional",
+      "status": "REVIEW"
+    },
+    {
+      "parameter": "recommended setup cold pressure",
+      "value": "medium/front 23.73 psi; medium/rear 23.86 psi",
+      "sourceType": "ENGINEERING_FORMULA",
+      "sourceIds": [
+        "M4-FORMULA-009"
+      ],
+      "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+      "constructionPrior": [
+        {
+          "construction": "bias",
+          "mechanicalResponse": "higher carcass/deflection sensitivity must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        },
+        {
+          "construction": "bias",
+          "mechanicalResponse": "higher carcass/deflection sensitivity must be retained",
+          "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+          "sourceIds": [
+            "E-SRC-0096",
+            "M4-FORMULA-009"
+          ]
+        }
+      ],
+      "telemetrySupport": [],
+      "confidence": "reported per entry",
+      "status": "TELEMETRY_READY"
+    },
+    {
+      "parameter": "temperature optimum",
+      "value": "Period Treaded Race 72.0 C",
+      "sourceType": "PROVISIONAL_GENERATOR_PRIOR",
+      "sourceIds": [
+        "FAM002"
+      ],
+      "formula": "PERFORMANCE_CURVE grip mapping only; not cavity-air temperature",
+      "constructionPrior": null,
+      "telemetrySupport": "unresolved",
+      "confidence": "provisional historical reconstruction",
+      "status": "RESEARCH_GAP"
+    }
+  ]
+}

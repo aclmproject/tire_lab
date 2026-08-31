@@ -1,0 +1,233 @@
+[
+  {
+    "sourceId": "E-SRC-0019",
+    "sourceIdentityId": "d0cd52cf8ff1d96990331f22",
+    "title": "Energy Losses in Tires",
+    "archive": "Tire Science and Technology / The Tire Society",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "20 lb",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0026",
+    "sourceIdentityId": "53f8dbb2cca4cb9fd567fd54",
+    "title": "Finite Element Analysis of Freely Rotating Tires",
+    "archive": "Tire Science and Technology / The Tire Society",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "241 km/h",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0035",
+    "sourceIdentityId": "fee5650eca0fe8c2e7330324",
+    "title": "One‐Dimensional Contact Pressure Distribution of Radial Tires in Motion",
+    "archive": "Tire Science and Technology / The Tire Society",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "60 km/h",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0038",
+    "sourceIdentityId": "34e2f073ee0a1bf273cc370c",
+    "title": "Stress Analysis of Tire Sections",
+    "archive": "Tire Science and Technology / The Tire Society",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "690 kPa",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0046",
+    "sourceIdentityId": "1d4234b34d373b57479fb10c",
+    "title": "Fatigue of Unidirectional Cord‐Rubber Composites",
+    "archive": "Tire Science and Technology / The Tire Society",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "100°C",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0079",
+    "sourceIdentityId": "dcce650a07b5ea9e09051d0a",
+    "title": "Tire footprint studies",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "000 lb",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0082",
+    "sourceIdentityId": "962863689a54e023684673ee",
+    "title": "Cornering characteristics of a 40 by 14-16 type 7 aircraft tire and a comparison with characteristics of a C40 by 14-21 cantilever aircraft tire",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "0 deg",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0083",
+    "sourceIdentityId": "33b1da1f4f04e41d0117cb66",
+    "title": "Experimental investigation of the cornering of a C40 x 14-21 cantilever aircraft tire",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "0 deg",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0092",
+    "sourceIdentityId": "bfb364a289dd7c0dd7ca789d",
+    "title": "Cornering and wear characteristics of the Space Shuttle Orbiter nose-gear tire",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "0 deg",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0094",
+    "sourceIdentityId": "10dddc78de30d8f5ecf4574e",
+    "title": "Thermal conductance of and heat generation in tire-pavement interface and effect on aircraft braking",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "1.5 mm",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0107",
+    "sourceIdentityId": "dc99191beb44b77d7425bd33",
+    "title": "Tire Footprint Affects Hydroplaning On Wet Pavement",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "105 km/h",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0113",
+    "sourceIdentityId": "0c0bbe767018b4cbb69ed128",
+    "title": "Rolling resistance of electric vehicle tires from track tests",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "32 C",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0125",
+    "sourceIdentityId": "6cd38652e228e254713cd694",
+    "title": "Chemiluminescence Study on Thermal Degradation of Aircraft Tire Elastomers",
+    "archive": "NASA / NACA / NTRS",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "150 C",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0134",
+    "sourceIdentityId": "a4df2ed2b2eb40b3dbaa7cbd",
+    "title": "Tire Transient Force and Moment Response to Simultaneous Variations of Slip Angle and Load",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "90 lb",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0139",
+    "sourceIdentityId": "c60921ed42177c57ad2b05eb",
+    "title": "Finite element tire model with aged rubber compound characterization",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "70°C",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0165",
+    "sourceIdentityId": "d40638fbec1587c5a194d977",
+    "title": "Operational Testing of Central Tire Inflation Systems Proves the Benefits of Low Tire Pressure in Logging Operations",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "000 kg",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0166",
+    "sourceIdentityId": "555551add37cd31df32b6ca6",
+    "title": "Design and Testing of an Automatic Tire Inflation System for Drive Axles on Class 8 Tractors",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "65 MPH",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0175",
+    "sourceIdentityId": "9b82975cb1f9e4ad2c595b84",
+    "title": "Passenger vehicle Tire Rolling Resistance can be Predicted from a Flat-Belt Test Rig",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "15 inch",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0182",
+    "sourceIdentityId": "82f3fce8bab2cc961be5ae03",
+    "title": "Practical Tire Research",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "100 mph",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0191",
+    "sourceIdentityId": "667fe6833cda7e830f8330f6",
+    "title": "A Tire Noise Investigation and Test Method",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "2 mph",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  },
+  {
+    "sourceId": "E-SRC-0196",
+    "sourceIdentityId": "5b646bcf7b7dadef9c55c6cf",
+    "title": "Automobile In-Use Tire Inflation Survey",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "status": "ABSTRACT_NUMERIC_SIGNAL_ONLY",
+    "numericSignal": "6 psi",
+    "originalUnitsPreserved": true,
+    "normalizedSiValue": null,
+    "qualification": "The abstract exposes a numeric/unit signal. Full text and test context must be reviewed before calibration use."
+  }
+]

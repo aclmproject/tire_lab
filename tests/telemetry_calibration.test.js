@@ -34,7 +34,7 @@ test("telemetry summary preserves float wear and normalizes accelerated tests",(
  assert.equal(summary.conditions.requested.roadTempC,26);
  assert.equal(summary.conditions.mismatchIsRejection,false);
  assert.equal(summary.wear.aidTireRate,5);
- assert.equal(summary.wear.multiplierSource,"recorded AC aidTireRate");
+ assert.equal(summary.wear.multiplierSource,"recorded positive AC aidTireRate");
  assert.equal(summary.wear.wheels.fl.startRawText,"100.00000000");
  assert.equal(summary.wear.wheels.fl.endRawText,"99.95000001");
  assert.ok(Math.abs(summary.wear.wheels.fl.deltaFromStartRaw-(-.04999999))<1e-10);
@@ -51,7 +51,7 @@ test("older CSV can declare a fallback multiplier and remains explicitly estimat
  const csv="distance_traveled_m,wear_raw_fl,wear_raw_fr,wear_raw_rl,wear_raw_rr\n0,100,100,100,100\n10000,99.5,99.5,99.4,99.4\n";
  const summary=core.telemetrySummary(core.parseTelemetry(csv),{wearMultiplier:2});
  assert.equal(summary.wear.aidTireRate,2);
- assert.equal(summary.wear.multiplierSource,"user-declared fallback");
+ assert.equal(summary.wear.multiplierSource,"requested/user-declared multiplier; raw AC aidTireRate is absent, zero, or semantically unvalidated");
  assert.equal(summary.wear.normalization.isEstimate,true);
  assert.equal(summary.wear.wheels.fl.normalized1xDeltaEstimate,-.25);
  assert.match(summary.wear.normalization.warning,/estimate, not a direct 1x measurement/);
@@ -129,4 +129,26 @@ test("generated pressure report separates static, ideal, rise and predicted hot"
  assert.ok(Number.isFinite(r.predictedHotPressureRisePsi));
  assert.ok(Number.isFinite(r.predictedStabilizedHotPressurePsi));
  assert.ok(r.pendingCalibrationFactors.includes("internal air volume and dimensional growth"));
+});
+
+test("raw aidTireRate zero remains unknown and does not disable wear",()=>{
+ const csv="tire_set_distance_m,aid_tire_rate,wear_raw_fl,wear_raw_fr,wear_raw_rl,wear_raw_rr\n0,0,100,100,100,100\n100000,0,98,99,90,92\n";
+ const wear=core.telemetrySummary(core.parseTelemetry(csv),{wearMultiplier:1}).wear;
+ assert.equal(wear.rawAidTireRate,0);
+ assert.match(wear.rawAidTireRateInterpretation,/zero does not mean tire wear was disabled/i);
+ assert.equal(wear.aidTireRate,1);
+ assert.equal(wear.wearDisabledInferenceAllowed,false);
+ assert.equal(wear.wheels.rl.endRaw,90);
+});
+
+test("pressure screen and extended thermal observation are separate protocols",()=>{
+ const protocols=core.validationProtocols();
+ assert.match(protocols.shortPressureScreen.prohibition,/does not certify absolute thermal equilibrium/);
+ assert.equal(protocols.extendedThermalObservation.engineeringThresholds.absoluteCoreSlopeCPerLapBelow,.1);
+ assert.equal(protocols.extendedThermalObservation.engineeringThresholds.absolutePressureSlopePsiPerLapBelow,.03);
+ const result=core.stabilityScreen({fl:{coreSlopeCPerLap:.153,pressureSlopePsiPerLap:.0197},fr:{coreSlopeCPerLap:.149,pressureSlopePsiPerLap:.0191},rl:{coreSlopeCPerLap:.202,pressureSlopePsiPerLap:.026},rr:{coreSlopeCPerLap:.202,pressureSlopePsiPerLap:.0259}});
+ assert.equal(result.classification,"NOT STABILIZED");
+ assert.equal(result.historicalTemperaturePassFail,"UNRESOLVED");
+ assert.equal(result.perWheel.fl.pressureStable,true);
+ assert.equal(result.perWheel.fl.coreStable,false);
 });

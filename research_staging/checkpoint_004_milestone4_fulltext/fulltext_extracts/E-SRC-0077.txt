@@ -1,0 +1,927 @@
+=== PDF PAGE 1 ===
+TP
+19 17
+c. 1
+NASA Technical Paper 1917 I
+Cornering Characteristics
+of the Nose-Gear Tire of
+the Space Shuttle Orbiter
+William A. Vogler and JohnA . Tanner
+OCTOBER 1981
+
+
+
+=== PDF PAGE 2 ===
+TECH LIBRARY KAFB, NM
+NASA Technical Paper 1917
+Cornering Characteristics
+of the Nose-Gear Tiroef
+the Space Shuttle Orbiter
+William A. Vogler
+Kentron InternationaZ, Inc.
+Hampton, Virginia
+John A. Tanner
+Langley Research Center
+Hampton, Virginia
+National Aeronautics
+and Space Administration
+Scientific and Technical
+information Branch
+1981
+
+
+
+=== PDF PAGE 3 ===
+INTRODUCTION
+The Space Shuttle Orbiter is the first spacev ehicled esigned to land like a
+conventionala irplane,a nd, as such, it is subjectedt ot he same crosswinde ffects as
+commerciaal nd militarya irplanes. As int hec ase of conventionala irplanes,c ross-
+winds duringa pproacha nd initial rollout phases of the landing are usually manage-
+ableb ecauset he pilot canm aintaind irectionalc ontrol by takinga dvantage of aero-
+dynamic forces. As grounds peed is reduced, however, aerodynamic forces become less
+effective, and the pilot must rely upon differential braking or nose-gear steering to
+providet hed esireds pacecrafth eading on the runway. The response of the Space
+Shuttle to nose-gear steeringi nput is defined,i n part, by thec orneringc haracter-
+istics of the nose-gear tire; thus, a need exists to establish these cornering char-
+acteristics under realistic operatingc onditions.
+The purpose of t h i s paper is to present results of an investigation of the
+corneringc haracteristics of the 32 X 8.8 nose-gear tire of the Space ShuttleO rbiter
+on a dry concrete runway. These characteristics, which includeds ide andd ragf orces
+and friction coefficients, aligning and overturningt orgues,f riction-force moment
+arm, and thel ateralc enter-of-pressures hift, were obtainedo ver a range of yaw
+angles from O o t o 12O and tirev erticall oads from 22 kN (5000 l b f ) t o 133 kN
+(30 000 lbf).T hisr ange of yaw angles and verticall oadss panst hee xpected
+envelope of loads and yaw angles t o be encounteredd uringS paceS huttlel anding
+operations. The tests werec onducted at grounds peeds that ranged from 50 t o
+100 knots (1 knot = 0.5144 m/sec).
+SYMBOLS
+Values are given in both the International System of Units (SI) and in the U. S.
+Customary Units. The measurementsa nd calculations were made int he U.S. Customary
+Units.F actorsr elatingt he two systems are giveni nr eference 1.
+drag force parallel t o plane of wheel
+Fd
+side force perpendicular t o plane of wheel
+FS
+tire vertical force
+FZ
+h axle height
+overturning torque
+Mx
+aligning torque
+MZ
+9 friction-force moment arm
+V carriage or grounds peed
+lateral center-of-pressures hift
+YC
+
+
+
+=== PDF PAGE 4 ===
+B coefficients of curve-f itting equations
+drag-force friction coefficient, parallel to plane of wheel
+'d
+side-force friction coefficient, perpendicular t o plane ofw heel
+S'
+$ tire yaw angle
+APPARATUS AND TESTP R OCEDURE
+Test Tires
+The t i r e s used in this investigation were 32 x 8.8, type VII, bias-plya ircraft
+t i r e s of2 0-ply rating with a maximum speed rating of 217 knotsa nd a three-groove
+tread pattern. A photograph of two test tires having new and worn treads is pre-
+sentedi nf igure 1. Thew orn tire is shown unmounted andt husu npressurized. The
+new tire which had an original grooved eptho f 0.25 cm (0.1 in. ) is shownm ounted
+andp ressurized.D uringt hec ourse of thisi nvestigation,t he test tire was changed
+when the tread was completely worn offa nd,t hus, a t o t a l of three tires were used.
+Throughout the investigation, the tire inflation pressure was maintained at the
+nominal operationalp ressure of 2.07 MPa (300 psi).
+T e s t Facility
+The investigation was performed on the 48 000 kg (106 000 lbm) test carriage at
+the Langley Aircraft Landing Loads and Traction Facility described in reference 2.
+Figure 2 is a photograph of thec arriagew itht het est-wheel assembly installed, and
+figure 3 is a close-up view of the tire andw heel mounted within the instrumented
+dynamometer used t o provide accurate measurements of the tire-ground forces.
+For the tests describedi nt hisp aper,a pproximately 122 m (400 ft)o f the
+available 366 m ( 1200 f t ) of the flat concrete runwayw as used t o providec ornering
+data. The concretes urfacei nt he test area had a light broom finishi nt het rans-
+versed irectiont hatp rovided ana veraget extured epth of 159 ym (0.00626 in. ),
+slightlyl esst hant hat of a typicalo perational runway. The test runway was level
+(no crown)a nd, f o r a l l tests, thes urface was keptd ry.
+Instrumentation
+Tire friction forces were measured witht he dynamometers hown in figure 3 and
+illustrateds chematicallyi nf igure 4. Strain gages were mounted on the five dyna-
+mometer support beams: two of the beams were used t o measure verticalf orces, two
+were used for measuring drag forces parallel to the wheelp lane,a nd a single beam
+was used t o measure sidef orcep erpendiculart ot he wheel plane.T hreea cceler-
+ometers on the test-wheel axle provided information for inertia corrections to the
+forced ata. An electronici nterval timer provided a measure of thec arriage speed.
+A slide-wire potentiometer was used to obtain a measureo fd rop carriaged isplacement
+and indirectlyt op rovide a measure of axleh eight. A l l datao utputs were fedi nto
+signal conditioning equipmenta nd then into a frequency-modulatedt aper ecorder.
+2
+
+
+
+=== PDF PAGE 5 ===
+Test Procedure
+The testing technique consisted of rotating the dynamometer andw heela ssembly
+t o the preselected yaw angle, propelling the test carriage to the desired speed,
+loweringt he tire ontot he dry runway anda pplyingt hes electedv erticall oad, and
+recordingt heo utputs from the on-board instrumentation. The yaw angle of the wheel
+assembly, heldc onstantf or each test run,r anged from Oo t o 12O in increments
+2 O
+witha dditionalt ests at a yaw angle of lo. The nominal carriages peedsr anged
+from about 43 t o 104 knotsa nd were measured when the maximum vertical load was
+attained. Tire verticall oading was variedh ydraulicallyt hrough a range from zero
+t o 147 kN (33 000 lbf) andt hen back t o zerod uringt hec ourse of a typical run,a nd
+thel oadingr ate was approximately 133 kN/sec (30 000 lbf/sec).
+Data Reduction
+All data were recorded on analogm agnetic tape filtered t o 1000 Hz. The analog
+data were thenp rocessedt hrough a low pass filter (cutoff frequency of 60 Hz 1, dig-
+i t i z e d a t 250 samples pers econd,a ndu sed t o generatet ime-historyp lotsf ord ata
+analysis. From thesed igitizedd ata,d irect measurementsw ere obtained of thed rag
+force (sum of two dragb eams), the side force, the vertical force applied to the tire
+(sum of two vertical beams 1, thev erticald isplacement of the drop carriage, and the
+vertical,d rag,a nds idea ccelerations of the dynamometerT. he instantaneous
+vertical-, drag-,a nd side-forced ata were correctedf ora cceleratione ffects and
+combined as necessary to compute botht hei nstantaneousd rag-forcef rictionc oeffi-
+cient parallel to the plane of the wheela nd the side-force friction coefficient
+perpendicular t o thep lane of the wheel. The loadt ransfer between the two drag-
+force beams (see fig.4 )p rovided a measure of thea ligningt orquea boutt hev ertical
+ors teeringa xis of the wheel. The loadt ransfer between the two vertical-force
+beams (agains eef ig.4 )p rovided a measure of theo verturningt orquea boutt hea xis
+mutuallyp erpendicularw itht hev ertical and rotationa xes. The lateralc enter-of-
+pressure shift of the vertical-load pressure distribution due t o yawed rolling was
+defined by
+where h was theh eight of thea xle above the runway surface. The friction-force
+moment arm q (see ref. 3 ford efinition) due t o yawed rolling was defined by the
+equation
+A least-squaresf airingt echnique (see ref.4 ) was used t o smooth thed igitized
+data frome achr un. Int hisa pplication,s eventh-orderp olynomiall ine segments
+were f i t t e d t o the data where each line segment was fairedt hrough 40 data points
+with a 10-pointo verlapb etweene ach segment. Lineari nterpolation was used t o
+insure a smooth transition between line segments within eacho verlapr egion,a nd
+eight line segments were necessary t o f a i r t h e d a t a f o r eachs econd of test dura-
+tion. The effect of t h i s smoothingr outine was t o limit thef requencyr esponse of
+the data t o 24 Hz without introducing the phase shifts associated with electronic
+filters.
+3
+
+
+
+=== PDF PAGE 6 ===
+The influence of the fairing technique on the data froma typical run is illus-
+trated i n figure 5. Figures5 (a) and 5(b)a ret imeh istories of the unsmootheda nd
+smoothed side force,r espectively, and figures5 (c) and 5(d)a ret imeh istories of
+the unsmoothed and smoothed verticalf orce,r espectively. The sidef orce is plotted
+as a function of the vertical force i n figure 5(e) before smoothinga nd i n fig-
+ure5 (f)a fter smoothing. The variousc orneringc haracteristics frome ach run were
+plotted as a function of vertical force, and discrete data points werec hosen a t pre-
+selectedv ertical-forcev alues( dashedv erticall ines i n fig. 5(f)) to establish the
+influence of parameter variations on tire cornering characteristics.
+RESULTS AND DISCUSSION
+Data from they awed-rollingt estsc onducted on the nose-gear t i r e of the Space
+Shuttle Orbiter are presented i n table I togetherw itht hec orrespondingt est con-
+ditions. Forp urposes of discussion,t hesed ataa rea lsop resented i n figures 6
+-
+t o 13. The tests examined thee ffects of threep arameters tirev ertical load, yaw
+-
+angle, andg rounds peed on thec haracteristics of side andd ragf orces,a ligning
+and overturningt orques,f riction-force moment arm, and lateralc enter-of-pressure
+shift. The dataa rep resented i n the form of carpet plots to illustrate functional
+relationships between thec haracteristics and thet estp arameters. In thec arpet
+plots, each characteristic is presented as a function of both vertical load and yaw
+angle, and the grounds peed is identified by test-point symbols.L ines of constant
+load and constant yaw angle were then fitted to the data i n aw eightedl east-squares
+fashiont os ervea s an interpolationa id. The coefficients of bicubici nterpolation
+equationsf or each characteristica rep resented i n table 11. A glossary of terms
+used i n thes tudy of t i r e mechanical properties is presented i n reference 3. Sub-
+sequentp aragraphs discuss i n detailt hee ffects of tirev erticall oad, yaw angle,
+and grounds peed on thec orneringc haracteristics of the Space Shuttlen ose-gear
+tire.
+SideF orce
+The effect of thet estp arameters on the developed sidef orce Fs is pre-
+sented i n figure 6 where the side force is measuredn ormal to the wheel plane( as
+opposed to cornering force which is measuredn ormal to the direction of motion).
+Wheyn a w angle is heldc onstant,s idef orcei ncreasesw ithi ncreasingv erticall oad
+and generallyr eaches a maximum at vertical loads between 89 kN (20 000 lbf 1 and
+133 kN (30 000 lbf). Thisf igurea lso shows thatt hee ffect on sidef orce due t o
+changes i n thev erticall oad becomme ore pronounced as yaw angle is increased. As
+expected,i ncreasing yaw anglew hileh oldingv erticall oadc onstanti ncreasest he
+sidef orcer egardless of thev erticall oad. A t low verticall oadings, however, the
+sidef orcea ppearst or each a maximum around the maximumy aw anglet ested. No dis-
+cerniblet rendsa ree vident with variations i n grounds peed.F requently,d uring
+high-yaw-angle tests, the lower vertical-loadt estp ointsa rer eached i n thel oading
+processb eforet het ireh asf ully spunu p. When t h i s conditione xists,t hes ide
+force and otherc orneringc haracteristicsa ren egligiblys mall( seef ig.5 (f),f or
+example), and thesed ata were not included i n this report.
+Sinces ide-forced ataa reg enerallyp resented i n dimensionless form, they were
+divided by ther espectivev erticall oad on thet ire. This processy ielded, by def-
+inition,s ide-forcef rictionc oefficients us, which arep resented i n thec arpetp lot
+1-1 ,
+of figure 7. For fixed yaw angles,t here is a decrease i n withi ncreasingv er-
+t i c a l load. The figurea lso shows thatf or most fixedv erticall oads, us increases
+4
+
+
+
+=== PDF PAGE 7 ===
+as the yaw angle is increased.F ort hel ightlyl oadedt ire (44.5 kN (10 000 lbf ) 1, a
+peak valuei n us of 0.57 is observed at approximately 8 O which is inc losea gree-
+ment witht hev alue of 0.60 predicted by equation( 88)i nr eference 5. As the tire
+verticall oadi ncreases,t he yaw anglef or maximum ps increases; and for tire
+verticall oadsg reatert han 89 kN (20 000 lbf),t he peak in ps is reached at yaw
+angles which are beyond.ther anget estedi nt hisi nvestigation. Again, no trends due
+to variation in grounds peed aree vident. These trends are similart ot het rends
+observed in reference 3.
+Drag Force
+The effect of the test parameters on the developedd ragf orce Fd is presented
+in figure 8 where thed ragf orce is measured parallel to the wheelp lane. When the
+yaw angle is heldc onstant,d ragf orceg enerallyi ncreasesw itht irev erticall oad.
+Increasing the yaw angle while holding the vertical load constant generally decreases
+thed ragf orce. For thel ightlyl oadedc ase (44.5 kN ( 10 000 lbf 1, a minimum drag
+force is observeda round 8O; and for the heavily loaded case (1 33 kN (30 000 lbf ) 1, a
+peak dragf orce is observed at approximately 6O. Dividingt hed ragf orce by the
+respective tire verticall oadp roducest hed rag-forcef rictionc oefficient pd, and
+values of thisc oefficienta rep resentedi nf igure 9. These coefficientsr epresent
+rollingr esistancev alues, and theira bsolutev alues are usually below 0.05. Con-
+siderable scatter is observed in the data for small yaw angles( lesst han 2 O ) , and no
+discerniblet rendsa ree stablishedi nt his yaw-angle range.F orf ixed yaw angles
+between and 1 2 O , pd increasesw ithi ncreasingv erticall oad. When thev ertical
+4 O
+load is heldc onstant, pd generallyd ecreases when the yaw angle is increased from
+4 O t o 1 2 O . For the 66.7-kN (150 00-lbf)v erticall oadc ase, a minimum pd value is
+observed between IOo and 1 2 O ; and fort heh eavilyl oadedc ase, a maximum pd value
+is observedb etween 4O and 6ON . o trends due to variation in the grounds peed are
+observedf o er i ther Fd or pd.
+Aligning Torque
+Aligningt orque MZ is defineda st het orqued evelopeda boutt hes teeringa xis
+of ya a wed tire.P ositive MZ is considereds elf-aligning;t hat is, it tends t o
+reduce yaw angle.A ligningt orquesf ort heS huttleO rbitern ose-gear tire arep re-
+sentedi nf igure 10. The figure shows that when the yaw angle is heldc onstant,
+aligningt orqueg enerallyi ncreasesw ithi ncreasingv erticall oad.T hist rend is
+reversedf ort hel ightlyl oadedt ire at high yaw angles. When verticall oad is held
+constant and yaw angle is increased from zero,a ligningt orquei ncreasesr apidly,
+reaches a maximum, and thend ecreasesw ithf urtheri ncreasesi n yaw. Fors everal
+conditions,s pecifically when the tire was lightlyl oaded and at high yaw angles,t he
+torque is negative;t hat is, no longers elf-aligning.I ng eneral,t hea ligning
+torquea ppears t o reach a maximum value at yaw angles between 2 O and 6O. Figure 10
+also shows thata ligningt orque is insensitivet ov ariationsi n grounds peed.T hese
+trends are consistentw ithd ata from references 3 and 6.
+Overturning Torque
+The torque which tends to tilt the wheel plane away from the vertical is
+referred t o as overturningt orque Mx. The carpetp lot of figure 11s h ows the
+effectst hatv erticall oad and yaw angleh ave on Mx over a range of grounds peed.
+A t small yaw angles (less than 4O 1 the overturning torque reaches peak values for
+5
+
+
+
+=== PDF PAGE 8 ===
+tirev erticall oads between 89 kN and 133 kN (20 000 lbf and 30 000 lbf);a th igher
+yaw anglest heo verturningt orquei ncreasesw ithi ncreasingv erticall oad.F igure 1 1
+also shows that,a se xpected, an increase i n yaw angle a t a fixed vertical load
+increasest heo verturningt orque and that the rate of increaseg enerallyi ncreasesa s
+thev erticall oad becomes larger. These trendsa res imilar t o thoser eported i n
+reference 4. As i n thec ase of theo therc haracteristics,t herea ppearst o be no
+discernible effects due t o ground-speed variations.
+Friction-Force Moment Arm
+The friction-force momena tr m q is thed istance from thef riction-force
+resultant vector to the steering axis and is consideredp ositive when the friction
+forcea ctsa long a line behindt hes teeringa xis. The friction-forcer esultant
+vector and momenat rm represent a forces ystem which is statically equivalent to the
+actualf orces and moments i n the-footprint.F riction-force moment arms computed from
+thed ata of these tests are plotted i n figure 12 t o show thee ffect of thev arious
+t e s t parameters. Them omenat rm increases with increasingv erticall oad on the tire
+and generallyd ecreasesw ithi ncreasing yaw angle. Thme omenat r m is insensitivet o
+ground-speed variations. A t high yaw angles and atl ightl oads, q is negative,a s
+expected,s incet hea ligningt orque( fig. 10) is negativea tt heset estc onditions.
+Center-of-PressureS hift
+Littlei nformation is available i n the literature on lateral movemenot f the
+center of presswe i n the tire footprint undery awed-rollingc onditionsb ecause of
+thes everei nstrumentation demands toa cquiret hatp arameter. However, measurements
+of thel ateralc enter-of-pressures hift yc were obtained i n thisi nvestigation
+and arep resented i n figure 13 as a function of verticall oad and yaw angle. For yaw
+angles below 8O, yc appears t o be fairlyi nsensitivet ov ariations i n thev ertical
+load; and for yaw angles above 8 O , yc appears toi ncrease with increasingv ertical
+,
+load. AS the yaw angle is increased from Oo yc increasesr apidly,b utt her ate
+of increaser educesa tt heh igher yaw angles. For thel ightlyl oadedc ase, ap eak
+i n yc is observed a t a yaw angle of about 8O. Once again, yc appears t o be
+insensitivet o ground-speed variations. The variation of ycw ith yaw angle and its
+insensitivity to ground-speedc hanges arec onsistentw itht hed ata of reference 3.
+CONCLUDING REMARKS
+An experimental investigation was conducted to evaluate the cornering charac-
+teristics of the 32 X 8.8 nose-gear t i r e of the Space ShuttleO rbiter. Dataw ere
+obtained on a dry concrete runway at nominalg rounds peedsr anging from 50 t o
+100 knots and overa r ange of tire vertical loads and yaw angles which span the
+expectede nvelope of loads and yaw angles t o be encounteredd uringS paceS huttle
+landingo perations. The corneringc haracteristicsi nvestigatedi ncludeds ide and
+dragf orces and friction coefficients, aligning and overturningt orques,f riction-
+force moment arm, and thel ateralc enter-of-pressures hift.
+The results of thisi nvestigationi ndicatet hatt hec orneringc haracteristics of
+the Space Shuttle nose-gear tire are insensitive to variations i n grounds peedo ver
+the ranget ested. The effects on corneringc haracteristics of variations i n the tire
+6
+
+
+
+=== PDF PAGE 9 ===
+verticall oad and yaw anglea rea se xpected.T rendso bserved are consistentw ith
+trendso bservedd uringp reviousc ornering tests involving other tire sizes.
+LangleyR esearchC enter
+NationalA eronautics andS pace Administration
+Hampton, VA 23665
+Augus1t 3, 1981
+REFERENCES
+1. Standardf or Metric Practice. E 380-79, American SOC. Testing & Mater., c.1980.
+2. Tanner,J ohn A.: Fore-and-Aft Elastic Response Characteristics o3f 4 x 9.9,
+Type VII, 14 Ply-RatingA ircraft Tires of Bias-ply,B ias-Belted, and
+Radial-BeltedD esign. NASA TN D-74491 , 974.
+3. Tanner, John A.; Stubbs, Sandy M. ; and McCarty, John L. : Static and Yawed-
+Rolling Mechanical Properties of Two Type V I 1 AircraftT ires. NASA TP-1863,
+1981.
+4. Alfaro-BouE, milioa; nd Vauqhan, Victor L., Jr.: LightA irplaneC rash Tests
+a t Impact Velocities of 13 and 27 m/sec. NASA TP-1042, 1977.
+5. Smiley,R obert F.; and Horne, Walter B. : Mechanical Properties of Pneumatic Tires
+With SpecialR eference t o Modern Aircraft Tires. NASA TR R-64, 1960.
+(Supersedes NACA TN 4110.)
+6. Tanner, John A.; andD reher,R obert C.: CorneringC haracteristics oaf
+40 x 14-16T ype VI1 Aircraft Tire and a Comparison With Characteristics of a
+C40 x 14-21 CantileverA ircraftT ire. NASA TN D-73511, 973.
+7
+
+
+
+=== PDF PAGE 10 ===
+I
+TABLE I.- SUMMARY OF TEST CONDITIONS AND TIRE CORNERING CHARACTERISTICS
+VI FZ Fd YC 9
+-
+knots lbf k N lkb Nf kN lbf N-m in-lbf N-mi n-lbf cm in. cm in.
+(a) (a) (a)
+50 22.24 5000 0.00 0 ****N/fl**** 224.0 1982 -356 -3147 ****N/fl**** ****N/fl****
+44.48 10000 .59 132 ****N/fl**** 472.8 4185 -89 -787 ****N/R**** ****N/fl****
+66.72 15000 .20 44 ****N/fl**** 298.6 2643 -444 -3933 ****N/fl**** ****N/fl****
+88.96 20000 .98 220 ****N/R**** 373.3 3304 -89 -787 ****N/fl**** ****N/fl****
+51 22.24 5000 .41 93 ****N/R**** 435.5 3855 187 1652 ****N/R**** ****N/fl****
+44.48 10000 .82 185 ****N/fl**** 383.3 3392 249 2203 ****N/fl**** ****N/fl****
+66.72 15000 .96 2 16 ****N/fl**** 592.3 5242 373 3304 ****N/fl**** ****N/fl****
+88.96 20000 .96 216 ****N/R**** 540.0 4780 187 1652 ****N/fl**** ****N/fl****
+111.21 25000 .96 216 ****N/R**** 487.8 43 17 0 0 ****N/fl**** ****N/fl****
+133.45 30000 1.23 278 ****N/fl**** 487.8 43 17 187 1652 ****N/fl**** ****N/R****
+78 22.24 5000 0.00 0 ****N/fl**** 298.6 2643 -267 -2360 ****N/R**** ****N/R****
+44.48 I0000 .39 88 ****N/R**** 373.3 3304 - 178 -1573 ****N/fl**** ****N/fl****
+66.72 15000 .20 44 ****N/fl**** 547.5 4846 0 0 ****N/fl**** ****N/R****
+88.96 20000 .98 220 ****N/fl**** 398.2 3524 89 787 ****N/fl**** ****N/fl****
+111.21 25000 .98 220 ****N/fl**** 423.1 3744 267 2360 ****N/fl**** ****N/R****
+133.45 30000 .98 220 ****N/R**** 448.0 3965 -267 -2360 ****N/R**** ****N/fl****
+104 22.24 5000 .20 44 ****N/R**** 124.4 1101 -178 - 1573 ****N/fl**W* ****N/fl****
+44.48 10000 .59 132 ****N/fl**** 224.0 1982 0 0 ****N/fl**** ****N/fl****
+66.72 15000 .78 176 ****N/fl**** 248.9 2203 0 0 ****N/fl**** ****N/fl****
+88.96 20000 .78 176 ****N/fl**** 273.8 2423 178 1573 ****N/fl**** ****N/R****
+111.21 25000 .98 220 ****N/R**** 273.8 2423 -178 -1573 ****N/fl**** ****N/fl****
+133.45 30000 .98 220 ****N/fl**** 248.9 2203 0 0 ****N/fl**** ****Nifl****
+-.
+43 44.48 10000 4.51 1013 2.69 6 04 373.3 3304 1600 14160 13 -.05 7.16 2.82
+66.72 15000 6.27 1410 1.46 327 497.7 4405 231 1 20453 . I 3 .05 7.67 3.02
+88.96 20000 7.64 1718 2.69 604 647.0 5727 2933 25960 .33 .I3 7.80 3.07
+111.21 25000 8.23 1850 4.31 969 796.4 7048 2933 25960 .23 .09 8.56 3.37
+133.45 30000 7.64 1718 3.08 692 945.7 8370 2844 25 173 .28 .ll 11.38 4.48
+-.
+75 22.24 5000 3.14 705 .17 38 273.8 2423 1155 10227 15 -.06 8.43 3.32
+44.48 10000 5.09 1145 1.96 44 1 448.0 3965 1778 15733 0.00 0.00 8.56 3.37
+66.72 15000 7.25 1630 2.52 566 572.4 5066 2666 23600 .20 .08 7.54 2.97
+88.96 20000 7.84 1762 2.69 604 746.6 6608 2933 25960 .28 .ll 9.19 3.62
+111.21 25000 7.84 1762 4.26 957 871.0 7709 2755 24386 .I5 .06 9.60 3.78
+133.45 30000 7.64 1718 4.20 944 995.5 881 1 2755 24386 .20 .08 11.51 4.53
+100 1 22.24 5000 3.14 705 .28 63 273.8 2423 1155 10227 0.00 0.00 8.05 3.17
+44.48 10000 5.49 1233 1 .O1 227 448.0 3965 2044 18093 -.05 -.02 8.05 3.17
+66.72 15000 7.64 1718 2.13 478 547.5 4846 2844 25 173 . 20 , .08 7.04 2.77
+88.96 20000 8.23 1850 2.69 604 746.6 6608 3022 26746 .23 .09 8.69 3.42
+111.21 25000 8.03 1806 2.91 654 895.9 7930 2933 25960 .20 .08 10.36 4.08
+133.45 30000 7.84 1762 3.70 83 1 1020.3 903 1 2755 24386 .I5 .06 11.76 4.63
+2 52 22.24 5000 5.49 1233 .34 76 298.6 2643 2222 19666 .43 .17 5.49 2.16
+44.48 10000 10.39 2335 1 .O1 227 572.4 5066 4355 38546 1.40 .55 5.49 2.16
+66.72 15000 13.91 3128 1.62 365 821.3 7269 5599 49559 1.17 .46 5.77 2.27
+88.96 20000 16.07 36 12 2.24 503 1169.7 10352 6222 55066 1.19 .47 7.67 3.02
+111.21 25000 15.87 3568 2.91 654 1493.2 13216 6399 56639 1.04 .41 9.19 3.62
+133.45 30000 15.09 3392 2.74 617 1742.1 15419 6 133 54279 .97 .38 11.13 4.38
+-lL
+a
+Notation N/A refers to data not available.
+
+
+
+=== PDF PAGE 11 ===
+TABLE I.- Continued
+v. 9 , FZ F, Fd M, yc
+. .
+1 ~~ ~~
+knots deg kN lbf kN lbf kN lbf N-m in-lbf N-rn in-lbf cm in. cm in. '
+l- '
+76 44.48 10000 10.78 2423 .17 38 472.8 4 185 4266 37760 .76 .30 4.22 1.66
+66.72 15000 14.11 3 172 1.96 441 796.4 7048 551 1 48773 .76 .30 5.36 2.11
+88.96 20000 15.87 3568 3.14 705 1095.0 9692 6 133 54279 .99 .39 6.78 2.67
+111.21 25000 16.07 36 12 4.42 994 1418.5 12555 6222 55066 .84 .33 8.43 3.32
+133.45 30000 15.09 3392 3.92 881 1692.3 14978 6 133 54279 .89 .35 10.49 4.13
+101 22.24 5000 5.88 1322 1.57 352 273.8 2423 2400 2 1240 1.07 .42 3.84 1.51
+44.48 10000 10.58 2379 1 .O1 227 448.0 3965 4355 38546 1.55 .61 4.34 1.71
+66.72 15000 14.30 32 16 2.80 629 746.6 6608 5955 52706 1.45 .57 4.98 1.96
+88.96 20000 15.28 3436 3.36 755 1 1 19.9 99 12 6 133 54279 1.40 .55 7.29 2.87
+111.21 25000 15.87 3568 3.81 856 1443.4 12775 631 1 55853 1.17 .46 8.81 3.47
+133.45 30000 14.70 3304 4.65 1045 1717.2 15198 5777 51 133 1.04 .41 11.13 4.38
+53 44.48 10000 18.03 4053 2.74 617 423.1 3744 7288 64506 2.21 .87 2.44 .96
+66.72 15000 25.28 5683 .45 101 671.9 5947 10310 91252 2.36 .93 2.69 1.06
+88.96 20000 29.20 6564 1.74 390 1269.2 1 1233 12088 106986 2.31 .91 4.34 1.71
+111.21 25000 29.79 6696 2.58 579 1816.7 16079 12443 110132 2.11 .83 6.02 2.37
+133.45 30000 27.83 6256 4.03 906 2488.7 22026 11910 105412 1.96 .77 8.81 3.47
+77 44.48 10000 20.18 4537 1.12 252 298.6 2643 7999 70799 1.83 .72 1.52 .60
+66.72 15000 26.26 5903 .28 63 746.6 6608 10755 95 186 2.31 .91 2.82 1.11
+88.96 20000 29.59 6652 1.90 428 1368.8 121 15 11999 106199 2.24 .88 4.60 1.81
+111.21 25000 29.59 6652 3.92 881 2015.8 1784 1 12088 106986 2.16 .85 6.78 2.67
+133.45 30000 27.63 621 1 5.82 1309 2588.2 22907 11910 105412 1.80 .71 8.56 3.37
+102 66.72 15000 25.67 577 1 3.81 856 895.9 7930 10310 9 1252 2.08 .82 3.58 1.41
+88.96 20000 29.98 6740 3.14 705 1319.0 11674 11732 1a3839 1.96 .77 4.47 1.76
+111.21 25000 29.79 6696 4.37 982 1791.8 15859 12266 108559 2.08 .82 5.89 2.32
+133.453 0000 29.20 6564 5.21 1171 2488.7 22026 11643 103052 1.83 .72 8.43 3.32
+-. -.
+72 44.48 10000 22.14 4978 -1 .O1 -227 -49.8 -44 1 862 1 76306 1.35 .53 25 la
+66.72 15000 31.55 7093 .06 13 273.8 2423 12710 1 12492 2.36 .93 .89 .35
+88.96 20000 38.60 8678 .84 189 671.9 5947 15554 37665 2.77 1.09 1.65 .65
+111.21 25000 41.35 9295 3.36 755 1592.7 14097 1662 1 47 105 2.72 1.07 3.84 1.51
+133.45 30000 41.35 9295 4.37 982 2488.7 22026 16710 47892 2.67 1.05 6.02 2.37
+75 44.48 10000 24.28 5458 1.14 256 505.2 447 1 10017 88656 2.95 1.16 2.06 .81
+66.72 15000 31.27 703 1 1.18 264 783.9 6938 13252 1 1729 1 3.43 1.35 2.51 .99
+88.96 20000 36.35 8 172 2.35 529 1550.4 13722 15679 138767 3.63 1.43 4.29 1.69
+111.221 5 000 37.04 8326 3.64 819 2247.3 1 9890 15865 140419 3.38 1.33 6.10 2.40
+133.45 m000 36.21 8141 5.29 1189 2944.1 26057 1574 1 139317 3.07 1.21 8.15 3.21
+104 88.96 20000 37.86 851 1 1.92 432 940.7 8326 151 19 13381 1 2.24 .88 2.51 .99
+1 1 1.2 1 25000 39.78 8943 2.86 643 1411.1 12489 15990 141520 2.36 .93 3.48 1.37
+133.45 30000 40.05 9004 4.62 1040 2473.7 2 1894 16736 148128 2.69 1.06 6.17 2.43
+101 44.48 10000 24.83 558 1 -.-24 a4 17.4 154 10639 94 163 4.04 1.59 0.00 0.00
+66.72 15000 33.47 7524 .55 123 574.9 5088 14372 127203 4.29 1.69 1.70 .67
+88.96 20000 36.49 8203 1.92 432 1149.8 10176 15679 138767 3i84 1.51 3.12 1.23
+111.21 25000 36.90 8295 3.37 758 1985.9 17577 15927 140969 3.58 1.41 5.46 2.15
+133.45 30000 35.12 7894 4.70 1057 2909.2 25749 154301 36564 3.33 1.31 83..2 234
+
+
+
+=== PDF PAGE 12 ===
+TABLE I.- Continued
+v, FS Fd Mz Y c
+knots ]cN lbf kN lbf N-m in-lbf cm in. cm in.
+75 25.24 5674 -.51 -115 -34-83. 048 4 1.50 .59 -1.35 --..5 3
+34.16 7678 .24 53 -156.8 -1388 2.44 .96 -.46 18
+42.11 9467 .59 132 296.1 2621 3.53 1.39 .71 .28
+44.58 la022 4.19 943 1254.3 11 101 3.51 1.38 2.87 1.13
+44.72 10053 5.88 1322 2404.0 21278 3.61 1.42 5.28 2.08
+79 23.73 5335 .a8 18 69.7 617 3.81 1.50 .28 . l l
+3747.4 403 .55 123 191.6 1696 4.50 -77 .64 .25
+39.37 8850 1.53 344 609.7 5396 4.60 .81 1.60 .63
+42.52 9559 2.90 652 1167.2 1a33a 4.29 .69 2.77 1.09
+4925.9 606 4.51 18x3 1985.9 17577 3.84 .51 4.65 1.83
+1a s 43.62 9806 -.04 -9 92158 4.5 3.15 .24 .18 .07
+451.40 02 a7 2.51 564 321737 .56 3.02 .19 I .7a .67
+48.15 10824 2.82 634 189186. 880 6 3.56 .4a 3.58 1.41
+100 26.34 5921 -.55 -123 -47-04. 41 63 2.06 .B1 -1.70 -.67
+35.53 7987 1.18 264 -209-.1 08 50 2.84 1.12 -.53 -.21
+42.11 9467 3.49 784 226.5 2004 3.58 1.41 .64 .25
+46.23 10392 2.67 599 1 ~ 6 2 . 7 9405 3.94 1.55 2.24 .88
+441.08 058 4 5.92 1330 2073. a 18348 3.86 1.52 4.57 1 .Ea
+101 23.18 5211 1.14 256 52.3 463 4.42 1.74 0.00 0. aa
+83057. 994 1.41 317 139.4 1233 4.11 1.62 .46 .18
+42.25 9498 2.78 626 731.7 6476 4.65 1.83 1.70 .67
+1 44.99 10115 3.61 81 1 1655.0 14648 4.72 1.86 3.05 1.20
+1 43.62 9806 5.53 12 42 2107.9 18656 4.04 1.59 4.83 1.90
+-.
+74 35.94 8079 1.57 352 -52-24. 66 26 3.68 .45 -1.42 56
+48.15 0824 3.61 81 1 69.7 617 4.67 .84 .18 . a 7
+1 52.54 181 1 4.70 1a 5 7 522.6 4626 4.78 .88 .99 .39
+1 54. a4 6.15 13 83 1 376.2 12181 4.90 .93 2.51 .99
+74 32.37 7278 .59 132 3.28 .29 -.71 -.28
+43.07 9683 1. la 247 4.47 .76 .36 .14
+1 49.66 1 1163 2.59 58 1 4.80 .89 1.42 .56
+1 52.40 1 1780 3.80 855 1 4.88 .92 3.05 1.20
+98 37.31 .16 35 -783.9 -6938 2.87 .13 -2.16 -.E5
+1.57 352 -627.1 -5551 4.17 .64 -1 - . . 3 5 "-5.3
+1.92 432 -296.1 -2621 4.47 .76 64 25
+4.31 969 559224 .23 4.78 .88 1.17 .46
+100 33.61 7555 .24 53 -174.2 -1542 3.68 1 .45 -.53 -.21
+42.39 9529 1.21 273 191.6 1696 4.70 1 .85 .46 .18
+45.13 10145 1.92 432 487.8 4317 4.67 1.84 1 .a7 .42
+46. sa 10454 3.53 793 877710 .90 4.42 1.74 2.16 .85
+76 33.06 7432 .63 14 1 -261.3 -2313 4.24 1.67 -
+-
+.
+.
+E 1 --..3 2
+43.21 9714 1.33 3 aa -156.8 -1388 5.16 2.03 .3 6 14
+52.95 1 1903 2.43 546 4635 2.3 5.31 2-09 l a .04
+57.61 12952 7637. 4 1 5s7a48 .89 5.82 2.29 .39 .99
+
+
+
+=== PDF PAGE 13 ===
+
+
+
+
+=== PDF PAGE 14 ===
+TABLE 11.- BICUBIC
+[Characteristic = Bo + BIFz + B2~, 2 + B 3 ~ 3Z
+Coefficientos f B for -
+I - ... . -B l B2 @3 B4
+7 - 3 L i 4 1 6 X lo3 9.4981 X -7.8146 X lo-' -4.0600 X 3.3435 X lo3
+IU.S. (-7.5123 X lo2) (9.4981 X :-3.4761 X (-8.0333 X (7.5165 X lo2)
+SI -3.1045 X lo-' 2.3555 X loe7 -3.7580 X 1.6522 X 0.16670
+pS
+U.S. (-3.1045 X lo-' (1.0478 X -7.4358 x 10-11 (1.4542 X (0.16670)
+-~.
+Fd SI 9.4574 x 102 1.7911 X 1.9823 X -1.5041 X -5.8040 X lo2
+N (lbf)
+U.S. (2.1261 X lo2) (1.7911 X (8.8179 X (-2.9762 X -1.3048 x lo2)
+SI 3.8969 X 2.5601 x lo-' -3.8621 X 1 0 - l ~ -3.9400 X -9.9506 X
+U.S. (3.8969 X (1.1388 x -7.6418 X -3.4678 X -9.9506 X loe3
+SI 1.9507 X 10 8.2103 X -3.2516 X lo-' -1.9424 X 1.7663 X lo2
+U.S. (1.7265 X lo2) (3.2324 x -5.6944 X -1.5131 X (1.5633 X- ~ lo3)
+3.0389 X -1.3274 X -7.4122 X 7.1965 X lo2
+- t (1.1964) -2.3246 X -5.7741 X 10-l' (6.3694 X lo3)
+SI -1.3149 2.1476 X -2.3572 X 10-l' 9.3808 X 8.3236 X 10
+cm fin.) U.S. (-5.1769 X 10-1 (3.7611 x -1.8363 X (3.2506 X (3.2770 X 10-l)
+I ~
+q. 1.1223 X 10 -7.2742 X 6.8968 X 10-l' -4.2993 X -2.9192
+cm (in.)
+-1.2739 X :5.3726 X lo-') - 1.1493)
+L
+aBoundaryv alues of characteristic, 0 when FZ = 30 000, 25 000, 20 000, 15 000, 10 000, 5000, and
+0 lbwf ith J, = Oo; and when $ = lo, 2", 4O, 6O, 8O, loo, and 12O with F, = 0 for a totalo f
+14 additionalp ointst ow eightb oundary.
+-bBoundaryv alueso fc haracteristic, 0 when F, = 30 000, 25 000, 20 000, 15 000, 10 000, and 5000 lbf
+with J, = Oo; repeatedf or a totalo f 167 additionalp ointst ow eightb oundary.
+'No boundaryv aluew eightingu sed.
+dBoundaryv aluesu sedi n( a)a bover epeatedf or a totalo f 84 additionalp ointst ow eightb oundary.
+12
+
+
+
+=== PDF PAGE 15 ===
+Coefficients of B for - T
+Number ofd ata Boundary
+~
+pointsu sed londitior
+B5 '6 %7 B9
+-4.0866 9.6513 6.9333 X lo-' -9.0677 X -1.6509 X 139 (a)
+-9.1871 X 10-l) (2.1697) (6.9333 X lo-' (-9.0677 X (-7.3436 X
+~
+-1.2407 X lo-' 1.1631 X -5.4298 X 1.4449 X -3.7037 X 139
+-1.2407 x lo-') (1.1631 X -2.4153 X (2.8590 X '-3.2598 X
+~
+6.7920 X 10 1.0984 X 10-1 -1.0844 X -8.0974 X 6.8798 X lo-' 117
+(1.5269 X 10) (2.4694 X lo-') -1.0844 X (-8.0974 X (3.0603 X
+~~
+3.3772 X loW4 1.5060 X 9.0355 X lo-' -6.8720 X lo-' 1.7479 X 117
+(3.3772 X (1.5060 X loW5) (4.0192 X (-3.0568 X (3.4585 x 10-12
+-6.2965 x 10 4.9674 3.8097 X -7.0523 X 2.8409 X 139
+-5.5729 X 10') (4.3965 X 10) (1.4999 X 10-1 (-2.7765 X lo-') (4.9751 x
+~~
+-1.0123 X 10' 3.5308 3.5601 X lo-' -9.2192 x 10-4 -7.2382 X 139
+-8.9600 X 10') (3.1250 x 10) ( 1.4016) (-3.6296 X lo-') [-1.2676 X lop5)
+-9.8064 X lo-' 9.6713 X 2.7235 X 5.1351 X -7.6350 X 117
+-3.8608 X lo-') (3.8076 X (4.7695 x (8.9930 X lom7) :-2.6742 X 10-l'
+.
+1.8707 X 10-1 -1.5328 X 1.6389 X -1.2566 X -1.8610 X 117
+(7.3653 X lo-') -6.0346 X (2.8701 X (-2.2007 X :-1.4497 X 10-l'
+~
+13
+
+
+
+=== PDF PAGE 16 ===
+L-81-3256.1
+Figure 1.- New and worn treadc ondition of three-groove, 32 x 0.8, type VII, nose-gear test
+t i r e of Space Shuttle.
+
+
+
+=== PDF PAGE 17 ===
+L-69-5860 2
+Figure 2.- Photograph of carriagew itht est-wheel assembly installed.
+
+
+
+=== PDF PAGE 18 ===
+.i
+L-80-4387
+Figure 3.- Photograph of test tire and instrumented dynamometer.
+
+
+
+=== PDF PAGE 19 ===
+n
+VERTICAL-LOAD BEAM
+D M - L O A D BEAM--,
+C"
+rl
+FORWARD
+7 S I DE-LOAD BEAM
+\VERTlCAL-LOAO B E A M 7
+VERTICSAID L,E , AND DRAG
+x V ' \ F @\ *
+ACCELEROMETERS
+\ .
+-
+-. "
+Figure 4.- Schematic drawing of dynamometer details.
+
+
+
+=== PDF PAGE 20 ===
+Fz, Ibf
+6o - (a) Unsmoothed.
+12 x 103 0 10 20 30 x lo3
+40- a -
+P (e) Unsmoothed.
+3
+.10
+20 4 . . 12 x
+z
+Y
+.-.
+U* 0 ' '
+40
+a
+.a-
+-0
+v,
+20 20 I-
+4 u - 4
+(c) Unsmoothed.
+J-J
+.a- 103
+-0
+v)
+50 1
+1
+(d) Smoothed./
+1
+30 x lo3
+"
+0 1 150 2 100 0 50
+Time, sec Verticafl o rce, Fz, kN
+- ,
+Figure 5. Data fairingt echnique. Yaw angle IOo ; grounds peed, 100 knots.
+
+
+
+=== PDF PAGE 21 ===
+70 - V, knots
+50 - 15 x lo3
+75
+a
+100
+-
+60
+50
+10
+”
+40
+30
+5
+20
+10
+0
+0
+Vertical load, Fz, and yaw angle, $
+Figure 6.- Variation of side force with vertical load and yaw angleo ver a range of ground speed.
+
+
+
+=== PDF PAGE 22 ===
+h,
+0
+.6 V, knots
+0 50
+0
+15
+n
+100
+.5
+aJ
+V
+L
+0
+L
+.a-J I
+U
+m .2
+.1
+0
+Vertical load, Fz, and yaw angle, @
+Figure 7.- Variation of side-force friction coefficient with vertical load and yaw angle Overa
+range of ground speed.
+
+
+
+=== PDF PAGE 23 ===
+a - V, knots
+50
+75
+n
+100 3
+-. 1.5 x 10
+6 -
+-
+1.0
+4
+- -z
+5.
+2 b
+LL
+0 0
+-2
+-.5
+Vertical load, Fz, and yawa ngle, rC,
+Figure 8.- Variation of drag force with vertical load and yaw angleo vera r ange of qround speed.
+
+
+
+=== PDF PAGE 24 ===
+.08 V, knots
+0 50
+0
+75
+n
+n
+100
+o
+o
+-06
+n
+0.4
+.02
+I
+0
+44.5 (10)’ &
+i
+-.02 I
+Vertical load, Fz, and yawa ngle, #
+Figure 9.- Variation of drag-force friction Coefficient With Vertical load and yaw angle over
+a range of ground speed.
+
+
+
+=== PDF PAGE 25 ===
+3 - (I, = 4O (I, = '6 V, knots
+0 50 25 x lo3
+0
+75
+n
+100
+20
+15
+0
+-5
+n A
+a
+-1 I
+-10 0
+Vertical load, Fz, and yaw angle, (I,
+h,
+W
+
+
+
+=== PDF PAGE 26 ===
+V, knots
+50
+1
+75
+-
+100 250 x lo3
+200
+150
+100
+50
+0 0
+Vertical load, Fz, and yaw angle, 0
+Figure 11.- Variation of overturning torque withv ertical load and yaw angleo ver
+a range of ground speed.
+
+
+
+=== PDF PAGE 27 ===
+- 6
+15 - V, knots
+50
+15
+kN (Ibf) n n
+100
+- 4
+10 c
+0
+0
+Vertical load, Fz, and yaw angle, fl
+Figure 12.- Variation of friction-force moment armw ith vertical load and yaw angle Over
+a range of ground speed.
+
+
+
+=== PDF PAGE 28 ===
+6 V, knots
+0 50
+0 15
+n
+100 1 0
+5
+2*
+t
+4 1*75
+3
+1.0 2
+.-
+4
+V
+2 .75 )r
+.50
+.25
+# =
+0
+-.25
+I
+-1
+Vertical load, Fz, and yaw angle, #
+Figure 13.- Variation of lateral center-of-pressure shift with vertical load y aawn d angle Over
+a range of ground speed.
+
+
+
+=== PDF PAGE 29 ===
+I
+1. Report No. 2. Government Accession No. 3. Recipient's C a t a l o g No.
+NASA TP- 1 9 1 7
+"" . . .
+4. Title and Subtitle
+CORNERING CHARACTERISTICS OF THE NOSE-GEAR I October 1981
+I
+TIRE OF THE SPACSE H UTTLE ORBITER
+6. Performing Organization Code
+505-44-33-01
+...... - ...... . . .. 1 -. - - -. -
+7. Author(s) 8. Performing Organization Report No.
+William A. Voglera ndJ ohn A. Tanner L- 1468 1
+1
+. . - ...... . . . . . . . . ........ 1 10. Work UnitN o.
+9. Performing Organization Name and Address
+NASA Langley Research Center 11. Contract or Grant No.
+Hampton, VA 23665
+~~ . ~ ". .. " ~. . . - "
+12. SponsoringA gencyN amea ndA ddress TechnicalP aper
+NationalA eronauticsa ndS paceA dministration
+Washington, DC 20546
+-- .- . . . - . . .
+~~
+15. Supplementary Notes
+William A. VoglerK: entron International,I nc., Hampton, Virginia.
+John A. TannerL: angleyR esearchC enter.
+An experimentali nvestigation was conducted t o evaluate cornering characteristics of
+the 32 x 8.8 nose-gear tire of the Space ShuttleO rbiter. Data were obtained on a
+dry concrete runway at nominalg rounds peedsr angingf rom 50 t o 100 knotsa ndo ver a
+range of tire vertical loads and yaw angles which spant hee xpectede nvelope of
+loadsa nd yaw angles t o be encounteredd uringS paceS huttlel andingo perations. The
+corneringc haracteristicsi nvestigatedi ncludeds ide andd ragf orcesa ndf riction
+coefficients,a ligninga ndo verturningt orques,f riction-force moment arm, and the
+lateral center-of-pressures hift.R esults of thisi nvestigationi ndicatet hatt he
+cornering characteristics of the Space Shuttlen ose-gear tire are insensitive to
+variationsi n grounds peedo ver the range tested. The effects on cornering
+characteristics of variations in the tire vertical load and yaw angle are as
+expected.T rendso bserveda rec onsistentw itht rendso bservedd uringp revious
+cornering tests involvingo ther tire sizes.
+~~ ~~ . " . -.
+17. Key Words( Suggested by Author(s) ) 18. Distribution Statement
+-
+Nose-gear tire Unclassified Unlimited
+Cornering
+Mechanical properties
+Subject Car tegory 39
+- ~. - - "~
+19. Security Classif. (of this report) 20. Security Classif. (of this page)
+Unclassified Unclassified -
+. . . --
+~~ "
+For sale by the National Technical information Servlce, Sprinefield. Vlrginla 22161
+NASA-Langley, 1981
+
+
+
+=== PDF PAGE 30 ===
+National Aeronauticsa nd THIRD-CLASSB ULKR ATE Postage and Fees Paid
+Space Administration National Aeronautics and
+Space Administration
+NASA451
+Washington, D.C.
+20546
+Official Business
+Penalty for Private Use, $300
+ruKn
+POSTMASTER: If Undeliverabl(e S ection 158
+Postal Manual) Do Not Return

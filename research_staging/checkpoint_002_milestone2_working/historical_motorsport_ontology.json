@@ -1,0 +1,1259 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-29T18:18:34.092Z",
+  "purpose": "Reusable class/era terminology and subject-period validation for all research layers.",
+  "publicationDateRule": "publication_date is independent from subject_period_start/end; a retrospective publication never becomes a contemporary period source.",
+  "provenanceSources": [
+    {
+      "provenanceId": "ONT-SRC-FIA-K-2025",
+      "title": "FIA Appendix K 2025",
+      "publisher": "FIA",
+      "url": "https://www.fia.com/sites/default/files/appendix_k_2025_online_v20250610.pdf",
+      "supports": [
+        "historic period definitions",
+        "Formula Junior/F2/F3/Formula Ford subdivisions",
+        "Group C",
+        "Group 5",
+        "historic American categories"
+      ]
+    },
+    {
+      "provenanceId": "ONT-SRC-FIA-HDB",
+      "title": "FIA Historic Database — period regulations and homologation records",
+      "publisher": "FIA",
+      "url": "https://historicdb.fia.com/front",
+      "supports": [
+        "period Appendix J",
+        "homologation identity",
+        "historic regulation provenance"
+      ]
+    },
+    {
+      "provenanceId": "ONT-SRC-SUPERGT-HISTORY",
+      "title": "SUPER GT official history",
+      "publisher": "GTA / SUPER GT",
+      "url": "https://supergt.net/about-super-gt/history",
+      "supports": [
+        "JGTC began in 1994",
+        "1994 GT1/GT2 terminology",
+        "SUPER GT name from 2005"
+      ]
+    },
+    {
+      "provenanceId": "ONT-SRC-IMSA-GTP",
+      "title": "IMSA official GTP history",
+      "publisher": "IMSA",
+      "url": "https://www.imsa.com/wp-content/uploads/sites/32/2023/05/25/2023_IMSA_UltimateExpression.pdf",
+      "supports": [
+        "original IMSA GTP period 1981-1993"
+      ]
+    },
+    {
+      "provenanceId": "ONT-SRC-TRANSAM",
+      "title": "Trans Am official history",
+      "publisher": "Trans Am",
+      "url": "https://gotransam.com/about/Our-History/59342",
+      "supports": [
+        "Trans-Am first race March 25, 1966"
+      ]
+    },
+    {
+      "provenanceId": "ONT-SRC-FIA-BPR",
+      "title": "FIA InMotion — GT history",
+      "publisher": "FIA",
+      "url": "https://www.fia.com/sites/default/files/publication/file/in_motion_March%2010.pdf",
+      "supports": [
+        "BPR 1994-1996",
+        "FIA GT succession from 1997"
+      ]
+    },
+    {
+      "provenanceId": "ONT-SRC-WRC",
+      "title": "WRC official historical archive and champion profile",
+      "publisher": "WRC Promoter / FIA World Rally Championship",
+      "url": "https://www.wrc.com/en/misc/world-rally-champion-bjoern-waldegard",
+      "supports": [
+        "first official drivers championship 1979",
+        "pre-1979 driver terminology limitation"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "ontologyId": "general_racing_tire",
+      "label": "General Racing Tire",
+      "subjectPeriodStart": null,
+      "subjectPeriodEnd": null,
+      "aliases": [
+        "General racing tire"
+      ],
+      "basis": "NO_HARD_CHAMPIONSHIP_WINDOW",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "general_tire_mechanics",
+      "label": "General Tire Mechanics",
+      "subjectPeriodStart": null,
+      "subjectPeriodEnd": null,
+      "aliases": [
+        "General tire mechanics"
+      ],
+      "basis": "NO_HARD_CHAMPIONSHIP_WINDOW",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "historic_reference",
+      "label": "Historic Racing Reference",
+      "subjectPeriodStart": null,
+      "subjectPeriodEnd": null,
+      "aliases": [
+        "Historic racing reference"
+      ],
+      "basis": "REFERENCE_CONTEXT_ONLY",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_1_1950_1965",
+      "label": "Formula 1 — early World Championship",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1965,
+      "aliases": [
+        "Formula 1"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_1_1966_1981",
+      "label": "Formula 1 — 3-litre/cross-ply-to-radial transition",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Formula 1"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_1_1982_1991",
+      "label": "Formula 1 — turbo/radial slick era",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1991,
+      "aliases": [
+        "Formula 1"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_1_1992_2001",
+      "label": "Formula 1 — 1990s radial slick/grooved transition",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 2001,
+      "aliases": [
+        "Formula 1"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_1_2002_2010",
+      "label": "Formula 1 — grooved-to-slick-return era",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "Formula 1"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_junior_1958_1963",
+      "label": "Formula Junior",
+      "subjectPeriodStart": 1958,
+      "subjectPeriodEnd": 1963,
+      "aliases": [
+        "Formula Junior"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_3_1964_1970",
+      "label": "Formula 3 — 1964-1970",
+      "subjectPeriodStart": 1964,
+      "subjectPeriodEnd": 1970,
+      "aliases": [
+        "Formula 3"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_3_1971_1973",
+      "label": "Formula 3 — 1971-1973",
+      "subjectPeriodStart": 1971,
+      "subjectPeriodEnd": 1973,
+      "aliases": [
+        "Formula 3"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_3_1974_1986",
+      "label": "Formula 3 — 1974-1986",
+      "subjectPeriodStart": 1974,
+      "subjectPeriodEnd": 1986,
+      "aliases": [
+        "Formula 3"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_3_1987_1990",
+      "label": "Formula 3 — 1987-1990",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1990,
+      "aliases": [
+        "Formula 3"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_3_1991_2010",
+      "label": "Formula 3 — 1991-2010",
+      "subjectPeriodStart": 1991,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "Formula 3"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_2_1956_1960",
+      "label": "Formula 2 — 1956-1960",
+      "subjectPeriodStart": 1956,
+      "subjectPeriodEnd": 1960,
+      "aliases": [
+        "Formula 2"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_2_1964_1966",
+      "label": "Formula 2 — 1964-1966",
+      "subjectPeriodStart": 1964,
+      "subjectPeriodEnd": 1966,
+      "aliases": [
+        "Formula 2"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_2_1967_1971",
+      "label": "Formula 2 — 1967-1971",
+      "subjectPeriodStart": 1967,
+      "subjectPeriodEnd": 1971,
+      "aliases": [
+        "Formula 2"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_2_1972_1984",
+      "label": "Formula 2 — 1972-1984",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1984,
+      "aliases": [
+        "Formula 2"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_3000_1985_2004",
+      "label": "International Formula 3000",
+      "subjectPeriodStart": 1985,
+      "subjectPeriodEnd": 2004,
+      "aliases": [
+        "Formula 3000",
+        "F3000"
+      ],
+      "basis": "SERIES_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_ford_1967_1976",
+      "label": "Formula Ford — 1967-1976",
+      "subjectPeriodStart": 1967,
+      "subjectPeriodEnd": 1976,
+      "aliases": [
+        "Formula Ford"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_ford_1977_1981",
+      "label": "Formula Ford — 1977-1981",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Formula Ford"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_ford_1982_1992",
+      "label": "Formula Ford — 1982-1992",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1992,
+      "aliases": [
+        "Formula Ford"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "formula_ford_1993_2010",
+      "label": "Formula Ford — 1993-2010",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "Formula Ford"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "club_single_seater_pre1967",
+      "label": "Club single-seater — pre-Formula Ford",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1966,
+      "aliases": [
+        "Club racing"
+      ],
+      "basis": "CONTEXTUAL_FALLBACK",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "indy_aaa_1950_1955",
+      "label": "AAA Championship Car / Indianapolis",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1955,
+      "aliases": [
+        "Indy",
+        "AAA"
+      ],
+      "basis": "ERA_APPROPRIATE_SANCTION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "indy_usac_1956_1978",
+      "label": "USAC Championship Car / Indianapolis",
+      "subjectPeriodStart": 1956,
+      "subjectPeriodEnd": 1978,
+      "aliases": [
+        "Indy",
+        "USAC"
+      ],
+      "basis": "ERA_APPROPRIATE_SANCTION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "indy_cart_1979_2003",
+      "label": "CART / Indy-car",
+      "subjectPeriodStart": 1979,
+      "subjectPeriodEnd": 2003,
+      "aliases": [
+        "Indy",
+        "CART"
+      ],
+      "basis": "ERA_APPROPRIATE_SANCTION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "sports_racing_1950_1963",
+      "label": "Sports racing / prototypes — 1950-1963",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1963,
+      "aliases": [
+        "sports racing",
+        "prototype"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "gt40_endurance_1964_1969",
+      "label": "GT40-era endurance",
+      "subjectPeriodStart": 1964,
+      "subjectPeriodEnd": 1969,
+      "aliases": [
+        "GT40",
+        "1960s endurance"
+      ],
+      "basis": "CAR_COMPETITION_WINDOW",
+      "provenanceIds": [
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "sports_prototype_1964_1971",
+      "label": "Sports racing / prototypes — 1964-1971",
+      "subjectPeriodStart": 1964,
+      "subjectPeriodEnd": 1971,
+      "aliases": [
+        "sports racing",
+        "prototype"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "sports_prototype_1972_1981",
+      "label": "Sports racing / prototypes — 1972-1981",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "sports racing",
+        "prototype"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_c_1982_1993",
+      "label": "Group C",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1993,
+      "aliases": [
+        "Group C"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "imsa_gtp_1981_1993",
+      "label": "IMSA GTP",
+      "subjectPeriodStart": 1981,
+      "subjectPeriodEnd": 1993,
+      "aliases": [
+        "IMSA GTP"
+      ],
+      "basis": "IMSA_OFFICIAL_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-IMSA-GTP"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "lmp_transition_1993_1999",
+      "label": "Le Mans Prototype transition",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 1999,
+      "aliases": [
+        "LMP",
+        "WSC prototype"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "lmp900_675_2000_2003",
+      "label": "LMP900 / LMP675",
+      "subjectPeriodStart": 2000,
+      "subjectPeriodEnd": 2003,
+      "aliases": [
+        "LMP900",
+        "LMP675"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "lmp1_2_2004_2010",
+      "label": "LMP1 / LMP2",
+      "subjectPeriodStart": 2004,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "LMP1",
+        "LMP2"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "canam_original_1966_1974",
+      "label": "Can-Am — original",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1974,
+      "aliases": [
+        "Can-Am",
+        "Group 7"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "canam_revival_1977_1986",
+      "label": "Can-Am — revival",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1986,
+      "aliases": [
+        "Can-Am revival"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "touring_pre1963",
+      "label": "Touring / saloon racing — pre-1963",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1962,
+      "aliases": [
+        "touring",
+        "saloon"
+      ],
+      "basis": "CONTEXTUAL_FALLBACK",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_2_etcc_1963_1969",
+      "label": "Group 2 / ETCC — 1963-1969",
+      "subjectPeriodStart": 1963,
+      "subjectPeriodEnd": 1969,
+      "aliases": [
+        "Group 2",
+        "ETCC"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_2_etcc_1970_1975",
+      "label": "Group 2 / ETCC — 1970-1975",
+      "subjectPeriodStart": 1970,
+      "subjectPeriodEnd": 1975,
+      "aliases": [
+        "Group 2",
+        "ETCC"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_2_etcc_1976_1981",
+      "label": "Group 2 / ETCC — 1976-1981",
+      "subjectPeriodStart": 1976,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Group 2",
+        "ETCC"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_4_1966_1969",
+      "label": "Group 4 Sports Cars — 1966-1969",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1969,
+      "aliases": [
+        "Group 4"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_4_gt_1970_1981",
+      "label": "Group 4 Special GT — 1970-1981",
+      "subjectPeriodStart": 1970,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Group 4"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_5_1966_1969",
+      "label": "Group 5 Special Touring — 1966-1969",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1969,
+      "aliases": [
+        "Group 5"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_5_sports_1970_1975",
+      "label": "Group 5 Sports Cars — 1970-1975",
+      "subjectPeriodStart": 1970,
+      "subjectPeriodEnd": 1975,
+      "aliases": [
+        "Group 5"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_5_1976_1981",
+      "label": "Group 5 Special Production — 1976-1981",
+      "subjectPeriodStart": 1976,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Group 5"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "transam_1966_1972",
+      "label": "Trans-Am — 1966-1972",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1972,
+      "aliases": [
+        "Trans-Am"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "transam_1973_1981",
+      "label": "Trans-Am — 1973-1981",
+      "subjectPeriodStart": 1973,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Trans-Am"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "transam_1982_2001",
+      "label": "Trans-Am — 1982-2001",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 2001,
+      "aliases": [
+        "Trans-Am"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "imsa_gt_1971_1981",
+      "label": "IMSA GT — 1971-1981",
+      "subjectPeriodStart": 1971,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "IMSA GT"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "imsa_gt_1982_1993",
+      "label": "IMSA GT — 1982-1993",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1993,
+      "aliases": [
+        "IMSA GT",
+        "GTO",
+        "GTU"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "imsa_gt_1994_2001",
+      "label": "IMSA GT/GTS — 1994-2001",
+      "subjectPeriodStart": 1994,
+      "subjectPeriodEnd": 2001,
+      "aliases": [
+        "IMSA GT",
+        "IMSA GTS"
+      ],
+      "basis": "SERIES_PERIOD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-TRANSAM"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_a_1982_1992",
+      "label": "Group A touring — 1982-1992",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1992,
+      "aliases": [
+        "Group A"
+      ],
+      "basis": "FIA_PERIOD_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "group_a_1993_2001",
+      "label": "Group A / production touring — 1993-2001",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 2001,
+      "aliases": [
+        "Group A"
+      ],
+      "basis": "CURATED_PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "dtm_1984_1992",
+      "label": "DTM — Group A era",
+      "subjectPeriodStart": 1984,
+      "subjectPeriodEnd": 1992,
+      "aliases": [
+        "DTM"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "dtm_class1_1993_1996",
+      "label": "DTM / ITC — Class 1",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 1996,
+      "aliases": [
+        "DTM",
+        "ITC"
+      ],
+      "basis": "FIA_HISTORIC_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "dtm_2000_2010",
+      "label": "DTM — silhouette era",
+      "subjectPeriodStart": 2000,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "DTM"
+      ],
+      "basis": "REGULATION_ERA",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-FIA-HDB"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "bpr_1994_1996",
+      "label": "BPR Global GT",
+      "subjectPeriodStart": 1994,
+      "subjectPeriodEnd": 1996,
+      "aliases": [
+        "BPR"
+      ],
+      "basis": "FIA_OFFICIAL_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-BPR"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "early_gt1_1994_1999",
+      "label": "GT1 — 1994-1999 context",
+      "subjectPeriodStart": 1994,
+      "subjectPeriodEnd": 1999,
+      "aliases": [
+        "GT1"
+      ],
+      "basis": "SANCTION_CONTEXT_REQUIRED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-BPR"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "fia_gt_1997_2009",
+      "label": "FIA GT — 1997-2009",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2009,
+      "aliases": [
+        "FIA GT",
+        "GT1"
+      ],
+      "basis": "SANCTION_CONTEXT_REQUIRED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-BPR"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "fia_gt1_world_2010",
+      "label": "FIA GT1 World Championship",
+      "subjectPeriodStart": 2010,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "FIA GT1"
+      ],
+      "basis": "SANCTION_CONTEXT_REQUIRED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-BPR"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "gt2_gts_1994_2004",
+      "label": "GT2 / GTS — 1994-2004 sanction-specific",
+      "subjectPeriodStart": 1994,
+      "subjectPeriodEnd": 2004,
+      "aliases": [
+        "GT2",
+        "GTS"
+      ],
+      "basis": "SANCTION_CONTEXT_REQUIRED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-BPR"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "gt2_gts_2005_2010",
+      "label": "GT2 / GTS — 2005-2010 sanction-specific",
+      "subjectPeriodStart": 2005,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "GT2",
+        "GTS"
+      ],
+      "basis": "SANCTION_CONTEXT_REQUIRED",
+      "provenanceIds": [
+        "ONT-SRC-FIA-BPR"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "jgtc_1994_1999",
+      "label": "JGTC — 1994-1999 (GT1/GT2 terminology)",
+      "subjectPeriodStart": 1994,
+      "subjectPeriodEnd": 1999,
+      "aliases": [
+        "JGTC",
+        "GT1",
+        "GT2"
+      ],
+      "basis": "SUPER_GT_OFFICIAL_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-SUPERGT-HISTORY"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "jgtc_2000_2004",
+      "label": "JGTC — 2000-2004",
+      "subjectPeriodStart": 2000,
+      "subjectPeriodEnd": 2004,
+      "aliases": [
+        "JGTC",
+        "GT500",
+        "GT300"
+      ],
+      "basis": "SUPER_GT_OFFICIAL_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-SUPERGT-HISTORY"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "super_gt_2005_2010",
+      "label": "SUPER GT — 2005-2010",
+      "subjectPeriodStart": 2005,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "SUPER GT",
+        "GT500",
+        "GT300"
+      ],
+      "basis": "SUPER_GT_OFFICIAL_DEFINED",
+      "provenanceIds": [
+        "ONT-SRC-SUPERGT-HISTORY"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "international_rally_pre1973",
+      "label": "International rally — pre-WRC",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1972,
+      "aliases": [
+        "international rally"
+      ],
+      "basis": "TERMINOLOGY_GUARD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "wrc_manufacturers_1973_1978",
+      "label": "World Rally Championship — manufacturers era",
+      "subjectPeriodStart": 1973,
+      "subjectPeriodEnd": 1978,
+      "aliases": [
+        "WRC"
+      ],
+      "basis": "TERMINOLOGY_GUARD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "wrc_1979_1986",
+      "label": "World Rally Championship — 1979-1986",
+      "subjectPeriodStart": 1979,
+      "subjectPeriodEnd": 1986,
+      "aliases": [
+        "WRC"
+      ],
+      "basis": "WRC_OFFICIAL_CONTEXT",
+      "provenanceIds": [
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "wrc_1987_2001",
+      "label": "World Rally Championship — 1987-2001",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 2001,
+      "aliases": [
+        "WRC"
+      ],
+      "basis": "WRC_OFFICIAL_CONTEXT",
+      "provenanceIds": [
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "wrc_2002_2010",
+      "label": "World Rally Championship — 2002-2010",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "WRC"
+      ],
+      "basis": "WRC_OFFICIAL_CONTEXT",
+      "provenanceIds": [
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "rallycross_1967_1981",
+      "label": "Rallycross — 1967-1981",
+      "subjectPeriodStart": 1967,
+      "subjectPeriodEnd": 1981,
+      "aliases": [
+        "Rallycross"
+      ],
+      "basis": "SEPARATE_DISCIPLINE",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "rallycross_1982_2010",
+      "label": "Rallycross — 1982-2010",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "Rallycross"
+      ],
+      "basis": "SEPARATE_DISCIPLINE",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "nascar_1950_1971",
+      "label": "NASCAR stock car — 1950-1971",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1971,
+      "aliases": [
+        "NASCAR"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "nascar_1972_1991",
+      "label": "NASCAR stock car — 1972-1991",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1991,
+      "aliases": [
+        "NASCAR"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "nascar_1992_2010",
+      "label": "NASCAR stock car — 1992-2010",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 2010,
+      "aliases": [
+        "NASCAR"
+      ],
+      "basis": "PERIOD_SUBDIVISION",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "us_gt_pre1971",
+      "label": "US GT / sports racing — pre-IMSA GT",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1970,
+      "aliases": [
+        "US GT",
+        "sports racing"
+      ],
+      "basis": "TERMINOLOGY_GUARD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    },
+    {
+      "ontologyId": "japanese_gt_touring_pre1994",
+      "label": "Japanese GT / touring — pre-JGTC",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1993,
+      "aliases": [
+        "Japanese GT",
+        "Japanese touring"
+      ],
+      "basis": "TERMINOLOGY_GUARD",
+      "provenanceIds": [
+        "ONT-SRC-FIA-K-2025",
+        "ONT-SRC-WRC"
+      ],
+      "publicationDateMustBeStoredSeparately": true
+    }
+  ]
+}

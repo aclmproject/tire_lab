@@ -1,0 +1,2047 @@
+=== PDF PAGE 1 ===
+NASA Technical Paper 3574
+j
+j
+.J /"
+Computational Methods for Frictional Contact
+With Applications to the Space Shuttle Orbiter
+Nose-Gear Tire
+Development of Frictional Contact Algorithm
+John A. Tanner
+April 1996
+
+
+
+=== PDF PAGE 2 ===
+
+
+
+
+=== PDF PAGE 3 ===
+NASA Technical Paper 3574
+Computational Methods for Frictional Contact
+With Applications to the Space Shuttle Orbiter
+Nose-Gear Tire
+Development of Frictional Contact Algorithm
+John A. Tanner
+Langley Research Center • Hampton, Virginia
+National Aeronautics and Space Administration
+Langley Research Center • Hampton, Virginia 23681-0001
+April 1996
+
+
+
+=== PDF PAGE 4 ===
+Acknowledgment
+This report is based on a dissertation submitted to the faculty of
+the school of Engineering and Applied Sciences of The George
+Washington University in partial satisfaction of the requirements for
+the degree of Doctor of Science.
+Available electronically at the following URL address: http://techreports.larc.nasa.gov/ltrs/ltrs.html
+Printed copies available from the following:
+NASA Center for AeroSpace Information National Technical Information Service (NTIS)
+800 Elkridge Landing Road 5285 Port Royal Road
+Linthicum Heights, MD 21090-2934 Springfield, VA 22161-2171
+(301) 621-0390 (703) 487-4650
+
+
+
+=== PDF PAGE 5 ===
+Contents
+Abstract ........................................................................... 1
+Introduction ....................................................................... 1
+Objectives and Scope ................................................................ 2
+Nomenclature ...................................................................... 2
+Mathematical Formulation ............................................................ 4
+Normal Contact Force Formulation ................................................... 4
+Tangential Contact Force Formulation ................................................. 4
+Governing Finite-Element Equations .................................................. 5
+Solution of Nonlinear Algebraic Equations ............................................. 7
+Computational Procedures to Determine Contact-Load Intensities, Contact Areas,
+and Energy Dissipated During Slip .................................................... 7
+Contact Algorithm With Friction ..................................................... 8
+Determination of Contact Area ....................................................... 8
+Special Treatment for Tread Grooves .................................................. 9
+Evaluation of Contact Forces From Load Intensities ...................................... 9
+Evaluation of Energy Dissipated During Slip ........................................... 10
+Computational Procedures for Solving Tire Contact Problem .............................. 10
+Comments on Mixed Models, Perturbed Lagrangian Formulation,
+and Computational Procedure ..................................................... 11
+Numerical Results ................................................................. 12
+Description of Finite-Element Models ................................................ 12
+Convergence Characteristics and Performance of Contact-Friction Algorithm ................. 13
+Relaxation parameter and penalty parameter effects .................................... 13
+Friction coefficient and load step size effects ......................................... 14
+Conclusions ...................................................................... 14
+Appendix A--Fundamental Equations of Shell Theory Used in Present Study .................. 16
+Appendix B--Formulas for Elemental Arrays [F], [S], [G(X)], [M(H, X)],
+[P], [Q], [R],and {go} ........................................................... 18
+Appendix C--Derivation of Newton-Raphson Tangential Operator Equations .................. 22
+Appendix D--Transformation of Elemental Arrays From Shell Coordinates
+to Global Cartesian Coordinates ..................................................... 27
+Appendix E--Details of Shape Functions for M9-4 Finite-Element Model ..................... 28
+References ....................................................................... 30
+Tables ........................................................................... 32
+Figures .......................................................................... 37
+iii
+
+
+
+=== PDF PAGE 6 ===
+
+
+
+
+=== PDF PAGE 7 ===
+Abstract
+A computational procedure is presented for the solution of frictional contact
+problems for aircraft tires. A Space Shuttle nose-gear tire is modeled using a two-
+dimensional laminated anisotropic shell theory which includes the effects of varia-
+tions in material and geometric parameters, transverse-shear deformation, and geo-
+metric nonlinearities. Contact conditions are incorporated into the formulation by
+using a perturbed Lagrangian approach with the fundamental unknowns consisting of
+the stress resultants, the generalized displacements, and the Lagrange multipliers
+associated with both contact and friction conditions. The contact-friction algorithm is
+based on a modified Coulomb friction law. A modified two-field, mixed-variational
+principle is used to obtain elemental arrays. This modification consists of augmenting
+the functional of that principle by two terms: the Lagrange multiplier vector associ-
+ated with normal and tangential node contact-load intensities and a regularization
+term that is quadratic in the Lagrange multiplier vector. These capabilities and com-
+putational features are incorporated into an in-house computer code. Experimental
+measurements were taken to define the response of the Space Shuttle nose-gear tire to
+inflation-pressure loads and to inflation-pressure loads combined with normal static
+loads against a rigid flat plate. These experimental results describe the meridional
+growth of the tire cross section caused by inflation loading, the static load-deflection
+characteristics of the tire, the geometry of the tire footprint under static loading con-
+ditions, and the normal and tangential load-intensity distributions in the tire footprint
+for the various static vertical loading conditions. Numerical results were obtained for
+the Space Shuttle nose-gear tire subjected to inflation pressure loads and combined
+inflation pressure and contact loads against a rigid flat plate. The experimental mea-
+surements and the numerical results are compared.
+Introduction strong enough to cause tire failures during individual
+landing operations (refs. 5 and 6). Therefore, an under-
+Contact-friction problems are inherently nonlinear
+standing of these tire friction forces and the resulting slip
+and path dependent. Nonlinearity occurs partly because
+velocities is critical to the design of aircraft tires for the
+both the contact area and the contact-load intensities are
+next generation of high-performance aircraft, such as the
+not known beforehand and vary during the loading his-
+National Aero-Space Plane and the High-Speed Civil
+tory. Path dependency is a result of the nonconserva-
+Transport.
+tive (irreversible dissipative) character of the frictional
+forces.
+Modeling contact phenomena in the tire footprint is a
+formidable task partly because of difficulty of modeling
+A review of static contact problems presented in ref-
+tire response. Distribution of tractions and the footprint
+erence 1, which includes a bibliography of approxi-
+geometry are both functions of normal, frictional, and
+mately 700 papers, points out that contact problems are
+inflation tire loads. Moreover, the complex mechanisms
+important to thermomechanical stress analyses, fracture
+mechanics, mechanical problems involving elastic foun- of dynamic friction, which allow the tire to develop the
+dations, the mechanics of joints, geomechanics, and tires. necessary steering and braking forces for aircraft control
+during ground operations, are not fully understood
+Contact problems occupy a position of special (ref. 7). The tire analyst thus is forced to choose among
+importance in aircraft tire mechanics because the contact several friction theories. When the tire contact problem
+zone is where the forces are generated that support, includes frictional effects, the solution becomes path
+guide, and maneuver the airplane. Distributions of con- dependent and a unique solution is not guaranteed.
+tact loads and frictional forces define the moments and
+shears that are applied to the landing gear system (ref. 2). The aircraft tire is a composite structure of rubber
+Under rolling conditions, the distribution of sliding and textile constituents that exhibit anisotropic and non-
+velocities within the tire footprint combined with the homogeneous material properties. Normal tire operating
+frictional forces developed by the tire defines the rate of conditions create loads that can produce large deforma-
+energy dissipation associated with the loading conditions tions. Elevated operating temperatures from the com-
+and provides a measure of tire wear (refs. 3 and 4). In the bined effects of material hysteresis and frictional heating
+case of the Space Shuttle orbiter, this wear mechanism is can cause variations in the material characteristics of the
+
+
+
+=== PDF PAGE 8 ===
+tire constituen(trsefs.8-10).Thelaminatedcarcasosf
+problem. Reference 26 summarizes the characteristics of
+the aircrafttire is thick enoughto allowsignificant this algorithm.
+transverse-shdeeafrormations.
+Numerical studies presented for an inflated Space
+Thesefactsandattendandtifficultiesemphasiztehe Shuttle nose-gear tire under static load on a fiat surface
+needtodevelopmodelingstrategieasndanalysismeth- demonstrate the capabilities of the analysis techniques.
+odsthatincludeefficientp, owerfualndeconomiccontact These analyses incorporate both friction and frictionless
+algorithmsIn.tensreesearchhasrecentlyfocuseodnnon- contact. Detailed studies are made of the effects of tire
+linearanalyseosfstaticanddynamicproblemisnvolving tread pattern on the contact-force intensities, the influ-
+contactN. oveltechniquetshathaveemergefdromthese ence of friction coefficient variations on the distribution
+effortsincludesemianalytifcinite-elemenmt odelsfor of tire contact-force intensities, the convergence charac-
+nonlinearanalysisof shellsof revolution(refs. 11 teristics of the contact algorithm, and the history of
+and12),reducemd ethod(srefs.13and14),andoperator energy dissipation in the static footprint.
+splittingtechnique(srefs.15-17).Reference1s4,17,
+and18summarizaepplicationosfthesenewtiremodel- Experimental measurements were carried out on the
+ingtechniques. Space Shuttle orbiter nose-gear tire to define its response
+to combined inflation-pressure and static vertical-loading
+conditions. Experimental procedures used to define the
+Objectives and Scope tire structural response to loading conditions and to mea-
+sure the footprint-force intensities, and empirical proce-
+NASA Langley Research Center tire modeling dures used to define the geometry and construction
+research concentrates on developing an accurate and effi- details of the tire for modeling purposes are discussed.
+cient strategy for predicting aircraft tire responses to a Finally, the analytical results are compared with the
+variety of loading conditions. This research focuses on experimental measurements.
+developing tire contact modeling techniques, and the
+specific objectives of this research are (1) to develop a Reference 27 describes numerical studies, experi-
+contact algorithm with friction effects included to predict mental measurements, and comparisons between analyti-
+tire response to combined inflation-pressure and static cal results and experimental measurements. This report
+vertical-loading conditions, (2) to demonstrate the capa- describes development of this contact algorithm.
+bilities of this algorithm through numerical studies, and
+(3) to validate these numerical results with experimental Nomenclature
+data. Distribution of normal and frictional forces in the
+tire contact zone (or footprint area) is of particular Act nodal contact area with variable
+interest. weighting function (see eq. (20))
+Anode nodal contact area (see eq. (19))
+The contact algorithm is incorporated into a mixed-
+formulation, two-field, two-dimensional finite-element Aquad area of finite-element quadrant
+model based on the moderate-rotation Sanders- (see eq. (18) and fig. 4)
+Budiansky shell theory, including the effects of all, a22, a12, shell compliance coefficients
+transverse-shear deformations, laminated anisotropic (see eq. (4))
+material response, and nonhomogeneous shell character- ass, ao0, aso,
+istics (refs. 19 and 20). A perturbed Lagrangian formula-
+bll, b22, bl2,
+tion (refs. 21 and 22) is the basis for this contact
+algorithm. The Lagrangian formulation uses the precon- gll' g22' gl2
+ditioned conjugate gradient (PCG) iteration procedure
+(refs. 23-25) to determine contact area, distribution of ¢ number of nodal points in contact
+normal force intensities, and allocation of friction force within element
+intensities. A modified version of the Coulomb friction
+portions of shell boundary where
+CG, Cu
+law is incorporated into the contact algorithm in which
+tractions and displacements are
+the friction coefficient at the onset of sliding differs from
+prescribed
+that during sliding. This algorithm also monitors the
+energy dissipated within the sliding portion of the contact cij' dij, f ij tire stiffness coefficients
+zone. In this investigation it will be assumed that the tire (i,j= 1,2,6)
+is loaded on a surface that is much stiffer than the tire,
+thus the surface will be treated as rigid. Hence, the static transverse-shear stiffness coeffi-
+C44, C45, C55
+tire contact problem will be treated as a unilateral contact cients of tire (see eq. (At0))
+
+
+
+=== PDF PAGE 9 ===
+es, eo tangential unit vectors in meridional Qs, Qo transverse-shear stress resultants
+and circumferential directions (see fig. l)
+iF] flexibility matrix for an individual R l, R 2 principal radii of curvature in meridi-
+element onal and circumferential directions
+vector defined in equation (11) r normal distance from tire axis to ref-
+{G(X)} vector of nonlinear terms erence surface
+(see eq. (7)) Is] strain-displacement matrix for an
+{_(X)} vector of nonlinear terms individual element
+(see eqs. (8) and (9)) S meridional coordinate of tire
+{_(X)} vector of nonlinear contributions to (see fig. l)
+the global equations (see eqs. (11 )) IT] transformation matrix
+current gaps T intensity of contact force acting nor-
+n
+mal to contact surface
+_',,o''_vo''_Wo initial gaps
+T resultant contact friction force
+{go} vector of initial gaps for contact r
+element (see eq. (2a))
+{n} vector of stress-resultant parameters Tu, T v intensity of contact friction forces
+tangent to contact surface
+h total thickness of tire
+U strain energy density (strain energy
+nondimensional thickness of tire
+per unit area)
+(see fig. 4)
+energy dissipated during slip at each
+[k] global linear stiffness matrix Uslipu' Uslipv
+iteration (see eqs. (27))
+(see eq. (11))
+energy dissipated during slip
+M s, M O,MsO bending and twisting stress resultants Uslipu, Uslip,,
+over all iterations in a load step
+(see fig. 1)
+(see eqs. (28))
+{M(H, X)} vector of nonlinear terms
+b/_ V_ W displacement components of refer-
+(see eq. (7))
+ence surface of tire in meridional,
+m number of displacement nodes in circumferential, and normal
+element directions (see fig. l)
+N shape functions used for approximat- tangential slip for each iteration (see
+Uslip' Vslip
+ing generalized displacements and eqs. (25))
+Lagrange multipliers
+total tangential slip for each load step
+Uslip' Vslip
+N s, N 0, Nso extensional stress resultants (see eqs. (26))
+n total number of degrees of freedom W external work
+peripheral node degrees of freedom {x} vector of nodal displacements in
+rlcl
+(see eq. (20)) shell coordinate system
+rls, no unit normal to reference surface {2} vector of nodal displacements in
+Cartesian coordinate system
+Pn' Pu' Pv nodal (contact) force
+Cartesian coordinate system
+P load parameter X, y, Z
+{p} normalized external load parameter x 3 coordinate normal to tire reference
+surface (see fig. 1)
+{?} global vector of normalized external
+{z} global response vector
+loads and initial gaps
+P0 intensity of inflation pressure Ag u, Ag v slip distances in tire footprint
+penalty parameters in tangential and
+Ps, P0, P intensity of external loading in coor- Et, E n
+normal directions (see eq. (6))
+dinate directions (see fig. I)
+[QI, IRI elemental matrices associated with Erelax relaxation parameter (see eqs. (16))
+contact condition and regularization es, e0, 2es0 extensional strains of reference sur-
+term in functional face of tire
+
+
+
+=== PDF PAGE 10 ===
+2Es32,£03 transverse shear strains of tire unknowns consist of five generalized displacements and
+0 eight stress resultants. Figure 1(a) gives sign convention
+circumferential (hoop) coordinate of
+for the generalized displacements and stress resultants
+tire (see fig. 1)
+and figure l(b) shows a free body diagram of applied
+bending strains of tire
+loads, torques, and contact forces. Fundamental equa-
+Lagrange multiplier, representing tions of the shell theory used herein are given in refer-
+intensity of contact load normal to ences 19 and 20 and are summarized in appendix A.
+contact surface
+Normal Contact Force Formulation
+Lagrange multipliers, representing
+_'U_ _'V
+intensity of contact friction loads Figure 2 shows the geometry of contact of a shell
+tangent to contact surface pressed against a fiat surface. Figure 2(a) shows sche-
+Lagrange multipliers, representing matically normal gaps between the tire carcass and the
+sliding friction load intensities flat surface. In the figure, _c refers to the contact
+region; _w° is the initial normal gap between the tire
+vector of nodal values of Lagrange
+shell and the plate; gw is the current normal gap; and T n
+multipliers
+is the normal traction on _c" Both _w0 and gw are
+static static coefficient of friction defined to be in the direction of the normal to f_c and are
+measured relative to the inflated profile of the tire. Tire
+_tdynamic dynamic coefficient of friction
+constraints normal to the contact surface can be
+_,q dimensionless coordinates along
+expressed in terms of the following inequalities and
+meridian (see fig. 4) equation that must be satisfied at each point on the con-
+functionals tact surface f2 c :
+rotation about normal to tire refer-
+_w>O (la)
+ence surface (see eq. (A9))
+t_s' _0 rotational components of reference Tn < 0 (lb)
+surface of tire (see fig. 1)
+k,-)(e) element domain Tn_ w = 0 (lc)
+f_ contact surface The first inequality (eq. (la)) represents the kine-
+C
+angle defined by ratio of two friction matic condition of no penetration of the contact surface
+forces (see eq. (2d)) (gw = 0 for the points in contact). The second inequal-
+ity (eq. (lb)) is the static condition of compressive (or
+=-_/_s
+zero) normal tractions. The third equation (eq. (lc))
+30 states that there is zero work done by the normal contact
+first variation stresses (i. e., the normal contact stresses exist only at the
+points where the tire is in contact with the rigid plate).
+Superscripts:
+The following inequalities are henceforth referred to as
+(e) individual elements the inactive contact conditions:
+i,j indices of shape functions for
+gw > 0 (ld)
+approximating Lagrange multipliers
+index of shape function for approxi- T n> 0 (le)
+mating generalized displacements
+(i = 1, m) Equations (1) must be satisfied for both frictionless and
+frictional contact.
+number of iteration cycles
+matrix transposition Tangential Contact Force Formulation
+Mathematical Formulation Equations (1) define the normal tire contact con-
+straint conditions and are augmented to include friction
+The analytical formulation for contact of aircraft constraints associated with the Coulomb friction law
+tires is based on a form of moderate-rotation Sanders- when friction forces are considered. The Coulomb fric-
+Budiansky shell theory and includes the effects of large tion law is modified to include a static friction coefficient
+displacements and transverse-shear deformation. A associated with the nonskidding or "stick" friction con-
+mixed formulation is used in which the fundamental straint, and a dynamic friction coefficient associated with
+
+
+
+=== PDF PAGE 11 ===
+theslipconditionwhenthestaticfrictionconstrainist
+violated. _dynamic < _static (2e)
+The"stick"conditiondefiningthestaticfrictioncon-
+TuA_, u < 0 (2f)
+strainits
+Tv A_,v < 0 (2g)
+/ 2
+',l( Tu + Tv 2 )/ T n < Pstatic (2a)
+Inequality (2e) simply states that the dynamic
+T u = cos(_)Tn_tdynami c (2b) friction coefficient cannot be greater than the static
+friction coefficient. Inequalities (2f) and (2g) state that
+the energy dissipated by sliding is never positive since
+Tv = sin(_)Tn_dynami c (2c) the friction forces always oppose slipping in the tire
+footprint.
+represent the slip condition when equation (2a) is vio-
+lated, where Tu and Tv are the tangential tractions on the Figure 2(b) shows schematically the relationship
+friction surface representing the friction forces. The among the various tangential gap definitions. Initial gaps
+angle _ defines the ratio between the two friction force _u0 and _vo represent the tangential displacement of the
+components for the slip condition and is expressed as: inflated tire from the uninflated configuration. Current
+gaps gu and gv represent the displacement of the current
+contact solution from the inflated configuration. Delta
+= abs arctan (2d) gaps A_u and A_,v represent the tangential slip distances
+L k u./A from the previous tire contact "stick" location in the tire
+footprint. For nodes not currently in contact with the flat
+where Tu and Tv in equation (2d) are the computed tan- plate, the initial gaps and current gaps represent the
+gential traction components that exist whenever the static orthogonal projections of the gap expressions on the con-
+friction constraint in equation (2a) is first violated. The tact surface. Delta gaps are defined only after contact has
+following inequalities also hold on the friction surface: been established.
+Governing Finite-Element Equations
+Discrete equations governing the response of the tire are obtained by applying a modified form of the two-field,
+Hellinger-Reissner mixed-variational principle. This principle can be expressed in the following form:
+5HHR( Ns' NO' Nso' Ms' MO' Mso' Qs' Qo' u, v, w, ¢Ps'¢Po) = 5FI - 5W (3)
+where
+!{Ns[_sU _1 _(u __sW _ _¢2]+ [_s r + w v+l r_OW ) +_2]
+Mso[_OCs+(_ s _r\ l )¢] u v+_c]oW+¢o)
+- [_ (all N s2+a22No+g2llMs+g22Mo2+assQs+ao2oQo)+a12N2sNo+bllNsM2 s+b12NsMo
+(4)
++b12NoMs+b22NoMo+g12MsMo+asoQsQo]}d _
+
+
+
+=== PDF PAGE 12 ===
+and
++u,+ + +°o,+.........*................
+(5)
+In equations (4) and (5), a, b, and g are shell compliance coefficients which are the inverse of the shell stiffness
+coefficients given in appendix A; _ is the rotation about the normal to the shell and is also given in appendix A; Ps, P0,
+and p are the intensities of the external distributed loads in the meridional, circumferential, and radial directions, respec-
+tively; f_ is the shell domain; and c_ and cu are the portions of the boundary over which tractions and displacements
+are prescribed. Quantities with a tilde (~) denote prescribed boundary stress resultants and generalized displacements;
+the underlined terms in equations (4) and (5) represent nonlinear contributions; and ns and nO are unit normals to the
+boundary.
+Modification to the variational principle consists of augmenting the functional of that principle by two terms: the
+Lagrange multiplier associated with the nodal contact pressures and a regularization term which is quadratic in the
+Lagrange multipliers. References 21, 22, and 28 give a detailed discussion of the perturbed and the augmented
+Lagrangian formulations.
+The modified functional has the following form:
+(6)
+l-I= I-IHR+ r|r 1_.___.:_(_1,)2| 7 d&q
+f/c
+where FlttR is the functional of the Hellinger-Reissner variational principle; _. is the Lagrange multiplier; and E is the
+penalty parameter associated with the regularization term. Note that the addition of the regularization term amounts to
+approximating the rigid plate by continuously distributed springs with stiffness of E, for sufficiently large e. As 1/_
+approaches zero, the continuous springs become the rigid plate.
+Shape functions used in approximating the generalized displacements and the Lagrange multipliers are selected to
+be the same and differ from those used in approximating the stress resultants. Moreover, because of the nature of the
+functional FI in equation (6), the continuity of neither the stress resultants nor the Lagrange multiplier is imposed at the
+interelement boundaries.
+Finite-element equations for each individual element can be cast in the following compact form:
+(e)
+t • a
+X + M(H, X) - PP = 0 (7)
+t H t(e) I G(X) }(e) t • t (e)
+! o S t • R _" • go
+
+
+
+=== PDF PAGE 13 ===
+where{
+H }, { X }, and {_,} are the vectors of the stress-resultant parameters, nodal values of the generalized displace-
+ments, and nodal values of the Lagrange multipliers, respectively, IF] is the matrix of linear flexibility coefficients,
+[S] is the strain-displacement matrix, [Q] and [R] are the matrices associated with the contact condition and the regu-
+larization term in the functional, respectively, { G(X)} and {M(H, X)} are vectors of nonlinear terms, and { go } is the
+vector of initial gaps in the contact region f_c. A dot refers to a zero submatrix or subvector, superscript (e) refers to indi-
+vidual elements, {P} is the normalized external load vector, and p is a load parameter. As the load is incremented, only
+the value of the load parameter p changes and the normalized load vector {P } is constant. Appendix B gives the formu-
+las for the elemental arrays [F], [S], {G(X)}, {M(H, X)}, [Q], [R], {P}, and {go}"
+Note that the sizes of the coefficient matrices [Q], [R], and {go} vary with the number of active contact condi-
+tions. The difficulty associated with an equation system whose size varies during the solution process is alleviated by
+allowing the Lagrange multipliers to be discontinuous at interelement boundaries and then eliminating them on the ele-
+ment level. If the stress-resultant parameters and Lagrange multiplier parameters are eliminated from equation (7) then
+the following equations in terms of nodal displacements {X } are obtained:
+(e)
+(8)
+[s]t[F]-I[s]_E[Q][R]-I[Q]t I {x}(e)+{_(X)}(e)+£[Q][e]-l{g0}(e)_p{P}(e) =0
+where
+{G(X)} (e) = [Slt[F]-I{G(X)}(e) + {M(H, X)} (e) (9)
+and the vector { H } in { M (H, X)} is replaced by its expression in terms of {X }. Equation (8) is the tangent operator for
+the Newton-Raphson iterative solution procedure used in this investigation and is derived in detail in appendix C.
+To simplify the treatment of the contact conditions, the displacement components are transformed from shell coordi-
+nates (s, 0, x3) to the global Cartesian coordinates (x, y, z) before assembly. The relations between the displacement
+vector in the shell coordinates {X} (e) and the corresponding vector in Cartesian coordinates {,_}(e) can be written in
+the following compact form:
+{X} (e) = [T]{_'} (e) (10)
+where [T] is the transformation matrix. The different arrays in the finite-element equations are transformed accordingly.
+Appendix D gives the explicit form of the transformation relations.
+Solution of Nonlinear Algebraic Equations value of p. This approximation is then chosen as an ini-
+tial estimate for {Z} in a corrective iterative scheme
+Discrete equations governing the response of the tire
+such as the Newton-Raphson technique. In each Newton-
+are obtained by assembling the elemental contributions
+Raphson iteration the contact conditions are checked and
+in equation (6) or (7) and can be written in the following
+form: updated.
+Computational Procedures to Determine
+{?(Z,p)} = [K]{Z}+{G(Z)}-p{?} = 0 (11)
+Contact-Load Intensities, Contact Areas,
+where [_7] is the global linear stiffness matrix of thetire;
+and Energy Dissipated During Slip
+{G(Z)} is the vector of nonlinear contributions; {P} is
+the global vector of normalized external loads and initial This section describes the contact algorithm used to
+gaps; and {Z} is the global response vector of the tire assess the state of contact in the tire footprint and to
+obtained by assembling the contributions from the sub- implement the modified Coulomb friction law. Descrip-
+vectors {H }, {X }, and {_,}. tions of the algorithms used to approximate the area of
+contact and the energy dissipated during slip are also
+The nonlinear algebraic equation (eq. (8)) is solved
+included. Finally, the computational procedures used to
+and the contact region and the contact-load intensities are
+determine the displacement, stress-resultant, and contact-
+determined by using an incremental-iterative technique
+load intensity solutions at each iteration and load step are
+(i.e., a predictor-corrector computation method) in which
+outlined.
+the response vector {Z }, corresponding to a particular
+value of the load parameter p, is used to calculate a suit- Nonlinearities due to large displacements (moderate
+able approximation (predictor) for {Z} at a different rotations) and the contact condition are combined into a
+
+
+
+=== PDF PAGE 14 ===
+singleiterationloop.Referenc2e3advocateastwo-level to 2. The dynamic friction-force load intensities are com-
+(nestedit)erationschemeF.orthistwo-leveslchemeth,e
+puted from the following equations:
+inneriterationloopaccountfsor thecontacct onditions
+associatewdiththecontact-loaindtensitieas,ndtheouter
+_'u, slip ---- c°s(_l/)_'n_tdynami c (12a)
+iterationloop uses the Newton-Raphsoitneration
+schemeN. umericael xperimentdsemonstrattehatfor
+_'v, slip = sin (_)_'n_dynamic (12b)
+frictionlesscontactproblemsthe two-leveliterative
+schemerequiresmoreiterationsthanthe single-level
+Incremental friction-force load intensities required to
+schemuetilizedinthepresensttudy.(Seeref.29.)
+bring the friction-force load intensities back into compli-
+ance with the Coulomb friction law constraint are com-
+puted from
+Contact Algorithm With Friction
+Figure 3 schematically shows the contact algorithm A_u = _'u, slip - _u (13a)
+developed for this investigation. Three possible contact
+states are possible for each contact node in this algo- A_v = _-v,slip - _-v (13b)
+rithm: (1) open or no contact, denoted by the contact flag
+The delta gaps associated with the sliding friction condi-
+set to 0; (2) stick contact where the contact node adheres
+tion are computed as follows
+to the contact surface, denoted by the contact flag set
+to 1; and (3) slip contact where the contact node slides on
+( {rlbar } - A_,u)
+the contact surface, denoted by the contact flag set to 2.
+Agu = {dlbar } (14a)
+The algorithm is built on a two-level logical if-statement
+scheme. The first level interrogates the status of the pre-
+({ rlbar } - A_,v)
+vious contact flags for each contact node. The second
+level interrogates the status of the current normal gap gw Agv = {dlbar } (14b)
+of nodes not previously in contact to determine whether
+where equations (14) are derived from equation (C44) in
+or not contact has been established for that particular
+appendix C and the delta gaps replace the displacement
+node; for nodes which were previously in contact, the
+solution. The vectors {rlbar} and {dlbar} are defined in
+second level interrog_ates both the sign of the normal
+appendix C. The incremental friction-force load intensi-
+Lagrange multiplier Xw, which represents the normal
+ties (eqs. (13)) are used to update the contact solution
+contact load intensity, and the Coloumb friction law con-
+straints to determine the current nodal contact status.
+_c = _-c'u + A_-c'u (15a)
+For nodes not previously in contact, stick contact is
+assumed whenever the normal gap gw is positive or 0, _C = _--Cv + A_--,Cv (15b)
+i.e., inequality equation (la) is satisfied, and no contact
+is assumed whenever gw is negative. For nodes previ- and the delta gaps (eqs. (14)) are used to update the dis-
+ously in contact, stick contact is assumed if both the placement solution
+static condition of compressive (or 0) normal tractions
+(eq. (lb)) and the static friction constraint (eq. (2a)) are c c c (16a)
+u = u + ErelaxAg u
+satisfied; slip contact is assumed if the compressive nor-
+mal tractions condition is satisfied but the friction con-
+vC = vC + erelaxAg cv (16b)
+straint is not satisfied at a node. If the compressive
+normal tractions condition is not satisfied at a node, then
+where Erelax is a relaxation parameter with a magnitude
+that node is removed from the list of active contact
+0 < erelax < 1. The function of erelax is to enhance the
+nodes.
+convergence characteristics of the contact algorithm.
+Index c ranges from 1 to the number of contact nodes.
+When an open nodal contact condition is encoun-
+tered the contact flag is set to 0; if the previous contact
+Determination of Contact Area
+condition was either stick or slip then the three load
+intensities {_.u, _.v,_.w} for that node are set to 0. When To obtain an accurate approximation of the contact
+a stick nodal contact condition is encountered the contact area of the Space Shuttle nose-gear tire under static load-
+flag is set to 1, the number of boundary condition nodes ing conditions, an algorithm was developed which
+is incremented, and incremental tangential nodal dis- employs information from the initial geometry of the tire
+placements Au and Av are set to 0. When a slip nodal footprint and updates this geometry to accommodate
+contact condition is encountered the contact flag is set footprint deformations associated with contact. Figure 4
+
+
+
+=== PDF PAGE 15 ===
+illustratems ajorfeatureosf thiscontacatreaalgorithm. i
+where Act is the modified contact area associated with a
+The9-nodedelemenits convenientlsyubdividedinto
+node in contact, and ct k is defined as
+fourquadrantwsithanodeonthecornerosfeachquad-
+rant.Coordinateosfthequadranctornerasredefinedas
+k _ 1 if node k is in contact
+ct = _ (21)
+i i i 0 if node k is not in contact
+x = x 0 + u (17a)
+where node k is a node on the periphery of the quadrant or
+i i i
+Y = Y0 + v (l 7b) quadrants defining the nodal areas. For the corner nodes
+of the 9-noded finite element shown in figure 4, net is 3;
+for the midside nodes nct is 5; and for the interior node
+where x_) and y_) are the initial coordinates of the node
+and ui and vt are the tangential nodal displacement net is 8. The peripheral nodes associated with corner node
+components. Index i ranges from 1 to the number of 1 are (2, 8, 9); the peripheral nodes for midside node 2
+nodes in the element. As figure 4 indicates, the area of a are (1, 3, 4, 8, 9); and the peripheral nodes for the interior
+typical quadrant is node 9 are (1, 2, 3, 4, 5, 6, 7, 8). Finally, the nodal areas
+from each element are assembled into a global contact
+node array so that the nodal areas reflect the contribu-
+Aquad = 0.5(xay b - xby a + xby c _ xCy b + xCy a_ xay c
+tions from all shared elements.
++x ay c -x cy a +x cy d -x dyc +x dy a -x ayd ) (18)
+Special Treatment for Tread Grooves
+where the superscripts a, b, c, and d denote the four cor-
+ners of the quadrant, starting from the lower left and To facilitate adequate modeling of the 3-
+advancing counterclockwise around the quadrant. Nodal circumferential groove tread pattern of the Space Shuttle
+areas associated with contact nodes within a 9-noded ele- nose-gear tire, modifications were made to the vector of
+ment are initial normal gaps {_w0} and to the variable weighting
+function used to define the contact area. For nodes in the
+I 1 region of a tread groove, a positive number was added to
+Anode = 0.25Aquad
+_w 0to prevent that node from contacting the surface. For
+this investigation the following modification was made:
+2 2
+Anode = 0.25(A uad + Aquad)
+3 2 _,g = _,g +3.1 (22)
+Anode = 0.25Aquad 14'0 W 0
+4 2 3
+where the superscript ranges over the node numbers
+Anode = 0.25(Aquad + Aquad)
+associated with tread groove locations. Nodal areas for
+5 3
+(19) contact nodes adjacent to the center groove were com-
+Anode = 0.25Aquad
+puted directly from equations (19) and the variable
+weighting function (eq. (20)) was not used for those
+Ano6de = 0.25(A 3quad +Aqua4d)
+nodes. Nodal areas for contact nodes adjacent to either of
+a 7node ----- 0.25A 4quad the remaining tread grooves were computed with the
+variable weighting function (eq. (20)) modified to reflect
+8 4 1
+fewer peripheral contact nodes. For example, suppose the
+Anode = 0.25(Aquad + Aquad)
+right edge of the finite element shown in figure 4 coin-
+9 1 2 3 4
+cides with the left edge of a tread groove such that nodes
+Anode = 0.25(Aquad + Aquad + Aquad + Aquad)
+(3, 4, 5) are in the groove and never contact the surface.
+For this situation nct for midside nodes (2, 6) is 3, and
+When there is only partial contact within an element,
+their peripheral nodes are (1, 8, 9) and (7, 8, 9), respec-
+i.e., only some nodes are in contact, then a variable
+tively. For the interior node (9) nct is 5, and the periph-
+weighting function is used to modify the nodal contact
+areas as follows: eral nodes are (1, 2, 6, 7, 8).
+Evaluation of Contact Forces From Load
+?'lCI
+Intensities
+A i = 0.5 1.0+ r k--l_ la i (20) Solution of the governing discrete equations of
+the entire structure generates the nodal displacements,
+the stress-resultant parameters, and the values of the
+ct nct I "node
+Lagrange multipliers at the contact nodes. For each
+
+
+
+=== PDF PAGE 16 ===
+individualelementin contact,the intensityof the
+c(k) _ c(k)_
+contact-loaindtensitieastanode{ T u, Tv, Tn } are equal Vslip = agv Erelax (25b)
+to the values of the Lagrange multipliers { ku, kv, kw } at
+the same node. Reference 30 states the contact-load where Uslip and Vslip represent the tangential slip in the
+tire meridional and circumferential directions, respec-
+intensities may be expressed as a function of the nodal
+tively. Index c ranges from 1 to the number of contact
+forces {pi ply, pi } as follows:
+U _ n nodes and the index k ranges from 1 to the number of
+iterations at each load step. For a given contact node, the
+T i total slip associated with a load step is
+U U
+i iter
+Pv _ NiNJd_, Tj (23)
+f pi UsClip: Z UslipC(k) (26a)
+Pn i T J n k=l
+iter
+where N i are the shape functions used in approximating
+the Lagrange multipliers and the generalized displace- Pslip = Z Vscl(ikp) (26b)
+ments, and _(e) is the domain of the contact element. The k=l
+indicated numerical integration in equation (23) was -C -C
+The magnitude of these total slip values Uslip and Vslip
+implemented with a Newton-Cotes quadrature formula- should increase monotonically over the iterations that
+tion. The range of both i and j in equation (23) is from 1 involve sliding contact. Energy dissipated through slip
+to the number of displacement nodes in the element. Ref- was computed at each iteration for each contact node as
+erences 29, 31, and 32 use this method in the analysis of
+frictionless contact problems. This method of extracting uc(k)
+contact forces from the load intensities is consistent with slipu = [Act(UslipTu)(k)] c (27a)
+the finite-element formulation of the problem.
+uC(k)
+A possible drawback of this method is the fact that slip_ = [Act(VslipTv) (k)]c (27b)
+the shape functions N i are computed only for the un-
+deformed tire and may not reflect contact area variations where the energy dissipation expressions (Uslipu , Uslipv )
+should always be negative since the friction forces
+associated with tire deformations at the tire-pavement
+(TuAct, TrAct ) oppose the slip. Energy expressions
+interface. An alternative method of obtaining contact
+forces from the load intensities that alleviates this draw- (eqs. (26)) are summed over the number of iterations to
+back is expressed in the following equation: obtain an estimate of the total energy dissipated through
+sliding at each contact node and load step as follows:
+iter c
+Iac1t'C
+(28a)
+UsliPu = ct ( )(k)
+(24)
+pC = (ActTv)C
+P: (ActTn) c UClipv = Act iEter (VslipTv),(k)lC (28b)
+k=l J
+where c ranges from 1 to the number of contact nodes.
+Computational Procedures for Solving Tire
+Reference 30 discusses other approaches for determining Contact Problem
+the contact forces.
+The computational procedure used in the present
+study is summarized as follows:
+Evaluation of Energy Dissipated During Slip
+Preprocessing and Initial Calculation Phases
+For contact problems involving friction it is impor-
+tant to account for any slip that occurs in the contact area. Step 1. Model tire geometry, evaluate stiffness coeffi-
+In this investigation the slip at each contact node is cients (ref. 31), and generate input data includ-
+approximated for each iteration with the following ing transformation matrices.
+equations:
+Step 2. Select estimates for the penalty parameters and
+c(k) assume the contact status at the selected con-
+Uslip = Ag:(k)Erelax (25a) tact nodes.
+10
+
+
+
+=== PDF PAGE 17 ===
+Step3. Generatleinearelemenatrrays. b. If the current contact condition is
+SolutionPhase slip, define dynamic friction forces and
+continue.
+Step4. Solveinflation-pressucraesewithoutcontact
+c. If the current normal contact constraint is
+usingNewton-Raphsitoenrationscheme.
+inactive, remove the node from the list of
+Step5. Generateinitial normalgap betweenthe active constraints, zero out contact forces,
+inflatedtire configuratioanndflat surfaceat and continue.
+designatecdontacntodes.
+If any current contact constraints are different
+• Begindisplacemeinnct rementatiolonop. from the previous constraints or if there are any
+active slip constraints, return to step 6.
+• Begin combinedcontactand Newton-
+Raphsointerationloop. Step 10. Cheek the convergence of the Newton-
+Raphson iterations:
+Step6. Generatneonlineaerlemenatrrays,eliminate
+thestresrsesultantasndtheLagrangmeultipli-
+[{AZ}t{ AZ}/{z}t{ z} ]1/2
+ersfromtheelementaelquationasn, dassemble e _ < Tolerance (30)
+n
+theleft-andright-hansdidesoftheequations.
+Step7. Solve equation(8) for the incremental where n is the total number of degrees of free-
+displacements. dom in the model and the tolerance is pre-
+scribed. If convergence is achieved, then
+Step8. Updatetheresponsveectorfordisplacements, compute the contact forces at each contact
+stresrsesultantasn, dtheLagrangme ultipliers: node with equation (24) or with the following:
+{z(r+ 1)} = {z(r)} + {AZ(r)} (29)
+I )
+U
+Step9.
+C ta h ct eek cond th it e ion c s onta a c t t ea s c t h atu n s ode and as m ne o e d d if e y d: the con- Pv i = f NiN j -j d_ (31)
+pi
+i
+if _'w < 0 and _w < 0, then the constraint is Pn _(e) [ -J
+active
+and continue. Otherwise return to step 6.
+if g'w > 0 or _'w > 0, then the contact constraint
+is inactive Step 11. If the prescribed displacement is greater than
+the specified maximum displacement, then
+if r r = J(r2u + r2)< rnlastatic then the con- stop. Otherwise, add additional displacement
+tact condition is stick
+and return to step 6.
+if T r = J(T2u + T2)> Tnktstatic then the con- The mixed-formulation finite elements used in this
+tact condition is slip study have nine displacement nodes and four stress-
+resultant nodes and are designated as M9-4 elements in
+When the previous normal contact constraint is
+table 1.
+inactive, proceed as follows:
+a. If the current normal contact constraint is Comments on Mixed Models, Perturbed
+also inactive, then continue. Lagrangian Formulation, and Computational
+Procedure
+b. If the current normal contact constraint
+is active, add the active contact contri- The following comments regarding the mixed mod-
+bution to the list of nodes with stick con- els, the perturbed Lagrangian formulation, and the com-
+tact, increment boundary conditions, and putational procedure used herein are in order:
+continue.
+1. Nonlinear terms in the finite-element equations of the
+When the previous contact constraint condition mixed model (eq. (7)) have a simpler form than those
+is stick or slip, proceed as follows: of the corresponding displacement model (eq. (9)).
+a. If the current contact constraint is 2. Equation (7) includes both the Lagrange multiplier
+stick, increment boundary conditions and approach and the penalty method as special cases, as
+continue. follows:
+11
+
+
+
+=== PDF PAGE 18 ===
+a.
+As the penalty parameters en and Et approach infin- using a Gauss-12gendre formula. The arrays [Q],
+ity, equation (7) reduces to those of the Lagrange [R], and {go} are evaluated using a Newton-Cotes
+multiplier approach. formula. In both cases the number of quadrature
+points used is the same as the number of displacement
+b. When Lagrangian multiplier terms are eliminated
+nodes in the dement. This results in under-integrating
+in equation (7), the resulting equations are identical
+the arrays [Q] and [R] and avoids the oscillatory
+to the penalty method.
+behavior of the contact-load intensity that has been
+3. The perturbed Lagrangian formulation alleviates two observed when the arrays are fully integrated. Note
+that the use of Newton-Cotes formula allows the
+of the drawbacks associated with the Lagrangian mul-
+tiplier approach and the penalty method, namely, contact-load intensities to be evaluated at the displace-
+ment nodes. Appendix E gives details on the shape
+a. The regularization term in the functional results functions for the Gauss-Legendre formula and the
+in replacing one of the zero diagonal blocks in the Newton-Cotes formula.
+discrete equations of the Lagrangian multiplier
+approach by the diagonal matrix [R]/E in Numerical Results
+equation (7).
+b. The contact condition is satisfied exactly by trans- Description of Finite-Element Models
+forming the constrained problem to an uncon- To develop the finite-element models used in the
+strained problem through the introduction of analysis of the Space Shuttle nose-gear tire, the cubic
+Lagrangian multipliers (the terms spline approximation of the outer meridional surface of
+the tire half cross section was discretized into 75 poten-
+tial node points as indicated in figure 5. From this popu-
+f_c _c lIc lation of possible nodes, a smaller number of nodes was
+chosen to approximate the tire cross section. To model
+in equation (6)) rather than approximately as in the the tire inflation response, a single strip of 30 finite ele-
+penalty method. However, the presence of the regu- ments was used to approximate the complete tire cross
+larization terms (the terms section. This model employed 61 nodes to characterize
+the tire meridian, and 480 stress-resultant parameters and
+293 nonzero generalized displacement parameters were
+used to synthesize the tire inflation response.
+Finite-element models employed to analyze the con-
+in equation (6)) results in replacing the contact con-
+tact behavior and friction characteristics of the Space
+dition by the perturbed condition:
+Shuttle nose-gear tire used 41 node points in one half of a
+meridional cross section (81 nodes for the entire cross
+_[RI{X} + [Q]t{x} - {go} = 0 (32) section), and these nodes are denoted as the circular sym-
+bols in figure 5. Nodes associated with the circumferen-
+4. An important consideration in the perturbed tial tread grooves are also highlighted in figure 5. In the
+Lagrangian formulation and in any penalty formula- meridional direction, the tread area of the tire was mod-
+tion is the proper selection of the penalty parameters eled with the highest density of nodes and the sidewall
+En and _t- With the foregoing mixed models the pen- and bead areas were modeled with progressively fewer
+ahy parameters can be chosen independently of the nodes. This meridional node pattern was used for each of
+element size without adversely affecting the perfor- the two-dimensional finite-element tire models employed
+mance of the model. Accuracy of the contact solution in this investigation. The circumference of the tire was
+increases with increasing values of the penalty param- divided into 240 possible node points, and a smaller
+eter _n. However, for very large values of en, the equa- number of nodes was chosen from that population to con-
+tions become ill-conditioned and thus round off errors struct the tire finite-dement models. To refine the mesh
+increase. For small values of Et the tire footprint in specific areas such as the contact zone, a higher den-
+becomes compliant, i.e., there is little or no slipping, sity of nodes was chosen from the population in the spe-
+and the calculated friction forces are artificially low. cific region of interest.
+For very high values of _t the contact algorithm with
+Figure 6 shows a map of elements and node loca-
+friction may become ill-conditioned.
+tions for one of the models used to analyze the contact
+5. The elemental arrays [F], [S], {G(X)}, problem. Figure 6 shows an array of elements with
+{M(H,X)}, and {P} are evaluated numerically 40 elements in the meridional direction and 18 elements
+12
+
+
+
+=== PDF PAGE 19 ===
+inthecircumferentidailrectionN. umberisn theleftand
+the second load step. It should be noted that the first load
+rightmarginsof figure6 denotethebeginninagndend-
+step, which computed the inflation solution, involved no
+ingelemenntumberisn specificrows.Blackdotssuper-
+contact and the second load step involved contact with no
+imposedoverthesquaregridof elementdsenotethe
+sliding. Load steps 3-7 involved some tire sliding for the
+individuanl odesof thefinite-elemenmtodel.Several
+conditions summarized in table 2. A relaxation parameter
+individualelementsare shadedand shownin an
+value of 0.75 required a total of 104 iterations to obtain
+expandesdcaletoillustratethenodenumberinsgequence
+converged solutions at the seven load steps; for a value of
+thatis usedto minimizethebandwidthfor thefinite-
+rr.relxa of 0.5, only 36 iterations were required to cover the
+elemenmt odelsT.hecomplicatinfgactorhereisthatthe
+same load range; and a relaxation parameter value of
+elemenitnsthecircumferentdiairlectionarejoinedalong
+0.25 required a total of 149 iterations. It is obvious from
+thetopandbottomedgeT. henumberinsgchemethat
+these results that the choice of the relaxation parameter
+isillustratedin theexampleshownin figure6 provides
+can have a profound effect on the convergence character-
+aminimumbandwidthforthistiremodelF. orthisspe-
+istics of the contact-friction algorithm.
+cificexampltehebandwidtihs1635T. hesixrowsofele-
+mentsinthemiddleofthearrayc, ontainineglement1s Data shown in table 3 illustrate the oscillating fric-
+tional load intensities that were observed when the relax-
+through240,comprisethepossiblecontacrtegionfor
+thismodelF. igure6 alsoshowsthelocationof thecir- ation parameter was set to 0.75. In table 3 both the lateral
+cumferentiatrleadgroovesof theSpaceShuttlenose- friction load intensity and the drag friction load intensity
+are shown to change sign 13 times during the course
+geatrire.
+of the 28 iterations required to obtain a converged solu-
+Threedifferenmt odelswereusedintheanalysiosf tion at the third load step. No oscillatory behavior was
+theSpaceShuttlenose-geatirrein contacwt itha flat observed for the friction-force load intensities when the
+plateT. hesemodelsd,enotedasmodel1,mode2l ,and relaxation parameter was set to 0.5 or 0.25.
+mode3l,aredepictedinfigure7.Eachmodeel mployed
+480elementsin the regionoutsidethecontactzone Table 4 summarizes the effect of tangential penalty
+(0<0.2re0, >0.27t)M. odel1included240elementisn parameter variations on convergence characteristics of
+thecontacrtegionof thetire (-0.2rt the contact-friction algorithm. To evaluate this effect
+< 0 < 0.2n) for a
+four values of _t were studied over seven load steps. For
+total of 720 elements. (See fig. 6.) For model 1 there
+a tangential penalty parameter value of 1.0 a total of
+were 14 076 nonzero generalized displacement parame-
+31 iterations was required to obtain converged solutions
+ters, 23040 stress-resultant parameters, and 3159
+over the range of load steps tested. At a tangential pen-
+contact-load intensity parameters. Model 2 used a refined
+alty parameter value of 1012 the number of iterations
+mesh within the contact region with 480 contact elements
+required to obtain converged solutions over the same
+and a total of 960 elements overall. For model 2 there
+load range increased to 45. Thus, approximately a
+were 18 776 nonzero generalized displacement parame-
+50 percent increase in iterations was required for con-
+ters, 30720 stress-resultant parameters, and 6075
+verged solutions when gt was increased by 12 orders of
+contact-load intensity parameters. Model 3 employed a
+magnitude.
+more refined mesh in the contact zone with 960 con-
+tact elements and a total of 1440 elements. Model 3 The physical significance of the tangential penalty
+employed 28 152 generalized displacement parameters, parameter is that it represents the distributed tangential
+46080 stress-resultant parameters, and 11 907 contact stiffness of the tire-contact interface and therefore serves
+load-intensity parameters. A single iteration for model 1 a double role of penalty parameter and tire stiffness
+required about 12 min on a Cray 2 computer, and a single parameter in the contact-friction algorithm. When _t is
+iteration for model 3 required about 12 min on a Cray set to a value of 1.0, the footprint of the contact-friction
+Y-MP computer. algorithm is compliant; little or no slip occurs in the tire
+contact zone and the predicted friction-force load intensi-
+Convergence Characteristics and Performance of ties are very small. When gt is set to 1012 the footprint of
+Contact-Friction Algorithm the contact-friction algorithm is extremely stiff, the tire
+must undergo slip to satisfy the Coulomb friction law
+Relaxation parameter and penalty parameter constraint, and the calculated friction-force load intensi-
+effects. Table 2 shows the effect of variations in the ties may be too high. To illustrate this point more clearly,
+relaxation parameter Erela x on the convergence character- figure 8 shows the normalized tire slip dissipation ener-
+istics of the contact-friction algorithm. To study this gies in the lateral and drag directions for two values of Et.
+effect four values of Erela x were evaluated over seven Figure 8 indicates that the amount of energy dissipated
+load steps. For a relaxation parameter value of 1.0 no by the tire due to slipping in the footprint is strongly
+convergence was obtained within 40 iterations beyond influenced by the choice of Et. Data presented in figure 8
+13
+
+
+
+=== PDF PAGE 20 ===
+alsoindicatethatthecontact-frictioanlgorithmpredicts
+tion range was covered in 5 load steps; and in the third
+muchmoreenergydissipatefdromlaterasllippingbythe
+case the deflection range was covered in 4 load steps.
+tirethanfromslippingin thedragdirectionfor static
+Case 1 required 52 iterations and computed a tire load of
+loadingcasesstudiedinthisinvestigation.
+3998 lb for a fire deflection of 0.6 in. Case 2 required
+28 iterations and case 3 required 26 iterations to obtain a
+Figure9 presenttsheinfluenceof normalpenalty
+converged solution at a tire deflection of 0.6 in. The cal-
+parametemr agnitudeon the accuracy
+of total strain
+culated normal tire load for case 2 was 0.6 percent less
+energy and total contact force. Total strain energy is the than the predicted load of case 1 and the calculated nor-
+integral of total strain energy density over the full extent mal load for case 3 was 0.9 percent less than that for
+of the tire carcass, while total contact force is the integral case 1. It appears that the contact-friction algorithm can
+of normal contact-load intensity over the entire contact operate over a range of step sizes without serious degra-
+zone. Strain-energy ratio, denoted by the solid line, and dation in performance.
+contact-force ratio, denoted by the dashed line, are plot-
+ted as a function of the base 10 logarithm of the penalty
+Conclusions
+parameter in figure 9. Results in figure 9 indicate that
+total calculated strain energy and total contact force are A computational procedure is presented for the solu-
+insensitive to variations in the normal penalty parameter tion of frictional contact problems for aircraft tires.
+over the range of 106 to 1015. It should be noted that for The Space Shuttle nose-gear tire was modeled using a
+these tire-contact problems, total contact force is much two-dimensional laminated anisotropic shell theory
+more sensitive to a poor choice in the penalty parameter which includes the effects of variation in material and
+than total strain energy, as denoted by the percent errors geometric parameters, transverse-shear deformation, and
+on the two ordinate axes. geometric nonlinearities. Contact conditions were incor-
+porated into the formula by using a perturbed Lagrangian
+Friction coej_icient and load step size effects. approach with the fundamental unknowns consisting
+Table 5 summarizes the effect of static and dynamic fric- of stress resultants, generalized displacements, and
+tion coefficient variations on convergence characteristics Lagrange multipliers associated with contact and friction
+of the contact-friction algorithm. Three different static conditions. The contact-friction algorithm is based on a
+friction coefficients were evaluated to study these modified Coulomb friction law. A modified two-field,
+effects, ktstatic = 0.3 represents a wet concrete runway mixed-variational principle was used to obtain elemental
+condition; P-static= 0.6 represents a dry concrete runway arrays. This modification consists of augmenting the
+condition; and _tstatic = 1.0 represents a maximum fric- functional of that principle by two terms: the Lagrange
+tion coefficient associated with aircraft tires in general. multiplier vector associated with normal and tangential
+The dynamic friction coefficient for each friction state node contact load intensities and a regularization term
+was taken to be 85 percent of the static value. These fric- that is quadratic in the Lagrange multiplier vector.
+tion coefficient values are consistent with a substantial
+Shape functions used in approximating generalized
+aircraft tire friction database that has been acquired over
+displacements and Lagrange multipliers were selected to
+a number of years. Reference 33 gives further details on
+be the same and differ from those used to approximate
+experimental friction measurements for aircraft tires and
+stress resultants. Stress resultants and Lagrange multipli-
+empirical relationships for predicting aircraft tire friction
+ers were allowed to be discontinuous at the interelement
+responses. Data in table 5 indicate that about 30 percent
+boundaries. Nonlinearities due to large displacements,
+more iterations were required to obtain converged solu-
+moderate rotations, and contact conditions were com-
+tions over the range of load steps tested for the low
+bined into the same iteration loop and were handled by
+friction surface and the high friction surface than for
+using the Newton-Raphson iterative scheme.
+the friction coefficients representative of the dry run-
+way condition. These results indicate that the contact- Numerical results are presented for the Space Shuttle
+friction algorithm is robust enough to handle the range of nose-gear tire subjected to inflation pressure loads and
+friction coefficients normally experienced in aircraft tire combined inflation pressure and contact loads against a
+applications. rigid flat plate.
+Table 6 summarizes the effects of varying load step Results from this investigation lead to the following
+size on the convergence characteristics of the contact- observations and conclusions: (1) the choice of the relax-
+friction algorithm. This study evaluates performance of ation parameter is critical to the performance of the
+the algorithm over a normal tire deflection range from 0 contact-friction algorithm. If the parameter is too large,
+to 0.6 in. In the first case the tire deflection range was oscillating friction load intensities occur; if the param-
+covered in 10 load steps; in the second case this deflec- eter is too small, many iterations are required for
+14
+
+
+
+=== PDF PAGE 21 ===
+convergenc(e2.)Thetangentiaplenaltyparameteisr a algorithmisrobusetnoughtohandletherangeoffriction
+measuroef tangentiasltiffnesosf thetire-contaicntter- coefficientasssociatewdithaircrafttireapplications.
+faceandhasastronginfluenceonenergydissipatebdy
+thetireduetoslip.Normacl ontact-loaindtensitdyistri-
+NASALangleRyesearCcehnter
+butionandstrainenergyareinsensitivteovariationisn HamptoVnA,23681-0001
+thenormapl enaltyparamete(r3.) Thecontact-friction Janua1ry81, 996
+15
+
+
+
+=== PDF PAGE 22 ===
+Appendix A
+Fundamental Equations of Shell Theory Used in Present Study
+Appendix A summarizes the fundamental equations of the Sanders-Budiansky type shell of revolution used in this
+study. Effects of laminated, anisotropic material response and transverse-shear deformation are included in these
+relationships.
+Strain-Displacement Relationships
+(AI)
+es =as"+_+_ -3sw +_
+(A2)
+E0 :-73-usr+ _30v+R_2_w_+w1_l_22 - _a0w _ +_1* 2
+2,0 U
+(A3)
+Ks = 3s_ s (A4)
+W'O: 3srC_rs + _30_0 (A5)
+(A6)
+2_sO = _30_)s + (3s-3sr'_+--7-ffO (g21 /__11)
+_ u + 3s w + _s (A7)
+2_s3 R1
+2e03 = -R2+ 30w+_0 (A8)
+where Es and e0 are extensional strains in the meridional and circumferential directions, 2Es0 is the in-plane shear strain,
+_¢sand K0 are bending strains in the meridional and circumferential directions, 2_¢s0 is the twisting strain, 2es3 and 2e03
+3 _3
+are transverse-shear strains, 3s - %5-'30 = _0' and _ is the rotation around the normal to the shell, which is given by
+(A9)
+Nonlinear terms that account for moderate rotations are underlined with dashes in equations (A 1) to (A3).
+Constitutive Relations
+The shell is assumed to be made of a laminated, anisotropic, linearly elastic material. Every point of the shell is
+assumed to possess a single plane of elastic symmetry parallel to the middle surface. The relationships between the
+stress resultants and the strain measures of the shell are given by
+16
+
+
+
+=== PDF PAGE 23 ===
+N s Cll c12 @ fll f12 _s
+N o c22 f12 f22 _0
+G@
+Nso c66 f66 • • 2tZsO
+M
+s dll d12 K s
+(A10)
+M o d22 K0
+Mso Symmetric d66 2_CsO
+as 2Es3
+Oo 2E03
+c44 J
+where cO, fij, and dij (i, j = 1,2, 6) are shell stiffness coefficients. Nonorthotropic (anisotropic) terms are circled and
+dots indicate zero terms.
+17
+
+
+
+=== PDF PAGE 24 ===
+Appendix B
+Formulas for Elemental Arrays [F], [S], [G(X)], [M(H, X)], [P], [Q], [R], and {go}
+Appendix B gives explicit forms of the elemental arrays [F], IS], [G(X)], [M(H, X)], and [P]. The arrays are
+partitioned into blocks corresponding to the contributions from individual nodes or stress-resultant approximation func-
+tions. Expressions for the typical blocks are given in table B 1. The order of the swains is Es, ___,2Es0, _:s,w_, 2Ws,O, 2_s3,
+and 2E03"The order of the nodal displacement parameters is u, v, w, tps, and tpo.
+In table B1, _k and _/l are shape functions associated with stress-resultant components; N i and N j are shape
+functions for generalized displacements; s is the number of stress nodes in the element; m is the number of displacement
+nodes in the element; and _(e) is the element domain. The range of the indices k and Iis 1to s; the range of the indices i
+andj is 1 to m. Dots in the matrices refer to zero terms; _s = _, and _0 -=_00"Quantifies _1 and E2 are defined in terms
+of
+U
+_1 = -_ll - OSw (BI)
+_ u _30w (B2)
+_:2 R2
+18
+
+
+
+=== PDF PAGE 25 ===
+Table B1. Explicit Form of Typical Partitions of Arrays [F], [S], [G(X)], [M(H, X)], and [P]
+Number of
+partitions
+Array (or blocks) Typical partition
+all a12 a16 bll b12 b16 ' • •
+i
+a22 a26 ' bl 2 b22 b26 ' • •
+i i
+a66 b16 b26 b66 . • •
+i
+gll g12 g16 • •
+[F]kl sXs N --k N -- = l n df_
+g22 g26 • •
+_te) Symmetric
+n
+g66 ' • •
+ass aso
+a88
+1
+_s •
+R I
+1
+asr 1_
+7 r ° R2 • •
+I a _sr
+r 0 _s--- • • •
+r
+• Os •
+[S]kj s >(m N --k a(cid:0) la NJ d_
+• --7- r 0
+2-1r 1 - 1 0 -2 - _s + • r 0 _, r
+l
+• _s l •
+R 1
+• R2 r o • 1
+19
+
+
+
+=== PDF PAGE 26 ===
+Table B 1. Concluded
+Number of
+partitions
+Array (or blocks) Typical partition
+1 2
+i
+i
+{a(x)}k
+1
+_--_(1Nsl31 + Nse_: 2) - I(N s + NO)_3 0
+1
+R.___2(Nso-EL+1No,2)+r2(Ns+No),(_s+___)
+{M(H,X)}j m - (Ns_ ] + NsO_2)_ s - _(Ns0_ ]+ N0_2)0 0 NJ d_
+i
+£-](*)
+Q
+I
+e$
+Po
+{P}j m _ N j. P d_
+2O
+
+
+
+=== PDF PAGE 27 ===
+Appendix B also gives explicit forms of elemental arrays [Q], [R], and {go}" Table B2 gives expressions of typi-
+cal partitions. In table B2, N t and N j are shape functions for Lagrange multipliers and generalized displacements and c
+is the number of nodal points in contact within the element. The range of the indices i and j is from 1 to c, and the range
+of the index i" is from 1 to rn; <_,w> is the unit ramp (or singularity) function defined as follows:
+~tl
+gw (kw>0)
+<gw >n (B3)
+0 (g'w-<0)
+where _'w = -gw and n = 0 or 1. Vector {go} contains components gu, gv, and <gw > for each contact node. Com-
+ponents gu and/¢v are defined in figure 2(b).
+Table B2. Explicit Form of Typical Partitions of Arrays [Q], [R], and {go}
+Number of partitions
+Array (or blocks) Formula for typical partition
+[Q] mxc N i'N j <g-w > od_
+JR] c×c - " N iN j <g-w >od_
+•df_
+{go} f Ni gv
+21
+
+
+
+=== PDF PAGE 28 ===
+Appendix C
+Derivation of Newton-Raphson Tangential Operator Equations
+Tayior's Series Preliminary Discussion
+The governing differential equations for the tire contact problem are
+t Sl • (e) 1 (e)
+h _rnntxx *
+(CI)
+qc x + mnlX h
+t 9_ go
+11 q•c • - pP = 0
+In equation (C1))_ is the element flexibility matrix, dimensioned s8 x s8 and partitioned into s x s submatrices; st is the
+element linear strain-displacement matrix, dimensioned s8 x m5 and partitioned into s x m submatrices; rant is the ele-
+ment stress-displacement displacement matrix, dimensioned s3m3 x m3 and partitioned into sm x m submatrices; and qc
+and rc are matrices associated with contact, dimensioned m x c3 and c x c3 and partitioned into m x c and c x c sub-
+matrices, respectively. Subvectors h, x, and _ representing stress, displacement, and contact-load intensity are dimen-
+sioned s, m, and c3, respectively. The normalized external load vector P is dimensioned m5 and the vector of initial gaps
+go is dimensioned c3. The penalty parameter is denoted as e and the loading parameter is denoted as p. Superscript t
+denotes transpose and superscript (e) indicates that the equations are developed at the element level. Equation (C1) can
+be expressed as three functions by carrying out the indicated multiplication:
+1
+(C2)
+f(h, x, _,) = - f lh + six + _mnlXX = 0
+g(h, x, _,) = stlh + qc _. + mnlxh - pP = 0 (C3)
+j(h, x, _,) = qc x + + go = 0 (C4)
+Consider a point x 0 "reasonably" close to a root of a functionflx). Taylor's series expansion about x0 is
+f(x) = f(x o) + (x - Xo)f ' (%) + (l _ x - xo)2 f"(Xo) + ... (C5)
+Iff(x) is set to zero, then x is a root of the right-hand side of the Taylor series expansion about x0 (taking linear terms
+only):
+0 = f(xo) + (x-Xo)f'(Xo) (C6)
+(X-Xo)f (x O) = -f(xo) (C7)
+f(x O)
+(C8)
+x = X0
+f (XO)
+or
+x-x 0 = _ - f(xo), (C9)
+f (x O)
+22
+
+
+
+=== PDF PAGE 29 ===
+x represents an improved estimate of the root to replace x0
+x(n+ 1) = xn+_)(n+ 1) (ClO)
+Taylor's series expansion of equation (C l) about ho, x0, and _o, considering the linear terms only, leads to the following:
+f(h, x, _,) = f(h O,x0, _'0) + (h - h0)_-_hf + (x _ x0)_xOf + (_ _ _'0)_-_Of (C1 l)
+0g _g + (_. _g
+g(h,x,_.) = g(ho, xo,_.o)+(h-ho)_-_+(X-Xo)-_x -Z0)_-- _ (C12)
+_J _J _J (C13)
+j( h, x, _ ) = j( hO,xO,_'0) + (h - ho)_- _ + (X - Xo)_x + (_. - _0)_-_
+Case l--No Contact
+Consider first the case for no contact where equation (C 1) is reduced to
+II1
+h + _mnlxx _ • = 0 (C14)
+x mnlX h pP
+1
+(C15)
+- fl h + six + _mnlXX = 0
+stlh + mnlXh- pP = 0 (C16)
+and rearranging the nonlinear terms
+.)=0
+s I + _lmnlX
+(C17)
+-ft x pP
+(Stl + mnlX)
+Applying the Taylor series expansion yields the following equations:
+1
+(C18)
+- flho + six 0 + _mnlXOX 0- (h - ho)fl + (x - Xo)(S l + mnlXO) = 0
+Stlho + mnlXOh 0 _ pP + (h - ho)(S tl + mnlXO) + (x- xo)mnlh 0 = 0 (C19)
+Let
+(h - ho) = Ah (C20)
+and
+(x - x0) = Ax (C21)
+23
+
+
+
+=== PDF PAGE 30 ===
+Equation(sC18)and(C19)
+become
+-f l (s! + mnlX 0 Ah = f lho - SlXo - _mnlXOXo = rh (C22)
+[Stl+ mnlXO) mnlh 0 j t Ax - Slth 0 - ranlXOh 0+ pP rx
+Equation (C22) defines the tangent operator for the Newton-Raphson iterative solution procedure for problems that do
+not involve contact. Looking at the first part of equation (C22) where
+1
+- flAh + (s l + mnlXO)AX = flho -stx 0 - _mnlXOXo = rh (C23)
+then multiplying by the inverse of the flexibility matrix
+1 -1
+- Ah + fll(St + mntxo)Ax = h0- fllslxo - _fl mnlXOXo = fl lrh (C24)
+and then substituting into the second part of equation (C22) yields
+(Stl+ mnlXO)f t I(s I + mnlXO)AX + mnlhOAx = -Stlho-mnlXoho + pP-(stl + mnlXO)f tlrh = rx- (stl + m nlXO)fllrh
+(c25)
+Equation (C25) is the governing differential equation for problems that do not involve contact with the stresses elimi-
+nated. Equation (C25) can be rewritten by defining the following terms that are employed in the tire modeling code used
+in this investigation:
+[k22] = mnlh o (C26)
+[kl2bar] = f ll (sl + mnlXO) (C27)
+[kl2S] t = (s I + mnlXO) (C28)
+(rhbar) = f/lrh (C29)
+and equation (C25) now becomes
+([kl2S]t[kl2bar] + [k22])Ax = (rx) - [kl2S]t (rhbar) (C30)
+Case II---Contact
+Next consider the case of contact by reintroducing the contact terms into equation (CI 7)
+1
+-f l (Sl + 72mnlX) •
+(Stl+ mnlX) • qc = 0 (C31)
+x_, - PgPo
+l FC
+• qc E
+Applying the Taylor series expansion yields
+1
+- flho + slx 0 + _mnlXOX 0 - (h - ho)fl + (x - Xo)(S l + mnlXO) = 0 (C18)
+24
+
+
+
+=== PDF PAGE 31 ===
+stlho + mnlXOh 0 + qc_.O - pP + (h - ho)(st! + mnlXO) + (x - xo)mnlh 0 + (_. - _'o)qc = 0 (C32)
+t r _ t rc (C33)
+qcX°+ e o-go + (X-Xo)qc+ (_'-_'0)-_ = 0
+Let
+(;_ - ;%) = AX (C34)
+Equations (C18), (C32), and (C33) become
+f 11f
+-fl (st + mnlXo) •
+f lho - six 0 - _m nlXoX 0
+rh
+(st t + mntXO) • qc Ax = - sl t h 0 - mnlXOh 0 - qc_.O + pP = rx (C35)
+Ah
+Ak
+t r c - qc t XO--_A r O c _ + go r_.
+• qc E
+The contact equation (the last part ofeq. (C35)) can be written as
+r
+t t c_
+_" = -qcAx-qcX°- a o +gO (C36)
+and solving for A_. yields
+A_. = - (_1 qctAX - ((r_c)-)I qctXO + (E)-I go-go (C37)
+Substituting equation (C37) into the second part of equation (C35) redefines the governing differential equation to
+account for contact terms
+t -1 fr,.yl t t t -I (rc'_-I t
+(st + mnlXo) f l (st + mntXO) Ax + mnlho Ax- qc_-_ ) qc Ax = - Slho- mntxoho + PP - (st + mntxo)ft rh - qc_-_ ) (go - qcXo )
+z -1 (rcyI
+= rx- (s l + mntXo)fl rh - qc(_) (go - qtcxo) (C38)
+where the underlined terms are those associated with contact. Equation (C38) is identical to equation (8) in the main
+body of the paper. The following terms are associated with the contact solution in the tire modeling code used in this
+investigation:
+IU'
+[dlbar] = qc (C39)
+(rc_-l, t ,
+(rlbar) = (,_-) tg0 - qcXo ) - _'0 (C40)
+(rc'_- I . t
+(C41)
+(rib) = _._) (go-qcXo)
+and equation (C38) can be rewritten as
+([kl2S]t[kl2bar] + [k22 ] -qc[dlbar])Ax = (rx)- [kl2S]t(rhbar)- qc(rlb) (C42)
+25
+
+
+
+=== PDF PAGE 32 ===
+wheretheunderlinedtermsareassociatewdithcontactT. hestresseasrerecoverefdromthedisplacemesnotlution
+throughthefollowingequation:
+(h) = (rhbar)- [kl2bar](x) (C43)
+andthecontact-loaindtensitieasrerecoverefdromthedisplacemesnotlutionwith
+(_.)= (rlbar)- [dlbar](x) (C44)
+26
+
+
+
+=== PDF PAGE 33 ===
+Appendix D
+Transformation of Elemental Arrays From Shell Coordinates to Global Cartesian Coordinates
+Transformation of the displacement components from the shell coordinates (s, 0, x3) to the global Cartesian coordi-
+nates (x, y, z) is expressed by the following equation:
+{X} (e) = [T]{X} (e) (D1)
+where [T] is a block-diagonal transformation whose submatrix at each node is given by
+es eo _s × _eo 0 0
+! 0
+[T] (n) (D2)
+(5x5)
+_-0
+0 1
+where es and e0 are tangennal umt vectors in the s- and 0-directions, respectively, 0 is the null vector, and {X} (e)
+and {X }(e) are generalized displacements in shell coordinates and global Cartesian coordinates, respectively. Note that
+rotation components 0s and 00 are not transformed since the outer surface of the tire was chosen as the reference surface;
+therefore, 0s and 00 do not appear in the contact conditions.
+Elemental matrices [S] and -_ and the external load vector {P} are transformed from the shell coordinates to
+the global Cartesian coordinates as follows:
+[S] --->[SI[TI (D3)
+----_[ ] [_--_I[T] (D4)
+{P} _ [TIt{p} (DS)
+Nonlinear vectors {G(X)} and {M(H, X)} are evaluated with displacement vector {X} expressed in terms of
+{X } at the end of each iteration cycle.
+27
+
+
+
+=== PDF PAGE 34 ===
+Appendix E
+Details of Shape Functions for M9-4 Finite-Element Model
+Appendix E presents the expressions for the shape functions used in the M9-4 finite-element model in terms of the
+local quadrilateral (or natural) coordinates _ and rI. In figure E1 the open circular symbols denote the nine nodes for the
+generalized displacements and Lagrange multipliers, and the filled symbols denote the interior nodes for the stress
+resultants. Figure E1 also lists the coordinates of the four comer nodes.
+4
+3
+1 (1, -1)
+(-1, -1)
+Figure El. Schematic of the M9-4 finite element.
+Shape functions for the biquadratic approximations are given by the following system of equations:
+N 1 = _TI( _-l)(r I-1)
+N 2 1
+= ,_rl(1 _ _2)(,q _ 1)
+N 3 = _rl(_+ 1)(r I- 1)
+N 4 = _(_+1)(1-t"12)
+N 5 = _1](_ + 1)(i I + 1)
+N 6 1
+= ,_rl(l -_2)(r I + l)
+U 7 = l_rl(_- 1)(rl + 1)
+N 8 = _(_- 1)(1 -1"12)
+N 9 = (1-_2)(1-q2) (El)
+28
+
+
+
+=== PDF PAGE 35 ===
+When the stress nodes are located at the center of each element quadrant, the corresponding bilinear shape functions
+for the stress resultants are given by
+-1' 1
+N = 3(1 -2_-2"q +4_rl)
+-2' 1
+U = 3(1 +2_-2rl-4_rl)
+-3' 1
+N = 3(1+2_+2rl+4_rl)
+-4' 1
+N = 3(1 -2_+ 2r I-4_rl) (E2)
+Elemental arrays [F], IS], {G(X)}, {M(H, X)}, and {P} are evaluated numerically using a Gauss-Legrendre
+formula, and the arrays [Q], [R], and {go} are evaluated using a Newton-Cotes formula. Reference 34 describes these
+numerical quadrature formulas.
+29
+
+
+
+=== PDF PAGE 36 ===
+References 16. Noor, Ahmed K.; and Peters, Jeanne M.: Nonlinear Analysis
+of Anisotropic Panels. AIAA J., vol. 24, no. 9, Sept. 1986,
+1. Zhong, Zhi-Hua; and Mackerle, Jaroslav: Static Contact pp. 1545-1553.
+Problems--A Review. Eng. Comput., vol. 9, Feb. 1992,
+pp. 3-37. 17. Noor, Ahmed K.; Andersen, Carl M.; and Tanner, John A.:
+Exploiting Symmetries in the Modeling and Analysis of Tires.
+2. Tanner, John A.; Stubbs, Sandy M.; and McCarty, John L.:
+NASA TP-2649, 1987.
+Static and Yawed-Rolling Mechanical Properties of Two
+Type Vll Aircrafi Tires. NASA TP-1863, 1981. 18. Noor, Ahmed K.; and Tanner, John A.: Advances in Contact
+Algorithms and Their Application to Tires. NASA TP-2781,
+3. Stubbs, Sandy M.; Tanner, John A.; and Smith, Eunice G.:
+1988.
+Behavior of Aircraft Antiskid Braking Systems on Dry and Wet
+Runway Surfaces--A Slip-Velocity-Controlled, Pressure-Bias- 19. Sanders, J. Lyell, Jr.: Nonlinear Theories for Thin Shells.
+Modulated System. NASA TP- 1051, 1979. Q. Appl. Math., vol. 21, no. 1, Apr. 1963, pp. 21-36.
+4. Tanner, John A.; Dreher, Robert C.; Stubbs, Sandy M.; and
+20. Budiansky, Bernard: Notes on Nonlinear Shell Theory.
+Smith, Eunice G.: Tire Tread Temperatures During Antiskid
+J. Appl. Mech., vol. 35, no. 2, June 1968, pp. 393-401.
+Braking and Cornering on a Dry Runway. NASA TP-2009,
+1982. 21. Simo, Juan C.; Wriggers, Peter; and Taylor, Robert L.: A Per-
+turbed Lagrangian Formulation for the Finite Element Solu-
+5. Daugherty, Robert H.; and Stubbs, Sandy M.: Cornering and
+tion of Contact Problems. Comput. Methods Appl. Mech. &
+Wear Behavior of the Space Shuttle Orbiter Main Gear Tire.
+Eng., vol. 50, no. 2, Aug. 1985, pp. 163-180.
+SAE Paper 871867, Oct. 1987.
+22. Stein, E.; Wagner, W.; and Wriggers, P.: Finite Element
+6. Daugherty, Robert H.; and Stubbs, Sandy M.: Spin-Up Studies
+Postbuckling Analysis of Shells With Nonlinear Contact
+of the Space Shuttle Orbiter Main Gear Tire. SAE Paper
+Constraints. Finite Element Methods for Nonlinear Problems,
+881360, Oct. 1988.
+P. G. Bergan, K. J. Bathe, and W. Wunderlich, eds., Springer-
+7. Oden, J. T.; and Martins, J. A. C.: Models and Computa- Verlag, 1986, pp. 719-744.
+tional Methods for Dynamic Friction Phenomena. Comput.
+Methods Appl. Mech. & Eng., vol. 52, nos. 1-3, Sept. 1985, 23. Wriggers, Peter; and Nour-Omid, Bahram: Solution Methods
+pp. 527-634. for Contact Problems. Rep. No. UCB/SESM-84/09 (Con-
+tract N00014-76-C-0013), Dep. of Civil Engineering, Univ. of
+8. Clark, Samuel K.; and Dodge, Richard N.: Heat Generation California, July 1984.
+in Aircraft llres Under Free Rolling Conditions. NASA
+CR-3629, 1982. 24. Concus, Paul; Golub, Gene H.; and O'Leary, Dianne P.: A
+Generalized Conjugate Gradient Method for the Numerical
+9. Clark, Samuel K.; and Dodge, Richard N.: Heat Generation Solution of Elliptic Partial Differential Equations. Sparse
+in Aircraft Tires Under Braked Rolling Conditions. NASA Matrix Computations. James R. Bunch and Donald J. Rose,
+CR-3768, 1984.
+eds., Academic Press Inc., 1976, pp. 309-332.
+10. McCarty, John Locke; and Tanner, John A.: Temperature Dis-
+25. Adams, Loyce: m-Step Preconditioned Conjugate Gradient
+tribution in an Aircraft Tire at Low Ground Speeds. NASA
+Methods. SlAM J. Sci. & Stat. Comput., vol. 6, no. 2,
+TP-2195, 1983.
+Apr. 1985, pp. 452-463.
+11. Schaeffer, Harry G.; and Bail, Robert E.: Nonlinear
+26. Tanner, J. A.; Martinson, V. J.; and Robinson, M. P.: Static
+Deflections of Asymmetrically Loaded Shells of Revolution.
+Frictional Contact of the Space Shuttle Nose-Gear Tire. Tire
+AIAA-68-292, Apr. 1968.
+Sci. & Tech., vol. 22, no. 4, Oct.-Dec. 1994.
+12. Wunderlich, W.; Cramer, H.; and Obrecht, H.: Application
+of Ring Elements in the Nonlinear Analysis of Shells 27. Tanner, John A.: Computational Methods for Frictional Con-
+tact With Applications to the Space Shuttle Orbiter Nose-Gear
+of Revolution Under Nonaxisymmetric Loading. Comput.
+7ire--Comparisons of Experimental Measurements and Ana-
+Methods Appl. Mech. & Eng., vol. 51, nos. 1-3, Sept. 1985,
+lytical Predictions. NASA TP-3573, 1996.
+pp. 259-275.
+13. Noor, Ahmed K.: On Making Large Nonlinear Problems 28. Wriggers, P.; Wagner, W.; and Stein, E.: Algorithms for
+Small. Comput. Methods Appl. Mech. & Eng., vol. 34, Non-Linear Contact Constraints With Application to Stability
+nos. 1-3, Sept. 1982, pp. 955-985. Problems of Rods and Shells. Comput. Mech., vol. 2, 1987,
+pp. 215-230.
+14. Noor, Ahmed K.; Andersen, Carl M.; and Tanner, John A.:
+Mixed Models and Reduction Techniques for Large-Rotation, 29. Noor, Ahmed K.; and Kim, Kyun O.: Mixed Finite Element
+Nonlinear Analysis of SheUs of Revolution With Application to Formulation for Frictionless Contact Problems. Finite Elem.
+7_res. NASA TP-2343, 1984. Anal. & Design, vol. 4, no. 4, 1989, pp. 315-332.
+15. Noor, Ahmed K.: Reduction Method for the Non-Linear Anal- 30. Torstenfelt, Bo: Finite Elements in Contact and Friction Appli-
+ysis of Symmetric Anisotropic Panels. Int. J. Numer. Methods cations. Link6ping Studies in Science and Technology. Disser-
+Eng., vol. 23, 1986, pp. 1329-1341. tations. No. 103, Div. of Solid Mechanics and Strength of
+30
+
+
+
+=== PDF PAGE 37 ===
+Materials, Dep. of Mechanical Engineering, Link6ping Univ. Contact With Application to Space Shuttle Orbiter Nose-Gear
+(Link(iping, Sweden), 1983. lires. NASA TP-3073, 1991.
+33. Smiley, Robert E; and Home, Walter B.: Mechanical Proper-
+31. Kim, Kyun O.; Noor, Ahmed K.; and Tanner, John A.: Model-
+ties of Pneumatic 7ires With Special Reference to Modern
+ing and Analysis of the Space Shuttle Nose-Gear Tire With
+Aircraft 7ires. NASA TR R-64, 1960. (Supersedes NACA
+Semianalytic Finite Elements. NASA TP-2977, 1990.
+TN 4110.)
+32. Kim, Kyun O.; Tanner, John A.; Noor, Ahmed K.; and 34. Fr/Sberg, Carl-Erik: Introduction to Numerical Analysis.
+Robinson, Martha P.: Computational Methods for Frictionless Addison-Wesley Publ. Co., Inc., 1965.
+31
+
+
+
+=== PDF PAGE 38 ===
+Table 1. Characteristics of Mixed Finite-Element Models Used in Numerical Studies
+Number of
+Number of Maximum number of parameters per Number of
+Designation displacement nodes Lagrange multipliers stress resultant quadrature points*
+M9-4 3x3 3x3 2x2 3x3
+*All elemental arrays are evaluated using Gauss-Legendre quadrature formulas except for [Q], [R], and {go }' which are evaluated us-
+ing Newton-Cotes formulas.
+Table 2. Effect of Relaxation Parameter on Convergence of Contact-Friction Algorithm
+[en = 1.0 E+12; Et = 1.5 E+06; _dstatic = 0.6; _dyrtamic = 0.51]
+Step Erela x Normal deflection, in. Normal load, lb Iterations
+1 1.0 0 0 6
+2 .025 86.63 4
+3 .05 221.43 (a)
+4 .1 515.07 (a)
+5 .2 1256.76 (a)
+6 .3 2112.22 (a)
+7 .33 2315.18 (a)
+Total 10a
+0.75 0 0 6
+.025 86.63 4
+.05 221.43 28 b
+.1 515.07 15b
+.2 1256.76 22 b
+.3 2112.22 25 b
+.33 2315.18 26 b
+Total 126 b
+0.5 0 0 6
+.025 86.63 4
+.05 221.43 4
+.1 515.07 3
+.2 1256.76 7
+.3 2112.22 8
+.33 2315.18 4
+Total 36
+0.25 0 0 6
+.025 86.63 4
+.05 221.43 32
+.1 515.07 20
+.2 1256.76 27
+.3 2112.22 28
+.33 2315.18 32
+Total 149
+aDid not converge in 40 iterations.
+bOscillating friction forces.
+32
+
+
+
+=== PDF PAGE 39 ===
+Table3.IterationHistoryforContacNt ode36IllustratingOscillatinFgriction-LoaIdntensities
+[_eiax=0.75;
+en= 1.0 E+12; et = 1.5 E+06; _tstatic = 0.6; _dynamic = 0.51; Normal deflection = 0.05 in.]
+Lateral friction Drag friction
+slip energy, slip energy,
+Iteration Contact flag Kw, psi Xu, psi Xv, psi in-lb in-lb
+1 0.0000 E+O0 0.0000 E+O0 0.0000 E+00 0.0000 E+00 0.0000 E+00
+2 .1238 E+01 .6313 E+00 .2232 E-01 -.7834 E-04 -.9799 E-07
+3 .1412 E+01 .6313 E+00 .2232 E-01 .0000 E+O0 .0000 E+00
+4 .1413 E+01 -.7206 E+00 -.2548 E-01 -.4470 E-04 -.5591 E-07
+5 .1326 E+01 -.7206 E+00 -.2548 E-01 .0000 E+00 .0000 E+00
+6 .1326 E+01 .6759 E+00 .2390 E-01 -.2096 E-04 -.2622 E-07
+7 .1370 E+01 .6759 E+00 .2390 E-01 .0000 E+00 .0000 E+00
+8 .1370 E+01 -.6982 E+00 -.2469 E-01 -. 1082 E-04 -. 1354 E-07
+9 .1348 E+01 -.6982 E+00 -.2469 E-01 .0000 E+O0 .0000 E+00
+10 .1348 E+01 .6871 E+00 .2430 E-01 -.5327 E-05 -.6663 E-08
+11 .1359 E+01 .6871 E+00 .2430 E-01 .0000 E+00 .0000 E+00
+12 .1359 E+01 -.6927 E+00 -.2449 E-01 -.2685 E-05 -.3359 E-08
+13 .1353 E+01 -.6927 E+00 -.2449 E-01 .0000 E+00 .0000 E+00
+14 .1353 E+01 .6899 E+00 .2439 E-01 -. 1337 E-05 -. 1672 E-08
+15 .1356 E+01 .6899 E+00 .2439 E-01 .0000 E+00 .0000 E+00
+16 .1356 E+01 -.6913 E+00 -.2444 E-01 -.6700 E-06 -.8380 E-09
+17 .1354 E+01 -.6913 E+00 -.2444 E-01 .0000 E+00 .0000 E+00
+18 .1354 E+01 .6902 E+00 .2441 E-01 -.3345 E-06 -.4183 E-09
+19 .1355 E+01 .6902 E+00 .2441 E-01 .0000 E+00 .0000 E+00
+20 .1355 E+01 -.6907 E+00 -.2442 E-01 -. 1673 E-06 .0000 E+00
+21 .1354 E+01 -.6907 E+00 -.2442 E-01 .0000 E+00 .0000 E+00
+22 .1354 E+01 .6905 E+00 .2442 E-01 -.8365 E-O7 .0000 E+00
+23 .1355 E+01 .6905 E+00 .2442 E-01 .0000 E+O0 .0000 E+O0
+24 .1355 E+01 -.6906 E+00 -.2442 E-01 -.4183 E-07 .0000 E+00
+25 .1354 E+01 -.6906 E+00 -.2442 E-01 .0000 E+O0 .0000 E+00
+26 .1354 E+01 .6905 E+00 .2442 E-01 -.2091 E-07 .0000 E+00
+27 .1354 E+01 .6905 E+00 .2442 E-01 .0000 E+00 .0000 E+00
+28 .1354 E+01 -.4183 E+00 -.1479 E-01 .0000 E+00 .0000 E+00
+Total -. 1655 E-03 -.2066 E-06
+33
+
+
+
+=== PDF PAGE 40 ===
+Table4.EffectofTangentiaPlenaltyParametoenrConvergenocfeContact-FrictioAnlgorithm
+[g--re=la0x.5;E
+n = 1.0 E+12; [,tstatic = 0.6; [.ld,ynamic = 0.51]
+Step et Normal deflection, in. Normal load, lb Iterations
+1 1.0 0 0
+2 .025 86.63
+3 .05 221.43
+4 .1 515.07
+5 .2 1256.76
+6 .3 2112.22
+7 .33 2315.18
+Total 31
+1 1.5 E+03 0 0
+2 .025 86.63
+3 .05 221.43
+4 .1 515.07
+5 .2 1256.76
+6 .3 2112.22
+7 .33 2315.18
+Total 34
+1 1.5 E+06 0 0
+2 .025 86.63
+3 .05 221.43
+4 .1 515.07
+5 .2 1256.76
+6 .3 2112.22
+7 .33 2315.18
+Total 36
+1 1.0 E+12 0 0
+2 .025 86.63
+3 .05 221.43
+4 .1 515.07
+5 .2 1256.76
+6 .3 2112.22
+7 .33 2315.18
+Total 45
+34
+
+
+
+=== PDF PAGE 41 ===
+Table5.EffectofStaticandDynamicFrictionCoefficientosnConvergenocfeContact-FrictioAnlgorithm
+[Erexla=0.5;E
+n = 1.0 E+12; Et = 1.5 E+03]
+Step Friction coefficient Normal deflection, in. Normal load, lb Iterations
+_static = 0.3 0 0 6
+.025 86.63 7
+_tdynami c = 0.26
+.05 221.43 7
+.1 515.07 5
+.2 1256.76 8
+.3 2112.22 8
+.33 2315.18 4
+Total 45
+0 0 6
+_tstatic = 0.6
+.025 86.63 4
+_dynamic = 0.51
+.05 221.43 4
+.1 515.07 3
+.2 1256.76 7
+.3 2112.22 5
+.33 2315.18 5
+Total 34
+_static = 1.0 0 0 6
+.025 86.63 6
+ladynamic = 0.85
+.05 221.43 7
+.1 515.07 5
+.2 1256.76 8
+.3 2112.22 8
+.33 2315.18 4
+Total 44
+35
+
+
+
+=== PDF PAGE 42 ===
+Table6.Effecot fLoadStepSizeonConvergenocfeContact-FrictioAnlgorithm
+[Erexla=0.5;E t = 1.5 E+03; en = 1.0 E+12; _tstatic = 0.6; t,tdynamic = 0.51]
+Step Normal deflection, in. Normal load, lb Iterations
+1 0 0
+2 .025 86.63
+3 .05 221.43
+4 .1 515.07
+5 .2 1256.76
+6 .3 2112.22
+7 .33 2315.18
+8 .4 2806.26
+9 .5 3435.70
+10 .6 3998.32
+Total 52
+1 0 0
+2 .025 86.63
+3 .2 1255.77
+4 .4 2779.85
+5 .6 3974.51
+Total 28
+1 0 0 6
+2 .025 86.63 4
+3 .3 2110.36 7
+4 .6 3962.25 9
+Total 26
+36
+
+
+
+=== PDF PAGE 43 ===
+x3, P
+0, Po
+x3
+External
+loading
+w _ s, Ps
+Qo
+V
+Nso
+o
+U
+Mso
+M s
+%
+Mso
+Generalized displacements Stress resultants
+(a) External loading, generalized displacements, and stress resultants.
+Figure 1. Two-dimensional model of tire and sign convention.
+37
+
+
+
+=== PDF PAGE 44 ===
+PO Overturning torque
+torque
+I
+Lateral load
+Drag
+/J
+Aligning torque
+PO
+Zll
+Tire footprint
+(b) Free body diagram of applied loads, torques, and contact forces.
+Figure 1. Concluded.
+38
+
+
+
+=== PDF PAGE 45 ===
+Deformed under contact
+Inflated profile Contact region and
+normal contact
+load intensity
+1
+Contact surface
+(a) Normal gaps.
+Uninflated profile _ . / /-- Inflated profile Contact surface --7
+Contact point after slip
+_ _ Deformed under contact _i_ d__!/_ /.
+_gv
+_u,_ _ _@_ _'
+Contact surface
+Tire footprint _i/_ ?_ _'_
+Initial contact point
+(b) Transverse gaps.
+Figure 2. Schematic representation of gap terms associated with tire contact problems.
+39
+
+
+
+=== PDF PAGE 46 ===
+( s_t )
+cnmgs=, [ V [ cntflgs=O ]
+set Au, Av = 0 [ I I / ',,
+I
+I I yes /_d_/_ no
+ret.
+//_ "N/ I stick-stick _ N/ / N
+•'es / _ no I _ cntflgs = I .... / _.
+[---_w > 0_-----_ [set Au, Av = 0 setau, Av = 0 [_-_;Z_ > 0_-_
+N/ . I slip-°P en I _/
+Isetcnmgs=0 _ Isetcntngs=OI
+Xv_, =ol
+/ Lu' _%' _ = 0 set cntflgs = 2 I _' set cntflgs = 2
+i set A_, A_ v L J set A_, A,_v
+set A_u, Ag-x_ upsdeatteAg{ux,}A, g{_v.}1
+update{x},{M
+I
+Figure 3. Schematic diagram of contact-friction algorithm logic.
+4O
+
+
+
+=== PDF PAGE 47 ===
+Finite element:
+7 6 5
+a4 a3
+; _ 4
+al a2
+LL •
+1 2 3
+Typical quadrant:
+(x8, y8) (x9, y9)
+al
+(x I' yl) (x 2, y2)
+• Typical quadrant area:
+1
+Aquad = 0.5*(xly 2- x2y I + x2y 9_x9y2+ x9y I _ xly9+ xly 9_x9y 1+ x9y 8_xSyg+ x8y 1- xly 8)
+• Nodal areas:
+1
+Anode = 0.25*Alquad
+2 , 1 2
+Anode = 0.25 (Aquad+ Aquad )
+A3 node _ -- 0.25*A2quad
+A4 _ , 2 3
+node -- 0.25 (Aquad + Aquad)
+A5 node _ -- 0.25*A3quad
+6 , 3 4
+Anode = 0.25 (Aquad + Aquad )
+7
+Anode = 0.25*A_uad
+A8 _ 4 1
+0.25*(Aquad + Aquad)
+node --
+9 2 3 4
+Anode = 0.25*(Alquad + Aquad + Aquad + Aquad)
+Figure 4. Major characteristics of contact surface area algorithm.
+41
+
+
+
+=== PDF PAGE 48 ===
+--Groove nodes
+4
+Node used in model (typical)
+Possible node for
+model refinement
+(typical)
+2
+t
+z, in. 0
+1 2 3 l 5
+y, in.
+-1
+-2
+-3
+-4
+Figure 5. Meridional profile of Space Shuttle nose-gear tire models denoting node point locations.
+42
+
+
+
+=== PDF PAGE 49 ===
+Typical bandwith = [(1578 - 1252) + 1]'5 = 1635
+1 168
+504 680
+I,,,. S
+641 1: _'r r:r'ri_Z:ZTTrTT'r'r'r_'r'l'r'r'r'tr 680
+561 :::::::::::::::::::: ::::::: _¢:_..... t" _r'rtT'"_:_: 777777":'7:777"7"7"_":'7 • 600
+481 ............................ i_ ..... _ _i. •r : .", •t_i ooo,o°.o°,°o,o°_°o°°ooo°o 520
+i/iiiilTiiiiii./,iiiiiiiii_.i_:r: _ _j._i..r.T:r.f_i
+401 o°.,°,.oo,°o°ooo°o°o°o°_° 440
+321 t':I'r'I'T:.'T2T:I'T'r'I" :.._, "X:_:___ _ [_" L!I!I!I:[: [: fT|:I : |3T7 I7I: 360
+241 • it: :t!t:t:l:trJ"t:t:t:t:t:,oi!_,ititiiiti_7 ....... I_: 280
+161 ....... :':':':ti!:I:l:l:I: 200
+81 120
+1 :::::,::o:,::::,::.::,:,:::o:,:::,:::, , o ooo. ,,, , , o o o i_ , o .,.,. o _ t_;:;l;l;l:t:l:f:t:t:t:tit:J: 40
+.............. @:. : : : : : -
+41 ............................ _ ........ _'; ....... t_ ........................... 80
+.......... _ _'_:; ; i ,_i_ ..... i¢_ .................
+121 !l!l:l'l''I!l'I''l/_''tl:I'I!T".i_,'l'l'l "" ;_g'''''',I l l'J_ ..............................: 160
+201 240
+281 ":'7"7"7"7:77 /" :i:i:i'i'i'_',:': ':': _ ]_ti l;t'l;l.i.i.i.i.i-1;l;l;i; 320
+361 400
+:_:_:_:_:i:V._:i:r:_:_:_:_:L_.:_:_.f:i{_i_:_._:_._i_:_:_._._:_:_:i:i:i:i:i:i:i:
+441 480
+521 ifitititiIi}i[:tit:tit:ti:X[_ i t +t : _: t _/t_t : t : t :./. t_: ,.l.i.l:l'l'l-l.i.i.l.l.i. 560
+601 :l:l:l:l:__rtT1ill'l'l '" "/'1i_ _} ; ; 4 "]_" 71"I'T:I'I,:I:I:I:I3I:',:,: 640
+681 ililititi/_:t!t:iii:lii:/" i_ ::;;;;; _; v'_*'"t_ :_'_'_'_-/';'I'_-l'l-I'. 720
+Groove.
+129 296 465 633 720
+Figure 6. Typical array of finite elements and nodes used to model the Space Shuttle nose-gear tire.
+43
+
+
+
+=== PDF PAGE 50 ===
+Model 1 Model 2 Model 3
+i
+i
+........ __ "!+_ ....
+0
+= .2n _ 0=0.2n
+M9-4 finite element
+Sector Number of elements (M9-4) for--
+Model 1 Model 2 Model 3
+-0.2n _<0 _<0.2_ 240 (40 x 6) 480 (40 x 12) 960 (40 x 24)
+0 < -0.2n_ 0 > 0.2n 480 (40 x t2) 480 (40 x 12) 480 (40 x 12)
+Total 720 (40 x 18) 960 (30 x 24) 1440 (40 x 36)
+Figure 7. Finite-element models of Space Shuttle nose-gear tire used in present study.
+44
+
+
+
+=== PDF PAGE 51 ===
+• I;t= 1.0E+12
+[] Et =1"5E+03
+Normalized
+tire slip
+dissipation energy
+Lateral energy Drag energy
+Figure 8. Effect of tangential penalty parameter variation on slip energy dissipated by tire. F_rela x -- 0.5;
+En = 1.0 E+I2; _static = 0.6; _dynamic = 0.51' normal deflection = 0.3 in.
+.020 -- 1.00
+.015 /I -- .75
+Total strain .010 -- .50
+energy ratio,
+Contact force ratio,
+U-U
+cony
+Fc.conv- Fc
+Uconv .005 -- .25 F
+C, COnV
+\
+0 0
+-.oo5 I I I I
+-.25
+0 3 6 9 12 15
+log l0E
+Figure 9. Effect of magnitude of normal penalty parameter enon accuracy of total strain energy and contact
+force. P0 = 300 psi.
+45
+
+
+
+=== PDF PAGE 52 ===
+FormApproved
+REPORT DOCUMENTATION PAGE OMBNo.0704-0188
+Publicreportingburdenforthiscollectionofinformationisas_imaledto averageI hourperrespor_e,includingthetimeforreviewinginstructionsle,archlng esistingdatasources,
+gatheringandmaintainingthedataneeded,andcompletingandreviewingtheco41ectloonfInformation.Sendcommentsregardingthisburdenestimateoranyotheraspectofthis
+collec_onof informationi,ncludingsuggestionsforreducingthisburden,1oWeshlngtorlHeadquartersServices,DirectorateforInfotmatlorO'=perationsandReports,1215Jefferson
+DavisHighway,Suite1204,Arlington,VA22202J,302,and1otheOfficeofManagementandBudget,PaperworkReductionProtect(0704-0188),Washington,DC20503,
+1. AGENCY USE ONLY (Leave blank) 2. REPORT DATE 3. REPORT TYPE AND DATES COVERED
+April 1996 Technical Paper
+4. TITLE AND SUBTITLE S. FUNDING NUMBERS
+Computational Methods for Frictional Contact With Applications to the
+Space Shuttle Orbiter Nose-Gear Tire WU 505-63-50-19
+Development of Frictional Contact Algorithm
+S. AUTHOR(S)
+John A. Tanner
+7. PERFORMINGORGANIZATIONNAME(SA) NDADDRESS(ES) 8. PERFORMING ORGANIZATION
+REPORT NUMBER
+NASA Langley Research Center
+L-17211B
+Hampton, VA 23681-0001
+9. SPONSORING/MONITORIANGGENCYNAME(S)ANDADDRESS(ES) 10. SPONSORING/MONITORING
+AGENCY REPORT NUMBER
+National Aeronautics and Space Administration NASA TP-3574
+Washington, DC 20546-0001
+11. SUPPLEMENTARY NOTES
+12a. DISTRIBUTION/AVAILABILITY STATEMENT 12b. DISTRIBUTION CODE
+Unclassified-Unlimited
+Subject Category 39
+Availability: NASA CASI (301) 621-0390
+13. ABSTRACT (Maximum 200 words)
+A computational procedure is presented for the solution of frictional contact problems for aircraft tires. A Space Shuttle
+nose-gear tire is modeled using a two-dimensional laminated anisotropic shell theory which includes the effects of varia-
+tions in material and geometric parameters, transverse-shear deformation, and geometric nonlinearities. Contact condi-
+tions are incorporated into the formulation by using a perturbed Lagrangian approach with the fundamental unknowns
+consisting of the stress resultants, the generalized displacements, and the Lagrange multipliers associated with both con-
+tact and friction conditions. The contact-friction algorithm is based on a modified Coulomb friction law. A modified
+two-field, mixed-variational principle is used to obtain elemental arrays. This modification consists of augmenting the
+functional of that principle by two terms: the Lagrange multiplier vector associated with normal and tangential node
+contact-load intensities and a regularization term that is quadratic in the Lagrange multiplier vector. These capabilities
+and computational features are incorporated into an in-house computer code. Experimental measurements were taken to
+define the response of the Space Shuttle nose-gear tire to inflation-pressure loads and to inflation-pressure loads com-
+bined with normal static loads against a rigid flat plate. These experimental results describe the meridionai growth of the
+tire cross section caused by inflation loading, the static load-deflection characteristics of the tire, the geometry of the tire
+footprint under static loading conditions, and the normal and tangential load-intensity distributions in the tire footprint for
+the various static vertical loading conditions. Numerical results were obtained for the Space Shuttle nose-gear tire sub-
+jected to inflation pressure loads and combined inflation pressure and contact loads against a rigid flat plate. The experi-
+mental measurements and the numerical results are compared.
+14. SUBJECT TERMS 15. NUMBER OF PAGES
+Finite elements; Tire modeling; Frictional contact; Shuttle; Nose-gear; Shell theory 48
+16. PRICE CODE
+A03
+17. SECURITY CLASSIFICATION 18. SECURITY CLASSIFICATION 19. SECURITY CLASSIFICATION 20. LIMITATION
+OF REPORT OF THIS PAGE OF ABSTRACT OF ABSTRACT
+Unclassified Unclassified Unclassified
+NSN 7540-01-280-5500 Standard Form 298 (Rev. 2-89)
+PrescribedbyANSIStd.Z39-18
+298-102
+
+
+
+=== PDF PAGE 53 ===
+
+
+
+
+=== PDF PAGE 54 ===
+

@@ -1,0 +1,4 @@
+logger_cumulative_distance_m,session_distance_m,stint_distance_m,tire_set_distance_m,wear_raw_fl,wear_raw_fr,wear_raw_rl,wear_raw_rr
+50000,0,0,0,100,100,100,100
+55000,5000,5000,5000,99.99,99.99,99.98,99.98
+60000,10000,10000,10000,99.98,99.98,99.96,99.96

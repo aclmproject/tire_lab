@@ -1,0 +1,226 @@
+=== PDF PAGE 1 ===
+NASA CASE NO. LAR 14160-1
+?
+PRINT FIG. 1
+NOTICE
+The invention disclosed in this document resulted from research in aeronautical and
+space activities performed under programs of the National Aeronautics and Space
+Administration. The invention is owned by NASA and is, therefore, available for
+licensing in accordance with the NASA Patent Licensing Regulation (14 Code of
+Federal Regulations 1245.2).
+To encourage commercial utilization of NASA-owned inventions, it is NASA policy to
+grant licenses to commercial concerns. Although NASA encourages nonexclusive
+licensing to promote competition and achieve the widest possible utilization, NASA
+will provide the necessary incentive to the licensee to achieve early practical
+application of the invention.
+Address inquiries and all applications for license for this invention to NASA Patent
+Counsel, Langley Research Center, Code 143, Hampton, Virginia 23681-0001.
+Serial No.: 08/111,321
+08/23/93 LaRC
+(',_ASA-Case-LAR-I 4 1 o0- ] ) REMOTE N94-15884
+TIKF PRESSURE SENSING [ECHN[wUE
+Patent Apolication (NASA) 9 p
+Unclas
+G3/35 0190863
+
+
+
+=== PDF PAGE 2 ===
+NASA Case No. LAR 1416 0-1
+AWARDS ABSTRACT
+REMOTE TIRE PRESSURE SENSING TECHNIQUE
+One of the most widely used and relatively simple devices for measuring tire
+air pressure is a calibrated manual tire pressure gage. The tire pressure gage fits
+over the stem of the tire and allows the user to read the pressure measurement
+directly. Oftentimes, however, reading the pressure of a tire directly becomes
+exceedingly impractical or impossible. This is true when the stem of the tire is
+inaccessible or when the tire is rotating.
+A remote tire pressure sensing technique is provided which uses vibration
+frequency to determine tire pressure. A vibration frequency measuring device is
+attached to the external surface of a tire which is then struck with an object,
+causing the tire to vibrate. The frequency measuring device measures the
+vibrations and converts the vibrations into corresponding electrical impulses. The
+electrical impulses are then fed into the frequency analyzing system which uses the
+electrical impulses to determine the relative peaks of the vibration frequencies as
+detected by the frequency measuring device. The measured vibration frequency
+-
+peaks are then compared to predetermined data describing the location of vibration
+frequency peaks for a given pressure, thereby determining the air pressure of the
+tire.
+The novelty of this method is found in providing a method for remotely
+sensing tire pressure which may be automated.
+Inventors: Howard H. Robin-son Tim othy A. NcGinnis
+Address: 201 Pageland Drive 133 Roland Drive
+Yorktown. VA 23693 Ham~tonV, A 23669
+0
+ss: ss:
+Employer: NASA LaRC Wyle Laboratories
+Robert H. Daugherty
+104 Chestnut Court
+Yorktown, VA 23692
+ss:
+Initial Evaluator: Huey E. Carden
+Serial No.: 0811 1 1,321
+Filed: 08\23\93
+
+
+
+=== PDF PAGE 3 ===
+LAR 141 60-1 -1 - PATENT APPLICATION
+REMOTE TIRE PRESSURE SENSING TECHNIQUE
+Origin of the Invention
+5 The invention described herein was made by employees of the
+United States Government and may be used by or for the Government for
+governmental purposes without payment of any royalties thereon or
+therefor.
+10 Technical Field of the Invention
+The invention relates to a tire air pressure sensing technique, and
+more particularly, to a mechanism for remotely sensing the pressure of an
+inflatable tire by measuring tire vibration frequency.
+15
+Background of the Invention
+Since the invention of inflatable tires and their application to motor
+vehicles, many techniques have evolved for measuring pneumatic tire air
+2O pressure. One of the most widely used and relatively simple devices for
+measuring tire air pressure is a calibrated manual tire pressure gage. The
+tire pressure gage fits over the stem of the tire and allows the user to read
+the pressure measurement directly.
+Oftentimes, however, reading the pressure of a tire directly becomes
+25 exceedingly impractical or impossible. This is true when the stem of the
+tire is inaccessible or when the tire is rotating. The importance of
+developing a reliable means for remotely measuring tire air pressure has
+been heightened with the advent of the Space Age. In particular, the need
+for a remote tire air pressure sensing technique for use on stationary
+30 vehicles has become of great importance with the development of the
+
+
+
+=== PDF PAGE 4 ===
+LAR 14160-1 -2- PATENT APPLICATION
+Space Shuttle. When the Space Shuttle is secured onto a launch pad, the
+stems of the tires of the Shuttle are inaccessible. Consequently, if the air
+pressure of a tire of the Shuttle is suspected of being outside tolerance
+limits, the Shuttle has to be dismantled from the launch pad and the tire
+pressure checked directly. Such a procedure can cause considerable delay
+of a scheduled launch.
+Several methods for remotely sensing tire air pressure have been
+disclosed. For example, U.S. 4,742,712 (Kokubu) discloses a method for
+detecting low tire pressure. Kokubu locates a pressure switch on a tire
+10 wheel side. When the tire pressure falls below a predetermined value, the
+pressure switch is turned on, thereby causing a vibration to be produced.
+The vibration, detected by a vibration detecting device, indicates low tire
+pressure.
+Another device, disclosed in U.S. 4,630,470 (Brooke et al),
+15 determines relative tire pressure using vibration frequency. The device
+disclosed requires each tire of a vehicle to transverse corrugated sections
+of a roadway, thereby causing each tire to vibrate. Any variation in
+vibration among tires is indicative of abnormal pressure. This device,
+because it requires a vehicle to transverse corrugated sections, is
+20 inapplicable for use on stationary vehicles. Furthermore, it only detects
+relative tire pressure, not absolute tire pressure.
+Other methods for detecting low tire air pressure have been
+developed which involve attaching pressure sensors to the rotating part of
+each wheel which transmits electronic signals to a signal processing
+25 means. Generally, these methods measure tire pressure indirectly by
+measuring stress exerted on a wheel by various air pressures in a tire.
+These indirect pressure measurements tend to lack accuracy; for example,
+moving a Shuttle from a hanger to a launch pad can cause a change in
+wheel stress without any appreciable change in tire air pressure.
+30 Consequently, particularly in view of such innovations as the Space
+
+
+
+=== PDF PAGE 5 ===
+LAR 141 60-1 -3- PATENT APPLICATION
+Shuttle, there is a need for a remote tire pressure detection means for use
+on a stationary vehicle.
+An object of the present invention is to provide an apparatus and a
+method for remotely sensing and measuring air pressure of an inflatable
+5 object.
+A further object of the present invention is use of pre-determined
+data correlating vibration frequency with air pressure, thereby allowing the
+use of vibration frequency to indirectly determine air pressure.
+10 Summary of the Invention
+To meet the foregoing and additional objects, this invention discloses
+a process and an apparatus for remotely sensing air pressure of inflatable
+objects. The new apparatus consists of a vibration inducing means, a
+15 vibration detecting means, an attachment means to secure the vibration
+detecting means to a surface of an inflatable object, and a vibration
+measuring means to measure the frequency peaks of the vibrations
+detected by the vibration detecting means.
+An especially beneficial means for inducing vibration is a hammer.
+2O An accelerometer attached to the surface of an inflatable object with two-
+sided tape is an effective means of measuring vibrations induced by the
+vibration inducing means. Finally, a computer frequency analyzer is an
+effective means for converting the vibration data from the vibration
+detection means into data which can indicate pneumatic pressure of the
+25 inflatable object.
+Description of the Preferred Embodiment
+The present invention is a new apparatus and method for remotely
+30 sensing pneumatic pressure of an inflatable object.
+
+
+
+=== PDF PAGE 6 ===
+LAR 14160-1 -4- PATENT APPLICATION
+Preferably, the apparatus consists of a hammer 14, an accelerometer
+18 temporarily attached to the inflatable object 42, and a frequency
+analyzer 20 attached to the accelerometer 48 via a coaxial cable 22.
+The use of the apparatus involves attaching the accelerometer 48 to
+5
+the inflatable object 12 in such a way as to measure radial acceleration.
+For example, in the case of a tire 12, the best location to attach the
+accelerometer 18 is the tread area. Any suitable temporary attachment
+means, such as two-sided tape 16, can accomplish the attachment.
+The accelerometer 18 then is connected electrically to a frequency
+10
+analyzer which, on the basis of predetermined data, correlates vibration
+frequency peaks to tire pressure. The connection of the accelerometer 18
+to the frequency analyzer 20 preferably is via a coaxial cable 22.
+Practically any device can be used to strike the inflatable object and
+cause the object to vibrate. An especially preferred device for a vibration
+15
+inducing means is a hammer 14 which cues the frequency analyzer 20 to
+begin taking data. The cue hammer 14 strikes the inflatable object 12
+causing an electrical impulse to travel through an attached coaxial cable 24
+connected to the frequency analyzer 20. The frequency analyzer 20 then
+receives vibration signals from the accelerometer 18.
+2O
+In an alternative embodiment, the vibration inducing means could be
+permanently attached to a vehicle and, upon an appropriate signal, be
+caused to strike the inflatable object. Such a device would allow the
+vibration inducing means to be controlled remotely.
+What is claimed is:
+
+
+
+=== PDF PAGE 7 ===
+5
+LAR 141 60-1 _ PATENT APPLICATION
+REMOTE TIRE PRESSURE SENSING TECHNIQUE
+Abstract
+A remote tire pressure sensing technique is provided which uses
+vibration frequency to determine tire pressure. A vibration frequency
+measuring device is attached to the external surface of a tire which is then
+struck with an object, causing the tire to vibrate. The frequency measuring
+device measures the vibrations and converts the vibrations into
+10 corresponding electrical impulses. The electrical impulses are then fed into
+the frequency analyzing system which uses the electrical impulses to
+determine the relative peaks of the vibration frequencies as detected by the
+frequency measuring device. The measured vibration frequency peaks are
+then compared to predetermined data describing the location of vibration
+15 frequency peaks for a given pressure, thereby determining the air pressure
+of the tire.
+
+
+
+=== PDF PAGE 8 ===
+I'A
+1"2--
+I
+"2..0
+
+
+
+=== PDF PAGE 9 ===
+

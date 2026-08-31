@@ -1,0 +1,2088 @@
+=== PDF PAGE 1 ===
+1974003931
+Distribution of this report Is provided in the
+Interest _f Information exchange. Responsibility
+for the contents resides In the author or
+organization that prepared It.
+Prepared for
+NATIONALAERONAUTICSAND SPACEADMINISTRATION
+
+
+
+=== PDF PAGE 2 ===
+1974003931-TSA03
+II
+NASA CR- 1 3 2 3 4 6 _
+' September 1973
+A SYSTEI_TIC EXPERIMENTALINVES_'IGATION OF SIGNIFICANT PARAMETERS
+AFFECTING MODELTI RE HYDROPLANING
+By
+Gilbert A. Wray
+and
+I. Robert Ehrlich
+,_ _ _. p
+_-__, -
+_ Distribution of this report is provided in the interest
+of information exchange, Responsibility for the contents
+resides ip the author or organlzat:on that prepared it.
+Prepared as Report SIT-DL-72-1602
+under
+................... Contract NAS 1-93b_9
+by
+OAVIDSON LABORATORY
+Stevens Institute of Technology
+Castle Point Station
+Hobokenj N, J. 07030
+(DL Projects 3628/_80/_6_/_65)
+for
+NATIONALAERONAUTICSANO SPACEADMINISTRATION
+!,
+;t
+.!
+
+
+
+=== PDF PAGE 3 ===
+1974003931-TSA04
+A SYSTEMATIC EXPERIMENTALINVESTISATION OF SIGNIFICANT
+PARAMETERSAFFECTING MODELTIRE HYDROPLANING
+by
+Gilbert A, Wray
+and
+I. Rober't Ehrlich
+- ABSTRACT
+_" The results of a comprehensive parametric study of model and small
+pneumatic tires operating on a wet surface are presented, Hydroplaning
+inception (spin down) and roiling restoration (spin up) are discussed.
+_ Conclusions Indicate that hydroplaning inception occurs at a speed
+- significantly higher than the rolling restoration speed. Hydroplaning
+_, speed increases considerably with tread depth, surface roughness and tlre
+inflation pressure or footprint pressure_ and only moderately with increased
+load. Water film thickness affects spin down speed oniy slightly. Spin
+,1 down speed varies Inversely as approximately the one-sixth power of film
+thickness.
+Empirical equations relating tire _nflatlon pressure_ normal Ioad_ tire
+diameter and water filnl thickness have been generated for various tire tread
+! and surface configurations.
+Keywords
+... Tires
+'; Ti re Hydtop lan ing
+Traction
+_i_ Wet Runways
+
+
+
+=== PDF PAGE 4 ===
+1974003931-TSA05
+CONTENTS
+SUMI_ARY.... o ............................. 1
+INTRODUCTION • • .............................. 2
+SYMBOLS............. o .................... 4
+ANALYSI S .... . ............................. 5
+Model ing Theory ............................ • 10
+HODEL .... • .............................. 12
+APPARATUS................ . ................. 13
+:
+TEST PROGRAM 15
+....
+_:.°"'_ Polyurethane TI re .......... • ................. 15
+_"'_ , Pneumatic Tire ........... . ................. 15
+_ -
+"' ' TEST PROCEDURE 16
+RESULTS ............... • ................. 16
+Polyurethane Tire .. .... . .... • ................. 16
+?
+Pne,jmatic Tire ........... . ............... • • 18
+Configuration ! - Bald Tire - Smooth Road ....... • ....... 18
+Configuration 2 - Treaded Tire - Smooth Road ............ • 20
+Configuration 3 - Bald Tlre- Rough Road ............... 21
+Configuration J_- Treaded Tlre - Rough Road ............. • 22
+DISCUSSION • • • • • • • • • • • , • • • • • • • • • • • ..... • • • • 22
+" CONCLUSI ONS 24
+(
+_: Polyurethane Tire • • • • • • • • • • • • • • • • • • • • • . ..... 24
+;',', Pneumatic Tire • • • • • , • • • • • • • • • • • • ........ , • • 24
+,. _ RECOHHENDATIONS, . . . . . , • .... . • • • • • • • • • • • • • • • • • 25
+/, TABLES .... , , . . . , . • . . . . . , . . • ....... ' • • • • • 26
+r
+';" FIGURES 40
+_ _ REFERENCES . . • . . . . . . . . . . . . . . . ..... ' • • ...... 73
+: B _ BL I OGP_PHY " " ..... ' " " " ' ' " " " " • " " " " ' " " • " • " " " 75
+' III
+it'
+, t,,_,;',r,'"_rN_. P_GP, BI,ANK NOT FILMP.,1.)
+
+
+
+=== PDF PAGE 5 ===
+1974003931-TSA06
+el'"
+A SYSTEMATIC EXPERIHENTALINVESTIGATION OF SIGNIFICANT
+PARAMETERSAFFECTING HODELTIRE HYDROPLANING
+By Gilbert Ao Wray and I. Robert Ehrlich
+Stevens institute of Technology
+SUMMARY
+A systematic study of the significant parameters affecting pneumatic tire
+hydroplaning when operating on wet surfaces was performed.
+Scale model tires were constructed using an open celled polyurethane foam.
+The foam density was varied in order to match the load-deflection and footprint
+characteristics of a pneumatic tire. A "dimensionless analysis" study was
+performed to determine _t the combination of significant tire parameters
+should be in order to facilitate correlation with full scale tires. A test
+," program was then planned which would generate the required Input data to the
+results of our "dimensionless analysis."
+The model tires were tested on our "rolling road" facility. This appa,-atus
+permits us to operate a '_lre at various loads, on a :moving belt surface while
+maintaining a water t;ilm of any desired thickness, within our operating range.
+The speed of the belt may be varied, and by varying the water flow rate through
+our nozzle, a film of water of specified thickness is placed on the belt at
+: synchronous speed so that there is no relative velocity between the belt and the
+a=
+water fl Im. By a process of Iteration a speed Is obt.ained whereby the wheel
+spontaneously spins down at the desired synchronous film thickness.
+'rests were performed on an 8-1nch diameter, smooth polyurethane tire
+oDeratlng on a smooth road surface. The normal load was varied from 5 lb to
+70 Ib and the water film thickness varied from 0.021 Inch to 0.125 inch. Both
+spln down and spin up (rolling restoration) speeds were measured. The tire was
+then modified to have 4 and 8 ribs of 1/32, 2/32 and 3/32 Inch depth, and the
+spin down speeds determined for all combinations of tread depth, number of ribs,
+load and water film thickness.
+From the above tests it was determined that the tire "contact patch bearing
+pressure" has the largest slngle effect on spin down speed. Incretslng "bearing
+¢
+. _ pressure" caused the tire to "spin down" at a higher speed. Tire normal load
+!
+
+
+
+=== PDF PAGE 6 ===
+1974003931-TSA07
+has a moderate effect insofar as it increases the footprint bearing pressure
+(on a polyurethane model tire).
+The water film thickness has only a slight effect on spin down speed;
+the hydroplaning speed varying inversely as approximately the one-sixth
+power of film thickness.
+Due to difficulty in varying the tire contact patch bearing pressure of
+a polyurethane tire and relatlng it to the load and inflation pressure of a
+pneumatic tire It was decided to test a small pneumatic tire.
+An 8-inch diameter by 2.80 inch cross-section pneumatic tire was selected
+for testing. This type of tire was tested in both the bald condition, and
+' "_ "_!_) with a standard depth rib-groove tread pattern, on both a smooth road surface
+i_'_': _ and a rough road surface. The rough surface was formed from strips of //150
+, i_
+,---'_ . grit abrasive cloth. The various combinations of tire tread and road surface
+were tested for all combinations of tire Inflation pressure from 5 psi to
+30 psi, loads from 5 ib to 120 lb and water film thicknesses from 0.021 to
+0.125. Empirical equations relating tire pressure, diameter, normal load and
+water flim thickness to hydroplaning inception speed (spin down speed) were
+_ derived for each tire-road configuration.
+The empirical equations were checked against some published experimental
+I=
+data. The correlation between prediced spin down speed from our equation and
+measurad data on rut! size tires was found to be quite good.
+• I NTRODUCTOI N
+!-_ It has long been recognized that a pneumatic tire rolling over a wet
+i : surface may encounter a condition whereby the tire rides up on the water film,
+i_i much like a water skier or surfboard, resulting in a complete loss of trection.
+i_: This condition ls created when the tire and/or road surface cannot drain the
+_ water away from the advancing tire contact patch sufficiently quick. The
+i, water forms a wedge or bow wave In front of the tire, which due to its dynamic
+:;i:i dynamic pressure begins to support part of the wheel/tlre load and reduces the
+_ ' contact patch footprint area in contact with the road. Thls condition Is
+!
+_ i generally referred to as partial hydroplaning. When the tire load is
+t
+iI '
+_ 2
+, !
+
+
+
+=== PDF PAGE 7 ===
+1974003931-TSA08
+!-" C'
+;=_ completely supported by the water film the tire has lost all contact with the
+road surface as is said to be hydroplaning. In this state the tire has lost
+all contact with the road surface and cannot g_nerate any tractive force. If
+rotate at a slower speed, or stop completely.
+allowed to roll freely (l.e., front wheels) the wheel will spin down and
+Previous studies have shown that the effects of various tire and road
+i_ parameters should be investigated more thoroughly.
+and theoretical 6'7 studies in an attempt to isolate the effects of various
+i The Oavidson Laboratory and others have conducted both experimental z'_'a'4'5
+_ tire/road parameters such as inflation pressure, normal load, water film
+!_ ,i thickness, tread depth and road surface roughness. This experimental program
+8
+was conducted or, the Davldson Laboratory Roiling Road Facility.
+i'
+_ This report describes the results obtalned by utillzing polyurethane
+model tires similar to those reported on in reference 3. The operating range
+of load and water film thickness was extended and the effects of the number
+of ribs and rib depth were also investigated. A similar size pneumatic tire
+i_ was tested for the complete range of load (5-120 lb) tire Inflation pressure
+,m(5 to 30 psig) and water film thickness (.021 to .125 inch). In addition
+_ this pneumatic tire was tested in the bald and full tread condition on both a
+smooth road surface and a rough road surface.
+Additional testing was performed to determine the relationship between
+hydroplaning Inception speed (spin down) and rolling restoration speed (spin up)
+whlch were previously found to differ considerably.
+The author wishes to acknowledge the considerable assistance given by
+: Major James R. Allred during the test program and data analysis. Mr. Awnl Boutros
+provided needed assistance In generating a computer program for data and
+f,
+_, error analysis. Also, Miss Nancy Crane provided editorial assistance in
+i addition to typing the manuscript.
+3
+i
+
+
+
+=== PDF PAGE 8 ===
+1974003931-TSA09
+t '," !
+q er"
+SYMBOLS
+a accelerat ion
+A dlmens ionless constant
+b tire tread depth
+B d_mensionless constant
+B.P. tire bearing pressure
+c exponentials used in dlmensionai analysis
+, i
+C dimensionless constant
+c dimensionless constant
+D tire undeflected diameter
+F force
+_' ) vertical lift force
+_._" Fv
+--"" '0: FH horizontal drag Force
+"_':., g acceleration of gravity
+h fluid film thickness
+_. I length
+m exponential used in dimensional analysis
+NHR mean hydraulic radius of channels between surface asperities
+"'" P tire Inflation pressure_ pressure
+q exponential used in dimensional analysis
+Q water flow rate
+r tire undefiected radius
+v veI oc i ty
+V belt speedp ground speed, vehicle Forward speed
+Vcr.d spin down or critical hydroplaning speed
+V spin up speed
+cr-u
+w tire contact patch width
+W vertical load on tlre
+model scaling factor
+I_ fluid dynamic viscosity
+_i dimensionless parameter groups (Bucklnghamts Theorem)
+held constant
+_i parameter groups
+" I_ fluid density
+
+
+
+=== PDF PAGE 9 ===
+1974003931-TSA10
+_ ,=-
+I1""
+ANALYSIS
+In order to set up a systematic test program it is necessary to determine
+what the s|gnificant parameters are. In this program scale model tires are
+being utilized &nd hence it is more convenient to express the primary variables
+in terms of dimensionless parameters.
+By designing the test program so as to vary only one of the dimensionless m
+parameters at a time, while maintaining the others constant, a relationship
+between the variables may be obtained.
+By expressing the relationships in terms of dimensionless parameters
+correlation with full scale data is facilitated. The individual input
+• _ ¢; p
+_:,_ variables such as wheel diameter, tire pressure, etc., do not have to be
+scaled by various powers of the scale factor.
+_-_' The following is a list of the independer:t variables considered to have
+_ a significant effect on the hydroplaning inception (spin down) speed of a
+i pneumatic tire rolling freely on a wet surface. The dimensional units
+i considered are the FLT system, i.e., force is in pounds. Time is in seconds,
+,distance is In feet,
+S_.y._o._l Descr I pt ion FLT Units
+I) tire undeflected diameter L
+_i w tire section width L
+h fluid film thickness L
+_/ vertical load on tire F
+P tire inflation pressure FL-a
+b tire tread depth L
+I_IR road surface HHR L
+p fluid density FL-_
++, _ fluid viscosity FL-2T
+/
+'_ g acceleration of gravity LT-_
+.t
+V hydroplanln_ inception speed LT
+•"" : (spin down)
+%
+5
+t
+t
+-"1" .__-.---=-.-.-.... --=_" " ,=_ ........... :__" -:"..... - :- .............. "_'_" " - - -
+
+
+
+=== PDF PAGE 10 ===
+1974003931-TSA11
+Using the techniques of dimensional analysis a relationship expressing
+the dependency of spin down speed (Vcr.d) on the above variables may be derived. _
+If we let
+V = f(D,w,h,W,P,b,HHR, t_,_,g) (l)
+Then on rearranging terms and assigning exponents to each of the variables
+_. I = Cc_Vcl I)ca wca hc4 Wcs Pc6 bc7 HHRc8 pc9 I_c_0gczz (2)
+_ where C= = constant
+_!i"_"_ .¢ cz to c_1 = unknown exponents
+_T._, '_
+.:., Equation (2) expressed in terms of the dimensions associated with each
+' variable is:
+0 = (LT-z) cz Lc' a Lca Lc_ Fcs (FL-a) c6 Lc_ Lce (FL.3)c9 (FL-_T) cz0 (LT-a) c1_ (3)
+,, Grouping each of the three types of units (F_L,T) together and equating them
+to zero yields the following three auxiliary equations.
+F: 0 = c_+c6 +c_ +c_0 (4)
+L: 0 = cz a 3 + c_ -2c6 + c? 8 - 3c_ - 2c_0+ Czz (5)
+T: 0 = -c= + c_- Zczz (6)
+Since we have eleven unknowns and only three equations available, arbitrary
+values must be assigned to 8 of _he unknowns. The selection of unknowns to be
+assigned values and the value assigned is arbitrary provided the determinant
+of the coefficients of the remaining terms is not zero.
+6
+
+
+
+=== PDF PAGE 11 ===
+1974003931 'TSA 12
+Selecting c_,c4,c:,,cc,cT,c_,c:_ and czz as our candidates to have values
+assigned to them we obtain for the determinant of the remaining coefficients
+0 0 I
+1 ! -2 = I (7)
+-I 0 I
+Since the determinant is non-zero our selection is valid and the values
+to be assigned are arbitrarily chosen to be zero for a11 terms except one of
+them which is assigned to the value of 1. The auxiliary equations are then
+?__ solved and a _ term obtained. By repeating this process unt|1 each of the
+_,_, unknowns have been assigned the value I we obtain a11 our _ terms. Note that
+IL_/ _ if values other than zero and 1 had been chosen we would obtain _ terms that
+• can be reduced to the same value as when zero and 1 are chosen.
+_t
+c3 = I Ce = 0 C9 = 0
+• . C4 = 0 C_ = 0 ClI = 0
+Cs = 0 Ca = 0
+Substituting these values into equations (4), (5) and (6), and solving yields
+F: 0 = O+ 0 + 04 czo
+L: 0 = cz + c2 + I + 0 - 0 + 0 + 0 - 0 - 2cz04. 0
+T: 0 = -c 1 + c_0- 0
+Therefore cz = 0 , ct0 -- 0 , ca = -1 and ca = !
+and
+TTa m "WG (8)
+7
+I
+t
+
+
+
+=== PDF PAGE 12 ===
+1974003931-TSA13
+i-
+iI_ Assigning the follov_ing dlfferent combination of values to the 8 unknowns:
+i_ % = 0 ce = 0 co = 0
+i_ c4 = l c7 = 0 cll= 0
+::_
+._-
+Crs = 0 C8 = 0
+i substituting into equations (4), (5) and (6) again and solving yields
+,_! F: 0 = 0+0+0+%
+__T' ' . : L: 0 = cz +c2 + O+ 1 - O+ O+ 0 - 0 - 2c_0+ 0
+_ :_ , T: 0 = -C 1 4-c10- 0
+_" ,;
+= 0 c_. = 0 c2 = I and c4 = 1
+' ii:._ Therefore c=0 , ,
+and
+h
+11b= _ (9)
+o ,
+Assigning cs = 1 and the others zero and repeating the above solution
+we obtain another n term. We then assign cs = 1 and the others zero and
+solve for the next n term. This process is repeated until the last unknown (czz)
+has been assigned the value I.
+Proceeding as above we obtain the following = terms.
+11 w h
+a _'_ _b ='_
+• W PD
+c Vcr.d i)l_ _d =
+b MHR
+11 = -- 13" = --'--,
+e D f I)
+= • pD2 nh =
+11g i_Vcr.d Vcr.d
+8
+
+
+
+=== PDF PAGE 13 ===
+1974003931-TSA14
+A general solution may be written as
+gl) F w h W PD b MHR pD_I (10)
+E!I v2 = (_' _ ' v0--_' _-_' _'-6-' _v"
+The above dimensionless TTterms can be rearranged as products, quotients
+or powers of each other to simplify them, and facilltate their use in our test
+program, without changing their validity.
+We therefore let
+V2
+_ = [nh]-I = g'-5' (11)
+_a i
+. _ = [_dl[_g]=-1P_2D_F=.3_.P (t2)
+_V pD_ oD
+.f
+h (13)
+%= nb = D'
+% _- [_][_g]__ w .._ = _ (14)
+= VD""_pD_ pDa
+TrB = TIa = W_ (is)
+= = _ (16)
+76 = [nc][TTg][_h]-I _ _-_ I_g
+_7 = ne = _b (17)
+n8 = nf = MH_...RRD (18)
+The general so|ution (10) may be rewritten as
+V9'_0 • F('_'D ' hD' TW6_' w0' ._.9_ b0 ' -M3H-R) (19)
+
+
+
+=== PDF PAGE 14 ===
+1974003931-TSB01
+i
+Due to experimental limitations and practical considerations some of the
+terms were not varied in the test program. The % term relating fluid density
+and viscosity was omitted since we are only concerned with tires hydroplaning
+on water, and for a narrow temperature range, where these variables may be
+considered as constants. The TT_term was not varied due to the limited
+availability of simi|ar tires having different section widths.
+Modeling Theory
+The relationships between model and prototype can, in general, be best
+established by the use c_ a series of equations which develop the scaling
+.!
+_ factor as a multipller between measured model parameters and predicted prototype
+results. The following is the approach used in relating model tire hydroplanln 9
+_'_
+tO that of the full size tire. A more complete treatment of modeling theory
+_ can be found in reference 9. The approach below is usually called "Froude scaling."
+If we chose scale factor _ to represent the ratio of model and prototype
+linear dimensions and the subscripts m and p to refer to model and prototype
+_i_ then basic geometric simulation is represented by
+Lp = Lm (20) .
+where every dimension In the model differs from the prototype by the factor _.
+If the density of model and prototype is to be identical (no_ _lways
+necessary but convenient), then
+H H
+Lpa Lm_
+or
+M = M (21)
+p m
+10
+
+
+
+=== PDF PAGE 15 ===
+1974003931-TSB02
+C '
+For weights:
+w = Mg
+But gravity is constant for both model and prototype in this case. Therefore
+Wp = Mp9 = L3 Mmg = L3 Wm (22)
+From Newtonls Law:
+Fp = MpAp= _._Fm= _'_(MAre)
+,/ "_, , M M
+_"'..."_ A " _.3 (_)Am = X3 (_M)Am
+_ P p m
+:._'_. therefore
+_' A = A (23)
+p m
+Therefore accelerations in both the model and prototype are the same, and
+sinee
+L
+T2
+Therefore L L
+_p_. = m
+T _ T _
+p m
+L
+= L-P-l"m_ = LTm_
+Tp m
+therefore
+_ T = .A" T (Z_)
+p m
+• i,e,, ev,;,_ts occur n_re rapidly with a scale model,
+i ,. 1!
+1
+
+
+
+=== PDF PAGE 16 ===
+1974003931-TSB03
+• alP"
+For velocities,
+L
+; T
+i_ therefore
+i_ L _L
+L P V_' Tm
+'_ P
+!_ For ground pressure or tire inflation pressure:
+_ W
+i' L2
+:,_,. _ or W -----m--_aw (26)
+_'/ P = _ = X_p a = X Pm
+•; " " P Lp m
+_._
+_" _:_ i.e., the ground pressure or inflation pressure of a model should be less than
+that of the prototype.
+Once the scaling relationship for the three primary units (weight, |ength,
+and time) have been obtained, any other parameter can be obtained by writing
+the equation in terms of its dimensionsD then scaling each individual dimension
+and collecting terms. This is the method used to obtain the relationship for
+velocity and inflation pressure, equations (25) and (26).
+HODEL
+The model tires were fabricated of an open cell polyurethane foam and
+coated with several layers of an impervious paint formulation (urethane)
+specifically designed to withstand the high degree of flexure thot would be
+experienced by the model tire under heavy load. This coating serves the dual
+purpose of protecting the open cell polyurethane tire from abrasion and also
+seals the porous surface.
+q
+12
+
+
+
+=== PDF PAGE 17 ===
+1974003931-TSB04
+at.
+The tire is of rectangular cross section having a diameter of 8 inches
+and a section width of 3•25 inches. The polyurethane foam density was varied
+so as to model the contact patch bearing pressure and load-deflection
+characteristics of a representative full scale type III aircraft pneumatic tire. 1
+The model tire was constructed with a smooth surface (bald). In addition the tire
+was modified to have 4 and 8 ribs with a depth of 1/32, 2/32 and 3/32 inch•
+These ribs had a rib width to .qroove width ratio of unity (Figure i)•
+An 8 lnch diameter by 2.80 inch section width pneumatic tire was chosen
+for testiJ_g as it allowed us to vary the inflation pressure. This tire is a
+"General Jet-Rib," nylon cord, 4-ply tire (Figure 2). The tire is intended
+to model a 40-inch diameter aircraft tire• This will give us a scale factor
+_ ,:i "," _ (_) of 5 based on the tire diameters
+_, _ APPARATUS
+The "rolling road ''e (Figure 3) consists of a flat table test section
+8 feet long by 3 feet wide over which a cord reinforced with rubber conveyor
+belt is run. The rubber belt is stretched over a pair of 20 Inch 0. D.
+i
+hollow cylindrical drums• Power is supplied by a 40 HP direct current motor
+and timing belt which drives one of the drums. The "idler" drum is slightly
+crowned to stabilize the belt and prevent It from "walking" oft: the pulley.
+The drive drum Is rubber lagged w;th a herringbone groove pattern to prevent
+it from hydroplaning at high test speeds (a problem encounb_,red with a previous
+smooth drive drum). The DC drive motor is capabl_ of providing variable belt
+surface speeds of up to 6000 ft/min, by means of a motor generator set and a
+closed loop feedback system. Belt speed is measured by means of a OC tach
+generator mounted on the drive drum axle.
+The rubber belt was used to slmu',tate a smooth road surface. Latter
+testing Involved bonding an abrasive cloth to the rubber belt surface to
+simulate a "rough" surface. The abrasive cloth was bonded to the belt in
+4 inch wide by 2 foot long strips. 1his was necessary to avoid separation of
+, the bond due to differential stretching of the belt as It passed over the drums.
+13
+
+
+
+=== PDF PAGE 18 ===
+1974003931-TSB05
+In order to simulate a wet or flooded roadway the "rolling road" has a
+water supply system capable of laying a 12 inch wide film of water, of
+variable thickness, on the road at a synchronous speed. This system consists
+of a 25 horsepower centrifugal pump, piping, water nozzle, control valves,
+flow measuring instrumentation and a 500 gallon water reservoir. Water film
+thickness is fixed by adjusting a hinged plate at the discharge end of the
+nozzle (Figure 4). By inserting different rods of specific diameters into a
+_ recessed groove above the nozzle plate the opening may be adjusted for any
+_ required water film thickness. In order for the test tire not to see any
+relative motion between the water and road surface it is necessary to adjust
+the water flow rate to match the road speed and desired film thickness setting
+i
+L_;,._= . , of the nozzle. From simple geometry and conservation of mass principles the
+_"_ following equation is obtained relating belt speed (V), film thickness (h),
+' film width (w) and water flow rate (Q).
+Q (9al/min) = 0.625 V (ft/min) w (ft) h (in)
+or
+Q = 0.625 V h where w = I ft water fi1=nwidth
+Figure 5 is a plot of required water flow rate versus belt speed for
+synchronization, for various water film thicknesses. The water flow system
+is limited to a flow rate of 320 gallons per minute.
+The test tire Is mounted on a modified "Grumman Mohawk" aircraft nose
+wheel strut. The strut ls attached to fixed ceiling rails by a pair of
+roller bearing s. LongitudiNal motion is prevented by a parallelogram linkage
+which is also capable of measuring drag force. The tire and lower portion of
+the strut are free to move vertically with respect to the fixed upper portion.
+To achieve minimum frictional drag in the vertical axis the tire and lower
+strut are separated by a bronze sleeve bushing which ls rotated about its
+vertical axls by a small electric motor. This reduces the vertlcal friction
+to approximately 0.2 pounds.
+i
+14
+
+
+
+=== PDF PAGE 19 ===
+1974003931-TSB06
+t '- !
+The tire is counterbalanced and loaded by a pulley and weight assembly.
+Removing counterbalance weights increases the vertical load on the tire to
+a maximum attainable load of 120 pounds. Vertical deflection or heaving of
+the wheel assembly can be measured by a rotary potentiemet_r mounted to the
+upper strut and connected to the lower strut via a string. The rotational
+speed of the test wheel is measured by a DC tach generator which together
+with the signal from the road speed tach is displayed and recorded on a
+Sanborn pen recorder.
+TEST PROGRAM
+i , ,) Polyurethane Tire
+" The test program consisted of determining the critical hydroplaning speed,
+_,;-_ ! both spin down and spin up, for an 8 inch diameter by 3.25 inch wide rectangular
+cross-section polyurethane tire. The load on the tire and water film thickness
+was varied to determine their effect on spin down/up speeds.
+The tire was modified to have a ribbed tread pattern in order to determine
+the effects of tread depth and number of ribs. Tests were performed with an
+8 rib and 4 rib tire having rib depths of 1/32, 2/32 and 3/32 of an inch. The
+=
+ratio of rib width to groove width was maintained at unity for both tread
+configurations. The test conditions were Identical to that of the bald tire
+in order to allow a comparison. Tlre footprint measurements were taken for
+each combination of load and tlre configuration.
+The test conditions for each tire configuration are listed in Table |.
+Pneumatlc Tire
+tn order to determine the effects of tire inflation pressure an 8-inch
+diameter by 2.80 Inch cross section "General Jet-Rib" tlre was selected.
+This pneumatic tire was tested in the bald and full tread condition on the
+"o
+15
+
+
+
+=== PDF PAGE 20 ===
+1974003931-TSB07
+smooth road surface, for the full range of tire inflation pressure, tire load,
+and water film thickness. The rolling road surface was then modified to have
+a textured surface and the abov6 test conditions repeated to investigate the
+effect of surface texture_
+The test conditions for each tire configuration are listed in Table II.
+A listing of the test conditions In terms of dimensionless = groups is
+presented in Table III.
+"_ TEST PROCEDURE
+_ The method of determining the spin down speed is basically a process
+r
+_z _ of iteration and consists of the following ste.pSo
+, I) The tire inflation pressure and wheel load are set.
+_%' _
+_,_ " 2) A deslred water film thickness is determined.
+3) An estimate of the spin down speed is made based on experience.
+_i 4) The rolling road speed is set at a speed slightly below the
+estimated spin down speed.
+5) The water flow Is adjusted for synchronization and film depth
+at the estimated spin down speed utilizing the flow graph
+shown in Figure 5.
+6) The road speed ls increased In small increments until the
+recorder trace indicates a loss In wheel speed.
+7) If the road speed determined In (6) differs from the estimated
+speed, a new estimate is made and steps (4) to (6) repeated.
+= The final value of spin down speed, which is when the wheel spins down
+at the estimated speed, is obtained from the pen recorder traces. Thls
+; recorder is ca|;brated with a hand tachometer prior to each series of tests
+i and periodically during the course of testing.
+I_ESULTS
+Polyurethane Ti re '
+_r
+i Footprint measurements of the tire contact patch area showed that, for
+the polyurethane tires there was no widening of the footprint with increasing
+! load, rather the footprint increased in length In proportion to imposed load,
+"_ ! maintaining a constant bearing pressure
+P
+
+
+
+=== PDF PAGE 21 ===
+1974003931-TSB08
+Q
+The results of the hydroplaning tests for the seven configurations of rib
+depth and number of ribs are shown graphically in Figures 6 to 21.
+Figures 6 and 7 are graphs of spin down and spin up speeds versus load,
+wlth water film thickness as a parameter, for Lh¢ bald tire. A comparlsoP of
+the two graphs shows that the spin up speed or rolling restoration speed is
+considerably lower than the spin down speed, the difference being approxi-
+mately 20 percent. The significance of this observation is that once spin
+down speed has been attained, or the vehicle brakes applied to initiate
+hydroplanin9, the vehicle must then slow down approximately L0 Fercent before
+rolling restoration occurs. This deceleration requires considerable distance
+as the wheel has no traction and hence the brakes are ineffective. A compari-
+# . son of the spin up/down data for the 8 rib and 4 rib tire, with 1/32, 2/32, Gr
+3/32 inch tread depth, shows that the difference in speeds is generally 20 to
+30 percent. This can be seen by comparing Figures 8 and 9, lO and II, and
+each of the following pair of curves up to Figures 18 and 19.
+Figures 20 and 21 are log-log plots of spin down speed versus load for a
+water film thickness'of 0.201 inch. Tire tread depth is a parameter. The
+hydroplaning inception speed is shown to increase exponentially with tread
+depth for both the 4 and 8 rib tire.
+Figure 22 is a cross plot of Figures 20 and 21, on cartesian coordinates,
+of spin down speed versus tread deF with water film and wheel load held
+constant at 0.021 Inch and 30 poun0=. This graph illustrates the differences
+between the 8 rib and 4 rib tire as a function of tread depth. For very shallow
+tread depth there is little difference in spin down speed. However, as the
+tread depth Is increased, the larger number of ribs is shown to be quite
+superior. The 8 rib tire has a considerably higher hydroplaning Inception
+speed for deep rlbs, the advantage decreasing to zero as both tires approach
+the bald condition. Since the rib area of both tires were the same, this
+difference cannot be attributable to differences in bearing pressure.
+; 17
+
+
+
+=== PDF PAGE 22 ===
+1974003931-TSB09
+# _l"°
+Figure 23 is a cross plet on log-log coordinates of the data shown in
+Figure 6. Here Vcr.d is plotted versus water fil;n thickness (h) for the bald
+tire with a load of 30 pounds. From the slope of the line it can be seen that
+hydroplaning speed varies inversely as approximately the one-sixth power of
+ti_e water film thickness.
+i"
+_' Pneumatic Ti re
+The pneumatic tlre was tested in four different configurations, namely:
+I) Bald tire on smooth road surface.
+=_14 2) Full tread depth (5 rib) on smooth surface. -
+'_ 3) Bald tire on rough road surface (150 grit).
+; 4) Full tread depth tire on rough road surface.
+The test conditions for all four configurations in terms of primary
+variables are shown in Table II. Table III lists the test conditions in terms
+of the dimensionless groups.
+Configuration I -.Bald Tire - Smooth Road
+Measurement of hydroplaning Inception speed was made for 277 different
+sets of test conditions. Measured test data for these sets are listed in Table
+IV. This data is plotted in terms of the corresponding dimensionless _ terms
+listed In Table III in order to generate a prediction eo",tion. Figure 24 is a
+plot of Trz (V_'/gO) versus % (P/pD) on log-log coordln : _ith _a (h/D) as a
+parameter, _r4 (W/pO3) is held constant.
+Since the data forms a family of straight fin., _'- equation of the
+form _x = BTLna may be obtained for the lines where B = i ;c.--, ept and n = slope
+of the line,
+From Figure 24 we obtai .
+'nz.= 29 _'a?B (27)
+where _a = 0.00938 and
+eem
+_- _4 = 2.166
+18
+i
+
+
+
+=== PDF PAGE 23 ===
+1974003931-TSB10
+The value of the intercept "B" can be found by several methods. It
+is equal to the value of the "ordinate _ when the _'abscissa" is equal to one,
+or the equation TTt = BT_n can be solved for B by substituting a set of values
+of TT1and TT=, and the value of n, from the straight line, into the equation.
+Depending on the value of the axis the most convenient method of
+determining tSB", the intercept, is used.
+From Figure 25 which is a log-lo 9 plot of n_ versus n3 with _ and
+94 held constant at 69.28 and 2.166 we obtain the relationship
+nl = 48 n=-.a4s (28)
+,, ) From Figure 26 which is a log-log plot of nzversus rr¢ with _= and
+; :=" _a held constant at 69.28 and 0.00938 we obtain the relationship
+' _z = 116 TT4"_ZZ for _ _ 2.166 (29)
+and
+n_ = 133 _.zo_ for n4 e 2. 166 (30)
+The curve in Figure 26 is composed of two straight lines and hence
+we have two regions of concern.
+= Equation.s (27), (28), (29) and (30) are combined according to the .
+.... relationship 9:
+_" T'r], i= _ .....
+• to yield
+_ _rt = 7/_ 2 _ .zvs 1.ra-.z4s n4.azz for _ s 2.166 (31)
+_ nz lee 8.94 _=.a'/s ns-.a4s _4.zoa for n4 a Z,166 (32)
+In terms of the primary Input parameters, equations (31) and
+(32) become
+i
+"_. , r_==._=_d o8 '7t_ ,,246 o_.1.1
+• gD = 7.42 [ ] [ ] [ ] for [ ] _2.166 (33)
+19
+
+
+
+=== PDF PAGE 24 ===
+............................. 1974003931-TSB11
+and
+V2 .375 " ,245 .I0_
+,#,
+-/ gD =
+_j Equation (33) gives predicted values of Vcr.d which have a maximumerror
+o£ 14.8 percent and an average error of 3.7 percent when compared to the
+experimental data. Equation (34) has a maximumerror of 14 percent and an
+average error of 3.7 percent in predicted Vcr.d versus experimental data.
+!
+Cpnfiquration 2 - Treaded Tire - Smooth Road
+•' ) The treaded tire has five ribs with a rib depth of 3/32 inch. This tire
+was tested for 136 different sets of test conditions, each set corresponding
+to a similar test for configuration !. The test data for this configuration
+is listed in Table V.
+Figures 27, 28 and 29 are log-io9 plots of w_ versus % , _ , and _4.
+The method of obtaining the component equations is similar te the previous
+configuration and yielded:
+From Fig. 27 _z = 21.5 T_'sz_ (35)
+From Fig. 28 nz = 35 _a-'ae° (36)
+From Fig. 29 nz = 164 _4"482 for TT4< 1.62 (37)
+nl = 237 _,-._9_ for _, z 1.62 (38)
+The component equations are combined to yteld:
+nt = 2.9b' %.s1_ Tr-.as0 n4.4e_ for _4 _ 1.62 (39)
+nz = 4.24 ua'sx7 T73-.oe0 TT4-.2_a for _ z 1.62 (40)
+20
+
+
+
+=== PDF PAGE 25 ===
+1974003931-TSB12
+Or in terms of the primary input parameters
+=517 "=380 ,482 t_/
+and
+m
+Vacr'----=-_d4,24 [ ] [ ] -- for [W > 1,62 (42)
+gD pD_
+Equation (41) exhibits a maximum error of 34 percent and an average
+error of 10.5 percent bet_en predicted value of Vcr.d and test data.
+Equation (42) exhibits a maximum error of 19.7 percent and average error
+.°" of 6,4 percent,
+_'_4'
+_-_ r Co.n.figurati°n 3 " Bald Tire - Rouqh Road
+The road roughness is obtained by bonding strips of 150 grit aluminum
+oxide cloth around the len.qth of the belt.
+Heasurements of spin down speed were made for 90 different sets of test
+conditions, each set corresponding to a similar set in the configuration I and
+2 series. The test data for this configuration is shown in Table VI.
+Figures 30, 31 and 32 are log-log plots of _z versus t_ , _a and '_4. The
+method of obtaining the component equations is similar to the previous
+configuration and yielded.
+From Fig. 30 zTz = 23.2 %'_°7 (43)
+From Fig, 31 _z = 26.8 _3-'4ae (/_)
+From FIg, 32 nz = 189 _4"z°e (45)
+The component equations are combined to yield
+•_" nl = 2.78 T_'s'_" %-.4;,_ (46)
+,, 21
+I
+t
+
+
+
+=== PDF PAGE 26 ===
+1974003931-TSB13
+or In terms of primary input parameters
+ii "
+C = 2.78 [ [ ] (47)
+Z! v2 h]-.4 8 W .lO
+_ gD
+Equation (47) exhibits a maximum error of 17.2 percent and an average
+error of 5.8 percent in Vcr.d when compared to our experlmental data.
+Cpnflquration 4 - Treaded Tire_- Rou.qhRoad
+, The objective of this series of tests was to _enerate sufficient data
+,.. _ so as to be able to derive a prediction equation for thls configuration. By
+varying the surface roughness it may have bec,n possible to include a "roughness"
+.... factor in the prediction equations to account for surface texture. The speed
+_- limits and water flow limits of the rolling road apparatus v,ere exceeded and
+only 9 data points generated. This data is listed in Table VII.
+DISCUSSION
+During the course of testing of the various tire configurations certain
+phenomena were observed which are worthy of comment.
+The "bow wave" and forward splash would not always dis._ppearwhen the
+wheel "spun down." It appears that the test conditions _,,chas water film
+thlckncss, load, etc., have an influence. The forward splash and bow wave
+would disappear or be reduced under certain test conditions but not for other
+test conditions.
+The wheel would spin down to a complete stc_)under certain test ¢ondltions
+(thick water films and a rough road surface) but generally slowed down to
+some "Idle" speed. The Initial deceleration of the wheel on spin down Is
+usually quite rapid and on the order of I000 feet per second for our 8-1nch
+diameter wheel then decelerating at a reducea rate until its idle speed is
+reached. Once the wheel is "idling" in the spun down condition the idle speed
+22
+
+
+
+=== PDF PAGE 27 ===
+1974003931-TSB14
+t =1_'
+is Independent of road speed. The wheel will continue to rotate at a fixed
+speed for any value of road speed prnvided we do not slow down below the
+rolling restoration speed.
+When the test data on the 8" pneumatic tlre, for various combinations of
+load, inflation pressure and water film thickness, are substituted into the
+prediction equations generated,the calculated value of spln down speed
+correlates well with the measured values.
+The prediction equations for a bald tire operating on a smooth surface
+(Equations 33, 34) were compared to data published by Staughton _° for a bald
+cross-ply tire. The film thickness, load, tire inflation pressure and wheel
+diameter (5.20-10) used by Staughton were inserted into Equation (33) and,
+the pred;cted values calculated, as well as the experimental values _°, plotted
+versus tlre pressure in Figure 33. For reference, the values obtained from
+the equations for configurations 2 and 3 (treaded tire - smooth road and bald
+t
+tire - rough road) are also shown. The Staughton data is for a bald cross ply
+5o20-lO tire operating at a load of 500 pounds on a water film thickness of
+0.374 inch. The correlation between the prediction equation and full slze
+test data from Staughton is quite good.
+The prediction equations for configurations 2 and 3 produce lines that
+are quite close together and higher in speed than that of configuration I.
+This sugg_,sts that the drainage in the tire-road surface interface is similar
+for the treaded tire - smooth road and bald tire - rough road combinations.
+These predictions do not agree completely wi th the widely accepted
+Horner-Dreher prediction s (plotted as a dashed line in Figure 33). Other
+researchers11,12 also have found hydroplaning trends to be less than the square
+root of pressure found by Hornet and Dreher (see the line of Staughton's 1°
+data, also plotted on Figure 33).
+23
+d
+d
+
+
+
+=== PDF PAGE 28 ===
+1974003931-TSC01
+CONCLUSIONS
+Polyurethane Tire
+!) The spin-up speed was determined to be approximately 20 to 30
+percent lower than the spin down speed for both the 4 rib and
+the 8 rib tlre.
+2) For very shallow tread depth there is little difference between
+a 4 rib and an 8 rib tire. As the tread depth is increased, the
+larger number of ribs is quite superior; i.e., higher spin down
+speed, for the same ratio of rib area to groove area (Figure 22).
+3) Spin down speed varies Inversely as approximately the one-sixth
+.... ; power of water film thickness, a fairly mild relationship.
+_-_.-.... 4) Footprint measurements of the tire contact patch area show that
+;. I the nominal contact patch bearing pressure remains in effect,
+_.. ,_'
+i ._.' '_ constant with increasing load, The footprint aspect ratio
+_, (length/width) changes, however, and it is believed that this is
+i'--_ responsible for the change in s]ope of the spin down versus load
+_-_ curve.
+Pneumatic Tire
+1) The effect of tire inflation pressure is significant and approximately
+the same for both the treaded tire - smooth road and smooth tire -
+rough road combination, it is less significant for the smooth tire -
+smooth road combination, being only slightly more significant than
+the other variables. In all cases, Vcr.d increases with increasing
+tire inflation pressure.
+2) The effect of water film thickness is more pronounced for the smooth
+tire - rough road and treaded tire - smooth road configurations
+than for the smooth tire - smooth road. In all cases, the spin down
+speed decreases with increasing water" film thickness.
+3) Spin down speed does not necessarlly increase with wheel load
+(Equations 41, 42). Log-log plots of the spin down speed parameter
+versus the load parameter show two load regimes for the configura-
+tions I and 2. The spin down speed increases with increasing load
+up to some point (he Ib for the 8 inch diameter wheel) then either
+Increases at a slower rate or decreases with further load (Figures
+26 and 29).
+24
+
+
+
+=== PDF PAGE 29 ===
+1974003931-TSC02
+Pneumatic Tire (cont'd)
+4) The method of dimensional analysis combined with a systematic test
+program has resulted in data from which prediction equations can
+be, and have been generated, The equations correlate quite well
+with our test data for an 8 inch diameter wheel and published data
+for a 20 inch diameter tire (5,20-10),
+RECOMMENDATIONS
+I) A series of tests be performed using pneumatic tires having different
+tread depths in order to include this effect into one prediction
+;; ,i.. equation.
+, 2) A series of tests to extend the range of road surface roughness
+-., should be performed in order to develop a relationship between
+-_:'_ surface roughness and spin down speed.
+2) A somewhat larger pneumatic tire (10-12 inch diameter) should be
+used for future testing so as to minimize distortions due to our
+inability 4o scale every variable simultaneously, and to reduce
+the effect of relatively large carcass stiffness on small diameter
+tires,
+"=i
+i Davldson Laboratory
+Castle Point Station
+i Stevens Inst| tute of Technology
+Hoboken, New Jersey, 07030
+25
+
+
+
+=== PDF PAGE 30 ===
+1974003931-TSC03
+Table !
+8" Diameter Polyurethane Model Tire Test Conditions
+_"t Smooth Tread Sutrace
+(Spin Downand Spin Up Test Points)
+Load Water Film Thickness h lin)
+_ o.bl._._' Z2 o.o2"'!" _ _
+r-_ 5
+2_
+.g 20
+8 Ribs x 1/32 Inch Deep - Area Ratio 1:1
+(Spin Down and Spin Up Test Points)
+5
+IO
+15
+20
+25
+30
+4o
+so
+55
+26
+
+
+
+=== PDF PAGE 31 ===
+1974003931-TSC04
+C
+Table I [Cont'd]
+Load , Water Film Thickness h (in)
+w (ib) o.oi.__3 0.02_.__! 0.o45 0.075 o.12.____s
+8 Ribs x 2/32 Inch DeeP
+(Spin Downand Spin Up Test Points)
+5
+1O
+" 15
+20
+25 "'---
+•_ .,j_, 3o
+_._ _o
+N,
+so
+55 _"
+8 Ribs x _/32 inch Deep
+(Spin Downand Spin Up Test Points)
+5
+10
+20
+25
+30
+40
+50
+e
+27
+
+
+
+=== PDF PAGE 32 ===
+1974003931-TSC05
+, %,
+Ill'
+Table I [Cont'd]
+Load Water Film Thlckness,..h (in)
+W(Ib) O.0'1._.._2 0O2.._!.. O.045
+,4 Rlbs x 1/32 Inch Deep.- Area Ratio 1:1
+(Spin Down and Spin Up Test Points)
+5
+" i0
+12
+_ 20
+_ 3o
+[-5
+N 5o
+;_ " 14Ribs x 2/32 Inch Deep
+_,. (Spin Downand Spin Up Test Points)
+5
+10
+2O
+30.
+5O _,
+4 Ribs X _/_2 Inch Deep
+(S_in Down and Spin Up Test Points)
+5
+I0
+20
+30
+50
+60 "-'--
+28
+
+
+
+=== PDF PAGE 33 ===
+"t "....................... 1974003931-TSC06
+IIIel.
+r'
+Table II
+Pneumatic Tire Hydroplaning Hodel Test Conditions
+DLmensionaI Variables
+p, Iblin:'
+Configuration (1) Bald Tire - Smooth Road
+5 5 -* 90 .021, .045, .075, .125
+!0 5 " iO0 ,, ,I m,, ,,
+' 15 5 " I00 " " " "
+d¢
+', 20 5 "* 120 " " " " "
+_. 25 5 " 120 " " " "
+30 5" I10 .021, .075, .045
+Configuration (2) Treaded Tire - Smooth Road
+5 5 " 80 .045, .075, .125
+10 5" 90 "
+15 5 -' 100 "
+20 5 " 120 "
+25 5 " 120 .075, .125
+Configuration (3) Bald Tire - RoughRoad
+15 5 _ 90 .Ok5, .075, .125
+20 5 -' 80 "
+25 5 " 90 "
+Configuratlon (4) Treaded Tire - RoughRoad
+15 5 - 35 .075
+15 10._ 20 .125
+*Veltlcal load applied In 5 lb Increments 5 through 20 Ib, and
+• I0 Ib Increments 20 through 120 lb.
+i ,
+-il 29
+• ! ,i
+l-
+i: !
+
+
+
+=== PDF PAGE 34 ===
+1974003931-TSC07
+Table I I I
+Test Conditions (Dimensionless Groups)
+!
+30
+
+
+
+=== PDF PAGE 35 ===
+1974003931-TSC08
+; Table III [Cont'd]
+Configuration 2
+t •
+0.271 17.32 3g•(:_ 51.96 69.28 86.60 00_63 00938 01562
+Sj
+_ 0.812
+_, 1.083
+[,
+'_ 1.62g
+_ '
+_¢ _ _, 2. 166
+,?i:.!, ,.707
+_ 3.790
+: g.331 _ __
+g.873 _.: ,.__
+22
+" 5.gig ,,
+6._97 _ C- " '
+31
+J
+
+
+
+=== PDF PAGE 36 ===
+1974003931-TSC09
+Table III [Cont'd]
+Confi9uration 3
+
+
+
+=== PDF PAGE 37 ===
+1974003931-TSC10
+Table IV
+Configuration 1 - Test Data
+8" x 2°8" pneumatic tire, smooth tread,
+smooth surface, 5 _ 30 lb/in 2 tire inflation pressure
+Water Film Hydroplaning Speed Vcr_d (ft/min)
+Th|ckness Load ' '
+h (in) W (ib) _ _ 1__psi 20 psi 2_; psi 3_..0psi
+0.021 5 2000 1925 2300 2300 2450 2450
+IO 2400 2400 2400 2500 2650 2650
+15 2500 2750 2600 2650 2775 2800
+20 25O0 2925 2925 2900 3000 2950
+....¢ /*" ) 30 2750 2950 3200 3250 3400 3350
+6,..•.,. _0 2900 3100 3200 3350 3600 3625
+;_:. o!o_ Z 50 3050 3150 3200 3450 3700 3750
+.... _ 60 3225 3225 3325 3525 3750 3800
+7o 3550 3300 3250 3550 3900 3850
+80 3625 3425 3350 3525 3900 3900
+90 3700 3550 3350 3550 3950 3950
+100 - 3675 3500 3550 4050 4100
+!10 - - - 3675 4200 42OO
+O,045 5 2200 2500 2600 2725 2875 -
+,- I0 2600 2900 2900 2950 31O0 -
+_T i 15 2675 3100 3150 3175 3250 -
+_: 20 2750 3250 3400 3400 3550 -
+.... 30 2900 3275 3475 3650 3700 -
+4O 3100 335O 35D0 3650 3800 -
+!_-il 50 3250 3520 3550 37OO 3725 -
+i_i 60 3300 3650 3625 3750 3675. -
+IF!.
+i_-_: 70 3300 3650 3650 3750 3750 -
+_il 80 3350 3625 3700 3800 3800 -
+90 - - 3725 3825 3825 -
+_i. Io0 - - - 3825 3825 -
+-_t. *, 120 - - - 3800 3850 -
+33
+"ii
+
+
+
+=== PDF PAGE 38 ===
+1974003931-TSCl 1
+Table IV [Contld]
+Water Film Hydroplaning Speed Vcr.d (ft/min)
+: Thickness Load
+h (in) _ _ 5 psi lOps! 1_ psi _ 25 psi
+_ 0.075 5 1800 2100 2350 2450 2475 2700
+i_ I0 2100 2425 2650 2725 2775 2925
+_ 15 2100 2800 2850 2850 2950 3050
+!_ 20 2300 2900 2950 3025 3100 3200
+3 4 0 0 2 2 5 8 7 5 5 0 2 2 8 9 0 5 0 0 3 3 1 1 7 7 5 5 3 3 3 3 0 7 0 5 3 3 3 5 7 2 5 5 33640500
+50 2900 3050 3175 3350 3525 3600 .
+,, __ •_. 60 2925 3100 3200 3350 3550 3600
+=_ 70 2950 3200 3275 3400 3525 3575
+80 3050 3250 3325 3425 3550 3600
+_ i 90 - 315o 3400 3500 3600 3650
+_ I00 - - 3400 3525 3625 3650
+I'10 - - - 3550 3700 3700
+120 - - - 3575 3700 -
+0.125 5 1775 2025 2175 2350 2375 2450
+10 1975 2375 2500 2650 2725 2800 .
+15 2075 2475 2600 2750 2850 2925
+20 2125 2525 2750 2925 2950 3050
+30 2325 2775 2950 3125 3225 3225
+40 2475 2700 3000 3225 3375 3275
+50 2625 2800 2900 3200 3450 3400
+60 2675 2775 2925 3125 3425 3525
+70 2725 2925 2950 3100 3400 3450
+80 2775 3000 3025 3100 3375 3450
+90 - 3050 3100 3150 3400 3500
+100 - - 3125 3175 3_oo 3500
+I10 - - - 3250 3400 3500
+
+
+
+=== PDF PAGE 39 ===
+1974003931-TSC12
+Table V
+Configuration 2 - Test Data
+8" x 2,8" pneumatic tire, 5 rib circumferential tread,
+smooth surface, 5 - 25 ib/in 2 tire inflation pressure
+Water Film Hydroplaning Speed V (ft/min)
+Thickness Load cr-d
+W (Ib) 5 psi. 10 psi l_.__p..s_, 20 psl
+O.045 5 2600 3075 3iO0 3175 -
+10 3500 3525 3650 3675 -
+15 3575 3500 4000 3950 -
+20 3500 3750 4150 4275 -
+__. 30 3400 3350 3900 _J+O0 -
+.... : 40 3200 3500 3675 410o -
+_/ 50 3050 3475 3750 3850 -
+_ 60 2925 3200 3750 4150 -
+70 2750 3125 3500 - -
+80 2675 3!o0 3350 3825 -
+90 - - 3225 - -
+100 - - - 3600 -
+120 - - - 3450 -
+O.075 5 2550 2525 2600 2575 2675
+10 2850 2850 2900 2925 3!O0
+15 3_50 3200 3225 3400 3375
+20 3050 3375 3500 3650 3650
+30 29?.5 31O0 3525 4000 4050
+40 2925 3150 3250 3825 4150
+50 .... 3825
+60 2700 2925 3300 36oo 3775
+80 2550 2875 2975 3575 3825
+90 - 2825 - - -
+I00 - - 2800 3350 3600
+, 120 - - - 3200 3400
+' 35
+
+
+
+=== PDF PAGE 40 ===
+1974003931-TSC13
+i Table V [Cont_d]
+_ (ft/min)
+_,_ Water Film Hydroplaning Speed Vcr.d
+_ Thickness Load
+_ h (in) _ _ 10psi _ _
+;; 0.125 5 2100 2125 2225 2300 2350
+!-_ 10 2450 2625 2725 2650 2750
+i_ 15 2700 2875 2900 2950 3075
+20 2825 3075 3100 3250 3300
+30 2750 3225 3500 3625 3750
+40 2850 31oo 3275 3775 3950
+50 - 3200 - 3475 3975
+60 2700 - 3450 3500 3725
+'giI;IPL. 70 - 305o - - "
+i_' ., 80 2650 - 3200 3575 3800
+i_i .,'_ 90 - Z975 - - "
+_' !oo - - 31oo 3350 3700
+120 .... 3500
+36
+........................ , , __.......... :: _.. "--7:_:: _'_._',"_-, "' _ -_ ' _ ::_k _ _.
+
+
+
+=== PDF PAGE 41 ===
+1974003931-TSC14
+Table Vl
+Configuration 3 - Test Data
+_j 8" x 2.8" pneumatic tire, smooth tread, #150 grit
+_i aluminum oxide surface, 15 -_ 25 psi tire inflation pressure
+Water Film Hydroplaning Speed Vcr.d (ft/min)
+Thickness Load
+h (in) W(lb) _ _
+O.045 5 4150 43oo 4500
+l 0 42O0 WOO 4450
+15 415o 4300 4500
+20 4050 4050 4250
+"" ' 30 4200 4200 4350
+40 4350 4550 4400
+50 4600 4600 4500
+60 4750 4700 4600
+70 4800 4800 4750
+80 - 4800 4800
+90 - - 4900
+0.075 5 3600 3700 4050
+I0 3750 3900 4200 "
+15 3700 3950 4250
+20 3650 3850 4200
+30 3550 3750 4000
+40 3750 3800 4050
+50 3900 39o0 410o
+60 4100 4000 4200
+70 4050 4125 4200
+80 _350 4300 415o
+90 4350 - 4200
+)7
+
+
+
+=== PDF PAGE 42 ===
+1974OO3931-TSDO1
+l
+table Vl [Cont'd]
+Water Film Hydroplaning Speed Vcr.d (ft/min)
+Thickness Load
+h (in) _ _ _ 2_ psi
+0.]25 5 3300 3200 3350
+lo 3450 3600 3550
+15 3500 3800 3750
+20 3400 3900 3900
+30 3300 3600 3950
+40 3400 3650 3800
+50 3600 3700 3850
+!_!_,/'_ _ 60 3650 3900 3900
+;. , 70 3775 4200 4150
+i_,_ • &O 4100 - "
+M
+; •
+
+
+
+=== PDF PAGE 43 ===
+1974003931-TSD02
+Table Vl I
+Configuration 4 - Test Data
+8I_ x 2.8" pneumatic tire, 5 rib circumferential tread,
+#!50 aluminum oxide surface
+Water Film Hydroplaning Speed Vcr.d (ft/min)
+Thickness Load
+,,h(i,n) _ 1_ psi 2o _si
+0.075 5 3750 - .m
+I0 4350 - -
+15 4600 - -
+20 4900 - -
+:. 25 - ° =
+.. 3o 5350 - -
+_! 35 5600 Note I: Any further
+_ 40 - increase in load or
+_" Inflation pressure,
+50 - or decrease in film
+thickness will cause
+60
+road to exceed maxi-
+mumsafe speed.
+0. 125 5 - - -
+I0 3850 - -
+15 4150 - -
+20 4300 Note 2: 4300 ft/min
+road speed requires
+25
+a water flow rate
+30 - of 327 GPHwhich is
+maxImumequ Ipment
+: 35 -
+capability. Any
+40 - further increase in
+W o,- P will cause
+50 " road speed to
+60 - Increase beyond water
+flow capabi !ity.
+l I 39
+•t
+
+
+
+=== PDF PAGE 44 ===
+.... 1974003931-TSD03
+FIGURE 1. 8" DIA. x ._.25"WIDE POLYURETHANE TIRE (8 RIBS)
+t J
+4O
+
+
+
+=== PDF PAGE 45 ===
+" " 1974003931-TSD04
+/ _°' e
+FIGURE 2. 8" DIA. x 2.80" PNEUMATIC NYLON CORD
+4-PLY TIRE (SMOOTH AND FULL TREAD
+CONFIGURATION)
+41
+
+
+
+=== PDF PAGE 46 ===
+1974003931-TSD05
+LoadedTest Ti re
+NozzI•
+_._
+_ Idler Drum Belt Po_._redDrum
+,.."
+;._
+FIGURE 3. ROLLING ROAD
+
+
+
+=== PDF PAGE 47 ===
+1974003931-TSD06
+k
+FIGURE 4. WATERFILH NOZZLE
+(Variable Film Thickness by
+Changing Spacer Rods at: Dis-
+Charge End)
+... 43
+! j
+
+
+
+=== PDF PAGE 48 ===
+1974003931-TSD07
+0
+_0
+0
+
+
+
+=== PDF PAGE 49 ===
+1974003931-TSD08
+e_""
+4000 --
+3500!-
+3000- h- .o12
+= ,021
+2500 -- = .045
+. = .075
+' 2000 = ,125
+_!___._._!;,,
+.
+• '-" 1000 --
+!
+U
+>
+8" Dia, x 3.25" Wide Bald Polyurethane Tire
+: 500 --
+Load [lb]
+,_. FIGURE 6, SPIN DOWNSPEED VS. LOAD (WATERFILM
+THICKNESS AS A PARAMETER)
+_ 45
+
+
+
+=== PDF PAGE 50 ===
+....... _ " - '_ -' ........ " ...... _ ....... :"" _ " 7 .." " -'_'-_:
+1974003931-TSDO.q
+dll"o
+• _' :3 0 l_.__b/ .7_0J____
+5I I!0 1,5 2J0_____ lo_ _41_So
+Load [Ib]
+FIGURE 7, SPIN UP SPEED VS. LOAD ( WATER FILM
+L_6 THICKNESS AS A PARAMETER) '
+
+
+
+=== PDF PAGE 51 ===
+1974003931-TSD10
+4000 --
+3500-- h = .012
+-- .021
+.3000 -- = .045
+= .075
+2500 -- =.1125
+E 2000'--
+_+_,,_u -o 1500 -- '
+|
+1000
+8" Dia. x 3.25" Wilde Polyurethane Tire
+i 8 Ribs x 1/32" Deep
+, Area Ratio 1:1
+L 500--
+i
+4
+'i
+_i _ }'
+!,: 1
+_, _ I ! I ,I. ,.. I I ! t !
+=i i .....
+' 5 IO 15 zo 30 40 50 60 70
+:i' l.oad [lb]
+"I i 4,,
+--i FIGURE 8. SPiN DOWNSPEED VS. LOAD (WATER FILM ,
+THICKNESS AS A PARAMETER 47 ;
+I'
+
+
+
+=== PDF PAGE 52 ===
+1974003931-TSD11
+7
+i
+4000
+3500 h = .012
+N 30001-
+i_ ! = .021
+=_ 2500!-- = .045
+,t 2000 == ..017255 ,
+;,_q ' t
+, _ _5oo
+1000 --
+500 --
+8" Dia. x 3.25" Wide Polyurethane Tire "
+8 Ribs x 1/32" Deep
+Area Ratio l:l
+L I__ .
+Load [lb]
+4.
+FIGURE 9. SPIN UP SPEED VS. I.DAD (WATER FILM
+48 THICKNESS AS A PARAMETER) '
+
+
+
+=== PDF PAGE 53 ===
+' 1974003931-TSD12
+h = .012
+400C-- . _-- = .021
+3500'_- = 045
+i
+3000-- = .075
+/
+2500"--- = . 125
+E 200C --
+._.,,.-. "o 1500--
+!
+-,_; L
+>
+_' 1000 --
+8" Dia, x 3.25" Wide Polyurethane Tire
+8 Ribs x 2/32" Deep
+Area Ratio I.I
+50.0_-
+5 I0 15 20 '30 40 50 60 70
+Load [Ib]
+• ", FIGURE I0. SPIN DOWNSPEED VS. LOAD (WATER FILM
+THICKNE,C$ AS A PARAMETER) 49
+
+
+
+=== PDF PAGE 54 ===
+1974003931-TSD13
+• dlf''
+6" Dia, x 3,25" Wide Polyurethane Tire
+8 Ribs x 2/32" Deep
+500 --
+Area Ratio 1:1
+l ._...... L-_-L---! L__J__.L_.L_I__
+5 I0 15 ]20 30 40 50 60 70
+Load [ Ib]
+FIGURE |I, SPIN UP SPEED VS. LO/).D (WATER FILM
+i
+50 THICKNESS AS A PARAHETER)
+
+
+
+=== PDF PAGE 55 ===
+
+
+
+
+=== PDF PAGE 56 ===
+1974003931-TSE01
+4000-- h = .012
+3500-- = .021
+3000-- - .o45
+2500_'- = . 075
+• ,:, '_, 2000 = ] 25
+!_" _ _ #,,b.
+_,,'--' ,,- =" ! 5001--
+_' > 1000--
+8" Dia. x 3.25" Wide Polyurethane Tire
+i; 8 Ribs x 3/32" Deep
+_ Area Ratio 1:1
+_-_.
+_ 500 --
+5 15-20 3 40 50 60 70
+Load [ Ib]
+"- FIGURE 13. SPIN UP SPEED VS. LOAD (WATER FILM
+52 THICKNESS AS A PARAMETER) '!
+
+
+
+=== PDF PAGE 57 ===
+• " "" _ ............. -.... "-"*-" ='=_'='____2_ " "-- .:--.;._-::L.._"_;.... :..L.:'_j .,,.:,,_ ._: .... =.,,_._..-
+Jq7ArINqaq4 T_Er_
+400( _
+3500 --
+h = ,012
+3000 -- =.-.0-2,1
+2500 --
+= •045
+_-,:"_,.._, 2000-- = .125
+",0 I000 --
+L
+u 8" Dia. x 3.25" Wide Polyurethane Tire
+4 Ribs x 1/32" Deep
+Area Ratio l:l
+500 --
+• _......I , I I .L.___L _L_.L_JJ_
+.... "-L__-t_...... _ I • I .... L
+.... 5 ] 0 ] 5 20 30 40 50 60 70
+" _, Load [lb]
+_: FIGURE 14. SPIN DOWN SPEED VS. LOAD (WATER FILM ,rl
+THICKNESS AS A PARAHETER) 53 _.
+
+
+
+=== PDF PAGE 58 ===
+1974003931-TSE03
+4000
+3500 .--
+3000 .-
+!-.
+_:, 2500 --
+'_ 2000 --' • ,':-- _ h = .O12
+/4 _L .o45
+'"I ,...-., 1500 -- .i 25
+IE
+= 1000 --
+!
+k.
+(J
+8" Dia. x 3.25" Wide Polyurethane Tire
+4 Ribs × 1/32" Deep
+500 -- Area Ratio I:I .
+f i _ i l__l [._£_L__
+5 10 15 20 30 40 50 60 70
+Load [Ib]
+FIGURE 15. SPIN liP SPEED VS. LOAD (WATER FILM
+54 THICKNESS AS A PARAMETER)
+
+
+
+=== PDF PAGE 59 ===
+1974003931-TSE04
+i1¢,0
+4000 --
+3500 -- h = •012
+= •021
+3000 --
+= .045
+2500--
+= .125
+-_::_' ,_ . 2000 --
+y: ._. 1500 --
+1000 --
+i
+I. 8" Dia x 3 25" Wide Polyurethane Tire
+0 • •
+> 4 Ribs x 2132" Deep
+Area Ratio I:1
+500 --
+I : : t __j_ _:-!__:-!.....J._J.,.._.1__7.ol---
+5 I0 15 20 30 40 5,_ 60
+Load [Ib]
+_' FIGURE 16. SPIN DOWNSPEED VS. LOAD (WATER FILM
+THICKNESS AS A PARAMETER) 55
+
+
+
+=== PDF PAGE 60 ===
+C"
+4000
+' 3500--
+_.. 3000
+_ 2500 --
+_ 2OOO-- h = .O12
+:T.,! _ .O21
+E .045
+o. " .125
+_" 1500 --
+I
+I-
+u 1000
+8" Dia. X 3.25" Wide Polyurethane Tire
+4 Ribs x 2/32" Deep
+5OO-- Area Ratio l:l
+==
+5 IO 15 20 30 40 50 60 70
+Load [Ib]
+J
+FIGURE 17. SPIN UP SPEED VS. LOAD (WATER FILM ,,
+56 THICKNESS AS A PARAMETER)
+
+
+
+=== PDF PAGE 61 ===
+1974003931-TSE06
+Il"lo
+i 4000 _........._.------' -'-...h..=. o12
+' 3500 -- 021
+2500 m = 125
+_ ,_,, • 2000-
+_.,
+:.::,_; i500 --
+. _ a. 1000 --
+W,.,
+! •
+_a 8" Dia. x 3 25" Wide Polyurethane Tire
+>u . 4 Ribs x 3132" Deep
+Area Ratio 1:!
+500--
+i
+_, ,. , , , _) _@-_V
+5 -I0 15 " 20 - 0.... 0 u 1T--
+Load [Ib]
+_' I FIGURE 18. SPIN DOWN SPEED VS. LOAD (WATER FILM
+-- 1 THICKNESS AS A PARAMETER)
+:: 'i 57
+• I
+1
+! ,
+
+
+
+=== PDF PAGE 62 ===
+1974003931-TSE07
+let
+4000 --
+3500 --
+3000 "-
+2500 --
+'+ .
+•,, h = ..O12
+__ / , 2000 -- = .O21
+_" = .045
+_,:;'_J:,r i 500 -- = _125
+.
+IOOO --
+!
+U
+> 8" Dia. x 3.25" Wide Polyurethane Tire
+4 Ribs x 3/32" Deep
+Area Ratio !.1
+500 --
+I !+ i ...l.+ i t ....L LL
+5 tO 15 20 30 40 50 60 70
+Load [Ib]
+FIGURE 19. SPIN UP SPEED VS. LOAD (WATER FILM
+58 THICKNESS AS A PARAMETER)
+
+
+
+=== PDF PAGE 63 ===
+1974003931-TSE08
+3/32"
+!. 4,ooo_ . 2/32-
+_' 3500 --
+3000 -- 1/32"
+2500 -- Bald
+_:. _:_,J 2000 -- ,
+" _-¢.
+-.-, 1500 -
+O.
+.,,-
+1000 --
+!
+L. 8" Dia. x 3 25" Wide Polyurethane Tire
+> 8 Ribs - Area Ratio l:l
+Water Film Thickness = O.021 Inch
+..o
+500-
+i
+I0 15 20 .......
+Load [lb]
+FIGURE 20. SPIN DOWN SPEED VS. LO_D (TREAD DEPTH t
+AS A PARAHETER) 1
+59
+t
+
+
+
+=== PDF PAGE 64 ===
+[ fT.,,
+
+
+
+=== PDF PAGE 65 ===
+1974003931-TSElO
+_r.
+L
+_; Vcr.d vs. Tread Depth
+h = 0,021 inch
+_' W=30 lb
+L.
+8 rib
+•. ) 4000_.
+}
+' -- 3000 --
+i '
+t
+i u
+_ >
+w
+[
+I.
+; 2000 _
+.... ; ; i I /I, ii i - 2/3 I 2 i n ±1 3 • /3 I 2
+! Tread Depth [in]
+_.T _ FIGURE 22. _;PIN DOWNSPEED VS. TREAD DEPTH
+!_ FOR A CONSTANT WATER FILM
+_ THICKNESS AND LOAD (POLYURETHANE
+_" " TIRE)
+6!
+t
+)i
+
+
+
+=== PDF PAGE 66 ===
+500
++_ _ __ I __.._:..j... j .... _L !_,J_LLJ.....__L+.+.._,__
+.010 .05 .lO 1.5 .2 "
+Film Thickness h [in]
+62 B" DIA. x 3,25" WIDE BALD POLYURETHANE '
+TIRE - LOAD= JO LB
+i FIGURE 23. SPIN DOWN SPEED VS. WATER FILM THICKNESS
+
+
+
+=== PDF PAGE 67 ===
+1974003931-TSE12
+50C
+FIGURE 24. CONFIGURATION I, _1 vs. 92
+
+
+
+=== PDF PAGE 68 ===
+1974003931-TSE13
+m
+5o I, I I ! I ll 1
+.004 .010 .I0
+FIGURE 25. CONFIGURATION I, n I vs. H 3
+
+
+
+=== PDF PAGE 69 ===
+1974003931-TSE14
+I I I ,I . I i I I ....
+. 0 C, Lt_
+o (_) I_ o o
+65
+
+
+
+=== PDF PAGE 70 ===
+1974003931-TSF01
+ql=.
+_o i I ! ! I I Ill
+- "''" |00
+o 7=(_1
+FIGURE 27, CONFIGURATION 2, [31 vs. II 2
+
+
+
+=== PDF PAGE 71 ===
+1974003931-TSF02
+r"
+500-- CONFI GURATI ON 2
+• _2 = 51.96
+-- _2 = 69.28
+___2= 86.60
+['4I= I. 624
+IIl; A i-[m3= 35II3"3803
+i
+•- .g/ i
+_' _2
+! OC
+i --
+i so 1 I I I i ! I
+' .005 .OI .02
+FICURE 28. CONFIGURATION 2, [1! vs. [I 3
+! '."
+=iT .
+67
+t _
+i-l.
+
+
+
+=== PDF PAGE 72 ===
+1974003931-TSF03
+
+
+
+=== PDF PAGE 73 ===
+1974003931-TSF04
+_ 69 1
+
+
+
+=== PDF PAGE 74 ===
+FIGURE 31. CONFIGURATION3, [I1 VS. [I3
+7o
+
+
+
+=== PDF PAGE 75 ===
+1974003931-TSF06
+I I ,[ ! ,_ ,
+0 0
+
+
+
+=== PDF PAGE 76 ===
+1974003931-TSF07
+
+
+
+=== PDF PAGE 77 ===
+] 97400393]-TSF08
+G •
+REFERENCES
+|. Dugoff, H. and Ehrlich, I. R., Proceedings of the Seventh Annual National
+Conference on Environmental Sciences, Princeton, New Jersey, September
+1967.
+2. Dugoff, H. and Ehrlich, I. R., "A Laboratory Scale Model Technique for
+Investigating Pneumatic Tire Hydroplaning," Davidson Laboratory Report
+1223, Stevens Institute of Technology, Hoboken, New Jersey, September
+1967.
+3. Ehrlich, I. R., Schaefer, A. R., and Wray, G. A., "Parameters Affecting
+Hodel-Tire Hydroplaning and Roll in 9 Restoration," Davidson Laboratory
+- Report SIT-DL-70-1405, Stevens Institute of Technology, Hoboken, New
+Jersey, March 1970.
+4. Wray, G. A., Jurkat, M. P., "Derivation of an Empirical Equation Relating
+Critical Hydroplaning Speed, Water Film Thickness and Nominal Contact
+_' Patch Bearing Pressure, for an 8" Diameter Polyurethane Model Tire,"
+Davldson Laboratory Letter Report SIT-DL-70-1479, Stevens Institute of
+Technology, Hoboken, New Jersey, February 1970.
+5. Horne, W. B., and Joyner, U. T., "Pneumatic Tire Hydroplaning and Some
+Effects on Vehicle Performance," Society of Automotive Engineers
+Paper 970C, January 1965.
+6. Tsakonas, S., Henry, C. J., and Jacobs, W. R., '*Hydrodynamics of Aircraft
+Tire Hydroplaning," NASAContract Report 1125 (DL Report 1238), August
+1968.
+7. Daughaday, H. and Tung, C., "A Hathematical Analysis of Hydroplaning
+Phencx,_na," Cornell Aeronautical Laboratory Report AG-2495-S-!,
+January 1969.
+8. Dugoff, H., 'q'he Davidson Laboratory Rolling Road Facillty, H Davldson
+Laboratory Note 693, Stevens Institute of Technology , Hoboken, New
+Jersey, I_ovember 1963.
+9. Murphy, O., °Elmllitude In Engineering, u Ronald Press, New York, New York,
+1950.
+IO. Staughton, G. C. and Wllllams, T., *'Tyre Performance in Wet Surface
+Conditions," Road Research Laboratory, Ministry of Transport, RRL Report
+LR-355, Crowthorne, England, 1970,
+73
+r.
+f
+
+
+
+=== PDF PAGE 78 ===
+1974003931-TSF09
+References (cont'd)
+LL._J_artinez, J. E., Lewis, J. M. and Stocker, A. J., =tAStudy of Variables
+Associated with Wheel Spin-Down and Hydroplaning," Texas Transportation
+Institute Report 147-1, March 1972,
+12. Nordstr'_m, 0., "Effects of the Thickness of the Water Film on Skid
+Resistance, _' paper not yet published.
+7_
+
+
+
+=== PDF PAGE 79 ===
+1974003931-TSF10
+¢ tit'
+BIBLI OGRAPHY
+Dugoff, H. and Ehrlich, I. R., "Laboratory Scale Model Experiments to
+Investigate Aircraft Tire Hydroplaning," Davidson Laboratory Note 779,
+Hoboken, New Jersey, September 1967.
+Ehriich, I. R., "Model Studies in Tire Hydroplaning," Proceedings of the First
+International Conference on Vehicle Mechanics, and Davidson Laboratory
+Technical Note 792, Hoboken, New Jersey, undated.
+Eshel, A., "A Study of Tires on a Wet Runway," AMPEXCorporation, Report
+RR 67-24, September 1967.
+Gough, V. E. and Badger, D. W., 'rfyres and Road Safety," Fifth World Meeting
+of the international Road Federation, Dunlop Rubber Company Ltd., London,
+_'_ ,i • England, 1966.
+_Z Home, W. B. and Dreher, R. C., "Phenomena of Pneumatic Tire Hydroplaning,"
+_i:i_ _ NASATechnical Note TN-D-2056, Washington, D. C., November 1963.
+• MaArnccei,deWnt.sB.oar ndIncJiodyennetsr,," U. RTe.p, ort"Deptreersmeinntiendg atCauthseati2o3nrd oAf nAniurcarlafItnternSaktiidodnianlg
+Air Safety Seminar,. Washington, D. C., 1970.
+Horne, W. B., Joyner, U. T. and Leland, T. J. W., "Studies of the Retardation
+Force Developed on an Aircraft Tire Rolling in Slush or Water," NASA
+Technical Note D-552, Washington, D. C., September 1960.
+Horne, W. B., Yager, T. J. and Taylor, G. R., "Review of Causes and Alleviation
+of Low Tire Traction on Wet Runways," NASATechnical Note TN-D-/4_06,
+Washington, D. C., April 1968.
+I'Anson, R., "Aquaplaning Studies Using a Small Pneumatic Tire," Dept. of
+Aeronautical Engineering, University of Bristol, Report No. PG-TO-I, Bristol,
+England, January 1970.
+Kummer, H. W., "Pavement Wetting and Skid Reslstance," Jolnt Road Friction
+Program of the Pennsylvania State Dept. of Highways, The Pennsylvania
+State University, Report No. 8, University Park, Pennsylvania, December 1963.
+t
+! Lude.ma, K. C., "Road Surface Texture," Materials Research and Standards,
+October 1971.
+: Hoore, D. F., "A Study of Tire-Surface Interaction for the Case of Rolling on
+_ a Wet Surface," Cornell Aeronautical Laboratory, Report No. YD-1969-V-,_,
+Buffalo, New York, July 1965. ;
+|
+_" 75
+- (
+b
+I
+
+
+
+=== PDF PAGE 80 ===
+Hoore, D. F., ",_rainage Criteria for Runway Surface Roughness," Corne|l
+Aeronautical Laboratory, Report No. 139, Buffalo, New York, December 1963.
+NordstrOm, 0., 'q'he Effect of the Oepth of Water F|lms on Road Friction,"
+from a draft of Chapter III from the P.I.A.R.C. Technical Committee on
+S|ipper|ness, Statens V_ginstitut, Stockholm, Sweden, December 1970.
+Rose, J. 6._ "Pavement Surface Texture Heasurement Hethods," an Interim
+_. Report prepared by ASTMSubcommittee E-17.23, Atlantic City, Hew Jersey,
+• June 1971,
+o
+/
+:,;_
+.,_ ;
+"

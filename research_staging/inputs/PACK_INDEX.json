@@ -1,0 +1,37 @@
+{
+  "pack": "ACLM Tire Lab 500 Content Corpus Expansion",
+  "total_records": 500,
+  "groups": {
+    "current_knowledge_deep_mine": 290,
+    "previous_50_source_packet": 100,
+    "fresh_50_sources": 100,
+    "cross_source_gap_mission": 10
+  },
+  "current_source_count": 145,
+  "prior_packet_source_count": 50,
+  "fresh_source_count": 50,
+  "gap_mission_count": 10,
+  "knowledge_release_input": "1.7.0",
+  "files": {
+    "ACLM_Tire_Lab_500_Content_Corpus.jsonl": {
+      "bytes": 740186,
+      "sha256": "a2b8b10c7629f3e5efb61378253dd7f6df206a73f2a00288f5458b75cbe8f1f0"
+    },
+    "ACLM_Tire_Lab_500_Content_Corpus.csv": {
+      "bytes": 581000,
+      "sha256": "6f9d81750f7161deb20014651d52ca800de5267c5310be760939cc5c0aa41594"
+    },
+    "FRESH_50_SOURCE_MANIFEST.txt": {
+      "bytes": 22887,
+      "sha256": "5343a5155cca65e08a86e34dde069906f1201eeb9320c0d1bc2ae0c9eb89adcf"
+    },
+    "CORPUS_STATS.txt": {
+      "bytes": 1108,
+      "sha256": "3e4bcd58456055bf9907aa82c19dff44333224a122a5e4597ec8ee34014300d9"
+    },
+    "README_DESKTOP_PROMPT.txt": {
+      "bytes": 7220,
+      "sha256": "b21f942dc7375654787795cdb80b1c8815f3652081ddc206f6c4e6a29e779f58"
+    }
+  }
+}

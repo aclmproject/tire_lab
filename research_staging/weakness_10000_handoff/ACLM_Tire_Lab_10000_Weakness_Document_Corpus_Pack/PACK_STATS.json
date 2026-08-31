@@ -1,0 +1,22 @@
+{
+  "acquisition_targets": 10000,
+  "p0": 1000,
+  "p1": 3000,
+  "p2": 6000,
+  "verified_fresh_seed_sources": 50,
+  "shards": 20,
+  "records_per_shard": 500,
+  "weakness_counts": {
+    "W01_PRESSURE_TEMP_SETUP": 1600,
+    "W02_WEAR_LIFE_GRIP": 1400,
+    "W03_FM_STIFFNESS_TRANSIENT": 1350,
+    "W04_WET_INTERMEDIATE": 1150,
+    "W05_CONSTRUCTION_MATERIALS": 1000,
+    "W06_SUPPLIER_COMPOUNDS": 900,
+    "W07_FITMENT_GEOMETRY_REGS": 900,
+    "W08_GT1_1990S_MAP": 700,
+    "W09_HEAT_CYCLE_AGING_DAMAGE": 550,
+    "W10_RR_HYSTERESIS_THERMAL": 450
+  },
+  "manifest_sha256": "f7f5cddd6637cad895ccc7013232d41ff393c76696a0f2b0fc1e572f68b9fb50"
+}

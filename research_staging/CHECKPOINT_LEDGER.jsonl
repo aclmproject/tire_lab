@@ -1,0 +1,6 @@
+{"checkpointId": "M0", "path": "checkpoint_000_first_5000", "status": "PRESERVED"}
+{"checkpointId": "M1", "path": "checkpoint_001_milestone1", "status": "PRESERVED"}
+{"checkpointId": "M2", "path": "checkpoint_002_milestone2_working", "status": "PRESERVED"}
+{"checkpointId": "M3", "path": "checkpoint_003_milestone3_archive_first", "status": "COMPLETE"}
+{"checkpointId": "M4", "path": "checkpoint_004_milestone4_fulltext", "status": "COMPLETE_OVERALL_RESEARCH_PARTIAL_CONTINUATION_REQUIRED", "sourceIds": ["E-SRC-0074", "E-SRC-0075", "E-SRC-0078", "E-SRC-0079", "E-SRC-0084", "E-SRC-0085", "E-SRC-0089", "E-SRC-0090", "E-SRC-0091", "E-SRC-0094", "E-SRC-0095", "E-SRC-0096", "E-SRC-0098", "E-SRC-0100", "E-SRC-0109", "E-SRC-0113", "E-SRC-0114", "E-SRC-0116", "E-SRC-0118", "E-SRC-0122", "E-SRC-0124", "E-SRC-0125", "E-SRC-0130", "E-SRC-0131", "E-SRC-0076", "E-SRC-0081", "E-SRC-0105", "E-SRC-0108", "E-SRC-0123", "E-SRC-0128"], "qualityGate": "MILESTONE_4_QUALITY_GATES.json", "report": "MILESTONE_4_FULLTEXT_REVIEW.md"}
+{"checkpointId":"M5","path":"checkpoint_005_milestone5_engineering","status":"COMPLETE","applicationVersion":"0.10.0","knowledgeVersion":"1.7.0","historicalNumericalPriorsChanged":0,"installerSha256":"c677ed5c8df73ad4121a9f4a56dd2dcde7d545015421f6b94439e00b58b4c132","report":"../docs/Engineering_Report_Milestone_5_v0100.md"}

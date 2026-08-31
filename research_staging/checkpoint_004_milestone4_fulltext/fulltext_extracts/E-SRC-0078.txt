@@ -1,0 +1,401 @@
+=== PDF PAGE 1 ===
+CURRENT RESEARCH IN AIRCRAFT TIRE DESIGN
+AND PERFORFlAMCE
+John A. Tanner and John L. McCarty
+NASA Langley Research Center
+S. K. Clark
+University of Michigan
+S UQlMAR Y
+A review of the NASA experimental and analytical t i r e research programs
+which address the various needs identified by landing gear designers and air-
+plane users i s presented in this paper. The experimental programs are designed
+to increase t i r e tread 1 ifetimes , relate static and dynamic t i r e properties ,
+establish the t i r e hydroplaning spin-up speed, study gear response to t i r e
+failures, and define t i r e temperature profiles during taxi, braking and corner-
+ing operations. The analytical programs are aimed a t providing insights into
+the mechanisms of heat generation in rolling tires and developing the tools
+necessary t o streamline the t i r e design process and to aid in the analysis of
+landing gear problems.
+INTRODUCTION
+For many years t i r e researchers a t Langley have maintained a close working
+relationship with the aircraft landing gear community, namely, the airframe
+manufacturers and the airline operators. This relationship has allowed NASA
+t o keep abreast of constantly changing t i r e research needs and t o adjust i t s
+-
+program priori t i e s accordi ngly , Recent inputs from various sources have i ndi
+cated that research i s needed to (1) improve t i r e lifetimes both in terms of
+reduced tread wear and greater blowout resistance; (2) solve such landing gear
+dynamic problems as shimmy, gear walk, truck pitching, and braking and corner-
+ing performance in adverse weather; and (3) streamline the t i r e design process.
+NASA currently has several research programs underway t o address these needs
+and the purpose of this paper i s to present a status report on these activities
+and t o provide some indication as t o the direction of future research efforts.
+TREAD NEAR
+Tire replacement due t o tread wear i s a major safety and economic concern
+of airline operators. For this reason, NASA has since the early 1970's (refs.
+1 t o 3) been involved in a program t o examine the effects of ti're tread wear
+attributed to the various ground operations of an airplane. In addition,
+attempts are underway t o develop new elastomeric materials which would provide
+543
+
+
+
+=== PDF PAGE 2 ===
+improved t i r e tread wear and blowout resistance w i t h o u t degrading traction
+characteristics. For the purpose of this program, braking and cornering tests
+are being conducted on specially-prepared test tires using the instrumented
+vehicle shown i n figure 1. The main feature of this vehicle is the test fixture
+which i s cantilevered from the rear of the truck and supports the test tire.
+For braking tests a t fixed slip ratios the test t i r e and wheel assembly is
+driven through a universal coupling by interchangeable gears, which i n t u r n are
+chain-driven by a driving wheel on the truck. Changing the slip ratio entails
+merely changing the gears in the drive unit and i n this program the slip ratios
+are being varied from 0% t o 50%. For cornering tests the universal coupling
+i s disconnected and the fixture i s rotated to the desired steering or yaw
+angle and clamped in place. Yaw angles t o 25-degrees are being evaluated. The
+braking tests are being conducted on both asphalt and concrete runway surfaces,
+but the cornering tests are being limited t o a relatively smooth asphalt surface.
+A sample of the wear, friction, and temperature data obtained during this
+test program i s presented i n figure 2. These data are for size 22 x 5.5,
+type VII, 12-ply rating aircraft tires which had been retreaded w i t h four dif-
+ferent elastomers whose compositions were as follows:
+El as tomer Compos i t io n
+100% natural rubber
+75% natural rubber and 25% cis-polybutadiene
+75% natural rubber and 25% vinyl-polybutadiene
+75% natural rubber and 25% trans-polypentenemer
+Elastomer A was tested because natural rubber has been considered the
+elastomer best suited t o meet the t i r e requirements for supersonic transport-
+type aircraft. Elastomer B comprises a stock representative of the current
+state-of-the-art treads for j e t transports, and elastomers C and D are
+experimental blends developed specifically for this program. A fifth experi-
+mental elastomer which consists of a tri-blend of natural rubber, cis-poly-
+butadiene, and vinyl-polybutadiene, i s currently being evaluated. Presented
+on the l e f t of figure 2 are plots of the t i r e wear rate as a function of the
+slip ratio from the braking tests and yaw angle from the cornering tests;
+a lower wear rate indicates a longer t i r e tread life. The data indicate that
+the 100-percent natural rubber tread (elastomer A) has the highest wear rate
+and the state-of-the-art tread (elastomer B) has the lowest wear rate of the
+elastomers tested to date. Treads fabricated from the two experimental
+elastomers had similar wear characteristics b u t neither had a wear resistance
+as good as the present state-of-the-art elastomer. Other characteristics of
+the experimental treads such as heat buildup, cut growth, and heat blowout
+resistance could, however, tip the balance i n favor of one of the experimental
+elastomers for some applications. I t is apparent from the figure t h a t ex-
+tended operations a t high slip ratios and/or high yaw angles significantly
+shorten tread l i f e for all tread materials.
+While experimenting with the composition of the tire tread t o improve i t s
+wear characteristics i t i s important that the t i r e friction capabilities not
+be compromised. The friction measurements obtained from the various tires in
+either the braking or cornering modes are faired by a single curve in figure 2,
+544
+
+
+
+=== PDF PAGE 3 ===
+thereby suggesting that the various tread elastomers studied t o date do not
+significantly affect the t i r e friction performance.
+Also presented i n figure 2 are the maximum tread temperatures as obtained
+from an optical pyrometer mounted on the t i r e fixture which continuously
+monitored the tread temperature of a p o i n t on the rotating t i r e approximately
+3/8 of a revolution out o f the footprint. Tread temperatures were observed to
+be independent of the elastomer and the figure shows that this temperature
+increases with increasing slip ratio and increasing yaw angle.
+STATIC AND ROLLING TIRE BEHAVIOR
+NASA research on static and rolling behavioral characteristics of the
+pneumatic aircraft t i r e i s concerned w i t h studies of gear response to t l r e
+failures (blowouts); t i r e carcass temperatures during various aircraft ground
+operations; wet runway friction/hydroplaning; and certain key t i r e mechanical
+properties. The following paragraphs briefly discuss each of these planned
+or on-going programs.
+Gear Response to Tire Failures
+The need for a study of landing gear response to t i r e failures has become
+more critical in recent years due to the increasing number of t i r e failures
+experienced by the wide-body airplane fleet. A tentative test matrix has been
+outlined for a NASA program which calls for studies of the friction forces
+developed by deflated (blown) tires and by wheels rolling on rims; an assess-
+ment of debris trajectory patterns associated with t i r e blowouts; and the
+response of the strut, antiskid braking system, and the demands placed on the
+nose gear steering system following a main gear t i r e failure. A planning
+session has been scheduled with representatives from airline, t i r e , and other
+aviation industries and interested government agencies t o finalize the test
+matrix and testing will probably commence in mid-1981.
+Tire Carcass Temperatures
+The generation of heat i n aircraft tires i s undergoing study to determine
+the temperature profiles which are necessary to define the strength and
+fatigue limitations of the t i r e carcass structure. Both experimental and
+analytical efforts are currently underway in this study. The experimental
+tests are being carried out on size 22 x 5.5 aircraft tires and the test vehicle
+i s the same instrumented truck shown i n figure 1. For these tests, the tires
+are equipped with a number of thermocouples located w i t h i n the t i r e carcass on
+one side of the t i r e centerline as illustrated i n the schematic of figure 3. A
+photograph of one such t i r e installed on the test vehicle is presented i n
+figure 4 which also shows the modified hub and slip ring assembly for trans-
+545
+
+
+
+=== PDF PAGE 4 ===
+mitting the thermocouple signals t o the on-board recording equipment. Temp-
+erature data are being acquired while the t i r e i s operated under free-rolling,
+light-braking, and yawed-rolling conditions. Since only one side of each t i r e
+i s instrumented, symmetry i s presumed about the t i r e centerline for free-
+rolling and light-braking conditions. For yawed rolling conditions, tests are
+r u n a t yaw angles of equal magnitude on either side of Oo to account for any
+asymmetrical heating conditions. Typical results from the free-rolling tests
+are presented i n figure 5 which shows the carcass temperature pro-files of a
+test t i r e after travelling distances of 1500 m, 3000 m, and 4500 m a t a ground
+speed of 17 knots. The data indicate that the hottest portions of the t i r e
+carcass are beneath the tread near the shoulder area and along the inner sur-
+face of the sidewall.
+The analytical effort t o model the heat generation mechanisms w i t h i n an
+aircraft t i r e i s being conducted a t the University of Michigan under a NASA
+grant. The model employs an assembly of finite elements to represent the t i r e
+cross section and treats the heat generated w i t h i n the t i r e as a function of
+the strain energy associated w i t h the predicted t i r e flexure.
+Figure 6 presents a comparison between the experimental data and the
+results from a preliminary analysis performed on a free-rolling tire. The
+figure shows the temperature rise as a function of time as measured and cal-
+culated a t two thermocouple positions for two t i r e deflection conditions. The
+thermocouple positions include the inner and outer surface of the t i r e sidewall
+near the bead, and their positions are denoted on figure 3 by asterisks. The
+data presented i n figure 6 show good agreement between the experimental and the
+calculated temperature rises. Current analytical work is aimed a t refining
+the strain energy terms i n the model t o provide even closer agreement i n the
+free-rolling case and t o address the braking and cornering cases.
+Wet Runway FrictionlHydroplaning
+For many years the Langley Research Center has been associated with
+friction and hydroplaning research. (See refs. 4 and 5 for examples.) As a
+result of these early research efforts, the critical hydroplaning speed a t
+which the t i r e begins to spin down when water i s encountered on the runway
+has been well established. These early tests also indicated that a speed
+reduction to a second, lower critical speed i s necessary t o allow the t i r e to
+spin up again, b u t this critical hydroplaning spin-up speed has not been well
+documented. Tests are currently underway on the Langley Landing-Loads Track to
+establish the speed reduction necessary t o allow t i r e spin-up, and to measure
+the hydrodynamic pressures within the footprint.
+Tire I4echanical Properties
+NASA's continuing investigation of t i r e mechanical properties (refs. 6
+and 7 are typical of earlier work i n this area) was recently expanded to
+546
+
+
+
+=== PDF PAGE 5 ===
+support a program sponsored by the Society o f Abtomotive Engineers (SAE) t o
+measure both the s t a t i c and dynamic properties of two sizes of modern a i r c r a f t
+tires. Data were generated using 49 x 17 and 18 x 5.5, type V I 1 t i r e s and
+provided some insight into the relationship of certain s t a t i c and dynamic t i r e
+properties. An example i s shown i n figure 7, which presents the lateral spring
+rates determined from s t a t i c and dynamic tests performed on a 49 x 17 size
+t i r e . The key t o relating the s t a t i c and dynamic data l i e s i n the interpreta-
+t i o n o f s t a t i c load-deflection curves similar t o the one sketched i n figure 7.
+As w i l l be noted, t i r e s t a t i c load-deflection curves generate a substantial
+hysteresis loop. It has been customary t o assign a single value t o the t i r e
+spring rate and generally, as i n references 6 and 8, t h i s rate was defined by
+the slope o f the l i n e which connected the loop extremes. Unfortunately, these
+spring rates were always lower than those obtained during dynamic tests.
+Observations from the SAE test program suggested that two spring rates would be
+more representative o f t i r e response t o static loadings. One rate would be the
+slope o f the loading portion o f the s t a t i c hysteresis loop and the other rate
+would be defined by the i n i t i a l slope o f the load relaxation curve following
+attainment o f the peak s t a t i c load. Both o f these rates and that obtained from
+dynamic (free vibration) tests are presented i n figure 7.. The figure suggests
+that the two s t a t i c a l l y determined rates define an envelope which would include
+a l l the possible spring rates obtained under dynamic loading conditions, with
+the lower bound o f the envelope defined by the s t a t i c loading curve and the
+upper bound defined by the i n i t i a l static relaxation curve.
+ANALYTICAL TIRE MODEL DEVELOPMENT
+NASA i s developing a family o f analytical t i r e models which w i l l be useful
+i n t i r e design and landing gear analysis. This i s a j o i n t venture between
+NASA, the College o f William and Mary, and George Washington University. The
+approach being taken i s to use f i n i t e elements based on nonlinear shell theory
+(refs. 9 and 10). The shell theory i s limited t o small strains but can handle
+anisotropic, nonhomogeneous, elastic material characteristics; bending exten-
+sional coupling; large deformations; and moderate rotations. To date two
+quadrilateral shell finite-element models have been developed which feature
+the use o f a reduced-basis solution algorithm and automatic selection o f load
+or displacement incrementation (refs. 11 and 12). One model i s a 16-node f i n i t e
+element based upon the displacement formulation and the second model i s a f i n i t e
+element based upon a mixed formulation with 9 nodes along the periphery where
+displacements are the fundamental unknowns and 4 internal nodes where the stress
+resultants are the unknowns. For the mixed formulation the internal stress
+resultants are discontinuous across the interelement boundaries and the stress
+parameters and t h e i r path derivatives are eliminated on the element level. The
+performance o f these two shell t i r e models i s being verified by applying i n f l a -
+t i o n pressure loads. Typical results from these verification studies are
+presented i n figure 8 f o r a 10-ply t i r e o f e l l i p t i c a l cross section mounted on
+a r i g i d wheel. A schematic o f the model cross section i s presented on the l e f t
+o f the figure. Also presented i n the figure i s a p l o t o f the pressure load
+against the crown displacement o f the t i r e i l l u s t r a t i n g the hardening spring
+characteristic o f the t i r e . The drawing o f the uninflated and inflated t i r e
+model geometries are shown to scale and i l l u s t r a t e the 'large deformations
+547
+
+
+
+=== PDF PAGE 6 ===
+associated with this simple loading system.
+Future work in t i r e analytical model development will be concentrated i n
+the major areas of material characterization, modeling techniques, and load
+determination. In the area of material characterization the next effort will
+be aimed a t the extension of the current linear elastic material model to includr
+the nonlinear effects of viscoelastic material behavior. This effort will
+also include studies of the effects of elevated temperature on the material
+strength and i t s mechanical properties. Modeling techniques i n the future will
+include rational approximations t o the comprehensive nonlinear shell theory and
+solution algorithm refinements that reduce computer costs while maintaining
+solution accuracy. Future loading systems imposed upon the model will be
+consistent w i t h studies of the tire/runway contact problem, the inclusion of
+braking and cornering forces, and the investigation of the dynamic effects of
+rolling.
+The importance of the analytical t i r e model development program can best
+be expressed in terms of i t s anticipated applications. A mature family of
+t i r e models should furnish a means of streamlining new t i r e development and
+qualification procedures. Furthermore, these analytical tools should be able
+t o predict t i r e failure modes during the design phase so t h a t appropriate
+steps can be taken t o prevent undue t i r e failures during aircraft ground
+operations. The family of t i r e models should provide the means of solving such
+landing gear dynamic problems as wheel shimmy, truck pitching, and gear walk.
+Eventually these models could provide the information necessary to tailor the
+mechanical properties of aircraft tires t o make them more compatible with
+aircraft antiskid braking and nose gear steering systems and, thereby, optimize
+the ground handling capability of modern aircraft.
+CONCLUDING REMARKS
+Langley Research Center i s conducting both experimental and analytical
+t i r e research programs t o address the various needs identified by the landing
+gear designers and the airplane users. The experimental programs are designed
+t o increase t i r e tread lifetimes, relate static and dynamic t i r e properties,
+establish the t i r e hydroplaning spin-up speed, study gear response t o t i r e
+failures, and define t i r e temperature profiles during taxi, braking and cor-
+nering operations. The analytical programs are aimed a t providing insights
+into the mechanisms of heat generation in rolling tires and developing the
+tools necessary to streamline the t i r e design process and t o aid i n the
+analysis of landing gear problems.
+548
+
+
+
+=== PDF PAGE 7 ===
+REF EREN CE S
+1. McCarty, John Locke: Wear and Related Characteristics of an Aircraft Tire
+During Braking. NASA TN D-6963, 1972.
+2. Yager, Thomas J.; McCarty, John L.; Riccitiello, S. R.; and Golub, M. A.:
+Development i n New Aircraft Tire Tread Materials. Aircraft Safety and
+Operating Problems, NASA SP-416, 1976, pp. 247-256.
+3. tlcCarty, John L.; Yager, Thomas J.; and Riccitiello, S. R.: Wear, Friction,
+and Temperature Characteristics of an Aircraft Tire Undergoing Braking
+and Cornering. NASA TP-1569, 1979.
+4. Horne, Walter B.; and Dreher, Robert C.: Phenomena of Pneumatic Tire
+Hydroplaning. NASA TN D-2056, 1973.
+5. Horne, Walter B.; and Leland, Trafford J. W.: Influence of Tire Tread
+Pattern and Runway Surface Condition on Braking Friction and Rolling
+Resistance of a Modern Aircraft Tire. NASA TN D-1376, 1962.
+6. Smiley, Robert F.; and Horne, Walter B.: Mechanical Properties of
+Pneumatic Tires w i t h Special Reference t o Modern Aircraft Tires. NASA
+TR R-64, 1960.
+7. Tanner, John A.: Fore-and-Aft Elastic Response Characteristics of
+34 x 9.9, Type VII, 14 Ply-Rating Aircraft Tires of Bias-ply, Bias-
+Bel ted, and Radial -Bel ted Design. NASA TN D-7449 , 1974.
+8. Sleeper, Robert K.; and Dreher, Robert C.: Tire Stiffness and Dampinq
+Determined From Static and Free-Vibration Tests. NASA TP-1671, 1980.
+9. Saunders, S. L.: Nonlinear Theories for Thin Shells. Q. Appl. Math.;
+VOI. 21, NO. 1, 1963, pp. 21-36.
+10. Budiansky, B.: Notes on Nonlinear Shell Theory. J. Appl. Ilech., Vol. 35,
+1968, pp. 392-401.
+11. Noor, Ahmed K.: Recent Advances in Reduction Methods for Nonlinear
+Problems. Computers arid Structures, Vol. 13, 1981 , pp. 31-44.
+12. Noor, Ahmed K.; and Andersen, C. Pl.: Computerized Symbolic Manipulation
+in Nonlinear Finite Element Analysis. Computers and Structures,
+VOI. 13, 1981, pp. 379-403.
+549
+
+
+
+=== PDF PAGE 8 ===
+Figure 1.- Instrumented test vehicle.
+-WEAR FRICTION TEMPERATURE
+F/- SLIP RATIO
+ELASTOMER (SEE TEXT)
+0.396
+BRAKING
+RATE,
+FRICTION
+COEFF oc
+0 0.5 0 0.5 0 2.50
+SLIP RATIO SLIP RATIO DISTANCE. kn
+YAW, DEG
+o*8[K
+CORNERING
+FCROIECFTFIO N 25
+0
+YAW ANGLE, DEG YAW ANGLE, DEG
+Figure 2.- Wear, friction, and temperature characteristics of a size 22 x 5.5
+tire on a smooth asphalt surface.
+550
+
+
+
+=== PDF PAGE 9 ===
+*: DATA FROM THESE THERMOCOUPLES COMPARED WITH
+MODEL PREDICTIONS
+Figure 3.- Location of thermocouples i n tire carcass.
+Figure 4.- Size 22 x 5.5 t e s t t i r e with thermocouples installed.
+5 51
+
+
+
+=== PDF PAGE 10 ===
+DISTANCE, rn 1500 3000 4500
+TEMP, OC
+)-----I 40 - 50 80 - 90
+- Esl -
+50 60 90 100
+60 - 70 100 - 120
+70 - 80
+Figure 5.- Temperature profiles during free roll. 22 x 5.5, 12-ply tire;
+ground speed, 17 knots.
+25% DEFLECTION 35% DEFLECTION
+EXPERIMENTAL
+CALCULATED
+_------
+-
+e-c
+INNER SURFACE
+0 50 100 150 0 50 100 150
+TIME, sec TIME. sec
+OUTER SURFACE
+Figure 6.- Comparison of experimental and calculated temperature rise.
+22 x 5.5 tire; ground speed, 17 knots.
+552
+
+
+
+=== PDF PAGE 11 ===
+- x IO2 -------
+/--- -
+/’
+------ --_-____--_-- --
+c
+/’
+-
+STATIC RELAXATION
+FREE VIBRATION
+STATIC LOADING
+-
+I I I
+0 60 120 180
+VERTICAL LOAD,kN
+Figure 7.- Comparison of static and dynamic lateral tire spring rates €or
+a 49 x 17 tire.
+*
+INFLATION
+PRESSURE,
+MPa 1
+0 0.5 1 .o
+CROWN DISP,crn
+MODEL CROSS SECTION
+UN IN FLATED
+INFLATED
+Figure 8.- Typical model results. 10-ply elliptical tire on a rigid wheel.
+553

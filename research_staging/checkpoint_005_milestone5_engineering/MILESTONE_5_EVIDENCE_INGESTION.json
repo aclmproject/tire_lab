@@ -1,0 +1,37 @@
+{
+  "checkpoint": "MILESTONE 5 - EVIDENCE-CONSTRAINED ENGINEERING",
+  "date": "2026-08-29",
+  "inputCheckpoint": "checkpoint_004_milestone4_fulltext",
+  "inputIntegrity": {
+    "verifiedFileHashes": 17,
+    "mismatches": 0,
+    "measurements": 10,
+    "observations": 18,
+    "scalingRules": 10,
+    "methodologyRecords": 8,
+    "typedRecordsTotal": 46
+  },
+  "engineeringUse": [
+    "absolute-pressure and contained-air architecture",
+    "explicit unknown internal-volume ratio",
+    "construction-aware profile propagation",
+    "separate flex and slip thermal pathways",
+    "reference-duty wear exposure architecture"
+  ],
+  "productionKnowledge": {
+    "version": "1.7.0",
+    "sha256": "9a74deaec72b09b92ec08b79abcf1f9f7db139402e13e6d80feddfae117f9200",
+    "historicalNumericalPriorsChanged": 0,
+    "recordsPromoted": 0,
+    "policy": "Evidence supports architecture and provenance only; no M4 number is promoted as a production family coefficient."
+  },
+  "applicationScopedRules": [
+    {
+      "id": "ENG-EV-GT40-0001",
+      "familyId": "FAM022",
+      "effect": "GT40/FAM022 regression resolves to bias/cross-ply and blocks stale radial fallback",
+      "scope": "application profile-state regression rule; broader mixed-family normalization remains research work"
+    }
+  ],
+  "researchStatus": "PARTIAL_CONTINUATION_REQUIRED"
+}

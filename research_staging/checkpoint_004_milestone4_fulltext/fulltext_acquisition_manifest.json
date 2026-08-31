@@ -1,0 +1,670 @@
+[
+  {
+    "sourceId": "E-SRC-0074",
+    "title": "Temperature distribution in an aircraft tire at low ground speeds",
+    "publicationYear": 1983,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19830024946",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19830024946/downloads/19830024946.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "THERMAL",
+      "FM",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 75,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0074.pdf",
+    "bytes": 1689481,
+    "sha256": "a8e4ad363e6bd90fba743440ef026939ff462ea0f1341bc103dea81069ea9488",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0075",
+    "title": "Fore and aft elastic response characteristics of 34 x 9.9, type 7, 14 ply-rating aircraft tires of bias-ply, bias-belted, and radial-belted design",
+    "publicationYear": 1974,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19740011551",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19740011551/downloads/19740011551.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "FM",
+      "CONSTRUCTION",
+      "TRANSIENT"
+    ],
+    "relevanceScore": 67,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0075.pdf",
+    "bytes": 10881013,
+    "sha256": "a455de6103f0fd136ee5808f06cbeb8cecda941b983cb8c82695145eb87c86eb",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0076",
+    "title": "A systematic experimental investigation of significant parameters affecting model tire hydroplaning",
+    "publicationYear": 1973,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19740003931",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19740003931/downloads/19740003931.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WEAR",
+      "WET"
+    ],
+    "relevanceScore": 65,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0076.pdf",
+    "bytes": 2472577,
+    "sha256": "35bdd206e0ddae01a167b34d54790ebb54d9241294f8bacc3bec0479a0714062",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0077",
+    "title": "Cornering characteristics of the nose-gear tire of the space shuttle orbiter",
+    "publicationYear": 1981,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19820002557",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19820002557/downloads/19820002557.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "FM",
+      "WET"
+    ],
+    "relevanceScore": 65,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0077.pdf",
+    "bytes": 1638836,
+    "sha256": "654f8fb9fe27a4ff4573de0e76a2677d2fc6d7d066e83295fa6d42533a0ef001",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0078",
+    "title": "Current Research in Aircraft Tire Design and Performance",
+    "publicationYear": 1981,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19810010539",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19810010539/downloads/19810010539.pdf",
+    "priorityTopics": [
+      "THERMAL",
+      "FM",
+      "WET"
+    ],
+    "relevanceScore": 65,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0078.pdf",
+    "bytes": 3630889,
+    "sha256": "8f39bf632d592ec85c2763c611241d56830c688a3d6ca1877e120bff28267527",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0079",
+    "title": "Tire footprint studies",
+    "publicationYear": 1995,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19960009454",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19960009454/downloads/19960009454.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WEAR",
+      "FM",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 60,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0079.pdf",
+    "bytes": 3857301,
+    "sha256": "d31d1cfbbd21ba9c7874a62b243c1f1b7b5ec275141bbe40945a872baf6dfebb",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0081",
+    "title": "Tire-to-Surface Friction Especially Under Wet Conditions",
+    "publicationYear": 1959,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19980228298",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19980228298/downloads/19980228298.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WET"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0081.pdf",
+    "bytes": 600689,
+    "sha256": "4b4da637198bb7580f0fa08491faca98e3d9ab15ecd24a768b5ab41f33419e5f",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0082",
+    "title": "Cornering characteristics of a 40 by 14-16 type 7 aircraft tire and a comparison with characteristics of a C40 by 14-21 cantilever aircraft tire",
+    "publicationYear": 1973,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19730023216",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19730023216/downloads/19730023216.pdf",
+    "priorityTopics": [
+      "FM",
+      "WET"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0082.pdf",
+    "bytes": 9519074,
+    "sha256": "191cf7bbdc3035b166286f83255b9700b1084b9a6df1f97f74a95241b0d8da0c",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0083",
+    "title": "Experimental investigation of the cornering of a C40 x 14-21 cantilever aircraft tire",
+    "publicationYear": 1973,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19730012331",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19730012331/downloads/19730012331.pdf",
+    "priorityTopics": [
+      "FM",
+      "WET"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0083.pdf",
+    "bytes": 2134360,
+    "sha256": "e4164674535d396190d852032ccce1a64b65d93c0d13c56cc7a7a74f103653ab",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0084",
+    "title": "Developments in new aircraft tire tread materials",
+    "publicationYear": 1976,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19770011149",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19770011149/downloads/19770011149.pdf",
+    "priorityTopics": [
+      "THERMAL",
+      "WEAR",
+      "FM",
+      "WET"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0084.pdf",
+    "bytes": 622551,
+    "sha256": "317ae0e127105f781e7185fad8ae577949f1a4d059dd8909b0f9015e11b45898",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0085",
+    "title": "A study of the cornering forces generated by aircraft tires on a tilted, free-swiveling nose gear",
+    "publicationYear": 1985,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19860002055",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19860002055/downloads/19860002055.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "FM"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0085.pdf",
+    "bytes": 5875459,
+    "sha256": "36145d5b2954a693df624671cd6297b0aded95e54459d4cc7281084c22fecfbe",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0089",
+    "title": "Computational Methods for Frictional Contact With Applications to the Space Shuttle Orbiter Nose-Gear Tire",
+    "publicationYear": 1996,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19960017561",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19960017561/downloads/19960017561.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WET"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0089.pdf",
+    "bytes": 2163817,
+    "sha256": "055c209fd62e25829d02d126c2bd0adcf79a03ecad9871335b5f83d7d9eb54df",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0090",
+    "title": "Computational methods for frictional contact with applications to the Space Shuttle orbiter nose-gear tire: Comparisons of experimental measurements and analytical predictions",
+    "publicationYear": 1996,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19960028562",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19960028562/downloads/19960028562.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WET"
+    ],
+    "relevanceScore": 55,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0090.pdf",
+    "bytes": 2659223,
+    "sha256": "aaa5404a7f9898e234af65d371b274a43024e19d664beb5bf9a1631fcb83c859",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0091",
+    "title": "Lightweight tire concept for space shuttle",
+    "publicationYear": 1973,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19740004388",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19740004388/downloads/19740004388.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "THERMAL",
+      "WET",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 52,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0091.pdf",
+    "bytes": 2517330,
+    "sha256": "2a86e9589fe03bff3da6923726f763d0274c01fa89720a299d6c643b3930f17f",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0093",
+    "title": "Aircraft tire behavior during high-speed operations in soil",
+    "publicationYear": 1972,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19720020356",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19720020356/downloads/19720020356.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "FM",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 50,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0093.pdf",
+    "bytes": 12367063,
+    "sha256": "19989049ece048c51ae9cdec8a38496083420df632ca482511469a4328cb107e",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0094",
+    "title": "Thermal conductance of and heat generation in tire-pavement interface and effect on aircraft braking",
+    "publicationYear": 1976,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19760007024",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19760007024/downloads/19760007024.pdf",
+    "priorityTopics": [
+      "THERMAL",
+      "WET",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 50,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0094.pdf",
+    "bytes": 3802487,
+    "sha256": "ca225ba6c4e720f32282f443ab4fe95904799be29a231fe5c2542d32248411b0",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0095",
+    "title": "Nonlinear Analysis and Modeling of Tires",
+    "publicationYear": 1996,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19960022781",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19960022781/downloads/19960022781.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "THERMAL",
+      "WET"
+    ],
+    "relevanceScore": 50,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0095.pdf",
+    "bytes": 721456,
+    "sha256": "53c82f6e2d9f0f738fada8b052c98bd6db4869d87a077d3c434bcdf59f39c397",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0096",
+    "title": "Fore and aft elastic response characteristics of size 34x9.9, type 7, 14 ply-rated aircraft tires of bias ply, bias belted, and radial belted design",
+    "publicationYear": 1973,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19730020255",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19730020255/downloads/19730020255.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 47,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0096.pdf",
+    "bytes": 3404287,
+    "sha256": "a7595aa0612a8d6065cd8c4384b25daea135dc0d9ca926d8696a01e41bdb05b5",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0098",
+    "title": "Overview of NASA tire experimental programs",
+    "publicationYear": 1983,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19830013127",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19830013127/downloads/19830013127.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "TRANSIENT"
+    ],
+    "relevanceScore": 47,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0098.pdf",
+    "bytes": 753667,
+    "sha256": "c470facccd13710948b88a652864992fe370bb8f97968db4886ef69e50c19db9",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0099",
+    "title": "Remote tire pressure sensing technique",
+    "publicationYear": 1993,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19940011411",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19940011411/downloads/19940011411.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WET"
+    ],
+    "relevanceScore": 47,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0099.pdf",
+    "bytes": 267563,
+    "sha256": "5bb2cfe754ba9b7b200b58008740db86e369aadc3e7b161ca41390fc65e31179",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0100",
+    "title": "Structural modeling of aircraft tires",
+    "publicationYear": 1973,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19730012279",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19730012279/downloads/19730012279.pdf",
+    "priorityTopics": [
+      "THERMAL",
+      "CONSTRUCTION",
+      "TRANSIENT"
+    ],
+    "relevanceScore": 45,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0100.pdf",
+    "bytes": 16213430,
+    "sha256": "8780016a4e75ded6565971ccebf72ed87a7e5d0fdd0ab9ee030c46888c1e4b58",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0101",
+    "title": "Cornering characteristics of the main-gear tire of the space shuttle orbiter",
+    "publicationYear": 1988,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19880009199",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19880009199/downloads/19880009199.pdf",
+    "priorityTopics": [
+      "FM"
+    ],
+    "relevanceScore": 45,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0101.pdf",
+    "bytes": 20404049,
+    "sha256": "bf4cdb04e708935f167cb9cb044ba9ffe4de2283729a1c84ed7cb2a5ee09f935",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0105",
+    "title": "Influence of Tire Tread Pattern and Runway Surface Condition on Braking Friction and Rolling Resistance of a Modern Aircraft Tire",
+    "publicationYear": 1962,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19620005764",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19620005764/downloads/19620005764.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "WET"
+    ],
+    "relevanceScore": 40,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0105.pdf",
+    "bytes": 58309587,
+    "sha256": "5e4fade43757470f22c236a8164182f59bf851c48c95d221b3c4ed1d6cfb1b3d",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0108",
+    "title": "Tire-to-Surface Friction-Coefficient Measurements with a C-123B Airplane on Various Runway Surfaces",
+    "publicationYear": 1959,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19980223589",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19980223589/downloads/19980223589.pdf",
+    "priorityTopics": [
+      "WET"
+    ],
+    "relevanceScore": 37,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0108.pdf",
+    "bytes": 1588688,
+    "sha256": "623eccd9768bee9bf4a2b24858855f41126bcb257c6babe9e8459a7a8308866f",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0109",
+    "title": "Tire Modeling",
+    "publicationYear": 1983,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19830013120",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19830013120/downloads/19830013120.pdf",
+    "priorityTopics": [
+      "THERMAL",
+      "WET"
+    ],
+    "relevanceScore": 35,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0109.pdf",
+    "bytes": 14447333,
+    "sha256": "8ac41018e105719ccf9a4654b0651a549b804c44a8bd077875c57b198cc1299c",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0113",
+    "title": "Rolling resistance of electric vehicle tires from track tests",
+    "publicationYear": 1982,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19820020910",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19820020910/downloads/19820020910.pdf",
+    "priorityTopics": [
+      "PRESSURE",
+      "THERMAL"
+    ],
+    "relevanceScore": 32,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0113.pdf",
+    "bytes": 9502413,
+    "sha256": "04ea28328ea644a831e0112ae3e14d445b427a79ca0cc59795ebbe2f2563c169",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0114",
+    "title": "The rolling tire under load technical report no. 2",
+    "publicationYear": 1965,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19650014068",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19650014068/downloads/19650014068.pdf",
+    "priorityTopics": [
+      "WEAR"
+    ],
+    "relevanceScore": 30,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0114.pdf",
+    "bytes": 1017491,
+    "sha256": "e1fe4249836144fe9c42e1017aedd4f26c9cf4b426e47ec5a396490b3726e91d",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0116",
+    "title": "A tire contact solution technique",
+    "publicationYear": 1983,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19830013124",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19830013124/downloads/19830013124.pdf",
+    "priorityTopics": [
+      "PRESSURE"
+    ],
+    "relevanceScore": 30,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0116.pdf",
+    "bytes": 928881,
+    "sha256": "edec54363382b0fdd8cd1dabedd11e5191087c461b26726f73a0f8eb8a949773",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0118",
+    "title": "An investigation of the influence of aircraft tire-tread wear on wet-runway braking",
+    "publicationYear": 1965,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19650012763",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19650012763/downloads/19650012763.pdf",
+    "priorityTopics": [
+      "WEAR",
+      "WET"
+    ],
+    "relevanceScore": 28,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0118.pdf",
+    "bytes": 1082308,
+    "sha256": "0654ee9f37513ea1bf7b11d44828dacd23d3146e923250cea4e469bf44117e0b",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0121",
+    "title": "An Overview of the Annual NASA Tire/Runway Friction Workshop and Lessons Learned",
+    "publicationYear": 2005,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/20050212114",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/20050212114/downloads/20050212114.pdf",
+    "priorityTopics": [
+      "WET"
+    ],
+    "relevanceScore": 25,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0121.pdf",
+    "bytes": 37987,
+    "sha256": "28e01d1880e288aa6e6ce769060c1b02ba9413fc59de370c1310921b99aaa667",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0122",
+    "title": "The rolling tire under load",
+    "publicationYear": 1965,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19660006958",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19660006958/downloads/19660006958.pdf",
+    "priorityTopics": [
+      "PRESSURE"
+    ],
+    "relevanceScore": 22,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0122.pdf",
+    "bytes": 853547,
+    "sha256": "800366960093657fe66ed82fb9f661b02e51aede716743c8e206eee04355cf0e",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0123",
+    "title": "Hydrodynamics of tire hydroplaning Final report, 1 Jul. 1965 - 30 Jun. 1966",
+    "publicationYear": 1966,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19660020440",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19660020440/downloads/19660020440.pdf",
+    "priorityTopics": [
+      "WET"
+    ],
+    "relevanceScore": 22,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0123.pdf",
+    "bytes": 1957458,
+    "sha256": "014233c44d7c23f1ef183e5f3ec8d349956fdb0a42c38edd924683a392428306",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0124",
+    "title": "Simple approximations for force-deflection characteristics of aircraft tires",
+    "publicationYear": 1966,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19660015644",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19660015644/downloads/19660015644.pdf",
+    "priorityTopics": [
+      "PRESSURE"
+    ],
+    "relevanceScore": 22,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0124.pdf",
+    "bytes": 3081725,
+    "sha256": "7742ad570c3d25404b16416afb34351c29824e788ce3d7a1aa2d1d5797e5504d",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0125",
+    "title": "Chemiluminescence Study on Thermal Degradation of Aircraft Tire Elastomers",
+    "publicationYear": 1976,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19760021335",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19760021335/downloads/19760021335.pdf",
+    "priorityTopics": [
+      "THERMAL",
+      "CONSTRUCTION"
+    ],
+    "relevanceScore": 20,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0125.pdf",
+    "bytes": 1356902,
+    "sha256": "acbe69134ce58fb86a34498e5d43eb33899a15768e5c3cb526bdc5a947ee1452",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0126",
+    "title": "NASA tire/runway friction projects",
+    "publicationYear": 1995,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19960003383",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19960003383/downloads/19960003383.pdf",
+    "priorityTopics": [
+      "WEAR",
+      "WET"
+    ],
+    "relevanceScore": 20,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0126.pdf",
+    "bytes": 2731477,
+    "sha256": "0b9d217c3ad3985cc5c5a8b071e8145a7de9b9bfa8101bb4f6fe7c2f83a7093c",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0128",
+    "title": "A laboratory scale model technique for investigating pneumatic tire hydroplaning",
+    "publicationYear": 1968,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19680013888",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19680013888/downloads/19680013888.pdf",
+    "priorityTopics": [
+      "WET"
+    ],
+    "relevanceScore": 10,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0128.pdf",
+    "bytes": 9761084,
+    "sha256": "fa1e60729cb0c265df2b2fc39929e4491cf078d533672e43868dd5eb1510953b",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0129",
+    "title": "Hydrodynamics of aircraft tire hydroplaning",
+    "publicationYear": 1968,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19680022121",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19680022121/downloads/19680022121.pdf",
+    "priorityTopics": [
+      "WET"
+    ],
+    "relevanceScore": 10,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0129.pdf",
+    "bytes": 1156134,
+    "sha256": "b54fba0109d257d9544f5aa9b97fc19301f4703c048461dadd81b3975a78beb3",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0130",
+    "title": "Some experience with tire wear and damage on grooved runways",
+    "publicationYear": 1969,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19690011102",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19690011102/downloads/19690011102.pdf",
+    "priorityTopics": [
+      "WEAR"
+    ],
+    "relevanceScore": 10,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0130.pdf",
+    "bytes": 670858,
+    "sha256": "ad19846849b39c5acf29e5a0975d1a0499c1b0eac930bd4a12cbd7824df2ea51",
+    "retrievalError": null
+  },
+  {
+    "sourceId": "E-SRC-0131",
+    "title": "NASA studies on effect of grooved runway operations on aircraft vibrations and tire wear",
+    "publicationYear": 1969,
+    "canonicalUrl": "https://ntrs.nasa.gov/citations/19690011103",
+    "fullTextUrl": "https://ntrs.nasa.gov/api/citations/19690011103/downloads/19690011103.pdf",
+    "priorityTopics": [
+      "WEAR"
+    ],
+    "relevanceScore": 8,
+    "retrievalStatus": "RETRIEVED",
+    "localPdf": "fulltext_sources/E-SRC-0131.pdf",
+    "bytes": 4450104,
+    "sha256": "577991e3636668b5f9ce4cf10d8756a49f1b14c87fffe9ee20186579af365411",
+    "retrievalError": null
+  }
+]

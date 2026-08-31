@@ -1,0 +1,1677 @@
+=== PDF PAGE 1 ===
+.-
+N A S A TECHNICAL NASA T1S 0-7449
+FORE-AND-AFT ELASTIC RESPONSE
+CHARACTERISTICS OF 34 9.9, TYPE VH,
+X
+14 TIRES OF €?I
+DI ELT DES
+J
+obn A. Tanner
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION WASHlli6TOM, D, C, APRIL 1974
+
+
+
+=== PDF PAGE 2 ===
+FORE-AND-AFT ELASTIC RESPONSE CHARACTERISTICS OF 34 x 9.9,
+TYPE VII, 14 PLY-RATING AIRCRAFT TIRES OF BIAS-PLY,
+BIAS-BELTED, AND RADIAL-BELTED DESIGN*
+By John A. Tanner
+Langley Research Center
+SUMMARY
+An investigation was conducted to determine the fore -and-aft elastic response
+characteristics of 34 X 9.9, type VII, 14 ply-rating aircraft tires of bias-ply, bias-belted,
+and radial-belted design. The investigation consisted of static and rolling tests on dry
+concrete pavements at the Langley aircraft landing loads and traction facility; statistical
+techniques which related the measured tire elastic characteristics to variations in the
+vertical load, inflation pressure, braking force and/or tire vertical deflection; and a
+semiempirical analysis which related the tire elastic behavior to measured wheel slippage
+during steady-state braking.
+The bias-belted tire developed the largest spring constant value for most loading
+conditions; the radial-belted tire, the smallest. The elastic response of the tire free
+periphery to static braking included both tread stretch and carcass torsional wind-up about
+the axle for the bias-ply and bias-belted tires and carcass wind-up alone for the radial-
+belted tire. Similarly, tread stretching under braked rolling conditions was detected
+within the footprints of the bias-ply and bias-belted tires but not within the footprint of
+the radial-belted tire. The tire slippage during steady-state braking was greater for the
+bias-ply tire than for the bias-belted and radial-belted tires.
+INTRODUCTION
+The most costly maintenance item associated with aircraft landing gear systems is
+the replacement of worn or damaged aircraft tires (ref. 1). One of the more promising
+approaches to increased tread life, which has proven successful in automotive applications,
+is to replace conventional bias -ply tires with either bias -belted or radial -belted tires.
+This approach could also result in an improvement in the cornering and braking traction
+~
+*The information presented herein was offered as a thesis in partial fulfillment
+of the requirements for the degree of Master of Science, George Washington University,
+May 1973.
+
+
+
+=== PDF PAGE 3 ===
+available to the aircraft if the belted carcass design reduces tire scrubbing and associated
+heat generation within the footprint during ground maneuver operations as advertised by
+tire manufacturers. However, since the bias-belted and radial-belted designs differ from
+that of the conventional bias-ply tire, it is reasonable to speculate that the elastic
+response characteristics of these tires will also differ.
+In 1965, reference 2 presented the results of an analog computer model study which
+indicated that the braking performance of aircraft antiskid braking systems, which pro -
+duced a cyclic braking effort, could be affected by the elastic response characteristics of
+aircraft tires in the fore-and-aft or braking direction. The results of this computer
+study were later corroborated by experimental data (ref. 3). In their operation, antiskid
+systems control the application of brake torque by sensing wheel angular velocity and/or
+acceleration. However, because of the elastic behavior of the tire, the angular velocity
+and acceleration of the wheel can differ significantly from that of the tire, particularly at
+the tire -pavement interface where the braking traction is actually developed. This flex-
+ibility between the wheel and the pavement influences the operational behavior of the anti-
+skid braking systems. Therefore a knowledge of the fore-and-aft elastic response char-
+acteristics of aircraft tires is necessary if improvements in economical operations and
+safety of aircraft antiskid braking systems are to be made.
+References 4 to 11 are examples of early (1940-1958) research papers which studied
+tire elastic response characteristics. These early studies dealt primarily with tire
+lateral deformations since wheel shimmy was a serious problem in the automotive and
+aircraft industries, and sophisticated aircraft antiskid systems were still years away from
+development. In 1965, when reference 2 was published, the information on tire fore-and-
+aft elastic response characteristics was limited to a few static data points (ref. 12) and an
+empirical analysis (ref. 13) based entirely upon the free peripheral measurements pre-
+sented in reference 12. Reference 14, published in 1971, studied the fore-and-aft elastic
+response characteristics of bias-ply aircraft tires in more detail, but no data are avail-
+able which describe the fore -and-aft elastic response characteristics of bias-belted and
+radial-belted aircraft tires.
+The purpose of this paper is to present the results of an investigation to determine
+the fore-and-aft elastic response characteristics of 34 X 9.9, type VII, 14 ply-rating
+aircraft tires of bias -ply, bias -belted, and radial-belted construction. These charac-
+teristics, which include fore -and-aft spring constant, fore -and-aft decay length along the
+free periphery, and deformation variation within the rolling footprint, were obtained over
+a range of vertical loads from 51.2 kN (11 500 lb) to 66.8 kN (15 000 lb) and inflation
+pressures from 621 kPa (90 lb/in2) to 965 kPa (140 lb/in2) at ground speeds up to
+100 knots (1 knot = 0.514 m/sec) and at braking forces up to 22.2 kN (5000 lb). The
+investigation consisted of static and rolling tests on dry concrete surfaces at the Langley
+2
+
+
+
+=== PDF PAGE 4 ===
+landing loads and traction facility. Statistical techniques were used to relate the meas-
+ured tire elastic characteristics to variations in the vertical load, inflation pressure,
+braking force, and/or tire vertical deflection, and a semiempirical analysis was used to
+relate tire elastic behavior to measured wheel slippage during study-state braking.
+The tires used in the tests were supplied by the U.S. Air Force under task number
+AFAN -62 5.
+SYMBOLS
+Values are given in both SI and U.S. Customary Units. The measurements and
+calculations were made in U.S. Customary Units. Factors relating the two systems are
+given in reference 15.
+a,b displacements
+C tire circumference
+braking force
+Fx
+vertical load
+Fz
+h footprint half-length
+J decay length
+% static fore-and-aft spring constant
+2 distance
+m
+M rolling footprint deformation variation, M = -
+Uf 0
+m linear slope
+N number of wheel revolutions
+P inflation pressure
+Q tread stretch
+3
+
+
+
+=== PDF PAGE 5 ===
+rolling radius
+statistical correlation coefficients
+tire circumferential distance
+deformation
+total tire slippage
+generalized constants
+tire vertical deflection
+change in rolling radius
+elongation strain due to braking
+coefficient of friction
+Subscripts:
+b braked
+calc calculated
+exP experimental
+f footprint
+center of footprint
+fO
+max maximum value
+0 unbraked
+P free periphery
+Pi peripheral station
+4
+
+
+
+=== PDF PAGE 6 ===
+footprint leading edge
+PO
+t total
+X fore-and-aft
+APPARATUS AND TEST PROCEDURE
+Test Tires
+The tires of this investigation were 34 X 9.9, type VII, 14 ply-rating aircraft tires
+of bias-ply, bias-belted, and radial-belted design. Figure 1 is a photograph of the tires
+before testing and the shape of the tire footprint under rolling conditions is shown in fig-
+ure 2. The differences in tire construction are illustrated by the sketches in figure 3.
+The bias-ply tire is constructed with the carcass plies arranged on a bias to form a rel-
+ative angle between the reinforcing cords of alternating plies. The carcass is then
+capped with the tire tread. The bias-belted tire is constructed in the same manner as the
+bias-ply tire except that a circumferential reinforcing belt is added to the carcass. The
+radial-belted tire is constructed with the reinforcing cords of the carcass plies oriented
+radially about the tire. The carcass of this tire is then reinforced with a circumferential
+belt and capped with the tire tread. Specifications for the three tires are presented in
+table I.
+Test Facility
+In its present configuration, the Langley aircraft landing loads and traction facility
+(formerly called the Langley landing-loads track) consists of a rail system 671 m (2200 ft)
+long by 9.2 m (30 ft) wide, a large hydraulically operated water-jet catapult system, an
+arresting system, and two test carriages. A schematic of the facility is presented in
+figure 4 and an aerial photograph is shown in figure 5. The central feature of the catapult
+system is an L-shaped pressure vessel containing 37.8 m3 (10 000 gal) of water. This
+vessel is pressurized with air, up to 22.1 MPa (3200 lb/in2), and a timed, quick-acting
+valve at the front of the vessel releases a high energy jet of water, through a 17.78-cm-
+diameter (7 in.) nozzle, which impinges upon a U-shaped turning bucket at the rear of the
+test carriage. The catapult can develop approximately 2000 kN (450 000 lb) of thrust
+which is sufficient to accelerate either test carriage to speeds of 120 knots in 2.5 to 3 sec
+over about 122 m (400 ft). After accelerating to the desired speed, the test carriage
+coasts through the test section of the facility, about 366 m (1200 ft), and is brought to a
+stop by 5 parallel arresting cables which are interconnected to 20 arresting gear engines.
+5
+
+
+
+=== PDF PAGE 7 ===
+Both the static and rolling tests were conducted with the wheel, tire, and brake
+assembly mounted in an instrumented yoke dynamometer which was attached to the center
+drop frame of the large test carriage. This carriage, shown in figure 6, weighs approx-
+imately 54 431 kg (120 000 lbm). The dead weight of the drop frame was 5205 kg
+(11 500 lbm) and was down-loaded hydraulically to increase the tire vertical loadings.
+For the tests described in this paper, the test runway had a concrete surface with a light
+broom finish. The average texture depth was 0.0787 mm (0.0031 in.) which was some-
+what smoother than those of most operational runways. A camera pit was installed in
+the test runway at its midpoint and covered with a glass plate, 229 cm (90 in.) long by
+122 cm (48 in.) wide by 20 cm (8 in.) thick, which was mounted flush with the concrete
+surface. This glass plate can withstand a 178 kN (40 000 lb) load at its midspan. The
+glass plate was cleaned and dried before each test, and the braking forces developed on
+its surface were comparable to those developed on the concrete surface.
+Static Tests
+The objectives of the static tests were to determine the tire fore-and-aft spring
+constants and to measure the deformation or stretch along the free periphery. Two
+different test procedures were required to meet these objectives and each is described
+separately in the paragraphs which follow.
+Spring constants.- Figure 7 is a photograph of the static test equipment employed
+to determine the fore-and-aft spring constants of the test tires. This equipment consisted
+of the test tire, which rested under a vertical load on the surface of a bearing plate, and
+the instrumentation necessary to monitor the tire loadings and the bearing-plate dis -
+placements. The carriage and wheel were externally braced to prevent axle translation
+and wheel rotation. Tire loadings included the vertical load which was controlled by the
+carriage hydraulic system and the fore-and-aft, or static braking, force which was applied
+to the bearing plate by means of a hydraulic piston. The magnitude of the vertical load
+applied to the tire was measured by load cells under the bearing plate, and the braking
+force was measured by a load cell located between the hydraulic piston and the backstop.
+The braking forces were restricted to levels insufficient to produce any discernible
+slippage in the tire-bearing-plate interface. Fore-and-aft displacements of the bearing
+plate during brake force applications were obtained from a dial gage. Since there was
+no relative motion (no slippage) between the tire footprint and the bearing plate, those
+bearing-plate displacements correspond to the footprint displacements with respect to the
+axle. The testing technique involved the application of the desired vertical load to the
+tire, the incremental application of braking force, and the recording of the resulting dis -
+placements of the footprint with respect to the axle.
+Deformation in the free periphery.- Deformations in the free periphery were meas-
+ured concurrently with the spring constants. In preparation for these measurements, 2
+6
+
+
+
+=== PDF PAGE 8 ===
+number of cone-shaped rubber studs were attached along the periphery of each tire as
+shown in figure 7 and a camera was mounted to a beam which was free to rotate about the
+axle center line. Free periphery deformations were obtained from projected enlarge-
+ments of photographs taken of the studs during the course of the static tests.
+Rolling Tests
+The objectives of the braked- and unbraked-rolling tests were to measure the
+deformation or stretch within the footprint and to determine the braked and unbraked
+apparent tire rolling radii. Two different test procedures were required to meet these
+objectives and each is described separately.
+Deformation within the footprint.- Figure 8 is a photograph of the carriage during
+the tests to determine the deformation within the rolling footprint. The deformations
+resulting from the combined vertical and braking forces on the tire were determined from
+projected enlargements of photographs of the tire footprint taken through the glass plate
+installed in the runway. In preparation for these tests, equally spaced small holes 3.2 mm
+(1/8 in.) in diameter and 1.6 mm (1/16 in.) deep were drilled along the tread periphe9
+and filled with a white silicone rubber as shown in figure 2. The test procedure involved
+rolling the tire, under the desired vertical load, over the glass plate at a speed of approx-
+imately 5 knots. The brake pressure was preset at values which were sufficient to
+develop the desired braking force but incapable of producing a locked-wheel skid; photo-
+graphs were taken of the passing footprint.
+Braked and unbraked tire rolling radii.- These tests were conducted on the dry
+concrete runway at the desired vertical loads, inflation pressures, and braking forces.
+The test procedure involved towing or catapulting the carriage to the desired speed, apply-
+ing the desired loads, and recording the load and displacement data as time histories on
+an oscillograph. Measurements of the vertical load and braking force were obtained from
+the instrumented dynamometer, and the braked and unbraked apparent tire rolling radii
+were determined from measurements of the distance traveled along the runway and the
+total number of wheel revolutions.
+Statistical Techniques
+Statistical analysis techniques were used to establish linear relationships between
+the tire fore -and-aft elastic response characteristics and the loading parameters. Three
+different techniques were used in this investigation and each is briefly noted.
+Method of least squares.- When a relationship between two variables was needed,
+the method of least squares (ref. 16) was used to determine the best unbiased estimate of
+the linear relationship and to define the correlation coefficient.
+7
+
+
+
+=== PDF PAGE 9 ===
+Multiple regression analysis. - When a relationship between tire fore-and-aft elas -
+tic response characteristics and several loading parameters was needed, a multiple
+regression analysis (ref. 17) was performed to determine the matrix of coefficients and
+to define the degree of correlation.
+Analysis of variance rationale.- When it was necessary to determine which loading
+parameters had a significant effect on the tire fore -and-aft elastic response characteris -
+tics, the analysis of variance rationale (ref. 18) was used to construct an ANOVA table,
+and a test for significance based on the F distribution table (ref. 18) was performed.
+RESULTS AND DISCUSSION
+Force and displacement measurements on bias -ply, bias -belted, and radial-belted
+aircraft tires were obtained under both static and rolling conditions. The measurements
+under static conditions were used to define the tire fore-and-aft spring constant and to
+establish the tread-stretch distribution due to the braking effort along the free periphery
+near the footprint leading edge. The measurements under rolling conditions were used
+to establish the tread-stretch distribution within the leading portion of the footprint and
+the apparent change in rolling radius due to the braking effort. The following sections
+discuss the variation of these tire elastic characteristics with vertical load, tire vertical
+deflection, inflation pressure, and braking force and include a discussion of variations in
+the tire rolling radius and their effect on both wheel and tire slippages.
+Static Response
+Fore-and-aft spring constant.- The fore-and-aft spring constant Kx is a funda-
+mental characteristic which defines the elastic deformation of the tire when subjected to
+a braking force. This spring constant takes into account both the circumferential defor -
+mation of the tread and the torsional wind-up of the carcass resulting from brake applica-
+tion and is therefore a measure of the overall elastic response of the braked tire. It was
+obtained experimentally for each tire under various vertical loads and inflation pressures
+by relating the braking force to the footprint deformation with respect to the axle.
+Typical fore -and-aft load-deflection data for bias -ply, bias -belted, and radial-belted
+tires under static loading conditions are presented in figure 9. These data were obtained
+over one and one-half loading cycles to establish the complete hysteresis loops. The
+value of K, was taken as the slope of the line which connected the end points of each
+loop. Spring constants and static vertical deflection data for each tire are presented in
+table 11.
+The variation of K, with tire vertical deflection is shown in figure 10. The linear
+curves fairing the data in the figure were obtained by the least-squares method and are
+8
+
+
+
+=== PDF PAGE 10 ===
+represented by the following equations:
+Bias -ply tires:
+'fr
+= 1.6 MN/m - (8.6 MPa)6
+I(, = 9276 lb/in. - (1254 lb/in2)6
+with r = -0.82
+Bias -belted tires:
+1
+K, = 1.9 MN/m - (11.4 MPa)6
+-
+& = 10 995 lb/in. (1650 lb/in2)6
+with r = -0.93
+Radial-belted tires:
+f<;y = 1.3 MN/m - (6.4 MPa)G
+(3)
+-
+K, = 7476 lb/in. (934 lb/in2)6
+with r = -0.84
+For these equations, 6 is measured in m (in.).
+The magnitude of r is a measure of the correlation between the data and the
+faired curves (*1.00 represents perfect agreement), and the sign of r is determined
+by the slope of the faired curves. The data presented in figure 10 indicate that Kx
+decreases with vertical deflection for all three tires over the test range of vertical deflec-
+tions. The bias-belted tire has the highest values of KX for a given tire deflection
+followed in order by the bias -ply and radial-belted tires. Furthermore, the bias-belted
+tire has the sharpest decrease in K, with vertical load followed in order by the bias-
+ply and radial-belted tires. The values of Kx for the bias-ply tire presented in fig-
+ure 10 are within 15 percent of the values calculated from equation (47) of reference 13.
+In an effort to obtain further insight into the variation of the data presented in
+table 11, a multiple regression analysis was performed to investigate the influence on f<;y
+of variations in the vertical load and inflation pressure. This analysis assumed a linear
+9
+
+
+
+=== PDF PAGE 11 ===
+relationship over the test range of parameters and yielded the following set of equations:
+Bias -ply tires:
+K, = 313 kN/m + (1.26 m-l)FZ + (0.86 m)p
+(4)
++ +
+K , = 1788 lb/in. (0.0320 in-l)F, (33.84 in.)p
+with r2 = 1.00
+Bias -belted tires:
+I
+K, = 693 kN/m - (4.36 m-')F, + (0.90 m)p
+(5)
+Kx = 3956 lb/in. - (0.1108 in-')FZ + (35.35 in.)p
+with r2 = 1.00
+Radial-belted tires:
+K , = 719 kN/m - (5.33 m-l)FZ + (0.51 m)p
+KX = 4106 lb/in. - (0.1354 in-l)FZ + (19.94 in.)p
+with r2 = 1.00
+For these equations, F, is measured in N (lb) and p is measured in Pa (lb/in2).
+The magnitude of r2,w hich is a measure of the ability of the equations to fair the
+data, may be artificially high for equations (4) to (6) since only nine data points were
+used to develop each equation.
+The equation for the bias-ply tire (eq. (4)) indicates that K, increases with the
+vertical load thereby corroborating the results for constant pressure presented in ref -
+erence 14. However, the equations for bias-belted and radial-belted tires (eqs. (5)
+and (6)) indicate that K, decreases with vertical load for constant pressure. All three
+equations indicate that the fore -and-aft spring constant increases with the inflation pres-
+sure for a constant vertical load and differs from the pressure trends noted in
+reference 13.
+Free periphery deformation distribution. - Experimental tests were performed to
+investigate the variation of tread deformation along the free periphery of each tire under
+static loading conditions. A schematic representation of this deformation is presented
+10
+
+
+
+=== PDF PAGE 12 ===
+in figure 11. As in references 13 and 14, the footprint was assumed to deform as a unit
+for these tests, that is, no localized stretching within the static footprint. Further, max-
+imum tire deformation was assumed to occur at the leading edge of the footprint; there-
+fore, during brake application the deformation at this point, identified as uPo in fig-
+ure ll(b), is defined by the ratio Fx/kx. The deformations at other points along the
+free periphery (upi in the figure) were obtained by subtracting from the maximum
+deformation the stretch accumulated between the leading edge of the footprint and the
+point in question.
+A sample of the results from these tests is presented in figure 12 where the
+deformations are plotted (on a logarithmic scale) as a function of circumferential distance
+from the footprint leading edge (on a linear scale). The deformations for the bias-ply and
+bias-belted tires are shown initially to decay linearly from their maximum values as the
+circumferential distance from the footprint leading edge sp increases and then to
+remain essentially unchanged with a further increase in The deformations for the
+sp.
+radial-belted tires are shown to remain constant regardless of the distance from the foot-
+print leading edge; this result implies no tread stretch due to the braking effort.
+The data presented in figure 12 indicate that the elastic response of the bias-ply and
+bias-belted tires to static braking forces includes both tread stretch in the immediate
+vicinity of the footprint and torsional deformation of the tire carcass about the axle. The
+elastic response of the radial-belted tire to static braking forces is observed to be
+strictly a torsional deformation of the carcass about the axle (no tread stretch). The
+linearity of the data for all three tires in the region near the footprint leading edge sug-
+gests an exponential relationship in that region between the tread deformation and the cir-
+cumferential distance from the footprint leading edge. This relationship is expressed as
+follows:
+up = - Fx e-”P/Jx
+KX
+where is the distance from the footprint leading edge to the point where the
+Sp,mx
+deformation attains a constant level. The slope of the exponential curve is defined as
+-l/Jx where Jx is referred to as the decay length and is a fundamental tire elastic
+characteristic which defines the deformation distribution along the free periphery (the
+smaller the value of Jx, the greater the tread stretch in the tire free periphery).
+A quantitative measure of the tire deformation along the free periphery was obtained
+by choosing an appropriate value of Sp,mm and by using the least-squares method to
+compute Jx for each tire at various vertical loads, inflation pressures, and braking
+forces. In order to simplify these computations, was set equal to 35.6 cm
+Sp,max
+(14 in.) which was observed to be the maximum value of Sp,max for either the bias-ply
+11
+
+
+
+=== PDF PAGE 13 ===
+or bias -belted tires. By eliminating Sp,mu as a variable, the computed values of JX
+now become a direct measure of the tread-stretch contribution to the total tire elastic
+response to the braking force (the smaller the value of Jx, the larger the tread-stretch
+contribution). However, this technique also causes the computed values of J, to be
+artificially high for the bias-ply and bias -belted tires under several loading conditions.
+These values of decay length J, are presented in table 111. The data indicate that J,
+for the bias -ply and bias -belted tires may be a function of the loading conditions, but
+J,
+for the radial-belted tire approaches infinite values for all loading conditions.
+In order to obtain additional information on the variation of Jx with loading condi-
+tions for the bias-ply and bias-belted tires, a 33 factorial ANOVA table (ref. 18) was
+constructed for the bias-ply data presented in table III. The results of the tests based on
+the ANOVA table indicated (with a 90-percent confidence) that JX for the bias-ply tire
+was sensitive to variations in inflation pressure and braking force and was insensitive to
+variations in the vertical load when Sp,mu was set at 35.6 cm (14 in.). This variation
+of Jx with braking force is contrary to the results presented in reference 14 where the
+decay length was essentially independent of the braking force. On the basis of the ANOVA
+table results, the equations which expressed J, for the bias -ply and bias -belted tires
+were assumed to be of the form
+over the test range of parameters.
+A multiple regression analysis based on equation (8) produced the following
+relationships :
+Bias-ply tires:
+Jx = 0.8903 m - (0.0422 m/N)Fx + (0.505 pm3/N)p
+(9)
+JX = 35.05 in. - (0.0074 in./lb)F, + (0.1371 in3/lb)p
+with r2 = 0.890
+Bias -belted tires:
+J, = 1.289 m - (0.0336 m/N)F, - (0.122 pm3/N)p
+J, = 50.78 in. - (0.0059 in./lb)F, - (0.0332 in3/lb)p
+with r2 = 0.800
+12
+
+
+
+=== PDF PAGE 14 ===
+For these equations, F, is measured in N (lb) and p is measured in Pa (lb/in2).
+Equation (9) indicates that J, for the bias-ply tire decreases with the braking force
+and increases with the inflation pressure. Equation (10) indicates that J, for the
+bias-belted tire decreases with either the braking force or the inflation pressure. A
+comparison of the two equations shows that the decay lengths for the bias-belted tire
+are generally higher than those for the bias-ply tire for most loading conditions.
+Rolling Response
+Deformation within the footprint. - The circumferential deformation in the leading
+half of the rolling footprint during brake application was studied under low-speed condi-
+tions (=5 knots). Typical data from these tests obtained under loading conditions com-
+parable to those of the static tests are presented in figure 13. The deformation at the
+geometrical center of the footprint, which was observed to be the point of maximum defor-
+mation for the bias-ply and bias-belted tires, was set equal to Fx/Kx, and the deforma-
+tion at other points within the leading half of the footprint were obtained by subtracting
+from Fx/Kx the tire deformation accumulated between the center of the footprint and
+the point in question. The values of K, for each tire were calculated from equations (4),
+(5), and (6). The data presented in figure 13 indicate that, under braking conditions,
+stretching occurs in the footprint of the bias-ply and bias-belted tires but, as observed in
+the free peripheral measurements, not in the footprint of the radial-belted tire. The
+tread deformations for the bias-ply and bias-belted tires were observed to vary linearly
+within the rolling footprint.
+A numerical measure of this deformation was obtained by multiplying the displace-
+ments by K,/F, to normalize the data and by using the least-squares method to compute
+the slope M of the normalized footprint data for each tire under various loading condi-
+tions. These data are presented in table IV. The variation of tread deformation with
+loading conditions was determined for the bias-ply and bias-belted tires by assuming an
+equation for the slope to be of the form
+for the test range of parameters.
+A multiple regression analysis of the data presented in table IV yielded the following
+equations :
+13
+
+
+
+=== PDF PAGE 15 ===
+Bias-ply tires: .
+M = -1.031 m-l - x (N-m)-l]F,\
+- (3.8081 x m/N)p
+M = -2.620 x in-' - E.48 X (lb-in.)-l]F,
+J
++ F-. 538 X 10-6.(lb-in.)-Y F, - (6.669 x in./lb)p
+with r2= 0.988
+Bias -belted tires:
++
+M = -3.326 (m-l) - [4.211 X (N-m)-g F, k.397 X (N-m)-g F q
+I
+- (1.259 x m/N)p
+}
+(13)
+M = -8.447 x 10-2 in-1 - b.758 X (lb-in.)-l]F,
++ b.839 x (lb-in.)-jF, - (2.206 X in./lb)p
+with r2 = 0.976
+For these equations, F, and F, are measured in N (lb) and p is measured in
+Pa (lb/in2).
+Equations (12) and (13) indicate that the magnitude of M for both tires increases
+with the braking force and inflation pressure and decreases with the vertical load.
+Rolling radius calculations. - The tire deformation data presented in this paper sug-
+gest that the elastic response of these aircraft tires to braking forces can be described
+in terms of tread stretch and/or torsional wind-up of the tire carcass about the axle.
+That portion of the tire elastic response which is attributed to tread stretch would be
+reflected in changes in the tire rolling radius during steady -state brake applications.
+Therefore, it is appropriate to develop an equation which expresses the change in rolling
+radius in terms of previously defined tire elastic properties. This equation, derived in
+the appendix, is
+This general expression may be used to compute the change in rolling radius due to
+braking regardless of the tire construction. However, equation (14) is considerably
+14
+
+
+
+=== PDF PAGE 16 ===
+different from the expressions for computing AR which were developed in references 13
+and 14, where AR was equated to the product of the tire unloaded radius and the max-
+imum value of the circumferential strain of the tread. Furthermore, on the basis of the
+analysis presented in the appendix, the expressions for computing AR presented in
+references 13 and 14 appear to be in error and would overestimate the net change in
+the tire rolling radius by a factor of 2s.
+Application of Results
+Apparent change in rolling radius. - Experimental braked- and unbraked-rolling
+tests were conducted to determine the apparent change in rolling radius (or wheel slip-
+page) of the bias -ply, bias -belted, and radial -belted tires under various loading conditions.
+For each tire, the apparent rolling radius F$, or Ro was determined by relating the
+distance traveled 2 to the number of wheel revolutions N as follows:
+1
+F$, or R =-
+0 2sN
+The experimental change in rolling radius is the difference between the apparent rolling
+radii of the braked and the freely rolling tire and is given as follows:
+When computed in this manner, ARexp includes both the effective change in rolling
+radius due to tire slippage within the tire-pavement interface and the actual change in
+rolling radius due to the elastic deformation of the tire tread.
+Values of for each tire are presented in table V. The calculated values of
+change in rolling radius ARcalc, also presented in table V, are based upon equation (14)
+and consider only the effect of tire stretch. For the purpose of these calculations the
+values of K,, J,, and M for the bias-ply and bias-belted tires were computed from
+equations (4) and (5), (9) and (lo), and (12) and (13), respectively. For the radial-belted
+tire, the values of IC, were computed from equation (6) and the values of Jx and M
+were equal to and 0, respectively. The footprint half-lengths were obtained from
+00
+table IV and the value of Sp,mm was set equal to 35.6 cm (14 in.) for all test conditions.
+The changes in rolling radius during braking as calculated from equation (14) are com-
+pared in figure 14 with those obtained experimentally. The tire slip boundary is defined
+by the straight line near the left edge of the figure and is the line of agreement between
+calculated and experimental values of AR. The data indicate that a major portion of the
+apparent change in rolling radius of the bias-ply and bias-belted tires and virtually all
+15
+
+
+
+=== PDF PAGE 17 ===
+the apparent change in rolling radius of the radial-belted tire measured experimentally
+are due to an actual tire slippage within the tire-pavement interface.
+Tire slip ratio.- Once the actual change in rolling radius due to tire elastic defor-
+mation has been established, the tire slip ratio can be determined from the following
+equation:
+The ratio xt/C is the tire slip ratio, where xt is the tire skidding distance per wheel
+revolution and C is the unloaded tire circumference. The braking force friction coef-
+ficient px is a measure of the braking effort and is defined as
+The variation of pLx with tire slip ratio for the three tire designs is presented in
+figure 15 where the values of px and xt/C were computed from the data presented
+in table V. The equations for the faired curves in the figure were determined by the
+least-squares method and are given as follows:
+Bias -ply tires:
++ -Xt
+1-1 , = 0.038 6.373
+C
+with r = 0.88
+Bias -belted tires:
+xt
++ -
+pX = 0.031 8.913
+C
+with r = 0.75
+Radial-belted tires:
+Xt
++ -
+pX = -0.071 42.017 (2 1)
+C
+with r = 0.40
+The small value of r for the radial-belted data is the result of the nearly vertical slope
+of the faired curve (fig. 15) rather than the lack of data correlation. These data indicate
+that for a given steady-state braking level, or px, the bias-ply tire is subjected to the
+16
+
+
+
+=== PDF PAGE 18 ===
+most severe tire slippage and the radial-belted tire to the least. The slippage associated
+with the bias-belted tire is only slightly less than that of the bias-ply tire.
+CONCLUDING REMARKS
+Tests were conducted to determine the fore-and-aft elastic response characteris-
+tics of 34 x 9.9, type VII, 14 ply-rating aircraft tires of bias-ply, bias-belted, and radial-
+belted design. These characteristics, which include the static fore -and aft spring con-
+stant, fore -and-aft decay length along the free periphery, and deformation variation
+within the rolling footprint, were obtained over a range of vertical loads and inflation
+pressures at ground speeds up to 100 knots and at braking forces up to 22.2 kN (5000 lb).
+The investigation consisted of static and rolling tests on dry concrete pavements at the
+Langley aircraft landing loads and traction facility, statistical techniques which related
+the measured tire elastic characteristics to variations in the vertical load, inflation
+pressure, braking force, and/or tire vertical deflection, and a semiempirical analysis
+which related tire elastic behavior to measured wheel slippage during steady -state
+braking.
+The bias-belted tire had the largest spring constant for most loading conditions;
+the radial-belted tire, the smallest. The static fore-and-aft spring constant (1) decreased
+with tire vertical deflection and increased with inflation pressure for each of the three
+tires and (2) increased with vertical load for the bias-ply tire and decreased with vertical
+load for the bias -belted and radial-belted tires.
+The elastic response of the tire free periphery to static braking included both tread
+stretch and carcass torsional wind-up about the axle for the bias-ply and bias-belted tires
+and carcass wind-up alone for the radial-belted tire. The decay lengths for the bias-
+belted tire were longer than those for the bias-ply tire for most loading conditions,
+whereas the decay lengths for the radial-belted tire approached infinity and, as a result,
+the lack of tread stretch was noted during brake application. The fore-and-aft decay
+length (1) was insensitive to variations in the vertical load for the bias-ply tire and
+decreased with braking force for both the bias-ply and bias-belted tires and (2) increased
+with inflation pressure for the bias-ply tire and decreased with inflation pressure for the
+bias -belted tire.
+Tread stretching under braked-rolling conditions was detected within the footprints
+of the bias-ply and bias-belted tires and was found to increase with braking force and
+inflation pressure and to decrease with vertical load. No tread stretching was detected
+within the footprint of the radial-belted tire.
+17
+
+
+
+=== PDF PAGE 19 ===
+The tread-stretch contribution to changes in rolling radius due to braking can be
+predicted from the elastic fore-and-aft response characteristics of the tires. These
+changes in rolling radius, based upon the tire elastic deformation measurements, can then
+be used in conjunction with the experimentally determined wheel response characteristics
+to calculate the actual tire slippage under steady -state braked-rolling conditions. Tire
+slippage during steady-state braking was less for radial-belted tires than for those of
+bias construction.
+The results of this investigation have several implications which are of interest to
+designers of aircraft landing gears and antiskid braking systems. The extent of tire
+slippage and hence scrubbing action associated with the three tire designs implies higher
+wear rates during braking operations for the bias-ply tire and, to a slightly lesser extent,
+the bias-belted tire than for the radial-belted tire. In addition, the reduced tire slippages
+noted particularly for the radial-belted tire design could also result in lower tread tem-
+peratures during high-speed operations which would suggest improved traction perform -
+ance. However, the low fore-and-aft spring stiffness of the radial-belted tire could intro-
+duce an excessive lag between the braking effort and the ground reaction which would alter
+the response characteristics of the aircraft antiskid braking system sufficiently to degrade
+its performance. Hence, designers of landing gears and antiskid braking systems must
+weigh the possible advantages of belted designs (tire wear and traction improvements)
+against this possible degradation in antiskid braking performance.
+Langley Research Center,
+National Aeronautics and Space Administration,
+Hampton, Va., December 6, 1973.
+18
+
+
+
+=== PDF PAGE 20 ===
+APPENDIX
+ANALYSIS
+This appendix develops the expression which relates the change in rolling radius
+of tires under steady -state braking conditions to previously defined tire elastic properties.
+The experimental data presented herein indicate that the tread deformation in the
+leading half of the footprint can be expressed by the following equation:
+uf = ufo + ms
+f
+The maximum deformation within the footprint is by definition
+F X
+Uf0=K,
+Substituting equation (A2) into equation (Al) and normalizing yield
+-rc,
++
+uf = 1 Msf
+F X
+where
+m
+M = -
+(A41
+UrO
+The elongation strain in the footprint due to the braking effort is defined as
+dur
+F X M
+- - (A5)
+= =
+dsf Kx
+The tread stretch which has accumulated within the footprint can be determined by
+integrating equation (A5) over the half-length of the footprint to yield
+h
+% = J
+*x
+d u f = - G M h
+0
+The static data presented herein indicated that the tread deformation along the free
+periphery near the footprint leading edge can be expressed as
+Fx -sp/Jx
+u =-e
+p K x
+19
+
+
+
+=== PDF PAGE 21 ===
+APPENDIX
+and the maximum deformation was assumed to occur at the footprint leading edge. Under
+rolling conditions, however, equation (A7) must be modified to conform to the following
+boundary condition:
+U = u 1
+Isf=h p sp=O
+where
+U --F-x + m h
+f/,f=h K~
+Equation (A7) now becomes
+F X Mh)e -sP/Jx
+u =-(11.
+p Kx
+The elongation strain in the free periphery due to the braking effort is defined by
+-duP -- Fx (1 + Mh)e -S PI J x
+EX,p = =
+dSP JXKX
+The tread stretch which has accumulated in the free periphery can be determined by
+integrating equation (A11 ) over the appropriate limits of integration
+-“p/Jx
+-1,
+Q P = J d u = 2 ( 1 + M h ) J o JX ds
+P
+p Kx
+sP , m a
+Performing the indicated integration yields
+-sp’Jxr
+-F X +
+Q = (1 Mh)e
+Kx Sp ,max
+or
+2
+Q = (1 + Mh) (1 - e -sp,max/Jxj
+P K ,
+The total tread stretch due to the braking effort is
+Qt = Qf + Qp
+20
+
+
+
+=== PDF PAGE 22 ===
+APPENDIX
+Equation (Al5) represents the net increase in tire circumference due to braking forces,
+and the net change in rolling radius is obtained by dividing equation (Al5) by 2n to
+yield
+[
+AR=-Q=t- 1 Fx -(l+Mh)e- ~p,max/~x]
+277 2nKx
+This equation is a general expression which may be used to compute the change in
+rolling radius due to the braking effort regardless of the tire construction.
+21
+
+
+
+=== PDF PAGE 23 ===
+REFERENCES
+1. Davis, J. E.; and Curry, R. C.: The Costs of Landing an Airplane. SAE J., vol. 71,
+Dec. 1963, pp. 47-49.
+2. Batterson, Sidney A.: A Study of the Dynamics of Airplane Braking Systems as
+Affected by Tire Elasticity and Brake Response. NASA TN D-3081, 1965.
+3. Tanner, John A.: Performance of an Aircraft Tire Under Cyclic Braking and of a
+Currently Operational Antiskid Braking System. NASA TN D-6755, 1972.
+4. Bourcier de Carbon, Christian: Etude The'orique du Shimmy des Roues d'Avion
+(Analytical Study of Shimmy of Airplane Wheels). O.N.E.R.A. Publ. No. 7,
+1948. (Available in English translation as NACA TM 1337.)
+5. Farster, B.: Versuche zur Feststellung des Haftvermagens von Personenwagen-
+Bereifungen (Tests To Determine the Adhesive Power of Passenger-Car Tires).
+Deutsche Kraftfahrtforschung ZB Nr. 22. (Available in English translation as
+NACA TM 1416.)
+6. Fromm, H.: Seitenschlupf und Fiihrungswert des rollenden Rades (Sideslip and Guid-
+ing Characteristics of the Rolling Wheel). Bericht 140 der L.G.L.., 1941, pp. 56-63.
+(Available in English translation as NACA TM 1365, pp. 191-216.)
+7. Fromm, H.: Schwingungsdxmpfung am rollenden Rade (Oscillation Damping on the
+Rolling Wheel). Bericht 140 der L.G.L., 1941, pp. 66-67. (Available in English
+translation as NACA TM 1365, pp. 229-233.)
+8. Horne, Walter B.: Static Force-Deflection Characteristics of Six Aircraft Tires Under
+Combined Loading. NACA TN 2926, 1953.
+9. Horne, Walter B.; Stephenson, Bertrand H.; and Smiley, Robert F.: Low-Speed Yawed-
+Rolling and Some Other Elastic Characteristics of Two 56 -Inch-Diameter, 24 -Ply -
+Rating Aircraft Tires. NACA TN 3235, 1954.
+10. Horne, Walter B.; and Smiley, Robert F.: Low -Speed Yawed-Rolling Characteristics
+and Other Elastic Properties of a Pair of 40-Inch-Diameter, 14-Ply-Rating,
+Type VII Aircraft Tires. NACA TN 4109, 1958.
+11. Kantrowitz, Arthur: Stability of Castering Wheels for Aircraft Landing Gears.
+NACA Rep. 686, 1940.
+12. Boeckh: Ermittlung der elastischen Konstanten von Flugzeugreifen (Determination of
+the Elastic Constants of Airplane Tires). Focke-Wulf Flugzeugbau G.m.b.H.
+(Bremen), Dec. 1944. (Available in English translation as NACA TM 1378.)
+22
+
+
+
+=== PDF PAGE 24 ===
+13. Smiley, Robert F.; and Home, Walter B.: Mechanical Properties of Pneumatic Tires
+With Special Reference to Modern Aircraft Tires. NASA TR R-64, 1960. (Super-
+sedes NACA TN 4110.)
+14. Tanner, John A.; McCarty, John L.; and Batterson, Sidney A.: The Elastic Response
+of Bias-ply Aircraft Tires to Braking Forces. NASA TN D-6426, 1971.
+15. Anon.: Metric Practice Guide. E 380-72, h e r . SOC. Testing Mater., June 1972.
+16. Hoel, Paul G.: Introduction to Mathematical Statistics. Third ed., John Wiley & Sons,
+Inc., c.1962.
+17. Draper, N. R.; and Smith, H.: Applied Regression Analysis. John Wiley & Sons, Inc.,
+c -1966.
+18. Hicks, Charles R.: Fundamental Concepts in the Design of Experiments. Holt,
+Rinehart and Winston, Inc., c.1964.
+23
+
+
+
+=== PDF PAGE 25 ===
+TABLE I. - TIRE SPECIFICATIONS
+Item Bias ply Bias belted Radial belted
+Bead Wire, steel
+Carcass:
+Matrix Natural rubber Natural rubber Natural rubber
+Cord Nylon Nylon Nylon
+Belt None I Polyester Steel
+Tread:
+Material Natural rubber Natural rubber Natural rubber
+Groove pattern 5-groove 4 - groove 4-groove
+Rated inflation 793 kPa 793 kPa 793 kPa
+press ure
+(1 15 lb/in2) (1 15 lb/in2) (11 5 lb/in2)
+I
+Rated vertical 58.7 kN 58.7 kN 58.7 kN
+load
+(13 200 lb) (13 200 lb) (13 200 lb)
+Unloaded a264.9 cm b268.2 cm b263.4 cm
+circumference
+(104.3 in.) (105.6 in.) (103.7 in.)
+C265.7 cm
+(104.6 in.)
+d266.4 cm
+(104.9 in.)
+ahflation pressure of 621 kPa (90 lb/in2).
+bAll test inflation pressures.
+CInflation pressure of 793 kPa (115 lb/in2).
+dInflation pressure of 965 kPa (140 lb/in2).
+24
+
+
+
+=== PDF PAGE 26 ===
+o m m
+9'909
+N C U C U
+m e a 0
+c9'991
+w c - 0 0
+o m * a t - -
+a cu.cs? ? ? " .
+a, w w t - I n - w
+d42
+a,
+Q m 4 -
+rn * o w
+f - w -
+cd w w w
+.a,-I
+o c o r -
+o w a o
+o m 0 ,
+m t - 0 , w o m
+a??=! qcu.09
+h w t - m m w w
+da
+rn m w 4
+cd f - m m
+iii r l C U 4
+w w w
+m m -
+m 4 4
+m m o )
+-
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+m c o o m C U 0 m c v o
+4 m m
+N 4 4 d
+k
+0 m *O
+m r(
+rl 4
+a
+m
+m
+P-
+25
+
+
+
+=== PDF PAGE 27 ===
+TABLE 1II.- SUMMARY OF FORE-AND-AFT DECAY LENGTHS
+FROM STATIC TESTS
+(a) Bias-ply tire; Sp,ma -- 35.6 cm (14 in.)
+P FZ JX
+r
+kPa lb/in2 kN lb kN lb cm in.
+621 90 51.2 11 500 8.9 2000 62 .O 24.4 -0.926
+13.4 3000 40.6 16.0 -.971
+17.8 4000 43.2 17. O -.961
+58.7 13 200 8.9 2000 186.9 73.6 -0.633
+13.4 3000 51.6 20.3 -.944
+17.8 4000 58.7 23.1 -.953
+66.8 15 000 8.9 2000 91.4 36 .O -0.903
+13.4 3000 43.4 17.1 -.972
+17.8 4000 51 .O 20.1 -.967
+793 115 51.2 11 500 8.9 2000 53.8 21.2 -0.935
+13.4 3000 43.9 17.3 -.956
+17.8 4000 55.6 21.9 -.915
+58.7 13 200 8.9 2000 83.8 33.0 -0.876
+13.4 3000 46.2 18.2 -.959
+17.8 4000 51.8 20.4 -.944
+-
+66.8 15 000 8.9 2000 97.0 38.2 -0.817
+13.4 3000 52.3 20.6 - .967
+17.8 4000 63.8 25.1 - .924
+96 5 140 51.2 11 500 8.9 2000 124.2 48.9 -0.844
+13.4 3000 73.2 28.8 -.920
+17.8 4000 88.1 34.7 -.893
+58.7 13 200 8.9 2000 88.1 34.7 -0.804
+13.4 3000 72.9 28.7 -.905
+17.8 4000 65.0 25.6 -.915
+66.8 15 000 8.9 2000 117.6 46.3 -0.852
+-
+13.4 3000 67.0 26.4 .967
+-
+17.8 4000 89.4 35.2 .929
+26
+
+
+
+=== PDF PAGE 28 ===
+TABLE m.-S UMMARY OF FORE-AND-AFT DECAY LENGTHS
+FROM STATIC TESTS - Continued
+(b) Bias-belted tire; s ~-- 35.6, cm (~14 in.) ~
+P Fz Fx
+kPa lb/in2 kN lb kN lb cm
+62 1 90 51.2 11 500 8.9 2000 (a)
+13.4 3000 59.2
+17.8 4000 66 .O 26 .O
+58.7 13 200 8.9 2000 71.9 28.3 -0.978
+13.4 3000 61.7 24.3 -.967
+17.8 4000 54.6 21.5 -.975
+66.8 15 000 8.9 2000 82.3 32.4 -0.964
+13.4 3000 6 5.0 25.6 -.978
+17.8 4000 (a) (a) (a)
+793 115 51.2 11 500 8.9 2000 45.7 18.0 -0.972
+13.4 3000 56.6 22.3 -.960
+17.8 4000 55.1 21.7 - .984
+58.7 13 200 8.9 2000 (4 (a) (a)
+13.4 3000 53.1 20.9 -0.968
+17.8 4000 ( 4 (4 (a)
+66.8 15 000 8.9 2000 240.8 94.8 -0.659
+13.4 3000 112.5 44.3 -.933
+17.8 4000 103.9 40.9 -.940
+96 5 140 51.2 11 500 8.9 2000 64.3 25.3 -0.825
+13.4 3000 41.9 16.5 -.961
+17.8 4000 46.2 18.2 -.946
+58.7 75.2
+55.4 -.975
+48.3
+66.8 15 000 82.6 -0.980
+83.3 32.8 -.975
+78.5 30.9 -.967
+aData not available.
+27
+
+
+
+=== PDF PAGE 29 ===
+TABLE II1.- SUMMARY OF FORE-AND-AFT DECAY LENGTHS
+-
+FROM STATIC TESTS Concluded
+(c) Radial-belted tire; Sp,max = 35.6 cm (14 in.)
+P FX JX r
+kPa lb/in2 kN lb cm in. (a)
+62 1 90 11 500 8.9 2000 N.A.
+13.4 3000 N.A.
+17.8 4000 N.A.
+13 200 8.9 2000 N.A.
+13.4 3000 N.A.
+17.8 4000 N.A.
+66.8 15 000 8.9 2000 N.A.
+13.4 3000 N.A.
+I17.8 4000 N.A.
+793 115 11 500 8.9 2000 00 00 N.A.
+13.4 3000 00 00 N .A.
+17.8 4000 00 00 N.A.
+58.7 13 200 8.9 2000 00 00 N.A.
+13.4 3000 m 00 N.A.
+17.8 4000 00 m N.A.
+66.8 15 000 8.9 2000 00 00 N.A.
+13.4 3000 00 00 N.A.
+17.8 4000 00 00 N.A.
+96 5 140 51.2 11 500 8.9 2000 00 00 N.A.
+13.4 3000 m 00 N .A.
+17.8 4000 00 00 N .A.
+58.7 13 200 8.9 2000 00 00 N.A.
+13.4 3000 00 00 N .A
+1 17.8 4000 00 00 N.A.
+15 000 8.9 2000 m 00 N.A.
+13.4 3000 m 00 N.A.
+17.8 4000 00 00 N.A.
+aN.A. denotes data not applicable.
+28
+
+
+
+=== PDF PAGE 30 ===
+TABLE 1V.- SUMMARY OF TREAD DEFORMATION VARIATION
+WITHIN BRAKED-ROLLING FOOTPRINT
+(a) Bias-ply tire
+h FX M
+r
+kPa lb/in2 kN lb cm in. kN lb m-1 in-1
+621 90 51.2 11 500 18.80 7.40 9.0 2031 -2.362 -0.060 -0.990
+17.6 3960 -2.756 -.070 -.998
+20.2 4529 -3.386 - .086 - .994
+58.7 13 200 19.51 7.68 10.5 2364 -1.496 -0.038 -0.991
+15.9 3567 -2.953 -.075 - .999
+21.8 4890 -3.346 -.085 -.998
+66.8 15 000 20.29 7.99 10.2 2291 -1.929 -0.049 -0.974
+15.6 3500 -2.913 -.074 -.990
+22.3 5004 -2.913 -.074 -.999
+793 115 51.2 11 500 17.53 6.90 9.5 2131 -1.969 -0.050 -0.980
+16.6 3725 -4.055 -.lo3 -.999
+22.5 50 50 -4.685 -.119 -.995
+~
+58.7 13 200 18.97 7.47 9.5 2131 -2.126 -0.054 -0.969
+16.8 3783 -3.425 -.087 -.998
+21.0 4731 -4.016 -.lo2 -.999
+66.8 15 000 18.82 7.41 10.2 2302 -2.165 -0.055 -0.993
+L
+16.4 3698 -3.425 -.087 -.998
+21.9 4924 -3.307 - .084 -.999
+965 140 16.13 6.35 8.8 1984 -2.992 -0.076 -0.995
+16.13 6.35 15.2 3422 -4.449 -.113 -.999
+17.40 6.85 8.1 1814 -3.268 -0.083 -0.986
+15.7 3526 -4.291 -.lo9 -.995
+20.6 4638 -4.882 -.124 -.997
+66.8 15 000 17.73 6.98 8.3 1865 -2.244 -0.057 -0.984
+17.2 3854 -3.701 -.094 -.999
+23.0 5181 -3.740 - .09 5 -1.000
+29
+
+
+
+=== PDF PAGE 31 ===
+TABLE 1V.- SUMMARY OF TREAD DEFORMATION VARIATION
+WITHIN BRAKED-ROLLING FOOTPRINT - Continued
+(b) Bias -belted tire
+P h FX M
+-___ r
+kPa lb/in2 kN lb cm in. kN lb m-1 in-1
+--
+L-
+62 1 90 51.2 11 500 19.43 7.65 15.8 3548 -2.087 -0.053 -0.992
+51.2 11 500 19.43 7.65 19.1 4289 -2.559 -.065 -.994
+58.7 13 200 20.07 7.90 8.6 1931 -2.795 -0.071 -0.957
+10.4 2338 -2.835 -.072 -.986
+13.5 3039 -2.795 -.071 - .990
+66.8 15 000 20.88 8.22 9.2 2065 -2.480 -0.063 -0.988
+12.5 2806 -2.598 -.066 -.995
+19.7 4437 -2.559 - .06 5 -.994
+793 115 51.2 11 500 17.78 7.00 8.9 1992 -2.559 -0.06 5 -0.950
+11.6 2608 -3.268 -.083 -.991
+17.3 3882 -3.976 -.lo1 -.997
+58.7 13 200 19.43 7.65 8.9 1998 -3.740 -0.095 -0.994
+10.6 2383 -2.835 -.072 -.982
+12.8 2876 -3.228 -.082 -.998
+~ ~
+66.8 15 000 19.43 7.65 9.5 2137 -1.575 -0.040 -0.957
+13.4 3024 -2.402 -.061 -.997
+18.8 4231 -2.874 -.073 -.995
+~
+96 5 140 51.2 11 500 17.35 6.83 8 .O 1803 -3.189 -0.081 -0.962
+15.5 3490 -3.898 -.099 -.991
+18.6 4173 -3.465 -.088 -.996
+58.7 13 200 18.14 7.14 7.2 1611 -2.323 -0.059 -0.883
+8.4 1881 -2.559 -.065 -.982
+10.3 2308 -2.835 -.072 -.972
+66.8 15 200 18.14 7.14 8.9 1992 -2.283 -0.058 -0.952
+13.1 2951 -3.268 -.083 -.995
+18.8 4231 -3.150 -.080 -.993
+--
+30
+
+
+
+=== PDF PAGE 32 ===
+TABLE 1V.- SUMMARY OF TREAD DEFORMATION VARIATION
+-
+WITHIN BRAKED-ROLLING FOOTPRINT Concluded
+(c) Radial-belted tire
+-
+P FZ h M r
+kPa lb/in2 kN lb cm in. kN lb m-1 in-1 (a)
+-
+621 90 51.2 11 500 19.84 7.81 11.0 2468 0 0 N.A.
+14.9 3353 0 0 N.A.
+18.5 4151 0 0 N.A.
+58.7 13 200 19.86 7.82 7.8 1743 0 0 N.A.
+11.3 2541 0 0 N.A.
+16.9 3803 0 0 N.A.
+66.8 15 000 20.02 7.88 8 .O 1800 0 0 N.A,
+11.1 2 500 0 0 N.A.
+19.1 4300 0 0 N.A.
+793 115 51.2 11 500 18.95 7.46 8.3 1858 N.A,
+14.5 32 50 N.A,
+20.7 4649 N.A,
+58.7 13 200 18.97 7.47 9.2 2062 N.A,
+11.9 2671 N.A,
+19.8 4442 N.A,
+66.8 15 000 19.00 7.48 8.9 2000 0 0 N.A,
+11.1 2 500 0 0 N.A,
+20.0 4500 0 0 N.A,
+96 5 140 51.2 11 500 18.67 7.35 10.2 2300 0
+15.2 3425 0
+17.8 4000 0
+58.7 13 200 18.69 7.36 8.9 2000
+13.4 3000
+17.8 4000
+66.2 15 000 18.74 7.38 8.9 2000
+13.6 3000
+17.8 4000
+aN.A. denotes data not applicable.
+bData not available.
+31
+
+
+
+=== PDF PAGE 33 ===
+TABLE V.- SUMMARY OF ROLLING RADIUS DATA
+(a) Bias-ply tire
+Speed, F X A€ lc ARexp-
+___ - -
+kPa b/in2 kN lb kN lb :m in, cm in.
+~
+5 965 140 56.3 12 664 19.2 4324 1.18 ).07 2.34 3.92
+5 96 5 140 62.3 14 007 18.5 4165 .18 .07 1.68 .66
+5 793 115 56.8 12 761 20.2 4531 .20 .08 2.39 .94
+5 793 115 64.5 14 486 19.0 4268 .18 .07 2.16 .85
+5 621 90 55.5 12 477 16.8 3788 .15 .06 1.96 .77
+5 621 90 64.5 14 492 15.7 3526 .13 .05 1.42 .56
+5 96 5 140 70.9 15 926 14.5 32 54 .10 .04 1.73 .68
+5 793 115 72.6 16 311 15.7 3528 .10 .04 1.73 .68
+5 621 90 70.9 15 926 15.7 3528 .10 .04 1.73 .68
+98.0 965 140 58.6 13 161 8.7 1957 .05 .02 .71 .28
+98.0 965 140 57.6 12 950 15.2 342 5 .13 .05 1.50 .59
+97.3 96 5 140 57.9 13 022 20.5 4606 .23 .09 1.13 .84
+100.0 96 5 140 66.9 15 035 19.2 4326 .18 .07 1.88 .74
+103.0 96 5 140 65.7 14 773 14.4 3238 .10 .04 1.37 .54
+104.0 965 140 65.7 14 768 9.4 2110 .O 5 .02 .74 .29
+103.0 965 140 72.7 16 333 8.8 1985 .05 .02 .66 .26
+99.0 965 140 72.6 16 308 15.1 3400 .10 .04 1.32 .52
+98 .O 96 5 140 73.6 16 543 20.6 4624 .18 .07 1.91 .75
+99.0 793 115 58.7 13 196 13.4 3023 .10 .04 2.08 .82
+99.0 793 115 58.4 13 119 14.1 3167 .13 .05 1.47 .58
+103.0 793 115 57.8 12 998 8.3 1873 .05 .02 .71 .28
+100.0 793 115 57.3 12 879 8.8 1973 .05 .02 .74 .29
+104.0 793 115 65.4 14 710 15.8 3545 .13 .05 1.35 .53
+101.0 793 115 69.3 15 583 20.9 4689 .20 .08 1.96 .77
+101.0 793 115 74.0 16 618 19.4 4367 .15 .06 1.65 .65
+102 .o 793 115 73.0 16 404 15.1 3404 .10 .04 1.22 .48
+103.0 793 115 71.4 16 046 10.2 2295 .05 .02 .64 2 5
+107.0 621 90 56.8 12 757 8.9 2010 .05 .02 .51 2 0
+107.0 621 90 56.8 12 753 15.6 3515 .13 .05 1.55 .61
+107.0 621 90 57.2 12 851 17.1 3841 .15 .06 1.98 .78
+99.0 621 90 66 .O 14 821 18.6 4172 .15 .06 1.63 .64
+99.5 621 90 64.2 14 439 15.0 3370 .10 .04 1.32 .52
+97.0 621 90 66.3 14 893 20.7 46 58 .20 .08 1.73 .68
+100 .o 621 90 72.2 16 225 20.4 4579 .18 .07 1.42 .56
+101.0 621 90 71.9 16 156 14.7 3304 .08 .03 .91 .36
+100.0 621 90 72.9 16 376 9.4 2118 .02 .o 1 .46 .18
+~-
+~ ~ ~
+32
+
+
+
+=== PDF PAGE 34 ===
+TABLE V.- SUMMARY OF ROLLING RADIUS DATA - Continued
+(b) Bias-belted tire
+P FZ FX AR IC
+Speed, - -
+knots
+kPa lb/in2 - kN lb kN lb - cm _ in _ . cm in.
+5 965 140 68.8 15 472 13.7 3084 0.08 0.03 1.17 0.46
+5 793 115 70.9 15 936 14.4 3229 .10 .04 (b) (b)
+5 62 1 90 69.6 15 648 16.5 3710 .13 .05 1.45 .57
+5 96 5 140 56.0 12 578 6.9 1556 .05 .02 -41 .16
+5 965 140 64.1 14 404 14.6 3288 .10 .04 1.47 .58
+5 793 115 55.6 12 484 15.0 3374 .10 .04 1.55 .6 1
+5 793 115 63.2 14 213 15.3 3433 .13 .05 1.40 -55
+5 62 1 90 54.7 12 293 15.5 3491 .13 .05 1.30 .51
+98.7 96 5 140 58.8 13 204 14.6 3289 .10 .04 .94 .37
+100.4 965 140 61.3 13 767 11.3 2543 .08 .03 .79 .31
+101.6 96 5 140 65.6 14 732 11.1 2500 .08 .03 .79 .31
+102.3 965 140 63.3 14 231 8.5 1914 -05 .02 .91 .36
+97.5 96 5 140 57.1 12 826 8.5 1902 .05 .02 .56 .22
+98.7 793 115 66.5 14 952 8.3 1857 .05 .02 .89 .35
+98.7 621 90 58.3 13 101 11.3 2543 .10 -04 .86 .34
+100.6 793 115 72.3 16 249 9.6 2167 .05 -02 .46 -18
+98.8 793 115 72.9 16 379 12.0 2699 .08 -03 .33 -13
+99.7 793 115 73.1 16 430 16.3 3660 .10 .04 1.02 .40
+97.2 793 115 67.0 15 064 11.7 2638 .08 .03 .74 .29
+98.5 793 115 67.4 15 154 16.1 3626 .13 .05 .86 .34
+103.0 965 140 73.9 16 615 8.6 1924 .05 .02 .41 -16
+98.9 96 5 140 71.4 16 049 12.3 2773 . .08 .03 .74 .29
+100.2 96 5 140 73.6 16 550 14.7 3305 .08 .03 .94 .37
+94.3 96 5 140 68.1 15 311 15.2 3424 .10 .04 1.63 .64
+97.2 793 115 58.5 13 145 8.5 1918 .05 .02 .48 .19
+97.2 793 115 59.8 13 430 11.2 2509 .08 -03 .7 1 .28
+97.2 793 115 60.6 13 623 14.7 3295 .10 .04 .94 -37
+101.0 621 90 59.2 13 297 14.0 3149 .10 .04 .79 .31
+101.0 621 90 67.0 15 064 8.5 1915 .05 .02 -41 -16
+97.5 62 1 90 65.5 14 719 11.3 2535 .08 .03 .68 .27
+97.5 621 90 67.2 15 109 14.4 3248 .13 .05 1.02 .40
+98.8 621 90 74.7 16 789 8.8 1974 .05 .02 .38 .15
+96.0 621 90 73.0 16 404 11.9 2669 .08 .03 .53 .21
+99.7 621 90 74.3 16 692 15.4 3459 .13 .05 .91 .36
+100.6 793 115 67.4 15 158 16.8 3773 .13 .05 1.12 .44
+89.0 793 115 58.9 13 239 19.8 4455 -15 .06 1.02 .40
+101.0 793 115 59.3 13 333 18.8 4216 .15 .06 1.80 .71
+93.5 793 115 58.9 13 239 18.8 4216 .15 .06 1.40 .55
+98.7 621 90 58.3 13 105 8.9 2009 .OS .03 -.28 .ll
+-
+aFrom equation (14).
+bData not available.
+33
+
+
+
+=== PDF PAGE 35 ===
+TABLE V.- SUMMARY OF ROLLING RADIUS DATA - Concluded
+(c) Radial-belted tire
+S k p n e o e t d s , P FX A ARc LC ARexp
+- - -
+kPa lb/in2 lb kN lb cm in. cm -in.
+-
+~
+5 96 5 140 51.2 11 500 9.6 2150 0 0 0.48 0.19
+5 965 140 58.7 13 200 11.3 2550 0 0 .46 .18
+5 965 140 66.8 15 000 13.5 3025 0 0 .25 .10
+5 793 115 51.2 11 500 11.1 2500 0 0 .36 .14
+5 793 115 58.7 13 200 11.8 26 50 0 0 .20 .08
+5 793 115 66.8 15 000 14.0 3150 0 0 .25 .10
+5 621 90 51.2 11 500 12.0 2700 0 0 .25 .10
+5 621 90 58.7 13 200 14.7 3300 0 0 .20 .08
+5 621 90 66.8 15 000 16.1 3625 0 0 .20 .08
+97.1 96 5 140 66.5 14 952 8.5 1902 0 0 .20 .08
+101.0 965 140 58.1 13 047 5.7 1277 0 0 .13 .05
+100.2 965 140 59.2 13 293 11.8 2646 0 0 .36 .14
+101.1 793 115 66.4 14 924 7.4 1663 0 0 .10 .04
+101.5 793 115 67.0 15 061 10.7 2404 0 0 .13 .05
+100.6 793 115 65.0 14 620 13.4 3022 0 0 .15 .06
+99.2 965 140 66.2 14 867 7 .O 1586 0 0 .20 .08
+98.3 96 5 140 66.6 14 964 10.9 2448 0 0 .33 .13
+97.7 96 5 140 67.4 15 139 14.4 3248 0 0 .41 .16
+101.1 793 115 58.9 13 239 8 .O 1802 0 0 .13 .05
+- -
+~ ~
+aFrom equation (14).
+34
+
+
+
+=== PDF PAGE 36 ===
+L2
+0
+.r(
+Y
+cd
+M
+.r(
+a,
+5
+35
+
+
+
+=== PDF PAGE 37 ===
+
+
+
+
+=== PDF PAGE 38 ===
+Bias ply Bias belted Radial belted
+Figure 3. -Sketches illustrating the different tire constructions.
+LGATAPULT
+Figure 4.- Schematic of aircraft landing loads and traction facility.
+37
+
+
+
+=== PDF PAGE 39 ===
++J
+v)
++QJ)
+w
+0
+M
+0
+Y
+0
+Jz
+a
+38
+
+
+
+=== PDF PAGE 40 ===
+4
+a,
+rn
+rn
+a+,
+a,
+k
+7
+rn
+rn
+a,
+k
+a
+P
+a,
+a
+Ld
+s
+rJ1
+I
+I4
+a
+c
+cd
+%
+cd
+.rk(
+k
+Ld
+0
++
+rn
+;
+I
+W
+a,
+k
+5
+M
+R.r(
+39
+
+
+
+=== PDF PAGE 41 ===
+40
+
+
+
+=== PDF PAGE 42 ===
+41
+
+
+
+=== PDF PAGE 43 ===
+0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0
+Z : : ” , r l h l c . a
+I I I I I I 1
+-09
+-hl
+- ? -2 a k ,
+rl .rl
+- s Y
+- Y B
+rl
+-u? --?
++dY
+Q,
+-0 -0 d
+cd
+3
+-‘? --?
+-9
+-d:
+w h 0
+I W
+-? -c9
+I m
+Q,
+3
+ai
+k
+.Yrl
+B
+d-c,
+a,
+.I:
+m
+cd
+8
+eh I
+Tcf 11
+g a
+a,
+I k
+0
+W
+0
+-09 Y.rl
+cd
+Ym
+- 2
+d2
+a,
+-d: k
+.-crl,
+.arl
+-h! h I?
+d
+?
+I
+- 0 m
+cd Q)
+--?
+.arl
+s
+-d: v
+-(9
+I I I I I I rIl
+m 0 m 0 In 0 m
+H rl I rl rl
+I I
+42
+
+
+
+=== PDF PAGE 44 ===
+r be1te7
+l6O0 Bias
+-
+1200
+800 .
+1 '
+5
+a
+9
+2000
+1
+al
+&
+0
+Er
+0
+Tire vertical deflection, 6 , cm
+0
+I
+1
+.Io
+2.
+I
+0 3.
+I
+0 4.
+1
+0
+Tire vertical deflection, 6 , i n.
+Figure 10. - Variation in fore-and-aft spring constant with tire vertical deflection.
+43
+
+
+
+=== PDF PAGE 45 ===
+Free
+Footprint leading edge
+(a) Tire nomenclature.
+Station i
+Tire for F, = 0
+----------
+Tire for Fx > 0
+upi = up() - (a
+(b) Deformation in free periphery.
+.-
+Figure 11 Sketches illustrating tire nomenclature and deformation in free periphery
+under combined vertical load and braking force.
+44
+
+
+
+=== PDF PAGE 46 ===
+9 " % (9 b:
+b
+I
+I
+I
+P
+~
+1
+I
+I
+a
+m
+I I
+I
+t
+X
+Er
+I 1 I 1 I
+45
+
+
+
+=== PDF PAGE 47 ===
+b
+I
+P
+i
+I
+I
+I
+0
+i O1
+I
+i
+I
+0;
+1
+kX
+I
+46
+
+
+
+=== PDF PAGE 48 ===
+Tire
+0 Bias ply
+Bias belted
+0 Radial belted
+.10
+Y
+.24 Tire slip boundary
+0
+0
+I
+.20 0 0 .08
+0
+I .16 0 a 0
+I D 0 .06 e-
+E .*
+0
+~ .)u
+.Lu d
+cd
+.12
+0
+5i 0
+.04
+0
+.08 0
+.02
+.04
+~ 0
+I I I I I 0
+0 .4 .8 1.2 1.6 2.0 2.4
+mew ,cm
+I I I I I I
+0 .2 .4 .6 .8 1.0
+mew , i n.
+Figure 14. - Comparison of calculated and experimental change in rolling radius
+attributed to braking.
+47
+
+
+
+=== PDF PAGE 49 ===
+.4
+.3
+.2
+%
+Bias-ply tire
+0
+/
+.3
+.2
+.1
+.belted tire
+1 1 1 1 1 1
+.4
+- 1
+- I
+.3
+cLx .2
+.1
+0
+0 .02 .04 .06
+Tire slip ratio, X-t
+C
+Figure 15.- Variation of braking friction coefficient with tire slip ratio.
+48 NASA-Langley, 1974 L-8350
+
+
+
+=== PDF PAGE 50 ===
+1. Report No. 2. Gowmmfflt Accession No. 3. Recipient's Catalog No.
+NASA TN D-7449
+4. Title and Subtitle 5. Repwt Date
+April 1974
+FORE -AND-AFT ELASTIC RESPONSE CHARACTERISTICS OF
+34 X 9.9, TYPE M, 14 PLY-RATING AIRCRAFT TIRES OF 6. Performing Organization Code
+BIAS-PLY, BIAS-BELTED, AND RADIAL-BELTED DESIGN
+7. Author(4 8. Performing Organization Report No.
+I
+John A. Tanner
+L-8350
+10. Work Unit No.
+9. Worming Organization Name and Address 501 -38-12-02
+NASA Langley Research Center 11. Contract or Grant No.
+Hampton, Va. 23605
+13. Type of Repon and Period Covered
+2. Sponsoring Agency Name and Address Technical Note
+National Aeronautics and Space Administration
+14. Sponsoring Agency Code
+Washington, D.C. 20546
+5. Supplementary Notes
+The information presented herein was offered as a thesis in partial fulfillment of
+the requirements for the degree of Master of Science, George Washington University,
+6. Abmact
+An investigation was conducted to determined the fore-and-aft elastic response
+characteristics of 34 X 9.9, type M, 14 ply-rating aircraft tires of bias-ply, bias-
+belted, and radial-belted design. The investigation consisted of static and rolling tests
+on dry concrete pavements at the Langley aircraft landing loads and traction facility;
+statistical techniques which related the measured tire elastic characteristics to varia-
+tions in the vertical load, inflation pressure, braking force and/or tire vertical deflec-
+tion; and a semiempirical analysis which related the tire elastic behavior to measured
+wheel slippage during steady-state braking.
+The bias-belted tire developed the largest spring constant value for most loading
+conditions; the radial-belted tire, the smallest. The elastic response of the tire free
+periphery to static braking included both tread stretch and carcass torsional wind-up
+about the axle for the bias-ply and bias-belted tires and carcass wind-up alone for the
+radial-belted tire. Similarly, tread stretching under braked rolling conditions was
+detected within the footprints of the bias-ply and bias-belted tires but not within the
+footprint of the radial-belted tire. The tire slippage during steady-state braking was
+greater for the bias-ply tire than for the bias-belted and radial-belted tires.
+7. Key Words (Suggerted by Author(s)) 18. Distribution Statement
+-
+Aircraft tire Unclassified Unlimited
+Elastic response
+19. Security Clanif. (of this report) 20. Security Clanif. (of this page) 21. No. of Pages 22. Rice
+Unclassified Unclassified 48 $3.25

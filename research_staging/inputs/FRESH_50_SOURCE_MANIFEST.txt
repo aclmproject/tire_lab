@@ -1,0 +1,453 @@
+ACLM TIRE LAB — 50 FRESH SOURCES ADDED IN THE 500-PIECE EXPANSION
+These are candidates to verify/read; they are not automatically promoted facts.
+
+[01] The Effects of Tire-in-Use Factors on Passenger Car Performance
+Year: 1974
+Publisher: SAE International
+Identifier: SAE 741107
+URL: https://saemobilus.sae.org/papers/effects-tire-use-factors-passenger-car-performance-741107
+Classification: PERIOD GENERAL TIRE F&M / WEAR / PRESSURE
+Research target: Inflation, tread/shoulder wear and construction effects on tire shear/handling; wet/dry traction methodology.
+Constraint: Passenger-car study; use relationships and test methodology, not absolute racing coefficients.
+
+[02] Thermal Analysis of a Rolling Tire
+Year: 1970
+Publisher: SAE International
+Identifier: SAE 700474
+URL: https://saemobilus.sae.org/papers/thermal-analysis-a-rolling-tire-700474
+Classification: PERIOD THERMAL MECHANICS
+Research target: Steady-state tire heat network: tire-road conduction, internal/external convection, radiation, power loss, construction differences.
+Constraint: General tire thermal model; do not copy absolute temperatures into racing families without context.
+
+[03] Spinvision: A New Look at Dynamic Tire Temperature
+Year: 1970
+Publisher: SAE International
+Identifier: SAE 700473
+URL: https://saemobilus.sae.org/papers/spinvision-a-new-look-dynamic-tire-temperature-700473
+Classification: PERIOD DYNAMIC TEMPERATURE MEASUREMENT
+Research target: High-speed infrared visualization of dynamic heat patterns and links among heat, wear, uniformity and speed.
+Constraint: Treat as measurement/method evidence; racing extrapolation requires care.
+
+[04] Material Properties Affecting Traction and Wear of Passenger Tires
+Year: 1972
+Publisher: SAE International
+Identifier: SAE 720161
+URL: https://saemobilus.sae.org/papers/material-properties-affecting-traction-wear-passenger-tires-720161
+Classification: PERIOD RUBBER FRICTION / ABRASION
+Research target: Tread-rubber friction and abrasion mechanisms and material properties controlling traction/wear trade-offs.
+Constraint: Passenger compounds are not racing compounds; preserve mechanism vs magnitude.
+
+[05] Passenger-Car Cornering and Braking Tests on Wet Pavements
+Year: 1976
+Publisher: SAE International
+Identifier: SAE 760350
+URL: https://saemobilus.sae.org/papers/passenger-car-cornering-braking-tests-wet-pavements-760350
+Classification: PERIOD WET TRACTION
+Research target: Wet cornering/braking response versus inflation, tread condition and pavement/water variables.
+Constraint: Use for wet mechanisms and test design, not direct motorsport wet-mu values.
+
+[06] Friction, Tread Depth and Water: Laboratory Investigations of Passenger Car Tire Cornering Performance under Minimally Wet Conditions
+Year: 2013
+Publisher: SAE International
+Identifier: SAE 2013-01-0789
+URL: https://saemobilus.sae.org/papers/friction-tread-depth-water-laboratory-investigations-passenger-car-tire-cornering-performance-minimally-wet-conditions-2013-01-0789
+Classification: WET / TREAD-DEPTH MECHANICS
+Research target: Separate effects of water depth and tread depth on cornering friction under light wetting.
+Constraint: Modern passenger tire; use mechanisms for wet/intermediate architecture only.
+
+[07] Transient Tire Properties
+Year: 1974
+Publisher: SAE International
+Identifier: SAE 740068
+URL: https://saemobilus.sae.org/papers/transient-tire-properties-740068
+Classification: PERIOD TRANSIENT TIRE DYNAMICS
+Research target: Transient force response, relaxation behavior and implications for steering response.
+Constraint: Do not impose test-tire transient constants on historic race tires.
+
+[08] The Mathematical Characteristics of Steady State, Low Slip Angle Force and Moment Data
+Year: 1976
+Publisher: SAE International
+Identifier: SAE 760031
+URL: https://saemobilus.sae.org/papers/mathematical-characteristics-steady-state-low-slip-angle-force-moment-data-760031
+Classification: PERIOD FORCE & MOMENT TEST METHODOLOGY
+Research target: Low-slip-angle F&M characterization, test sequencing, break-in/equilibrium and mathematical representation.
+Constraint: Use methodology and curve behavior; not a direct historical racing fitment.
+
+[09] A Study of Tire Lag Property
+Year: 2001
+Publisher: SAE International
+Identifier: SAE 2001-01-0751
+URL: https://saemobilus.sae.org/papers/a-study-tire-lag-property-2001-01-0751
+Classification: RELAXATION / TRANSIENT MODELING
+Research target: Tire lag/relaxation response and parameters that control force build-up.
+Constraint: Modern modeling study; use to inform relaxation architecture, not era-specific values.
+
+[10] An Experimental Study of the Effects of Wheel and Sidewall Parameters on Tire Power Loss
+Year: 1982
+Publisher: SAE International
+Identifier: SAE 820457
+URL: https://saemobilus.sae.org/papers/experimental-study-effects-wheel-sidewall-parameters-tire-power-loss-820457
+Classification: THERMAL / HYSTERESIS / SIDEWALL
+Research target: Wheel/sidewall design effects on power loss and thermal state; structural contribution to hysteresis.
+Constraint: General tires; preserve construction trends, not raw racing coefficients.
+
+[11] Correlation Between Wear of Rubber Compounds in Laboratory and Dynamic Simulations Performed by Finite Elements Method
+Year: 2005
+Publisher: SAE International / Pirelli-associated research
+Identifier: SAE 2005-01-4089
+URL: https://saemobilus.sae.org/papers/correlation-wear-rubber-compounds-laboratory-dynamic-simulations-performed-finite-elements-method-2005-01-4089
+Classification: WEAR CORRELATION / SIMULATION
+Research target: Laboratory-to-road wear correlation, dynamic severity and finite-element wear prediction.
+Constraint: Use wear methodology; do not transfer passenger compound wear rates directly.
+
+[12] Structure and Parameterization of MF-Swift, a Magic Formula-based Rigid Ring Tire Model
+Year: 2009
+Publisher: Tire Science and Technology
+Identifier: 
+URL: https://tst.kglmeridian.com/view/journals/tist/37/3/article-p142.xml
+Classification: STRUCTURAL / TRANSIENT TIRE MODEL
+Research target: Loaded radius/contact dimensions, stiffness identification, pressure/load dependence, relaxation and rigid-ring parameterization.
+Constraint: Modern tire model; use parameter-identification methods and physical relationships.
+
+[13] Viscoelastic Loss Characteristics of Cord-Rubber Composites
+Year: 1986
+Publisher: Tire Science and Technology
+Identifier: 
+URL: https://tst.kglmeridian.com/view/journals/tist/14/2/article-p75.xml
+Classification: CARCASS MATERIAL / HYSTERESIS
+Research target: Viscoelastic loss behavior of cord-rubber composites relevant to carcass heat generation.
+Constraint: Material-level evidence; requires construction mapping before use in race families.
+
+[14] Traction of Pneumatic Tires on Wet Runways
+Year: 1965
+Publisher: NASA
+Identifier: 
+URL: https://ntrs.nasa.gov/citations/20000011970
+Classification: PERIOD WET TRACTION / HYDROPLANING
+Research target: Wet runway tire traction and hydroplaning relationships versus speed/load/pressure/water conditions.
+Constraint: Aircraft tires and surfaces; use fundamental wet mechanics, not racing absolute grip.
+
+[15] Heat Generation in Aircraft Tires Under Free Rolling Conditions
+Year: 1982
+Publisher: NASA
+Identifier: NASA CR-3629
+URL: https://ntrs.nasa.gov/citations/19830002826
+Classification: THERMAL GENERATION / VALIDATION
+Research target: Strain-work-to-heat calculation, heat diffusion and buried-thermocouple validation under free rolling.
+Constraint: Aircraft tire scale differs; use heat-generation architecture and validation method.
+
+[16] Traction Characteristics of a 30 by 11.5-14.5 Type VIII Tire on Dry, Wet, and Flooded Runways
+Year: 1976
+Publisher: NASA
+Identifier: NASA TM X-72805
+URL: https://ntrs.nasa.gov/citations/19760011408
+Classification: DRY/WET/FLOODED TRACTION
+Research target: Traction transition across dry, wet and flooded conditions; water-depth/speed effects.
+Constraint: Aircraft tire; use wet-transition mechanics only.
+
+[17] Heat Generation in Aircraft Tires Under Yawed Rolling Conditions
+Year: 1987
+Publisher: NASA
+Identifier: NASA CR-4080
+URL: https://ntrs.nasa.gov/citations/19870016170
+Classification: THERMAL / LATERAL SCRUB
+Research target: Heat from yawed rolling/contact scrubbing and validation across pressure, deflection and yaw.
+Constraint: Aircraft geometry/load; use normalized mechanisms and validation approach.
+
+[18] Wear and Related Characteristics of an Aircraft Tire During Braking
+Year: 1972
+Publisher: NASA
+Identifier: NASA TN D-6963
+URL: https://ntrs.nasa.gov/citations/19730002294
+Classification: WEAR / SLIP / TEMPERATURE
+Research target: Wear versus distance/slip ratio/surface and tread temperature increase with braking slip.
+Constraint: Aircraft braking; use qualitative/normalized wear-energy relationships.
+
+[19] Heat Generation in Aircraft Tires Under Braked Rolling Conditions
+Year: 1984
+Publisher: NASA
+Identifier: NASA CR-3768
+URL: https://ntrs.nasa.gov/citations/19840007519
+Classification: THERMAL / LONGITUDINAL SLIP
+Research target: Heat-generation mechanisms under braking and validation of thermal model.
+Constraint: Aircraft tire; translate by normalized work/slip, not raw values.
+
+[20] Energy Dissipation in a Rolling Aircraft Tire
+Year: 1988
+Publisher: NASA
+Identifier: NASA CR-182978
+URL: https://ntrs.nasa.gov/citations/19880016529
+Classification: HYSTERESIS / ENERGY DISSIPATION
+Research target: Rolling energy dissipation and its relation to carcass deformation and thermal behavior.
+Constraint: Aircraft tire; use architecture and normalization.
+
+[21] Rolling Resistance of Tires Measured Under Transient and Equilibrium Conditions
+Year: 1970s
+Publisher: Calspan / U.S. DOT
+Identifier: 
+URL: https://rosap.ntl.bts.gov/view/dot/11691
+Classification: TRANSIENT/EQUILIBRIUM PRESSURE-TEMP-RR
+Research target: Systematic effects of load, speed, pressure, temperature, slip angle, torque, construction, aspect ratio and wheel diameter; time/distance to equilibrium.
+Constraint: Passenger/light-truck matrix; highly useful for coupled physics, not race magnitudes.
+
+[22] Some Effects of Grooved Runway Configurations on Aircraft Tire Traction
+Year: 1973
+Publisher: NASA
+Identifier: 
+URL: https://ntrs.nasa.gov/citations/19730012330
+Classification: WET TRACTION / SURFACE TEXTURE
+Research target: Groove/surface effects on wet traction and hydroplaning behavior.
+Constraint: Aircraft/runway context; use surface/water mechanisms.
+
+[23] One Giant Leap
+Year: 2014
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/july-2014/138/one-giant-leap/
+Classification: HISTORICAL RACING TIRE DEVELOPMENT
+Research target: Period recollections on 1960s tire war, tread thickness, heat buildup, soft compounds and development methods.
+Constraint: Retrospective interviews; separate quoted period facts from later recollection.
+
+[24] Compound Fractures
+Year: 1997
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/april-1997/30/compound-fractures/
+Classification: HISTORICAL RACING SUPPLIER / WET TIRE
+Research target: Supplier wars, wet-tire performance differences and compound/spec evolution.
+Constraint: Magazine historical narrative; corroborate quantitative claims where possible.
+
+[25] 50 Goodyear Wolverhampton 1927-1977
+Year: 1977
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/august-1977/74/50-good-year-wolverhampton-1927-1977/
+Classification: PERIOD RACING TIRE CONSTRUCTION
+Research target: Goodyear racing development: construction spring-rate tuning, ply angle/cord density, temperature/sliding observations.
+Constraint: Company/history article; distinguish direct engineer quotations from narrative.
+
+[26] Technofile - The Slick Tyre
+Year: 1999
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/july-1999/51/the-slick-tyre/
+Classification: HISTORICAL SLICK / WET DEVELOPMENT
+Research target: Early slick behavior, driveability/breakaway and Dunlop wet compound/tread development.
+Constraint: Historical overview; do not universalize one supplier/spec.
+
+[27] Leo Mehl, Goodyear's European Racing Chief, Reflects on Four Years in Europe
+Year: 1971
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/november-1971/48/leo-mehl-goodyears-european-racing-chief-reflects-on-four-years-in-europe/
+Classification: DIRECT PERIOD RACING ENGINEERING
+Research target: Goodyear race-tire development, materials, slick durability/heat and contemporary supplier engineering.
+Constraint: Supplier-specific period interview; preserve exact context.
+
+[28] Austrian Grand Prix 1979 Race Report
+Year: 1979
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/september-1979/29/austrian-grand-prix-5/
+Classification: DIRECT PERIOD QUALIFYING-TIRE WEAR
+Research target: Qualifying tire degradation/blistering and supplier differences; very short-life soft compounds.
+Constraint: Event-specific F1 evidence; do not apply to endurance/touring.
+
+[29] Formula Two Review — June 1981
+Year: 1981
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/june-1981/40/formula-two-review/
+Classification: PERIOD F2 SUPPLIER / CONSTRUCTION
+Research target: Bridgestone cross-ply vs Pirelli radial behavior, qualifying/race versions, blistering and supplier differences.
+Constraint: F2-specific; useful for transition-era construction and compound menus.
+
+[30] P ZERO RA Rally Tyre Technical Data
+Year: current
+Publisher: Pirelli Motorsport
+Identifier: 
+URL: https://www.pirelli.com/tires/en-us/motorsport/car/rally/catalog/p-zero-ra
+Classification: OFFICIAL MODERN RACING TEMP/PRESSURE
+Research target: Official compound working surface-temperature ranges, cold/hot pressures, sizes and construction/use guidance.
+Constraint: Modern rally tire; use as calibration methodology/thermal architecture, not historical direct values.
+
+[31] P ZERO RW Rally Wet Tyre Technical Data
+Year: current
+Publisher: Pirelli Motorsport
+Identifier: 
+URL: https://www.pirelli.com/tires/en-us/motorsport/car/rally/catalog/p-zero-rw
+Classification: OFFICIAL MODERN WET TEMP/PRESSURE
+Research target: Official rain-tire working temperature, pressure and sizing; wet-specific range evidence.
+Constraint: Modern rally wet; do not back-cast absolute values to period wet tires.
+
+[32] SCORPION K Rally Tyre Technical Data
+Year: current
+Publisher: Pirelli Motorsport
+Identifier: 
+URL: https://www.pirelli.com/tires/en-us/motorsport/car/rally/catalog/scorpion-k
+Classification: OFFICIAL MODERN GRAVEL TEMP/PRESSURE
+Research target: Official gravel-rally compound working ranges, cold/hot pressure and geometry.
+Constraint: Modern rally; use cross-surface calibration methodology.
+
+[33] 2024 Michelin Motorsports Catalogue
+Year: 2024
+Publisher: Michelin Motorsport
+Identifier: 
+URL: https://trackdaytire.com/wp-content/uploads/2024/08/2024-Michelin-Motorsports-Catalogue.pdf
+Classification: OFFICIAL/REPRODUCED MODERN MOTORSPORT CATALOG
+Research target: Race tire sizes, pressure preparation, temperature-pressure rule-of-thumb and application recommendations.
+Constraint: Verify document authenticity/version; modern values are not historical targets.
+
+[34] Michelin Raceguide — WEC 24 Hours of Le Mans 2024
+Year: 2024
+Publisher: Michelin Motorsport
+Identifier: 
+URL: https://www.speedcafe.com/wp-content/uploads/04_Michelin_Raceguide_WEC_24HduMans2024_EN.pdf
+Classification: OFFICIAL MODERN ENDURANCE
+Research target: Hypercar sizes, ground-temperature compound selection, minimum pressures/camber and event operating guidance.
+Constraint: Modern Hypercar; use for endurance calibration concepts, not historic GT1 values.
+
+[35] MICHELIN Pilot Sport Cup Care and Feeding
+Year: unknown
+Publisher: Michelin / Tire Rack mirror
+Identifier: 
+URL: https://www.tirerack.com/images/pdf/Michelin_Care_and_Feeding.pdf
+Classification: TREAD PYROMETER / PRESSURE SETUP METHOD
+Research target: Cold-to-hot pressure examples, I/M/O pyrometer interpretation, hot pressure and tread-temperature setup workflow.
+Constraint: Track-day tire guidance; methodology only for racing-tool telemetry interpretation.
+
+[36] 2022 Italian Grand Prix Event Notes — Pirelli Preview
+Year: 2022
+Publisher: FIA / Pirelli
+Identifier: 
+URL: https://www.fia.com/sites/default/files/doc_3_-_2022_italian_grand_prix_-_event_notes_-_pit_lane_drawing_red_zone_and_pirelli_preview.pdf
+Classification: OFFICIAL F1 PRESSURE/CAMBER
+Research target: Start/stabilized pressure minima, camber limits and documented pressure-vs-temperature cooling relationships.
+Constraint: Modern F1; excellent pressure-model validation structure but not historical values.
+
+[37] FIA WEC Committee Tyre Pressure and Camber Decisions
+Year: 2024-2026
+Publisher: FIA
+Identifier: 
+URL: https://www.fia.com/events/world-endurance-championship/season-2024/wec-committee
+Classification: OFFICIAL ENDURANCE PRESSURE/CAMBER DATASET
+Research target: Event-by-event stabilized pressure and camber constraints; build a structured modern endurance reference set.
+Constraint: Modern regulated minima are not necessarily optimum pressure and not historic targets.
+
+[38] Hoosier Rally Tires Set-Up Recommendations
+Year: current
+Publisher: Hoosier Racing Tire
+Identifier: 
+URL: https://www.hoosiertire.com/tires/rally/
+Classification: OFFICIAL RACE-TIRE SETUP
+Research target: Cold/hot pressure targets and rally setup guidance.
+Constraint: Modern manufacturer guidance; use pressure closure/testing methodology.
+
+[39] Dowe on Le Mans 1990
+Year: 2024
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/september-2024/115/dowe-on-le-mans-1990/
+Classification: HISTORICAL ENDURANCE STINT / COMPOUND
+Research target: Jaguar/Goodyear rear-tire compound sizing and double-stint durability evidence from Le Mans 1990.
+Constraint: Retrospective testimony; preserve car/event/spec context.
+
+[40] Formula Two Review — May 1975
+Year: 1975
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/may-1975/35/formula-two-review/
+Classification: PERIOD WET-TIRE DURABILITY
+Research target: Wet tire overheating/chunking as track dries; harder older wet compounds lasting longer.
+Constraint: F2 event evidence; do not universalize supplier behavior.
+
+[41] Around and About — October 1981: Avon Racing Tyres
+Year: 1981
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/october-1981/40/around-and-about-october-1981/
+Classification: PERIOD SUPPLIER DEVELOPMENT
+Research target: Avon rapid F1 tire development after Goodyear withdrawal; construction/development timeline.
+Constraint: Historical narrative; extract only supported technical details.
+
+[42] How Williams Designed a Le Mans Winner: BMW V12 LMR
+Year: 2008
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/april-2008/108/bmw-v12-lmr/
+Classification: ENDURANCE TIRE STINT STRATEGY
+Research target: Michelin endurance strategy and double/triple-stint development goals around 1999 Le Mans.
+Constraint: Retrospective; distinguish planned vs actually completed stints.
+
+[43] Lunch with Oliver Gavin
+Year: 2013
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/february-2013/94/lunch-oliver-gavin/
+Classification: ENDURANCE DRIVER TIRE EVIDENCE
+Research target: Driver testimony on double/triple stints, tire consistency and endurance strategy.
+Constraint: Anecdotal/driver evidence; use as stint observation, not material-property data.
+
+[44] IMSA — Daytona 24 Hours 1991
+Year: 1991
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/march-1991/53/imsa-daytona-24-hours-2/
+Classification: PERIOD IMSA TIRE / SUSPENSION INTERACTION
+Research target: Jaguar suspension changes for softer Goodyear compounds and event tire setup interaction.
+Constraint: Event/car-specific; useful to demonstrate tire-chassis co-development.
+
+[45] The Formula One Scene — November 1978
+Year: 1978
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/november-1978/31/formula-one-scene/
+Classification: PERIOD F1 SUPPLIER / QUALIFYING COMPOUNDS
+Research target: Circuit-specific supplier support and qualifying tire life of only a few hard laps.
+Constraint: F1-specific; use compound-menu/life evidence only.
+
+[46] Tuning Topics — Ford Escort RS1600 / Broadspeed
+Year: 1971
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/july-1971/76/tuning-topics/
+Classification: DIRECT PERIOD ESCORT / DUNLOP
+Research target: Broadspeed Escort RS1600 tire/suspension context including period Dunlop Formula racing tires.
+Constraint: Extract exact tire wording/fitment only if present; do not infer Group 2-wide universal spec.
+
+[47] Winning Ways: How the Ford Escort Dominated the RAC Rally 50 Years On
+Year: 2022
+Publisher: Hagerty UK
+Identifier: 
+URL: https://www.hagerty.co.uk/articles/winning-ways-how-the-ford-escort-dominated-the-rac-rally-50-years-on/
+Classification: HISTORICAL ESCORT / DUNLOP A2
+Research target: Escort rally tire recollections: Dunlop A2 origins, size/width preferences, wet/loose-surface behavior and fragility.
+Constraint: Retrospective and rally-specific; do not substitute for circuit Group 2 slick data.
+
+[48] Le Mans 1995: Introducing the McLaren F1 GTR
+Year: 2025
+Publisher: Motor Sport Magazine
+Identifier: 
+URL: https://www.motorsportmagazine.com/archive/article/june-2025/80/le-mans-1995-introducing-the-f1-gtr/
+Classification: 1995 GT1 SUPPLIER / COMPOUND HISTORY
+Research target: Team-specific Michelin/Goodyear supply and compound-range differences for McLaren F1 GTR at Le Mans/BPR.
+Constraint: Retrospective; corroborate team/supplier mappings with entry records.
+
+[49] 1995 Le Mans Entry Appearance — Tire Supplier Map
+Year: 1995
+Publisher: RacingSportsCars
+Identifier: 
+URL: https://www.racingsportscars.com/entry/appearance/Le_Mans-1995-06-18.html
+Classification: 1995 GT1 EVENT SUPPLIER DATA
+Research target: Car-by-car tire supplier mapping across McLaren, F40, Porsche, Venturi, NSX, Nissan and others at 1995 Le Mans.
+Constraint: Database evidence; verify individual entries where critical.
+
+[50] McLaren F1 GTR RacingSportsCars Archive
+Year: 1995+
+Publisher: RacingSportsCars
+Identifier: 
+URL: https://www.racingsportscars.com/type/archive/McLaren/F1%20GTR.html
+Classification: GT1 EVENT / SUPPLIER CHRONOLOGY
+Research target: Build team/event-specific tire supplier chronology for F1 GTR rather than one universal supplier profile.
+Constraint: Database; treat exact compound identity as unknown unless separately sourced.
+

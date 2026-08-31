@@ -1,0 +1,32 @@
+param()
+$ErrorActionPreference='Stop'
+$Root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+. (Join-Path $Root 'src/payload/Telemetry/ACLM_Telemetry_Manifest.ps1')
+$requested=[pscustomobject]@{airTemperatureC=26;roadTemperatureC=26;wearMultiplier=1;fuelRate=0;damageRate=0;startingFuelLiters=30;sessionBlanketsEnabled=$false}
+$generated=[pscustomobject][ordered]@{
+  schema='ACLM telemetry calibration manifest 1.1';appVersion='0.10.1';knowledgeVersion='1.7.0';loggerVersion='0.10.1';year=1966;family='FAM022';class='CLS021';compound=@('soft','medium','wet');availableCompoundMenu=@('Dry sprint','Dry endurance','Wet');construction='bias'
+  constructionProvenance=[pscustomobject]@{provenance='AUTO_CLASSIFICATION';sourceIds=@('ENG-EV-GT40-0001')};supplier='General / unknown';supplierProvenance=[pscustomobject]@{provenance='UNKNOWN_FALLBACK';sourceIds=@('FAM022','CLS021')};profileState=[pscustomobject]@{authoritative=$true};requestedCondition=$requested;userRequestedCondition=$requested;requestedTyreWearMultiplier=1;requestedWearMultiplier=1
+  tireBlanketCapabilityTemperatureC=70;tireBlanketCapability=[pscustomobject]@{definedTemperatureC=70};historicalBlanketRecommendation=[pscustomobject]@{status='OFF'};requestedSessionBlanketsEnabled=$false;sessionBlanketStatus=[pscustomobject]@{enabled=$false};carIniPhysicsVersion='extended-2';thermalModelVersion=2;tireFileSha256='abc123';wearLutSha256=[pscustomobject]@{'wear.lut'='def456'};temperatureLutSha256=[pscustomobject]@{'temp.lut'='789abc'};referenceDriver='AI_REFERENCE'
+  pressureReference=[pscustomobject]@{axleReport=@([pscustomobject]@{axle='front';generatedPressureStaticPsi=23.2;generatedPressureIdealPsi=27;setupDefaultColdPressurePsi=$null;selectedSetupColdPressurePsi=$null},[pscustomobject]@{axle='rear';generatedPressureStaticPsi=23.6;generatedPressureIdealPsi=27;setupDefaultColdPressurePsi=$null;selectedSetupColdPressurePsi=$null})}
+}
+$observed=[pscustomobject]@{airTemperatureCStart=26;roadTemperatureCStart=37;initialPressurePsi=@(25.303,25.303,25.277,25.277);initialCoreTemperatureC=@(36.15,36.15,35.95,35.95);observedCompoundString='Dry endurance compound/spec (E)';rawAidTireRate=0;aidTireRateInterpretation='UNKNOWN';authority='recorded Assetto Corsa physics shared memory'}
+$runtime=[pscustomobject]@{car='wsc_legends_gt40_mk2_tires';track='ks_monza66';observedCompoundString='Dry endurance compound/spec (E)';samples=26542;loggerSchema='ACLM native telemetry 1.2';loggerRateHz=10;distanceMeters=[pscustomobject]@{loggerCumulative=198576;session=198576;stint=198576;currentTireSet=198576}}
+$activeMatch=[pscustomobject]@{status='ACTIVE_PHYSICS_OBSERVED';tyresIniSha256='abc123';carIniSha256='car123';activeCompoundIdentity=[pscustomobject]@{name='Dry endurance compound/spec';shortName='E';internalSlot='medium'};activePressureStaticFrontPsi=24.1;activePressureStaticRearPsi=24.5;activePressureIdealFrontPsi=28;activePressureIdealRearPsi=28}
+$match=Merge-ACLMRunManifest -Generated $generated -ActiveInstalledPhysics $activeMatch -Observed $observed -Runtime $runtime
+if($match.physicsIdentityStatus-ne'MATCH'-or$match.physicsHashMatch-ne$true){throw 'Matching active/generated tyres.ini hashes did not produce MATCH.'}
+
+$activeMismatch=[pscustomobject]@{status='ACTIVE_PHYSICS_OBSERVED';tyresIniSha256='ed0af559';carIniSha256='car456';activeCompoundIdentity=[pscustomobject]@{name='Dry endurance compound/spec';shortName='E';internalSlot='medium'};activePressureStaticFrontPsi=24.1;activePressureStaticRearPsi=24.5;activePressureIdealFrontPsi=28;activePressureIdealRearPsi=28}
+$merged=Merge-ACLMRunManifest -Generated $generated -ActiveInstalledPhysics $activeMismatch -Observed $observed -Runtime $runtime
+if($merged.physicsIdentityStatus-ne'STALE/HASH_MISMATCH'-or$merged.physicsHashMatch-ne$false){throw 'Mismatching active/generated hashes did not produce STALE/HASH_MISMATCH.'}
+if($merged.tireFileSha256-ne'ed0af559'-or$merged.generatedTyresIniSha256-ne'abc123'){throw 'Active and generated hashes were not separated.'}
+if($merged.activePressureStaticFrontPsi-ne24.1-or$merged.activePressureStaticRearPsi-ne24.5-or$merged.activePressureIdealFrontPsi-ne28){throw 'Stale generated pressure values overrode active installed values.'}
+if($merged.generatedConfiguration.pressureReference.axleReport[0].generatedPressureIdealPsi-ne27){throw 'Stale generated configuration was not retained as historical handoff evidence.'}
+if($merged.compound.Count-ne1-or$merged.compound[0]-ne'medium'-or$merged.activeSelectedCompound.shortName-ne'E'){throw 'Stale generated compound menu became the active compound.'}
+if($merged.generatedCompounds.Count-ne3-or$merged.availableCompoundMenu.Count-ne3-or$merged.observedCompoundString-ne'Dry endurance compound/spec (E)'){throw 'Available, generated and active compound concepts were conflated.'}
+if($merged.track-ne'ks_monza66'-or$merged.trackIdentitySource-ne'LOGGER_RUNTIME_OBSERVED'){throw 'Runtime track identity was not merged into the observational field.'}
+if($merged.observedStartingThermalState.source-ne'DIRECT_TELEMETRY'-or$merged.observedStartingThermalState.temperatureC.Count-ne4){throw 'Observed initial core did not replace pending state only in the observed field.'}
+if($merged.requestedCondition.roadTemperatureC-ne26-or$merged.observedACCondition.roadTemperatureCStart-ne37){throw 'Requested and observed conditions were not preserved separately.'}
+if($merged.requestedTyreWearMultiplier-ne1-or$merged.rawAidTireRate-ne0-or$merged.aidTireRateInterpretation-ne'UNKNOWN'-or$merged.aidTireRateMeaning-notmatch'does not mean tire wear was disabled'){throw 'rawAidTireRate zero was misinterpreted or overwrote requested wear.'}
+if($merged.generatedRecommendedSetupPressure.axleReport[0].setupDefaultColdPressurePsi-ne$null-or$merged.generatedRecommendedSetupPressure.axleReport[0].selectedSetupColdPressurePsi-ne$null){throw 'Missing setup default/selection did not remain null.'}
+foreach($name in @('generatedConfiguration','activeInstalledPhysics','observedACCondition','observedRuntimeState','physicsIdentityStatus','activeTyresIniSha256','generatedTyresIniSha256','activeSelectedCompound','generatedCompounds','availableCompoundMenu')){if($null-eq$merged.$name){throw "Merged manifest lost $name"}}
+[ordered]@{ok=$true;matchCase=$match.physicsIdentityStatus;mismatchCase=$merged.physicsIdentityStatus;activeCompound=$merged.activeSelectedCompound.name;track=$merged.track;requestedAndObservedPreserved=$true}|ConvertTo-Json -Compress

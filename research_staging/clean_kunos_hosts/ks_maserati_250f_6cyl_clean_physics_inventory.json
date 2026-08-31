@@ -1,0 +1,243 @@
+{
+  "schema": "ACLM clean installed host snapshot 1.0",
+  "carId": "ks_maserati_250f_6cyl",
+  "source": "official installed Kunos car with Content Manager loose-data extraction",
+  "createdUtc": "2026-08-31T06:15:42.6496121Z",
+  "carRoot": "F:\\SteamLibrary\\steamapps\\common\\assettocorsa\\content\\cars\\ks_maserati_250f_6cyl",
+  "looseDataPresent": true,
+  "packedDataPresent": true,
+  "packedDataSha256": "a78abd8a9f1afe064a7c56921d8cda1a308d2dd9c32b6c441a94e062e62254fa",
+  "fileCount": 46,
+  "files": [
+    {
+      "path": "data/1st.rto",
+      "bytes": 27,
+      "sha256": "4e54f4bb7b45aa717c0c46823374abac900a4ecdec3e9965e9f6309d534b01a4"
+    },
+    {
+      "path": "data/2nd.rto",
+      "bytes": 93,
+      "sha256": "25c0408f15a62987b99d45ba0fe8b16be94504991033e088f1c3ec1744a76206"
+    },
+    {
+      "path": "data/3rd.rto",
+      "bytes": 54,
+      "sha256": "8bed0ad1f51d8fefff1bee2998e50317fc735de01eebad5310f041ccf7fbbe99"
+    },
+    {
+      "path": "data/4th.rto",
+      "bytes": 66,
+      "sha256": "123a79d40ebe3dba21533bd38f4594de7adf69e176be45d1b9358a3991967af3"
+    },
+    {
+      "path": "data/aero.ini",
+      "bytes": 2100,
+      "sha256": "e0563681e39280f18747908a2501571c50a70ed1fa7cf7e545b583756801bcd9"
+    },
+    {
+      "path": "data/ai.ini",
+      "bytes": 273,
+      "sha256": "f60f3de698f653b62563eb768f59585178124b42601ac75cf88e233b5bc4b9e8"
+    },
+    {
+      "path": "data/ambient_shadows.ini",
+      "bytes": 32,
+      "sha256": "100a4fc064dec167cfa088637a728707d25d5a6fa7893d3558afed4138163afe"
+    },
+    {
+      "path": "data/analog_instruments.ini",
+      "bytes": 242,
+      "sha256": "40d1be2f731f1092ab4780165d181af71de0b61c3474465e654d77b3288841a1"
+    },
+    {
+      "path": "data/blurred_objects.ini",
+      "bytes": 624,
+      "sha256": "5af6f1b5a98a588c27182cee94caae19e3c8850365a66c398d71a35a3ef4f726"
+    },
+    {
+      "path": "data/brakes.ini",
+      "bytes": 795,
+      "sha256": "fd28d8f64e49d9bb488d1fc7c33420f455275a100eaa80e322f179bf3d595d64"
+    },
+    {
+      "path": "data/cameras.ini",
+      "bytes": 872,
+      "sha256": "71a60fe4057dfab8b3d60dd5d3325d998483290a445b233c8cd147a256cc70a6"
+    },
+    {
+      "path": "data/car.ini",
+      "bytes": 1836,
+      "sha256": "f2fcd4eee564d943a99c2b9f6833684887d56a0f344530e20f344015d7b86b7b"
+    },
+    {
+      "path": "data/colliders.ini",
+      "bytes": 69,
+      "sha256": "26da74ee905cbaf786664b16a0f50fd8801c75f91fc6b6fd6ac6baa8973d6aef"
+    },
+    {
+      "path": "data/damage.ini",
+      "bytes": 624,
+      "sha256": "aed3f9adb82b3822a724a3aa530fdabcae7bec71986a712ebc99a0f2aedd44ae"
+    },
+    {
+      "path": "data/dash_cam.ini",
+      "bytes": 50,
+      "sha256": "d992e522009255b393017b750b67a660c3522feacfd5c45f4669b6a699d4956e"
+    },
+    {
+      "path": "data/digital_instruments.ini",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/driver3d.ini",
+      "bytes": 443,
+      "sha256": "33fffa660027b1a269609bae8aa2e82288a59ef2a3d50c19aa54d7be5715b0a7"
+    },
+    {
+      "path": "data/drivetrain.ini",
+      "bytes": 2199,
+      "sha256": "955858d2c25500108527535a5b558414244fffad937f4f41ad203e2f76e66d22"
+    },
+    {
+      "path": "data/electronics.ini",
+      "bytes": 162,
+      "sha256": "05d7ddc1916b4241e0eab949172429b2a4943825131f8d2ff6375908f1106446"
+    },
+    {
+      "path": "data/engine_rev_8400.ini",
+      "bytes": 1032,
+      "sha256": "4a29372737da48383220c3df547daf8ba0f8f7efd10156de9a0d982d002e5d4b"
+    },
+    {
+      "path": "data/engine.ini",
+      "bytes": 1033,
+      "sha256": "29820a7593538f43e03b850c694dc5965a2cd31a197b6f75dfcb26ace1a8540b"
+    },
+    {
+      "path": "data/escmode.ini",
+      "bytes": 37,
+      "sha256": "04b3d1993ffcf3ab3090681e8017c5b6af1716bd4f1bbc6011ff3def5cdcd394"
+    },
+    {
+      "path": "data/F1_67_front.lut",
+      "bytes": 70,
+      "sha256": "d8b139b8f1ad16e4596a954285aeec355b68eeec780a2ae18ea27f3599430321"
+    },
+    {
+      "path": "data/F1_67_rear.lut",
+      "bytes": 70,
+      "sha256": "d8b139b8f1ad16e4596a954285aeec355b68eeec780a2ae18ea27f3599430321"
+    },
+    {
+      "path": "data/final.rto",
+      "bytes": 87,
+      "sha256": "887855edc4dba1f0924d665e4d316141e7950f87c8a3a851af8add5dcd997f51"
+    },
+    {
+      "path": "data/flame_presets.ini",
+      "bytes": 1019,
+      "sha256": "ab34f387d0efdfd83aae2ec47fad086b5b4f6473740cfbcffa49ef0c5dc2240b"
+    },
+    {
+      "path": "data/flames.ini",
+      "bytes": 228,
+      "sha256": "bdd958d051d714cf85877f059b5483a0e1d2401472c34bfadff7972a9ea21a5e"
+    },
+    {
+      "path": "data/fuel_cons.ini",
+      "bytes": 34,
+      "sha256": "f2a7e33d6c8d8005b49a54b1f7de13a6efccfd3f6c3ea0b6708161d23d251f12"
+    },
+    {
+      "path": "data/lights.ini",
+      "bytes": 41,
+      "sha256": "d43529333917ba5b0135ecc37767ea3be63df1c43aca5c75a7115bfdc2985dcd"
+    },
+    {
+      "path": "data/lods.ini",
+      "bytes": 283,
+      "sha256": "767a5b582fc557f626f363992b76ee497366659684dc4e7c1382fd0e19dfa3e8"
+    },
+    {
+      "path": "data/mirrors.ini",
+      "bytes": 23,
+      "sha256": "363a70ec73751dd69d7e6e7c6678211a8e864eb7e9f6c851bac41ec4e9145c95"
+    },
+    {
+      "path": "data/power.lut",
+      "bytes": 181,
+      "sha256": "ce482e98ee031546ce8f93e4768bc405f1c7f1f198201839d2df6da0d35e6a9b"
+    },
+    {
+      "path": "data/proview_nodes.ini",
+      "bytes": 4471,
+      "sha256": "d42bccf047ded3906b503f6a47124b1303a85759532aae25e701eee3e4ddd61d"
+    },
+    {
+      "path": "data/setup.ini",
+      "bytes": 5151,
+      "sha256": "5ae2b2ce69be5846084f2b3ce741d3752fef45c6b6c53ba33bc334843dcd7d01"
+    },
+    {
+      "path": "data/sounds.ini",
+      "bytes": 695,
+      "sha256": "e67f5960da7001377c6d76ee35651a48c5ca6722fc86acc6613945b3f38beea9"
+    },
+    {
+      "path": "data/suspension_graphics.ini",
+      "bytes": 267,
+      "sha256": "5116c7b3fee2f3e52499a54bccac875e4472095423e5327369bf1fc3c2fb700a"
+    },
+    {
+      "path": "data/suspensions.ini",
+      "bytes": 4486,
+      "sha256": "f1df08ab695b2a9024c184ba7f956b5b7d04e310618481423d0b34e02dcba0f5"
+    },
+    {
+      "path": "data/tcurve_f167.lut",
+      "bytes": 82,
+      "sha256": "5fa1d8de85fc02415832f28bbcddd4caf856be21c4291145fa664e0a01b96ba8"
+    },
+    {
+      "path": "data/throttle.lut",
+      "bytes": 63,
+      "sha256": "f0bf0f72370f405770e70316d1665338829219a2f14105e50d26ec1fc15ea69e"
+    },
+    {
+      "path": "data/tyres.ini",
+      "bytes": 4379,
+      "sha256": "c05b8aed0ca9c62acb5975b431262e53dcb9795da8af9787318ee0643f4c87a4"
+    },
+    {
+      "path": "data/wing_animations.ini",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/wing_body_AOA_CD.lut",
+      "bytes": 46,
+      "sha256": "5cecea55d789f950d9b7307ba3f8c8e4f59d54f9b0eda182627a4848c880b536"
+    },
+    {
+      "path": "data/wing_body_AOA_CL.lut",
+      "bytes": 67,
+      "sha256": "16bdd12eb92de90063806204ce337fea01e9452d8d613401899642af58e6b951"
+    },
+    {
+      "path": "data/wing_bodylift_AOA_CD.lut",
+      "bytes": 105,
+      "sha256": "1bbbf7c8e2b51341982649ab6201f66dd0b38f2bcafd311758fb5276ec7006de"
+    },
+    {
+      "path": "data/wing_bodylift_AOA_CL.lut",
+      "bytes": 68,
+      "sha256": "27c15dcc49a18cc1db23ee0af49d892494939c50f393d6ec0b97f0da7af8e562"
+    },
+    {
+      "path": "ui/ui_car.json",
+      "bytes": 1664,
+      "sha256": "1929df6648c0b2e24703636bd76c2d26dce46dd2a1847fb2ef3c4840e7534f6b"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+ACLM HISTORICAL TIRE LAB — 10,000-DOCUMENT WEAKNESS-CLOSURE INGESTION
+
+PURPOSE
+This handoff targets the Tire Lab's weakest evidence areas rather than broad generic tire reading. The package contains exactly 10,000 DOCUMENT ACQUISITION TARGETS. These are not 10,000 documents falsely claimed as already read. Your task is to resolve each target to one real unique document or explicitly mark it unresolved.
+
+READ FIRST
+1. DEDUP_AND_EVIDENCE_RULES.md
+2. WEAKNESS_MATRIX.csv
+3. VERIFIED_FRESH_SEED_SOURCES.csv
+4. P0_FIRST_1000.jsonl
+5. SHARD_INDEX.csv
+
+DO NOT MODIFY OR REBUILD THE TIRE LAB DURING THE ACQUISITION PHASE.
+First grow and audit the evidence corpus. Physics changes happen only after an evidence-impact review.
+
+PRIORITY
+Process P0_FIRST_1000 first. These targets emphasize the immediate telemetry-driven weaknesses: historical pressure/temperature/setup, historical life/wear-to-grip, and F&M/stiffness/transient behavior, especially 1966-76 cross-ply touring/endurance and 1992-96 GT/GT1.
+
+DOCUMENT RESOLUTION
+For each record in DOCUMENT_ACQUISITION_MANIFEST.jsonl:
+- search the named repository/domain plus the provided query;
+- identify ONE unique real document that materially addresses the target;
+- store canonical bibliographic identity and stable URL;
+- if full text is public, read it;
+- if paywalled, use only the abstract/metadata actually visible and mark ABSTRACT_ONLY or METADATA_ONLY;
+- if a legitimate connected/library access path is available, use it;
+- do not claim full-text review when only an abstract was available;
+- if no qualifying document is found, mark NO_DOCUMENT_FOUND.
+
+NO COUNT GAMING
+A search page is not a document. A duplicate mirror is not another document. A patent family is normally one evidence source unless distinct family members add materially different disclosure. Do not invent documents to complete a shard.
+
+EXTRACTION SCHEMA
+For every resolved document capture:
+- source ID / canonical identity
+- title
+- authors / organization
+- publication/event date
+- publisher/repository
+- DOI/report/patent/regulation/homologation ID
+- stable URL
+- review status
+- page/table/figure/section provenance
+- evidence type
+- era / class / supplier / construction applicability
+- exact numeric measurements with units and test conditions
+- direct observations
+- causal/scaling rules
+- fitment/regulatory constraints
+- uncertainties and limitations
+- Tire Lab families/classes affected
+- whether it supports architecture only or a numerical prior
+
+WEAKNESS PRIORITY COUNTS
+W01 Pressure / temperature / setup: 1,600
+W02 Wear / life / wear→grip: 1,400
+W03 F&M / stiffness / transient: 1,350
+W04 Wet / intermediate: 1,150
+W05 Construction / materials: 1,000
+W06 Supplier compound/code documents: 900
+W07 Fitment / geometry / regulations: 900
+W08 1990s GT1/BPR/Le Mans/IMSA map: 700
+W09 Heat-cycle / aging / graining / blistering / breakup: 550
+W10 Rolling resistance / hysteresis / thermal transfer / pressure rise: 450
+TOTAL: 10,000
+
+IMMEDIATE QUESTIONS THIS CORPUS MUST HELP ANSWER
+1. How should the Tire Lab predict setup cold pressure from the simulator's actual cold→hot pressure behavior without confusing PRESSURE_STATIC, PRESSURE_IDEAL and setup pressure?
+2. What period racing evidence exists for tread/pyrometer, carcass/core and cavity temperatures, and how should those observables be distinguished?
+3. What historically meaningful life definitions can be supported: observed stint, competitive life, service/abrasion life, or another measure?
+4. How should real historical duty map into Assetto Corsa VIRTUALKM/WEAR_CURVE under USE_LOAD=1?
+5. What are credible vertical/lateral/longitudinal stiffness and relaxation priors by construction/era/class?
+6. What actual wet/intermediate temperature, pressure, water-depth and durability evidence exists?
+7. Which supplier compound/construction codes can be decoded for Dunlop, Goodyear, Firestone, Michelin, Pirelli, Avon and others?
+8. Can we build an event-specific 1992-99 GT/BPR/Le Mans/IMSA tire map instead of one generic 1990s GT tire?
+
+SPECIAL REPOSITORIES TO MINE
+- FIA Historic Database: homologations, Period Appendix J/C, official bulletins, period regulations, Formula One regulations and tire homologations.
+- Motor Sport Magazine period archive: race reports and technical features with compound codes, pressure, pyrometer, supplier, wet/intermediate and failure observations.
+- SAE Mobilus: manufacturer/government/academic tire mechanics, pressure, thermal, wear, wet and motorsports papers.
+- Tire Science & Technology / Tire Society archive.
+- NASA NTRS, NHTSA/NIST, EPA and ROSAP government technical corpora.
+- Manufacturer archives/catalogs/technical bulletins/patents: Dunlop, Goodyear, Firestone/Bridgestone, Michelin, Pirelli, Avon.
+- Google Patents for period construction/material disclosures, with strict fitment caveats.
+- Calspan/FSAE TTC methodology as a calibration/test-method reference, not historical racing truth.
+- Official Le Mans/FIA/IMSA/event records and period entry/program sources for supplier/stint/fitment evidence.
+
+CHECKPOINTING
+Work in 500-document shards. After each shard, save:
+- acquisition status counts
+- newly resolved unique documents
+- duplicates
+- inaccessible/abstract-only
+- no-document-found targets
+- evidence candidates
+- highest-impact discoveries
+- contradictions
+- remaining gaps
+Do not rebuild the app between shards.
+
+P0 MILESTONE
+After the first 1,000 P0 targets, stop and produce a P0 EVIDENCE IMPACT REPORT before processing P1. Specifically assess whether new evidence changes our current conclusions on:
+- Escort/FAM023 pressure prediction;
+- cross-ply thermal/pyrometer interpretation;
+- historical life semantics and AC vKm mapping;
+- FAM023 carcass stiffness/compliance;
+- GT40/FAM022 pressure/thermal/wear expectations;
+- 1990s GT1 family architecture.
+Do not alter the code yet.
+
+FRESH VERIFIED SEEDS
+VERIFIED_FRESH_SEED_SOURCES.csv contains web-verified source pages that were screened against the previous 500-record corpus by canonical URL. They are starting points, not permission to skip full document review. Preserve their stated review status.
+
+FINAL INGESTION OUTPUT
+When a milestone is complete, return:
+1. exact number of unique real documents resolved;
+2. full-text/partial/abstract/metadata-only counts;
+3. duplicate/inaccessible/no-document counts;
+4. new measurements by weakness;
+5. new scaling rules by weakness;
+6. direct historical racing evidence vs general tire-mechanics evidence;
+7. source provenance report;
+8. proposed knowledge-master additions;
+9. numerical generator changes that evidence could justify (separate list; may be EMPTY);
+10. unresolved high-value research gaps.
+
+CRITICAL RULE
+Do not report “10,000 documents ingested” unless 10,000 unique real documents have actually been resolved and reviewed to at least metadata level. The manifest is a 10,000-document acquisition target set, not a fake document count.

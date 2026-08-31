@@ -1,0 +1,31 @@
+{
+  "schema": "ACLM v0.10.1 fixture index 1.1",
+  "appVersion": "0.10.1",
+  "fixtures": [
+    {
+      "car": "BRM P48",
+      "file": "brm_p48.json",
+      "sha256": "5a1f3f7cdce1e73f6447a63a78463698bb29b7f6bd2b9d173201eb0019103198"
+    },
+    {
+      "car": "Ford Escort RS1600",
+      "file": "ford_escort_rs1600.json",
+      "sha256": "e539a999995cd08d91a8bec529fbfcaa5e7e8ace9cb2cb769c96c51af7046018"
+    },
+    {
+      "car": "Ford GT40",
+      "file": "ford_gt40.json",
+      "sha256": "d6354af5b581418fd04dfec5bbae24e7e2ae7e2ab0099ad4713ed7c7472c2ce9"
+    },
+    {
+      "car": "Porsche 962C Group C fixture",
+      "file": "group_c_porsche_962c.json",
+      "sha256": "a46fec245ffa9e5e2ba9de25a2790383748a56a947e22ec4e99b5a12e898bf94"
+    },
+    {
+      "car": "1990s BPR GT radial fixture",
+      "file": "1990s_bpr_gt_radial_fixture.json",
+      "sha256": "3e6d176b042f72e2a6eba967a5cbbeb62f7687771419c92a29fe98cd7260ebe0"
+    }
+  ]
+}

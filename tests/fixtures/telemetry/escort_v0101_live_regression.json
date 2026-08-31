@@ -1,0 +1,85 @@
+{
+  "schema": "ACLM live calibration fixture 1.0",
+  "fixtureId": "ESCORT-RS1600-BRANDS-LIVE-V0101-003",
+  "classification": "CLEAN 1X CONTINUOUS SESSION — TWO CONSECUTIVE CSV SEGMENTS",
+  "identity": {
+    "appVersion": "0.10.1",
+    "knowledgeVersion": "1.7.0",
+    "car": "ks_ford_escort_mk1_tires",
+    "track": "ks_brands_hatch",
+    "year": 1972,
+    "familyId": "FAM023",
+    "classId": "CLS022",
+    "construction": "bias",
+    "supplier": "General / unknown",
+    "referenceDriver": "AI_REFERENCE"
+  },
+  "artifacts": {
+    "tirePack": {"file": "ACLM_Ford_Escort_Mk1_TirePack(5).zip", "sha256": "7c30ef805d448a79981e504482c4e43bfa593b6494d7536a95c6dc7e0b3235fb"},
+    "tireFileSha256": "97441cb4fdaa6202e34e8b963cd1d7818dab426a1c9f0926caeed69480a0730c",
+    "segments": [
+      {"csv": "ACLM_AC_20260830_183343_ks_ford_escort_mk1_tires_ks_brands_hatch.csv", "csvSha256": "49dda2a3fe4e2ae7e8b7accff1e5b9163bc62fef55278c940bc03683c1c7144d", "manifestSha256": "b7fd7089d05804abbb70a929cb4c9ab018f4e5e17ab351bb49e4b775ac819b5b", "rows": 2556, "spanKm": 11.9059568648},
+      {"csv": "ACLM_AC_20260830_183913_ks_ford_escort_mk1_tires_ks_brands_hatch.csv", "csvSha256": "78c4743fb76cd33765e376a0b977bb7cca1d20ae528cf6f52e62191fa6453c39", "manifestSha256": "763491ce60a5edaff955a661db57f195c9a4a13c076e805d0e12f61a13e0dfd2", "rows": 776, "spanKm": 3.6635476173}
+    ]
+  },
+  "manifestHandoff": {"status": "PASS", "reason": "Both sidecars retain v0.10.1 identity, FAM023/CLS022 profile, requested conditions, recorded AC conditions and matching tire hash."},
+  "session": {
+    "combinedRows": 3332,
+    "combinedSegmentSpanKm": 15.5777800599,
+    "loggerDistanceStartKm": 8.4183460923,
+    "loggerDistanceEndKm": 23.9961261521,
+    "lapStart": 2,
+    "lapEnd": 6,
+    "requested": {"airC": 26, "roadC": 26, "wearMultiplier": 1, "warmers": false},
+    "observed": {"airC": 25.9999981, "roadC": 36.9999962, "aidTireRateRaw": 0},
+    "conditionRule": "Recorded AC physics telemetry is authoritative for actual air/road conditions; requested and observed conditions are both retained."
+  },
+  "pressureInitialization": {
+    "generatedPhysicsReferencePsi": {"front": 23.9, "rear": 24.4},
+    "continuousRecommendationPsi": {"front": 23.9449408412, "rear": 24.4166739814},
+    "setupGrid": {"minPsi": 15, "maxPsi": 50, "stepPsi": 1, "defaultPsi": null},
+    "setupAchievableRecommendationPsi": {"front": 24, "rear": 24},
+    "persistedSelectedSetupPsi": {"fl": 23, "fr": 23, "rl": 24, "rr": 24},
+    "persistedSetupSha256": "de713c2481c1ecbbe71459178bbaf83a994d139bb08b42e752fcb3a970c8d850",
+    "observedInitialPressurePsi": {"fl": 24.274147, "fr": 24.273613, "rl": 25.3103333, "rr": 25.310318},
+    "observedInitialCoreC": {"fl": 36.169075, "fr": 36.1648026, "rl": 36.1861267, "rr": 36.18601},
+    "finding": "Content Manager/AC loaded the persisted 23/23/24/24 selection. The observed initial pressures are already thermally elevated at approximately 36.2 C; they are not evidence that the solver rounded 23.94/24.42 to 24/25."
+  },
+  "lateRun": {
+    "window": "last 1.0 logger km",
+    "finalPressurePsi": {"fl": 27.0752182, "fr": 26.0054741, "rl": 27.607811, "rr": 26.9265175},
+    "finalCoreC": {"fl": 58.53022, "fr": 49.99104, "rl": 54.05066, "rr": 48.7536163},
+    "axlePressureClosure": {
+      "front": {"meanPsi": 26.54034615, "idealPsi": 27, "errorPsi": -0.45965385, "classification": "PASS"},
+      "rear": {"meanPsi": 27.26716425, "idealPsi": 27, "errorPsi": 0.26716425, "classification": "PASS"}
+    },
+    "surfaceCombinedC": {
+      "fl": {"mean": 64.1838, "p95": 84.4362, "max": 89.0428},
+      "fr": {"mean": 49.8558, "p95": 60.1022, "max": 68.8447},
+      "rl": {"mean": 57.4182, "p95": 67.9923, "max": 71.9112},
+      "rr": {"mean": 48.6950, "p95": 52.8957, "max": 55.9755}
+    },
+    "coreSlopeCPerKm": {"fl": 0.1030, "fr": -0.2917, "rl": 0.1483, "rr": -0.2250},
+    "wearRaw": {"fl": {"start": 100, "end": 100}, "fr": {"start": 100, "end": 100}, "rl": {"start": 100, "end": 100}, "rr": {"start": 100, "end": 100}}
+  },
+  "decisions": {
+    "profileCoherence": "PASS",
+    "historicalEvidenceStatus": "PARTIALLY SOURCED",
+    "fam023AiPressureArchitecture": "PROVISIONAL LIVE PASS",
+    "absoluteHistoricalThermalCalibration": "UNRESOLVED",
+    "wearCalibration": "NO CHANGE — 1X CHANNELS REMAIN ON INITIAL PLATEAU",
+    "globalThermalRetune": false,
+    "globalWearRetune": false,
+    "nextAction": "Move to clean 1966 GT40 Mk II FAM022/CLS021 fixture; do not request more Escort testing in this pass."
+  },
+  "historicalEvidence": {
+    "carIdentity": {"status": "DIRECTLY SOURCED", "sourceIds": ["AC package metadata", "live telemetry manifest"]},
+    "classFamily": {"status": "RECONSTRUCTED", "sourceIds": [], "note": "FAM023/CLS022 are internal identifiers, not citations."},
+    "construction": {"status": "RECONSTRUCTED", "sourceIds": []},
+    "supplier": {"status": "UNKNOWN", "sourceIds": []},
+    "geometry": {"status": "PARTIALLY SOURCED", "sourceIds": ["imported tyres.ini"]},
+    "compound": {"status": "RECONSTRUCTED", "sourceIds": []},
+    "temperature": {"status": "PROVISIONAL", "sourceIds": ["ESCORT-RS1600-BRANDS-LIVE-V0101-003"]},
+    "pressure": {"status": "PROVISIONAL", "sourceIds": ["ESCORT-RS1600-BRANDS-LIVE-V0101-003"]}
+  }
+}

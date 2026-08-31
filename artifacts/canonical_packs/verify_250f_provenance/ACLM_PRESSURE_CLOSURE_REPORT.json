@@ -1,0 +1,263 @@
+{
+  "schema": "ACLM pressure closure report 4.1",
+  "generatedBy": "ACLM Historical Tire Lab v0.10.2",
+  "car": "Maserati 250F 6 cylinder",
+  "year": 1957,
+  "series": "1954-58 Formula 1 / Grand Prix",
+  "concepts": {
+    "acPhysicsReference": "PRESSURE_STATIC in tyres.ini",
+    "continuousRecommendation": "reference-duty axle calculation before setup control rounding",
+    "achievableSetupCold": "continuous recommendation quantized through imported setup.ini MIN/MAX/STEP when available",
+    "setupDefault": "DEFAULT in imported setup.ini when present",
+    "setupSelected": "actual AC/Content Manager setup selection when provided; persisted last.ini can override a generated recommendation",
+    "observedSessionStart": "recorded AC shared-memory pressure; authoritative for a live run",
+    "historicalDesiredHot": "PRESSURE_IDEAL, optionally axle-specific",
+    "trackSpecificCornerTuning": "post-run Validation Workspace recommendation; never hard-coded into tyres.ini"
+  },
+  "globalThermalRetune": false,
+  "pressureFormula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+  "decision": "setup recommendation, grid, default, selected value and observed initial state are reported independently; global thermal, wear and historical numerical priors remain frozen",
+  "closureThresholdsPsi": {
+    "pass": "absolute hot error <= 0.5",
+    "review": "absolute hot error > 0.5 and <= 1.5",
+    "fail": "absolute hot error > 1.5"
+  },
+  "entries": [
+    {
+      "compound": "medium",
+      "axle": "front",
+      "generatedPressureStaticPsi": 23.7,
+      "acPhysicsReferencePressurePsi": 23.7,
+      "recommendedSetupColdPressurePsi": 23.72693632131557,
+      "achievableSetupColdPressurePsi": 24,
+      "setupPressureQuantization": {
+        "continuousPsi": 23.72693632131557,
+        "achievablePsi": 24,
+        "quantized": true,
+        "control": {
+          "min": 15,
+          "max": 55,
+          "step": 1,
+          "default": null,
+          "source": "data/setup.ini",
+          "section": "PRESSURE_LF"
+        },
+        "deltaPsi": 0.27306367868443004
+      },
+      "setupDefaultColdPressurePsi": null,
+      "selectedSetupColdPressurePsi": null,
+      "observedSessionStartingPressurePsi": null,
+      "pressureConcepts": {
+        "physicsReference": "PRESSURE_STATIC in tyres.ini",
+        "continuousRecommendation": "reference-duty solver output",
+        "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+        "setupDefault": "DEFAULT from setup.ini when the host defines it",
+        "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+        "observedStart": "authoritative recorded AC shared-memory pressure",
+        "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+      },
+      "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+      "generatedPressureIdealPsi": 28,
+      "ambientAirTemperatureC": 26,
+      "roadTemperatureC": null,
+      "referenceSetupTemperatureC": null,
+      "acInitialCoreTemperatureC": 26,
+      "initialThermalState": {
+        "temperatureC": 26,
+        "source": "AMBIENT_PROXY_UNRESOLVED",
+        "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+        "sourceIds": []
+      },
+      "referenceColdTemperatureC": 26,
+      "predictedContainedAirHotTemperatureC": 59.268939044182424,
+      "containedAirTemperatureUncertaintyC": 12,
+      "treadGripCurveOptimumTemperatureC": 72,
+      "predictedHotToColdVolumeRatio": 1,
+      "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+      "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+      "predictedHotPressureRisePsi": 4.270068048291908,
+      "predictedStabilizedHotPressurePsi": 27.970068048291907,
+      "predictedHotPressureErrorPsi": -0.029931951708093152,
+      "closureClassification": "PASS",
+      "pressureTemperatureGain": 1,
+      "oldV092ColdPredictionPsi": 22.309687382297547,
+      "coldPredictionChangePsi": 1.4172489390180232,
+      "predictionMode": "reference-duty thermal-network screening estimate",
+      "guardrail": "none",
+      "constructionModel": {
+        "construction": "bias",
+        "mechanicalResponse": "higher carcass/deflection sensitivity must be retained",
+        "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+        "sourceIds": [
+          "E-SRC-0096",
+          "M4-FORMULA-009"
+        ]
+      },
+      "calibrationStatus": {
+        "pressure": "provisional physical reconstruction",
+        "temperature": "historical absolute target unresolved"
+      },
+      "provenance": null,
+      "referenceDuty": {
+        "familyId": "FAM002",
+        "classId": "CLS102",
+        "driver": "AI_REFERENCE",
+        "trackDuty": "reference axle calibration duty; not every circuit or left/right corner",
+        "compound": "medium",
+        "axle": "front"
+      },
+      "inputs": {
+        "widthM": 0.096,
+        "radiusM": 0.334,
+        "rimRadiusM": 0.2032,
+        "estimatedInternalAirVolumeM3": 0.022848726837263633,
+        "vehicleMassKg": 700,
+        "axleLoadN": 2214,
+        "referenceTireLoadN": 1107,
+        "rateNPerM": 49920,
+        "construction": "bias",
+        "compound": "medium",
+        "flex": 0.00195,
+        "carcassRollingK": 0.195,
+        "trackDutyFactor": 1
+      },
+      "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+      "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+      "acParameterAudit": {
+        "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+        "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+        "PRESSURE_IDEAL": "grip-optimum pressure",
+        "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+        "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+        "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+        "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+      },
+      "pendingCalibrationFactors": [
+        "internal air volume and dimensional growth",
+        "measured racing hot/cold cavity-volume ratio",
+        "contained-air temperature by family and duty",
+        "construction-specific pressure/compliance telemetry",
+        "AC pressure-gain parameter closure"
+      ],
+      "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+    },
+    {
+      "compound": "medium",
+      "axle": "rear",
+      "generatedPressureStaticPsi": 23.9,
+      "acPhysicsReferencePressurePsi": 23.9,
+      "recommendedSetupColdPressurePsi": 23.856643554484926,
+      "achievableSetupColdPressurePsi": 24,
+      "setupPressureQuantization": {
+        "continuousPsi": 23.856643554484926,
+        "achievablePsi": 24,
+        "quantized": true,
+        "control": {
+          "min": 15,
+          "max": 55,
+          "step": 1,
+          "default": null,
+          "source": "data/setup.ini",
+          "section": "PRESSURE_LR"
+        },
+        "deltaPsi": 0.14335644551507443
+      },
+      "setupDefaultColdPressurePsi": null,
+      "selectedSetupColdPressurePsi": null,
+      "observedSessionStartingPressurePsi": null,
+      "pressureConcepts": {
+        "physicsReference": "PRESSURE_STATIC in tyres.ini",
+        "continuousRecommendation": "reference-duty solver output",
+        "achievableSetup": "recommendation quantized to imported setup.ini controls when known",
+        "setupDefault": "DEFAULT from setup.ini when the host defines it",
+        "setupSelected": "actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",
+        "observedStart": "authoritative recorded AC shared-memory pressure",
+        "trackSpecificCornerTuning": "post-run validation output; never hard-coded into tyres.ini"
+      },
+      "acImplementationBinding": "PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",
+      "generatedPressureIdealPsi": 28,
+      "ambientAirTemperatureC": 26,
+      "roadTemperatureC": null,
+      "referenceSetupTemperatureC": null,
+      "acInitialCoreTemperatureC": 26,
+      "initialThermalState": {
+        "temperatureC": 26,
+        "source": "AMBIENT_PROXY_UNRESOLVED",
+        "confidence": "unresolved fallback only; ambient is not asserted to equal AC initial tire core",
+        "sourceIds": []
+      },
+      "referenceColdTemperatureC": 26,
+      "predictedContainedAirHotTemperatureC": 58.15053966346247,
+      "containedAirTemperatureUncertaintyC": 12,
+      "treadGripCurveOptimumTemperatureC": 72,
+      "predictedHotToColdVolumeRatio": 1,
+      "volumeRatioProvenance": "UNKNOWN_ASSUMED_UNITY",
+      "volumeRatioConfidence": "low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",
+      "predictedHotPressureRisePsi": 4.148016091582932,
+      "predictedStabilizedHotPressurePsi": 28.04801609158293,
+      "predictedHotPressureErrorPsi": 0.04801609158293019,
+      "closureClassification": "PASS",
+      "pressureTemperatureGain": 1,
+      "oldV092ColdPredictionPsi": 22.309687382297547,
+      "coldPredictionChangePsi": 1.5469561721873788,
+      "predictionMode": "reference-duty thermal-network screening estimate",
+      "guardrail": "none",
+      "constructionModel": {
+        "construction": "bias",
+        "mechanicalResponse": "higher carcass/deflection sensitivity must be retained",
+        "numericVolumeCoefficient": "not assigned; no M4 racing coefficient",
+        "sourceIds": [
+          "E-SRC-0096",
+          "M4-FORMULA-009"
+        ]
+      },
+      "calibrationStatus": {
+        "pressure": "provisional physical reconstruction",
+        "temperature": "historical absolute target unresolved"
+      },
+      "provenance": null,
+      "referenceDuty": {
+        "familyId": "FAM002",
+        "classId": "CLS102",
+        "driver": "AI_REFERENCE",
+        "trackDuty": "reference axle calibration duty; not every circuit or left/right corner",
+        "compound": "medium",
+        "axle": "rear"
+      },
+      "inputs": {
+        "widthM": 0.124,
+        "radiusM": 0.3585,
+        "rimRadiusM": 0.2032,
+        "estimatedInternalAirVolumeM3": 0.03663908246741782,
+        "vehicleMassKg": 700,
+        "axleLoadN": 2770,
+        "referenceTireLoadN": 1385,
+        "rateNPerM": 64480,
+        "construction": "bias",
+        "compound": "medium",
+        "flex": 0.00195,
+        "carcassRollingK": 0.195,
+        "trackDutyFactor": 1
+      },
+      "modelScope": "absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",
+      "formula": "P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",
+      "acParameterAudit": {
+        "PRESSURE_TEMPERATURE_GAIN": "retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",
+        "PRESSURE_STATIC": "physics reference; it is not asserted to be an exact selectable setup value",
+        "PRESSURE_IDEAL": "grip-optimum pressure",
+        "PRESSURE_SPRING_GAIN": "retained generator prior; not used as a gas-law coefficient",
+        "PRESSURE_FLEX_GAIN": "retained generator prior; not used as a gas-law coefficient",
+        "PRESSURE_D_GAIN": "retained generator prior; not used as a gas-law coefficient",
+        "PRESSURE_RR_GAIN": "retained generator prior; not used as a gas-law coefficient"
+      },
+      "pendingCalibrationFactors": [
+        "internal air volume and dimensional growth",
+        "measured racing hot/cold cavity-volume ratio",
+        "contained-air temperature by family and duty",
+        "construction-specific pressure/compliance telemetry",
+        "AC pressure-gain parameter closure"
+      ],
+      "decision": "reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "1.7.1",
+  "schemaVersion": "1.2.0",
+  "families": 85,
+  "classes": 102,
+  "profiles": 22,
+  "sources": 149,
+  "measurements": 184,
+  "sha256": "ca0b0fcf498e8f4714354f22ffef269cca1c813b3b19eda8eb9d1b77f0dd8954",
+  "contentSha256": "14f92adf97786556ac3472f05496a469bdfd0713b2b49fd4c146e529912ff14f",
+  "checks": {
+    "uniqueIds": true,
+    "references": true,
+    "priorCoverage": true,
+    "supportedMenus": true,
+    "v1_7_0Lineage": true,
+    "numericPriorsUnchanged": true,
+    "existingClassesUnchanged": true
+  }
+}

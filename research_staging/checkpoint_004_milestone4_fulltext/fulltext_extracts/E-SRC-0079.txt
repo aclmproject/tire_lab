@@ -1,0 +1,449 @@
+=== PDF PAGE 1 ===
+Tire Footprint Studies
+Mangal Chawla and John Medzorian
+Landing Gear Systems Group
+Flight Dynamics Directorate
+Wright Laboratory
+Wright Patterson Air Force Base, OH
+
+
+
+=== PDF PAGE 2 ===
+
+
+
+
+=== PDF PAGE 3 ===
+TIRE FOOTPRINT STUDIES
+Mangal Chawla and John Medzorian
+Landing Gear Systems Group
+Flight Dynamics Directorate
+Wright Laboratory
+Wright Patterson Air Force Base, OH
+ABSTRACT
+This presentation covers the results of tire footprint studies conducted in the Landing Gear Develop-
+ment Facility of the USAF Wright Laboratory at the Wright Patterson Air Force Base, OH. Tire footprint
+studies are essential in understanding tire wear mechanisms and computing tire tread wear rates. The power
+input into the tread is the driving force for tread wear. Variables needed for power input calculations include
+the footprint pressure and slip velocity distributions. Studies were performed on the effects of power input
+distributions due to vertical load, camber, yaw, inflation pressure and tire construction. For the present study,
+two tire constructions, one radial and the other bias, were selected. These tires were for the F-16 Block 30
+Fighter aircraft, both of which were previously worn. The present study was limited to steady straight roll with
+a 14,000 lb vertical load, a 3 10 psi inflation pressure, zero yaw and camber. All tests were conducted on the
+Tire Force Machine (TFM) with a specialized sensor plate with embedded pressure sensors (X, Y and Z) and
+slip sensors (X & Y). All tests were conducted for a table speed of 1 ids. Tests on the TFM show that the power
+intensity distributions and total power for both tire constructions are quite similar for straight roll. Later on,
+tests were also conducted on a modified dynamometer which was overlaid with a grit wear surface. The tire
+speed was maintained at 40 miles per hour and yaw was set to four degrees. Dynamometer tests showed that
+radial tires have more tread wear than the bias tire, however, in the field, radial tires have longer life. This is
+a dilemma.
+
+
+
+=== PDF PAGE 4 ===
+PROBLEM
+Included is the problem statement of low tire life.
+Excessive tire wear due to
+-
+Large contact pressures
+-
+Large slip velocity
+Very few sortiedtire
+- F- 16 Block 30. .. 8- 12 landings
+- ...
+F-16 Block 40 8 50 4-8 landings
+Figure 1.
+
+
+
+=== PDF PAGE 5 ===
+OBJECTIVES
+This slide states the objectives of the program. The main objectives are to quantify parameters affecting
+tread wear.
+Overall Objective: Increase tread life
+Focussed Objective: Quantiw operating conditions and tire design
+parameters affecting tread wear
+Operating conditions
+-
+Load
+-
+Takeoff/Landing profile (speed, yaw, camber, braking)
+-
+An tiskid characteristics
+Tire design parameters
+-
+Inflation pressure
+-
+Tire construction (bias/radial)
+Figure 2.
+
+
+
+=== PDF PAGE 6 ===
+NEEDS
+This slide states the need to study footprint pressures and slips so that power intensity can be calculated
+for tread-wear computations. This data is needed for steady roll, yaw and braking conditions.
+Determine aircraft tire footprint slips and pressures
+to quantify PO wer intensity due to
+-
+Steady roll
+-
+Yaw
+Steady (cross wind)
+Cornering
+-
+Braking
+Steady (constant slip)
+Transient (antiskid)
+Figure 3.
+
+
+
+=== PDF PAGE 7 ===
+TOOLS
+The tools for carrying out this work are the Tire Force Machine (TFM) and specialized sensors which
+measure footprint pressures and slips.
+Experimental
+-
+TFM
+Steady conditions only
+Low speed (2 in/s max)
+A nalytical/Comput at ional
+-
+FEM
+Figure 4.
+
+
+
+=== PDF PAGE 8 ===
+APPROACH
+The approach to this work is to perform roll tests on the TFM and measure footprint data using specialized
+equipment. The data will be analyzed for wear energy rate determination. Parameter studies will be performed
+to compare the performance of radial against bias tire for vertical load, yaw and camber.
+Perform Footprint measurements on TFM
+-
+Slip velocity x (longitudinal) y (lateral)
+-
+Contact force intensity x, y and z (normal)
+Data Analysis
+-
+Wear energy rate determination
+-
+Parametric studies on F-I6 tires
+*
+Type (Radial vs Bias)
+*
+Vertical Load
+*
+Yaw
+*
+Camber
+Figure 5.
+
+
+
+=== PDF PAGE 9 ===
+SENSORS FOR TIRE FORCE MACHINE
+This slide shows the layout of pressure and slip sensors and the direction of roll. Pressure sensors give
+X, Y and Z components of pressure, whereas slip sensors measure X and Y components. There are 37 pressure
+gages and 37 slip gages. The holes are 114 inch in diameter. The pressure sensors are level with the top of the
+plate whereas the slip sensors are 4 mils above the plate surface.
+SENSORS FOR TIRE FORCE MACHINE
+,------------I--
+,SO* )( 36 SPACES = 18'------------ 1
+I i
+>
+PRESSURE
+GA3G7E S
+DIRECTION OF MDTION
+Figure 6.
+
+
+
+=== PDF PAGE 10 ===
+F-16 BLOCK 30
+This is a mesh plot of the vertical (Z) pressure for the bias and the radial F- 16 Block 30 tires. Both plots
+look similar in shape and magnitude indicating that the normal pressures are nearly the same for these tires.
+In all runs, the tire is rolling towards the origin in the fore-aft direction. The table speed was 0.98 1 ids for the
+radial tire and 0.91 3 ids for the bias tire.
+F-16 BLOCK 30
+BIAS
+RADIAL
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+fore-aft posllion (in) lateral position (in) fore-afl position (in) 0 0 laleral position (ln)
+Figure 7.
+
+
+
+=== PDF PAGE 11 ===
+X PRESSURE
+This is a plot of the fore-aft (X) pressure distributions for both radial and bias tires. The total measured
+steady state X force is 140 lbs for the radial tire and 271 lbs for the bias tires. This compares favorably with
+the predicted integrated values of 265 lbs and 141 lbs. Therefore, the total dissipative power in these runs works
+out to be 137 in-lbls for the radial tire and 247 in-lbls for the bias tire.
+F-16 BLOCK 30
+RADIAL
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+25.5x8.OR14RO Load=l4,OMllb P=JlOpsi Y=C=O
+25.5x8.014RO Load=14,000Ib P=JlOpsi Y=C=O
+fore-aft position (in) 0 0 fore-an posltion (in) 0 0 lateral pas~lion( ~n)
+lateral position (in)
+Figure 8.
+
+
+
+=== PDF PAGE 12 ===
+Y PRESSURE
+This is a plot of the lateral (Y) pressure distribution for both radial and bias tires.
+F-16 BLOCK 30
+BIAS RADIAL
+Load = 14 Kips, Inf. Pr. = 310 psi
+Yaw = 0, Camber = 0
+fore-aft pos~tion( in) 0 0 lateral positton (~n) fore-aft pos~tion( in) 0 0 lateral position (in)
+Figure 9.
+
+
+
+=== PDF PAGE 13 ===
+TRACTION VECTOR
+This is a plot of the tractionvectors providing both magnitude and direction.
+Figure 10.
+ioi
+
+
+
+=== PDF PAGE 14 ===
+X SLIP VELOCITY
+This is the slip velocity in the fore-aft (X) direction, measured in miYs. Note that the peaks occur at the
+trailing edges of the contact patch. The slip velocity was calculated from the slips by using the central
+difference method. The data was manipulated such that at zero normal (2)p ressure, no slip velocity occurs.
+Note that the maximum slip occurs at the trailing edge of the tire.
+F-16 BLOCK 30
+BIAS RADIAL
+Load = 14 Kips, inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+25.5~8.0-14/20L oad=l4,WOlb P=310p~Yi =C=O . - -
+10 10
+fore4p orltm (in) 0 0 lateral psitim (in) lOre-?Jl position (in) 0 0 IhtWdl position (in)
+Figure 11 .
+
+
+
+=== PDF PAGE 15 ===
+Y SLIP VELOCITY
+This is the slip velocity in the lateral (Y) direction, measured in mills. Note that the maximum values
+occur at the trailing and leading edges of the contact patch.
+F-16 BLOCK 30
+BIAS RADIAL
+Load = 14 Kips, inf. Pr. = 310 psi
+Yaw = 0, Camber = 0
+0 0 lateral posilion (in) fora-aff posi&n (in) 0x 0 1 html poar~on(i n)
+Figure 12.
+
+
+
+=== PDF PAGE 16 ===
+SLIP VELOCITY MAGNITUDE
+This is the slip velocity magnitude measured in mills. Note that the peaks occur at the trailing edge of
+the contact patch.
+F-16 BLOCK 30
+RADIAL
+Load = 14 Kips, Inf. ~ r =. 3 10 PSI
+Yaw = 0, Camber = 0
+25.5~8.014/20L oad=14,0001b P=Jl@si Y=C=o 25.5~8.OR14ROLo ad.14.0001b P-3lOpsi Y=C=O
+10
+. .
+fors4 poaikn (in) 0 0 lateral psiliar (in) fOre-afI position (in) 0 0 lateral position (in)
+Figure 13
+
+
+
+=== PDF PAGE 17 ===
+SLIP VECTOR
+This is the plot of the slip velocity vector giving both the magnitude and the direction. There is a lot of
+similarity between the two tires.
+F-16 BLOCK 30
+RADIAL
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+25.5~8.014ROL oad=14,0001b YwCam=O Slip vector 25.5x8.OR14RO Load=14,0001b P=3lOosl Y=C=O Slio veclor
+1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 0 9
+lateral position (in) lateral position (in)
+Figure 14.
+
+
+
+=== PDF PAGE 18 ===
+Z PRESSURE
+This is a contour plot of the normal (Z) pressure for the bias tire. When integrated over the contact area,
+it gives a total value of 15,565 lbs which compares favorably with the applied load of 14,000 lbs.
+F-16 BLOCK 30 BIAS
+Load = 14 Kips, Inf. Pr. = 31 0 PSI
+Yaw = 0, Camber = 0
+0 1
+2 4 6 8 10 12
+Fore-aft position (in)
+Figure 15.
+
+
+
+=== PDF PAGE 19 ===
+SLIP VELOCITY MAGNITUDE
+This is a contour plot of the slip velocity magnitude for the bias tire. Note that the slip velocity is
+maximum at the trailing edge of the contact patch. This data was manipulated by zeroing out values which
+occurred at zero contact pressure.
+F-16 BLOCK 30 BIAS
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+L Slip Vel Mag
+(mills)
+-
+8
+h.c- - - - 4: 8 4 2 6 . .3 3 4 8 9 2 8 2
+V - I q 34.4378
+C 25.5872
+.- P 18.0112
+. 40 - -l 6 ' 14.1253
+V) t) 10.495
+0 1 7.79778
+-
+a
+z
+-
+.ac-' - 3'-7
+" 0
+J 2 - @
+2 4 6 8 10 12
+Fore-aft position (in)
+Figure 16.
+
+
+
+=== PDF PAGE 20 ===
+POWER INTENSITY
+This is a contour plot of the power intensity calculated by multiplying an assumed value of coefficient
+of friction (0.5) and the Z pressure by the slip velocity magnitude. Note that the maximum power intensity
+occurs at the front and back edges of the tire. The total dissipative power due to friction was determined by
+integrating this power intensity over the contact area. The resulting value was 22.0 in-lbls for the bias tire.
+F-16 BLOCK 30 BIAS
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+] L t Pow Int
+(in-lb)l(s inA2)
+2 6 8 12
+F&-aft position (in)
+Figure 17.
+
+
+
+=== PDF PAGE 21 ===
+Z PRESSURE
+This is a contour plot of the normal (Z) pressure for the radial tire. When integrated over the contact area
+it gives a value of 15,095 lbs which compares favorably with the applied load of 14,000 lbs.
+F-16 BLOCK 30 RADIAL
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+Pressure
+Figure 18.
+
+
+
+=== PDF PAGE 22 ===
+SLIP VELOCITY MAGNITUDE
+This is a contour plot of the slip velocity magnitude for the radial tire. Note that the slip velocity is
+maximum on the trailing edge of the contact patch. This data was manipulated by zeroing out values which
+occurred at zero contact pressure.
+F-16 BLOCK 30 RADIAL
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+9 1
+Slip Vel Mag
+(miVs)
+Figure 19.
+
+
+
+=== PDF PAGE 23 ===
+POWER INTENSITY
+This is a contour plot of the power intensity for the radial tire. This was calculated by multiplying an
+assumed value of coefficient of friction (0.50) by the Z pressure and the slip velocity magnitude. Note that
+the maximum power intensity occurs at the front and back edges of the tire. The total dissipative power was
+23.6 in-lbls for the radial tire.
+F-16 BLOCK 30 RADIAL
+: ' Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+Pow Int
+Figure 20.
+
+
+
+=== PDF PAGE 24 ===
+POWER INTENSITY
+This is a mesh plot of the power intensity distributions for the two tires.
+F-16 BLOCK 30
+RADIAL
+Load = 14 Kips, Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+25.5x8.OR14RO Lcad=14,0001b P=31Opai Y=C4
+Figure 2 1.
+
+
+
+=== PDF PAGE 25 ===
+POWER PER UNIT LENGTH
+This is a plot of power per unit width plotted in the lateral direction which was determined by integrating
+the power intensity along the fore-aft direction.
+F-16 BLOCK 30
+RADIAL
+Load = 14 Kips. Inf. Pr. = 310 PSI
+Yaw = 0, Camber = 0
+Figure 22.
+
+
+
+=== PDF PAGE 26 ===
+RESULTS
+Tabulated results for both bias and radial tires. All values are very similar.
+BIAS RADIAL
+Table speed (ink) ,913 ,981
+Maximum slip (mil) 31.3 49. I
+X-Pressure range psi
+YIPressure range psi
+Traction Vector psi
+2-Pressure range psi
+X-Slip Velocity mi1.s
+V-Slip Velocity mil/s
+Slip Velocity Magnitude mi1.s
+Power In tensity in-lb/(s-inA 2)
+MEASURED (INTEGRATED) TOTAL VALUES
+Fx (Ib) 271 (265) 140 (141)
+FY (lb) 182 (6) 157 (199)
+Fz (lb) 14,000 (15,565) 14,000 (15,291)
+Power (in-lb/s) (22.0) (23.6)
+Figure 23.
+
+
+
+=== PDF PAGE 27 ===
+WL DYNAMOMETER TIRE WEAR RESULTS SUMMARY
+This is a plot of the actual tire wear on the bias and the radial tires which were run on a modified external
+drum dynamometer overlaid with an abrasive material glued to the wheel surface. The tire was run with four
+degrees of yaw at 40 mph. Tread wear was quantified by measuring the maximum groove depth on the tire
+tread. Note that on the dynamometer for four degrees of yaw, the radial tire wears much faster than the bias
+tire. However, in the field, the radial tires have longer tread life.
+.wI
+Q)
+0
+u
+2Lsaitu
+4Dea.Yaw
+13,000 b Vertical Load
+310 psi lnfhtbn Presswe
+Blas T i(Q TR 461B -3431 -TL)
+Radii Tire (QTR Q M 7 M I )
+6 9
+0 10000 20000
+Cumulative Distance Traveled (it)
+Figure 24.

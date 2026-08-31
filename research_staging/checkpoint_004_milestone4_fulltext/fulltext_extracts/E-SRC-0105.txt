@@ -1,0 +1,7748 @@
+=== PDF PAGE 1 ===
+NASA TN D-1376
+CD
+r:
+M
+~
+I
+Q
+.Z... .
+<
+en
+<
+Z
+TECHNICAL NOTE
+D-1376
+INFLUENCE OF TIRE TREAD PATTERN AND RUNWAY SURFACE
+CONDITION ON BRAKING FRICTION AND ROLLING
+RESISTANCE OF A MODERN AIRCRAFT TIRE
+By Walter B. Horne and Trafford J. W. Leland
+Langley Research Center
+Langley Station, Hampton, Va.
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+WASHINGTON September 1962
+
+
+
+=== PDF PAGE 2 ===
+TABLE OF CONTENTS
+Page
+SUMMARY ... 1
+INTRODUCTION 1
+SYMBOIS ••• 3
+APPARATUS AND PROCEDURE 5
+TEST FIXTURE 5
+TIRES •••• 6
+WHEEL BRAKE . 6
+RUNWAY TROUGHS AND SURFACES 7
+RUNWAY WETNESS . . . . . 7
+OTHER RUNWAY CONTAMINANTS 8
+INSTRUMENTATION . . . 8
+GENERAL CONSIDERATIONS 9
+DEFINITION OF TERMS • 9
+Instantaneous Drag Force 9
+Vertical Ground Force 10
+Brake Torque . . . . . . 10
+Deflected Tire Radius . . 10
+Movement of Vertical-Load Center of Pressure 10
+Footprint Area . . . . 10
+Wheel Moment of Inertia . . . . . 11
+Slip Ratio ........... . 11
+Tire-Ground Friction Coefficient 11
+MECHANICS OF THE ROLLING TIRE 12
+Unbraked Rolling 12
+Dry runways . 12
+Wet runways . 13
+Braked Rolling 16
+AUTOMATIC BRAKING DEVICES 17
+DISCUSSION OF PARAMETERS 19
+ROLLING RESISTANCE 19
+FWID-DISPLACEMENT DRAG. 20
+Single or Leading Tandem Wheels 20
+Rear Tandem Wheels . . . . 21
+BRAKING DRAG ......•... 21
+MOVEMENT OF VERTICAL-LOAD CENTER OF PRESSURE 21
+WHEEL SPIN-UP AND SPIN-OOWN . . . . . . . . . . 22
+i
+
+
+
+=== PDF PAGE 3 ===
+Page
+INSTANTANEOUS TIRE-GROUND FRICTION COEFFICIENT 23
+MAXIMUM TIRE-GROUND FRICTION COEFFICIENT 23
+Dry Runways . . . . . . . . . . . . . . 23
+Contaminated Runways . . . . . . . . . . 24
+FUlJrSKID TIRE-GROUND FRICTION COEFFICIENT 24
+Dry Runways . . . . . . . . . . . . . 24
+Water-Covered Runways . . . . . . 25
+AVERAGE TIRE-GROUND FRICTION COEFFICIENT . 26
+Dry Runways . . .. .... 26
+Contaminated Runways . . . . . . . 26
+Runway composition and surface . 26
+Type and depth of contaminant on runway 27
+Vertical ground load acting on tire 28
+Tire inflation pressure . . . . . . • . 29
+Tire position in tandem wheel arrangements 29
+Tire tread material . . . . 29
+Tire tread pattern . . . . . 30
+Smooth and dimple treads . 30
+Circumferential rib treads 31
+Other treads 32
+TIRE TREAD WEAR 32
+SUMMARY OF RESULTS 33
+APPENDIX. 35
+REFERENCES 37
+TABLE I 39
+FIGURES 40
+ii
+
+
+
+=== PDF PAGE 4 ===
+_--
+-~---------~--- ...
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+TECHNICAL NOTE D-1376
+INFLUENCE OF TIRE TREAD PATTERN AND RUNWAY SURFACE
+CONDITION ON BRAKING FRICTION AND ROLLING
+RESISTANCE OF A MODERN AIRCRAFT TIRE
+By Walter B. Horne and Trafford J. W. Leland
+SUMMARY
+A series of taxiing tests was conducted at the Langley landing
+loads track with both braked and unbraked (freely rolling) single and
+tandem wheels equipped with 32x8.8 type VII aircraft tires of dif
+ferent tread designs to obtain data on tire and braking characteristics
+during operation on dry and on contaminated concrete and asphalt run
+ways. Contaminants used were water, slush, JP-4 jet fuel, and organic
+and detergent fire- extinguishing foams. Forward velocities for the
+tests ranged from approximately 13 to 104 knots. Vertical loads of
+approximately 9,000 to 22,000 pounds and tire inflation pressures of
+85 to 350 pounds per square inch were used.
+Results indicated that the unbraked tire rolling resistance
+increased with increasing forward velocity on dry and on contaminated
+runway surfaces. Peak tire-ground friction coefficients developed
+during wheel braking decreased rapidly with increasing velocity on
+contaminated runways but remained relatively unchanged on dry runways
+as the forward velocity was increased. Dry-runway friction coeffi
+cients were found to be relatively insensitive to tire tread pattern.
+However, the magnitude of the friction coefficients developed by tires
+on contaminated runways was extremely sensitive to the tire tread pat
+tern used, with circumferential-groove treads developing the highest
+values of friction coefficient, and smooth and dimple treads the lowest
+values for the tread patterns and runway conditions investigated.
+INTRODUCTION
+It has been recognized for many years that the presence of contam
+inating fluids such as slush, water, and oil on airport runways tends
+to impair landing and take-off performance of aircraft. Previous NASA
+work on tire performance under adverse runway conditions is reported in
+references 1 to 7. British work on this subject, in which a full-scaie
+t
+I
+I
+I
+1_ ___
+
+
+
+=== PDF PAGE 5 ===
+--- - -------
+jet-fighter airplane was used} is reported in references 8 and 9. This
+degradation in performance due to contamination has been tolerated with
+propeller-type aircraft because only rarely are operations made unsafe
+by the presence of these contaminants. Operations of military jet air
+craft and of the recently introduced jet-powered commercial transport
+aircraft} on the other hand} have proved to be much more affected by run
+way contaminants than operations of the propeller-type aircraft. Several
+factors are responsible for the difference in the effect of contaminated
+runways on the ground performance of the two types of aircraft. The main
+factors are the higher landing and take-off velocities required of the
+jets} and their generally lower acceleration and deceleration character
+istics while on the ground.
+Operation on fluid-contaminated runways affects aircraft performance
+in several ways. First} the retardation forces developed by aircraft
+wheels when taking off from slush- or water-covered runways increase the
+take-off distance required by the airplane and under certain conditions
+would prevent the airplane from obtaining the required take-off velocity
+(ref. 2). Second} the high-velocity spray of slush or water originating
+from the airplane wheels can be damaging to the surfaces of the airplane
+that are under spray impingement. Third} under certain conditions of
+vertical load} tire-inflation pressure} and forward velocity} airplane
+tires on slush- or water-covered runways reach a condition called hydro
+planing during which the hydrodynamic lift force developed between the
+tire footprint and the fluid-covered runway surface equals or exceeds
+the vertical reaction of the airplane mass acting on the tire. During
+hydroplaning the tire loses contact with the runway surface and thus
+loses its directional stability and braking effectiveness. Fourth} at
+subhydroplaning velocities the friction coefficients developed between
+aircraft tires and the ground during braking on fluid-contaminated run
+ways are considerably reduced from values obtained on dry runways.
+Many investigations under various test conditions have been made of
+the effects of water or other runway contaminants on the performance of
+tires . In some of these investigations small tires were used} some of
+the investigations were confined to low speeds} and in some investiga
+tions in which full-scale airplanes were used} difficulty was experienced
+in maintaining test conditions constant. The presently described inves
+tigation extends the range of controlled tests to a higher speed and
+weight combination. This investigation under controlled conditions was
+performed at the Langley landing-loads track (track described in ref. 10)
+to determine the effect of forward velocity; type of runway surface;
+tire-tread material} pattern} and wear; and type of runway contaminant
+on the braked and unbraked rolling characteristics of aircraft tires on
+single and tandem wheels. Some of the preliminary experimental data
+obtained from this investigation were used in references 1 and 2 to
+demonstrate the degrading effects of runway slush and water on the take
+off and landing performance of several typical jet aircraft.
+2
+----_.- - ----- -- -
+
+
+
+=== PDF PAGE 6 ===
+It is the purpose of this paper to describe the investigation in
+more detail than was done in references 1 and 2 so that the degradation
+of braking effectiveness on contaminated runway surfaces may be more
+fully understood. It will be demonstrated that tread designs or patterns
+used on tires have little effect on tire and braking performance on dry
+runways but have a very substantial effect on contaminated runways.
+SYMBOIS
+gross footprint area of tire, sq in.
+net footprint area of tire, sq in.
+hydrodynamic lift coefficient (dimensionless)
+hydrodynamic drag coefficient (dimensionless)
+tire constant; 0.02 for type I tires and 0.03 for type III
+and VII tires (obtained from ref. 12)
+depth of contaminant on runway surface, in.
+instantaneous horizontal (drag) force at wheel axle, lb
+instantaneous horizontal (drag) force acting on tire at
+ground, Fx,g,r + Fx,g,b + Fx,g,f' lb
+F braking drag (portion of Fx,g contributed by forcing tire
+x,g,b
+to roll at values of sl > 0 either by wheel braking or by
+other means), lb
+Fx, g, f fluid-displacement drag (portion of Fx,g contributed by
+horizontal component of hydrodynamic force due to runway
+contaminant), lb
+Fx , g, r rolling resistance (drag forces developed on unbraked wheel
+due to tire hysteresis and inertia effects), lb
+instantaneous vertical force at wheel axle, lb
+instantaneous vertical force acting on tire at ground, lb
+3
+
+
+
+=== PDF PAGE 7 ===
+vertical component of hydrodynamic force due to runway con
+taminant, lb
+2
+I moment of inertia of rotating wheel and tire parts, slug-ft
+p unloaded tire inflation pressure, lb/sq in.
+hydraulic-fluid pressure acting on wheel brake, lb/sq in.
+back pressure in return line of brake system, lb/ sq in.
+average gross footprint pressure, FZ,g/A , lb/sq in.
+g
+Pn average tire- ground bearing pressure, FZ,g/~' lb/sq in.
+rated tire inflation pressure (one- fourth tire bursting pres
+sure), lb/sq in.
+unloaded tire radius, in.
+slip ratio (dimensionless)
+T net spin-up or spin- down torque acting on wheel, lb- in.
+instantaneous retarding t orque developed on wheel by wheel
+brake, lb-in.
+t time, sec
+carriage forward velocity, knots or ft/ sec as noted
+tire hydroplaning velocity (occurs when Fz,g = Fz,L)' knots
+or ft/sec as noted
+w unloaded maximum tire width, in.
+2
+x horizontal axle acceleration, ft/sec
+instantaneous movement of vertical-load center of pressure, in.
+2
+angular acceleration of wheel, radians/sec
+vertical tire deflection, in.
+4
+J
+
+
+
+=== PDF PAGE 8 ===
+.. ---- ------------
+~~~~~~~~~~--- ~--
+instantaneous tire-ground friction coefficient, F gkr
+x, z, g
+(dimensionless)
+average value of 11 developed between slip ratios of 0.1
+Ilav
+and 0.5
+maximum value of 11 developed between slip ratios of 0 and 1
+value of 11 developed at slip ratio of 1
+Ilskid
+p mass density of runway contaminant, slugs/cu ft
+wheel angular velocity, radians/sec
+APPARATUS AND PROCEDURE
+The present investigation was carried out by making test runs at
+the Langley landing-loads track (track described in ref. 10). The main
+carriage (fig. 1) of this facility weighs approximately 100,000 pounds
+and travels at speeds up to 130 knots on steel rails which are located
+on each side of a 2,200-foot-long concrete runway. The investigation
+consisted of a series of braked and unbraked runs conducted at different
+forward velocities with a type VII tire at inflation pressures ranging
+from 85 to 350 pounds per square inch. The forward velocities varied
+from approximately 13 to 104 knots. The vertical load per tire varied
+from approximately 9,000 to 22,000 pounds. Runway surfaces investigated
+were concrete, smooth asphalt (sand finish), and rough asphalt (aggregate
+finish). Runway-surface contaminants investigated were water, slush,
+Jp-4 jet-engine fuel, and fire-extinguishing foam (both detergent and
+organic types). Both single and tandem wheel arrangements were inves
+tigated.
+TEST FIXTURE
+The tire under test was mounted on a main-landing-gear wheel from
+a century-series fighter airplane. This wheel was in turn mounted within
+an instrumented test fixture (fig. 2) suspended from the vertical drop
+carriage of the main carriage. Most of the tests were conducted with a
+single wheel. Some tests were made with the tandem arrangement shown in
+figure 3, where an unbraked wheel was added forward of the instrumented
+wheel contained in the test fixture. The fixture could be positioned to
+allow the tire to run 25 inches to either side of the track center line.
+5
+I
+~
+
+
+
+=== PDF PAGE 9 ===
+TIRES
+The tires used in the investigation were 32X8.8, 22 ply rating,
+type VII (extra high pressure ). Through the cooperation of several air
+craft tire manufacturers, a number of tires with different tread designs
+and tread materials were investigated. The tread designs for these tires,
+along with their footprints for a vertical- loading condition of
+Fz,g ~ 10,000 pounds and p = 260 lb/ sq i n. , are shown in f i gure 4.
+Tire cross sections shown in figure 5 illustrate the two di fferent tread
+materi als investigated, rubber and fabric- reinforced rubber. Several of
+the fabric- reinforced tires were provided with an extra thickness of rub
+ber at the t i re surface so that during test, braki ng woul d occur only on
+a rubber surface . A description of the t i res mentioned in this paper,
+thei r code designati ons, and some infl ated tire dimensions are given in
+table I. Tires having the code desi gnation S were made especi all y for
+thi s i nvesti gation, and in all cases were mol ded to ful l tread depth but
+with no tread pattern. Before testing, the desired tread patterns were
+cut i nto the tire to a depth of approxi mately one- quarter of an inch by
+means of an electrical ly heated knife .
+WHEEL BRAKE
+The wheel brake used in this investigati on was the main-landing- gear
+di sk brake of a century- seri es jet fighter and consi sted of an assembly
+of 5 rotor and 6 stator brake disks . The braki ng system f or most of the
+braki ng runs was equipped with an "on- off" type of automati c braki ng
+device that dumped brake pressure PB whenever t he wheel decel eration
+2
+dur ing braking exceeded 45 to 60 radians/ sec . A recovery si gnal was
+generated, recocking the automatic braking device, when, after brake
+release, the wheel angul ar vel oci ty became equal to the angul ar vel ocity
+of an i nertia- type f l ywheel mounted i n the devi ce. Dur i ng the free- rol l
+or unbraked taxii ng runs, the brake hydraul ic system was vented t o atmos
+phere to mi ni mize brake torque . For most of the wheel-braki ng test runs,
+the brake system, with antiskid unit operating, was set up to represent
+a pil ot conti nuousl y ridi ng brakes during the l andi ng rol l . Thus, 20 to
+30 braking cycles occurred for a test run at l ow forward veloci ty and
+5 to 8 braki ng cycles for a run at hi gh forward velocity. A few wheel
+braki ng runs were made without automatic braki ng. For these runs, the
+brake was cycled once each run at specifi ed l ocati ons on the track run
+way by means of a track- mounted knife edge whi ch actuated solenoid valves .
+6
+~~------
+
+
+
+=== PDF PAGE 10 ===
+RUNWAY TROUGHS AND SURFACES
+A cross section of the test runway surfaces is shown in figure 6.
+The concrete dikes located along the edges of both the asphalt and con
+crete runways formed troughs into which runway contaminants such as
+water, slush, foam, and JP-4 jet-engine fuel could be deposited to the
+desired depth. The concrete runway test surface shown at the right in
+figure 6 is similar to actual portland-cement concrete surfaces in cur
+rent use for airport runways. The asphalt runway shown at the left in
+figure 6 was rolled in two adjoining sections (fig. 7). The initial
+400-foot section had a smooth sand-finish surface, while the remaining
+portion of the asphalt runway had a rough aggregate surface. Photographs
+of the asphalt runway surfaces are shown in figure S. The sand particles
+used for the smooth asphalt would pass through a l!lO-inch sieve. The
+rough-asphalt aggregate conformed to a standard highway specification
+wherein 100 percent of the aggregate could pass through a I-inch sieve,
+95 to 100 percent through a 3/4-inch sieve, 60 to So percent through a
+3!S-inch sieve, 40 to 60 percent through a 1/4-inch sieve, 20 to 40 per
+cent through a 1/10-inch sieve, and 3 to 10 percent through aliSO-inch
+sieve.
+RUNWAY WETNESS
+The elevation characteristics of the concrete runway within the
+confines of the trough shown in figure 7 were such that with just the
+high spots of the runway showing through the water surface, the water
+depth in the trough varied between 0 and 0.3 inch. This degree of wet
+ness corresponds to conditions measured on an actual runway during a
+heavy rain shower. Figure 9 is a photograph of the concrete runway for
+this condition of wetness.
+The asphalt runway surfaces under similar wetness conditions (high
+spots showing through water surface) showed a variation in water depth
+of 0 to 0.5 inch. The larger variation in water depth for the asphalt
+runway surface is felt to be the result of the method used in rolling
+the asphalt during its installation on the track runway, and may be
+representative of actual runway surfaces . Most of the wheel-braking
+runs of this investigation were made with the wetness conditions just
+described (concrete, dl = 0 to 0.3 inch; asphalt, dl = 0 to 0.5 inch).
+For the unbraked rolling runs (performed on the concrete runway only),
+the water depth varied from 0.25 to 1.75 inches.
+7
+----- -
+- --~-
+
+
+
+=== PDF PAGE 11 ===
+OTHER RUNWAY CONTAMINANTS
+Both braked and unbraked rolling runs were made on slush-covered
+runways with slush depths ranging from 0.5 to 2.0 inches. A detailed
+description of the slush, slush trough, and method of determining slush
+density is given in reference 1.
+One braked rolling run was performed on the asphalt runway after
+the surface had been covered with Jp-4 jet-engine fuel. For this run,
+a strip of the asphalt runway 1 to 2 feet wide and approximately 600 feet
+long was coated as uniformly as possible with 12 gallons of Jp-4 fuel.
+The fuel was allowed to stand on the runway for an hour, at which
+~bout
+time most of the puddles of fuel had disappeared either by evaporation
+or penetration into the asphalt surface. The runway was then lightly
+sprayed with water to simulate the beginning of a rain shower, and the
+test run was made as soon as the entire surface was wetted.
+One braked rolling run was performed on the concrete runway after
+the surface had been covered with 2 to 5 inches of fire-extinguishing
+foam such as might be used to cover airport runways during emergency
+landing of airplanes. Two types of foam were used, organic (protein
+base solution, Joint Army-Navy Specification JAN-C-266) and detergent
+(Unox No.3 wetting-agent foam). Figure 10 shows the foam being applied
+to the runway surface. The foam issuing from the nozzle in figure 10 is
+of the organic type. The detergent foam was placed on the runway farther
+down the track.
+In addition to the purposely applied contaminants, the tires them
+selves contaminated the runway surfaces by depositing abraded and molten
+rubber on the runway surface during braked rolling. The abraded rubber
+(deposited only at very low taxiing speeds) did not stick to the runway
+surface and was readily removed. The molten rubber (deposited at the
+higher taxiing speeds) solidified in the irregularly shaped voids of the
+runway surface and was extremely difficult to remove. A stiff steel
+brush was used to remove as much as possible of the molten rubber deposits
+on the runway before the start of most of the wheel-braking runs.
+INSTRUMENTATION
+Instrumentation was provided to obtain the vertical and drag forces
+developed between the single tire or rear tandem tire and the runway.
+(See figs. 2 and 3.) Also obtained were the vertical and drag accelera
+tions of the wheel axle; brake torque; wheel angular acceleration, veloc
+ity, and displacement; forward velocity of the carriage; brake pressure;
+vertical displacement of the test fixture (tire deflection); and time.
+8
+
+
+
+=== PDF PAGE 12 ===
+~l
+I
+I
+A 16-channel oscillograph was used to record the outputs of this instru
+mentation during a test run. A more detailed discussion of the instru
+I
+mentation is given in reference 1. In addition, high-speed (200 frames
+per second) 16-mm motion pictures were taken from three different posi
+tions around the tire during each braked and unbraked rolling run.
+GENERAL CONSIDERATIONS
+DEFINITION OF TERMS
+A discussion of various parameters that affect the unbraked and
+braked rolling of aircraft tires is included here as a basis for the
+presentation of the data to follow. Consider the external forces and
+moments acting on the rolling tire shown in figure 11. The net torques
+or moments acting on the wheel must equal the acceleration of the wheel
+(neglecting wheel-bearing frictional torque):
+TB + Fz,gXc - Fx,g(ro - 5)
+a. = (1)
+I
+For the notation used, positive a. denotes wheel spin-down and negative
+a. denotes wheel spin-up. Some of the parameters involved in this equa
+tion, as well as other tire parameters, will now be discussed.
+Instantaneous Drag Force
+An airplane tire during landing or take-off can be subjected to at
+least three distinct types of drag loading. The first type of loading
+is called rolling resistance Fx g and arises from wheel-bearing
+, ,r
+friction, tire hysteresis, and inertia effects. The second type of drag
+loading Fx,g,f occurs only on fluid-covered runways and is created by
+the aircraft tire displacing the fluid, for example slush or water, from
+the wheel path on the runway. Finally, the drag force Fx,g,b is
+created on a tire during changes in wheel rotational velocity and during
+locked-wheel skidding. The magnitudes of Fx,g,f and Fx,g,b depend
+upon the vertical load acting on the tire and the friction coefficients
+developed between the tire and the ground. The instantaneous drag force
+acting on the tire is the sum of these three types of drag force:
+F =F +F +F b
+x, g x, g, r x, g, f x, g,
+9
+
+
+
+=== PDF PAGE 13 ===
+I
+Vertical Ground
+Forc~
+The vertical ground force Fz,g is defined as the instantaneous
+ground force acting on the tire. It should be noted that this vertical
+ground force is practically never constant during take-off and landing
+because of runway roughness and changes in the airplane attitude on the
+runway.
+Brake Torque
+The brake torque TB is the wheel spin-down torque created by
+mechanically braking a rolling aircraft tire through use of wheel brakes.
+It is a resistive torque and its magnitude must equal the sum of the other
+torques acting on the wheel at any instant during braking.
+Deflected Tire Radius
+The difference between the unloaded tire radius ro and the vertical
+tire deflection 5 defines the length of the arm (ro - 5) through which
+the drag force Fx,g acts in spinning up a tire.
+Movement of Vertical-Load Center of Pressure
+Because of tire elasticity, inertia, and hydrodynamic (wet runways
+only) effects, the center of pressure of the vertical load on a rolling
+tire will be displaced from its static position beneath the wheel-axle
+center line. Positive values of Xc in equation (1) denote a shift of
+the center of pressure in the direction of motion, negative values the
+opposite.
+Footprint Area
+The tire contacts the ground in a "finite area whose shape is illus
+trated in figure 4 for a number of tires. For tires with a tread pattern}
+this area consists of alternate spaces where the tire contacts the ground
+where it does not contact the ground. The total area, including the
+~d
+spaces that do not contact the ground, is designated as the gross foot
+print area Ag of the tire. The actual ground-contact area, or bearing
+An.
+area, is referred to as the net footprint area
+10
+I
+___ .. _ J
+~~._.~.
+
+
+
+=== PDF PAGE 14 ===
+---- -- .----~ -- -- ~
+Wheel Moment of Inertia
+The wheel moment of inertia I is defined as the sum of the moments
+of inertia of all masses rotating about the wheel axle. The rotating
+masses in this investigation consisted of the wheel, tire, tube, and
+brake rotors. The moment of inertia was determined experimentally with
+tire Rl mounted on the wheel, and was found to be 2.73 slug- ft2. It is
+assumed that the moment of inertia had the same magnitude when the other
+t ires were mounted on the test wheel.
+Slip Ratio
+The difference between the peripheral velocity of the tire and the
+horizontal velocity of the wheel axle is defined as the relative skidding
+velocity occurring between the tire and the ground. The ratio of this
+relative skidding velocity to the horizontal velocity of the axle is
+defined as the slip ratio sl. Thus for a freely rolling wheel the slip
+ratio is effectively zero while for a completely braked wheel (full ski d)
+the slip ratio equals 1. When the rolling wheel is gaining angular veloc
+ity (-a) - that is, rolling at decreasing slip ratio - the condition is
+called spin-up. This condition occurs after touchdown at landing as well
+as after brake release during wheel braking. A loss in angular velocity
+(+a) - that is, rolling at increasing slip ratio - is called wheel spin
+down and occurs, on dry runways, during wheel-brake application only.
+Wheel spin- down and spin-up can also occur during high-speed unbraked
+rolling of tires on fluid-covered runways as a result of hydrodynamic
+effects.
+Tire-Ground Friction Coefficient
+The ratio of the instantaneous ground drag load Fx,g developed by
+a rolling or nonrolling tire during straight- ahead (00 yaw) translation
+on a runway surface and the instantaneous vertical ground load Fz,g
+acting on the tire is arbitrarily defined as the tire-ground friction
+Fx_
+0-
+coefficient For the special case of an unbraked rolling tire
+~ =~.
+Fz,g
+undergoing straight- ahead translation on a dry runway, Fx,g = Fx,g,r
+and the ratio F .IP is defined as the coefficient of rolling
+x, g, r/- z, g
+resistance . During wheel braking, if the braking torque TB is suf
+ficiently large, the tire will be forced from a freely rolling condition
+(sl = 0) to a full-skid condition (sl = 1) and the tire-ground friction
+coefficient ~ will vary with slip ratio (for a dry runway) in the manner
+11
+
+
+
+=== PDF PAGE 15 ===
+shown schematically in figure 12. The relationship between friction
+coefficient I-l and slip ratio sl has considerable signific.ance with
+regard to wheel braking. For example, to obtain maximum effectiveness,
+automatic braking systems must be designed to operate near peak I-l
+(I-lmax usually occurs at a slip ratio between 0.1 and 0.2). If opera-
+tion occurs at a slip ratio greater than that required for peak friction,
+tire tread life is reduced by skidding and braking effectiveness is
+reduced. Operation at a slip ratio below that required for peak fric
+tion simply results in reduced braking action.
+Because of the transient nature of the tire- slip phenomenon, opera
+tion by the pilot or antiskid unit at I-l i s not generally realized
+max
+without some overshooting or undershooting of the slip ratio for I-lmax'
+For this reason, the average friction coefficient I-lav developed between
+slip ratios of 0.1 and 0.5 (see fig. 12), rather than I-lmax' was arbitrar
+ily chosen in this paper as more nearly representative of the friction
+coefficient attainable with present- day braking systems . In most of the
+comparisons made in this paper, I-lav is used. The friction coefficient
+at full skid (sl = 1) is also of interest and is designated I-lskid'
+MECHANICS OF THE ROLLING TIRE
+For the condition of straight-ahead (unyawed) rolling on a runway
+surface, equation (1) specifies the angular acceleration a wheel will
+experience during both braked and free-rolling conditions .
+Unbraked Rolling
+Dry runways.- For the special case of unbraked rolling at constant
+VH (constant m) on dry runway surfaces, both ~ and TB must equal
+zero and equation (1) reduces to
+Equation (2) thus specifies that the moment Fz,gXc must be equal
+and opposite in direction to the wheel spin- up moment Fx , g , r(ro - 0)
+created by the tire rolling resistance, which means that for positive
+rolling resistance Xc must move forward of the axle center line in the
+direction of motion for a rolling unbraked tire . One possible explana
+tion of this phenomenon is based on the accelerations imparted to radial
+12
+
+
+
+=== PDF PAGE 16 ===
+elements of the tire when entering and leaving the tire footprint region.
+(See fig. 13(b).) If constant axle height above the runway (constant
+vertical load) during the rolling process is assumed, radial elements of
+the tire are accelerated toward the axle as they pass through the for
+ward half of the tire footprint from ro at the leading edge of
+r~gion,
+the footprint to ro - 5 directly below the axle center line. As the
+radial tire elements rotate out of the rear half of the footprint region
+they are accelerated away from the axle by the internal tire pressure,
+from ro - 5 beneath the axle to ro where exit from the footprint
+occurs. These accelerations, and associated tire hysteresis effects,
+create forces which are thought to change the vertical-load distribution
+within the footprint from the symmetrical distribution of a standing tire
+(fig. 13(a)) to a distribution such as that schematically indicated in
+figure 13(b), with the resulting center of pressure of the vertical load
+moved forward of the wheel-axle center line in the direction of horizontal
+axle motion. Since the accelerations of the tire within the footprint
+are a function of the tire rotational velocity (accelerations must increase
+with increasing rotational velocity), it would appear logical for Xc to
+move increasingly forward as the rotational velocity or forward speed is
+increased. Such a trend is indicated by the data shown in figure 14(b).
+According to Kamm (see ref. 11), this effect may result in loss of adhe
+sion over the last third of the contact surface at high rolling speeds.
+Wet runways.- Consider the case of a freely rolling unbraked tire
+accelerating on a fluid-covered runway as in airplane take-off. As the
+moving tire contacts and displa'ces the stationary runway fluid the
+resulting change in momentum of the fluid creates hydrodynamic pressures
+that react on the runway and tire surfaces. The tire engages the runway
+fluid at a definite angle of attack that is determined by the intersec
+tion of the tire equator and the ground plane. (See fig. 13(c).) As
+the forward speed is increased, a wedge of water penetrates farther and
+farther into the tire footprint region until at some high forward speed,
+complete separation between the tire and runway occurs. This speed is
+referred to as the tire hydroplaning velocity. At this speed, the tire
+loses practically all of its directional stability because of the inability
+of a fluid to develop large shear forces. Experimental measurements of
+vertical-load center of pressure obtained from the present investigation
+indicate that the hydrodynamic pressure generated at the front of the
+tire footprint by the wedge of water distorts the vertical-load distribu
+tion within the tire footprint region so that Xc moves farther forward
+of the axle than for the case of a tire rolling at the same forward
+velocity on a dry runway (shown schematically in fig. 13(c)). In addi
+tion, the horizontal component of the hydrodynamic force adds to the
+tire rolling resistance to produce a larger wheel spin-up moment.
+13
+
+
+
+=== PDF PAGE 17 ===
+r
+,I
+As in the case of the braked tire (eq. (1))) the net torques and
+moments acting on the unbraked tire must equal the acceleration of the
+wheel. Including hydrodynamic effects) this can be expressed approxi
+mately as
+Fz)~C FZ)L)~
+- [Fx)g)r + Fx)g)f + (Fz)g - (ro - 5)
+I
+When the vertical component of the hydrodynamic force F L equals
+z
+the vertical ground force Fz)g in equation (3)) the tire-grou ) nd fric-
+tional spin-up moment vanishes and since the tire is entirely supported
+by the runway fluid for this condition) tire hydroplaning then exists.
+2
+If F L is assumed to be proportional to V and directly propor-
+z H
+)
+tional to tire-ground gross contact area Ag and fluid density p) and
+if all other effects such as those due to tire tread design and fluid
+viscosity are ignored) the following approximate expression for tire
+hydroplaning velocity Vp may be obtained:
+(4)
+Rearranging terms gives
+The term Fz)g/A is actually the gross footprint pressure Pg
+g
+exerted by the tire on the ground. From reference 12) this pressure may
+be represented (for modern airplane tires) by
+(6)
+Thus the tire hydroplaning velocity may be approximately expressed for
+modern aircraft tires by the equation
+14
+------- ---- -- -
+
+
+
+=== PDF PAGE 18 ===
+The data shown in figure 15 indicate that reasonable agreement between
+calculated and experimental tire hydroplaning velocities occurs when
+CL = 0.7 is used in equations (5) and (7). Equation (5)) rather than
+equation (7)) was used to calculate Vp for the nonaircraft tires shown
+in figure 15 because the effects of carcass stiffness on Pg for these
+particular tires is not known.
+Experimental data obtained from the present tests and reference 6
+indicate that when tire hydroplaning velocity is approached or exceeded
+by an unbraked rolling tire) tire spin-down or even tire stopping (m = 0)
+can occur. Figure 16 shows data obtained on the buffed dimple tire D5Ml
+when it entered a wet runway unbraked at a forward speed of 113 knots.
+The predicted hydroplaning velocity (from eq. (7)) for the test tire pres
+sure of 90 lb/sq in. was 85 knots. It will be noticed in this figure
+that the tire started slowing down immediately upon entering the wet run
+way and stopped rotating at approximately 102 knots) which is 17 knots
+above the predicted hydroplaning velocity. These data support the con
+clusion reached from the treadmill tests (ref. 5) that a hydroplaning
+tire is stable about m = 0 for forward velocities in excess of the
+hydroplaning velocity Vp and for moderate fluid depths. The data in
+figure 16 also show that tire D5Ml did not spin up on the wet runway until
+the forward velocity had decreased to 72 knots) a speed which is 13 knots
+below the predicted hydroplaning velocity. This result indicates a
+hysteresis effect which was noticed in the investigation of reference 5
+but not reported. Because of this effect) the forward velocity required
+for a tire to spin down and stop under increasing forward velocity con
+ditions is always greater than the forward velocity required to spin up
+the tire (after hydroplaning) under decreasing forward velocity conditions.
+It is of interest to note that a similar test was performed at the
+same forward velocity on the rib-tread tire R4 for a tire pressure of
+85 lb/sq in. rather than the 90 lb/sq in. which was used for tire D5Ml.
+Tire R4 never stopped rotating) but did suffer a 20-percent loss in
+angular velocity while in the water trough) which was covered with water
+to a depth of 0.1 to 0.4 inch. From equation (7)) the hydroplaning
+velocity for rib-tread tire R4 should be slightly lower than that for
+smooth-tread tire D5Ml because the inflation pressure for tire R4 was
+5 lb/sq in. l ess; yet tire R4 showed less tire spin-down than tire D5Ml.
+The tread depth of tire R4 at the time of the test was approximately
+0.2 inch. The test results thus indicate a tread effect on tire hydro
+planing even when the water depth is somewhat greater on the average
+than the tread depth.
+15
+
+
+
+=== PDF PAGE 19 ===
+Braked Rolling
+In order to develop drag forces for stopping aircraft on runways or
+for directional control, a resistive torque opposing tire rotation is
+applied to an aircraft wheel by means of wheel brakes. Rearranging equa
+tion (1) gives an expression for this resistive torque TB in terms of
+all the other torques or moments acting about the wheel axle at any instant.
+A typical variation of TB with time is shown in figure 17 for tire R2
+undergoing braked rolling on a wet runway at high forward speed (VH = 96
+to 93.5 knots). Also shown in this figure are time histories of
+ill, 0"
+PE, ~,and the net spin-up moment Fx,g(ro - 0) - Fz,~c under these
+test conditions.
+The mechanics involved in braking a rolling tire can be treated best
+by discussing figure 17 in detail. Just before time zero in this figure,
+the tire is unbraked and rolling at a velocity of 130 radians/sec. At
+time zero, a valve is opened to allow hydraulic fluid to flow from an
+accumulator through a micrometer needle valve and into the brake, where
+the pressure PE builds up to the accumulator pressure. This pressure
+acts on pistons positioned around the wheel which force brake stators
+(splined to the wheel axle) against brake rotors (rotating with the wheel).
+The stator and rotor rubbing surfaces (brake pucks) generate a resistive
+torque TB which opposes tire rotation. The torque TB is a function
+PB
+of the pressure supplied to the brake, the friction coefficient
+developed between the rubbing surfaces, and the distance between the axle
+and brake-puck center lines. It will be noticed in figure 17 that the
+initial rise of after time zero does not create a corresponding rise
+~
+in TB until PB exceeds approximately 100 Ib/sq in. This lag is
+explained by the fact that the brake pistons must first overcome return
+spring forces before the stators will start sliding along the axle toward
+the rotors. The small constant value of TB before stator motion starts
+is believed to be due to light contact between the stators and rotors
+while unloaded.
+As PB increases further, there is a corresponding rise in the
+curves for both TB and Fx,g(ro - 0) - Fz,~c until the slip ratio
+for is exceeded. At this point the wheel decelerates rapidly as
+~max
+a result of the net torque impulse (area between curves for TB and
+Fx,g(ro - 0) - Fz,~c)' The change in momentum imparted to the wheel by
+the brakes must exactly equal this net torque impulse. This comparison
+is shown in figure 17 for both spin-down and spin-up conditions. The
+agreement shown is typical for the instrumentation used in this
+investigation.
+16
+---------
+
+
+
+=== PDF PAGE 20 ===
+Continuing along the time history of the braking cycle in figure 17)
+a point is reached where the wheel comes to a complete stop. At this
+point a and Fx)g)r equal zero and TB equals
+(Fx)g)f + FZ)~Skid)(rO - 5) - Fz)gXc' The symbol ~skid is the fric
+1)
+tion coefficient for the tire under full- skid (sl = conditions) and
+is considerably lower than ~max for the wet-runway test conditions of
+figure 17. At time 0.63 second in figure 11) the brakes are released by
+dumping the pressure PB' Almost immediately) the net spin-up moment
+increases above TB and the resulting net torque impulse spins up the
+wheel to the angular velocity required for free rolling. It is inter
+esting to note that considerable TB exists after PB has been reduced
+to near zero values. This effect is attributed to grabbing of the brakes
+PB)
+(stators and rotors do not disengage at zero due to dynamic condi-
+tions in the brake. The residual TB after release of PB was a var-
+iable in the current tests. Some runs developed larger residual TB
+values than others without establishing any identifiable pattern. This
+residual torque can seriously affect wheel spin-up characteristics when
+tire treads with low friction coefficients are used at high forward speeds
+on wet runways) as is shown in figure 18.
+AUTOMATIC BRAKING DEVICES
+This section of the paper will discuss how the deterioration of wheel
+angular acceleration with increasing forward velocity on wet runways
+impairs the performance of the antiskid unit used in this investigation.
+The operation of many antiskid units in use on aircraft at the pres
+ent time is based on changes in wheel angular acceleration. The antiskid
+unit used in the present investigation is such a device. Depressing the
+pilot's brake pedal releases pressure from an accumulator to the wheel
+brake. This hydraulic pressure forces the brake stators against the brake
+rotors (for a disk brake)) creating an increasing resistive torque TB
+that opposes wheel rotation in the direction of motion. A point will
+soon be reached where the slip ratio required for maximum tire-ground
+friction coefficient will be exceeded and the tire will suddenly decel
+erate. The test antiskid unit was set to dump brake pressure (by means
+of a solenoid-operated valve) when this angular deceleration exceeded
+45 to 60 radians/sec 2 . In the test antiskid unit) an inertia-type fly
+wheel disengages from the main wheel when the main wheel starts to decel
+erate. This inertia flywheel then coasts, continuously losing its angular
+velocity because of bearing frictional torque and possibly clutch drag.
+17
+
+
+
+=== PDF PAGE 21 ===
+After brake-pressure release, the resistive torque TB decays to
+zero and the drag-load spin-up moment accelerates the main wheel back up
+to runway speed. When the angular velocity of the wheel equals the rota
+tional velocity of the antiskid inertia flywheel, which has now slowed
+below its value at brake release, a signal is generated to close the
+pressure dump valve and open a valve located between the accumulator and
+the brake, allowing pressure to be applied to the brake again, and another
+braking cycle commences.
+For dry runways, spin-up accelerations are large enough so that the
+inertia flywheel loses little velocity during the recovery portion of the
+braking cycle, and successive braking cycles always start with the tire
+rotating at or near the tangential velocity required for the airplane's
+forward speed along the runway (sl = 0). Such is not the case under
+certain braking conditions on wet runways, as is shown in figures 19
+to 21. These figures show sample oscillograph tracings obtained during
+wet-runway braking tests at different forward speeds with several tires
+having different tread patterns. Figure 19 shows tracings obtained for
+the rib-tread tire S2M2 at low and high forward speeds. This figure
+illustrates satisfactory antiskid operation on a wet runway, with the
+tire recovering the necessary tangential velocity before each new braking
+cycle.
+Figure 20 shows sample oscillograph tracings obtained during wet
+runway braking tests at approximately the same test forward velocities
+for a less skid-resistant tire, smooth all-rubber-tread tire Sl. Notice
+that the developed drag loads and spin-up accelerations in figure 20 are
+much less than those shown in figure 19 for the rib-tread tire S2M2.
+Figure 20(b) illustrates a characteristic of the test antiskid unit in
+that reapplication of brake pressure initiates another braking cycle
+before complete wheel spin-up has been attained.
+The end result of this antiskid characteristic is illustrated in fig
+ure 21, where tracings of oscillograph records obtained during wet-runway
+tests at high forward speeds are shown for tire Dl at p = 260 Ib/sq in.
+and tire Sl at p = 120 Ib/sq in. The initial braking cycle for tire Dl
+(fig. 21(a)) started on dry concrete. Note that for both tires Dl and Sl,
+the initial angular velocity of the wheel was never completely regained
+before the next braking cycle commenced, resulting in completely locked
+wheels (wheels at full skid) at the end of 3 or 4 braking cycles.
+The test antiskid unit had a lockout feature for low-speed taxiing
+(below 4 or 5 mph) so that the pilot could arbitrarily brake each wheel
+up to full skid without operation of the antiskid unit. This feature
+is illustrated in figure 2l(b), where after the last braking cycle the
+_J
+18
+
+
+
+=== PDF PAGE 22 ===
+brake pressure PB is seen to be increasing rapidly. (Brake pressure
+PB went to full system pressure in subsequent portions of the oscillo
+graph records of fig. 21.) Inadvertent operation of the antiskid lock
+out feature also occurred during the first wet braking run with a new
+and unused test tire (tracings not shown). Conditions for this test
+were: Fz,g = 10,000 pounds, P = 260 lb/sq in., and VH = 100 knots.
+The wheel developed a full-skid condition on the wet concrete in a man
+ner similar to that shown in figure 21 and then skidded onto a portion
+of the concrete runway that was dry. The tire failed (see fig. 22) after
+sliding (locked wheel) approximately 60 feet on the drY runway surface.
+It is obvious that the combination of this antiskid lockout feature and
+a pilot continuously riding the brakes can be hazardous to airplane opera
+tion on runways which are intermittently wet and dry.
+In summary, it is apparent that the relatively long spin-up times,
+due to low spin-up accelerations, developed by some tires during braking
+at high speeds on wet runways can seriously impair the performance of
+antiskid units that utilize an inertia flywheel for reference angular
+velocity. The antiskid-unit lockout feature used in some airplane braking
+systems to permit differential braking by the pilot at low taxiing speeds
+with antiskid on, can lead to tire failure under certain braking condi
+tions on wet runways at high forward speeds.
+Examination of equation (1) shows that highest wheel spin-up accel
+eration on wet runways will result when (a) the forward shift of Xc is
+a minimum, (b) the drag moment Fx,g(r - 5) is as large as possible,
+o
+and (c) the brake torque TB drops to zero immediately after brake
+pressure release. The test results indicate that for wet conditions
+(a) and (b) are functions of tire tread and runway design while (c) is
+a function of the braking system (hydraulic resistance and brake grab).
+DISCUSSION OF PARAMETERS
+ROLLING RESISTANCE
+The variation of the steady-state unbraked-rolling resistance
+force Fx,g,r with forward velocity is shown in figure 14(a) in terms
+of the ratio Fx,g/Fz,g. The data shown in this figure were obtained
+from the unbraked-rolling tests under essentially constant conditions
+of vertical ground load Fz,g and tire pressure p on a dry concrete
+runway. The scatter of the test data in this figure is such that no
+19
+
+
+
+=== PDF PAGE 23 ===
+discernible tendency of the rolling resistance to increase with decreasing
+tire pressure (at constant vertical load) is evident. Such a trend would
+be expected from tire hysteresis and inertia considerations because of
+the larger deformations of the carcass experienced by tires rolling at
+reduced tire pressures. The tendency of rolling resistance to increase
+with increasing forward velocity shown in figure 14(a) is in agreement
+with the findings of reference 11. The rolling- resistance values obtained
+from the present tests are, however, somewhat higher than those reported
+in reference 11 for airplane tires on hard surfaces. It is fel t that
+brake grab (discussed in an earlier section of this paper) is mainly
+responsible for this disagreement in that drag forces produced by the
+unloaded wheel-brake rubbing surfaces add to the actual rolling-resistance
+values to produce larger effective rolling resistance values for the tire
+being tested. The possibility that modern aircraft tires, such as those
+used in the present tests, might develop larger rolling-resistance val ues
+than the older and smaller aircraft tires discussed in reference 11
+should, however, not be entirely ruled out as a factor contributing to
+this difference.
+FLUID-DISPLACEMENT DRAG
+Single or Leading Tandem Wheels
+When an unbraked rolling tire encounters a fluid of finite depth on
+a runway surface, the drag force acting on the rolling tire will increase
+in the manner shown in figures 16 and 23. In reference 1, where the ini
+tial results obtained from the unbraked-rolling portion of this investi
+gation were used, it was determined for the velocity range covered that
+this increase in tire rolling resistance due to fluid displacement drag
+Fx , g , f could be represented with reasonable accuracy by the equation
+(8)
+In words, equation (8) states that F for a single wheel or a
+x,g,f
+front-mounted tandem wheel varies approximately linearly with fluid den
+sity, fluid depth, tire cross-sectional width at the fluid surface on
+the runway, and forward velocity squared. The comparison of the predic
+tions of equation (8) and experimental data from unbraked-rolling runs
+on a water-covered concrete runway made later in the test program (not
+included in ref. 1) is shown in figure 24. The scatter of the data in
+figure 24 is attributed mainly to wind effects, which produced water
+depth gradients in the water trough when the wind was blowing during
+20
+- -- --- - - ----
+
+
+
+=== PDF PAGE 24 ===
+test runs, and to the elevation characteristics of the concrete runway,
+which produced water-depth variations of as much as 0.3 inch in the test
+trough. (See section entitled "Runway Troughs and Surfaces.")
+Rear Tandem Wheels
+It was observed in reference 1 that when a single wheel passed
+through the slush trough, most of the slush in the wheel path was com
+pletely removed or thrown from the slush trough. Reference 1 also states
+that the slush residue remaining in the trough in the path of the wheel
+did not exceed 0.1 inch. This observation on the path-clearing effective
+ness of the front wheel is confirmed by the data shown in figure 25. The
+solid curve in this figure is the slush-displacement drag acting on a
+single wheel for the slush conditions noted, calculated from equation (8),
+while the single data point shows the slush-displacement drag developed
+on a rear tandem wheel at the same forward velocity (approximately
+92 knots) for the same runway slush conditions. With a slush depth of
+1.75 inches on the runway, the drag force developed on the rear wheel
+of the tandem gear was the same as a single wheel would experience in
+approximately 0.1 to 0.2 inch of slush. These data indicate that for
+the test conditions noted, the fluid-displacement drag developed on rear
+tandem wheels is only 0.1 the magnitude of the drag force developed on
+a single wheel or front-mounted tandem wheel.
+BRAKING DRAG
+When relative motion exists between the tire footprint (the part
+of the tire in contact with a runway surface) and the runway surface, a
+drag force Fx,g,b is created which is equal to the product of the ver
+tical load acting on the tire and the friction coefficient developed
+~
+between the tire and runway surfaces. (See section entitled "Definition
+of Terms.") No further treatment of Fx , g , b will be given in this paper
+since a knowledge of the variation of and the vertical load automat
+~
+ically defines the variation of Fx , g , b. The coefficient is discussed
+~
+in detail in a subsequent section.
+MOVEMENT OF VERTIC AIr-LOAD CENTER OF PRESSURE
+The ground-pressure distribution within the footprint of a tire
+undergoing translation along the ground can be distorted by different
+ground-load conditions so that the vertical-load center of pressure of
+21
+
+
+
+=== PDF PAGE 25 ===
+the tire may shift either ahead of or behind the wheel-axle center line.
+Tire fore-and-aft elastic effects displace the tire footprint in the
+direction of the applied ground-drag loads and cause Xc to move toward
+the rear of the footprint. Tire hysteresis and inertia, and runway
+hydrodynamic effects, distort the pressure distribution within the foot
+print in such a way that Xc must move toward the front.
+For the condition of unbraked rolling on a dry runway, tire elastic
+effects are small and tire hysteresis and inertia effects predominate,
+so that Xc is always a small distance forward of the axle center line.
+Figure 14(b) illustrates this condition and also shows that Xc tends
+to move farther forward as the rolling velocity or forward velocity is
+increased. For the condition of unbraked rolling on fluid-covered run
+ways, the hydrodynamic effects predominate, expecially at the higher for
+ward speeds and greater fluid depths, and Xc moves farther forward of
+the axle center line than for the equivalent dry-runway conditions.
+These effects are shown in figures 16, 23, and 26. It is interesting
+to note in figure 16 that just before the unbraked hydroplaning tire
+encounters the greater water depth on the runway and after tire spin
+down to a stop, Xc decreases in magnitude. Apparently the decrease
+in Xc at this point is caused by tire hysteresis and inertia effects
+dropping to zero when the tire stops rotating.
+On a dry runway during wheel braking, tire elastic effects predom
+inate and Xc moves toward the rear of the tire footprint at the larger
+values of ground-drag load during both wheel spin-down and spin-up, as
+is shown in figure 27 for tire R2. During wheel braking on wet runways,
+hydrodynamic effects become increasingly larger as the forward velocity
+is increased and tend to reduce or eliminate the rearward movement of
+Xc shown for dry runways. This trend was evident for all tires inves
+tigated but especially for the less skid-resistant tread designs; for
+example, see figure 28 for the smooth-tread tire Sl.
+WHEEL SPIN-UP AND SPIN-OOWN
+Satisfactory operation of most antiskid devices in use on airplanes
+today is dependent upon quick recovery of wheel rotational velocity by
+the braked wheel upon release of the wheel brakes. (See section entitled
+IIAutomatic Braking Devices. II) Test results indicate that the degree of
+runway wetness, tire-tread design, tire inflation pressure, and the loca
+tion of the tire (in tandem-wheel landing-gear arrangements) can influence
+wheel spin-down and spin-up characteristics markedly.
+The test data indicate that for braking on dry runway surfaces,
+tread design has little effect on wheel spin-up characteristics. For
+I
+22
+i
+-~
+
+
+
+=== PDF PAGE 26 ===
+example, compare the solid curves in figure 29 for the rib-tread tire Rl
+and the dimple-tread tire Dl. All of the tire-tread designs investigated
+show a degradation in wheel spin-up performance during braking on wet
+runways, especially at the higher forward velocities of the investigation.
+For the velocity range covered, multirib-tread tires such as tires Rl
+and S2M2 showed considerably less decrease in spin-up performance than
+did the other tire tread types. For example, compare the dashed curves
+in figure 29 for the multirib-tread tires Rl and S2M2 with the dashed
+curves obtained for tires Dl and S3.
+The test data also indicate that wheel spin-up performance on wet
+runways will be further impaired for the less skid-resistant tires by
+reducing the tire inflation pressure while keeping the vertical load on
+the tire constant (see fig. 30), which increases the length of the con
+tact region between the tire and the ground. The multirib-tread tire S2M2
+under the same test conditions (see fig. 30) showed little loss in spin
+up performance.
+Wheel spin-up performance on wet runways for the less skid-resistant
+tires may be improved by mounting these tires on the rear wheels of tan
+dem landing gears, thus utilizing the path-clearing ability of the front
+or leading tandem wheel. (See discussion of fluid-displacement drag
+Fx,g,f.) The curves in figure 31 indicate that no large improvement in
+wheel spin-up performance is experienced by the more skid-resistant tires
+(represented in fig. 31 by tire S2M2) when they are mounted on the rear
+wheel of a tandem landing gear.
+INSTANTANEOUS TIRE-GROUND FRICTION COEFFICIENT
+Time histories illustrating the variation of the instantaneous
+tire-ground friction coefficient developed during braking test runs
+~
+on wet concrete runways for a tire with good skid resistance (tire R2)
+and a tire with poor skid resistance (tire Dl) are shown in figures 17
+and 18, respectively. The variation of ~ with slip ratio is shown in
+the appendix for most of the skid cycles obtained during braking tests
+of a single wheel on wet concrete runways for the different tires
+investigated.
+MAXIMUM TIRE-GROUND FRICTION COEFFICIENT
+Dry Runways
+For dry concrete runways, the curves of as a function of slip
+~
+ratio for the different tires investigated usually displayed a very
+23
+
+
+
+=== PDF PAGE 27 ===
+prominant peak ~max between slip ratios of O.l and 0.2 (see appendix).
+The data shown in figure 32 indicate that is practically inde
+~ax
+pendent of forward velocity, with most of the tire tread designs indi
+cating little or no decrease in the magnitude of over the for-
+~max
+ward velocity range investigated.
+The magnitude of is, however, dependent upon the average
+~max
+tire-ground bearing pressure Pn' as shown in figure 33, where
+~max
+decreases in magnitude with increasing values of Pn. This is the trend
+reported in reference 12 for values obtained at very low forward
+~max
+speeds (0.009 < VH < 2 knots). It is interesting to note that the equa
+tion = 0.93 - O.OOllPn' which was empirically derived on the basis
+~ax
+of low-speed data (ref. 12), also fits the high-speed data of this inves
+tigation with fair accuracy. This agreement also supports the conclu
+sion that is relatively independent of forward speed for a dry
+~
+concrete runway surface.
+Contaminated Runways
+The data from this investigation and other available experimental
+data (refs. 4 to 9) indicate that ~ax decreases with increasing for
+ward velocity on fluid-covered or contaminated runways. The test data
+indicate that follows the trends observed for but at some-
+~max ~av
+what higher values of
+~.
+FULL-SKID TIRE-GROUND FRICTION COEFFICIENT
+Dry Runways
+The variations of with forward velocity on a dry concrete
+~skid
+runway for several of the tire designs investigated are shown in fig
+ure 32. It is seen that ~skid decreases as the forward velocity
+increases for the velocity range investigated. This trend is more
+clearly shown in figure 34, where the ratio ~skid/~max is plotted
+against forward velocity for a number of tires used in this and other
+investigations. The data in £igure 34 indicate very small differences
+between and at low forward velocities and very large
+~skid ~max
+2)
+differences (~:d ~ 0. 3 at the higher forward velocities. The sub
+stantial difference in tire behavior at low and high forward velocities
+24
+
+
+
+=== PDF PAGE 28 ===
+- ----1
+is attributed to tire heating effects. For example, at the low veloc
+ities of references 13 to 15, the rubber deposited on the runway by
+the sliding tires consisted of small solid particles that were evidently
+sheared or abraded from the tire surface by the asperities of the run
+way surface. At the conclusion of each of these low-speed runs, the
+rubber tread in the ground-contact region was warm to the touch but
+showed no evidence of being subjected to high heat. In contrast, in
+the present investigation, inspection of the skid marks after high-speed
+skids on a dry concrete runway revealed that the rubber apparently was
+deposited in the liquid state since the concrete gave the appear
+surfa~e
+ance of having been painted with rubber. At the conclusion of each high
+speed braking run, the rubber or rubber-fabric tread of the ground
+contact region of the tire was hot and sticky to the touch. In fact,
+when the brake was released after a high-speed skid, this sticky contact
+area of the tire would stamp the runway at each succeeding revolution
+of the wheel and leave a clear imprint on the runway surface. As a
+point of interest, these stampings looked exactly like the tire foot
+prints shown in figure 4.
+Correlation of the movie films taken on each braking run with the
+corresponding oscillograph records showed that the puff of smoke
+(oxidized rubber) emanating from the tire footprint region during a
+braking cycle at high speed occurred at slip ratios ranging from 1.0
+(full skid) to as low as 0.15. The reduced values of ~skid/~max
+obtained on tires at the higher forward velocities are probably caused
+by the molten rubber in the tire footprint region acting as a lubricant
+between the tire and the ground. Prolonged skids of a tire at or near
+can cause rapid erosion of the tire tread and carcass and result
+~skid
+in failure of the tire. Figure 22 is a photograph of a tire that failed
+after a full skid of only 60 feet on a dry concrete runway. No tests
+were conducted on dry asphalt runways during this investigation.
+Water-Covered Runways
+Figure 35 shows the variation of ~skid with forward velocity for
+several different rib-tread aircraft tires on water-covered concrete
+and asphalt runway surfaces. For comparison purposes, this figure
+includes British flight-test data (refS. 8 and 9) that were obtained
+under similar runway wetness conditions. Both British flight tests
+and NASA track tests indicate that ~skid decreases with increasing
+forward velocity for wet concrete and asphalt runways, although the
+British values of ~skid are generally lower than the track values
+over the velocity range investigated. Both British and NASA track
+data indicate that the wet asphalt-runway surfaces investigated gave
+higher ~skid values than did the wet concrete surfaces at the higher
+forward velocities.
+25
+
+
+
+=== PDF PAGE 29 ===
+AVERAGE TIRE-GROUND FRICTION COEFFICIENT
+Dry Runways
+In figure 12) is defined as the average value of the tire
+~av
+ground friction coefficient obtained between slip ratios of 0.1
+~
+and 0.5. For tires on a dry concrete runway) the data shown in fig
+ure 36 indicate that ~av is approximately 10 percent lower in magni
+tude than over the forward-velocity range investigated. Fig
+~max
+ure 36 also indicates that ~av (as was found earlier for ~max)
+appears to be independent of forward velocity over the range of condi
+tions investigated) on a dry concrete runway.
+Contaminated Runways
+In contrast to the dry-runway results) which showed little or no
+forward-velocity effect on the experimental data obtained during
+~av)
+braking runs on contaminated runway surfaces disclosed that
+~av
+decreases markedly with increasing forward velocity. The magnitude of
+the decrease in was found to depend upon such parameters as:
+~av
+Runway composition and surface
+Type and depth of contaminant on runway
+Vertical ground load acting on tire
+Tire inflation pressure
+Tire position in tandem wheel arrangements
+Tire tread material
+Tire tread pattern
+It is the purpose of this section to show how these parameters affect
+the magnitude of developed on contaminated runway surfaces.
+~av
+Runway composition and surface.- The effect on ~av of braking a
+single wheel on water-covered runways of different composition and sur
+face texture is shown in figure 37. These data indicate that the values
+of ~av developed on asphalt surfaces with both the smooth sand finish
+26
+
+
+
+=== PDF PAGE 30 ===
+and the rough aggregate finish were higher than those developed on the
+concrete surface for the low and medium forward velocities investigated.
+At the higher forward velocities, ~av values developed on the test
+runway surfaces were approximately e~ual. Figure 37 also shows that the
+surface texture of the asphalt runways investigated apparently had little
+effect on ~av' since both the smooth and rough asphalt surfaces gave
+rise to approximately the same values of ~av for the range of condi
+tions investigated.
+38
+Type and depth of contaminant on runway.- Figure shows faired
+~av data obtained during single-wheel braking runs on both slush-
+covered and water-covered runways for tires D2 and 82M2. By comparing
+curves A (water) and curves B (slush) of this figure, it may be seen
+that curves B increase at the higher forward velocities whereas curves A
+continue to decrease . This rising trend of the slush data at the higher
+velocities is believed to be due to the depth of slush on the runways
+during the tests. The fluid-displacement drag forces due to slush for
+the test conditions were calculated by means of equation (8), and these
+calculations in terms of an effective ~av are shown as curves C of
+38.
+figure The same calculations were made for the water-covered run
+way at a forward speed of 100 knots, and an effective ~av e~ual to
+approximately 0.014 was obtained. This low value is due to the small
+average water depth (d = 0.15 inch) used in the tests. The differences
+l
+38,
+between curves B and C are curves D of figure the contribution to
+of tire braking friction and tire rolling resistance. Curves D
+~av
+decrease with forward velocity in a manner similar to data for the
+water-covered runway (curves A), which contain a negligible amount of
+water-displacement drag as just indicated. Comparison of curves A
+and D indicates that lower values of ~av are generated during braking
+on slush-covered runway surfaces than on water-covered surfaces.
+Test results indicate that the presence of measurable fluid depths
+on a runway surface are not a necessary requirement for low braking
+friction on contaminated runways. Values of that are considerably
+~av
+reduced from dry-runway values can also be obtained during braking runs
+on runways that are only damp, that is, moistened with just enough water
+or other fluids to create a film on the runway surface, but not suf
+ficient to form puddles. This effect is shown in figure 39 for tire 81M3
+on a concrete runway and for tire 82M2 on an asphalt runway. The data
+in figure 39 indicate that values developed on both the damp
+~av
+(with water) asphalt and concrete runways are only slightly higher than
+the values obtained for the water-covered (d = 0 to 0.3 inch) runways.
+l
+The data shown in figure 39(b) for an asphalt runway contaminated with
+Jp-4 fuel and water indicate that this form of runway contamination
+27
+
+
+
+=== PDF PAGE 31 ===
+results in an even greater decrease of than was obtained for the
+~av
+asphalt runway dampened with water only. No tests were made with the
+concrete runway contaminated with Jp-4 fuel.
+The data obtained during braked rolling on a concrete runway
+covered with two types of fire-extinguishing foam (organic and deter
+gent) are shown in figure 40. For the velocity range investigated these
+data indicate that values developed on the foam-covered runway
+~av
+were approximately equal to those developed on a water-covered concrete
+runway. The large depths of foam indicated for this particular braking
+run can be discounted, since both types of foam were of very low density
+and foam-displacement drag forces would be negligible.
+The results of the braking runs on runways damp with water, damp
+with Jp-4 fuel and water, slush-covered, and foam-covered tend to indi
+cate that the reduction of developed on these surfaces may depend
+~av
+less on depth and density and more on lubrication or other properties
+of the particular contaminant, especially at subhydroplaning velocities.
+Most airport runway surfaces are contaminated to some extent by
+from aircraft tires that is deposited on the runway surface during
+~bber
+wheel spin-up at initial airplane touchdown, and during wheel braking
+in the landing roll. The data shown in figure 41 indicate that the tire
+ground friction coefficient is reduced from the values for uncontaminated
+dry runweys when wheel braking occurs on a rubber-contaminated surface.
+These data indicate that ~av decreases from about 0.64 for the dry
+uncontaminated concrete surface to about 0.48 for the dry rubber
+contaminated concrete surface under the conditions of the investigation.
+Vertical ground load acting on tire.- Increasing the vertical
+ground load on tire 82M2 (fig. 4(n)) while keeping the tire inflation
+pressure constant during single-wheel braking tests on a wet runway
+affects ~av as shown in figure 42. The data in figure 42 indicate
+that for this particular tread design, an increase in the tire vertical
+load from 10,000 pounds to 22,000 pounds decreases the magnitude of
+~av
+throughout the forward-velocity range investigated. Apparently this
+result is a tread effect rather than a load effect, since for this par-
+ticular tire the higher load condition results in a larger footprint
+~
+area and consequently a larger region near the outside of the footprint
+I
+without grooves to furnish escape paths for the water trapped between
+the footprint and the ground.
+It is interesting to note that while an increase in the vertical
+load at constant tire pressure reduces this load condition also
+~av'
+increases the average wheel spin-up acceleration acting on tire 82M2
+28
+
+
+
+=== PDF PAGE 32 ===
+after brake release, as is shown in figure 42(b). This result points
+out the fact that it is the product of Fz,g and ~, rather than ~
+alone, that determines the wheel spin-up acceleration. For this reason,
+better wheel spin-up acceleration will probably result if wing lift is
+dumped as quickly as possible after touchdown during landing, so that
+the full weight of the airplane will act on the tires.
+Tire inflation pressure.- Decreasing the tire inflation pressure
+while keeping the vertical ground load on a tire constant affects the
+tire-ground contact region in two ways. First, the tire footprint length
+and width is increased, and second, the tire-ground bearing pressure is
+reduced. The data shown in figure 43 indicate that lowering the tire
+pressure from 260 to 120 Ib/sq in. at Fz,g ~ 10,000 pounds produces
+little change in for tires 81, 82, and 82M2 on a wet concrete run
+~av
+way. These data do, however, show some tendency for the low-pressure
+values to be higher at low forward speeds than the high-pressure
+~av
+values. The reverse is true at the higher forward speeds. These
+~av
+trends are best illustrated in figure 43(a) for data obtained for
+tire 82M2 on the wet asphalt runway. The same trends are shown in fig
+ure 43(b) where average spin-up acceleration is plotted against forward
+speed for the same tires and test conditions (on the concrete runway)
+as those of figure 43(a). For the condition of constant vertical load,
+average wheel spin-up acceleration reflects the magnitude of the tire
+ground friction coefficient that is developed during wheel spin-up.
+Tire position in tandem wheel arrangements.- As pointed out in
+reference 1, the forward or leading wheel of a tandem-wheel landing
+gear arrangement tends to clear the path for the rear wheel of the tan
+dem gear during unbraked rolling on a fluid-covered runway. This obser
+vation was confirmed by the data shown in figure 25. The data shown in
+figure 44(a) indicate that this path-clearing ability of the forward
+wheel can also raise the level of developed during braking on wet
+~av
+runways by tires with poor skid resistance when these tires are used on
+rear tandem wheels. These data also indicate that for the conditions
+investigated, position of the tire in a tandem gear had little or no
+effect on values developed by the skid-resistant rib-tread
+~av
+tire 82M2. The same trend is indicated in figure 44(b), where the aver
+age wheel spin-up accelerations developed under the test conditions of
+figure 44(a) are plotted against forward velocity. The path-clearing
+effect of the leading wheel in a tandem arrangement is even more pro
+nounced when braking occurs on slush-covered runways, as illustrated in
+figure 44( c).
+Tire tread material.- Until the advent of jet aircraft, tire
+designers used rubber alone as tread material with very satisfactory
+29
+
+
+
+=== PDF PAGE 33 ===
+results. The much higher landing and take-off velocities required of
+most jet aircraft as compared with propeller-type aircraft, however,
+compelled designers to reinforce the rubber tread by means of fabric
+laminations in order to meet the new high-speed design requirements con
+cerning tread wear and tread integrity. Typical all-rubber and fabric
+reinforced tire-tread sections are shown in figure 5. The data in fig
+ure 45 indicate that the effect of tread material on the magnitude of
+~av is largely insignificant over most of the forward-velocity range
+investigated. At the higher forward velocities, however, the fabric
+reinforced treads tend to develop slightly higher valu€s on wet
+~av
+concrete runways than do all-rubber treads. In fact, the buffed dimple
+tire D5Ml (fig. 4(d)), which had all of the tread removed so that the
+carcass cords were exposed, developed the highest values at the
+~av
+higher forward velocities of all the tires investigated for this effect.
+In summary, reinforcing rubber tire treads by means of fabric lamina
+tions in the tread does not impair the braking effectiveness of tires
+on wet concrete runways.
+Tire tread pattern.- The variations in average tire-ground friction
+coefficient with forward velocity obtained for the 20 different
+~av
+tread patterns (see fig. 4) investigated during single-wheel braking
+tests on a wet concrete runway are shown in figure 46. The ~av values
+shown in this figure were determined from wheel spin-down data given
+in the appendix. The tread-pattern comparisons to follow make use of
+the faired lines drawn through the data of figure 46.
+Smooth and dimple treads: Tires with smooth and dimple treads
+developed the lowest values of all the different tires investigated
+~av
+on wet runway surfaces. The variations of ~av with forward velocity
+for these tire treads were similar in shape and magnitude, as is shown
+in figure 47. For the conditions investigated, the smooth and dimple
+tread tires developed values of ~av ranging from 0.14 to 0.175 at
+50 knots and 0.060 to 0.085 at 100 knots forward velocity.
+The path of the braked wheel through the water-covered runway was
+examined after each braking run. This examination revealed that at the
+higher forward velocities, the smooth- and dimple-tread tires investi
+gated did not deposit rubber on the wet concrete surface as did the rib
+tires Rl and S2M2. The only visual evidence on the runway that
+~read
+the smooth- and dimple-tread tires had been subjected to braking action
+was that the path of the tire was much cleaner and whiter than the sur
+rounding concrete surface. The inference follows that most of the foot i
+I
+print was supported by a water film at the higher velocities, or else
+I
+penetration to the concrete surface would have occurred and rubber would
+have been deposited on the runway surface.
+I
+I
+I
+30
+I
+_____ J
+----- ----
+
+
+
+=== PDF PAGE 34 ===
+----- -----
+-~
+Circumferential rib treads: Tire designers have known for many
+years that cutting grooved patterns into tire treads can substantially
+increase the braking coefficients of tires on wet surfaces. This effect
+is shown in figure 48, where ~av values obtained for the smooth-tread
+tires 81 and 82 are compared with values obtained for the identical
+tires after circumferenti al grooves were cut into the treads. Also shown
+in figure 48 are the comparisons between ~av values obtained for the
+dimple-tread tire D2 and values obtained for the similar dimple-tread
+tires D6Ml and DBMI which were modified before the test by cutting five
+and two circumferential grooves, respectively, into the tread. In every
+case shown in figure 48, cutting circumferential grooves into the smooth
+and dimple tire treads resulted in large increases in braking friction,
+especially at the higher test velocities. The curves in this figure also
+indicate that increasing the number of grooves cut into a tread increases
+the braking friction for the tires shown. In fact, tire Rl (see
+figs. 4(s) and 46(w)), which has nine circumferential grooves, developed
+the highest values of at most forward speeds of all the tires
+~av
+investigated. It should be noted, however, that other design considera
+tions, such as tread wear, tread integrity, and reinforcing of the tread
+for high-speed operation, act to limit the number of grooves that can be
+incorporated in a tread. As an example, this same tire Rl which produces
+such good braking friction on wet runways is not qualified for use on
+high-speed aircraft because of the excessive tread wear and tread chunking
+that occurs for this tire during high-speed operation.
+The test data also indicate that the width of the circumferential
+groove cut into a tire tread is of utmost importance with regard to
+developing high braking coefficients on wet runways. For example,
+increasing the width of the single groove from 1/2 inch for tire 81Ml
+(fig. 4(j)) to 3/4 inch for tire 81M2 (fig. 4(k) ) tended to decrease
+~av' as is shown in f igure 46(k). Removing the zigzag rib between the
+grooves of tire DBMl (fig. 4(g)), thus increasing greatly the width of
+the groove for tire DBM2 (fig. 4(h)), resulted in lower ~av values
+for tire DBM2 over the forward-velocity range shown in figure 46(h).
+On the other hand, the addition of a narrow groove to tire 82Ml
+(fig. 4(m)) resulted in higher values of ~av for tire 82M2 (fig. 4(n))
+than for tire 82Ml, as is shown in figure 48(b}.
+As previously mentioned, close scrutiny of the wet concrete runway
+surface after braking runs in which circumferential-groove-tread tires
+were used disclosed that these tire treads deposited rubber on the con
+crete surface during braking cycles at the higher forward velocities,
+whereas smooth- and dimple- tread tires did not. The implication is that
+at least a portion of the footprint area of these tires must have been
+in intimate contact with the runway surface during the braking process
+on water-covered runways. In some instances, deposited rubber was found
+31
+
+
+
+=== PDF PAGE 35 ===
+on the runway for the circumferential-groove-tread tires where the water
+depth on the runway was as much as 1/2 inch.
+Other treads: In addition to the tire treads already discussed,
+studies were made of tire treads having lateral grooves (fig. 4(f)),
+large diamond patterns (fig. 4(p)), and small diamond patterns (fig. 4(q)).
+In figure 49, faired ~av data obtained for these treads are compared
+with faired data obtained for the circumferential-groove-tread
+~av
+tires Rl and 82M2. It should be mentioned that all the tires in fig-
+ure 49 had approximately the same value of An/Ag (see table I) and
+therefore exerted approximately equal pressures on the runway surface.
+The curves for the two diamond- tread tires shown in this figure indi-
+cate that the small-diamond tread (more grooves ) developed larger ~av
+values than did the large- diamond tread. This result is in agreement
+with the results shown for the circumferential groove tires in that
+increasing the number of grooves increases the value of The curves
+~av'
+of figure 49 also indicate that the lateral-groove and diamond treads
+are not as efficient as the circumferential-groove treads in increasing
+the braking effectiveness of tires rolling at zero yaw angle on a wet
+concrete runway.
+TIRE TREAD WEAR
+Tire tread wear produces a marked degradation in the braking effec
+tiveness of grooved tires on contaminated runway surfaces, a fact clearly
+illustrated by figure 48 if it is assumed that the smooth tires 81
+and 82 before modification represent tires with the tread worn off com
+pletely. This assumption is substantiated by the data in figure 50
+(taken from ref. 2), which show that on wet concrete, when tire R2 was
+80 to 90 percent worn it developed values of ~max only about half as
+good as those it developed when 0 to 50 percent worn. As tire wear
+progresses past the point where the tread is worn off completely, the
+tire footprint will undergo little change until the tire carcass cords
+are exposed, when its appearance is radically altered. For example,
+compare the unworn dimple-tread tires D2 and D3 shown in figures 4(a)
+and 4(b) with the buffed dimple tire D5Ml, figure 4(d). Tire D5Ml was
+buffed down mechanically until the tread was completely removed and the
+tire carcass cords exposed. The curves shown in figures 45, 46(b ),
+46(c), and 46(e) indicate that at the higher forward velocities on a
+water-covered runway, the tire with the exposed carcass cords (D5Ml)
+develops slightly higher values than do the less-worn tires. Thus
+~av
+it is apparent that as a grooved-tread tire becomes progressively worn,
+braking effectiveness on wet runways will suffer greatly as the tire
+approaches the smooth-tread condition, recovering only a small part of
+its original effectiveness after the carcass cords are exposed.
+32
+
+
+
+=== PDF PAGE 36 ===
+SUMMARY OF RESULTS
+An investigation was made with 32XB.B type VII aircraft tires of
+different tread designs mounted on a single wheel and on tandem wheels
+to examine the effects of dry and contaminated runway surfaces on the
+unbraked and braked rolling characteristics of the tires. The principal
+results found for the range of conditions investigated were:
+1. The unbraked rolling resistance of an aircraft tire increases
+with increasing forward velocity on dry and contaminated runway surfaces.
+For contaminated surfaces, the rolling resistance increases parabolically
+with increasing forward velocity and approximately linearly with depth
+and densi ty of the contaminating fluid.
+2. The center of pressure of the vertical load on the tire moves
+progressively forward of the axl e center line (in the direction of motion)
+as the forward velocity is increased during unbraked rolling on both
+dry and contaminated runway surfaces.
+3. Automatic braking devices that use an inertia flywheel for ref
+erence angular velocity tend to become deficient in operation at high
+forward velocities on runways contaminated with slush and water because
+of the longer time required for wheel spin-up and consequent greater
+reference- flywheel spin- down. Chiefly responsible for this effect are
+low tire- ground friction coefficients, forward movements of the vertical
+load center of pressure of the t ire, and unloaded-wheel brake drag that
+develop under certain contaminated- runway conditions and combine to pro
+duce extremely low wheel spin- up accelerations .
+4. Peak tire-ground friction coefficients developed during braking
+on contaminated runway surfaces tend to decrease rapidly with increasing
+forward vel ocity. In contrast, peak friction coefficients obtained on
+dry runway surfaces appear to be relatively insensitive to changes in
+forward velocity.
+5. The magnitude of tire-ground friction coeffi cients developed on
+contaminated runway surfaces is extremely sensitive to tire tread design;
+of the various tread patterns tested, the circumferential-groove treads
+exhibited the least degradation of fri ction coefficient, and smooth and
+dimple treads the greatest degradation, for the
+contaminated- runw~"
+conditions investigated.
+33
+l_ _____ _
+---- - - - ---'
+
+
+
+=== PDF PAGE 37 ===
+6. The magnitude of tire-ground friction coefficients developed
+by tire treads with poor skid resistance was increased on contaminated
+runway surfaces by mounting tires having these treads on the rear wheel
+of a tandem-wheel landing gear.
+Langley Research Center,
+National Aeronautics and Space Administration,
+Langley Station, Hampton, Va.) May l6) 1962.
+------ - -------
+
+
+
+=== PDF PAGE 38 ===
+.
+-------------------------
+I
+APPENDIX
+For those who may desire more detailed information} figures 51
+to 79 contain plots of instantaneous tire-ground friction coefficient
+as a function of slip ratio for all tires and tire tread designs used
+in this investigation. All test runs utilized single-wheel braking
+only} with the vertical load Fz)g on the tire approximately equal to
+10)000 pounds. As explained in the body of this report} the test runs
+in which the automatic braking device was used consisted of from 3
+to 22 braking cycles) depending on forward velocity. In those instances
+where automatic braking was not used) brakes were applied by a knife
+edge-activated solenoid valve) and only one braking cycle per test run
+was obtained. The brake hydraulic system was modified for some of the
+test runs and incorporated some residual back pressure Ps 1 into the
+}
+system. These runs are so indicated} all other runs having zero back
+pressure.
+All test runs in figures 51 to 79 were intended to investigate
+braking effectiveness on water-covered concrete surfaces only. In some
+instances) however) braking action was initiated before the wet test
+section was reached) with the result that in some runs part or all of
+a particular braking cycle occurred on dry concrete. Braking cycles
+that occurred entirely on dry surfaces are indicated in the pertinent
+figures by the words "Dry runway." In those cases where braking started
+on dry concrete and ended on wet concrete the transition point is indi
+cated by a vertical line marked "A." This should be interpreted to mean
+that spin-down values to the left of the line occurred on dry concrete)
+while spin-down values to the right of the line) and all spin-up values}
+were on wet concrete. The depth of the water on the surface varied from
+damp (no puddles) d l ~ 0) to wet (high spots showing) d l = 0 to 0.3 inch)
+to flooded (runway completely covered) dl = 0.2 to 0.5 inch)} and these
+depth variations are indicated in each figure.
+Figures 51 to 79 are arranged in the same manner as table I} that
+is) data for dimple treads and modified dimple treads are presented
+first) then data for smooth and modified smooth treads) and finally
+data for grooved or rib treads. The runs for each tire are arranged in
+order of increasing forward velocity) except in figure 79. The decrease
+in forward velocity from cycle to cycle -in a particular run is due to
+wind and rolling resistance that acts to decelerate the main carriage
+upon termination of the catapult stroke.
+In figure 79} the runs are arranged chronologically rather than
+in order of increasing velocity. Braking tests on tire R3 started with
+the new tire) as did the braking tests on each of the other tires. At
+35
+
+
+
+=== PDF PAGE 39 ===
+the conclusion of run 3, however, the tire was considerably worn by
+heavy braking action on dry concrete (see run 3, fig. 79). Two more
+runs were made on this tire to demonstrate the effect of excessive tread
+wear, and upon conclusion of the last run the tire was judged to be
+approximately 90 percent worn.
+36
+
+
+
+=== PDF PAGE 40 ===
+REFERENCES
+1. Horne, Walter B., Joyner, Upshur T., and Leland, Trafford J. W.:
+Studi es of the Retardation Force Developed on an Aircraft Tire
+Rolling in Slush or Water. NASA TN D-552, 1960.
+2. Horne, Walter B., and Joyner, Upshur T.: Some Effects of Runway
+Slush and Water on the Operation of Airplanes, With Particular
+Reference to J et Transports. Preprint No. 275A, Soc. Automotive
+Eng., J an. 1961.
+3. Trant, J ames P., Jr.: NACA Research on Friction Measurements. Proc.
+First Int. Skid Prevention Conf ., Pt. I, Virgi nia Council of High
+way Invest. and Res. (Charlottesville ), Aug. 1959, pp. 297- 308.
+4. Sawyer, Richard H., and Kolnick, Joseph J.: Tire- to-Surface Friction
+Coefficient Measurements With a C-123B Airplane on Various Runway
+Surfaces . NASA TR R-20, 1959.
+5. Harrin, Eziaslav N.: Low Tire Friction and Cornering Forces on a
+Wet Surface . NACA TN 4406, 1958.
+6. Harrin, Eziaslav N.: Investigation of Tandem-Wheel and Air-Jet
+Arrangements for Improving Braking Friction on Wet Surfaces. NASA
+TN n-405, 1960.
+7. Sawyer, Richard H., Batterson, Sidney A., and Harrin, Eziaslav N. :
+Tire-to-Surface Friction Especially Under Wet Conditions. NASA
+MEMO. 2- 23- 59L, 1959.
+8 . Anon.: Flight Tests t o Determine the Coefficients of Friction
+Between an Aircraft Tyre and Various Wet Runway Surfaces. Part II -
+Trial s on a Brushed Concrete Runway at R.R.E. Pershore . S & T
+Memo 5/ 60, British Ministry of Aviation, Apr. 1960.
+9. Anon.: Flight Tests to Determine the Coefficients of Friction
+Between an Aircraft Tyre and Various Wet Runway Surfaces. Part I -
+Preliminary Instrumentation-Proving Trials at Wisley Airfield.
+S & T Memo 15/ 59, British Ministry of Aviation, Sept. 1959.
+10. Batterson, Sidney A. : Investigation of the Maximum Spin-Up Coef
+ficients of Friction Obtained During Tests of a Landing Gear
+Havi ng a Stati c-Load Rating of 20,000 Pounds. NASA MEMO 12-20-58L,
+1959·
+37
+
+
+
+=== PDF PAGE 41 ===
+11. Hadekel, R. : The Mechanical Characteristics of Pneumatic Tyres - A
+Digest of Present Knowledge. S & T Memo. No. 10/52, British
+Ministry of Supply, TPA 3/TIB, Nov. 1952.
+12. Smiley, Robert F., and Horne, Walter B.: Mechanical Properties of
+Pneumatic Tires With Special Reference to Modern Aircraft Tires.
+NASA TR R-64, 1960. (Supersedes NACA TN 4110.)
+13. Horne, Walter B. , Stephenson, Bertrand H., and Smiley, Robert F.:
+Low-Speed Yawed-Rolling and Some Other Elastic Characteristics of
+Two 56-Inch-Diameter, 24-Ply-Rating Aircraft Tires. NACA TN 3235,
+1954.
+14. Horne, Walter B., Smiley, Robert F., and Stephenson, Bertrand H.:
+Low-Speed Yawed-Rolling Characteristics and Other Elastic Properties
+of a Pair of 26-Inch-Diameter, 12-Ply- Rating, Type VII Aircraft
+Tires. NACA TN 3604, 1956.
+15. Horne, Walter B. , and Smiley, Robert F.: Low-Speed Yawed-Rolling
+Characteristics and Other Elastic Properties of a Pair of 40- Inch
+Diameter, 14-Ply-Rating, Type VII Aircraft Tires. NACA TN 4109,
+1958.
+
+
+
+=== PDF PAGE 42 ===
+----I
+TABLE I.- CHARACTERISTICS OF 32x8.8 TYPE VII TIRES OF THE INVESTIGATION
+Inflated dimensions (p = 260 lb/sq in. )
+Tire Description Diameter, Tread Area ratio, - An
+in. radius, in. Ag
+Dl Dimple, fabric-reinforced tread, fabric surface (a) (a) (a)
+D2 Dimple, fabric-reinforced tread, fabric surface 30.3 6.5 0.87
+D3 Dimple, fabric-reinforced tread, rubber surface 30·4 6.0 0.87
+D4 Dimple, fabric-reinforced t read (ice grip) 30·5 6.0 0.86
+D5Ml Dimple, fabric-reinforced tread modified by (a) (a) 1.00
+buffing t o remove the dimples
+D6Ml Dimple, fabric-reinforced tread modified by 30.2 6.2 0·59
+5 circumferent ial grooves
+D7Ml Dimple, fabric-reinforced tread modified by 30.6 6.0 0·75
+37 lateral grooves
+D8M! Dimple, fabric-reinforced tread modified by 30·9 (a) 0·75
+2 zigzag circumferential grooves
+D8M2 Tire D8M1 modified by removing rib between the (a) (a) 0.60
+2 zigzag grooves
+Sl Smooth, all-rubber tread 30.8 6.6 1.00
+SlMl Tire 81 modified by 1/2-inch-wide (a) 6.6 0·91
+circumferential groove
+S1M2 Tire Sl modified by 3/4-inch-wide (a) 6.6 0.86
+circumferential groove
+S1M3 Tire S1M2 modified by adding two 3/8-inch- (a) 6.6 0.78
+wide circumferential groov~s
+S2 Smooth, fabric-reinforced tread, rubber surface 30·9 (a) 1.00
+S2M! Tire S2 modified by 4 circumferential grooves 30·9 (a) 0·79
+S2M2 Tire S2M! modified by adding 1 narrow 31.1 (a) 0·78
+circumferential groove at center line
+S3 Smooth, fabric-reinforced tread, fabric surface 30·9 (a) 1.00
+84M! Smooth, fabric-reinforced t read, rubber surface, 30·9 (a) 0.81
+modified by a large diamond pattern
+S5M! Smooth, fabric-reinforced tread, rubber surface, 30·8 (a) 0.72
+modified by a small diamond pattern
+S6Ml Smooth, fabric-reinforced tread, rubber 30.9 (a) 0.62
+surface, modified by 7 circumferential
+grooves (sine-wave cross section)
+Rl Rib, all-rubber tread, 9 grooves 30.6 5.7 0.77
+R2 Rib, all-rubber tread, 9 grooves (a) (a) (a)
+R3 Rib, all-rubber tread, 9 grooves (a) (a) (a)
+R4 Rib, all-rubber tread, 11 grooves (a) (a) (a)
+R5 Rib, fabric-reinforced tread, 3 grooves 30.6 5.7 0·79
+"Not recorded.
+39
+
+
+
+=== PDF PAGE 43 ===
+g
+ITY ·-80-KNOTS WET CONCRETE RUNWAY 0 - 0.3 INCH WATER DE
+Figure 1.- Main carriage of Langl ey l anding- loads track. L-60- 2485.1
+~~-----.
+
+
+
+=== PDF PAGE 44 ===
+WHEEL ANGULAR WHEEL ANGULAR VELOCITY
+ACCELERATION AND AND ANGULAR DISPLACEMENT
+ANTISKID DEVICE
+TOOTHED TIMING BELT---./' VERTICAL-LOAD BEAM
+DRAG-LOAD BEAM
+~'f'"
+~.t~~.~,
+FORWARD "<:F"
+SIDE-LOAD
+VERTICAL-LOAD BEAM BEAM
+, ~WHEEL
+\ I
+DRAG-LOAD
+BEAM \ I
+/
+/
+VERTICAL AND DRAG
+I
+I
+ACCELEROMETERS
+-- I /
+/ /
+./
+BRAKE TORQUE LINKS
+v
++" Figure 2.- Test fixture .
+I-'
+
+
+
+=== PDF PAGE 45 ===
++""
+I\)
+Figure 3.- Tandem wheel setup at Langl ey landing-loads track. L-60-6948
+
+
+
+=== PDF PAGE 46 ===
+Before test After test
+. .
+..
+..
+•
+• • , • ~ -
+• • • • • .~:!c~:-
+t C ••••.••
+•
+~ ?
+M• •
+Tire footprint
+(a) Tire D2; dimple, fabric- reinforced tread, fabric surface. L-60-69S0
+Figure 4.- 32XS.S type VI I aircraft tires . Tire footprint conditions: Fz,g ~ 10, 000 pounds;
++= P = 260 lb/ sq in.
+\)I
+
+
+
+=== PDF PAGE 47 ===
++
++-
+Before test After test
+,----
+Tire footprint
+(b ) Tire D3; dimple, fabric- reinforced tread, rubber surface . L-62- 2062
+Figure 4. - Continued.
+
+
+
+=== PDF PAGE 48 ===
+----
+.---------.~----.. -------~----- -----~--
+Before test After test
+• -•.,,':: ! ..• ~' -•"
+••• • • • •• ••J
+. . 11-
+••••••••••
+,• .J t.-_
+D D ~
+Tire footprint
+(c) Tire D4; dimple, fabric-reinforced tread (ice grip) . L--62-2063
++ Figure 4.- Continued.
+\Jl
+------- - -. -- --------
+
+
+
+=== PDF PAGE 49 ===
++"
+0'\
+Before test After test
+No footprint available
+L-60- 3527
+(d) Tire D5Ml; dimple, fabric-reinforced tread modified by bl1ffing to remove the dimples.
+Figure 4.- Continued.
+;
+I
+[
+l_ ___ ___ ______ ---. __
+~~ ~ .~&--. ~_.
+__ ____ ----~- ~-- - - --------- --
+
+
+
+=== PDF PAGE 50 ===
+--
+----~~ ~~-- ~-.~- -~
+Before test After test
+........
+Tire footprint
+L-62-2064
+(e ) Tire D6Ml; dimple} fabric-reinforced tread modified by 5 circumferential grooves.
++=
+-..l Figure 4.- Continued.
+
+
+
+=== PDF PAGE 51 ===
++'
+(Xl
+Before test After test
+fftIIIIftlII
+Tire footprint
+L-62- 2065
+(f) Tire DTMl; di mple, fabri c-reinforced tread modified by 37 l ateral grooves .
+Figure 4.- Continued.
+
+
+
+=== PDF PAGE 52 ===
+1--
+-------..
+'-
+No photo
+available
+Before test After test
+1_ _- -
+Tire footprint
+L-62-2066
+(g) Tire DBMlj dimple) fabric-reinforced tread modified by 2 zigzag circumferential grooves.
+\E Figure 4. - Continued.
+
+
+
+=== PDF PAGE 53 ===
+'(g
+Before test After test
+........
+,
+Tire footprint
+L-62- 2067
+(h) Tire DBM2; tire DBMl modified by removing rib between the 2 zigzag grooves .
+Figure 4.- Continued.
+
+
+
+=== PDF PAGE 54 ===
+-----1
+No photo
+available
+After test
+Before test
+Tire footprint
+(i) Tire 81; smooth, all-rubber tread. L-6o-6979
+Figure 4.- Continued.
+\J1
+I-'
+
+
+
+=== PDF PAGE 55 ===
+\J1
+I\)
+Before test Before test
+I. ...n .. rnnnlI
+Tire footprint Tire footprint
+L-62- 2068
+(j) Tire S1Mlj t i re Sl modi f i ed by 1/2-inch (k ) Tire S1M2; t i re Sl modi fied by 3/ 4- inch
+wi de circumfer ent i al groove . wide ci rcumferent ial groove .
+Figure 4.- Cont i nued.
+--
+----- ---
+------~.~- --------~- ---~-.--- --.-~
+
+
+
+=== PDF PAGE 56 ===
+After test
+Before test
+rnnn'II
+Tire footprint
+L-62-2069
+(1 ) Tire 81M3; tire 81M2 modified by adding two 3/8-inch-wide circumferential grooves .
+Figure 4.- Continued.
+\Jl
+\,)J
+
+
+
+=== PDF PAGE 57 ===
+
+
+
+
+=== PDF PAGE 58 ===
+- ~ I
+I
+Before test After test
+Tire footprint
+(0) Tire 83; smooth, fabric-reinforced tread, fabric surface. rr-62-2070
+Figure 4.- Continued.
+\J1
+\J1
+
+
+
+=== PDF PAGE 59 ===
+- --- - - - -----
+\J1
+0\
+Before test After test
+rn. .....
+Tire footprint
+I
+L-62- 207l
+(p ) Tire S4Ml j smooth) fabric- reinforced tread) rubber surface) modified by a l arge diamond
+pattern.
+Figure 4.- Continued.
+L _ _
+---------
+----~~ --------------.- ---- ------------------~----.....-----
+
+
+
+=== PDF PAGE 60 ===
+--_.
+--~-I
+Before test After test
+rntmmII
+Tire footprint
+L-62-2072
+(q) Tire S5MI; smooth, fabric-reinforced tread, rubber surface, modified by a small diamond
+pattern.
+Figure 4.- Continued.
+\Jl
+~
+
+
+
+=== PDF PAGE 61 ===
+I
+\Jl
+co
+Before test After test
+••
+Tire footprint
+L-62-2073
+(r) Tire S6Mlj smooth, fabric-reinforced tread, rubber surface, modified by 7 circumferential
+grooves (sine-wave cross section).
+Figure 4.- Continued.
+-----
+""----"--- ------- -~----c:::_-::::-~- ~------. -~----- ----- --~-----------------~ ..-~---... --- -----
+
+
+
+=== PDF PAGE 62 ===
+-----~ - -~~- --.
+No photo available
+Before test After test
+I- •••
+Tire footprint
+(s) Tire Rl; rib, all-rubber tread, 9 grooves. L-60-6978
+Figure 4.- Continued.
+\J1
+\0
+
+
+
+=== PDF PAGE 63 ===
+0\
+o
+(t ) Tire R4; rib) all- rubber tread) 11 grooves (after test ). L-60-3426
+Figure 4.- Continued.
+L
+--------
+~~------ ------ ------~~- ~....--y----;.r---..---.,---.... ___ ~
+
+
+
+=== PDF PAGE 64 ===
+1---
+-----'-.---- ___~ ______ ~ _______ ___ ____. .... c~ ....... ~----~"""'-~~-......."'"-----..r"''""'-~-.---....---~
+--.--~~--:::::..~--~~--.--
+Before test After test
+IIHlIfiili
+Tire footprint
+(u) Tire R5; rib, fabric- reinforced tread, 3 grooves . L-62-2074
+Figure 4.- Concluded.
+0'
+I-'
+
+
+
+=== PDF PAGE 65 ===
+0\
+f\)
+10 I 11'";'" 2 I 3
+°
+I 11'°;"'12 I 13
+(a) Fabric-reinforced dimpl e tread (similar (b) Fabric-reinforced rib tread (similar
+to tires Dl) D2). to tire R5 ).
+,0 I ,1";' ',2 I ,3 10 I f'";·",2 I 1 3
+L-62-2075
+(c ) All-rubber rib tread (similar to (d) All-rubber rib t read (si milar to
+tires Rl) R2) R3). tire R4).
+Figure 5. - Cross sections obtained from 32XB.B type VII aircraft tires with fabric- reinforced
+tread and all-rubber tread.
+......
+~--~~-- --------------zr-><-------~~--~----- ~~---------------&-_-~ ~.:.r_..___ _____ ~~ ---n.~-~
+
+
+
+=== PDF PAGE 66 ===
+-----------_.,... .... '-_._-- <---- ---------"
+~
+I
+•I +
+--1--+
+,- - - +--
+~ 19" I
+~
+Fluid sur face
+25"
+~.. ~
+2"
+Concrete runway
+Figure 6.- Cross section of test runway surfaces .
+0\
+\.)I
+
+
+
+=== PDF PAGE 67 ===
+0\
++=-
+Concrete runway
+----------~~--Direction or carriage travel
+r
+T1re center line
+t
+I I I I I I I
+100 800 900 1,000 1,100 1,200 1,)00 I, 00
+Di8tance along track, rt
+Figure 7.- Schematic diagram showing location of test runways on Langley landing-loads track.
+L
+---J~'--___________ _
+"--'-~_r-O~~ --'-~' '~~--__- ---.f
+
+
+
+=== PDF PAGE 68 ===
+(a) Smooth asphalt runway (sand finish). . L-59-7643
+(b ) Rough asphalt runway (aggregate finish). L-59-7644
+Figure 8.- Asphalt runway surfaces used in investigation.
+----------- .~-
+
+
+
+=== PDF PAGE 69 ===
+(J\
+(J\
+L-62- 2076
+Figure 9.- Water- covered concrete runway i mmedi ately before wheel-braking run.
+dl = 0 to 0. 3 inch.
+~---------------
+
+
+
+=== PDF PAGE 70 ===
+_________. ..-_______ " _______________ ~ - .7>-_. _.~_ - --------l
+L-62-2077
+Figure 10.- Spreading detergent and organic foam on concrete runway just before start of a
+braked rolling run.
+0'\
+--J
+I
+
+
+
+=== PDF PAGE 71 ===
+i
+-------- Tire for F ~ 0; Fz,g 0
+x,g
+- - - - Tire for Fx,g = 0; Fz,g = 0
+;;Runwa
+y surface
+/~
+F /
+X,p, ,/
+/
+/'
+t
+Xc (positive forward
+of axle c'enter
+F z,g line)
+Figure 11.- Moments and torques acting on decelerating tire during braked
+rolling. (Wheel-bearing frictional torque is disregarded.)
+68
+-------- ---------- ---
+
+
+
+=== PDF PAGE 72 ===
+\
+r
+FREE FULL
+ROLL SKID
+l1av (51 = 0. 1 to 0.5)
+I
+COEFF I Cl ENT
+OF
+cn
+FR I ON,
+11
+o
+.2 .4 .6 .8 1.0
+SLI P RATIO, 51
+Figure 12.- Determination of ~av.
+69
+I
+~ -~ .... -
+
+
+
+=== PDF PAGE 73 ===
+Shape of pressure
+distribution
+(a) Standing tire under vertical load only.
+Runway sur face
+,
+(b ) Unbraked tire rolling at constant velocity on dry runway. O·
+TB = O.
+"A" Footprint region supported by runway
+(vertical load::: Fz,g - Fz,L)
+"8" Footprint region supported by fluid
+(vertical load ::: Fz,L)
+FX,g,f ~
+Fx g r~ ~ --~"""'=
+, , Fx,g,b
+(c ) Unbraked roll ing tire undergoing spin- down on flui d- covered runway.
+ex, > 0; TB = O.
+Figure 13. - Schematic representation of pressure distributions developed
+in footprint region of a loaded tire under various roll ing conditi ons .
+70
+
+
+
+=== PDF PAGE 74 ===
+,- -1
+.06
+C'@
+0
+.os
+0
+~ ~
+r... r...
+0
+.0
+I-<~ 0 0
+0
+0
++ Q > ) 0 OeY
+Q)
+@
+0
+I-< ~
+11 0
+.03
+( I Q - ) < ) 0 0
+0
+r... 0
+.02
+0 p = 115 lb/in2
+0 p = )50 Ib/in 2
+.01
+(a) Variation of rolling-resistance coefficient.
+o'''--__
+---l_ __- -'-___- -J.._ __- -I-___. J-___. ..J
+.8 o
+o
+O<I1J 0
+.6 o
+o
+o
+[ill
+o o
+.4 00[0
+.2
+(b) Variation of vertical-load center-of-pressure
+movement. (Posi tive value denotes movement
+in direct ion of motion.)
+20 80 100 120
+Forward velocity, V , knots
+H
+Figure 14.- Vari ation of rolling- resistance coeffi ci ent and vertical
+load center- of- pressure movement with forward vel ocity for an
+unbraked t i re (R2) rol ling on a dry concrete runway.
+71
+---.---------------~-~ --
+
+
+
+=== PDF PAGE 75 ===
+~ 6.70-15 automobile tire (unpublished data from friction-cart
+tests; see ref. 3 for description of cart):
+Calculations
+based on p = 18-40 Ib/in2; Fz, g = 1,875 Ib; smooth tread; dIzO.3 inch
+C L ::: 0.7 v
+12 inch diameter x 3 inch width tire ( ref.5)
+in eq. (5) p = 7.5-28.5 Ib/in2j Fz,g = 100 Ib; smooth tread; dl~0.05 inch
+o 32 x 8.8 type VII aircraft tire (rresent test) :
+r, = 115 Ib/ in2j Fz ,g = 9,400 Ibj rib tread; d1ZO.5-0.8 inch
+Calculations o 44 x 13 type VII aircraft tire (ref. 7) :
+based on = 100-150 Ib/in2; F = 20,000 Ib; rib treadj dl·e O.l inch
+C L ::: 0.7 o P z,g
+17 .00-20 ty,e III aircraft tire ( reL L ):
+in eq. (7)
+p = 65 Ib/in2j F z ,g = 10,000 Ibj rib treadj d l ""'0.4 inch
+120
+100
+Lio, of ." .,",ot~
+80
+1
+60
+(
+i
+L
+r
+40
+~
+!
+20
+o 20 40 60 80 100 120
+Experimental hydroplaning velocity, knots
+Figure 15.- Comparison of experimental hydroplaning velocities obtained
+from tests on wet runway surfaces and velocities calculated by usi ng
+CL = 0·7 in equations (5) and (7).
+72
+1_ __
+--------- ---- ._- - _._- - -- -----.--------------------------------~
+
+
+
+=== PDF PAGE 76 ===
+2.4 x 102
+---------~7-----uWet, d1>0.4 inch
+f '-... "-
+Wet,
+1. Dry d1 = 0.1 _ 0.4 ,"ch
+Runway Predicted ..................
+hydroplanl.ng
+velocity
+(eq. (7»
+2.4 x 103 1.2 x 1aL
+F 'J-
+./----- Z - l - g - ~ - - _ __ ------, .......
+-.-
+1. ,/ ,/ ,/ .8 '- " 0 ~ < ~
+\ I / F x ,g ~ ____ --___ .4 ~ . t : l .. " ' "
+I ~
+\
+)]
+) .~ __~ ~--~-----L-----k----~----~----L---~~--~0
+L x 104
+Spin-up moment Fx ,g (ro - 6)
+1
+Spin-down moment F z,g Xc
+I
+~
+~
+~ Spin-up torque impulse
+) Wll2:] Spin-down torque impulse
+1
+-~~---~----*------~---~----~------~----~----~----~
+Time, sec
+Figure 16.- Unbraked rolling run during which t i re hydroplanes and
+spins down t o stop on water- covered concrete runway. Tire D5Ml;
+p = 90 lb/sq in.
+73
+
+
+
+=== PDF PAGE 77 ===
+160
+80
+OL-____ ~ _____ L_ ___~ __~ ~L_ ____L __ ___J __ ___~ ____~ ____~
+2 X 103
+s::~
+..o...
+...,'"
+' q Q" j ) e" Qn )
+rQl) 'e"n
+" s::
+"q j ..q..j.
+'te:l
+~
+rl
+6'n ,,~ -2
+..".;
+Inter- Torque Change in
+10 x 10 4 val impulse, momentum,
+k----"A"~
+lt2 T dt, I("'l - "'2)'
+t l
+8 Ib-in-sec Ib-in-sec
+"A" 3,740 4,0 0
+.~ § Spin-down impulse "Bn 4,190 4,130
+..D I ,
+[jj
+rl Spin-up impulse ~IIBII~
+"
+'C" "
+0
++'
+0 '" 4 (ro - 15) - FZ,gXc\/
++s::'
+Q I: ) /
+~
+2
+0
++'~
+s::
+..Q...) 1.0 10 x 10 2
+.... "..... Q)~
+.... ~
+0 Q ) e en n ", ! i
+.. "s 0. : . : . :j, .S 5 ' P Q " ) o ' ~ "
+Q)
++' "" £
+.."... L ' q " j
+'" 0:1
+r..
+0 .1 .2 .3 .4 .5 .6 .7 .8 .9
+Time, sec
+Figure 17.- Braking cycle for tire R2 on wet concrete. Fz,g ~ 10,000
+pounds; p ~ 260 l b/sq i n. ; dl 0. 05 to 0.3 inch; VH ~ 96 to
+93.5 knots; antiski d uni t not used. Brake pressure was sequenced
+by energizing sol enoid valves in brake circuit through knife edges
+positioned on track runway.
+
+
+
+=== PDF PAGE 78 ===
+____ ---....• . .---.. _...--..-. _____~ _____ ,_("'. ...< a_._ • _________~ ~~--~--~"v'----. ~----.-- ' 1, ____ _ _ ___
+-~-l
+.~., 160
+"
+..o o .. I .0 / . ) .I 0 I, ) '" _____ _
+'Ql ~.. .Ii LV~
+@ ~ : c ;j t?' 80~- -
+r'"l .....
+.w
+8" ]
+C"
+..o...
+.., N .. a
+...
+" 0
+r.l. ...I./..).
+" o o " ." ICI . ) o
+.".t.l.
+"... ....
+r'"l
+." C .," " _2~1 __ - +~ ______ L-____~ ____- L_ ___~ ______L -____~ ____- L_ ___~ ______L -____~ ____- L_ ___ ~
+120 x 103
+.S
+P.I , ~ Spin-down impulse
+rl
+~ Spin-up impulse
+80
+'" .. .___TB
+0"
+.",
+0
+. " 0, - F z,g " c
+..
+C
+E
+0
+:E
+~
+~---=~
+..; 10 x 10 2
+"
+.."...
+...t...J.. ~
+...
+"0 0 C :j. i'" 5 ' P ~ . .. " . . o N " ! P r i l.
+r .. . . .0 0. . , t . . . . , " "' , .\ --, ' - : " " '! ~
+2.0 2.L 2.8 3.2 3.6 5.2
+Time, sec
+Figure 18.- Braking of tire D1 on wet concrete runway with antiskid unit operating.
+~ Fz,g ~ 10,000 pounds; p = 260 1b/sq in.; PB , 1 = 50 1b/ sq in.
+\J1
+
+
+
+=== PDF PAGE 79 ===
+~
+(a) V H 30 knots. ,Arrows indicate positive or increasing direction of traces .
+Cycle 2 0.1
+I
+_ I
+=
+(b) V 89 knots .
+H
+Figure 19. - Typical oscillograph tracings obtained during low- speed and high-speed braking on
+a wet concrete runway with the fabric- reinforced rib-tread t i re 82M2. Fz, g ~ 10,000 poundsj
+p = 260 Ib/ sq in. ; dl = 0 to 0. 3 inch.
+'~----~~~_J
+
+
+
+=== PDF PAGE 80 ===
+,---- -5 __- _________ - - ---
+--~.----~-.-.-------~------~~----~ '-----~--
+.------~.~--- -~I
+I
+- -
+V\ 1..--1.~ feet ~
+l!\ l!\ VwlVvnVv Ivr v
+~ ~t
+,w
+'---/ ~ ~ ~ ~~ ~hr
+t
+J I al >~ v~ /'~ Kft ..
+-..-------
+1-
+, pBI - rr- ~~ W~
+TBI
+i--{\
+V\ V\-ty 'V
+Y ~ rv~A .~~f ~
+~
+--- .d~
+1--- ---~ ~ J FzJ \J ~ v ~ / ""
+---- .....
+---- >
+Cycl e 7 1 ,1 selond~
+---- Cycle 8
+(a) VH = 20 knots,
+Arrows indicate positive or increosing direction of traces.
+l---- H
+.i xl L f- ~ ____ 10 feet r~
+trv
+~ ~ r--L "" ~ ~ ~ ~ ~ I;~ "J>. V\(" ~ ~ ~ ~ ~
+...---'
+.----
+i~lL / ¥ ~ L a A ..A/V'jV- ~"" 'II' -v "" J\/\ v· "V' """"" I '- ~ /'
+-
+PB- c=
+i l' v
+~ '- TBI ~ ~
+Fx
+11
+~ ~ ~ :vwv "'liN! ~ ~ ~ ~ ~ r.I1/"'V ,.,r'" """".,.,p-, --vJ.l"'f" ~ ~ ~ ~ ~
+-
+f ~/"'" h "'-' ~ -J'- ~ ~
+F~J
+Cycle I Icycle 12 ,,1 seiond.,., ~ Cycle 3
+I I
+(b) V B7 knots
+H
+Figure 20.- Typical oscillograph tracings obtained during low- speed and· high-speed braking
+on a wet concret e runway wit h t he all- rubber smooth-tread tire 81. F g 10,000 pounds;
+z, ~
+--.J p = 260 lb/sq in.; d = 0 to 0. 3 inch.
+--.J l
+J
+
+
+
+=== PDF PAGE 81 ===
+1--
+-.J
+co
+V 10 feet....,., ~t-
+" 1 > V [V\I" ~V' .A7 A 1 :; V V'~ -./\~ ~ ~ ~ ~ ~ """' ..-,. """" r--. r-..
+~
+[" wI I--
+~
+~+ ~ ~ ~ r-" IV' -v- .."....,..,
+L PSI
+11:
+~ TIIAf\w~rvl'J~~~~ ~
+~ r->r
+~- r-Fx FI - --.r"-
+1
+If'~~~~
+cyJle I Z '{YCle 12 0jl sect Cyc I le 3
+~
+(0) Tire DI ·• VH" 90 knots; p= 260 Ib
+-
+/.ln2 ; broke b
+-
+ock pressure = 50 Ib/m . Arrows indicate positive or increasing direction of traces .
+- f-
+1 J: f-- f-- K 10 teet;-.J
+~ ~ ~ J\. 6 ~ ,P-V) ~\ ~ I - / - "'JV ~ ~ ~ vvv" ~ rvv"" ~ 'y.I'" ~ ~ "-'v " ... ' .... 1"'. ...... 'V-"'" rr '
+IL w --...,
+.c..
+t
+'v' "i
+I PS
+t + -....- ---- I.eTs ~ - r------..
+~ ~. .J"'V'- f"/ "'" .. ~ ~ ~ ~ ~ L Fx --"" ~ ~ ~ ~ ~/"" ~ ~ -,....,.,.. ~ ",-_v ~ J
+-~ J r- :
+Z Cycle 3
+Cycle I Cycle 2 0.1 second_
+I I I I I --- I
+2
+(b) Tire S I; V "89 knots ; P = 120 I b/ln .
+H
+Figur e 2l . - Typical oscillograph traci ngs obtai ned duri ng hi gh- speed braki ng on a wet concrete
+runway with the fabric-reinf orced dimple-t read t i re Dl and the all- rubber smooth- t read
+t ire 81. Fz
+~
+10,000 pounds; d
+l
+= 0 t o 0. 3 inch.
+- -
+'-----~------ -~1I~~-----": ..----- -----~----
+
+
+
+=== PDF PAGE 82 ===
+\
+I
+L-62- 2078
+Figure 22.- Tire appearance after skidding approximately 60 feet on a dry
+1
+concrete runway.
+>
+1
+~
+J
+1
+I
+79
+
+
+
+=== PDF PAGE 83 ===
+16 X103
+·
+12
+v.o
+~~
+Or y- + ---.+--d 1 : S 2 lu . s 0 h in. Ro ~ llout - i-----d I W 1 a . t 5 er j n. -----+ I -Ro llout
+p : 1.695 slugs/ft3 p : 1.938 slugs/ft3
+· Water
+v
+dl : 0.5 in.
+o
+16
+.
+180 ..
+~~
+-
+110
+2>~
+.0->
+160 D~
+_ 0
+150 0
+-•
+>
+~0
+Difference due 10
+c lire --.
+C
+·E .... ~" ............ . --
+~·
+0-
+------ Orop carriage
+- -Computed t ire deflection (from vertical load)
+,
+·
+0,- v
+'0
+~
+~ ~
+u E
+.2 .< .6 .8 1.0 1.2 1.~ 3.~ 3.6 3.8 ~.O
+Time, sec
+Figure 23.- Typical time history of wheel loads, velocities, and dis
+placement during unbraked rolling through sl ush and water troughs
+on a concrete runway. p = 115 1b/ sq in. I
+I
+80
+
+
+
+=== PDF PAGE 84 ===
+------l
+I
+I
+I p, lb/in2
+20 x 102 1 3S 1S 0 } Predic tion of eq. (8)
+I
+" o 11S}
+~
+... , . .. . o 3S0 Experimental cia ta
+e
+~ .o-.
+- . / //} 0.1S in:
+..~ u .. .. - . o 0 ,,/
+"
+~ .:1 ...~ / / / ~ - } O.S in. o // / _"" ,,""" / .... , ..... 1 J. O·S in.
+~
+~
+01 ~u
+(a) Water depth d o to 0. 5 inch. (b ) Water depth dl 0. 5 to 0.75 inch.
+l
+20 x 102
+I
+,/ } 1.00 in.
+~ IS! /
+.a /
+/
+1:.0 /
+/.
+;~ /
+.."
+~
+..
+~"- 1'"-
+" /
+/
+" ~ / ~ 0 "f'" / 0 " / / f / J// 0
+~ j ~~/
+'---~~~~o ---i~~--~gO~--~lM~--~l12 0 A -~ I.'n bi All 1i~1 I~O
+Forward velocity, V , knots
+H
+(c ) Water depth d 0.75 to 1.00 inch. (d) Water depth d = 1.00 to 1.75 inches.
+l l
+Figure 24. - Variation of fluid- displacement drag force with forward velocity and water depth on
+a concrete runway. Tire R2.
+CD
+I-'
+J
+
+
+
+=== PDF PAGE 85 ===
+co
+f\)
+3
+2.0 10
+r X
+1.5
+SLUSH
+SINGLE OR FORWARD TANDEM WHEEL
+RETARDATION
+LB
+FORC~
+1.0
+REAR TANDEM WHEEL
+.5
+190 LB '\
+o
+20 40 60 80 100
+FORWARD SPEED, KNOTS
+Figure 25.- Forces devel oped on unbraked tandem wheel s i n sl ush . Slush depth, 1. 75 inches;
+sl ush density, 1.82 sl ugs/ cu ft .
+"-----~~--~~-.<-.--.~~_~-----~- _-=S'--__ ..... ~ ____ ~-=-. ____________ --
+
+
+
+=== PDF PAGE 86 ===
+o p = 115 lb/in2
+1:: o p = 350 lb/in2
+~
+v
+~
+" .
+~
+~.!i o 00
+. L .
+8v
+.I.
+.)( •0 o
+o o
+qgCO°O
+OOO'-
+,
+{
+,
+]
+0 0
+B
+0
+.v, o
+c v o lEI oIEJ
+u
+(a ) Water depth d 0.25 to 0. 50 inch. (b ) Water depth d 0.5 to 0.75 inch.
+l l
+.,
+D
+c
+~
+~o
+~
+B . o o 8
+~ ~ . !i o c 0 0 D 0
+v • D
+!t~ OJ] q§l
+..I. . 000 CD 0
+Y
+v~ cP cP DO
+1:: 0
+v
+u
+:0 o 100 120 o 20 40 60 100 120
+FOMolard velocity, V , knots
+H
+(c) Water depth d 0.75 to 1.00 inch. Cd) Water depth d = 1.00 to 1.75 inches.
+l 1
+Figure 26.- Variation of vertical-load center-of-pressure movement Xc with forward velocity
+and water depth for tire R2.
+())
+\.).j
+
+
+
+=== PDF PAGE 87 ===
+co
+~ .>.,;
+15
+-rl
+0 0
+0 Q)
+~ ~ 1001
+.
+>
+'"..
+'' U ""l
+.....
+..... "0
+:0 '" 50
+bO ...
+'"
+.. ' . " .. 3"
+Q) 0'
+Q)
+~
+12 x 103 6 x 103
+_LFZ,g
+oJ y--- ~
+0.. . 8 -------
+..0.. ...0... ""
+..... "'4 r..x
+'"
+. -. 0. r. , .l r..t o " Q
+~
+)
+pQo) 0, ~
+bO
+'"
+~ 2~
+..," 2 r
+Forward of wheel-axle center line
+'"
+Q) (in direction of motion)
+E
+>Q) 1
+0
+E
+Q...)
+0
+:0
+Ul •
+UQ..).l ..'."..
+0. - -1
+..I. . x0
+0
+.
+. .I.
+,
+.
+Q) -2
+'"
+Q)
+<.)
+-3
+-4
+0 .1 .2 .3 .4 .5 1.0 T.l 1.2 -1.3 T.lJ f .51.6
+Time, sec
+Figure 27.- Variation of wheel angular velocity, verti cal force, drag force, and vertical-load
+center-of -pressure movement duri ng a braking cycl e with tire R2 on a dry concrete runway.
+VH "'=' 79 knots.
+----- --------
+--_____________0 --~------- ~----
+
+
+
+=== PDF PAGE 88 ===
+<.> 150
+ell
+en
+.......
+en -
+' C " - - - - - - -- ---- -- -
+'M
+'tl
+' 1 " -0 ........ .....---
+3~ '-... .......
+"-
+.;.:,: '--- /' /'
+'M
+<.>
+0
+M
+ell
+~
+1-0
+'"
+M
+~ rt>::D /
+'" \
+M
+e el l l l '\.. '/
+:i 0
+=
+v 18 knots
+H
+=
+4 x 103 - - - - V H 89 knots
+;::
+..
+..
+t>D
+.>.<
+~
+ell 2
+<.>
+1-0
+..0..
+--------------
+---- --
+' b " O /' ~- ...- -- --
+S --- /' ...--
+----- -~
+..,~
+C
+ell
+~
+ell
+~
+0
+~ /" '-- -
+h ell . "- --- ..--"
+;r:nl "
+rn r::
+ell 'M
+H
+P I o <~.>
+..,.. ><
+0
+.1.-,0
+ell
+r:: -l.a I I I I I I i
+< e .. l ) l .2 .3 .t .5 .6 .7 .8 .9
+Time from start of braking cycle, sec
+Figure 28.- Variation of wheel angular velocity, drag force, and vertical
+load center- of- pressure movement during braking cycles with tire 81 on
+a wet concrete runway. Fz,g ~ 10,000 pounds; p = 260 lb/sq in;
+d = 0 to 0.3 inch.
+1
+
+
+
+=== PDF PAGE 89 ===
+Tire Rl Tire S2M2
+160
+---------------~
+7 -- -...... \ ,/
+\
+VH~ 90 knots \ V , knots
+H89 ~
+I I
+\
+64 - - -- - --- _~ I I
+V ::::: 40 knots ~ \
+H 32 ~ I- I I I
+\1)( __ _ __ _ __ \I v\ \I I
+I I
+\ '"'I \ \I fI, '
+\
+I I \ I 1/
+\ I /"P
+(a) Tires with good skid resistance.
+__ Dry concrete
+- - - - Wet concrete
+Tire S3
+I
+f
+I
+I
+I
+I ! .
+1.0 1.0
+T:iJre, sec
+(b) Tires with poor skid resistance .
+Figure 29.- Wheel spin- down and spin- up characteristics for tread
+designs with good and poor skid resistance on dry and wet (with
+water) concrete runways. Data obtained during braking tests on
+single wheel s . Fz)g ~ 10)000 pounds; P = 260 lb/sq in. ;
+d = 0 to 0. 3 inch on wet runways .
+l
+86
+L
+------ ---- - - -- ---- ------------
+
+
+
+=== PDF PAGE 90 ===
+160
+p = 260 lb/in2; V = 89-79 knots
+H
+120LC---- P = 120 lb/in2; V H = 79-73 knots
+------------
+-, ,r ---.._ r--- ---- ... -
+I I , I \ I ,
+8 '~I \ \J I \ \ 'I I \ \ ,
+\ ,-' \;
+~ 4
+(J)
+"-
+(J)
+C ! , , ! ! ! , --.J
+tIS (a) Tire S2M2; smooth fabric-reinforced tread, rubber surface, modif ied by cutting 5 circumferential
+grooves into tire S2.
+-u
+tIS 160
+L.. p = 260 lb/in2; V 89-82 knots
+p = 120 lb/in2; V H 93-84 knots
+3 120 H
+"
+>.
++'
+80
+o
+o
+......
+\
+> Q) 40'
+L..
+..t.I.S.. ,
+:J (b) Tire ! Sl; smooth all-, rubber tread. ' -.J
+Cl
+C
+tIS
+......
+Q) p = 260 lb/in2; V H = 89-82 knots
+: . ; J Q = : ) : P = 120 lb/in2; V H 92-84 knots
+, , , / ------ r--- -
+/
+/
+----------
+- - - -...
+,
+\
+\
+'-- - -- - --....
+0';' ).. /, '" '" ',. '" "',, "',, ,,',. "',, "',, ,,'x ~', ,, ' ~ ,, 'n 'n
+Time, sec
+(c) Tire S2; smooth fabric-reinforced tread, rubber surface.
+Figure 30.- Effect of tire pressure on the spin- down and spin-up characteristics of tires with
+smooth and grooved treads. Data were obtained during braking tests of a single wheel on a
+co wet concrete runway. Fz,g ~ 10,000 pounds; d l = 0 to 0.3 inch.
+--.J
+I
+
+
+
+=== PDF PAGE 91 ===
+,--
+OJ
+OJ
+Single or front tandem wheel; V = 89-79 knots
+H
+Rear tandem wheel (tested with tire S2M2 on front tandem wheel); V = 99-92 knots
+H
+16 _ ____ _ Rear tandem wheel (tested with tire S2 on front tandem wheel); V H = 104-92 knots
+u =_7=-:c=-_-=-=-_-_==~ -::,--:-- -:.:---:--..--.. =---_
+" U Q ) l 12 ' -- ~ r---.. 0 ...-- ' /f_~_ --- --=-: ~ .::-,-y - .--/. ~ "'='"""~ y -=-::., / /i" =-=--:' V' L J" ~ '.) - ",- - ----....\/ I
+\ /I
+Ul
+' C " 8 \ \ .1 , '
+\ '
+"t:J "
+'"
+L. 40,
+3
+01 "
+.>... (a) Tire S2M2, Single or front tandem wheel; V = 99-91 knots
+H
+.. u o... 16 Rear tandem wheel (tested with tire S2M2 on front tandem wheel); V H = 97-91 knots
+Q)
+>
+L. 12 ~~~\ ./
+..'."..
+0 ::J > , , '---./
+C 1
+'" ,, ,I1
+.....,.
+V
+4
+'"
+.r;
+~
+0' , i I; A ,'n ,', 'a ,'1; , A ?'n ,'? ,'a ,'~ ,'A "l 'n "l'? "l'a ::l'h ::l'A a'n a':;> a'a '(6
+Time, sec
+(b) Tire D1.
+Figure 31.- Effect of tire location on wheel spin-up characteristics in a tandem wheel arrange
+ment. Data were obtained during braking tests on a wet concrete runway. Vertical load per
+tire ~ 10,000 pounds; P = 260 Ib/sq in.; dl = 0 to 0.3 inch.
+-----
+
+
+
+=== PDF PAGE 92 ===
+--- - - -- ,._-
+i -~ .- -- ---
+\
+I
+!
+\
+.8
+0
+~max
+.. : . 1 , . ' .6 0 ~skid OO--CD
+0--
+~ 0
+.<..l.).
+.<..>..
+'H
+'H
+<l) .4
+0
+<>
+~
+...0...., .
+0
+-0--Do--o_
+.<..>..
+.2
+r~.. -0-
+(a) Tire D5Ml (dimple, fabric-reinforced tread; dimples buffed off).
+Fz,g ~ 10,000 pounds; p = 260 lb/sq in .
+• 6
+:1. .6
+...,' -o-6D--V-
+~
+..<..l).
+.<..>.. 0
+'H
+'H .4
+<l)
+0
+<>
+0
+~
+....0..., .
+6f
+0
+u -
+..<.>.. .2
+r~..
+O~--~1~O--~2~O~-~3~O-----'4~O~--~5~O~----6~O~----~7------~80~---~9O~--~l~~
+Forward velocity, V , knots
+H
+(b) Tire R4 (all-rubber rib tread; 11 circumferential grooves).
+Fz,g ~ 10,000 pounds; p = 260 lb/sq in.
+Figure 32.- Variation of maximum and full- skid tire-ground friction coef
+ficients with forward velocity for several tire tread designs. Data
+were obtained during single-wheel braking tests on a dry concrete
+runway.
+
+
+
+=== PDF PAGE 93 ===
+.8
+o
+>'max
+.6
+:1 o
+11 ~skid
+..<.V..
+.U... .
+~ .1.
+o
+u
+.:
+...o...,.
+-0-0
+.~ .2
+~
+~
+o
+oL-----~----~------~-----L------~----~----~------~----~----~
+(c ) Tires R2 and R3 (all- rubber rib tread; 9 circumferential grooves ) .
+Fz,g ~ 10,000 pounds; p = 260 lb/s~ in .
+• 8
+o
+:1
+..,
+--O---O--O~&-OO--------O 0
+.: 01"-- 0-:-
+.<..V.. o o o
+..U...
+""' o
+" o<"V' •
+o
+u 0
+.: o 0
+... o...,. __
+------~B~OTD~---- ~
+u
+~ .2
+o
+~
+I
+O'~-----1~O----~20~----3~O------4~o~--~5~o----~60~----~----~O'----r9~O----~100
+Forward velocity, V , knots
+H
+(d) Tire Dl (dimple, fabric-reinforced tread, fabric surface) .
+Fz,g ~ 10,000 pounds; P = 260 lb/s~ in.
+Figure 32. - Continued.
+90
+-.---------~
+
+
+
+=== PDF PAGE 94 ===
+.8 -
+------~~~-,---,-~---~D~--------~D~----cr-o-----
+o = 2
+p 200 1b/in
+::I. o = 2
+P 150 1b/in
+~ .6
+Ql
+'M
+"
+'M
+.<....;
+gQl .4 ~Skid~
+<::
+o
+..-< ~----~~~----------------~D~~OO
++'
+.."...
+o
+r!:: .2
+o 10 20 30 40 50 60 70 80 90 100
+Forward velocity, V , knots
+H
+(e ) 44x13, type VII, 26- pl y- rating tire, all-rubber rib tread, 5 circum
+j
+ferential grooves . Unpublished data from NASA landing- loads track.
+Fz,g ~ 20,400 pounds .
+Figure 32. - Concl uded.
+91
+
+
+
+=== PDF PAGE 95 ===
+\0
+f\)
+1.0
+J ,---- I-Lmax = 0.93 - 0.0011 Pn (reference 12)
+..
+~s::
+.8
+(l)
+•. .-i
+t) o
+•. .-i
+""'
+""'
+o(l)
+t) .6
+s:: t:.
+o
+•. .-i
+~ Experimental data
+t)
+•. .-i
+M
+""' .4 () 44 x 13, type VII 5-groove rib-tread tire (V = 45 - 90 knots)
+'s0:: H
+;:s (Unpublished NASA landing-loads track data.)
+o
+H bD o o Tires R2 and R3 (VH = 34 - 89 knotS)}
+I =
+H
+(l) Tire Dl (VH 27 - 86 knots) 32 x 8.8, type VII tires
+. . ~ r ; ! .2 6, Tire D5Ml (VH = 36 - 71 knots) of present investigation.
+b,. Tire R4 (V = 39 - 52 knots)
+H
+~
+oI ,..I. . I , I I I I I f
+n" .. ,...,... .. / .................. ,.1 .... n ..... _........ ,-
+Average tire-ground bearing pressure, p , pounds per sqUare inch.
+n
+Fi gure 33.- Variation of maximum tire- ground friction coefficient ~max with average tire- ground
+bearing pressure Pn for several different tires and tread desi gns on a dry concrete runway .
+.----~--~- ?".-----~---- -~- ~ .~ ~---- - ----- ~...--....... -------
+
+
+
+=== PDF PAGE 96 ===
+data
+~perimental
+j
+o DSMl}
+( Tire
+o
+Tire R4 32 x 8.8 type VII; present investigation
+~
+V Tire R2 p = 260 lb/in 2
+6. Tire Dl
+~ Tire 44 x 13, type VII, p = 200 lb/in2} (Unpublished NASA data)
+o = 2
+Tire 44 x 13, type VII, p 150 lb/in
+= 2
+Qo Tire 56 x 16, type VII, p 168 lb/in (ref. 13) }
+Tire 26 x 6.6, type VII, p = 103 lb/in2} Locked-wheel
+~ 2 (ref. 14) drag test s'
+=
+V Tire 26 x 6.6, type VII, p 230 lb/in V ~ 0.009'knot
+H
+Q Tire 40 x 12, type VII, p = 124 lb/in2 (ref. 15)
+Forward velocity, V , knots
+H
+Figure 34.- Effect of f orward velocity on the ratio of tire-ground full
+Ilskid
+skid fri ction coeffi ci ent t o maximum fricti on coefficient
+Il
+max
+Data obtai ned on dry concrete runways .
+93
+,
+)
+\_-~~
+
+
+
+=== PDF PAGE 97 ===
+\
+\
+.6 I
+NASA data; )2 x B.B, type VII, 22 ply ratin~ rib-tread tires
+. .' . " . " . , o o P p = = 1 2 2 60 0 1 1b b / / i i n n 2 2 ; ; F Fz z, ,g g Z ;::; l ; O 1 , 0 O , O 00 O 0 l l b b . . } Tire S2M2 I
+"- •5 <) P = 260 Ib/in2; Fz,gZ 20,000 lb.
+tf 1
+.'.".. 6 p = 260 Ib/in2; Fz,g ;::;;10,000 lb. Tire Rl
+. .. ". ." . . British data; )0 x 7.7, type VII, 16 ply ratinp rib-tread tire I
+•L
+" ' 0 " \ , , --- p ( B = r i 1 ti 0 s 0 h 1 f b l / i i g n h 2, J t I - te F s z t , g d ':: a ::: t a 7 , , 2 r 0 e 0 f l . b 8 . ) .
+.. " 0.,.. ,
+, 6.
+- - -- p = )20 1b/in2
+.
+.".. ... ... .) ,
+..,
+§
+0 ~ .2 6~
+.'"..
+....,.
+.., ---
+.... ------------~O~------------·
+'" • 1
+'f
+.-<
+.-<
+r~..
+0
+(a ) Concrete runways .
+• 6
+.., NASA data; )2 x B. B, type VII, 22 ply rating tire S2M2
+:.;;.! o p = 260 1b/in 2 ; F ~ 10,000 lb.
+z,g
+"- •5
+.,' British data; )0 x 7.7, type V1I, 16 ply rating rib-tread tire
+c (British flight-test data, ref. 9)
+..'"..
+. . .".. . .. . . ---- p = 190 Ib/in2; Fz,g~ 7,600 lb.
+.L
+'"
+"0
+c
+.0.. .
+..
++"
+.."...
+'
+.)
+..,
+c
+" o
+0
+Il, .2
+. '"I. o
+.. +.",'
+....
+'" .1
+"i
+.-<
+.-<
+r"..
+0 10 20 )0 LO so 60 70 Bo 90 100 110
+Forward velocity, V , knots
+H
+(b) Asphal t runways .
+Figure 35.- Variation of full-skid t ire-ground frict ion coeffi ci ent wit h
+f orwar d veloci t y f or several di f f erent r i b-tread aircraft t ires on
+water-cover ed concrete and asphalt runways . For NASA data,
+dl = 0 to 0. 3 i nch; for Brit i sh data, dl ~ 0.08 i nch.
+I
+94
+\
+____
+~I
+-- ----- -------
+
+
+
+=== PDF PAGE 98 ===
+--=---
+-- ----v-- ---, ,=-__ ____ ,--- ----v
+----.;--~- ~ 'S.:s;" ---___ -'>_ - "--~",,,------ __ ~--------
+I
+'~
+I
+1.0
+06. ~ Q)~o QID
+~I1~ ° ° 000° °
+:1.al .. o 200&fi{ 00 d o
+"b1:: .8 6. 6.
+Q) Q)
+-..1 -..1 °
+o 0
+-..1 -..1
+"-i"-i
+"-i"-i
+Q) Q)
+o o 0 0 .6
+I=: I=:
+o 0
+-..1 -..1 () Tires Rl and R2 (9-groove rib)
++>+> o
+o 0 Tire R5 (ll-groove rib)
+- , .. . 1 . - J r . l . <>
+"-i"-i .4 Tire Dl (dimple)
+.6. Tire D5Ml (buffed dimple)
+.2
+a 10 20
+Forward velocity, V , knots
+H
+Figure 36.- Variation of the ratio of tire-ground friction coefficient ~av with forward veloc-
+~max
+ity for several tires on a dry concrete runway. F ~ 10,000 pounds; p 260 Ib/sq in.
+zJg
+\0
+VI
+
+
+
+=== PDF PAGE 99 ===
+o
+.6
+\0
+0\ s 0 : : I ~ p = 260 lb/in 2 ~ p = 120 lb/in 2
+..-i
+.jJ o
+()
+. . .H . .. - .. i ' > " .4
+:i.
+'
+;o
+s{:
+l
+j:
+.jsJ:: ~ I 0 o
+H, Q)
+tC..-i
+()
+Q) OM
+s... ...... .2:
+OM ...... o
+.jJ Q) Sand finish o
+Q) ( 0 ) I Sand finish
+'t"C [] Aggregate finish [] Aegregate finish
+H
+~ 0
+(a) Asphalt runway; d = 0 to 0. 5 inch:
+l
+.6
+s o :: p = 260 lb/in 2 p = 120 lb/in 2
+t..- i
+. H .-i '>"
+...... .4
+'s{:j: :i.
+;ol +s:' ~ : ~~ ~--
+~, ~
+()
+:Q.:).t.-:i
+.2
+.jJ oQ)
+Q) ()
+~
+H
+Q)
+~
+6 20 40 60 80 100 o 20 40 60 o 100
+Forward velocity, V , knots
+H
+(b ) Concrete runway; d 0 to 0 . 3 inch.
+l
+Figure 37.- Effect of runway surface on the magnitude of developed while braking tire 82M2
+~av
+on water-covered runways .
+-:=:- ________- - ----"--_-L-~-.~---~----;;?----~~~~ ______;; ;;:-------'-- ...---- .--J
+
+
+
+=== PDF PAGE 100 ===
+------
+~ _M:'--__. . ____ .~~. __ ~-~--------~-- -. -- .. ~.-----~-- ----..- -----------.r---_____ ~. ----"- "--- . l
+I
+A Water depth 0-0.3 in. (concrete runway)
+B-- -- Slush depth 0. 8 in. (br ake plus sl ush drag)
+c- - --
+Slush drag
+:> D-- - - Brake
+-;j.C'J .6 E-- --- Dry concrete (approx)
+'"
+1::
+QJ
+·rl
+· t r l l -------- - - --- -------- .- - - --- --- - ---------
+'H
+'H
+oQJ
+tl
+1:1
+o .h
+·rl
++>
+CJ
+·rl
+H
+'H
+'U
+1:1
+[3
+~
+H
+bD
+I
+QJ ,,~
+.~
+.2
++>
+~------------~
+QJ
+bD -----
+-----= -------
+~
+QJ
+~
+1------ --------
+a 2 L 0 - 40 6 I 0 BO ------ . --100
+Forward velocity, V , knots
+H
+(a ) Tire D2; dimple, fabric- rei nforced tread, fabric surface .
+Figure 38.- Average t i re- ground friction coefficient obtained during si ngl e-wheel braki ng runs
+\ .... 0 ..J on slush- and wat er-covered runway surfaces . Fz, g ~ 10,000 pounds; p = 260 Ib/ sq in .
+
+
+
+=== PDF PAGE 101 ===
+A Water depth 0-0.3 in. }
+B---- Slush depth l.S in. (concrete runway)
+(brake plus slush drag)
+C - - - - Slush drag (calculated)
+l> D--- - Brake
+cO
+:i E -- - - - Dry concrete (approx.)
+.6
+- -- -- --- --- ----- - - --- -- ------
+.4
+----
+- -
+-----
+.2 ----
+----
+---
+--
+- --7"
+-
+o 20 60 80 100
+Forward velocity, V , knots
+H
+(b) Tire 82M2j fabric-reinforced rib tread} rubber surface .
+Figure 38.- Concluded.
+98
+- -----------
+
+
+
+=== PDF PAGE 102 ===
+=
+() Runway wet (d 0 - 0.3 inch)
+l
+.4 =
+[J Runway damp (d 0)
+1
+>=1 >
+0 ro
+°H :i
++>
+°
+U
+H
++>" '
+r H r; Q >= ) 1 .2
+OH
+QI U
+bD OH
+(1j tH
+Hrr;
+Q) Q)
+g
+~
+0
+(a ) Concrete runway; tire 81M3 .
+• 6
+-0- Runway wet Cd = 0 - 0.5 inch)
+l
+=
+[J Runway damp Cd 0)
+o l
+>=1 ~ Runway damp (water and JP-4 jet fuel)
+0
+°H :i
++> .l~
+°
+U
+H
++>" '
+H >=1
+rr; Q)
+°H
+QI U
+~~
+Hrr;
+.2
+Q) Q)
+~ 0
+U
+o 20 40 100 120
+Forward velocity, V , knots
+H
+(b) Asphalt runway; tire 82M2.
+Figure 39. - Comparison of average tire- ground friction coefficients
+obtained on water-covered and damp runways. Data obtained during
+single-wheel braking tests . F zJg ~ 10,000 pounds; p = 260 lb/sq in.
+99
+
+
+
+=== PDF PAGE 103 ===
+b
+o
+=
+Water-covered runway (d 0 - 0.3 inch)
+l
+= 5
+~ Organic-foam-covered runway (d 2 - inch)
+l
+.6
+Detergent-foam-covered runway (dl = 1 - 3 i.nch)
+:> ~
+cO
+-:i
+'"
+~s::
+Q)
+·rl I.
+t) • Ll
+·rl
+~
+~
+Q)
+o
+t)
+s::
+o
+·rl
+t .2·-
+·ri
+J..
+~
+Q)
+bD
+cO
+H
+<D
+~
+o 20 40 60 80 100 120
+Forward velocity, V , knots
+H
+Figure 40.- Comparison of average t ire- ground friction-coefficient values obtained during
+singl e-wheel braking tests on foam- and water-covered runways for tire 82M2.
+--~-- ------.-!~-~- .-----~ -----, -~~~~----~-=---~
+
+
+
+=== PDF PAGE 104 ===
+(-
+.B
+.7
+~av ~.64
+, r""Y
+'\
+.6 '\
+:i '\ , V, = 81 knots
+'\ oonmt.;
+..,~
+c
+. .Q. ;) '\
+'\
+0 .s .LIB
+" " ' - - '' < < ; - - " -.>. £ ., ~av , ~ r.J
+0 Q ) ,
+0 "-
+c
+.0., "
+...; .4
+'
+.. 0 . ; '- ......
+I; ......
+"-< '-
+-0 ' '- ....
+C
+::>
+0 .J ....... ....
+H ....
+bD
+I ........
+Q)
+.I
+. .
+;
+;
+E-<
+.2 -----
+Dry concrete con~aminated with rubber
+(deposited on runway during previous
+braking run); V = 77 knots
+H
+o .1 . 2 .3 .4 .5 .6 .7 .B .9 1.0
+Slip ratio, 51
+Figure 41.- Effect of rubber contamination of a concrete runway sur£ace on the braking fric
+tion developed by a 44x13, type VII, 26- ply- rating aircraft tire. Fz,g ~ 20,400 pounds;
+b
+p = 150 lb/ sq in. (Unpublished NASA landing-loads-track data. )
+f-'
+
+
+
+=== PDF PAGE 105 ===
+>
+'"
+:1- -0- Fz,g~ 10,000 Ib
+..,~
+" - -0-- Fz,gZ 22,COO Ib
+..Q...) 'l
+..(.).
+'-<
+'-<
+Q)
+0
+() +
+"
+.0.,
+'M
+()
+·.r..l
+'-<
+"0
+"
+"
+0.. .
+.2
+OJ)
+I
+Q)
+.~
++'
+"Q")
+.'.."..
+>Q) 0
+(a ) Average tire- ground friction coefficient ~av'
+'"
+()
+' Q " ) --
+'-
+.". ' ' " ".. 16 -0- --- --
+"0 - 0 0
+'."..
+0 c: ~ ----.
+'M
++'
+'.".. 12
+Q) D
+.-i
+Q)
+()
+()
+'"
+0-
+"
+cI:
+8
+'M""
+'"
+.-i
+Q)
+;Q::)
+;.
+"Q") 4
+..'."..
+>Q)
+o 20 40 60 120
+Forward velocity, V , knots
+H
+(b) Average wheel spin-up acceleration.
+Figure 42.- Average tire- ground friction coefficients and wheel spin-up
+accelerations obtained during single-wheel braking runs with tire 82M2
+at ground vertical loads of approximately 10JOOO and 22JOOO pounds.
+Wet concrete runway; dl = 0 to 0.3 inch; p = 260 Ib/sq in.
+102
+I
+--------------~
+
+
+
+=== PDF PAGE 106 ===
+--~ -------~------.-----...__,._v_ _----...---..
+.6
+~o
+~"
+~
+> U~~D
+III
+.:.,l . .2
+c
+..Q..).
+. .. . o. . . . . Tire 81; concret e runway Tire 82,. concrete rUffilay - , - ~ 17'1::£)
+....
+~ 0
+o
+c
+...o...,.
+..o... ~ p = 260 lb/in 2
+..'"..'
+1:l - - 0- - p = 120 lb/in 2
+C
+o"
+"'""' .6 -~
+1
+Q)
+...~, ~,
+:Q:)
+... .4 (:1
+~ Q) ~ o
+.2'- "
+"-
+coa,,-,~
+Tire 82M2; concrete runway Tire 82M2; aspbalt rUffilay "
+o t 2 ( 0 40 « 60 ! 80 I 10 I 0 o 20 40 60 80 100 120
+Forward velocity, V , knots
+H
+(a ) Average t ire-ground friction coefficient ~av.
+Figure 43. - Effect of tire inflation pressure on average tire-ground friction coefficients and
+wheel spin-up accelerations . Data were obtained during single-wheel braking tests on wet
+runways for several different tires. Fz, g ~ 10,000 pounds; dl (asphalt) = 0 to 0,5 inch;
+b
+d (concrete ) = 0 to 0. 3 inch.
+VI l
+
+
+
+=== PDF PAGE 107 ===
+8
+4
+~ Tire 82M2; concrete runway
+~ ol·--------~-------J--------~------~--------L-----~
+"-
+c(f)
+'"
+'M
+"0
+2
+~ 12 x 10
+c
+o
+' + M -' ~ p = 260 lb/in 2
+'"
+r Q ~ l ) 8 - - 0 - - p = 120 lb/in 2
+Q)
+tJ
+tJ
+'"
+Po
+::l
+rI:
+4
+'M
+Po
+(f)
+rl
+Q)
+.< Q :: ) Tire 81; concrete
+~
+0L-----~------~-------L------~~_1
+Q)
+b!J
+~
+Q)
+<~
+8
+4
+Tire 82; concrete runway "-
+O,------~2~~------~4~'0~----~6~O------78bD~-"-~[~I~lOO~'------~i20
+Forward velocity, VH' knots
+(0 ) Average wheel spin- up acceleration.
+Figure 43. - Concluded.
+104
+
+
+
+=== PDF PAGE 108 ===
+1--
+--. ~~~--I
+BuB
+~ Direction of Motion
+Rear Forward
+Tandem Wheels
+---{)--5ingle or forward tandem wheel
+- - 0-- Rear tandem wheel
+o o
+Dimple tread, tire D2 5-groove rib tread tire 52M2
+o o
+.6 Dimple tread, tire D2 (S-groove rib 5-groove rib tread tire 52M2
+tread tire 52M2 on forward wheel). (S-groove rib tread tire 52M2
+on forward wheel)
+.L
+;:; ~-~--
+"-
++'
+. " i . J 8 . .2 o
+""'
+'l1
+o
+u
+g 0
++""''
+~ ~ o 5DlOoth tread, tire 52 O S-groove rib tread tire 52M2
+§ .61 o 5mooth tread. tire 52 (S-groove rib o 5-groove rib tread tire 52M2 (smooth.
+tread tire 52M2 on forward wheel). tread tire S2 on forward wheel)
+~
+1: __ _
+j .L '4~ ~"-
+~
+~
+H
+~
+~
+.2i ~~
+oI mI ~ I w! ~ I ~ I ~ I o 20 40 60 o 100 120
+Forward velocity J VH ' knots
+(a ) Average tire- ground friction coefficient ~av'
+Figure 44.- Effect of tire position in a tandem wheel arrangement on average tire- ground fric
+tion coefficients and wheel spin-up accelerations developed during braking tests on wet
+b
+\Jl concrete runways . Fz,g ~ 10,000 pounds per tire; p = 260 lb/sq in.; d l = 0 to 0.3 inch.
+
+
+
+=== PDF PAGE 109 ===
+b
+0'1
+Dimple tread, tire D2
+1_2 x 102 o Single wheel
+[] Rear tandem wheel {tire S2M2
+Rib tread, tire 52M2
+on front tandem wheel)
+o
+Single wheel
+o Rear tandem wheel (tire 82M2
+8 on front tandem wheel)
+C\ .ct J u,) - --00 -- __ - o <> Rear tandem wheel(tire 82
+';n-- o on front tandem wheel)
+a
+o a r< l 4,- 0-
+'d
+al <>
+H 2
+12 x 10
+a~ o
+0
+or<
+1il
+0
+o---o~~<o>
+.- Hc c t t - u u ) ) I Smooth tread, tire 82 8 o 0 o o
+al 2 o o
+go 12 x 10 Single wheel
+aI [] Rear tandem wheel (tire S2M2
+O.M, on front tandem wheel) 4
+Po
+.-c
+c
+-u
+u
+I
+8 '0- .....
+. ; Q . I -0
+:
+c
+i
+u
+f
+ot
+2
+I
+0 4
+I
+0 6
+!
+0 8
+I
+0 10
+!
+0 12
+I
+0
+Hcu
+4
+~
+o 20 40 60 80 100 120
+Forward Velocity, VH ' knots
+(b) Average wheel spin-up acceleration.
+Figure 44. - Continued.
+
+
+
+=== PDF PAGE 110 ===
+---
+------.
+- -
+I
+o REAR TANDEM WHEEL, 0- 0.3 INCH WATER DEPTH
+o REAR TANDEM WHEEL, 1.5 INCH SLUSH DEPTH
+a -
+- - SINGLE WHEEL, 0.3 I NCH WATER DEPTH
+.6
+--- SINGLE WHEEL (LESS SLUSH DRAG), 1.5 INCH
+SLUSH DEPTH
+AVERAGE .4
+FRICTION
+COEFFI Cl ENT,
+-{Jom
+~av
+.2 -....-...._----o-
+0
+..........
+a
+20 40 60 80 100
+FORWARD VELOC ITY, KNOTS
+(c ) Average tire- ground friction coefficient !-lav for tire 82M2 braki ng in sl ush and water.
+b Figure 44.- Concluded.
+-.l
+_____ J
+
+
+
+=== PDF PAGE 111 ===
+b
+OJ
+-------- Tire D5Ml - Smooth (buffed dimple), rubber and carcass-fabric
+> contact surface
+ro
+:i -- --- Tire Sl - Smooth all-rubber tread, rubber contact surface
+... Tire S2 - Smooth fabric-reinforced rubber tread, rubber contact
++>
+r::; surface
+(l) ---- Tire S3 - Smooth fabric-reinforced tread, rubber and tread
+'M
+() fabric contact surface
+'M .6
+'H
+'H
+(l)
+o
+()
+r::;
+o
+'M
+.4
+~ \ "
+'M
+r....
+'H ~~ .,
+'0
+r::;
+"0-
+;:l
+o
+r,.... .2~·
+Wl
+\l)
+.~
++>
+~ (l) o· 2 1 0 4'0 60 8'0 Ibo lko
+(l)
+>
+c:x: Forward velocity, V , knots
+H
+Figure 45.- Effect of tire tread material on the average tire- ground friction coefficients
+developed during single-wheel braking tests on wet concrete runways. Fz)g 10)000
+~
+pounds; p = 260 Ib/sq in; dl = 0 to 0. 3 inch.
+L-__. _ _ . --
+~
+----------------------~~-~~--------
+
+
+
+=== PDF PAGE 112 ===
+·6
+.4
+~~
+~
+• (a) Tire 01.
+OL-_ d P_B l = ,l O = _ t _ 5 o 0 _ O I_b . / 5 in 1n 2 _ . ._ j __- L ~ _ ___ __ (b) Tire 02. ~
+~ ~ ~ ~
+.6
+5F
+.4
+.2
+0,.
+(c) Tire (d) Tire D4.
+oL-__ ____ ____- L_ ___ __
+~ ~ ~ ~
+.6
+~
+(e) Tire 05Ml. (r) Tire D6MJ..
+0
+.6
+--O-TireD8Ml
+- - -0 - Tire D8M2
+.4
+.2
+(g) Tire 07MJ.. (h) Tires 000 and 08l!2.
+0 20 40 60 80 100 0 20 40 60 80 1
+Forward veloc i ty, VH ' knots
+Figure 46.- Variations of average t ire- ground fri ction coefficient
+wi th forward velocity for the di fferent tires investigated during
+singl e-wheel braking tests on a water- covered concrete runway.
+Test conditions, except where noted, are Fz, g 10,000 pounds,
+~
+p = 260 Ib/sq in., and dl = 0 to 0. 3 inch. Shaded circle symbols
+i n this figure denote average values over several braking cycles
+due to inability of tire to spin up after brake release.
+109
+
+
+
+=== PDF PAGE 113 ===
+o
+(j) Tire 81;
+o
+Water depth 0-0.3 inch
+o
+Damp runway, water depth<='zero
+(1) Tire 81M3 .
+• 2
+(0) Tire 82Ml. (p) Tire 82M2; p = 260 1b/in2.
+0'~----~2~0----~4~0------6~0------~80------1-L00 o 20 ~O 60 100
+Forward velocity, V , knots
+H
+Figure 46. - Continued.
+110
+I
+~
+
+
+
+=== PDF PAGE 114 ===
+~
+.2 ~
+(r) Tire 53. ~
+.6
+.4
+o
+(8) Tire 54Ml . (t) Tire 55Ml.
+• 4
+.2
+(u) Tire 56Ml. (v) Tire Rl.
+o~----~----L-----L-____L -__~
+.6
+.4
+.2
+(w) Tire R4. d1 ~ 0 to 0·5 in.; PB,l ~ 50 Ib/ in2. (x) Tire R5.
+o
+20 40 60 80 100 o 20 40 60
+Forward velocity, V , knots
+H
+Figure 46.- Concluded.
+III
+I
+L_
+
+
+
+=== PDF PAGE 115 ===
+f--'
+f--'
+I\)
+.6
+~8:::::::::~8j
+Dimple-tread tires (tires Dl, D2, D3, and D4)
+uTilI C
+: c > tl .5~ Smooth-tread tires (tires Sl, S2, and S3)
+:i
+"'
++>
+C
+<lJ
+'M
+()
+'M I
+'H .~
+'H
+<olJ
+()
+c
+o
+'M
+~ .3--
+'M
+H
+'H
+'0
+C
+;:l
+o
+~ . 2--
+I
+<lJ
+.~
++>
+<lJ
+~ .1
+H
+<lJ
+~
+o 10 20 50 60 70
+Forward velocity, V , knots
+H
+Figure 47.- Average tire-ground friction coefficients obtained with smooth- and dimple-tread
+tires during braking tests on a water-covered concrete runway. Fz,g 10,000 pounds;
+~
+P = 260 Ib/sq in.; d = 0 to 0.3 inch.
+l
+L._
+.------"----- ___ ______
+-~ ,~ ~_~~_ ,-------------------v-~ .~.
+
+
+
+=== PDF PAGE 116 ===
+-----------.--.---.~.~-~- - --- .---~---~------" I
+I~-
+---- Smooth-tread tire 52
+.6
+Smooth-tread tire Sl - - Tire 52 modified by 4 circumferential
+- - - - - Tire Sl modified by 1 circumferential grooves ( 52Ml )
+groove ( SlMl ) - Tire 52 modified by 5 circumferential
+--- -- Tire Sl modified by 3 circumferential grooves ( 52M2 )
+.4 grooves ( SlM3 ) '- ==--
+'---~ "
+'~" --------::-..::::--:----::----
+::1- ----
+--- --------
++>~ .2~ ~ ---
+J::
+Q)
+·rl
+()
+·rl I
+'H
+'H (a) Tires Sl, SlMl, and S1M3· . (b) Tires 82, 82Ml, and 82M2.
+Q)
+0 __ I
+() 0
+J::
+0
+-rl
++>
+()
+·rl
+'H I-< .6
+"0 Dimple-tread tire D2
+,; 0 J .: : : .l - - - -- - D D i i m m p p l l e e - - t t r r e e a a d d t t i i r r e e m D2 o dified by 5 -- - - - D c i i m rc p u le m -t f r e e r a e d n t t i i a r l e z m ig o z d a i g f ie g d ro o b v y e 2 s (DBM1)
+bD circumferential grooves (D6Ml)
+Q I ) .4
+.~
++>
+----
+Q) " -
+',b ".D. "
+Q) .2
+~
+(c) Tires D2 and D6ML (d) Tires D2 and D8Ml.
+0 2 I 0 4 1 0 6 I 0 8 I 0 100 o 20 40 60 80 100
+Forward velocity, V , knots
+H
+Figure 48.- Braking effectiveness of smooth- and dimple-tread tires on water-covered runways
+before and after circumferential grooves were cut into tire tread. Fz,g 10,000 pounds;
+~
+~ P = 260 lb/sq in.; dl = 0 to 0.3 inch.
+~
+\)j
+
+
+
+=== PDF PAGE 117 ===
+An/Ag
+Tire Rl (9 circumferential grooves) 0.77
+Tire S2M2 (5 circumferential grooves) 0.78
+Tire D7Ml (37 lateral grooves) 0.75
+~ Tire s4Ml (large diamond) 0. 81
+:i
+Tire S5Ml (small diamond) 0.72
+"
+~
+s.::
+Q)
+·rl
+C)
+·rl .6
+Ct-i
+Ct-i
+Q)
+o
+C)
+s.::
+o
+·rl
+t .4
+·rl
+H
+Ct-i
+'"d
+§
+o
+H .2
+b.O
+I
+Q)
+H
+·rl
+~
+Q)
+b.O
+~ 0 20 40 60 80 100 120
+Q)
+:>
+c:x: Fonlard velocity, V H , knots
+Figure 49.- Wet-runway braking effectiveness of tire treads with lateral
+grooves, diamond patterns, and circumferential grooves. Data obtained
+during single-wheel braking tests on a wet concrete runway.
+Fz,g ~ 10JOOO pounds; P = 260 Ib/sq in.; dl = 0 to 0.3 inch.
+114
+L
+
+
+
+=== PDF PAGE 118 ===
+1--- -
+Dry concrete Wet concrete
+(0 to 1.0 in. water)
+.8
+.6 ~ 0 0
+O~
+~max .4 o ~
+Tire R2
+.2 0 Ti re R3
+0
+I
+!
+(a ) 0- to 50-percent worn.
+!
+! .8 6
+80 percent worn
+o
+.6 80 to 90 percent worn
+.4
+\ ~max
+(
+1
+.2
+o
+0 20 40 60 80 100 20 40 60 80 100
+(b ) 50- to 90-percent worn.
+Figure 50.- Effect of tread wear on maximum t ire- ground friction coeffi
+I
+\ cient ~max for t i res R2 and R3 (9 circumferential grooves, al l
+1 rubber t r ead) . Fz, g ~ 10, 000 pounds; P = 260 lb/sq in.
+1
+115
+
+
+
+=== PDF PAGE 119 ===
+.----
+I
+0 ~ ~ \ .6 ° c9 0 Cycle I, VH • W. knots Cycle 2, VH • 39 knots
+° o cg
+0 Spin-down
+8
+0 o
+.4 I- 0 Spin-up CO 0
+0
+0 C
+0 0 00 0 0 0 0 0
+0
+0 0 0 @
+.2 I
+Dry runway Dry runway
+0 .2 .4 .6 .8 1.0 0 .2 .4 .6 .8 1.0
+'"
+,;
+c r
+. . <. . . . ~ . . . . . .l ., ~ 0,0" ,. " . " _" Cycle 5, v H • 37 knots r Cycle 7, V H • 35 knots
+8~
+.. c 0.. 8 o oc9 o 0 CO ~ o~
+.~... .2 Cb QJ oEl ff:y0 0 0 0
+'h" B
+0
+00 0
+0 .2 .4 0 .2 .4 .6 0 .2 .4
+.4
+Cycle 9, VH • 34 knots Cycle 11, V • 3J knots
+H
+00
+.2 ~ 0 0 lo 0 o @ 0
+o CO 0 0 0 0 0 0 0 0 o OJ 00 0 oC
+0
+0 .2 .4 .6 .8 1.0 0 .2 .4 .6 .8 1.0
+Slip ratio, 51
+(a) Run 1.
+Figure 51.- Tire Dl, dimple fabric-reinforced tread, fabric surface . Antiskid unit operating;
+p = 260 lb/sq in.; d = 0. 2 to 0.5 inch (except where noted); PB,l = 50 lb/sq in.
+l
+...
+----~<-------~ -~--- --------~.~
+
+
+
+=== PDF PAGE 120 ===
+I --.J' __ ~ ______~ _~. ____~ -____ --- - _..r-'.L..-..-______ - ----_._- --~--- -----., I
+.8 ,
+Cycle 1, V - 49 knots
+H
+o
+Spin-down
+o
+0 Spin-up
+.6 f--- @
+00
+0 CIA II
+.4 I .4 Cycle 3, V 48 knots Cycle 5, V u7 knots
+H H
+&
+0
+1 8Q)
+.2 .2
+- + rQ < < : l ' 0 01 0 0@@J c:P~OO ~
+.-.r 0 .<. 00 0
+....
+Ql
+0
+0
+.r0 < < : 0 .2 .4 .6 .8 1.0 o .2 .U o .2 .4
++'
+0
+-.r.<.
+r..
+.4
+Cycle 7, V 46 knots Cycle 9, VH 44 knots Cycle 11, V 41 knots
+H H
+.2
+6f1«D<0 ~ o o 0 c §) 800 o o <Q() ~ 0 0 t J O
+o .2 .4 .6 o .2 .4 .6 o .2 .4 .6
+Slip ratio, sl
+(b) Run 2 .
+I-'
+I-' Figure 51.- Continued.
+~
+
+
+
+=== PDF PAGE 121 ===
+,-
+Cycle 2, VH := 62 knot3
+°
+'A'
+.4. Cycle h, VB :: 60 knot.s
+°
+0
+10 0
+°
+.2
+0 °1 0° ° 0 0 0 6b'O 0c90~ ~
+0
+0
+--1
+.2 .4 .6 .8 1.0 .2 .4 .6 .2 .4
+r
+. .4 I Cycle 5, vH :: 59 knots Cycle 7, VH :: 58 knots Cycle 9. VH ;; 56 knot:!! Cycle la, VH =: 55 knots
+~c
+~ '~ o
+1 c i~~OD 0 o 0 ~ o o 0 0 00 '0&
+~
+E o
+.2 .4 .2 .4 .2 .2 .4 .6 .8
+(c ) Run ) .
+.6
+I
+, -------- Cycle 1, VH :: 88 knots
+BttB Ii C"YC"le 2.., "VH .' 66 k no,"
+l
+o
+.4 0 ~Cycle 3, Vii :: 8) knots Spln-dovn
+o
+Spin-up
+~ J
+8 o 0,<\ n •• ,"
+~ .2 0
+~ o
+.t: Dry O~@CD~
+runway
+o
+I
+.2 .4 .6 .8 loC
+Sllp ratio, 91
+Cd) Run 4.
+Figure 51.- Concluded .
+-. --"'---------
+.......... -----~- ~ --- - -"'00.....- - - --_.---...--..-_ -. ----- .-.----===---~-
+
+
+
+=== PDF PAGE 122 ===
+- I
+-~-----
+I
+Cycle 2, VII = u6 knoLl! Cycle ), VII = 47 knots Cycle S. VH = 46 knots
+o o o o 00 0 0 0 ~ 8 ° °0 <EJ ° o°Q:POOO6l
+o
+I I I I I
+.2 .4 .6 ) 1.0 .2 .4 .6 .2
+.2 a COrl °
+IlD D C O yc le 0 6 0 . VH 0 :;: 0 ',6 0 k ' n ots o oc Cy o cle o 7, ~ VII :: Lit knoLl! Qo§< Cy § cl Q e ~ 9, % \ = il2 knots @ C ;rela 0 11, O V @ II 0 :: O hO O kno t::. 0 0
+n I . I 2 .1I . .2 .4 .2 .4 .2 .4 .6
+(a ) Run 1.
+t::ycle 1, VH = 61 knots
+c
+"A"
+.4
+Cycle 7. VH = 8S knots CYcle J, VM = 81 knoLs Cycle L, VH = 79 kn!:t.!!
+o
+o
+.2reo o o
+o o 0 00 @° oCt:a£ "i§ o lC ° c o ~O ct 9
+00 LJ C
+.6 I, .I4 .~ .l .2 .J,
+.4 DO
+Cyel~ S, VH :: 78 knot.s Cvc11" 6, VII :;: 71 knots Cycle 1, Vli :;: 76 kllots
+Dry spin-up o
+I1J) o Spin-dOWn
+o o o 0 8 C 0 e o ° 0 0 ° 8 c/¢J C Spin-up
+C
+, I
+.2 .4 .2 .lI
+SUp ratio, 51
+(b) Run 2.
+Figure 52.- Tire Dl, dimple fabric-reinforced tread, fabric surface . Antiskid unit operating;
+P = 260 lb/sq in.; d l = 0 to 0. 3 inch (except where noted); PB , 1 = 50 lb/sq in.
+~
+t)
+~
+
+
+
+=== PDF PAGE 123 ===
+B
+o
+Spin-down
+o
+Spin-up
+.6- Cycle 1, V 86 knots
+H
+~
+r---- ------ Cycle 2, V 83 knots
+::I.
+H
+...
++> A"
+!:: II
+.4
+Q) ,----- Cycle 3, V 80 knots
+.,-i
+u H
+.,-i o
+Ct-i
+Ct-i [ CYCle
+oQ) 4, V = 76 knots
+u H
+!::
+o
+- + , > -i .2
+u o o
+.,-i
+rx H .. o
+o
+o~~~
+008
+a' ,
+.2
+.4I
+.6
+I
+.8
+I
+1.0
+Slip ratio, 51
+(c ) Run 3.
+Figure 52.- Concluded.
+1_
+.----.~----- ~- --.--~
+
+
+
+=== PDF PAGE 124 ===
+--- - _. - ----._-._---- -----_._. ----- -------
+!-----~-.-
+.L
+I
+Cycle 1, VH :: li1l knots Cycle 2, VH :: IJ2 knots Cycle ), VH :: Ll knots
+.2~ 0 0 0 @0 8 en 0 ~ o o o ;) o o o o o o o D O
+0 o
+0
+I I I I
+.? .L .6 .6 .2 .!J .b .6
+"" .L
+~. Cycle t.. VH :: LI knot.s Cycle $, V H :: uO knots Cycle 6, vH :: LO knots
+~
+. " g o. GJ o o 0 o 00 @ o 8 o o o o o o o 0 0 00 Cb o
+.
+..u. .
+.
+.
+" o
+.2 .L .6 .e 0 .2 .L .6 .8
+.h
+Cycle 7, V H :: Ito knots Cycle 6, VH = )8 knot.s
+o o
+.2 {) 0 8 o o o ° o 0 c9 o 0 0 § ° o o o S Sp p i i n n - - u d p ow n
+Q .2 .L .6 .6 1.0 o .2 .L .6 .8 1.c
+Slip ratio, 81
+(a) Run 1.
+Figure 53.- Tire D2, dimple fabric-reinforced tread, fabric surface. Antiskid unit oper-
+ating; p == 260 lb/sq in.; dl = 0 to 0.3 inch.
+I-'
+r\)
+I-'
+-----"
+
+
+
+=== PDF PAGE 125 ===
+..
+r
+I-'
+f\)
+f\)
+"'[ fa
+Cycle 1, VH :: 57 knots Cycle 2, VH = 56 knots r& Cycle ), VH :: S5 knots
+0 0 ,0 a , 0 0, 0 6' ~cP CD 0 0 0 'b 0 0 '" a
+"- 0 .2 .tt .6 .6 l.C o .2 .Ii .6 o .2 .It .6
+~
+~
+t:
+13 Cycle h, -"H :: $) knots Cycle S, V :: 52 knots
+H
+'r . OOOOOO~ O ~O"0
+,
+o .< .L .6 .2 .'L .6'
+(b ) Run 2.
+CO/de I, VH :: 6) knots C.vcle 2 J VH :: 61 knots Cycle ), VH :: 61 knots Cvclp II, VH :: 60 bets
+.2
+eO0" :J 0 0 0 0 ~ ad' o ~'~ 0 , ~OO 'b0 , 0 \l 0° ~0C\) o~ 0 00, c<b ,
+~- 0 .2 .h o .2 .L o .2 .10 .6 o .2 .h .6
+~
+~
+2
+~
+c
+'Ill
+r-vcle $, VH ::: 59 knots
+o Spin-down
+... o
+00 ~ Spin-up
+0 0'0
+o .2 .h .6
+Sli~ ratio, 51
+(c) Run 3.
+Figure 53.- Continued.
+
+
+
+=== PDF PAGE 126 ===
+l~-·-· ----"""--~.-. --- -- - ~------- - ,
+.. I . .2 ~ Cycle 1, VH = 8) knots Cycle 2, VH = 80 knots Cycle ) , V H 16 knots
+"
+"0 .:.,1
+' {j)ce>
+. . c o. . . , . .." c " .. I~CbO OO~ 0 1J OO@ Q3 BCD ~
+.".. ........
+" I
+'" 0 .2 .4 .6 o .2 .4 o .2 .1.
+(d) Run 4.
+Cycle 1, VH 99 knots Cycle 2, VH = 96 knots Cycle 3, VB 93 knots Cycle I., VH 92 knots
+..I. .• 2
+""o ..:,1
+°
+. .0 c . . , . ..". c " .. ' ~ 0 GO &0 ° qji'§9 db~~o~
+.".. ........
+t; o o .< .w .6
+(e ) Run 5.
+.. I . .2 Cycle 1, V H 100 knots Cycle 2, V H 97 knots k~~~ ,~" o
+""o :1 J. ' " " 95 Spin-down
+' o
+. .o c . . . , . . ~ . "".. 8§9o~ OJ~ Spin-up
+.".. ........
+' " " a .2 .1; a .2 .1. o .? .11
+Sl ip ratio, sl
+(f) Run 6.
+Figure 53.- Concluded.
+~
+r\)
+\)I
+,
+
+
+
+=== PDF PAGE 127 ===
+-_
+- ..- ----------
+l
+~ .~
+~ Cycle 1, VH = 14 knots 0 0 Cycle iJ, VH = 14 knots
+o 0 0 0 0
+o
+0 0 0
+.2 f- o 0 o 0 0 0 0 0 - ~ <..J
+0
+.6
+I Cycle 7, VH = 12 knots Cycle 10, VH = 11 k .... ot s
+0
+r
+0
+.4 0 o
+:1
+'2- o o o o 0 o
+..U ~ .~. 0 0 0 o Spin-<Iown o 0 o o o
+...". .2 1 0 Spin-up o
+u0~
+o
+c
+...!,l 10 Cl
+.~
+to.
+0
+.h r 0 0 0 0 o Cycle 13, V H o = 9 knots o 0 DO o Cycle 16, VH § = 8 knots
+0 o
+0
+.2 ~ 0
+o
+n .2 ·4 .6 .8 1.0 o .2 .4 .6 .8 1.0
+Slip ratio, 51
+(a ) Run 1.
+I ' ~~ Figure 54.- Tire D3, dimpl e fabric- reinforced tread, rubber surface . Antiskid unit oper
+l ating; p = 260 lb/ sq in.; d l = 0 to 0. 3 inch.
+. -------- ..• -----~.-.--- ----"'-----.-.
+
+
+
+=== PDF PAGE 128 ===
+r--._--
+--~----~---.--~---~ -~----~- --~-
+.4 .
+Cycle 1, VH = 49 knots Cycle 2, VH = 48 knots Cycle ), V
+H
+= 46 knots
+0
+.21--0 0 0 § 0 0 000 too <m @ @ 0 loo 0 o 0
+8 0 0 o 0
+L
+..
+" 0 0 .2 .4 .6 .S 0 .2 .~ .6
+!:
+..!..!.
+u0~
+"
+.$.l
+~ .4
+'"" Cycle 4, V~ = 45 knots Cycle S, VII = 44 knots
+o
+Spin-down
+.2 I- 00 8 0 0 0 0 0 0 ~o~ 0 00 0 0 o Spin-up
+f€
+1
+0 .2 .4 .6 0 .2 .4 .6
+(b) Run 2.
+Cycle 1, VH = 98 knots Cycle 2, VH = 96 knots Cycle ), VH = 95 knots Cycle 4, v H = 9) knots Cycle S, V H = 91 knots
+1"- . '~0 ~
+rc"",
+~e to~%~Ce ,
+OOOOOC:OcP '2Jeen 0
+{ CO
+I
+0 .2 .4 0 .2 .4 0 .2 .4 0 .2 .~ 0 .2 .4
+Slip ratio, "1
+(c) Run 3.
+~ Figure 54.- Concluded.
+~
+
+
+
+=== PDF PAGE 129 ===
+......
+f 0 \) \ .L I 00 0 Cycle 1, Vp, = 2L knots 00 0 0 0 Cycle 2, VH = 2) knots
+0 0 0 0 0
+0 0 0 0
+.2 f- 0 0 o 0
+00 Spin-down 0
+o
+0 Spin-up
+0
+0
+.L r o 0 0 Cycle J J VH = 22 knots [~ 0 Cycle L, VH = 22 knotso
+0 0 (; ° 0 0 0
+0 0 0
+.2 J...
+"-
+'2
+.
+~
+8 0 r
+. j. ! " : i .L 00 0 Cycle 5, VH = 22 knots LO 0 0 Cycl 0 e 6 J VH = 2l knots
+r~ 0 0 0
+0 0 00 0 0 0
+.2 f-O
+0
+0
+L
+0
+.L r Cycle 1, VH = 21 knots
+[00
+Cycle 6, VH = 20 kr.ots
+0 0 0 °0 0 0 0 0
+0 0 0
+0 0 0
+.2 I-~
+o .2 .L .6 .8 1.0 o .2 .L .6 .8 1.0
+Slip ra tic, 91
+(a ) Run 1.
+Figure 55. - Tire D4, dimple fabric-reinforced tread (ice grip). Antiskid unit operating;
+p = 260 lb/sq in.; d = 0 to 0 . 3 inch.
+l
+
+
+
+=== PDF PAGE 130 ===
+---- ---~ -~.-.-
+---~~----.~--
+l~
+)
+.4
+I
+Cycle 1, VH ::: 1.,9 knots Cvcle 2, VH ::: L8 knots
+.2 t--
+CbO
+° o
+°
+c:P o o Spin-down <90 0 0 0 0 ° o
+D U Spin-up &
+~
+0 r
+.4
+Cycle J, V H ::: u7 knots Cycle L, "H = L6 knots
+' ~
+00
+.".- 0 o 0 0 0 o 0 0 ~o 8 8 o °
+c
+] ----L_
+t 0
+8
+.4
+c
+~ Cycle 5, VH ::: L6 knots Cycle 6, VH ::: taL knots
+...
+~ o
+o
+.2 f- ° 00 n 00 c:;l 0 o 00 o o 0 0 o
+~
+o
+0
+L
+o .2 .4 .6 .8 1.0
+J.4
+Cycle 7, VH ::: LLa knots
+0
+en 0
+0
+0 0° 0°
+0
+.2 .4 .6 .8 1.0
+Slip ratio, 51
+(b ) Run 2 .
+......
+f\) Figure 55.- Continued.
+--.l
+J
+
+
+
+=== PDF PAGE 131 ===
+k'O
+,2 Cycle 1, VH = 79 knots '.d, ' .•" • n ••• " ~ I,-,. ~ CY o cle o ~" ."'''
+f f- \ - ) ' ~~" ~ Cl nr J, V" -. n '00"
+OJ cEO ,
+Cb
+I
+"-
+..,' 0
+c
+~
+"
+...<
+t
+QI
+8
+g
+:;J 2 Cycle 5, VH = 7L knots ~n.oo"
+E~ o
+Spin-down
+o
+Spin-up
+o
+(c) Run 3.
+b
+, ., ~cP 00 '~ . •" '," ..." ~'~d' ' . •" '," '"", ~" J ••" ', " '00" ~oo ;~ ' .•" • " _Co
+o
+i 0 o .2 .L o .2 .L o .2 .L
+..Q.<I
+."..
+.....<.
+QI
+8
+g
+...<
+~ 2 Cyel", 5, VH = 92 knots
+.~
+o .2 .L
+Slip ratio, 51
+(d) Run 4.
+Figure 55 .- Concluded.
+-_._----
+~'------.
+
+
+
+=== PDF PAGE 132 ===
+~.--~----
+----
+- -- ---,-""
+.L I Cycle 1, V H = la9 knots Cycle 2, VH = 1.!8 knots
+~ f ~ @:-::~'~-"
+000 0 o
+.2 I- o 0 0 0 ::: o :J 0 0 0 o 0 0 0 0 o O DS 00 0 § ~ 0 00
+I
+o .2 .4 .6 .8 1.0 o .2 .4 .6
+.".. .4 r Cycle L, VH = 46 knot. Cycle 5, V H = UL knot.s Cycle 6 J VH = hI knots
+c
+~ r o o
+~ ()
+. 8 c .. . .2 ~ 0 o 0 i l2 0 >.l '- li ' 0 0 00 ~ 0 000 0 0 0 0 0 0 ~0Q§ 0 0 0 cP c
+~
+.:: I
+o -----L
+0 .2 .4 .6 .8 1.0 o .2 .4 .6
+.4 Cycle 7, VH = 41 knots
+G Spin-down
+o
+Spin-up
+.2 f-~O OJ
+@:!.O DO&""
+o
+o .2 .4 .6
+Slip ratio, 51
+(a ) Run 1.
+~ ~ Figu di r m e p 5 l 6 es .- . T A ir n e t i D sk 5M id l , u d n i i m t p o le p e f r a a b ti r n ic g - j re p in = f o 2 r 6 c 0 e d lb t / r s e q a d in m .j· o d d i l f ie = d 0 b .2 y b to u f 0 fi . n 5 g i n th c e h t ( i e r x e c e t p o t w re h m e o re v e the
+noted)j PB , 1 = 50 l b/sq in.
+J
+
+
+
+=== PDF PAGE 133 ===
+r
+I-'
+VoJ .4 Cycle 1. V H :: 54 knot.s Cycle 2 J VH :: 52 knots Cycle J, VH :: SO knots Cycle 4. VH :: 49 knot.s
+DO 0
+.2 0 o 0 0 0 00 6>0 o Cb 000 o o 0 o 0 0 0 0 0 0 0
+000
+~ c .2 .4 .6 .2 .4 .2 .4 .6 .2 .4 .6
+t
+~
+~ .4 Cycle S. vH :: 41 knot., C7cl. 6, V H :: 45 knots Cycli!! 7. vH :: 43 knots
+~
+.E
+.21-~0 o O ~ <:b : 0 J 0 0 0 0 0 0 o 0 0 08 B CCF l4.D
+o o
+o 0
+o
+.2 .4 .2 .4 .6 .8 1.0 .2 .4 .6
+(b) Run 2. I
+.4 r "A" Cycle I, VH :: 81., knot.s Cycle 2, V H :: 62 knots
+~~~."-"
+,>~
+o
+Spin-down
+0 o B °co ao o 0 o o Spin-up
+0 0 0 o [j ""'0 DO
+0
+.2 .4 .6 .8 1.0 .2 .4 .6 .2 .4
+' Cycle 4, ~ VH :: 79 knots [ Cycle \ 6 i, , 1 V > H = 7 . 6 k ~ not .s I ~ Cycle e 7 : . rl V J H O :: ~ 74 0 0 kn 0 o t.s [ Cycle , 6 a , V H g :: 13 8 kno a ts
+.2 .4 .2 .4 .2 .4 .2 .4 .6
+SUp rat.io, III
+(c ) Run 3.
+Figure 56.- Concluded.
+L
+-~,,- ---- - "- --_._---- --------~---- ---- ----'
+
+
+
+=== PDF PAGE 134 ===
+1
+~
+"A"
+.4 r ~I Cycle 1, V H = 51 knots r Cycle 2 J VH = 49 knots r Cycle 3, VH = 1&8 knots
+0
+0 000
+0 0
+.2 I- ~ 0 0 0 0 0 0 0 0 0 r~O
+0 0 0 0 O~ 0 0 0 00 0
+0 0
+0 .2 .4 .6 .8 1.0 0 .2 .4 .6 .8 0 .2 .4 .6
+.4 r Cycle L, IIH = ta6 knots r Cycle 5, v H = 45 knots r Cycle 6, V H = La) knots
+."
+~c
+l
+.~u..
+.2~ 0 <@ 0 0 0 0 0 0 0 0 0 ~ <n:P0 O0 ~ 0 0 Q:) fc~no~ 00 C6
+c
+0
+~
+E
+~0
+0 .2 .4 .6 0 .2 .4 0 .2 .4 .6
+.4 Cycle 7, VH = L2 knot.s Cycle 6, VH = 41 knots
+o 0 00 o
+.2 r O@::;C0o (jJ % 0 0 0 0 00 o Spin-down
+o Spin-up
+o
+o .2 .4 .6 .S 1.0 .2 .4
+Slip ratio, 31
+(a ) Run 1.
+Figure 57.- Tire D5Ml, dimple fabric- reinforced tread modified by buf fing the tire to remove the
+I-' dimples . Antiskid unit operating; p = 260 lb/sq in.; d l = 0 to 0. 3 inch (except wher e noted);
+\)l
+I-' PB,l = 50 lb/ sq in.
+
+
+
+=== PDF PAGE 135 ===
+.......
+\>I
+I\)
+.1. r "A" Cycle 1, V H 87 knots Cycle 2, VH 86 knots Cycle 3, VH 81. knots
+0
+Eg& o
+o
+I-
+.2
+01 o DOD o o ~ 8 o
+0 o 0 0 0 o 0r::teJ 0 ~
+"- 0 .2 .1. .6 .8 1.0 o .2 .1. .6 o .2
+.;
+c
+.. . .U ~ " ~ .. o
+.... Spin-do,,"
+u0~ o
+Spin-up
+c
+0
+.+.~.'
+U
+.~
+c.. .1. Cycle I., V H 82 knots Cycle 5, vH = 81 knots Cycle 6, v H = 79 knots Cycle 7, VH 78 knots
+.2
+We~ °Cb Cb:P § £ IQl cg) ~&O ~ ~ ~ O Q )D GJO
+0 0
+I
+o .2 .1. 0 .2 .L 0 .2 .1. o .2 .1. .6
+Slip ratio, 51
+(b ) Run 2.
+Figure 57.- Concluded .
+--
+._ --
+-----~------
+
+
+
+=== PDF PAGE 136 ===
+1- ---.--- -~ -.. ...... ~~-~-- ----v
+,",-- Cycle 1, VH = 61 knots ~o ,~;. '. ' •• " ,." .. :ycle ), 'H = 52 knots
+c "l 0 0 00 0
+' '. . u . . ~" ". . . . .2 (h ~~ 0 0 Cb 0 8 <0 o 0()J 0 0 0 0 ~ c900 c§J 000 0
+u0~
+c
+~
+"
+.~..... ~
+0 .2 I .4 I .6 I .e I 0 .2 I .4 I .6 I 0 .2 .4 .6
+(a ) Run 1 .
+, : , I - . . 41 Cycle 1, V H = 89 knots I Cycle 2, VH = 87 knots I Cycle ), VH = 35 knots Cycle LJ VH = 8) knots Cycle 5, V H ;;: 78 knots
+.. c !l r
+. . ~. . . . . . 'l~OJO~ IO~ gbO~ t~ ~D8 ~ ~ ')"
+'J O~
+u0~
+c
+' " "0 "
+.~
+ct
+0 0 .2 .4 0 ,2 .4
+(b ) Run 2.
+, " ,- - ,4r Cycle 1, VH ;;: 10) knots Cycle 2 J VH ;;: 100 knots Cycle ) , V H = 97 knots
+c
+'u ~" ! o
+'. . u0 . . ~ ". . . . OD'd o C OO 0 0 0 ( 0 ; 00~ o S S p p i i n n - - u d p o wn
+c 0 0 0 0
+~ 0
+~
+...... 0
+0 .2 .4 0 .2 .4 0 .2 .4
+Slip ratio, 31
+(C) Run 3·
+f-J
+\..>I Figure 58.- Tire D6Ml, dimple fabric-reinforced tread modified by 5 circumferential grooves .
+\..>I
+Antiskid unit operating; p = 260 lb/sq in.; d = 0 to 0.3 inch.
+l
+
+
+
+=== PDF PAGE 137 ===
+I
+V ~ f- I ' .4 r 000 0 0 0 0 0 0 0 08 ~o 0 cP 0 0 0 0 0 00 0
+0
+.2
+Cycle 1, VH = 26 knots Cycle 5, vH = 25 knots
+I
+0
+o
+Spin-dovn
+o
+Spin-up
+.4 f
+"-
+. c , DO 0 0 0 0 en <tJO
+. . . . . . " u . . . . . . 0 0 0 0 0 0 o 0 0 0 00 0 0
+....
+" .2
+u0
+.. c 0.,. . Cycle 9 J V H = 23 knots ~:vcle 1), Vii = 21 kr.ots
+...~.
+"
+0 0 .2 .4 .6 .8 l.0
+.4 r 0iQ) 0 0 0
+0 0 o ©
+0
+, ~
+Cvcle 1'(, VH = 19 knots
+0 .2 .4 .6 .8 1.0
+Slip ratio, ::11
+(a) Run 1.
+Figure 59.- Tire DTM1, dimple fabric-reinforced tread modified by 37 lateral grooves. Antiskid
+unit operating; p = 260 lb/sq in.; dl = 0 to 0.3 inch.
+~-.------- - /'
+
+
+
+=== PDF PAGE 138 ===
+'1
+r-.------------------......... ~ ..- -- --~-~-- ,~------- ------' ------ - - -
+I
+.
+[
+~~l,~=~~~ Cycle L, VH 5) knots Cycle 7, VH 51 knots Cycle 10, VH 50 knots
+~ ~~ ~ ~u c 2 ~ ~ .? 0 0 0 0 0 0 0 0 0 0 ~ o o o o 8 o 80 0 8@ © Oo0cf)0 B °0
+c o o
+~
+~ o
+H
+~ 0 .2 .L .6 o .2 .L .6 o .• 2 .L o .2 .1,
+(b) Run 2.
+I
+Cycle 1, VH :::: 72 knot.s r Cycle 2, VH = 71 knots Cycle ), V H = 70 knots Cycle L. VH = 69 knots
+.L
+:1
+.;
+c•
+. ' ' . - - . 0~ u < < . ~ . +% o l 0 c:P 000 0 r .Qd0 DO 0 0 0 0 . o 0 § 9 0 J @ DB 0 ~ COD 0 00 DO o o S Sp p i i . n , - - u d p o wn
+c 0
+j 0 :0
+.~
+;!;
+0
+(c) Run 3.
+.L Cycle 1, VH = 98 knots . Cycle 2, VH = 95 knots Cycle ), V H = 9L knots Cycle L, VH = 93 knots C\"cle S, VH =. 92 knots
+..
+'
+c
+!:
+~
+" " . 0u ~ c. .2 ~EbQ:@ ~ o c PcP>~ a C o O ~M Se~O
+~
+~
+H
+~ 0 .2 .L o .2 .L o .2 .L o .2 .L o .2 .L
+Slip ra tio, 51
+(d) Run 4.
+~ ~ Figure 59.- Concluded.
+\J1
+
+
+
+=== PDF PAGE 139 ===
+t: .4 r Cycle 1, VH = 47 knots Cycle 2, VH = L6 knots
+O«ilO
+0\ 0
+0 0 o
+0
+0 0 00 0 0 o
+.2 t- 0 0 0 0 o o o
+EID
+o
+o
+Spin-down
+o
+Spin-up
+.4 r- Cycle 3, VH = 45 knots Cycle 4, VH = 44 knots
+'"
+.,
+c 0 0 o
+.. . ! ~ ..:,,l , ~ 00 0 0 [j) a 0 0 o 0 c
+" 0
+u0
+c
+0
+'j
+.u...
+,t
+0 o .2 .4 .6 .e
+.4 Cycle 5, v H = 43 knots
+[l)
+§
+dJ o
+o
+.2 o
+00
+o .2 .4 .6 .e 1.C
+Slip ra tio, sl
+(a) Run 1.
+Figure 60.- Tire DBMl, dimple fabric-reinforced tread modified by 2 zigzag circumferential
+grooves . Antiskid unit operating; p = 260 lb/sq in.; d = 0 to 0. 3 inch.
+l
+"-- --------- ---"
+
+
+
+=== PDF PAGE 140 ===
+-- --- Y.
+I
+i Cycle 1, V H = 7L knots I Cycle 2, V H = 73 knots r Cycle 3, VH 72 knots Cycle 0, VH 71 knots
+.,r
+.L
+... I r
+QJ
+" o °0 °
+~ '2l dl 0 0 § °0° ° °0 ° @ c9
+i 0 00 °
+8
+." "..
+r"x.
+0 .2 .4 0 .2 .l! o .2 .L o .2 .L
+(b) Run 2.
+Cycle 1, VH = 9L knots Cycle 2, VH 92 knots Cycle 3, VH = 91 knots Cycle L, VH = 90 knots
+o 0 g
+.2 ~CffCn c9 ~ 0 0 0 ° 2J O ° ~ fu
+'~-D
+:1 Qj d'8,
+~'
+. . . Q ". . . . . .J o . I 2 .l! .6 o .2 .L o .2 o .2
+...
+oQJ
+"
+.c o..
+t.. . Cycle 5, VH = 89 knots Cycl
+r
+e 6,
+:
+VH
+:
+= 67 knots
+"
+rx. .2 °
+0Cb08
+o .2 .L o .2
+Slip ratio, sl
+(c) Run 3.
+I--' Figure 60.- Concludea .
+\..N
+-..J
+
+
+
+=== PDF PAGE 141 ===
+r
+\ ~ )J .L Cycle 1, V H = 56 knots Cycle 2, VH = 5L knots Cycle 3, VH = 5L knot'
+OJ
+.2 I r ~ C Oo 00 o o 0 o % 0 CO 0 0 o o 0 o o Cb o o 0
+000
+f o
+o .2 .L .6 .8 1.0 o .2 .4 .6 .8 o .2 .L .6
+.4 r Cycle 4, v H = 53 knots r Cycle 5, vH = 53 knots r Cycle 6, VH = 52 knots
+"-
+..;
+c l
+.". " .. 8 " " " " ".... ., ~ o < 0 b fl <g 0 0 r~ b 0 0 CIJ 0 eOO 0 0 C 0
+..c 0,,.,
+.". ,
+.
+.
+.
+,
+r.. 0 .2 .4 .6 0 .2 .L .6 .8 0 .2 .L .6 .8
+.4 Cycle 7, VH = 51 knots
+o
+Spin-down
+o
+00 Spin-up
+.2 1-0 § <TIl o
+00
+o
+8
+o .2 .4 .6 .s 1.0
+Slip ratio, 51
+(a ) Run 1.
+Figur e 61. - Tire DBM2, tire DBM1 modified by removing rib between the 2 zi gzag grooves . Ant i skid
+unit operating; p = 260 1b/ sq in.; d = 0 to 0. 3 inch.
+1
+L
+----.----~------------ --~---..,--<-. -~~----- ____ - -II.
+
+
+
+=== PDF PAGE 142 ===
+-'"'
+I-~--~ - I
+I
+I
+r
+• 4 Cycle 1, VH = 78 knot • Cycle 2, VH 76 knot. Cycle 3, V H = 76 knot. Cycle 4, VH 75 knot,
+.2 rOO 0
+eO[§) 0 0 0 @ 0 D 0 o ° D O 0D 0 O 0 00 -z) ro °
+.. : . 1 ,' 0 .2 .4 .6 o .2 .4 o .2 .4 o .2 .4
+<:
+.~
+...~..
+....
+CI>
+8
+·..
+"o
+r.,i
+.~
+r!: .4 Cycle 5, VH 75 knot. Cycle 6, V H 73 knots Cycle 7, VH 72 knots
+o
+.2 ° ° Spin-down
+~OcD 0 00 0 ~ go o o Spin-up
+1
+o .2 .4 o .2 .4 0 .2 .4
+Slip ratio, '1
+(b) Run 2.
+Figure 61.- Concluded.
+~
+\0
+
+
+
+=== PDF PAGE 143 ===
+gf--'
+·~ r c9 Cycle 1, V H • 23 knots 00 Cycle 2, V H • 22 knots
+0
+en 0 0 .0 00 0 0
+0 0 o Spin-down 0 0 0 c9
+0 o
+t Spin-up 0
+a .
+. .
+~
+o 0 0 0 Cycle 5, VH • 21 knots ~ Cycle 6, v H • 21 knots
+0 0 Ooe 0 0
+0 0 00 0 §
+.2 [0 0 0 0
+.",'-
+~ 0
+1.
+.
+. .1.
+.
+'OJ
+g 100 Cycle 8, V • 20 knots Cycle 11, V • 19 knots
+.c.. H H
+0
+. t t. : . 0 0 0 0 0°
+0 [jJ ~ 0 0 0 0
+0 0 0
+$
+0
+.L r 0
+Cycle lL, V • 18 knots 0 Cycle 16, V - 17 knots
+0 0 H III 0 H
+.2 1- 0 0 0 0 0 0 0 g 0 0 0 o 0
+J
+0
+t
+a .2 .L .6 .8 1.0 0 .2 .4 .6 .8 1.0
+Slip ratio, 81
+(a ) Run l j P = 260 lb/ sq in.
+o
+Figure 62.- Tire 81) smooth) all- rubber tread. Antiskid operatipgj d l t o 0.3 inch.
+----~_..._z..__~ ___ .
+
+
+
+=== PDF PAGE 144 ===
+~ _ _____• __~ -~ .. "__.i-- - •• ¥_.-.-_ .. - -~YI
+\
+.2 fJ
+0 0 C ° ycl ll 1, 0 VH 0 = 56 knC'fS . , ° 0 0 Cyele 2 'e . VH S5 o k not 8 s C Cy b cl c e 9 J , @ VH o • 5lL knots cP C ° yc le D L : . ) VH = D :, C kn '.l
+'f ;';.2 .:' -.I, . .2 ./, .6 .? ., .2 ./,
+~ ott? o B ° ° 0°0 C o ° 0 °
+o
+Cycle 6, V H • 52 knots Cycle 7. V H • 52 knots
+.2 .b .2 .L .6 .2 .L .6
+(b) Run 2'"; p 260 lb/sq in.
+.2 0 ° 0 o C yc 0 l e 1, V ° o I{ • 66 o k n Q ot. J s 0 o E C © C i y cle 2 0 V ° . 7'no,", ~Jl C y d cle ' J • . B V ~ - " '~" ~ Cycle ~ L. V -
+C : "'":"
+.2 ..... .L .6 .2 .L .2 .L .2 .L
+'~~'~'~' " fg~·~·~··-" ~ e-m "','" .~" ~~~,~ ." ~'
+<ru e
+§ 0
+-, , , ,
+I
+(c) Run 3; p = 260 lb/sq in.
+I
+loo C ycle 1 V • 89 knot.3 Cycle 2, V • 61 knot.s Cycle ), Vii • 66 knot.s to ..
+~~DO. ~00~8 ~o~ ;'~:~ "~" I
+, ncB ,
+. .2 .L .2 .L
+2 Cycle 5. V • 84 knots Cycle 6, V • 62 knots \
+ba~~~
+tb
+~o%o~o~ o
+Spin-down
+, o Spin-up
+.2 .I, .2 ./,
+SHp ratio, -I
+(d) Run 4; p = 260 lb/sq in.
+f-J
+-
+f-
+F
+J
+" Figure 62.- Continued.
+_J
+--------------------
+
+
+
+=== PDF PAGE 145 ===
+I-'
+I
++
+\
+"
+)
+" .4i Cycle 2, VH :: 26 knots Cycle L, VH :: 25 knots
+0 0 0 0 0 DO 00 0
+.21- 0 0 0 0 0 0 o o Spin-down 0 0 0 0
+0 Spin-up
+O·
+.4,.... 0 Cycle 6, VH :: 25 knots r Cycle 8, VH = 2L knot.s
+00
+0
+0 0 0 0 0 0 0 0 0 0 0
+D
+.2'
+i
+~.
+........ 0
+8
+c 'T Cycle 12, VH = 2) knots fo Cycle 16, VH :: 22 knots
+~ ~o
+.".. 0 0 0 0 0 0
+0
+0 D 0 0 D D
+0
+0
+I~ I
+0
+.4,.... Cycle 11, 1H :: 21 knot.s r Cycle 19, VH :: 20 knot.s
+0 0 0
+00
+0 0 0 0 0
+.2f-- 0 0 0 0 0 ~:o 0 0
+(]I
+0
+I
+.2 .4 .6 .8 1.0 0 .2 .4 .6 .8 1.0
+Slip ratio, lSI
+,
+(e) Run l' P = 120 1b/sq in.
+Figure 62.- Continued.
+_ -_ _ _ ---A
+
+
+
+=== PDF PAGE 146 ===
+-'- 1
+_______~ -...• - --- _ _ __ __ --..,.,---- I ~ ...... -- .. ---~ ----- .---
+I
+b
+, '~'l9 dO ~'~~~:'~' • (IlD Cy O cle ) ~ , V H :: ° 51 knot,s roOCy ° c le < 6 tJ , vI ° I : : L 0 9 0 k not.s ~ 9,0 C yccleP 1°, V~ --.9 kn oto
+." ."
+~ .2 .L .6 .2 .6 .2
+~ :;':;" .. .. °
+'~ ;~" '""~.' ~ ~ !Jl U
+08°00 0 0 ~O
+~
+Cycle 11, VH : 47 knots
+. ! 2 .I" .2 ." I
+(f) Run 2; P = 120 1b/sq in.
+I
+Cycle 2 V Cycle J. VH :: 6S knots Ecy"• •. V H -- "I1 4.L knoUi
+'F~~'~~-~ [£f ",:~:~" cw
+~o ~ 000 I
+..
+'i ,," ..', . . ,." ., ."
+.2 . h .6 .? .2 .L
+~ Cycle 6 V Cyde 7, VII :;: 62 knots Cycle 9. VH :: 61 knots I
+° ° ~e&o,E"=~" k;~,~'~~" ~ 8 °
+OOIlD 00 r§)0 00 rID 00 0° °
+I
+.2 .L .2 .1: .2 .L .2 .J,
+I
+- (g) Run 3; p = 120 1b/sq in.
+' ~:~'o:' ~ o ""~'~~"~:
+Cycle J. VH:;: 78
+~
+k not.
+[ ° °o°cRJ 0'
+o
+., Spin-dcnm
+.2 .1: .:: .L .6 .2 .6 o Spin-up
+.2 Cycle L, VH :: 71 lmot.a Cyele 5. VH :: 75 knoU
+[ 000000 Il1)IOC(p [ 0[))00 0 000c:P1Q)
+.2 .L .6 .! .2 .L .~ .8
+Slip roaUo, 51
+(h) Run 4; p = 120 1b/sq in.
+~ Figure 62. - Continued.
+VI
+I
+---- _._--
+
+
+
+=== PDF PAGE 147 ===
+f-'
++=
++=-
+,-_________v ij = 93 knots
+.,' I
+H
+:i
+I V = 91 kn;::le 1, V = 90 knots
+H
+.~ =
+l'T Cycler 2, V 88 knots
+H
+I CYcle knots
+H
+3. V = 87
+I ~o OO~
+$ oS
+000 OOr.§D 00 00
+00
+t ~
+I I I
+'' ~ ''; 0 . 2 .~ .6 .8 1.0
+J'r.<
+Slip ratio, sl
+(i) Run 4; P 120 Ib/sq in.
+Figure 62.- Concluded.
+~-------------~ --__~ ..O-<.-___~ __ ______ ____ _____ _ ____ .• __ _ __ -------._---
+
+
+
+=== PDF PAGE 148 ===
+---------- -- - Yj
+I ----~------
+I
+.4 Cycle 1, V H = 62 knots Cycle J, VH 59 knots Cycle 5, V H = 5tl knots
+0 8
+o
+.2 l-- 00 C Cb 0 (l#
+0 0 00 OQ) ~o
+c9
+~
+I
+0 .2 .4 .6 .8 o .2 .4 o .2 .4
+:i.
++r:'
+.."..
+o
+.... . o.. ... Spin-down
+o
+o" Srin-up
+o
+r:
+..o..
++o'
+r . . ~ . • 4 r Cycle 7, vH 57 knots Cycle 9, V H 56 knots Cycle 11, V H 54 knots
+CO
+.2 c§) ~ § 0 O© 0 0
+00 00
+o .2 .4 o .2 .4 o .2 .4
+Slir ratio, sl
+Figure 63.- Tire 8lMl, tire 81 modified by 1/2-inch-wide circumferential groove. Run 1; antiskid
+unit operating; p = 260 lb/sq in.; d = 0 to 0.3 inch .
+1
+......
++
+\Jl
+I
+L_
+
+
+
+=== PDF PAGE 149 ===
+t: .J.. Cycle 1, V H 71 knots Cycle 2, V H 70 knots Cycle :>, VH 69 knots
+0\
+.2 f-
+000 0 0 0 I() iro 0 0 0 0 0 0 o noCb 0 o
+0
+0 00
+0 .2 ./' .6
+o
+Spin-doyn
+o
+Spin-up
+.0 r Cycle /" V H = 69 knots Cycle 5, VH = 68 knots Cycle 6, \ = 66 knots
+"-
++'
+C
+"
+."~
+. ...
+.
+. .~.
+.
+c
+o"
+"
+.2
+~[!l)00 o I]J) r§> o ~g cP 0 0
+o
++.~'
+.
+".~..
+r~
+o
+.L Cycle 7, VH = 66 knots Cycle 8, V H 65 knots Cycle 9, VH 6/' knots
+8
+.2 c5D o m o Cb ° eo ctJ o § o 0 0 o
+o
+o .2 .L o .2 .0 o .2 .L
+Slip ratio, 51
+Figure 64. - Tire S1M2, tire Sl modified by 3/4- inch- wide circumferential groove. Run 1; anti
+skid unit operating; p = 260 lb/sq in. ; dl = 0 t o 0. 3 inch.
+'---. - -
+.-------.~---~------ '
+..
+
+
+
+=== PDF PAGE 150 ===
+.4 Cycle 1, V H = 78 knots Cycle 2, VH = 77 knots Cycle ), VH 76 knots
+• 2 ° o C fJ Ql 0 o o o <[j o Dr. co o
+o OJ 0
+On
+o .2 .4 .1) o .2
+.4 r Cycle 5, VH = 74 knots r Cycle 6, VH = 7) knots r C:rcle 7, V H = 73 knots
+'"
+.;
+c .,t il
+"
+·rl
+' ' ~ - - u0 " < < °0 OJ CO la°'iJ o loo@ [!j) °
+c
+0
+j
+u
+.'J..:
+0 0 .2 .4 0 .2 .4
+!
+Cycle 9, VH 71 knots
+.4
+o
+Spin-down
+o
+o Spin-up
+.2 Ot3 <0 0
+o .2 .4
+Slip ratio, 51
+Figure 65.- Tire 81M3, tire 81M2 modified by adding two 3/8- inch-wide circumferent ial grooves .
+I-'
+.. - ... F ;J ' Run 1; antiskid unit operating; p = 260 1b/ sq in.; d l = 0 t o 0. 3 inch .
+
+
+
+=== PDF PAGE 151 ===
+.4 Cycle 1, V = 79 knots Cycle 2, V = 78 knots Cycle ), V = 76 knots
+H H H
+o
+o
+(]> 00
+.2 o
+8
+")
+o
+.4 Cycle 5, V = 74 knots Cycle 6, V = 74 knots Cycle 8, V = 72 knots
+H H H
+:!.
+.2
+°
+o .2 .4 o .2 .4 o .2 .4
+.4 Cycle 9, V = 71 knots
+H
+0
+0 0 Spin-down
+0°0
+.2
+0 0 Spin-up
+0
+o .2
+Slip ratio, sl
+Figure 66.- Tire 81M3. Run lj antiskid unit operatingj p = 260 lb/sq in.
+For this run, the wet runway was broomed free of water, that is, the
+o.
+runway was l eft damp with no standing puddles of water; d
+l ~
+148
+
+
+
+=== PDF PAGE 152 ===
+._ ............." .......... _ ..... ______
+_u.~,
+~ Cycle 1, V
+H
+::: 19 knots Cycle 4, vH ::: 18 knots
+.6
+o 0 o
+.4 0 0 0 o 0 0 0 0 0 8 o o o o 0 o
+o
+'liO o
+Spin-down
+o
+o
+Spin-up
+.6
+Cycle 7, '.[ H = 16 knots Cycle 13, VH ::: lL knots
+"
+i
+o 0
+.4
+~ o o
+o
+g c o o o o DO ~ o o o o o
+~
+~ .2 o
+.::
+o
+o
+.6
+Cycle 19, VH ::: 11 knot:s Cycle 25, 'v H ::: 6 knots
+cP o
+.4 o o
+~ Q 0 o o o o o
+o o o o o
+.2 o
+o
+o .2 .4 .6 .S 1.0 o .2 .4 .6 .8 LO
+Slip ratio, '1
+(a ) Run 1; p = 260 1b/ sq in.
+Figure 67.- Tire 82, smooth fabric- reinforced tread, rubber surface . Antiskid unit operating;
++ f- ' d 1 = 0 to 0.) inch.
+\D
+l ____
+
+
+
+=== PDF PAGE 153 ===
+g .
+I-' Cycle 1, VH = 74 knots
+~ ~;;" ~; ~
+~ '~ O '0 0° '. ',' • " .." • 'P M"
+. °D @ D0 D °
+DO
+o
+!
+o .2 .4 .6
+t'
+~ § ~ 0,., ••. •~ • n ,"," ~ 8 ", ::;. •~ . n 'M" ~ 0,"" .._ ~ H • ~ '''','
+~c}) 0 0
+a
+~ 0
+.t Lr ""'M"
+, ~OOb ~:" ,. '~ • " .." . 4ll ~ cP ~CleG. v, - o Spin-down
+U Spin-up
+o
+(b ) Run 2j p 260 l b/ sq i n.
+"."
+. ., ~ 08 O~~; 'M"
+r&oCy c!.o 2, VH = B7 knots
+{~:: ~ ':~
+% '"'''
+I t
++'
+~
+0
+...
+'j0; .,
+a 0°:: ,." . " .. ,"
+~ oQ:] 'C 0"" '" " • " '"''' ~<1ll ° 0 f~ " ~:~"'''
+o .2 .4 o .2 .4 o .2 .4
+Slip ratio, 81
+(c ) Run 3j P = 260 lb/ sq i n.
+Figure 67. - Continued.
+l-. __ _________________ ___ ____ ____ ._ _____
+....,.......~___ _~ ~ ~
+
+
+
+=== PDF PAGE 154 ===
+I-'
+\J1
+I-'
+~ ____ ~ . - . - - - r - '
+- -------------
+... ._ __ - .------~
+.L o o 0 0 0 o o Cycle 1, o V H o = 25 kno o ts o o o 0 0 0 o o Cycle 5 0 , 0 v H = 2) k o n ots o
+.2 f- 0
+o
+o
+o
+Spin-down
+o
+Spin-up
+.L Cycle 9, VH = 21 knots Cycle 12, VH = 20 knots
+"
+1 I O @ 0 0 o o
+;::; 0 0 00 0 0 o o o o 0 o o o 0
+~ .2
+g o
+. ,co, , ., o
+1."..!
+o
+.L r Cycle 16, VH = 19 knots I 0 Cycle 18, V H = 18 knots
+0
+0 0 0 0 0 @ 0 0 0 0 o o
+0 D O DO
+.2 f- 0
+0
+0
+J..
+0
+0 .2 .L .6 .8 1.0 0 .2 .L .6 .8 1.0
+Slip ratio, sl
+(d) Run 1; P = 120 1b/sq in.
+Figure 67.- Continued.
+
+
+
+=== PDF PAGE 155 ===
+f-'
+\ f J \) l '[ Cycle 1, V H = 50 knots Cycle ), VH = 50 knots Cycle 5, vH = L9 knots
+.2 ~O 0 0 0 0 0 0 0 00 o o [] o <0 000 o
+0
+R:l
+J
+0 .2 .L .6 .8 o .2 .L
+." r Cycle 6, VH = 49 knots Cycle 8'''H = 48 knots Cycle 9, V H = L8 knots
+"-
+.,'
+c
+..~.. r
+.!.l. o
+.. u0~ .. .2 8 0 ~ 8 0
+o
+0 0 CD o ° SO o On 0
+c
+'0j
+..u.....
+c.. 0 o .2 .4
+. " Cycle 12, VH = 47 knot • Cycle 1), VH = 46 knots
+o
+o 0 0 0 Spin-down
+.2 o 0 o o rJ Spin-up
+~o 0 0 0
+0 .2 .L .6 0 .2 .4 .6
+Slip ratio, 31
+(e ) Run 2; p = 120 1b/sq in.
+Figure 67.- Continued.
+---------_.-
+~~ ~-----------~-- ._-
+
+
+
+=== PDF PAGE 156 ===
+......
+\Jl
+\.>I
+_ ~
+___
+~ ~ v " ' ~ ~
+____ --- ---.------.- -- .~ __ _ ._ _ ---.r --_ ... -. ~-~ " ..... ----
+..
+,' [o>d%, :"o'·~~" .~" Cycle 2, V H = 71 knots [;~' '''.~'' ~~";~ ~ ~"
+"
+8 ~'" ' '
+all ,0 (30 ,
+~ 0 .2 .L .6 0 .2 .~ 0 .2 .~ 0 .2 .h
+!:
+.~..
+'OJ
+o
+u
+...
+Cycle 7, V = 68 knots
+~ ~ ~ ~~';~." ' ~" H [ 8 ";.~ " ," •• ~"
+., @: : : ' " ,''" ~
+CD 0
+0 .2 .L 0 .2 .h 0 .2 .h 0 .2 .~
+(f ) Run 3; p 120 lb/ sq in.
+. : . 1 .h Cycle 1, VH = 92 knots
+IC ycle 2, VH = 91 knots o
+S ! " u : l I CycleI ), V H = C y 8 c 8 lI e k n ~ o , ts V H = 86 knots o S Sp p i i n n - -d u o p w n
+8 ,,,'d. " " ...."
+.2
+.~,
+cb€ °8
+E 10 0 ~ 0 ~ C(00<0
+o .2 .h .6 .e 1.0
+Slip ratio, "1
+(g) Run 4; p = 120 lb/sq in.
+Figure 67.- Concluded .
+
+
+
+=== PDF PAGE 157 ===
+I-' ·6
+V += l - Cycle 1, VH :: 27 knots Cycle 4, vH :: 2S knots
+o
+0
+.4 I- 0 0 0 o o o o o S S p p i i n n- - d u o p w n 00 0 o o o
+o
+0 o 08 o o B
+.2 1
+o
+0 o
+0
+0
+I
+0
+.6
+Cycle B, VH ::: 2) knot.s Cycle lL, VH :: 20 knot.s
+~
+.
+., 0
+c "~ ~ 0 If
+~ ~ 0 0 0 0 0 0 0
+0
+0 0 0
+c .2 00 0 0 0
+.!l
+~ 0
+t:
+0
+.6
+Cycle 19, VH :: 18 knot.s Cycle 20, V H :: 17 knots
+0 0 00 0
+.d- o
+0 0 0 0 0 0 o o o o o
+0 0 o
+o
+.2
+o
+o .2 .4 .6 .8 1.0 .2 .L .6 .f 1.0
+Slip ratto, 51
+(a) Run 1.
+Figure 68.- Tire 82Ml, tire 82 modified by adding 4 circumferential grooves . Antiskid unit oper-
+atingj p = 260 lb/sq in.; d = 0 to 0.3 inch.
+l
+-----------------,--
+------ ---
+~--- --~.-
+
+
+
+=== PDF PAGE 158 ===
+-_._-- I
+Cycle 2, V = 1.9 knots Cycle 5, V = 1.7 knots
+.1. 8&0 H H
+@ 00
+o
+o o 0 0
+o 0
+.2 o o o o o Spin-down o o o 0 o
+Spin-up
+o
+.1. Cycle 6, V H = uS knots Cycle 7, V H = 1.7 knots
+:1
+.., o o
+' '' '- - a M M " o " " < < .2 JP o 0 o o o o o o 0 o o o <0 o
+o
+.
+.
+"a.
+.
+.
+,
+.:1
+t!:
+o
+.1. r Cycle 8, V H = uS knots r: Cycle 9, V H = 1.3 knots
+0 0 ° 0° 0
+0 0 0 0 0
+0
+0 0 0 0 0
+.2 I- 0 0
+0 0
+1
+0
+o .2 .1. .6 .8 loG o .2 .L .6 .8 I.e
+Slip ratio, 51
+(b ) R1lll 2.
+t; Figure 68. - Conti nued.
+\J1
+-- _._-
+
+
+
+=== PDF PAGE 159 ===
+·L Cycle 1, VH :::: 78 knots Cycle 3 J YH ::: 76 knots Cycle 4, V H ::: 16 knot.s
+.2 o o o o (0 c 1 O o o 0 0 0 o o 0
+o
+o
+.2 .L .6 .8 .2 .L .6
+co Cycle 5, vH = 73 knots Cycle 6, V H ::: 73 knots Cycle 1 J VH ::: 71 knots ~~ Cycle ij, VH ::: 11 knots
+I ~u :. .2 o o 0 @ o I <tf 00 OQ) ° 8 CtJ ° DO
+0
+~
+I
+.2 .L .2 .L .2 .2 .L .6
+(c ) Run 3 .
+•L
+Cycle I, VH ::: 96 knots Cycle 2, V H ::: 9) knots Cycle J, VH ::: 92 k-m't.s
+00 o o
+.2 Cb oJ cPO o 0 0 0 o ° ~~D
+.
+0
+~c 0 o Spin-down
+u 0 o
+t~ Spin-up
+8
+~ .L
+.~. Cycle L, V H ::: 90 knots Cycle $. VA ::: 89 knots Cycle 6, vH :::: 67 knots
+OQ:JQ) o °10 0 °
+.2 0 0 0 0 0 0 0 0
+Cb cP °
+.2 .L .6 .2 .L o .2 .L
+Slip ratio, 51
+(d) Run 4.
+Figure 68. - Concluded.
+156
+
+
+
+=== PDF PAGE 160 ===
+----l
+------ ----
+r~~
+.6
+I
+Cycle 2, VH ::: )2 knots Cycle ), VH ::: )2 knots
+r- ~G
+.L 0 0
+0 0 o 0
+0 Spin-down 0
+.2 [j) 0 0 0 o Spin-up I 0 0 0 0 0 0 ~ 0
+0
+.6
+I
+Cycle 5, YH ::: )0 knots Cycle 6, V H ::: )0 knots
+0
+.~:": :
+.~. ' ~ 0
+0 0 0
+0 0
+0
+0 0
+~ " 8 .2 0 0 0 0 0 0 0 ~ 0 0 00
+t: 0
+0
+0 0
+L..
+0
+.6
+I
+Cycle 7, VH ;: 29 knots Cycle 6, V H ::: ?6 knot.s
+.L f- 0 0 0 0 0 o 0
+CD 0 <tJ 0 0 0 0
+0 0 0 8 0 0 0
+.2 f-- 0
+0
+T
+---~
+.2 .L _6 .8 I.e 0 .2 .L .6 .8 I.e
+Slip ratio, 51
+(a) Run 1; P = 260 lb/sq in.
+Figure 69.- Tire 82M2, tire 82Ml modified by adding 1 narrow circumferential groove at center
+line . Antiskid unit operating; d = 0 to 0.3 inch.
+l
+I-'
+\Jl
+-..J
+
+
+
+=== PDF PAGE 161 ===
+--.--- -.- - ---
+.U Cycle 1, VH ::: 61 knots Cycle 2, VH ::: 59 knots Cycle 3, VH = 58 knots
+~
+\ O Jl J 0o o 0 Cb 00 8 o 00 D 0 O 0 00 o o o co D 0 O B o o o o o
+.2 o 0 o
+o 0 o
+o
+~c
+.~..
+iil
+0
+8
+.U 0 Cycle 4, v H = 56 knots
+E 0 0 ° 0 aD o
+o
+.2 a 6l o a o Spin-dOV'n
+Spin-up
+(b) Run 2; P 260 l b/ sq in.
+.U r a 0 Cycle 1, V H :: 69 knots r Cycle 2 J VH :: 69 knots Cycle ), VH = 68 knots
+0 l
+.2 f- 0 0 0 0 o 0 0 OJ 0 e 0 nD 0 00 00 ° 0 D a f:o°'6 CO DO a
+0 f
+a
+.2 .U .6 .6 1.0 .2 .U .6 .2 .U .6
+.U r
+nO
+Cycle L, VH = 61 knots t
+~ ooo
+Cycle 5, VH = 66 knots
+0 c 0
+COO 0 0 0
+.2 f- 0 0 0 0 0 0 0 a
+0
+0
+.2 .L .6 .6 .2 .L .6 .6
+Slip ra tic, 61
+(c ) Run 3; p = 260 l b/ sq i n.
+Figure 69.- Continued.
+
+
+
+=== PDF PAGE 162 ===
+- ---_.
+r-- -- --- - ----------'~--. ~
+-----.--~-
+I I
+.L r Cycle 1, V H ;;: 71 knots ;cle 2, VH = 69 knots o Cycle ), V H = 68 knots
+°
+0 000 0 Gl cP 0 0 l 00 B o o
+o
+.2 I- 0 0 0 00 0 0
+~
+~ .,I
+t: 0 .2 .L .6.6 .2 .2 .L .6 .6
+ca ~ I Cycle L, VH = 67 knot. C;'~ 5'oV~ = 66 knots h:c~e86, ~ = 6L knots ~ 00 0 ° Cycle 7, vH = 6) knots
+E ~ OJ (j] 0 °
+o 0 0 0 0
+.2 ~ ° 0 0° DO
+I~ o
+o
+0
+0 .2 .L .2 .L 0 .2.L .2 .L .6
+(d) Run 4; p = 260 lb/sq in .
+•L Cycle 1, VA ;: 93 knots Cycle 2, VH ::: 91 knots Cycle ), VH = 69 knot.s
+00
+~ 0 8 o o 0 DO oOCb 0 0 0 o Sptn-dolm
+o o o
+Spin-up
+.
+~c
+u
+.: 0 .2 .L .6 .6 .2 .2 .L
+~
+~ .L Cycle L, V H = 68 knots Cycle 5, v H = 82 knot.s Cycle 6, VH ::: 86 knots Cycle 7, VH :: 85 knots
+..: rPCb
+E o i o <ill o 0 0 0
+~o o 8
+.2
+0 0 ~ o
+10
+.2 .L o .2 .2 .L .2 .L .6
+Slip ratio, 81
+(e) Run 5; p = 260 lb/sq in.
+i-'
+\ \ J 0 l Figure 69.- Continued.
+
+
+
+=== PDF PAGE 163 ===
+3 ~ ' .6 I Cycle I, VH :: )6 knots l Cycle 2, V
+H
+:: 37 knots
+.L f- 0 0 0 0 o Spin-down 0
+0 0 0 0 0 0 o Spin-up 0 0 0 0 0 0
+'{ 0 0 r 00 0 0 0
+0
+.6
+Cycle ), V H :: )6 knot.s Cycle l.i., Vii = 35 knots
+"-
+~c .L 0 0 00 0 0 0
+l ~ 0 m 0 0 0 0 l~ 0 0 00 0 0 0
+.2 0 0 0
+c
+~ 0
+r!: 0
+0 .2 .L .6 .6 1.0
+.6 r
+Cvcle 5, v :: JL knots
+H
+0 0
+.L f- 0 0 0
+0
+0 0 0
+~ 0
+.2 , 0
+0
+.2 .L .6 .6 1.0
+Slip ratio, 51
+,
+(f) Run 1· P = 120 1b/sq in.
+Figure 69.- Continued.
+._--
+~ ~--.---.--...------~-- ._---
+
+
+
+=== PDF PAGE 164 ===
+------ --- I
+1'-- ----- -----
+--
+.4 Cycle 1, V H = 58 knots Cycle 2, VH = 56 knots ~ycle ), VH = 55 knots
+. , .! " ~ . :. ; - 0 0 OD 0 D 0 0 0 0 0 o 0 0 0 0 0 0 0 DO 0 0 00 0 0 0 o i 0 J 0 0 0 0 0
+~ .2 0 0
+8~ 0
+00 0
+S~
+~....
+0 .2 .4 .6 .8 0 .2 .4 .6 .8 0 .2 .4 .6 .8
+(g) Run 2; p 120 lb/SCl in.
+.4
+Cycle 1, VH 79 knots Cycle 2, V H 78 knots Cycle ), VH 76 knots
+o
+.2 O~uCb & o o ro 0 o 0 J< ,. - n r OD <9 0
+BOd
+<tJ
+"-
+"
+!~:
+. .~.
+.
+.
+.
+0 .2 o .2 .4
+o~
+u
+§
+.' u.j. .~ Cycle 4, V H 75 knots Cycle S, vH 74 knots
+,::
+o 00 D O cP O ~O cP~ 0 o Spin-dovn
+.2 rO O 0 o o
+0 o Spin-up
+o
+<0
+0 .2 .4 .6 o .2 .4
+Slip ratio, sl
+(h) Run 3; p = 120 lb/SCl in.
+~
+I-' Figure 69.- Concluded.
+
+
+
+=== PDF PAGE 165 ===
+I
+0 f ~ \) \ .L r Cycle 1, V H = 27 knots C\'c)e 2, V H = 27 knots
+0 0 0 0 0 ~f 0 0 0 0
+.2 h 0 0 0 0 0 o o Spin-down 0 0 0
+0 Spin-up
+0
+.L r 0 Cycle ) J VH = 21 knots [000 Cycle 5J VH = 25 knots
+0 0
+0 0 0
+0 0 0 0 0
+.2 1@ 0 0 0 0 0
+"-
+.,
+c
+.:l
+S
+8 0 r
+c .L © Cycle 6, V H = 25 knots [0 0 Cycle 7, V H = 2L knots
+~
+0 0
+J:: 0 cP
+'r 0 0 0 0 0 0 0 0
+l:
+0
+.L r Cycle 9, VH = 20 knots 0 Cycle 10, V = 23 knots
+0 0 0 H
+0 0 0 0 0 0 0
+I 0 0 0 0 0
+.2
+0
+0
+.2 .• L .6 .6 l.0 0 .2 .L .6 .6 l.0
+Slip ratio, 31
+(a) Run 1.
+Figure 70.- Tire S), smooth fabric-reinforced tread, fabric surface. Antiskid unit operating;
+p = 260 1b/sq in.; d1 = 0 to 0. ) inch.
+l_ _
+~----- ----.-
+---------
+-----
+.-~--
+
+
+
+=== PDF PAGE 166 ===
+----- -I
+~----------
+---~~-~---
+.4 Cycle 1, V H • 48 knots Cycle 2 J V H = h6 kn0t.s Cycle 3, VH • 46 knots
+o
+.21.- o 0 o a 0 CCP o ° o o § o o aD O B o 0 0
+0 0
+[} o
+o .2 .4 .6 o .2 .4 .6 .8 1.0 .2 .4 .6
+.4 Cycle 4, VH • 45 knots Cycle 5, v H = 44 knots Cycle 6, V H = 4L knots
+.2 Q] o ° 0 o ° cP ° t [ ~O DO 0 00 0 00 0 D O ° o 0
+0
+"
+.,
+c
+.~
+-t. o :< o r o .2 .4 .6
+2~ .4 Cycle 7 J VH ... 43 knots Cycle B, VH = 43 knots
+c
+~
+o
+.::: .2 I- O 0 J 0 o ° 0 0 0 0 o o 0 0 0 ° o ° o
+o
+Spin down
+o .2 .4 .6 .8 o .2 .4 .6 o
+Spin-up
+.4 - Cycle 9, v = 42 knots
+H
+jccoo
+'b
+0 0 0 0
+~
+o .2 .4 .6 .8 1.0
+Slip ratio, 91
+(b) Run 2.
+~
+'->l Figure 70.- Continued.
+~-~---
+
+
+
+=== PDF PAGE 167 ===
+~
++=- .L Cycle I, VH ;:: 78 knots Cycle 2, VH -:: 77 knot.s Cycle J, VH = 16 knot.s Cycle h, V H ::: 7L knots
+.2
+1m
+0 0 cP o 10 ° 0 DO I~~ 0°8 1000 @o cr:o
+.2 .L .6 a .2 .L a .2 .L .2 .L
+.L I Cycle 5, vH -:: 74 knots Cycle 6, v H ::: 73 knots I Cycle 7, V H ::: 7J knot.s
+.2
+I 00 co 8 8
+L
+cr :P 00 I!l 000
+IcP
+DO
+a
+(c ) Run 3 .
+.,I " ,. '.'. . ,."
+,~ Cycle 2, VH ::: 98 knots C~·cle ), VII::: 96 knot.s Cycle h, VH :: 94 knots
+.2
+o
+~' I~O c:8 cO oc9 cjJ ° @ OOO@~ o9lo <tHlD o r:})0 0 rc9
+::
+~ .2 .L .2 .L .2 .L
+~ " .L I Cvcle 5, v -:: 91 knots
+H
+E
+o
+Spin-dovn
+.2 o
+Spin-up
+0
+(' c colfJo
+-----'
+.2 .L
+Slip rat.io, 51
+(d) Run 4.
+Figure 70.- Concluded.
+L ___ __
+~ ~
+-.-------~" ~-
+
+
+
+=== PDF PAGE 168 ===
+1
+Figure 71.- Tire S4Ml, smooth fabric-reinforced tread, rubber surface, modified by adding a large
+~ diamond pattern. Antiskid unit operating; p = 260 lb/sq in.; d = 0 to 0.3 inch.
+\J1 l
+- - .--.--
+
+
+
+=== PDF PAGE 169 ===
+r" ""'" , - "
+.4 CYcle 1, VH ::: So knots Crell'! 2. VH ::: 49 knots Cycle u, VH :: 48 knot.s
+~
+0\ o ooJl 00 0 00 o 0 8 o
+O§ 0 o goo 0 Cb 0
+1.2f- tl) 0 re o 0
+.0
+OJ
+.. .,
+I I
+.2 .6 .2 .6
+~"<",'" -"
+Cycle 6, YH :: 46 knot.s
+~: : 'Q: '~ .-"
+.2 e <OJ ctl 8 0 0 0 E9 0 o o Spin-down
+§ Spin-up
+o .2 --.4-- .~6 0 .2 .4
+(b) Run 2 .
+• 4
+Cycle I, VH ::: 14 knot.s Cycl. 2, YH = 73 ''''''' Cycle 3. vH ::: 72 knot." Cyc L le L, iH : : 71 knot.s Cyele 5. vH ::: 70 knots Cyc t le 6, V :H ::: 10 knot.s
+o DO L
+.2 (J] 00 0
+[ll)0 0 0 [ fo~O~
+o
+f
+o .2
+o o @ 0
+°
+o
+Cyell'! 7, iH ::: 69 knot.s Cycle 8, VN ::: 68 knots
+(c ) Run 3.
+Cycle
+r
+J. VH
+:
+:: 88 k not.s Cycle !.t, VH ::: 87 knob Cycle 6, vH ::: 65 knot.s
+r
+' u 8 ~. , .2 &<0 0 0 0 ' -b 0 0°8 o 0 :> ~~ &D~ oc9O §
+Eoc
+~
+.c
+Cycle I, VH :: 92 knots Cycle 2, YH:: 69 knot.s , .1
+'~"" ~ .2 .L .2 .4 o .2 o .2 .2
+SUp ratto, II]
+(d ) Run 4.
+l_,,_ Figure 71.- Concluded.
+--- .~~---'--.-..-. ..--- - .. -----
+
+
+
+=== PDF PAGE 170 ===
+---l
+1
+Cycle 1, V H = 28 knots o Cycle ) , VH ;;: 2(.. Knot.s
+0 00
+0 0 0 0 o C o Spin-dovn o o o o o
+0 00 C Spin-up o
+.0 o
+.2
+0
+.6
+Cycle 5, V
+H
+;;: 25 knots Cycle 7, VH = 2L Imo:s
+.".-
+0
+" .U C 0
+~
+.~., 0 0 0 ~ 8 00
+8~ ~ 0 0 10 0 0 0
+~ .2
+.;:
+0
+J:
+1 - I
+0
+,
+.6
+Cycle 11, VH = 22 knots Cycle 1) J VH = 21 knot.s
+0
+.L f- 0 0 0 0 0 0 f 0 0 0 0 0°
+c9
+0 CJ
+0 DC
+0
+.2
+o .2 .L .6 .8 l.0 .2 .L .6 .8 l.0
+Slip ratio, 91
+(a ) Run 1.
+Figure 72.- Tire S5Ml , smooth fabric- reinforced tread, rubber surface, modified by adding a small
+~
+-.J diamond pattern. Antiskid unit operating; p ~ 260 Ib/ sq in.; d l ~ 0 to 0. 3 inch.
+
+
+
+=== PDF PAGE 171 ===
+0
+f-J
+\ .~
+I Cycle 1, VH ::: 5.3 knots ko Cycle 2, VH ::: 53 knots Cycle .3, VH ::: 52 knot.s
+():) CC' 0 0 0 0 § 0 ° 0 00 0 loo 0 0 0 0
+5
+.2 f- 0
+0
+.2 .~ .6 .8 .2 .~ .6 .8
+'[
+0
+0 r ~ooo 0 c [0 ° 0 0 C-
+o 0 00 0 o 0 &0 8 @ 0
+' 2 8 0 0 ~vcle °
+8 0
+0 CYcle h, Vii ;; 51 !lnots >. v K ' 50 knots CYcle 6, VH ::: L9 knot~ 10 eve] e 7, \ ::: 1.17 knots
+('
+I
+.2 .~ 0 .2 .~ .2 .~ .6 .2 .~ .6
+(b) Rllil 2 .
+.I. C"cle 1, VH ::: 73 knot.s Cvclo 2, Vb ::: 72 knots CYcle ), VH :: 71 knots Cycle II, V H ::: 70 knot.s
+o o
+.2 0 00 cP o o @r:P c· Sp1.n-down 1!F ° o° 000
+<tJ <2J o L Spl,~up EP o:§'"°
+o
+oL.........----l, o o
+.2 .~ .6 .~
+.~
+Crcle 5, VH ::: 70 knnts CYcle 6, v H :: 69 knot!' Cycle 7, V~ ::: 66 knots C:vcle B, VH :: 66 knots
+<no
+d? 8°
+.2 CO 00 C b@O 00 Q J @ l lD
+@
+C
+.2 o .2 •1 . o .1• .2
+Slit: ratio, 51
+(c) Rllil 3.
+Figure 72.- Continued.
+'--- ---- ----'"'------------ -" ~-~~--~-.--. ------- --
+
+
+
+=== PDF PAGE 172 ===
+- -----1
+.L
+Cycle 1, V H • 86 knots Cycle 2, VH ;; 66 knots Cycle 3, V H • 85 knots Cycle L, V H :: 8) knots
+.2 00 ~OO
+gCJjO 0 CO 0 §~8 0
+§ cA§l°0
+~
+~
+~
+;:: 0
+~
+.L
+S Cycle 5, vH = 61 knots Cycle 6, VH ;; 80 knot.s
+t
+~
+o
+.2 o:rP, n 0 00 COD '2J 0 o Spin-down
+DO ,tr° Spin -up
+@
+(d) Run 4 .
+•L
+Cycle 1, VH ;; 94 knots Cvcle 2, V
+H
+= 9) knot.s Cycle ), VH :: 92 knot.s Cycle L, VH = 91 knots
+o
+o
+. .2
+§
+q pmo 00 0
+o
+< 2J%0 000 o 0
+o
+0 0 I2J DO
+~c
+o
+eu
+8 0 ~ ______L -___~ o .2 o .2 .1,
+~ 04
+t Cycle 5, vH = 89 knots Cycle 6, VH • 88 knots
+~
+..a
+.2 ~D OD r:9 o !YO Do
+lib
+!8'l0
+.2 .4 .2 .4
+Slip ratio, 51
+(e) Run 5.
+~
+Figure 72.- Concluded.
+\0
+
+
+
+=== PDF PAGE 173 ===
+.6
+~ ~ I Cycle 1, V H .: 27 knot.s Cycle 2 J VH = 27 knot.s
+0
+0
+.L t- cPO 0 0
+0 o Spin-down 0
+.2 e- 0 0 0 o 0 c9 o Spin-up 0 0 0 0 0 0 O 0
+.6
+C.vcle L, V .: 2S knots C:vcle S, VH .: 2S knots
+H
+.L o o
+00 8 o o o o o
+cP o o o o o
+o o 0
+.2 o 0 0 0
+.6
+Cycle 7, V
+H
+= 2) knots C\'cle 8, VH .: 22 Imot.s
+0
+.4 r
+oo <§) 0 0 ~ o
+o c
+o
+o 0 o o o o
+o o
+.2
+C
+.2 .L .6 .8 1.0 o .2 .L .6 .C 1.0
+Slip ratio, 51
+(a ) Run 1.
+Figure 73.- Tire S6Ml, smooth fabric- reinforced tread, rubber surface, modified by adding 7 cir
+cumferential grooves (sine-wave cross section) . Antiskid unit operating; p = 260 l b/ sq in.;
+l__ _ _ dl = 0 to 0.3 inch.
+- ------ --------
+----~-~---- ----'
+
+
+
+=== PDF PAGE 174 ===
+----- --
+-~- ~--
+.U r 00 0 C 0 y cle 1, VH : 55 knot!!! (.'yele 2. VH = SL knots Cycle .3. VH = 53 knots
+0 C
+0 0 0
+\3 0 < @ lll 0 0 0 0 0 0 0 0 0 0 0 8
+0 0
+..
+.2 • U .6 .8 .2 .6 _2 .U .6 .8
+-. r
+0 Cycle L, VH = 52 knots ~ Cycle S. VH = SO knots
+.2f- 0 ~ 0 0 00 ro 0 0 0 0 0 o o S S p p i i n n - - u d p o vn 0000 0 I:b 0 0 0 0 0 0 0
+.2 .U .6 .8 1.0 .2 .U .6 .8 1.0
+(0 ) Run 2 .
+r
+. L
+O§ C 0 y cle 1, VH = 61 knots ~ :'~'~' ~-. ~ 0 "d." " , WO ... Cycle 6, vH = 16 knots
+.21-B 0 o 0 '0' ° o <b0oo
+0 o 0 8 o ca O 0 0 0 IDl O 0
+0 'J€
+0
+.2 .U .6 .2 .U
+(c) Run 3 .
+•U
+Cycle 1, VH = 91 knot.s Cycle 2, V H = 95 knots Cvele 3, vH = 9) knots Cycle L, VH = 92 knot.s
+0 0 0 a
+I@ 0 J & o a o 0 O De 0g? 00 ° c o )J °O 0 0 0 ~ O o ~ o oa 0° 0 0
+.. .. ..
+• 2 .U .6 .2 • 2 .2 .6
+Slip ratio, 51
+(d) Run 4 .
+.t:l
+I-'
+Figure 73.- Concluded.
+
+
+
+=== PDF PAGE 175 ===
+~
+- f - \) l .6 o 0 c o Cycle I, VII :: 18 knot3 o C' o Cvclo 6, v H :: lL knot.s
+o o c o o o
+C'
+.4 o o o o
+o o Spln-dovn
+t:J Spin-up
+o
+0
+.6r OOt') C 0
+Cycle 9, VH :: 13 knot:! :::ycle 1), V :: 11 knot.s
+"- ·t 0 ~ 0 C 0 0 H C'
+f,- 0 0
+.!l 0
+~ 0 q9
+';l
+g
+c .2
+~
+.':l
+/:.
+0 .2 .4 .~ .8 1.0
+.6
+C ('
+Cycle 22, VH :: 7 knots
+C 0 0
+0
+0
+00
+"r
+.2
+.2 .L .6 .8 1.0
+Slip ratio, 51
+(a ) Run 1.
+Figure 74.- Tire Rl, rib all-rubber tread, 9 grooves. Antiskid unit operating; p 260 lb/sq in.;
+d = 0 to 0.3 inch.
+l
+-~-.-~-~--<----- --
+
+
+
+=== PDF PAGE 176 ===
+.- ---.. - . - ---1
+--- - - -- ---- ----
+_---.c'~ .... --.----~- .... -- --
+.6 r I
+Cycle 1, V H :: L7 knot.s Cycle ), V H :: L5 knot.s
+0 0
+.4 ~ 00 0 ~o c:f0C
+0 o 0
+r0 0 0 0 o S S p p i i n n - - d u o p w n 0 0 0 [j)
+0 Cb 0
+I
+Cycle 5, vii = L) knots Cvcle 7, VH :: LI knoL
+"-
+!
+~"l
+i "t OO~
+l:O
+0 0 0 0 0
+; ; " J l .2 0 0 0 0 o§ ~ 0 121
+t:
+I
+.2 .4 .6 .8 1.C
+.6 ,
+Cycle 9, VI1 :: Lo knot.s
+C§
+(;
+C' 8
+.4 f- a
+0 c
+0 o B
+.2
+.2 .4 .6 .8 1.0
+Slip ra tio, 51
+(b) Run 2.
+Figure 74.- Continued.
+~
+-..:J
+VJ
+
+
+
+=== PDF PAGE 177 ===
+l--'
+-.J
++=-
+'l
+Cycle 1, VH = 67 knots Cyclc ), v H = 6L knot s Cycle 5, V H = 62 knotr
+o
+0
+o
+.L 0 0
+C' 0 c o o o o %
+ClD o o (§)
+0 0 o
+C' 0° o ('
+.2 1 cP
+o o
+c
+0
+0
+L-
+. : , 1 0 .2 .L .6 .B 1.( o .2 .L .6 0 .2 .L .6 .8
+c
+!
+. ..u. .",
+, o
+Spin-do,,"
+c
+0u Q ) o
+Spin-up
+..0",
+u
+-r<
+c~..
+.6
+C.,cle 6, VI; = 6] k'1ct.::; Cycle 9, \ 59 knots
+0°
+.L
+0 0
+C'
+o o C'
+C' 0 o
+.2 c o C' o !IT o o 0 0
+o .2 .L .6 .6 o .2 .L .6 .8 1.0
+Slip ra tio, 31
+(c) Run 3.
+Figure 74.- Continued.
+L_ ________ _________ ____
+~_~_- ._~~
+----- ---<''-'-----
+
+
+
+=== PDF PAGE 178 ===
+----~- ----~ --~~--
+~-------.<--
+.1. r C Cycle I, Vn - 60 knots Cycle) J VH " 77 knots
+rr~ O O
+°c of
+@ ° 0 0 0 'i?P 0
+., I- 0 ° 0
+°0 0 °
+.,
+.? .1, .6 .6 1.0 o .1. .6
+.1. Cycle 5, v • 7L knots r
+H ° § O cP
+cP
+ds c
+., IcC ° CO 0:; ;VC1.~ 7, V• . = 7':' ""lOts o o Spin-down
+§ Spin-up
+o
+.,
+.1. .2 .1.
+(d) Run 4.
+o
+Cy~lf' 1, .,. =? t:: Cycle 2 J VH • 96 knots Cycle ), VH -s 93 knots
+° ° °
+.11--0 o ° Cbo o 00 Q] ° o O@~O
+° ° &
+°
+~ o
+., .,
+3 .6 .1.
+0
+Bc
+.L Cycle 11, VH • 91 knots Cycle 5, VH • 90 knots Cycle 6, VH ~ 88 knots
+E 00
+If ° 0o°
+.2 o o 0 0 c 0 0 c o o
+c
+.,
+.1. .2 .2 .1. .6
+Slip ratio, 31
+(e) Run 5.
+f-'
+-:j
+\Jl Figure 74.- Concluded.
+
+
+
+=== PDF PAGE 179 ===
+.6
+Cycle 1, V = 53 knots
+H
+0
+::I. ~O 0
++'~
+'" .4 0
+. < r 1 < 1 8
+o ( r J < 0
+'H
+'H 0
+<11
+0 0 0
+(J 0
+'" 0
+.r0< .2
++'
+.
+(
+r<
+J
+H &
+~
+o
+(a) Run 1.
+o
+Spin-down
+o
+Spin-up
+.6
+Cycle 1, V = 95 knots
+H
+I
+::I.
++' I
+'"
+o < r 1 < 1 .h 0 1
+(J
+or< 0
+'H
+'H 0 0
+<11 0 j
+0 (J 0 0 0 0 0 °0
+0 '" 0 0 0
++
+.r<
+' .2 . 0 0 0 ® I
+. ( r< J Ocfj
+H
+~
+o .2 .4 .6 .5 1.0
+Slip ratio, 51
+(b) Run 2.
+Figure 75.- Tire R2, rib all-rubber tread, 9 grooves. Antiskid unit not
+operating; p = 260 lb/sQ in.; d 1 = 0 to 0.) inch.
+j
+J
+
+
+
+=== PDF PAGE 180 ===
+'--.
+-.---.-.---.--..,-.--~ ~-~
+.6 80 Cycle I, VH = L5 knots Cycle 2, VH = lW knoes
+00
+I(t
+~ o o 0
+.b o o o S Sp p i i n n - - d u o p w n 0 ° ° o
+.0° e o
+o
+.2 Dry runway o o o o o o
+o
+.2 .b .6 .8 1.0 o .2 .b .6 .8 1.0
+.6
+r:ycle J, VH ;: L2 knot::. Cycle L, V H ;: iJO knots Cycle 5, V H ;: )8 knot.s
+;. o 0
+c; .1" o &5b CCo 08
+! ~ i ~o c aa o &6 0 @ o
+t § : 8 o o o 8
+c o o
+j .2 o
+.~::
+o .2 .b 0 .2 .b .6 .8 1.0 o .? .b .6 .8 I.e
+.6
+Cycle 6, VH ;: )7 knots
+.b f- 810l 0
+00
+00 o
+8
+.2
+~ L __. _ ____ I 1 _
+o .2 .b .6 .8 1.0
+Slip ratio, 51
+(a) Run 1.
+f-' Figure 76.- Tire R4, rib all-rubber tread, 11 grooves. Antiskid unit operating; p 260 lb/sq in.;
+-..J PB , 1 = 50 lb/sq in.; d = 0.2 to 0.5 inch (except where noted).
+-..J l
+
+
+
+=== PDF PAGE 181 ===
+~
+CP
+=
+Cycle 1, V H 82 knots Cycle 2, V 78 knots
+. H
+}~
+o
+Coo ~
+B EC~g
+§l@o 0 Cb 8
+0
+OC
+.? c
+:i
+.,
++'
+C
+,.Q.;)
+()
+'''; 0 .2 .4 -:6
+"-'
+'H c, o
+8 Spin-down
+()
+o
+c Spin-up
+o
+''';
++'
+() .4 r
+''';
+~ H 0 ~ 0 0
+§(§J 00 8=' 0 o 0 0
+ceo 0
+c§J 0 0
+C 0 0
+.2 ~ 0 C 0 0 C
+Cycle 3, V = 75 knots Cycle 4, V = 71 knots
+H H
+0 .2 .4 .6 0 .2 .4 .6 .8
+Slip r ati o, s
+1
+(b ) Run 2.
+Figure 76.- Concluded.
+-------<..-.-. - -~- ----- -------"-~-1..~ __ -- - .---
+---------~--
+
+
+
+=== PDF PAGE 182 ===
+- __ _ 0· _~ .• __, _--- .- - -..,.......---, .............. - - --
+.6 ~
+Cycle I, V H = S8 knotll I CYcle 2, VH :: 56 knots Cycle J. vH = SL knot!>
+<Ii: 0 0
+.L I-
+o@
+C C C. r ; .L 0
+., I- 0 0 0 0 C 0 0 0 0 08 0 0 ., ~ 0 0 0 0 0
+0 c 0 0 0 0
+0
+0
+.,
+.J. .6 .2 .L .6 .8 I.e
+c Cycle II, VH = 51 k:lols T 0 0 !:'I Cvcl(' 5, \ :: L6 bets
+~ t @ 0
+tt 0 C
+8 c9
+0 'lo~ ~ o Spin-do,," 0
+.~:: .2 0 0 0 0 o 0 c o Spin-up l
+Dry runway
+.2 .L .n .8 1.G .2 .L .6 .8
+(a ) Run 1.
+./,
+ito
+I:C cD <fP Cvclo I, V H - - 8) 'no"
+[ ~
+CyclEl 2. V" :: 82 knots :-Ic1f' J. vH :: 11 knots
+avo@
+00 <5l
+.2 o
+I 0
+I
+.,
+.2 .L .L .> .J.
+Slip ra \.10, 61
+(b) Run 2.
+Figure 77.- Tire R4, rib all-rubber tread, 11 grooves. Antiskid unit operating; p 260 lb/sq in.;
+p B,l = 50 lb/sq in.; d l = 0 to 0.3 inch (except where noted).
+~
+\.D
+--- - -'
+
+
+
+=== PDF PAGE 183 ===
+8 f-' ' .6 i 0
+00 0 Cycle 1, VH ::: 28 knot.s Cycle 2, Vp :. 27 knots
+0 0 <§> 0
+.h f- 0 0
+0
+0 0 0
+0 0 0 8
+cP 0 0 0
+.2 ~
+0
+0 o
+Spin-down
+."." o Spin-up
+.6
+. .
+~.
+. . . . . .
+t o
+0
+Cyclo L, VH ::: 26 knots
+r
+Cycle 5, "1M ::: 25 knots
+3
+0 0 0
+~ 0 0 0 o
+E 0 0 o l6
+0
+.2
+0
+t
+0
+.h r tp Cycle 7, V H ::: 25 knots 0 Cycle 11, VH ::: 2) knots
+0 00 0 0 0 0 0 o o o 0
+.2 I- 0 0 0 0 0 o
+0
+0 0
+0
+I 1
+0 .2 .h .6 .8 1.~ 0 .2 .h .6 .8 1.0
+Slip ratio, 81
+(a ) Run 1.
+Figure 78.- Tire R5, rib fabric-reinforced tread, 3 grooves . Antiskid unit operating;
+p = 260 lb/ sq in.; dl = 0 to 0. 3 inch.
+-- ---
+-----~ .~~~.---- .. -~----- -----
+
+
+
+=== PDF PAGE 184 ===
+- --- -- ----
+- - - - ----... --.-.------~. ~- .-~-~-----~~. ~ .. ----~~.-- ---- . .~ _. ---------- .. -~
+.1.
+eO 0 0 Cycle 1, VH = 51 knots 0 Cycle 2, VH = 50 knots
+0 ~
+DO
+0 o 0 0 0 0 0
+.2 f.- 0 Spin-down 00
+0 0 o Spin-up 0
+0 .2 .4 .6 .8 1.0 0 .2 .1. .0 .8 1.0
+.4
+Cycle ), VH = 49 knots Cycle 4, vH = 48 knots Cycle 5, v H = L7 knots
+"- , ~ o ~o
+.; o
+0
+.~.. 0
+. . . u. . ~. . . . 0 0 0 00 OJ 0 0 ~~ 0 0 0 0 0 0 0
+g~
+"
+~
+~
+c~.. 0 .2 .1. .S .8 0 .2 .4 .6 .8 .2 .4 .6 .S
+.4
+o
+Cycle 6, VH = 47 knots
+o
+Cycle 7, VH = 46 knots
+o o o o o 0 0 o D O o 0
+DO 0 0
+.2 o
+o o
+o .2 .1. .6 .8 o .2 .4 .6 .8 1.0
+Slip ratio, 91
+(b ) Run 2.
+Figure 78.- Continued.
+I-J
+co
+I-J
+J
+
+
+
+=== PDF PAGE 185 ===
+~
+())
+r\)
+r
+.4
+Cycle 1, VH 76 knots Cycle 2, V H 14 knots Cycle ) J V H '/L knots Cycle L, v H = 72 knot.
+og
+0 o 000 0 8
+.2 o 0 o o 0 o
+o
+0 Do r9 0 B o0
+o
+' 60 00 0 0
+o
+o o
+o .2 .4 .6 o .2 .4 o .2 .L
+"-
+.,
+c .1,
+~
+. .~. . . . Cycle 5, VH " 70 knots Cycle 6, VH " 69 knots Cycle 7, VH " 68 knots
+o~
+- .~ U r c u , l ' ~ .2f- @ - ' V = I. ' 0 00 0 o Ib 8 i 0 0 0 0 0 0 0 o o S S p p i i n n - - u do p wn
+c!:
+)
+o o .2 .4 0 .2 .4 .6
+(c) Run 3.
+", ,... .
+.2 [r~ C o yc q le § 1 U , V "100 Cycle 3, VH = 96 knots Cycle 4, Vii " 93 knots rOOD O Cy ,' c " l e o 5 ~ ", ~
+oct @ 0 0 0 " ,.";
+f o 0 0 0 0 0 00 o ~ 0 0 0
+o .2 .4 o .2 .4 .0 o ;2 .4 o .2 .4
+Slip ratio, 81
+(d) Run 4.
+Figure 78.- Concluded.
+L ___ _
+
+
+
+=== PDF PAGE 186 ===
+--- I
+,~ ~--- ---
+I
+o
+.6 o o 000
+o 00 8 Cycle 2, V - B6 knots
+Cycle 1, V '" 89 knots H
+o ego H o
+8
+o ° o
+o Spin-down
+o
+o
+Spin-up
+o o
+.2 o o
+o o
+Dry runway Dry runway during spin-down only.
+.4 o .2 .4 .6 .8 1.0
+Cycle J, V "' 81 knots Cycle 4, V '"' 80 knots
+o H H
+o
+o ° 00°0 00 0
+o o o 0 o o CO 00
+o 0 O~
+o 0 0 o
+8
+c .6
+.6
+CvcJe ; , ":: = 77 ~,.,cts
+i
+I .U
+0 0
+\
+i
+.2
+o
+f
+7 L-~~~ __~ ___l ___ I ____ I
+t o .2 .1, .6 .8 l.O
+I Slip ratio I 51
+1
+I (a ) Run 1.
+Figure 79.- Tire R3, rib all-rubber tread, 9 grooves . Antiskid unit
+operating; p = 260 lb/sq in.; d = 0 to 0. 3 inch (except where
+l
+noted). Runs in this f i gure are arranged chronologically (see
+appendix ) .
+
+
+
+=== PDF PAGE 187 ===
+Q).o
+.6
+@ 0 0 0 Cycle 1, V H .. 67 knots .6[ ~O 0 0 Cycle ), V H - 64 knots
+~ 0 0
+0
+.4 0 .4 0
+0 8 0 <g
+0 0 0 0 0 0
+0 0
+.2 § .2
+Dry runway Dry runway
+0
+0 0
+.6 Cycle u, V H S 62 knots 0 0 S Sp p i i n n - - d u o p w n Cycle 5, VH .. 60 knots I
+"" o 0 I
+.. " . .. c ~; .. ; j . .4 0 @ @ 0 0 0 00 .4 ~O 0 I
+.. : ' ; c 0 0 ; : 0 . J : l .2 0 0 0 0 0 O ~ .2 0 0 0 oJ ITJ) 0 0 0 00 0 ~ I I I
+I
+"
+0
+I
+0 0
+.6 0 0 II
+0 Cycle 7, V H - 57 knots Cycle 8, V H - 55 knot.
+0
+I
+0 I
+.4 0 0 0 0 CD 0 l
+[] 0 CO 0 ~
+0 0 ~ 0 0
+0 0
+I,
+0 0 r
+.2 0 0 01
+0
+Dry runway 0
+0
+0 .2 .4 .6 .8 1.0 0 .2 .4 .6 .8 1.0
+Slip ratio J 51
+(b) Run 2 .
+Figure 79·- Conti nued.
+184
+
+
+
+=== PDF PAGE 188 ===
+.6 Cycle 1, V H ::: 6) knots 0 Cycle 2, VH = 61 l-r.ots
+0
+~ 0 0 0 0
+0 0
+.L 0 0 0 0 0 0
+Cb 0
+0 0
+0 0
+.2 0 0 0
+0
+Dry runway Dry runway 0
+0
+.6 0 0 4::l 0
+Cycle 3, V H = 57 knots 0 Cycle L J VH = 57 )mot::>
+"- 0 0 0
+0
+..~c. ~ .. .L 0 0 0 0
+..g .. 0.. .. 0 0 o
+o
+Spin-dovn
+G 0 0
+Spin-up
+0
+~ .2 0 0
+.t 0
+Dry runway 0 Dry runway 0
+--l
+0
+.6 0
+0 Cycle 5, VH = 56 knots 0 0 C".,le 6, v H = 56 knots
+0 0 0 0 0
+0 0 0
+.L
+0
+0 0 0
+0
+0 8 0
+f .2
+0
+Dry runway Dry runway
+r /8
+0 .2 .L .6 .8 1.0 0 .2 .L .6 .8 1.C
+1 Slip ratio, ~l
+(C) Run 3.
+Figure 79·- Continued.
+I
+I
+!
+r,
+t_
+
+
+
+=== PDF PAGE 189 ===
+I
+j
+1
+l
+I
+.6 0 Cycle 7, VB = SL knot.s CJCle 8, "H = 5L knots
+0
+0 0 0 o
+0 0 0 Spin-doyn
+1
+.L 0 C Spin-up
+I
+0 0 0
+0 0
+.2
+0
+Dry runway Dry runway I
+0 (
+.6 0 0 I
+0 o Cycle 9, V = 50 knots o Cvcle 10, V H = 53 knots
+0 H
+"- 0 I
+~. c
+. ..... 3 u ! "... l . .L 0 o o o o o o o o o
+o
+c
+~ .2
+~
+,t
+Dry runway Dry runway
+o
+0
+.6
+Cyole n , V = 52 knots C)'t:le 12, V = 52 knots
+0 H H
+0
+0 0 C('
+.L 0 00 1
+0
+0 0
+0 0 § 00 I
+.2 0 o
+Dry runway 0
+0
+0 .2 .L .6 .8 1.G 0 .2 .iJ .6 .8 loC
+)
+Slip ratio, sl
+I
+I
+i
+(c ) Run 3. Continued.
+I
+I
+Figure 79.- Continued.
+1
+I
+I
+186
+I
+1
+~
+
+
+
+=== PDF PAGE 190 ===
+Cycle 13, VH = 52 knots Cycle 14, V • 51 knots
+.6 H
+o
+Spin-down
+0 o
+.4 0 0 Spin-up 0
+0
+0 0
+0
+0 0
+0
+.2 0 0 0 0
+0 !Q
+0
+I
+I 0
+.6
+T Cycle 15, \ = 51 knots Cycle 16, V = 50 knots
+@ a H
+""
+.~c.. .L a 0
+. . ~. . g ~ . . . . 8 8 a 0 8
+: c l .2 0 Oa 8 0 a 0
+~
+t: Dry runway
+0
+.6 0 a
+&b 0 Cycle 17, V H = 49 knots a 0 0 Cycle 18, V H • 48 knots
+0
+0
+J .4
+0 0 a
+0 0 0
+J 00
+0
+a
+.2
+;
+Dry runway Dry runway
+1
+0 .2 .4 .6 .8 1.0 0 .2 .L .6 .8 1.0
+Slip ratio, 91
+(C) Run 3· Continued.
+Figure 79·- Continued.
+
+
+
+=== PDF PAGE 191 ===
+.6 o Cycle Ie; J V H = '18 knots 0 0 0 Cycle 20, Vu = 07 knc.ts
+o
+0 Spin-down 0 0
+LJ Spin-up 0
+.~ 0
+0
+0 0 0
+00
+.2
+0
+"- Dry runway Dry runway
+.;
+c
+!l
+.u..
+....... n
+3
+.6
+c o Cycle 21, V = L7 knots Cycle 22, V = L6 knots
+.~.. H CD 0 o H
+t ~ : 0 0 0 0 0
+o o o
+.~ 0 °eo o
+o o
+o o
+o
+.2
+Dry runway Dry runway
+)
+o .2 .~ .6 .6 loG o .2 .~ .6 .6 1.G
+Slip ratio, 81 j
+(c ) Run 3. Concluded.
+Figure 79.- Continued.
+I
+i
+)
+1
+i
+I
+I
+1
+I
+188
+J
+I
+L
+
+
+
+=== PDF PAGE 192 ===
+.6 0C{] 0
+0 Cycle 1, V H = 76 knot.s CYcle 2, '1H = 7'2 knots
+0
+0 0
+.1. o Spin-down 0
+0 0 00
+o
+0 0 Spin-up
+0 0 8 0
+.2 0 0 0 0 0 0 00 e
+0 0 0 0 ~
+0 Dry runway
+0
+0 .2 .L .6 .8 1.0 0 .2 .L .6 .6 1.0
+.:,1 .L
+! c i Cycle ), V H = 70 knots Cycle L, \ = 69 knots
+. . .. . !. . . . l oc:P o
+~ 8 c ~ .2 0 0 0 0 0 rP IJ€ arJ o ~ ~ o 0n '- - V .O 0 0
+O
+I ~ 0
+0
+0 .2 .L .6 .8 o .2 .L
+I
+I .6 C 0 00
+i
+CYcle 5, vH = L6 knots
+0
+0 o 0
+0
+.4 0
+1
+! 0 0 0 0
+0 0 8
+0
+.2
+0 0
+Dr,.. runvay
+1 0
+o .2 .1. .6 .8 1.0
+I Slip ratio, 51
+(d ) Run 4.
+Figure 79.- Continued.
+t
+t
+I
+189
+l
+--~
+
+
+
+=== PDF PAGE 193 ===
+I
+1
+I
+.8 f
+= l
+Cycle 1, V 72 knots
+H
+=
+Cycle 2, V 69 knots
+H
+ct,
+!
+.6 CPJ .6
+0
+~, 0
+.' 0
+.tt 0 .4 ~O
+0
+0 0
+0 () n
+:1- .2 0 .2 0 0 n 0 0 0
+..,~ 0 0 00
+<! 0
+.rQ<) 0 Dry runway 0
+0
+' . - r - < < 0 0
+'--<
+aQ) 0
+0 0
+..,a<
+...,
+!
+,
+o
+Spin-down
+r .r0 ! < : o Spin-up Cycle 4, v H = 60 knots
+.6 (;0
+c
+DO
+Cycle ) , V H = 67 knots 0 0 0 0
+0 0
+.[, .[,
+0 0 I
+0 1
+0
+&0
+COo cO DeB CQ) 0 {
+.2 .2
+0 0 0
+a Dry runway
+.0
+~
+I
+0 .2 .[, 0 .2 .L .6 .8 1.0
+Slip ratio, sl I
+(e ) Run 5.
+Figure 79.- Conclude·d.
+J
+<
+I
+I
+190 L-1347
+NASA-Langley, 1962
+j
+L

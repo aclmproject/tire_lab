@@ -1,0 +1,89 @@
+[
+  {
+    "searchSweepId": "M2-SWEEP-GROUP2",
+    "scope": "1971-1976 Group 2 / ETCC",
+    "queries": [
+      "Group 2 ETCC Dunlop Goodyear tire pressure pyrometer 1971 1976",
+      "Escort Camaro BMW Group 2 intermediate tyre compound 1970 1976"
+    ],
+    "repositories": [
+      "Motor Sport archive",
+      "supplier archives",
+      "SAE/NASA technical indexes"
+    ],
+    "disposition": "Period compound observations found; no qualifying cold/hot-pressure, pyrometer or team setup sheets found for most exact supplier/subtopic targets."
+  },
+  {
+    "searchSweepId": "M2-SWEEP-GT40",
+    "scope": "1964-1969 GT40/endurance",
+    "queries": [
+      "Ford GT40 Goodyear Firestone Dunlop tire pressure size Le Mans 1964 1969",
+      "GT40 tyre failure wet intermediate stint Goodyear Firestone"
+    ],
+    "repositories": [
+      "Ford heritage/SAE",
+      "Goodyear history",
+      "Motor Sport archive",
+      "FIA Historic Database"
+    ],
+    "disposition": "Supplier/event and failure evidence found; exact pressure, pyrometer and setup-book targets largely remain open."
+  },
+  {
+    "searchSweepId": "M2-SWEEP-1950S",
+    "scope": "1950s-early 1960s sports/GP and Dunlop R5/RS5",
+    "queries": [
+      "Dunlop R5 RS5 racing tyre pressure temperature 1958 1965",
+      "1959 Grand Prix Dunlop tyre heat wear race report"
+    ],
+    "repositories": [
+      "Dunlop history",
+      "Motor Sport archive",
+      "historic supplier catalogues"
+    ],
+    "disposition": "Period durability/heat observations and later RS5 construction history found; no period pressure table or stiffness/F&M document found."
+  },
+  {
+    "searchSweepId": "M2-SWEEP-1990SGT",
+    "scope": "1993-1996 BPR/Le Mans/JGTC/IMSA GT",
+    "queries": [
+      "BPR GT1 tyre pressure compound Goodyear Michelin Dunlop Pirelli 1994 1996",
+      "1994 JGTC tire allocation compound pressure",
+      "1996 IMSA GTS tire regulations"
+    ],
+    "repositories": [
+      "FIA Historic Database",
+      "supplier histories",
+      "Motor Sport archive",
+      "RacingSportsCars"
+    ],
+    "disposition": "Chronology, supplier/event context and regulations found; numerical pressure/temperature/stiffness/wear documents were not found for most exact targets."
+  },
+  {
+    "searchSweepId": "M2-SWEEP-MECHANICS",
+    "scope": "general tire thermal/mechanics/wear architecture",
+    "queries": [
+      "site:ntrs.nasa.gov tire heat generation deflection pressure slip wear",
+      "site:saemobilus.sae.org tire temperature inflation pressure deflection footprint"
+    ],
+    "repositories": [
+      "NASA NTRS",
+      "SAE Mobilus"
+    ],
+    "disposition": "Multiple qualifying government reports and SAE abstracts reviewed; applicability is architectural/methodological unless a racing bridge exists."
+  },
+  {
+    "searchSweepId": "M2-SWEEP-OTHER-HISTORIC",
+    "scope": "remaining active historic class/supplier targets",
+    "queries": [
+      "historic racing tire pressure temperature supplier setup Goodyear Dunlop Avon Michelin Pirelli Firestone",
+      "period racing tyre wear stint compound wet intermediate"
+    ],
+    "repositories": [
+      "Motor Sport archive",
+      "supplier archives",
+      "FIA Historic Database",
+      "technical indexes"
+    ],
+    "disposition": "Only reviewed documents with direct relevance were linked; unmatched exact combinations are retained as NO_DOCUMENT_FOUND rather than inferred."
+  }
+]

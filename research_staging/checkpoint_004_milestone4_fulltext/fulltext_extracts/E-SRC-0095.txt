@@ -1,0 +1,343 @@
+=== PDF PAGE 1 ===
+Final Report
+Grant No. NAG-1-1180
+-
+September 12,1990 December 31,1995
+NONLINEAR ANALYSIS AND MODELING OF TIRES
+Submitted to:
+National Aeronautics and Space Administration
+Langley Research Center
+Hampton, VA 23681-0001
+Attention:
+Dr. John A. Tanner, MS 495
+Impact Dynamics Branch
+Structural Dynamics Branch
+Submitted by:
+Ahmed K. Noor
+Ferman W. Perry Professor of
+Aerospace Structures and Applied Mechanics
+SEAS Report No. UVA/528370/CEAM96/101
+May 1996
+DEPARTMENT OF CIVIL ENGINEERING
+AND APPLUED MECHANICS
+SCHOOL OF n
+APPLIED SCIENCE
+University of Virginia
+Thornton Hall
+Charlottesville, VA 22903
+
+
+
+=== PDF PAGE 2 ===
+TABLE OF CONTENTS
+&gg
+.................................................
+ABSTRACT 1
+.......................
+RESEARCH AND OTHER ACCOMPLISHMENTS 1
+............................................
+PRESENTATIONS 3
+...............................................
+REFERENCES 4
+- .......................
+APPENDIX ABSTRACTS OF PUBLICATIONS 5
+
+
+
+=== PDF PAGE 3 ===
+ABSTRACT
+The objective of the study was to develop efficient modeling techniques and
+computational strategies for: a) predicting the nonlinear response of tires subjected to
+inflation pressure, mechanical and thermal loads; b) determining the footprint region, and
+analyzing the tire pavement contact problem, including the effect of friction; and c)
+determining the sensitivity of the tire response (displacements, stresses, strain energy,
+contact pressures and contact area) to variations in the different material and geometric
+parameters. Two computational strategies were developed. In the first strategy the tire was
+modeled by using either a two-dimensional shear flexible mixed shell finite elements or a
+quasi-three-dimensional solid model. The contact conditions were incorporated into the
+formulation by using a perturbed Lagrangian approach. A number of model reduction
+techniques were applied to substantially reduce the number of degrees of freedom used in
+describing the response outside the contact region.
+The second strategy exploited the axial symmetry of the undeformed tire, and uses
+cylindrical coordinates in the development of three-dimensional elements for modeling each
+of the different parts of the tire cross section. Model reduction techniques are also used
+with this strategy.
+The principal investigator was Dr. Ahmed K. Noor, Ferman W. Perry Professor of
+Aerospace Structures and Applied Mechanics, and the NASA Technical Officer was Dr.
+John A. Tanner, Impact Dynamics Branch, Structural Dynamics Division, NASA Langley
+Research Center.
+RESEARCH AND OTHER ACCOMPLISHMENTS
+The research activities conducted under this grant are briefly described
+subsequently. Seven publications were completed. Four technical presentations were
+made based on the studies made under this grant. The list of publications and presentations
+are given after this summary. The abstracts of the papers are given in the Appendix,
+followed by a copy of each paper.
+1
+
+
+
+=== PDF PAGE 4 ===
+In addition, a workshop was organized in October 1994 to assess the state-of-the-
+technology in tire modeling and to identify mechanisms for rapid transfer of the research
+results to industry. The participants of the workshop came from NASA, tire industry,
+government agencies and universities. The proceedings of the workshop were published in
+August 1995 (Ref. 5).
+The research activities can be grouped into three major tasks: a) accurate
+determination of the characteristics of the tire cross section using scanned images; b)
+development of model-size reduction strategies for the efficient simulation of the tire contact
+response, and its sensitivity with respect to variations in the material and geometric
+parameters of the tire constituents (cord, rubber and bead); and c) development of three-
+dimensional elements in cylindrical coordinates for modeling the tire.
+In the first tusk, the tire cross section image is captured using a flat bed scanner.
+The raw image is digitally enhanced by subtracting a smooth area-averaged copy from the
+original. The image consists of a grid of pixels, each with its own gray scale value
+(amount of black and white). The gray scale values are used to determine geometrical
+details, since geometry changes correspond to changes in color. An edge tracing procedure
+is used to determine the inner and outer surfaces. Also, the tire cord locations, and ends
+per inch (epi), are determined by examining the changes in the color of the image. The
+details of this procedure being prepared for publication.
+An interactive computer program has been developed which allows the user to
+generate, in a semi-automated manner, the geometrical data of the tire cross section for use
+in the finite element model.
+The second task included development of a number of model-reduction strategies,
+including:
+1) reduced basis technique for simulating the tire contact response. This strategy is
+an extension of the reduced basis technique originally developed by the principal
+2
+
+
+
+=== PDF PAGE 5 ===
+investigator for the solution of geometrically nonlinear problems. It is based on
+significantly reducing the number of degrees of freedom away from the contact zone.
+2) partitioning strategy based on dividing the tire into two regions: the contact
+region, and the region away from the contact area. A preconditioned conjugate gradient
+approach is used with the preconditioning matrix selected to correspond to the degrees of
+freedom in the contact region.
+3) neglecting the changes in the tire response away from the contact area.
+The first two strategies have been implemented into an in-house computer program.
+The third task included the development of three-dimensional finite elements in
+cylindrical coordinates for modeling tires. In contrast to elements formulated in Cartesian
+coordinates, these elements allow the exact representation of circular shapes. Numerical
+results are presented for the application of this formulation to the analysis of a radial
+passenger tire subjected to rim mounting, inflation pressure, and rigid pavement contact.
+Comparison was made with both available experimental data, and the predictions of a
+commercial code using finite elements developed in Cartesian coordinates.
+PRESENTATIONS
+1. Noor, A. K., Tanner, J. A. and Peters, J. M., "Sensitivity of Tire Response to
+Variations in Material and Geometric Parameters," International Conference on
+Computational Engineering Science (ICESPl), Patras, Greece, April 21-25, 199 1.
+2. Noor, A. K., Tanner, J. A. and Peters, J. M., "Reduced Basis Technique for
+Evaluating the Sensitivity Coefficients of the Nonlinear Tire Response," Tire Society
+1l th Annual Meeting and Conference on Tire Science and Technology, University of
+Akron, Akron, OH, March 24-25,1992.
+3. Noor, A. K., "Advances in Reduction Techniques for Tire Contact Problems,"
+Workshop on Computational Modeling of Tires, Hampton, VA, Oct. 26-27,1994.
+4. Danielson, K. T. and Noor, A. K., "Finite Elements Developed in Cylindrical
+Coordinates for Three-Dimensional Tire Analysis," Tire Society 15th Annual Meeting
+and Conference on Tire Science and Technology, University of Akron, Akron, OH,
+March 19-20, 1996.
+3
+
+
+
+=== PDF PAGE 6 ===
+REFERENCES
+1. Noor, A. K., Tanner, J. A. and Peters, J. M., "Sensitivity of Tire Response to
+Variations in Material and Geometric Parameters," Finite Elements in Analysis and
+Design, Vol. 11, 1992, pp. 77-86.
+2. Noor, A. K., Tanner, J. A., Peters, J. M. and Robinson, M. P., "Analytical Studies of
+the Space Shuttle Orbiter Nose-Gear Tire," SAE Technical Paper Series, 1991 SAE
+Aerospace Atlantic, Dayton, OH, April 22-26, 1991, Paper No. 91 198.
+3. Noor, A. K., Tanner, J. A. and Peters, J. M., "Reduced Basis Technique for
+Evaluating the Sensitivity Coefficients of the Nonlinear Tire Response," AIM Journal,
+Vol. 31, No. 2, Feb. 1993, pp. 370-376.
+4. Noor, A. K. and Peters, J. M., "Reduction Technique for Tire Contact Problems,"
+Workshop on Computational Tire Modeling, Hampton, VA, Oct. 26-27, 1994, NASA
+CP-3306, 1994, pp. 69-88; Computers and Structures (to appear).
+5 . Noor, A. K. and Tanner, J. A. (compilers), Computational Modeling of Tires, NASA
+CP-3306, August 1995.
+6. Danielson, K. T., Noor, A. K. and Green, J. S., "Computational Strategies for Tire
+Modeling and Analysis," Computers and Structures (to appear).
+7. Danielson, K. T. and Noor, A. K., "Finite Elements Developed in Cylindrical
+Coordinates for Three-Dimensional Tire Analysis," Tire Science and Technology (to
+appear).
+4
+
+
+
+=== PDF PAGE 7 ===
+Appendix
+ABSTRACTS OF PUBLICATIONS
+Sensitivity of Tire Response to Variations in Material
+and Geometric Parameters
+Ahmed K. Noor, John A. Tanner and Jeanne M. Peters
+A computational procedure is presented for evaluating the analytic sensitivity derivatives df the tire
+response with respect to material and geometric parameters of the tire. The tire is modeled by
+using a two-dimensional laminated anisotropic shell theory with the effects of variation in material
+and geometric parameters included. The computational procedure is applied to the case of uniform
+inflation pressure on the space shuttle nose-gear tire when subjected to uniform inflation pressure.
+Numerical results are presented showing the sensitivity of the different response quantities to
+variations in the material characteristics of both the cord and the rubber.
+Finite Elements in Analysis and Design, Vol. 11, 1992, pp. 77-86.
+Analytical Studies of the Space Shuttle Orbiter Nose-Gear Tire
+Ahmed K. Noor, John A. Tanner, Jeanne M. Peters and Martha P. Robinson
+A computational procedure is presented for evaluating the analytic sensitivity derivatives of
+the tire response with respect to material and geometrical properties of the tire. The tire is
+modeled by using a two-dimensional laminated anisotropic shell theory with the effects of
+variation in material and geometric parameters included. The computational procedure is
+applied to the case of the Space Shuttle orbiter nose-gear tire subjected to uniform inflation
+pressure. Numerical results are presented which show the sensitivity of the different tire
+response quantities to variations in the material characteristics of both the cord and rubber.
+SAE Technical Paper Series, 1991 SAE Aerospace Atlantic, Dayton, OH, April 22-26,
+1991, Paper No. 91198.
+Reduced Basis Technique for Evaluating the Sensitivity Coefficients
+of the Nonlinear Tire Response
+Ahmed K. Noor, John A. Tanner and Jeanne M. Peters
+An efficient reduced basis technique is presented for calculating the sensitivity of nonlinear
+tire response to variations in the design variables. The tire is discretized by using three-
+field mixed finite element models. The vector of structural response and its first-order and
+second-order sensitivity coefficients (derivatives with respect to design variables) are each
+expressed as linear combinations of a small number of basis (or global approximation)
+vectors. The Bubnov-Galerkin technique is then used to approximate each of the finite
+element equations governing the response, and the sensitivity coefficients, by a small
+number of algebraic equations in the amplitudes of these vectors. Path derivatives
+(derivatives of the response vector with respect to path parameters, e.g., load parameters)
+are used as basis vectors for approximating the response. A combination of the path
+derivatives and their derivatives with respect to the design variables is used for
+approximating the sensitivity coefficients. The potential of the proposed technique is
+discussed and its effectiveness is demonstrated by means of a numerical example of the
+Space Shuttle nose-gear tire subjected to uniform inflation pressure. The design variables
+are selected to be the material properties of the cord and rubber as well as the cord
+diameters, end counts, and angles.
+AIM Journal, Vol. 31, No. 2, Feb. 1993, pp. 370-376.
+5
+
+
+
+=== PDF PAGE 8 ===
+Computational Modeling of Tires
+Ahmed K. Noor and John A. Tanner (compilers)
+A significant capability has been developed over the past two decades for the
+computational modeling and analysis of tires. Several in-house and commercial software
+systems are currently available for accurate determination of static load deflection
+characteristics, contact area shape, free vibration modes, and quasi-static rolling resistance.
+This success can be attributed, in part, to the joint NASA/U.S. tire industry National Tire
+Modeling Program (NTMP). This program was initiated in 1983 and was completed in
+1991. At its peak seven U.S. tire companies, four universities, and a software developer
+participated in the program. The NTMP established a set of benchmark tire modeling
+problems, developed a national database of experimental tire measurements, and led to the
+development of a number of tire modeling strategies and solution algorithms that could be
+incorporated into new or existing software packages.
+Despite the significant advances made in the computational modeling and analysis
+of tires, a number of technology needs and related tasks must be addressed by the research
+community to enhance the state-of-the-art in computational modeling of tires and to make it
+an effective tool in tire design. The joint University of Virginia/NASA workshop held at
+the Peninsula Graduate Engineering Center of the Virginia Consortium of Engineering and
+Science Universities, Oct. 26-27, 1994 focused on the status of computational modeling of
+tires and the current and future needs for further development of this technology. The list
+of pacing items given in this introduction was compiled from a number of participants.
+The technology needs identified by the participants can be grouped into the
+following five major headings: 1) material characterization of filled rubber and heat
+generation mechanisms; 2) understanding the physical phenomena associated with fictional
+contact, wear and noise generation; 3) accurate determination of tire footprint shape, size
+and pressure distribution; 4) prediction of wear resistance, failure and fatigue; and 5)
+tire/vehicle interaction and its effect on riding and handling qualities and performance.
+For each of the aforementioned items, attempts should be made to exploit the major
+characteristics of high-performance computing technologies, as well as the future
+computing environment. The five primary technology needs and related tasks are described
+subsequently.
+-
+NASA CP-3306 Proceedings of the workshop held at NASA Langley Research Center,
+Hampton, VA, Oct. 26-27, 1994.
+Reduction Technique for Tire Contact Problems
+Ahmed K. Noor and Jeanne M. Peters
+A reduction technique and a computational procedure are presented for predicting
+the tire contact response and evaluating the sensitivity coefficients of the different response
+quantities. The sensitivity coefficients measure the sensitivity of the contact response to
+variations in the geometric and material parameters of the tire. The tire is modeled using a
+two-dimensional laminated anisotropic shell theory with the effects of variation in
+geometric and material parameters, transverse shear deformation, and geometric
+nonlinearities included. The contact conditions are incorporated into the formulation by
+using a perturbed Lagrangian approach with the fundamental unknowns consisting of the
+stress resultants, the generalized displacements, and the Lagrange multipliers associated
+with the contact conditions. The elemental arrays are obtained by using a modified two-
+field, mixed variational principle.
+For the application of the reduction technique, the tire finite element model is
+partitioned into two regions. The first region consists of the nodes that are likely to come
+in contact with the pavement, and the second region includes all the remaining nodes. The
+6
+
+
+
+=== PDF PAGE 9 ===
+reduction technique is used to significantly reduce the degrees of freedom in the second
+region.
+The effectiveness of the computational procedure is demonstrated by a numerical
+example of the frictionless contact response of the space shuttle nose-gear tire, inflated and
+pressed against a rigid flat surface.
+NASA CP-3306, pp, 69-88.
+Computational Strategies for Tire Modeling and Analysis
+Kent T. Danielson, Ahmed K. Noor and James S. Green
+Computational strategies are presented for the modeling and analysis of tires in contact with
+pavement. A procedure is introduced for simple and accurate determination of tire cross-
+sectional geometric characteristics from a digitally scanned image. Three new strategies for
+reducing the computational effort in the finite element solution of tire-pavement contact are
+also presented. These strategies take advantage of the observation that footprint loads do
+not usually stimulate a significant tire response away from the pavement contact region.
+The finite element strategies differ in their level of approximation and required amount of
+computer resources. The effectiveness of the strategies is demonstrated by numerical
+examples of frictionless and frictional contact of the space shuttle Orbiter nose-gear tire.
+Both an in-house research code and a commercial finite element code are used in the
+numerical studies.
+Computers and Structures (to appear).
+Finite Elements Developed in Cylindrical Coordinates for Three-
+Dimensional Tire Analysis
+Kent T. Danielson and Ahmed K. Noor
+Finite elements developed in cylindrical coordinates are presented for three-dimensional
+analysis of tires. In contrast to elements formulated in Cartesian coordinates, these
+elements allow the exact representation of circular shapes. The exact modeling of circular
+geometries can provide better finite element predictions and reduce the number of elements
+needed around the tire circumference. Numerical results are presented for the application of
+this formulation to the analysis of a radial passenger tire subjected to rim mounting,
+nonconservative inflation pressure, and rigid pavement contact. The predictions of the
+foregoing finite elements are compared to experimental data and to predictions of a
+commercial code using finite elements developed in Cartesian coordinates. The
+comparisons demonstrate the accuracy and the advantages of the cylindrical coordinate
+formulation for three-dimensional finite element analysis of tires.
+Tire Science and Technology (to appear).
+7
+
+
+
+=== PDF PAGE 10 ===
+DISTRIBUTION LIST
+1 - 3 Dr. John A. Tanner, MS 495
+Impact Dynamics Branch
+Structural Dynamics Branch
+National Aeronautics and Space Administration
+Langley Research Center
+Hampton, VA 23681-0001
+4 Mr. Joseph Murray, MS 126
+National Aeronautics and Space Administration
+Langley Research Center
+Acquisition Division
+Hampton, VA 23681-0001
+5 - 6 A. K. Noor
+Center for Advanced Computational Technology
+University of Virginia
+MS 369
+National Aeronautics and Space Administration
+Langley Research Center
+Hampton, VA 2368 1-0001
+7 - 8 NASA Scientific and Technical Information Facility
+P. 0.8757
+Baltimore/Washington International Airport
+Baltimore, MD 21240
+9 F. W.Barton
+10- 11 M. Rodeffer, Clark Hall
+*
+SEAS Postaward Research Administration
+12 SEAS Preaward Research Administration
+*Cover Letter
+JO#7018:ph

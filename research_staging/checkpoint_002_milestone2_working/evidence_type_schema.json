@@ -1,0 +1,16 @@
+{
+  "allowedTypes": [
+    "MEASUREMENT",
+    "OBSERVATION",
+    "SCALING_RULE",
+    "HISTORICAL_CONSTRAINT",
+    "CALIBRATION_FIXTURE",
+    "CONFLICT",
+    "COMPOUND_APPLICABILITY",
+    "SOURCE_METHODOLOGY",
+    "EVENT_SUPPLIER_EVIDENCE",
+    "CALIBRATION_METHOD"
+  ],
+  "publicationDateRule": "Publication date and subject period are independent provenance fields.",
+  "retrospectiveRule": "A later publication about a historical event is SECONDARY_RETROSPECTIVE unless the underlying primary record is separately reviewed."
+}

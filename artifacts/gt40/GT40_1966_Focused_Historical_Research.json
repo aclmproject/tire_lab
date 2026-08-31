@@ -1,0 +1,102 @@
+{
+  "schema": "ACLM focused historical research context 1.0",
+  "subject": "1966 Ford GT40 Mk II / FAM022 / CLS021",
+  "generatedBy": "ACLM Historical Tire Lab v0.10.1",
+  "historicalEvidenceStatus": "PARTIALLY SOURCED",
+  "supplierDecision": {
+    "value": "General / unknown",
+    "reason": "Ford's Chris Amon account documents event- and car-specific Firestone/Goodyear use at 1966 Le Mans; it does not justify assigning one supplier to a generic 1966 Mk II fixture."
+  },
+  "sources": [
+    {
+      "id": "GT40-PRI-FIA-224",
+      "quality": "PRIMARY",
+      "publisher": "FIA Historic Database",
+      "title": "Ford GT 40 homologation form 224, Group 4",
+      "url": "https://historicdb.fia.com/sites/default/files/car_attachment/1601034301/homologation_form_number_224_group_4.pdf",
+      "supports": [
+        "1966 GT40 homologation context"
+      ],
+      "limitations": "Covers the homologated 4.736 L Group 4 GT40, not the 7.0 L Mk II prototype; it is a scope boundary, not exact Mk II tire calibration."
+    },
+    {
+      "id": "GT40-PRI-FORD-AMERICAN-CHALLENGE",
+      "quality": "PRIMARY",
+      "publisher": "Ford Division News Bureau",
+      "title": "Ford GT40 — The American Challenge",
+      "url": "https://media.ford.com/content/dam/fordmedia/history/products/fordgt-gt40/Ford-GT40-Press-release-The-American-Challenge.pdf",
+      "supports": [
+        "Mk II development",
+        "provision for 8-inch front and 9.5-inch rear magnesium wheels",
+        "1966 endurance context"
+      ],
+      "limitations": "Direct wheel-width evidence; does not provide exact tire dimensions, pressures, temperature or force curves."
+    },
+    {
+      "id": "GT40-PRI-FORD-AMON-1966",
+      "quality": "PRIMARY",
+      "publisher": "Ford Media Center / Chris Amon",
+      "title": "Remembering Le Mans 1966",
+      "url": "https://media.ford.com/content/fordmedia/feu/de/de/news/2016/06/10/ford-gt40-fahrer-chris-amon-erinnert-sich-an-seinen-grossen-le-m.html",
+      "supports": [
+        "Firestone intermediate use on the McLaren/Amon car",
+        "high-speed tread shedding",
+        "event-specific switch to Goodyear",
+        "other GT40s using Goodyear"
+      ],
+      "limitations": "Retrospective first-person event account; supports Le Mans supplier/failure context, not a generic Mk II supplier or numeric pressure/temperature target."
+    },
+    {
+      "id": "GT40-PRI-FORD-LEMANS-REPORT",
+      "quality": "PRIMARY",
+      "publisher": "Ford Motor Company",
+      "title": "Le Mans Progress Meeting No. 11 — 1966 race review",
+      "url": "https://media.ford.com/content/dam/fordmedia/history/products/fordgt-gt40/LeMans-Progress-Meeting-with-wrap-up-of-victory-10-06-1966.pdf",
+      "supports": [
+        "Mk II race pace strategy",
+        "1-2-3 completion",
+        "endurance operating context"
+      ],
+      "limitations": "No direct tire dimensions, pressures or temperatures."
+    }
+  ],
+  "findings": {
+    "hostSpecification": {
+      "status": "DIRECTLY SOURCED",
+      "value": "Installed WSC60 Ford GT40 Mk II metadata identifies 1966; imported AC physics mass is 1161 kg."
+    },
+    "rimArchitecture": {
+      "status": "PARTIALLY SOURCED",
+      "value": "Ford documents 8-inch front and 9.5-inch rear wheel provision; imported host uses 15-inch rim diameter and 0.245/0.325 m tire widths."
+    },
+    "construction": {
+      "status": "RECONSTRUCTED",
+      "value": "Bias/cross-ply is the internal FAM022 compatibility classification; the focused source set does not expose a direct carcass specification."
+    },
+    "supplier": {
+      "status": "UNKNOWN",
+      "value": "General / unknown for this generic fixture; retain Firestone/Goodyear only as 1966 Le Mans event evidence."
+    },
+    "compound": {
+      "status": "RECONSTRUCTED",
+      "value": "Dry endurance/race spec; exact period compound code unresolved."
+    },
+    "pressure": {
+      "status": "PROVISIONAL",
+      "value": "No period Mk II hot/cold pressure guidance found in the focused primary set."
+    },
+    "temperature": {
+      "status": "UNKNOWN",
+      "value": "No period tread, carcass or core temperature window found."
+    },
+    "durability": {
+      "status": "PARTIALLY SOURCED",
+      "value": "Ford race records establish endurance completion context; Amon records high-speed intermediate tread shedding, but no numeric wear-life mapping."
+    },
+    "wetIntermediate": {
+      "status": "DIRECTLY SOURCED",
+      "value": "Amon explicitly records Firestone intermediates in damp 1966 Le Mans conditions; exact construction and compound remain unknown."
+    }
+  },
+  "forbiddenInference": "Do not convert FIA dimensional-measurement pressure, modern historic eligibility, or event-specific supplier testimony into a universal historical pressure/supplier value."
+}

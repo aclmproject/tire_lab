@@ -1,0 +1,238 @@
+{
+  "schema": "ACLM historical profile state 1.2",
+  "generatedBy": "ACLM Historical Tire Lab v0.10.2",
+  "state": {
+    "construction": {
+      "value": "bias",
+      "provenance": "USER_EXPLICIT_OVERRIDE",
+      "sourceIds": [],
+      "confidence": "explicit user choice",
+      "explicit": true
+    },
+    "supplier": {
+      "value": "General / unknown",
+      "provenance": "USER_EXPLICIT_OVERRIDE",
+      "sourceIds": [],
+      "confidence": "explicit user choice",
+      "reason": "user changed supplier control",
+      "explicit": true
+    },
+    "familyId": "FAM035",
+    "classId": "CLS035",
+    "lastTransition": "supplier profile changed; explicit supplier override retained"
+  },
+  "context": {
+    "classId": "CLS035",
+    "className": "1968-70 World Sportscar / Group 4-6 transition",
+    "classFrom": 1968,
+    "classTo": 1970,
+    "familyId": "FAM035",
+    "familyName": "1968-70 world sportscar tread-to-slick transition",
+    "familyFrom": 1968,
+    "familyTo": 1970,
+    "construction": "mixed",
+    "dryType": "slick",
+    "menu": [
+      {
+        "kind": "race",
+        "lifeBasis": "1969 GT40 axle-specific change counts anchor endurance scale",
+        "lifeConfidence": 65,
+        "lifeKm": 850,
+        "lifeRangeKm": "300; 2000",
+        "name": "Dry endurance specification"
+      },
+      {
+        "kind": "soft",
+        "lifeBasis": "Softer rubber increasingly common; exact supplier/event required",
+        "lifeConfidence": 50,
+        "lifeKm": 300,
+        "lifeRangeKm": "100; 750",
+        "name": "Dry higher-mu / sprint specification"
+      },
+      {
+        "historicalKind": "wet_dry",
+        "kind": "intermediate",
+        "lifeBasis": "Period wet-dry compromise practice documented by 1970",
+        "lifeConfidence": 55,
+        "lifeKm": 300,
+        "lifeRangeKm": "100; 700",
+        "name": "Wet-dry compromise"
+      },
+      {
+        "kind": "wet",
+        "lifeBasis": "High-mu pure-wet practice",
+        "lifeConfidence": 55,
+        "lifeKm": 140,
+        "lifeRangeKm": "50; 320",
+        "name": "Pure-wet specification"
+      }
+    ],
+    "slots": {
+      "soft": {
+        "kind": "soft",
+        "lifeBasis": "Softer rubber increasingly common; exact supplier/event required",
+        "lifeConfidence": 50,
+        "lifeKm": 300,
+        "lifeRangeKm": "100; 750",
+        "name": "Dry higher-mu / sprint specification",
+        "slot": "soft",
+        "short": "S"
+      },
+      "medium": {
+        "kind": "race",
+        "lifeBasis": "1969 GT40 axle-specific change counts anchor endurance scale",
+        "lifeConfidence": 65,
+        "lifeKm": 850,
+        "lifeRangeKm": "300; 2000",
+        "name": "Dry endurance specification",
+        "slot": "medium",
+        "short": "R"
+      },
+      "hard": null,
+      "intermediate": {
+        "historicalKind": "wet_dry",
+        "kind": "intermediate",
+        "lifeBasis": "Period wet-dry compromise practice documented by 1970",
+        "lifeConfidence": 55,
+        "lifeKm": 300,
+        "lifeRangeKm": "100; 700",
+        "name": "Wet-dry compromise",
+        "slot": "intermediate",
+        "short": "I"
+      },
+      "wet": {
+        "kind": "wet",
+        "lifeBasis": "High-mu pure-wet practice",
+        "lifeConfidence": 55,
+        "lifeKm": 140,
+        "lifeRangeKm": "50; 320",
+        "name": "Pure-wet specification",
+        "slot": "wet",
+        "short": "W"
+      }
+    },
+    "warnings": [],
+    "supportedSuppliers": [],
+    "sourceIds": [],
+    "confidenceSource": "ACLM historical class calibration"
+  },
+  "coherence": {
+    "pass": true,
+    "profileCoherent": true,
+    "authoritative": true,
+    "compatibilityOnly": true,
+    "title": "PROFILE COHERENCE PASS",
+    "historicalEvidenceStatus": "PARTIALLY SOURCED",
+    "evidence": {
+      "schema": "ACLM historical evidence status 1.0",
+      "overall": "PARTIALLY SOURCED",
+      "categories": {
+        "carIdentity": {
+          "status": "DIRECTLY SOURCED",
+          "sourceIds": [
+            "data/car.ini [INFO]"
+          ],
+          "basis": "imported AC package identity",
+          "limitation": "AC package identity is not proof of period specification"
+        },
+        "classFamily": {
+          "status": "RECONSTRUCTED",
+          "sourceIds": [],
+          "basis": "CLS035 / FAM035",
+          "limitation": "internal FAM/CLS identifiers are not citations"
+        },
+        "construction": {
+          "status": "RECONSTRUCTED",
+          "sourceIds": [],
+          "basis": "USER_EXPLICIT_OVERRIDE",
+          "limitation": "profile compatibility does not prove a numerical construction model"
+        },
+        "supplier": {
+          "status": "UNKNOWN",
+          "sourceIds": [],
+          "basis": "USER_EXPLICIT_OVERRIDE",
+          "limitation": "supplier stays unknown without event/car-specific evidence"
+        },
+        "geometry": {
+          "status": "PARTIALLY SOURCED",
+          "sourceIds": [
+            "data/tyres.ini"
+          ],
+          "basis": "imported AC geometry with traceable source",
+          "limitation": "sim geometry is not automatically period dimensional evidence"
+        },
+        "compound": {
+          "status": "RECONSTRUCTED",
+          "sourceIds": [],
+          "basis": "class/family compound menu",
+          "limitation": "exact compound properties remain reconstruction unless directly documented"
+        },
+        "temperature": {
+          "status": "PROVISIONAL",
+          "sourceIds": [],
+          "basis": "generator prior; no host-specific live telemetry yet",
+          "limitation": "simulator closure is not historical optimum evidence"
+        },
+        "pressure": {
+          "status": "PROVISIONAL",
+          "sourceIds": [],
+          "basis": "reference-duty pressure model only; host remains unvalidated",
+          "limitation": "a static software prediction is not a validated live result or automatically a historical racing-pressure source"
+        },
+        "wearLife": {
+          "status": "RECONSTRUCTED",
+          "sourceIds": [],
+          "basis": "generator family prior; host-specific life unresolved",
+          "limitation": "period durability evidence must not be converted directly into AC virtual-km wear without telemetry calibration"
+        }
+      },
+      "rule": "PROFILE COHERENCE checks compatibility only. Historical evidence status reports sourcing separately; internal FAM/CLS IDs are not citations."
+    },
+    "fields": {
+      "year": 1970,
+      "classId": "CLS035",
+      "familyId": "FAM035",
+      "classPeriod": [
+        1968,
+        1970
+      ],
+      "familyPeriod": [
+        1968,
+        1970
+      ],
+      "familyConstruction": null,
+      "currentConstruction": "bias",
+      "constructionProvenance": "USER_EXPLICIT_OVERRIDE",
+      "supplier": "General / unknown",
+      "supplierProvenance": "USER_EXPLICIT_OVERRIDE",
+      "compound": null,
+      "geometry": {
+        "front": {
+          "width": 0.23,
+          "radius": 0.3048,
+          "rimRadius": 0.2032
+        },
+        "rear": {
+          "width": 0.37,
+          "radius": 0.3302,
+          "rimRadius": 0.2032
+        }
+      },
+      "thermalConstruction": "bias",
+      "anachronisticOverride": false
+    },
+    "issues": [],
+    "intended": {
+      "value": null,
+      "provenance": "UNKNOWN_FALLBACK",
+      "sourceIds": [
+        "FAM035",
+        "CLS035"
+      ],
+      "confidence": "mixed/unknown construction requires explicit evidence or user review"
+    }
+  },
+  "profileCoherent": true,
+  "compatibilityOnly": true,
+  "historicalEvidenceStatus": "PARTIALLY SOURCED"
+}

@@ -1,0 +1,25 @@
+{
+  "researchScope": "Staging-only research lineage, ontology, acquisition-target repair, evidence merge, and audit.",
+  "prohibitedActionsObserved": [],
+  "outOfScopeFiles": [
+    {
+      "relativePath": "src/payload/app/app.js",
+      "sha256AtCheckpoint": "af4a26adcc3d282ae6051b1f66e148ebbf8c0a1a3f43cc7a71ba14489fbdcf1e",
+      "disposition": "PRE_EXISTING_UNCOMMITTED_PHYSICS_WORK_PRESERVED_OUT_OF_SCOPE"
+    },
+    {
+      "relativePath": "src/payload/app/index.html",
+      "sha256AtCheckpoint": "318fde29eefb2f487a9b8f42d7b273c6d84672fcc7117d5e5b7b00b0abb0b8ca",
+      "disposition": "PRE_EXISTING_UNCOMMITTED_PHYSICS_WORK_PRESERVED_OUT_OF_SCOPE"
+    },
+    {
+      "relativePath": "src/payload/app/pressure_solver.js",
+      "sha256AtCheckpoint": "389b301f2387e2b85122055b016b37ea93013859d7e3b81d68c091c27a60e17c",
+      "disposition": "PRE_EXISTING_UNCOMMITTED_PHYSICS_WORK_PRESERVED_OUT_OF_SCOPE"
+    }
+  ],
+  "canonicalKnowledgeChanged": false,
+  "applicationChangedByThisPipeline": false,
+  "buildRun": false,
+  "releaseCreated": false
+}

@@ -1,0 +1,19 @@
+{
+  "retrievedAtUtc": "2026-08-29T21:56:18.390Z",
+  "endpoints": [
+    "https://api.crossref.org/journals/0090-8657/works?filter=from-pub-date:1973-01-01,until-pub-date:2005-12-31&rows=1000&select=DOI,title,author,published-print,published-online,page,volume,issue,abstract,URL,publisher",
+    "https://api.crossref.org/prefixes/10.4271/works?query.title=tire&filter=from-pub-date:1950-01-01,until-pub-date:2005-12-31&rows=1000&select=DOI,title,author,published-print,published-online,page,volume,issue,abstract,URL,publisher",
+    "https://ntrs.nasa.gov/api/citations/search?q=%22aircraft%20tire%22&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20temperature&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20deflection&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20pressure&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20friction&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20wear&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20hydroplaning&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20cornering&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20thermal&page=1&pageSize=100",
+    "https://ntrs.nasa.gov/api/citations/search?q=tire%20rolling%20resistance&page=1&pageSize=100"
+  ],
+  "reviewRule": "A publisher/government-deposited abstract was read and classified. Records without abstracts were excluded. ABSTRACT_ONLY is not full-text review.",
+  "copyrightRule": "Only a maximum 24-word abstract excerpt is retained per source; full abstracts are represented by SHA-256 fingerprints."
+}

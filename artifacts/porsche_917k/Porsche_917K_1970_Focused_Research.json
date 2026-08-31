@@ -1,0 +1,68 @@
+{
+  "schema": "ACLM focused historical research record 1.0",
+  "subject": "1970 Porsche 917 K",
+  "carIdentity": {
+    "status": "DIRECT PRIMARY",
+    "year": 1970,
+    "make": "Porsche",
+    "model": "917 K",
+    "homologation": "FIA form 250, Group 4",
+    "host": "ks_porsche_917_k"
+  },
+  "taxonomyDecision": {
+    "classId": "CLS035",
+    "familyId": "FAM035",
+    "class": "1968-70 World Sportscar / Group 4-6 transition",
+    "family": "1968-70 world sportscar tread-to-slick transition",
+    "construction": "mixed transition; generated baseline must use bias/cross-ply compatibility unless direct host/evidence proves otherwise",
+    "dryArchitecture": "slick transition",
+    "status": "AUTHORITATIVE FOR ACLM CLASS/FAMILY SELECTION",
+    "reason": "FIA identifies the 917 as Group 4 and Porsche identifies the 917 K as a 1970 World Sportscar endurance racer; the existing 1968-70 transition class is more specific than generic CLS021/FAM022."
+  },
+  "supplier": {
+    "value": "General / unknown",
+    "status": "UNRESOLVED",
+    "reason": "No source in the focused primary set justifies one supplier across generic 1970 917 K teams and events."
+  },
+  "historicalFindings": [
+    "Porsche describes the 1970 short-tail 917 K as the stabilized evolution used by multiple Porsche-backed teams in the World Sportscar Championship.",
+    "The FIA database records Porsche 917 homologation form 250 in Group 4, including 1970 bodywork and 4907 cc extensions.",
+    "Porsche records known high-speed tread-separation risk above roughly 350 km/h in the 1970 Le Mans context; this supports preserving a distinct high-speed tire-risk note, not a numeric wear or thermal fit.",
+    "Porsche records 343 laps and 4607.811 km for the winning 917 K at Le Mans, but this is vehicle/event endurance context and not evidence that one tire set covered that distance."
+  ],
+  "sources": [
+    {
+      "id": "917K-PRI-FIA-250",
+      "publisher": "FIA Historic Database",
+      "url": "https://historicdb.fia.com/node/99501",
+      "supports": "Porsche 917 identity, FIA Group 4, homologation form 250 and 1970 extensions"
+    },
+    {
+      "id": "917K-PRI-PORSCHE-GAMECHANGER",
+      "publisher": "Porsche",
+      "url": "https://www.porsche.com/stories/innovation/why-the-porsche-917-is-a-gamechanger/",
+      "supports": "917 K chronology, World Sportscar role, 1970 team context and Le Mans distance"
+    },
+    {
+      "id": "917K-PRI-PORSCHE-AHRENS",
+      "publisher": "Porsche Newsroom / Christophorus",
+      "url": "https://newsroom.porsche.com/en/christophorus/porsche-christophorus-le-mans-kurt-ahrens-13006.html",
+      "supports": "1970 Le Mans high-speed tire tread-separation risk"
+    },
+    {
+      "id": "917K-PRI-PORSCHE-ATTWOOD",
+      "publisher": "Porsche Christophorus",
+      "url": "https://newsroom.porsche.com/christophorus/en/2019/390/market-great-britain-natural-born-winner-917-k-17047.html",
+      "supports": "1970 917 K identity, short-tail development and team/event context"
+    }
+  ],
+  "numericCalibrationDecision": "NO THERMAL, PRESSURE, WEAR, VIRTUALKM OR PRODUCTION KNOWLEDGE NUMERIC CHANGE",
+  "hostPhysicsStatus": {
+    "installedPath": "F:\\SteamLibrary\\steamapps\\common\\assettocorsa\\content\\cars\\ks_porsche_917_k",
+    "cleanKunosHostFound": true,
+    "looseDataFolderFound": false,
+    "dataAcdFound": true,
+    "generationStatus": "BLOCKED PENDING CONTENT MANAGER UNPACK",
+    "reason": "Tire Lab cannot decode data.acd, and substituting a mod host or approximate validation profile would violate the clean-host requirement."
+  }
+}

@@ -6,12 +6,35 @@ const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 let generatedFiles={};
 let importedPressureReference={};
 let importedTireReference={};
+let importedSetupPressureControls={};
 let lastThermalCalibrations=[];
 
 const BASE_LAT=[1.98,1.88317305,1.7833464,1.68138135,1.5781392,1.47448125,1.3712688,1.26936315,1.1696256,1.07291745,0.9801,0.89203455,0.8095824,0.73360485,0.6649632,0.60451875];
 const BASE_LON=[1.9404,1.846916379,1.753112592,1.659541653,1.566756576,1.475310375,1.385756064,1.298646657,1.214535168,1.133974611,1.057518,0.985718349,0.919128672,0.858301983,0.803791296,0.756149625];
 
 let activeHistoricalContext=null;
+let historicalProfileState=window.ACLMProfileState.create($("construction")?.value||"radial",window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,$("supplier")?.value||"General / unknown");
+function constructionProvenance(){return historicalProfileState.construction;}
+function supplierProvenance(){return historicalProfileState.supplier;}
+function renderConstructionProvenance(){
+ const p=constructionProvenance(),el=$("constructionProvenance");
+ if(el)el.textContent=`Provenance: ${p.provenance} · ${(p.sourceIds||[]).join(", ")||"no source ID"} · ${p.confidence||"unresolved"}`;
+}
+function renderSupplierProvenance(){const p=supplierProvenance(),el=$("supplierProvenance");if(el)el.textContent=`Provenance: ${p.provenance} · ${(p.sourceIds||[]).join(", ")||"no source ID"} · ${p.confidence||"unresolved"}`;}
+function setConstructionWithProvenance(value,provenance,details={}){
+ window.ACLMProfileState.setConstruction(historicalProfileState,value,provenance,details);$("construction").value=historicalProfileState.construction.value;renderConstructionProvenance();
+}
+function currentHistoricalCoherence(compound=null){
+ const directSourceIds=ids=>ids.map(id=>$(id)).filter(el=>el?.classList.contains("imported-field")).map(el=>el.title?.replace(/^Imported from\s*/i,"")||"imported AC package");
+ return window.ACLMProfileState.validate(historicalProfileState,activeHistoricalContext,{year:n("year")||null,supplier:v("supplier"),compound,allowAnachronisticOverride:$("allowAnachronisticOverride")?.checked===true,geometry:{front:{width:n("fw"),radius:n("fr"),rimRadius:n("frr")},rear:{width:n("rw"),radius:n("rr"),rimRadius:n("rrr")}},thermalConstruction:v("construction"),carIdentitySourceIds:directSourceIds(["car","year"]),geometrySourceIds:directSourceIds(["fw","fr","frr","rw","rr","rrr"]),pressureEvidenceStatus:activeHistoricalContext?.familyId==="FAM023"?window.ACLMProfileState.EVIDENCE_STATUS.PROVISIONAL:undefined,pressureSourceIds:activeHistoricalContext?.familyId==="FAM023"?["ESCORT-RS1600-BRANDS-LIVE-V0101-003"]:[]});
+}
+function renderHistoricalCoherence(){
+ const result=currentHistoricalCoherence(),el=$("historicalCoherenceStatus");if(!el)return result;
+ const conflicts=result.issues.map(x=>`${x.code}: ${x.message}`).join(" ");
+ el.className=`notice small ${result.pass?(result.issues.length?"warning":"ok"):"error"}`;el.innerHTML=`<b>${escapeHtml(result.title)}</b> — compatibility check only.${conflicts?` ${escapeHtml(conflicts)}`:""}`;
+ const evidence=$("historicalEvidenceStatus");if(evidence){const gaps=Object.entries(result.evidence?.categories||{}).filter(([,x])=>x.status!==window.ACLMProfileState.EVIDENCE_STATUS.DIRECTLY_SOURCED).map(([k,x])=>`${k}: ${x.status}`).join(" · ");evidence.className="notice small warning";evidence.innerHTML=`<b>HISTORICAL EVIDENCE STATUS: ${escapeHtml(result.historicalEvidenceStatus)}</b>${gaps?`<br>${escapeHtml(gaps)}`:""}`;}
+ return result;
+}
 
 function activeFamilyPrior(){
  return activeHistoricalContext?.familyId?window.ACLMHistoricalCategories?.priorForFamily?.(activeHistoricalContext.familyId):null;
@@ -181,7 +204,8 @@ function clearCompoundNameOverrides(){
  for(const ids of Object.values(COMPOUND_NAME_FIELDS)){if($(ids.name))$(ids.name).value="";if($(ids.short))$(ids.short).value="";}
  refreshCompoundNameEditor();renderTireGraphs();refreshLoadDutyStatus();
 }
-function historicalLifeKm(comp){const x=historicalSlot(comp);return x&&Number.isFinite(Number(x.lifeKm))?Number(x.lifeKm):null;}
+function historicalLifeEvidence(comp){const x=historicalSlot(comp);return x?window.ACLMWearModel.migrateLife(x,{sourceRefs:[activeHistoricalContext?.familyId,activeHistoricalContext?.classId].filter(Boolean)}):null;}
+function historicalLifeKm(comp){const x=historicalLifeEvidence(comp);if(!x)return null;if(Number.isFinite(Number(x.competitiveLifeKm)))return Number(x.competitiveLifeKm);if(x.lifeDefinition==="PROVISIONAL_GENERATOR_PRIOR"&&Array.isArray(x.lifeRangeKm)&&x.lifeRangeKm.length)return Number(historicalSlot(comp)?.lifeKm);return null;}
 function compoundTypeHint(comp){
  if(comp==="wet")return "RAIN";
  if(comp==="intermediate")return "RACING_TREADED";
@@ -207,7 +231,7 @@ function renderHistoricalFamilySummary(extra=""){
  }
  const c=activeHistoricalContext;
  const menu=(c.menu||[]).map(x=>`${x.name}${x.lifeKm?` ~${x.lifeKm} km`:""}`).join(" · ");
- const construction=c.construction==="mixed"?"mixed/transition — review exact supplier/car":(c.construction==="bias"?"bias/cross-ply":"radial");
+ const intended=window.ACLMProfileState.familyConstruction(c),construction=intended.value?(intended.value==="bias"?"bias/cross-ply":"radial"):(c.construction==="mixed"?"mixed/transition — review exact supplier/car":"unresolved");
  const warns=(c.warnings||[]).length?`<br><span class="warning">${escapeHtml(c.warnings.join(" "))}</span>`:"";
  const k=window.ACLMHistoricalCategories?.knowledgeInfo?.()||{};
  const prior=window.ACLMHistoricalCategories?.priorForFamily?.(c.familyId);
@@ -218,9 +242,10 @@ function applyHistoricalContext(ctx,source="historical category"){
  activeHistoricalContext=ctx||null;
  if(!ctx){updateHistoricalCompoundLabels();renderHistoricalFamilySummary();return false;}
  if(ctx.familyId && $("preset").value!=="manual") $("preset").value=ctx.familyId;
- if(ctx.construction && ctx.construction!=="mixed" && !fieldIsDirect("construction")){
-   $("construction").value=ctx.construction;markResearched("construction",source);
- }
+ const applied=window.ACLMProfileState.applyContext(historicalProfileState,ctx,source);
+ if(applied.constructionChanged){$("construction").value=historicalProfileState.construction.value;$("construction").classList.remove("imported-field");markResearched("construction",source);}
+ if(applied.supplierChanged){setMenuValue("supplier",historicalProfileState.supplier.value);$("supplier").classList.remove("imported-field","researched-field");}
+ renderConstructionProvenance();renderSupplierProvenance();renderHistoricalCoherence();
  const prior=window.ACLMHistoricalCategories?.priorForFamily?.(ctx.familyId);
  if(prior){
    // Geometry/mass from the imported car is preserved. Tire-family structure is regenerated.
@@ -232,6 +257,7 @@ function applyHistoricalContext(ctx,source="historical category"){
    }
    if(Number.isFinite(Number(prior.hotPsi))){
      $("pIdeal").value=Number(prior.hotPsi).toFixed(1);
+     if(!$("axleIdealPressure")?.checked){$("pIdealF").value=$("pIdeal").value;$("pIdealR").value=$("pIdeal").value;}
      $("pIdeal").classList.add("researched-field");$("pIdeal").title=`ACLM Knowledge ${ctx.familyId} hot-pressure prior`;
    }
  }
@@ -252,7 +278,7 @@ function applyHistoricalContext(ctx,source="historical category"){
 function autoApplyHistoricalContext(source="year + racing class"){
  if(!window.ACLMHistoricalCategories)return false;
  const ctx=window.ACLMHistoricalCategories.resolveContext(v("year"),v("series"));
- if(!ctx){activeHistoricalContext=null;updateHistoricalCompoundLabels();renderHistoricalFamilySummary("No class/family match was strong enough; manual review required.");return false;}
+ if(!ctx){activeHistoricalContext=null;window.ACLMProfileState.applyContext(historicalProfileState,null,source);renderConstructionProvenance();renderHistoricalCoherence();updateHistoricalCompoundLabels();renderHistoricalFamilySummary("No class/family match was strong enough; manual review required.");return false;}
  if(ctx.ambiguous){
    activeHistoricalContext=null;updateHistoricalCompoundLabels();
    renderHistoricalFamilySummary(`Multiple historical class calibrations remain plausible: ${(ctx.candidates||[]).map(x=>x.name).join(" / ")}.`);
@@ -262,8 +288,8 @@ function autoApplyHistoricalContext(source="year + racing class"){
  return applyHistoricalContext(ctx,source);
 }
 function applyPreset(key){
- if(key==="manual"){
-   activeHistoricalContext=null;updateHistoricalCompoundLabels();renderHistoricalFamilySummary("Manual mode: current checkboxes and construction are preserved.");return;
+  if(key==="manual"){
+    activeHistoricalContext=null;setConstructionWithProvenance(v("construction"),window.ACLMProfileState.PROVENANCE.USER_EXPLICIT_OVERRIDE,{reason:"manual historical mode selected",confidence:"explicit user choice"});updateHistoricalCompoundLabels();renderHistoricalFamilySummary("Manual mode: current checkboxes and construction are preserved.");renderHistoricalCoherence();return;
  }
  if(key==="auto"){
    if(!autoApplyHistoricalContext("automatic year/class category")){
@@ -304,9 +330,12 @@ function renderTireGraphs(){
  graphCanvas("gripGraph","Peak grip reference","Selected compound index","μ reference",[{name:"DY_REF",points:dy},{name:"DX_REF",points:dx}],{xmin:0,xmax:Math.max(1,comps.length-1)});
 }
 
-$("preset").addEventListener("change",e=>{applyPreset(e.target.value);populateSeriesClassOptions();});
+$("preset").addEventListener("change",e=>{applyPreset(e.target.value);populateSeriesClassOptions();renderHistoricalCoherence();});
 $("series").addEventListener("change",()=>{clearMenuProvenance("series");applySeriesMenuSelection();refreshMenuDrivenOutput();});
-$("supplier").addEventListener("change",()=>{clearMenuProvenance("supplier");refreshMenuDrivenOutput();});
+$("supplier").addEventListener("change",()=>{clearMenuProvenance("supplier");window.ACLMProfileState.setSupplier(historicalProfileState,v("supplier"),window.ACLMProfileState.PROVENANCE.USER_EXPLICIT_OVERRIDE,{reason:"user changed supplier control",confidence:"explicit user choice"});renderSupplierProvenance();if(activeHistoricalContext)applyHistoricalContext(activeHistoricalContext,"supplier profile changed");refreshMenuDrivenOutput();});
+$("construction").addEventListener("change",()=>{setConstructionWithProvenance(v("construction"),window.ACLMProfileState.PROVENANCE.USER_EXPLICIT_OVERRIDE,{reason:"user changed construction control",confidence:"explicit user choice"});renderHistoricalCoherence();refreshMenuDrivenOutput();});
+$("year").addEventListener("change",()=>{if($("preset").value==="auto")autoApplyHistoricalContext("year changed");else if(activeHistoricalContext)applyHistoricalContext(activeHistoricalContext,"year changed");populateSeriesClassOptions();renderHistoricalCoherence();refreshMenuDrivenOutput();});
+$("allowAnachronisticOverride")?.addEventListener("change",()=>{renderHistoricalCoherence();refreshMenuDrivenOutput();});
 $("reset").addEventListener("click",()=>{applyPreset($("preset").value);populateSeriesClassOptions();populateSupplierOptions();});
 for(const ids of Object.values(COMPOUND_NAME_FIELDS)){
  for(const id of [ids.name,ids.short]){const el=$(id);if(el)el.addEventListener("input",()=>{el.value=cleanCompoundText(el.value,id===ids.short?5:48,id===ids.short);refreshCompoundNameEditor();renderTireGraphs();refreshLoadDutyStatus();});}
@@ -371,8 +400,8 @@ function wearText(key){
  const targetLife=historicalLifeKm(comp);
  if(Number.isFinite(targetLife)&&targetLife>5){
    const lifeThreshold=$("terminalNormalGrip")?clamp(n("terminalNormalGrip"),51,95):60;
-   let baseLifeX=null;
-   for(const pt of pts) if(pt[1]>=lifeThreshold && pt[0]>0) baseLifeX=pt[0];
+   const crossing=window.ACLMWearModel.crossingAtGrip(pts,lifeThreshold);
+   const baseLifeX=crossing.x;
    if(baseLifeX&&baseLifeX>0){
      const scale=clamp(targetLife/baseLifeX,0.20,6.0);
      pts=pts.map(p=>[Number((p[0]*scale).toFixed(3)),p[1]]);
@@ -421,14 +450,32 @@ function targetTempForCompound(comp){
  if(!window.ACLMPressure) return NaN;
  return window.ACLMPressure.optimalTempFromLutText(performanceCurveText(comp));
 }
-function solvedColdPressure(comp){
- if(!window.ACLMPressure) return NaN;
- return window.ACLMPressure.solveColdPsi(n("pIdeal"),targetTempForCompound(comp),n("pRefTemp"));
+function idealPressure(axle){
+ const split=$("axleIdealPressure")?.checked===true;
+ return split?n(axle==="front"?"pIdealF":"pIdealR"):n("pIdeal");
+}
+function optionalNumber(id){const text=String($(id)?.value??"").trim(),value=Number(text);return text!==""&&Number.isFinite(value)?value:undefined;}
+function setupPressureControl(axle){return importedSetupPressureControls?.[axle]||null;}
+function pressureModelOptions(comp,axle){
+ const front=axle==="front",width=n(front?"fw":"rw"),radius=n(front?"fr":"rr"),rimRadius=n(front?"frr":"rrr");
+ const prior=activeFamilyPrior(),physical=window.ACLMThermalV2?.estimatePhysical({width,radius,rimRadius,construction:v("construction"),treaded:compoundTypeHint(comp)!=="SLICK",treadDepth:comp==="wet"?.0075:comp==="intermediate"?.0035:undefined});
+ return {
+  familyId:activeHistoricalContext?.familyId||null,axle,idealPsi:idealPressure(axle),ambientAirC:n("pRefTemp"),referenceColdC:n("pRefTemp"),referenceSetupTemperatureC:optionalNumber("pInitialCore"),referenceDriver:v("pReferenceDriver")||window.ACLMPressure.REFERENCE_DRIVER.UNKNOWN,setupPressureControl:setupPressureControl(axle),selectedSetupPressurePsi:optionalNumber(axle==="front"?"pSelectedF":"pSelectedR"),legacyTargetHotC:targetTempForCompound(comp),targetHotC:targetTempForCompound(comp),trackDutyFactor:n("pReferenceDuty")||1,
+  referenceDuty:{familyId:activeHistoricalContext?.familyId||null,classId:activeHistoricalContext?.classId||null,driver:v("pReferenceDriver")||window.ACLMPressure.REFERENCE_DRIVER.UNKNOWN,trackDuty:"reference axle calibration duty; not every circuit or left/right corner",compound:comp,axle},
+  inputs:{widthM:width,radiusM:radius,rimRadiusM:rimRadius,estimatedInternalAirVolumeM3:physical?.internalVolume??null,vehicleMassKg:n("mass"),axleLoadN:fz0(axle)*2,referenceTireLoadN:fz0(axle),rateNPerM:n(front?"rateF":"rateR"),construction:v("construction"),compound:comp,flex:prior&&dryCompound(comp)?Number(prior.flex):compDefs[comp].flex,carcassRollingK:prior&&dryCompound(comp)?Number(prior.rollingK):compDefs[comp][front?"thF":"thR"].roll,trackDutyFactor:n("pReferenceDuty")||1}
+ };
+}
+function solvedPressureModel(comp,axle){
+ if(!window.ACLMPressure)return null;
+ return window.ACLMPressure.solveRecommendedColdPsi(pressureModelOptions(comp,axle));
+}
+function solvedColdPressure(comp,axle){
+ return solvedPressureModel(comp,axle)?.recommendedColdPsi;
 }
 function pressure(comp,axle){
  const p=compDefs[comp].p;
  if($("autoSolvePressure")?.checked){
-   const solved=solvedColdPressure(comp);
+   const solved=solvedColdPressure(comp,axle);
    if(Number.isFinite(solved)) return solved;
  }
  return n("p"+p+(axle==="front"?"F":"R"));
@@ -449,10 +496,11 @@ function refreshSolvedPressures(){
  for(const [comp,ids] of Object.entries(pairs)){
    const temp=targetTempForCompound(comp);
    if(auto){
-     const psi=solvedColdPressure(comp);
-     if(Number.isFinite(psi)){
-       ids.forEach(id=>{$(id).value=psi.toFixed(1);$(id).readOnly=true;});
-       details.push(`${compDefs[comp].name}: ${psi.toFixed(1)} psi @ ${temp.toFixed(1)} deg C target`);
+     const front=solvedPressureModel(comp,"front"),rear=solvedPressureModel(comp,"rear");
+     if(Number.isFinite(front?.recommendedColdPsi)&&Number.isFinite(rear?.recommendedColdPsi)){
+       $(ids[0]).value=front.recommendedColdPsi.toFixed(1);$(ids[1]).value=rear.recommendedColdPsi.toFixed(1);ids.forEach(id=>$(id).readOnly=true);
+       const fq=front.setupQuantization, rq=rear.setupQuantization;
+       details.push(`${compDefs[comp].name}: continuous ${front.recommendedColdPsi.toFixed(1)} F / ${rear.recommendedColdPsi.toFixed(1)} R psi${fq?.control?.step?`; setup-achievable ${fq.achievablePsi.toFixed(1)} / ${rq.achievablePsi.toFixed(1)} psi at ${fq.control.step} psi steps`:"; setup quantization unknown"} -> ${front.predictedHotPsi.toFixed(1)} / ${rear.predictedHotPsi.toFixed(1)} hot; initial core reference ${front.referenceColdC.toFixed(1)} / ${rear.referenceColdC.toFixed(1)} C (${front.initialThermalState.source}); contained-air ${front.predictedContainedAirC.toFixed(1)} / ${rear.predictedContainedAirC.toFixed(1)} C`);
      }
    }else{
      ids.forEach(id=>$(id).readOnly=false);
@@ -461,7 +509,7 @@ function refreshSolvedPressures(){
  const status=$("pressureSolveStatus");
  if(status){
    if(auto){
-     status.innerHTML=`<b>Auto pressure solve active.</b> Reference ${n("pRefTemp").toFixed(1)} deg C -> ideal ${n("pIdeal").toFixed(1)} psi at each compound's peak thermal window. ${escapeHtml(details.join(" | "))}${importedPressureSummary()?`<br><b>Imported AC cold-pressure reference only:</b> ${escapeHtml(importedPressureSummary())}`:""}`;
+     status.innerHTML=`<b>Auto pressure solve active.</b> Ambient, AC initial core, contained-air hot estimate, setup-reference temperature and tread optimum are separate states. The tread grip-curve optimum is not used as gas temperature. ${escapeHtml(details.join(" | "))}${importedPressureSummary()?`<br><b>Imported AC PRESSURE_STATIC reference only:</b> ${escapeHtml(importedPressureSummary())}`:""}<br><b>Track-specific per-corner tuning:</b> produced only after telemetry; it is not hard-coded into tyres.ini.`;
    }else{
      status.innerHTML=`<b>Manual cold-pressure mode.</b> Tire Lab will use the F/R values shown above. ${importedPressureSummary()?`Imported AC reference: ${escapeHtml(importedPressureSummary())}`:""}`;
    }
@@ -470,10 +518,10 @@ function refreshSolvedPressures(){
 function pressureClosureManifest(compounds){
  const entries=[];
  for(const comp of compounds)for(const axle of ["front","rear"]){
-  const front=axle==="front",width=n(front?"fw":"rw"),radius=n(front?"fr":"rr"),rimRadius=n(front?"frr":"rrr"),staticPsi=Number(pressure(comp,axle).toFixed(1)),idealPsi=n("pIdeal"),targetHotC=targetTempForCompound(comp),physical=window.ACLMThermalV2?.estimatePhysical({width,radius,rimRadius,construction:v("construction"),treaded:compoundTypeHint(comp)!=="SLICK",treadDepth:comp==="wet"?.0075:comp==="intermediate"?.0035:undefined});
-  entries.push({compound:comp,axle,...window.ACLMPressure.pressureReport({staticPsi,idealPsi,referenceColdC:n("pRefTemp"),targetHotC,referenceDuty:{familyId:activeHistoricalContext?.familyId||null,classId:activeHistoricalContext?.classId||null,trackDuty:"family reference calibration duty; not every circuit",compound:comp,axle},inputs:{widthM:width,radiusM:radius,rimRadiusM:rimRadius,estimatedInternalAirVolumeM3:physical?.internalVolume??null,vehicleMassKg:n("mass"),axleLoadN:fz0(axle)*2,referenceTireLoadN:fz0(axle),rateNPerM:n(front?"rateF":"rateR"),construction:v("construction"),compound:comp,rollingFlexHeating:"represented in thermal model; not yet closed into pressure-rise prediction",trackDuty:"reference duty only"}})});
+  const options=pressureModelOptions(comp,axle),model=solvedPressureModel(comp,axle),staticPsi=Number(pressure(comp,axle).toFixed(1));
+  entries.push({compound:comp,axle,...window.ACLMPressure.pressureReport({...options,staticPsi,model})});
  }
- return {schema:"ACLM pressure closure report 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,car:v("car"),year:n("year")||null,series:v("series"),generatorChangedFromV091:false,decision:"pressure prediction audit only; wait for the Escort same-tire A/B before changing PRESSURE_STATIC or compliance coefficients",closureThresholdsPsi:{good:"absolute hot error <= 0.5",review:"absolute hot error > 0.5 and <= 1.5",fail:"absolute hot error > 1.5"},entries};
+ return {schema:"ACLM pressure closure report 4.1",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,car:v("car"),year:n("year")||null,series:v("series"),concepts:{acPhysicsReference:"PRESSURE_STATIC in tyres.ini",continuousRecommendation:"reference-duty axle calculation before setup control rounding",achievableSetupCold:"continuous recommendation quantized through imported setup.ini MIN/MAX/STEP when available",setupDefault:"DEFAULT in imported setup.ini when present",setupSelected:"actual AC/Content Manager setup selection when provided; persisted last.ini can override a generated recommendation",observedSessionStart:"recorded AC shared-memory pressure; authoritative for a live run",historicalDesiredHot:"PRESSURE_IDEAL, optionally axle-specific",trackSpecificCornerTuning:"post-run Validation Workspace recommendation; never hard-coded into tyres.ini"},globalThermalRetune:false,pressureFormula:"P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",decision:"setup recommendation, grid, default, selected value and observed initial state are reported independently; global thermal, wear and historical numerical priors remain frozen",closureThresholdsPsi:{pass:"absolute hot error <= 0.5",review:"absolute hot error > 0.5 and <= 1.5",fail:"absolute hot error > 1.5"},entries};
 }
 function fz0(axle){
  const m=n("mass"), fw=n("frontWeight")/100, factor=n("fzFactor");
@@ -615,7 +663,7 @@ function tireSection(comp,axle,index){
  `PRESSURE_FLEX_GAIN=0.370`,
  `PRESSURE_RR_GAIN=${comp==="wet"?.32:.30}`,
  `PRESSURE_D_GAIN=${comp==="wet"?.0032:.0030}`,
- `PRESSURE_IDEAL=${n("pIdeal").toFixed(1)}`,
+ `PRESSURE_IDEAL=${idealPressure(axle).toFixed(1)}`,
  `FZ0=${fz0(axle)}`,
  `LS_EXPY=${(prior&&dryCompound(comp)?Number(prior.loadY):d.lsy).toFixed(4)}`,
  `LS_EXPX=${(prior&&dryCompound(comp)?Number(prior.loadX):d.lsx).toFixed(4)}`,
@@ -670,7 +718,7 @@ function thermalInput(comp,axle){
   drivenDuty:front?duty.drivenFront:duty.drivenRear,brakeExposure:front?duty.frontBrake:duty.rearBrake,drivetrainSource:duty.source,
   speedKph:expectedSpeedKph(),speedRangeKph:[0,expectedSpeedKph()],rollingResistance0:rr0,rollingResistance1:rr1,construction:v("construction"),carcassMaterial,beltConstruction:v("construction")==="radial"?"radial belt reconstruction prior":"bias-ply reconstruction prior",
   treaded:compoundTypeHint(comp)!=="SLICK",treadDepth:comp==="wet"?.0075:comp==="intermediate"?.0035:undefined,
-  pressurePsi:pressure(comp,axle),idealHotPressurePsi:n("pIdeal"),optimumTemperatureC:targetTempForCompound(comp),era:n("year")||null,
+  pressurePsi:pressure(comp,axle),idealHotPressurePsi:idealPressure(axle),optimumTemperatureC:targetTempForCompound(comp),era:n("year")||null,
   supplier:v("supplier"),confidence:reportConfidenceScore()/100,evidenceConfidence:reportConfidenceScore(),
   evidenceBasis:prior?"historical family generator prior + physical reconstruction":"class/manual physical reconstruction prior"};
 }
@@ -725,10 +773,10 @@ function reportFindings(){
  if(ws!=="historical") out.push("Wear-to-grip behavior remains provisional/evidence-weighted rather than historically certified from period stint data.");
  else out.push("Wear calibration is marked historically calibrated from stint evidence.");
  if($("terminalFailure")?.checked) out.push(`Terminal tire failure is a simulation layer: ${n("terminalFailureGrip").toFixed(0)}% grip after +${n("terminalFailureGap").toFixed(2)} vKm beyond the final normal-wear point. It is not direct historical puncture evidence.`);
- if($("autoSolvePressure")?.checked) out.push(`Generated cold pressures are solved from the ${n("pRefTemp").toFixed(1)} deg C reference temperature to each compound's peak temperature window; imported PRESSURE_STATIC values are reference-only.`);
+ if($("autoSolvePressure")?.checked) out.push(`Generated cold pressures use an explicit AC initial-core state (${solvedPressureModel("medium","front")?.referenceColdC?.toFixed(1)??"unresolved"} deg C, ${solvedPressureModel("medium","front")?.initialThermalState?.source||"unresolved"}); ambient ${n("pRefTemp").toFixed(1)} deg C is retained separately and is not silently equated with tire core.`);
  else {
-   const predF=window.ACLMPressure?.predictHotPsi(pressure("medium","front"),targetTempForCompound("medium"),n("pRefTemp"));
-   if(Number.isFinite(predF)&&Math.abs(predF-n("pIdeal"))>1) out.push(`Manual Medium pressure predicts approximately ${predF.toFixed(1)} psi at the target thermal peak versus ${n("pIdeal").toFixed(1)} psi ideal.`);
+   const model=solvedPressureModel("medium","front"),predF=window.ACLMPressure?.predictHotPsi(pressure("medium","front"),model?.predictedInternalCoreC,model?.referenceColdC,window.ACLMPressure.ATM_PSI,model?.volumeModel?.hotToColdVolumeRatio,model?.pressureResponseFactor);
+   if(Number.isFinite(predF)&&Math.abs(predF-idealPressure("front"))>1) out.push(`Manual Medium pressure predicts approximately ${predF.toFixed(1)} psi at the reference-duty internal temperature versus ${idealPressure("front").toFixed(1)} psi ideal.`);
  }
  if((lastResearchCandidates?.classes||[]).length>1 && /unknown/i.test(v("series"))) out.push("Multiple historical racing categories were found but no context has been selected yet.");
  if((lastResearchCandidates?.suppliers||[]).length>1 && /unknown/i.test(v("supplier"))) out.push("Multiple historical tire suppliers were found but no supplier context has been selected yet.");
@@ -783,8 +831,8 @@ function buildHistoricalReportData(comps){
      {label:"Reference load FZ0",value:`${fz0("front")} N front / ${fz0("rear")} N rear`},
      {label:"Thermal load duty",value:loadDutySummary()+"; transparent N/mm reconstruction thresholds"},
      {label:"Compound/load checklist",value:comps.map(c=>compoundDisplayName(c)+" ["+compoundDutyAssessment(c).level+"]").join(", ")},
-     {label:"Ideal hot pressure",value:`${n("pIdeal").toFixed(1)} psi`},
-     {label:"Pressure generation",value:$("autoSolvePressure")?.checked?`Auto-solved from ${n("pRefTemp").toFixed(1)} deg C reference to each compound thermal peak`:"Manual generated cold pressures"},
+     {label:"Ideal hot pressure",value:`${idealPressure("front").toFixed(1)} psi front / ${idealPressure("rear").toFixed(1)} psi rear`},
+     {label:"Pressure generation",value:$("autoSolvePressure")?.checked?`Auto-solved using ${solvedPressureModel("medium","front")?.initialThermalState?.source||"unresolved"} initial core; ambient ${n("pRefTemp").toFixed(1)} deg C retained separately`:"Manual generated cold pressures"},
      {label:"Medium generated cold pressure",value:`${pressure("medium","front").toFixed(1)} psi front / ${pressure("medium","rear").toFixed(1)} psi rear`},
      {label:"Imported AC cold-pressure reference",value:importedPressureSummary()||"None / not imported"},
      {label:"Blanket temperature",value:`${n("blankets").toFixed(0)} deg C`},
@@ -847,10 +895,39 @@ function assertLutIntegrity(files){
  if(errors.length)throw new Error("LUT integrity gate blocked export: "+errors.join(" "));
 }
 
+function familyConstructionAudit(){
+ return {schema:"ACLM family construction audit 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,knowledge:window.ACLMHistoricalCategories?.knowledgeInfo?.()||null,rows:window.ACLMProfileState.auditKnowledge({families:runtimeFamilies(),classes:runtimeClasses()})};
+}
+function wearEvidenceManifest(compounds,files){
+ const entries=[];
+ for(const comp of compounds)for(const axle of ["front","rear"]){const name=`aclm_${comp}_${axle}_wear.lut`,life=historicalLifeEvidence(comp);entries.push({compound:comp,axle,historicalLife:life,acImplementation:{virtualKm:"not historical real km",useLoad:1,wearCurve:name,wearCurveSha256:window.ACLMIntegrity.sha256(files[name]||""),landmarks:window.ACLMWearModel.landmarks(files[name]||"")}});}
+ return {schema:"ACLM historical life / AC wear separation 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,referenceDuty:window.ACLMWearModel.referenceDutyFramework(),entries};
+}
+function engineeringProvenanceManifest(compounds,pressureManifest){
+ const rows=[
+  {parameter:"construction",value:v("construction"),sourceType:constructionProvenance().provenance,sourceIds:constructionProvenance().sourceIds,formula:"historical context dependency resolution",constructionPrior:currentHistoricalCoherence().intended,telemetrySupport:activeHistoricalContext?.familyId==="FAM022"?"GT40 software regression; old thermal data excluded":null,confidence:constructionProvenance().confidence,status:currentHistoricalCoherence().pass?"COHERENT":"CONFLICT"},
+  {parameter:"PRESSURE_IDEAL",value:`${idealPressure("front")} F / ${idealPressure("rear")} R psi`,sourceType:"KNOWLEDGE_GENERATOR_PRIOR_OR_USER_INPUT",sourceIds:[activeHistoricalContext?.familyId].filter(Boolean),formula:"grip optimum; separate from setup cold recommendation",constructionPrior:null,telemetrySupport:activeHistoricalContext?.familyId==="FAM023"?"Escort pressure-closure fixture":"unresolved",confidence:activeHistoricalContext?.familyId==="FAM023"?"operationally supported; historical target provisional":"provisional",status:"REVIEW"},
+  {parameter:"recommended setup cold pressure",value:pressureManifest.entries.map(x=>`${x.compound}/${x.axle} ${x.recommendedSetupColdPressurePsi.toFixed(2)} psi`).join("; "),sourceType:"ENGINEERING_FORMULA",sourceIds:["M4-FORMULA-009",...pressureManifest.entries.flatMap(x=>x.provenance?.fixtureId?[x.provenance.fixtureId]:[])],formula:"P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",constructionPrior:pressureManifest.entries.map(x=>x.constructionModel),telemetrySupport:pressureManifest.entries.map(x=>x.provenance).filter(Boolean),confidence:"reported per entry",status:"TELEMETRY_READY"},
+  {parameter:"temperature optimum",value:compounds.map(x=>`${compoundDisplayName(x)} ${targetTempForCompound(x).toFixed(1)} C`).join("; "),sourceType:"PROVISIONAL_GENERATOR_PRIOR",sourceIds:[activeHistoricalContext?.familyId].filter(Boolean),formula:"PERFORMANCE_CURVE grip mapping only; not cavity-air temperature",constructionPrior:null,telemetrySupport:activeHistoricalContext?.familyId==="FAM023"?"Escort sensor observations; no direct period pyrometer target":"unresolved",confidence:"provisional historical reconstruction",status:"RESEARCH_GAP"}
+ ];
+ return {schema:"ACLM engineering provenance 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,fields:["VALUE","SOURCE TYPE","SOURCE IDS","FORMULA","CONSTRUCTION PRIOR","TELEMETRY SUPPORT","CONFIDENCE","STATUS"],rows};
+}
+function renderEngineeringProvenance(manifest){const el=$("engineeringProvenance");if(!el)return;el.innerHTML=`<table class="import-table"><thead><tr><th>Value</th><th>Source / formula</th><th>Confidence / status</th></tr></thead><tbody>${manifest.rows.map(r=>`<tr><td><b>${escapeHtml(r.parameter)}</b><br>${escapeHtml(String(r.value))}</td><td>${escapeHtml(r.sourceType)}<br>${escapeHtml(r.formula)}<br>${escapeHtml((r.sourceIds||[]).join(", ")||"no source ID")}</td><td>${escapeHtml(String(r.confidence))}<br>${escapeHtml(r.status)}</td></tr>`).join("")}</tbody></table>`;}
+function focusedHistoricalResearchManifest(){
+ if(activeHistoricalContext?.familyId!=="FAM022"||n("year")!==1966||!/gt40/i.test(v("car")))return null;
+ return {schema:"ACLM focused historical research context 1.0",subject:"1966 Ford GT40 Mk II / FAM022 / CLS021",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,historicalEvidenceStatus:"PARTIALLY SOURCED",supplierDecision:{value:"General / unknown",reason:"Ford's Chris Amon account documents event- and car-specific Firestone/Goodyear use at 1966 Le Mans; it does not justify assigning one supplier to a generic 1966 Mk II fixture."},sources:[
+  {id:"GT40-PRI-FIA-224",quality:"PRIMARY",publisher:"FIA Historic Database",title:"Ford GT 40 homologation form 224, Group 4",url:"https://historicdb.fia.com/sites/default/files/car_attachment/1601034301/homologation_form_number_224_group_4.pdf",supports:["1966 GT40 homologation context"],limitations:"Covers the homologated 4.736 L Group 4 GT40, not the 7.0 L Mk II prototype; it is a scope boundary, not exact Mk II tire calibration."},
+  {id:"GT40-PRI-FORD-AMERICAN-CHALLENGE",quality:"PRIMARY",publisher:"Ford Division News Bureau",title:"Ford GT40 — The American Challenge",url:"https://media.ford.com/content/dam/fordmedia/history/products/fordgt-gt40/Ford-GT40-Press-release-The-American-Challenge.pdf",supports:["Mk II development","provision for 8-inch front and 9.5-inch rear magnesium wheels","1966 endurance context"],limitations:"Direct wheel-width evidence; does not provide exact tire dimensions, pressures, temperature or force curves."},
+  {id:"GT40-PRI-FORD-AMON-1966",quality:"PRIMARY",publisher:"Ford Media Center / Chris Amon",title:"Remembering Le Mans 1966",url:"https://media.ford.com/content/fordmedia/feu/de/de/news/2016/06/10/ford-gt40-fahrer-chris-amon-erinnert-sich-an-seinen-grossen-le-m.html",supports:["Firestone intermediate use on the McLaren/Amon car","high-speed tread shedding","event-specific switch to Goodyear","other GT40s using Goodyear"],limitations:"Retrospective first-person event account; supports Le Mans supplier/failure context, not a generic Mk II supplier or numeric pressure/temperature target."},
+  {id:"GT40-PRI-FORD-LEMANS-REPORT",quality:"PRIMARY",publisher:"Ford Motor Company",title:"Le Mans Progress Meeting No. 11 — 1966 race review",url:"https://media.ford.com/content/dam/fordmedia/history/products/fordgt-gt40/LeMans-Progress-Meeting-with-wrap-up-of-victory-10-06-1966.pdf",supports:["Mk II race pace strategy","1-2-3 completion","endurance operating context"],limitations:"No direct tire dimensions, pressures or temperatures."}
+ ],findings:{hostSpecification:{status:"DIRECTLY SOURCED",value:"Installed WSC60 Ford GT40 Mk II metadata identifies 1966; imported AC physics mass is 1161 kg."},rimArchitecture:{status:"PARTIALLY SOURCED",value:"Ford documents 8-inch front and 9.5-inch rear wheel provision; imported host uses 15-inch rim diameter and 0.245/0.325 m tire widths."},construction:{status:"RECONSTRUCTED",value:"Bias/cross-ply is the internal FAM022 compatibility classification; the focused source set does not expose a direct carcass specification."},supplier:{status:"UNKNOWN",value:"General / unknown for this generic fixture; retain Firestone/Goodyear only as 1966 Le Mans event evidence."},compound:{status:"RECONSTRUCTED",value:"Dry endurance/race spec; exact period compound code unresolved."},pressure:{status:"PROVISIONAL",value:"No period Mk II hot/cold pressure guidance found in the focused primary set."},temperature:{status:"UNKNOWN",value:"No period tread, carcass or core temperature window found."},durability:{status:"PARTIALLY SOURCED",value:"Ford race records establish endurance completion context; Amon records high-speed intermediate tread shedding, but no numeric wear-life mapping."},wetIntermediate:{status:"DIRECTLY SOURCED",value:"Amon explicitly records Firestone intermediates in damp 1966 Le Mans conditions; exact construction and compound remain unknown."}},forbiddenInference:"Do not convert FIA dimensional-measurement pressure, modern historic eligibility, or event-specific supplier testimony into a universal historical pressure/supplier value."};
+}
+
 function build(){
- refreshLoadDutyStatus();
- const comps=selectedCompounds();
- if(!v("car")||/^car$/i.test(v("car")))throw new Error("Car name is required before generating a tire pack.");
+  refreshLoadDutyStatus();
+  const comps=selectedCompounds();
+  if(!v("car")||/^car$/i.test(v("car")))throw new Error("Car name is required before generating a tire pack.");
+  const coherence=currentHistoricalCoherence(comps[0]||null);renderHistoricalCoherence();if(!coherence.pass)throw new Error("PROFILE COHERENCE FAIL: "+coherence.issues.filter(x=>x.severity==="BLOCK").map(x=>x.message).join(" "));
  lockExportName();
  if(!comps.length) throw new Error("Select at least one compound.");
  // Keep Medium as default when available, otherwise first available.
@@ -916,8 +993,28 @@ CAMBER_TEMP_SPREAD_K=${cspV2Enabled()?window.ACLMThermalV2.RAYS.camberTemperatur
  }else if(cspV2Enabled()){
    files["CSP_THERMAL_V2_CAR_REQUIREMENT.txt"]="CSP Thermal V2 tire generated. Car must use [HEADER] VERSION=extended-2 in car.ini.\n";
  }
- files["ACLM_THERMAL_V2_CALIBRATION.json"]=JSON.stringify({schema:"ACLM CSP Thermal V2 calibration manifest 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,physicsMode:cspV2Enabled()?"CSP Extended Physics - Thermal V2":"Vanilla AC",car:v("car"),year:n("year")||null,series:v("series"),supplier:v("supplier"),carIni:carValidation,rays:cspV2Enabled()?window.ACLMThermalV2.RAYS:null,cspDocumentation:["https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Thermal-Models","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Physics","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Enabling-extended-physics"],calibrations:lastThermalCalibrations},null,2)+"\n";
- files["ACLM_PRESSURE_CLOSURE_REPORT.json"]=JSON.stringify(pressureClosureManifest(comps),null,2)+"\n";
+ files["ACLM_THERMAL_V2_CALIBRATION.json"]=JSON.stringify({schema:"ACLM CSP Thermal V2 calibration manifest 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,physicsMode:cspV2Enabled()?"CSP Extended Physics - Thermal V2":"Vanilla AC",car:v("car"),year:n("year")||null,series:v("series"),supplier:v("supplier"),supplierProvenance:supplierProvenance(),construction:v("construction"),constructionProvenance:constructionProvenance(),profileCoherent:coherence.profileCoherent,historicalEvidenceStatus:coherence.historicalEvidenceStatus,carIni:carValidation,rays:cspV2Enabled()?window.ACLMThermalV2.RAYS:null,cspDocumentation:["https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Thermal-Models","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Tyre-Physics","https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Cars-%E2%80%93-Enabling-extended-physics"],globalThermalRetune:false,heatPathways:{flexHysteresis:"carcass/shoulder",slipYaw:"tread/surface"},calibrations:lastThermalCalibrations},null,2)+"\n";
+ const pressureManifest=pressureClosureManifest(comps);
+ files["ACLM_PRESSURE_CLOSURE_REPORT.json"]=JSON.stringify(pressureManifest,null,2)+"\n";
+ files["ACLM_PROFILE_STATE.json"]=JSON.stringify({schema:"ACLM historical profile state 1.2",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,state:historicalProfileState,context:activeHistoricalContext,coherence:currentHistoricalCoherence(),profileCoherent:coherence.profileCoherent,compatibilityOnly:true,historicalEvidenceStatus:coherence.historicalEvidenceStatus},null,2)+"\n";
+ files["ACLM_HISTORICAL_EVIDENCE_STATUS.json"]=JSON.stringify(coherence.evidence,null,2)+"\n";
+ const focusedResearch=focusedHistoricalResearchManifest();if(focusedResearch)files["ACLM_FOCUSED_HISTORICAL_RESEARCH.json"]=JSON.stringify(focusedResearch,null,2)+"\n";
+ files["ACLM_FAMILY_CONSTRUCTION_AUDIT.json"]=JSON.stringify(familyConstructionAudit(),null,2)+"\n";
+ files["ACLM_WEAR_EVIDENCE_AND_IMPLEMENTATION.json"]=JSON.stringify(wearEvidenceManifest(comps,files),null,2)+"\n";
+ const provenanceManifest=engineeringProvenanceManifest(comps,pressureManifest);files["ACLM_ENGINEERING_PROVENANCE.json"]=JSON.stringify(provenanceManifest,null,2)+"\n";renderEngineeringProvenance(provenanceManifest);
+ const requestedCondition={airTemperatureC:n("telemetryRequestedAir")||null,roadTemperatureC:n("telemetryRequestedRoad")||null,wearMultiplier:optionalNumber("telemetryWearMultiplier")??null,fuelRate:optionalNumber("telemetryRequestedFuelRate")??null,damageRate:optionalNumber("telemetryRequestedDamageRate")??null,startingFuelLiters:optionalNumber("telemetryStartingFuel")??null,sessionBlanketsEnabled:$("telemetrySessionBlankets")?.checked===true};
+ const blanketCapabilityTemperatureC=n("blankets")||0,requestedSessionBlanketsEnabled=$("telemetrySessionBlankets")?.checked===true;
+ files["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]=JSON.stringify({
+  schema:"ACLM telemetry calibration manifest 1.1",appVersion:ACLM_APP_VERSION,knowledgeVersion:window.ACLMHistoricalCategories?.knowledgeInfo?.().version||null,loggerVersion:ACLM_APP_VERSION,loggerSchema:"ACLM native telemetry 1.2",
+  car:v("car"),track:null,layout:null,year:n("year")||null,family:activeHistoricalContext?.familyId||null,class:activeHistoricalContext?.classId||v("series"),compound:comps,
+  profileCoherent:coherence.profileCoherent,profileCompatibilityOnly:true,historicalEvidenceStatus:coherence.historicalEvidenceStatus,historicalEvidenceAudit:coherence.evidence,profileIssues:coherence.issues,profileState:{state:historicalProfileState,context:activeHistoricalContext,coherence},
+  construction:v("construction"),constructionProvenance:constructionProvenance(),supplier:v("supplier"),supplierProvenance:supplierProvenance(),referenceDriver:v("pReferenceDriver"),
+  requestedCondition,userRequestedCondition:requestedCondition,observedACCondition:{airTemperatureC:null,roadTemperatureC:null,initialCoreTemperatureC:null,initialPressurePsi:null,rawAidTireRate:null,aidTireRateInterpretation:"UNKNOWN",authority:"recorded Assetto Corsa physics shared memory"},
+  requestedTyreWearMultiplier:optionalNumber("telemetryWearMultiplier")??null,requestedWearMultiplier:optionalNumber("telemetryWearMultiplier")??null,rawAidTireRate:null,aidTireRateInterpretation:"UNKNOWN",fuelRate:optionalNumber("telemetryRequestedFuelRate")??null,damageRate:optionalNumber("telemetryRequestedDamageRate")??null,
+  tireBlanketCapabilityTemperatureC:blanketCapabilityTemperatureC,tireBlanketCapability:{definedTemperatureC:blanketCapabilityTemperatureC,source:"tyres.ini BLANKETS_TEMP; capability only"},historicalBlanketRecommendation:{status:activeHistoricalContext?.familyId==="FAM023"?"OFF":"UNRESOLVED",source:activeHistoricalContext?.familyId==="FAM023"?"Escort FAM023 validation protocol":"no family-specific recommendation resolved"},requestedSessionBlanketsEnabled,sessionBlanketStatus:{enabled:requestedSessionBlanketsEnabled,source:"user-requested session state; independent of BLANKETS_TEMP"},observedOrInferredStartingThermalState:pressureManifest.entries[0]?.initialThermalState||{status:"pending live telemetry"},observedStartingThermalState:{status:"pending live telemetry"},
+  startingFuel:optionalNumber("telemetryStartingFuel")??null,pressureReference:{driver:v("pReferenceDriver"),ambientAirC:n("pRefTemp"),requestedRoadTemperatureC:n("telemetryRequestedRoad")||null,explicitInitialCoreC:optionalNumber("pInitialCore")??null,setupPressureControls:importedSetupPressureControls,axleReport:pressureManifest.entries},
+  tireFileSha256:window.ACLMIntegrity.sha256(ini),wearLutSha256:Object.fromEntries(Object.entries(files).filter(([name])=>/_wear\.lut$/i.test(name)).map(([name,text])=>[name,window.ACLMIntegrity.sha256(text)])),temperatureLutSha256:Object.fromEntries(Object.entries(files).filter(([name])=>/_tcurve\.lut$/i.test(name)).map(([name,text])=>[name,window.ACLMIntegrity.sha256(text)])),carIniPhysicsVersion:carValidation.version,tyresIniThermalVersion:cspV2Enabled()?2:"Kunos legacy",thermalModelVersion:cspV2Enabled()?2:"Kunos legacy",distanceBases:["LOGGER_CUMULATIVE_DISTANCE","SESSION_DISTANCE","STINT_DISTANCE","CURRENT_TIRE_SET_DISTANCE"]
+ },null,2)+"\n";
  files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"]=loadCompoundChecklistText(comps);
  files["ACLM_TIREPACK_MANIFEST.txt"]=`ACLM Historical Tire Lab v${ACLM_APP_VERSION}
 Car: ${v("car")}
@@ -936,10 +1033,10 @@ Thermal: ${cspV2Enabled()?"CSP Thermal Model V2 plus required Kunos THERMAL sect
 Extended contact rays: ${cspV2Enabled()?"2 lateral / 4 longitudinal per side, 60 degrees":"disabled"}
 Calibration manifest: ACLM_THERMAL_V2_CALIBRATION.json
 Pressure closure report: ACLM_PRESSURE_CLOSURE_REPORT.json
-Pressure generation: ${$("autoSolvePressure")?.checked?`auto-solved from ${n("pRefTemp").toFixed(1)} C reference to compound peak thermal temperatures`:"manual cold pressures"}
+Pressure generation: ${$("autoSolvePressure")?.checked?`auto-solved from explicit/predicted AC initial core (${solvedPressureModel("medium","front")?.referenceColdC?.toFixed(1)??"?"} C; ${solvedPressureModel("medium","front")?.initialThermalState?.source||"unresolved"}) to reference-duty contained-air temperature`:"manual cold pressures"}
 Imported AC cold-pressure reference: ${importedPressureSummary() || "none"}
 Medium generated cold pressure F/R: ${pressure("medium","front").toFixed(1)} / ${pressure("medium","rear").toFixed(1)} psi
-Ideal hot pressure: ${n("pIdeal").toFixed(1)} psi
+Ideal hot pressure F/R: ${idealPressure("front").toFixed(1)} / ${idealPressure("rear").toFixed(1)} psi
 Wear calibration: ${$("wearStatus")?.value || "provisional"}
 Wear note: ${$("wearNote")?.value || ""}
 Terminal failure: ${$("terminalFailure")?.checked ? `enabled; normal curve threshold ${n("terminalNormalGrip").toFixed(1)}% grip; failure ${n("terminalFailureGrip").toFixed(1)}% at +${n("terminalFailureGap").toFixed(2)} vKm` : "disabled"}
@@ -1024,6 +1121,9 @@ function validate(files){
  if(!files["ACLM_LOAD_COMPOUND_CHECKLIST.txt"])errors.push("Load/compound suitability checklist is missing.");
  if(!files["ACLM_PRESSURE_CLOSURE_REPORT.json"])errors.push("Pressure closure report is missing.");
  else {try{const p=JSON.parse(files["ACLM_PRESSURE_CLOSURE_REPORT.json"]);if(!Array.isArray(p.entries)||p.entries.length!==fronts.length*2)errors.push("Pressure closure report does not cover every axle/compound.");}catch(e){errors.push("Pressure closure report is malformed JSON.");}}
+ const coherence=currentHistoricalCoherence();if(!coherence.pass)errors.push("PROFILE COHERENCE FAIL blocks generation.");else for(const issue of coherence.issues)warnings.push(issue.code+": "+issue.message);
+ for(const requiredManifest of ["ACLM_PROFILE_STATE.json","ACLM_FAMILY_CONSTRUCTION_AUDIT.json","ACLM_WEAR_EVIDENCE_AND_IMPLEMENTATION.json","ACLM_ENGINEERING_PROVENANCE.json","ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"])if(!files[requiredManifest])errors.push(requiredManifest+" is missing.");
+ if(files["ACLM_PROFILE_STATE.json"]){try{const p=JSON.parse(files["ACLM_PROFILE_STATE.json"]);if(p.state?.construction?.value!==v("construction"))errors.push("Profile-state construction does not match generated tire construction.");if(p.state?.supplier?.value!==v("supplier"))errors.push("Profile-state supplier does not match generated supplier state.");if(p.profileCoherent===false)warnings.push("Generated profile uses a compatibility exception; review profile issues.");if(p.historicalEvidenceStatus!=="DIRECTLY SOURCED")warnings.push(`Historical evidence status is ${p.historicalEvidenceStatus||"UNKNOWN"}; profile coherence does not imply fully sourced physics.`);}catch(e){errors.push("Profile-state manifest is malformed JSON.");}}
  const generatedNames=fronts.map(s=>sec[s]?.NAME).filter(Boolean),generatedShorts=fronts.map(s=>sec[s]?.SHORT_NAME).filter(Boolean);
  if(new Set(generatedNames.map(x=>x.toLowerCase())).size!==generatedNames.length)errors.push("Compound full names must be unique.");
  if(new Set(generatedShorts.map(x=>x.toUpperCase())).size!==generatedShorts.length)errors.push("Compound short codes must be unique.");
@@ -1031,19 +1131,18 @@ function validate(files){
  if(!window.ACLMPressure) errors.push("Pressure solver module is unavailable.");
  else {
    selectedCompounds().forEach(comp=>{
-     const target=targetTempForCompound(comp);
      ["front","rear"].forEach(axle=>{
-       const cold=Number(pressure(comp,axle).toFixed(1));
-       const predicted=window.ACLMPressure.predictHotPsi(cold,target,n("pRefTemp"));
+       const model=solvedPressureModel(comp,axle),target=model?.predictedInternalCoreC,cold=Number(pressure(comp,axle).toFixed(1));
+       const predicted=window.ACLMPressure.predictHotPsi(cold,target,model?.referenceColdC,window.ACLMPressure.ATM_PSI,model?.volumeModel?.hotToColdVolumeRatio,model?.pressureResponseFactor);
        if(!Number.isFinite(cold)||cold<=0) errors.push(`${comp} ${axle}: invalid generated cold pressure.`);
        if(Number.isFinite(predicted)){
-         const delta=Math.abs(predicted-n("pIdeal"));
+         const delta=Math.abs(predicted-idealPressure(axle));
          if($("autoSolvePressure")?.checked && delta>0.15) errors.push(`${comp} ${axle}: auto pressure solver misses ideal hot pressure by ${delta.toFixed(2)} psi.`);
          if(!$("autoSolvePressure")?.checked && delta>1.0) warnings.push(`${comp} ${axle}: manual cold pressure predicts ${predicted.toFixed(1)} psi at ${target.toFixed(1)} C, ${delta.toFixed(1)} psi away from ideal.`);
        }
      });
    });
-   info.push(`Pressure model: ${$("autoSolvePressure")?.checked?"auto-solved":"manual"} using ${n("pRefTemp").toFixed(1)} C cold reference.`);
+   info.push(`Pressure model: ${$("autoSolvePressure")?.checked?"auto-solved":"manual"}; ambient/reference setup and predicted AC initial core are separate states.`);
  }
  if(n("blankets")===0 && v("construction")==="radial") warnings.push("Blankets are set to 0°C for a radial racing profile.");
  if($("terminalFailure")?.checked){
@@ -1213,10 +1312,12 @@ function markResearched(id,source){
  el.title=`Researched / inferred from ${source||"public source"} — review before certification`;
  return true;
 }
-function setResearched(id,value,source){
+function setResearched(id,value,source,sourceIds=[]){
  if(value===undefined || value===null || String(value).trim()==="" || fieldIsDirect(id)) return false;
  const el=$(id); if(!el) return false;
- setMenuValue(id,String(value)); markResearched(id,source); return true;
+ setMenuValue(id,String(value)); markResearched(id,source);
+ if(id==="supplier"){const direct=/ACLM Knowledge/i.test(String(source||"")),citations=Array.isArray(sourceIds)?sourceIds.filter(Boolean):[];window.ACLMProfileState.setSupplier(historicalProfileState,String(value),direct?window.ACLMProfileState.PROVENANCE.DIRECT_HISTORICAL_EVIDENCE:window.ACLMProfileState.PROVENANCE.AUTO_CLASSIFICATION,{sourceIds:direct?(citations.length?citations:[String(source)]):[],confidence:direct?"curated knowledge profile":"public-source classification; review required",reason:"supplier researched/applied"});renderSupplierProvenance();}
+ return true;
 }
 function clearResearchChoices(){
  lastResearchCandidates={classes:[],suppliers:[],constructions:[],pages:[]};
@@ -1333,8 +1434,8 @@ function applyCuratedKnowledgeProfile(showStatus=true){
  const cls=window.ACLMHistoricalCategories.classById(profile.classId);
  if(profile.year&&!fieldIsDirect("year"))setResearched("year",profile.year,`ACLM Knowledge ${profile.id}`);
  if(cls&&!fieldIsDirect("series"))setResearched("series",cls.name,`ACLM Knowledge ${profile.id}`);
- if(profile.supplier&&!fieldIsDirect("supplier"))setResearched("supplier",profile.supplier,`ACLM Knowledge ${profile.id}`);
  if(cls){const ctx=window.ACLMHistoricalCategories.contextForClass(cls.id,profile.year||v("year"));applyHistoricalContext(ctx,`ACLM Knowledge ${profile.id}`);}
+ if(profile.supplier&&!fieldIsDirect("supplier"))setResearched("supplier",profile.supplier,`ACLM Knowledge ${profile.id}`,profile.sourceIds||[]);
  renderKnowledgeProfileSources(profile);
  if(showStatus)$("researchStatus").innerHTML=`<span class="ok"><b>Curated ACLM match:</b></span> ${escapeHtml(profile.display)} · ${escapeHtml(cls?.name||profile.classId)}${profile.supplier?` · ${escapeHtml(profile.supplier)}`:""} · confidence ${escapeHtml(String(profile.confidence||"?"))}/100.`;
  return true;
@@ -1387,7 +1488,7 @@ async function researchHistoricalProfile(){
    else setMenuValue("supplier",GENERAL_UNKNOWN);
 
    if(constructions.length===1){
-     $("construction").value=constructions[0];
+     setConstructionWithProvenance(constructions[0],window.ACLMProfileState.PROVENANCE.DIRECT_HISTORICAL_EVIDENCE,{sourceIds:[`Wikipedia: ${contextPages[0].title}`],confidence:"explicit construction wording in reviewed identity context",reason:"historical construction evidence"});
      markResearched("construction",`historical tire designation on Wikipedia: ${contextPages[0].title}`);
    }
 
@@ -1437,8 +1538,8 @@ function applyResearchChoices(){
 }
 
 function populateFromPhysics(files,label='import'){
- clearImportedMarks(); clearResearchChoices(); importedPhysics=files; importedPressureReference={}; importedTireReference={}; lastImportLabel=label; const rows=[]; const notes=[]; let populated=0;
- $('preset').value='auto'; activeHistoricalContext=null; updateHistoricalCompoundLabels(); renderHistoricalFamilySummary('Awaiting researched racing class.');
+ clearImportedMarks(); clearResearchChoices(); importedPhysics=files; importedPressureReference={}; importedTireReference={}; importedSetupPressureControls={}; lastImportLabel=label; const rows=[]; const notes=[]; let populated=0;
+ $('preset').value='auto'; activeHistoricalContext=null; historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();updateHistoricalCompoundLabels(); renderHistoricalFamilySummary('Awaiting researched racing class.');
  // New car import must not inherit the previous car's historical profile.
  $('car').value='';
  $('year').value='';
@@ -1481,7 +1582,7 @@ function populateFromPhysics(files,label='import'){
      importedTireReference.rateF=oldRateF;importedTireReference.rateR=oldRateR;
      rows.push(importedRow('Existing AC tire RATE reference',`${oldRateF!==null?oldRateF.toFixed(0):"-"} F / ${oldRateR!==null?oldRateR.toFixed(0):"-"} R N/m`,tyre.path));
    }
-   const idealF=numIni(F,'PRESSURE_IDEAL'),idealR=numIni(R,'PRESSURE_IDEAL');if(idealF!==null||idealR!==null){const p=idealF!==null&&idealR!==null?(idealF+idealR)/2:(idealF??idealR);importedTireReference.idealPressure=p;rows.push(importedRow('Existing AC ideal-pressure reference',`${p.toFixed(1)} psi`,tyre.path));}
+   const idealF=numIni(F,'PRESSURE_IDEAL'),idealR=numIni(R,'PRESSURE_IDEAL');if(idealF!==null||idealR!==null){const p=idealF!==null&&idealR!==null?(idealF+idealR)/2:(idealF??idealR);importedTireReference.idealPressure=p;importedTireReference.idealPressureFront=idealF;importedTireReference.idealPressureRear=idealR;if(idealF!==null&&idealR!==null&&Math.abs(idealF-idealR)>.01){$("axleIdealPressure").checked=true;$("pIdealF").value=idealF;$("pIdealR").value=idealR;}rows.push(importedRow('Existing AC ideal-pressure reference',`${idealF??"-"} F / ${idealR??"-"} R psi`,tyre.path));}
    const blanket=numIni(t.ADDITIONAL1,'BLANKETS_TEMP');if(blanket!==null){setImported('blankets',blanket,tyre.path,0);populated++;rows.push(importedRow('Blanket temperature',`${blanket} °C`,tyre.path));}
    const ptg=numIni(t.ADDITIONAL1,'PRESSURE_TEMPERATURE_GAIN');if(ptg!==null){setImported('pTempGain',ptg,tyre.path,3);populated++;rows.push(importedRow('Pressure temperature gain',ptg,tyre.path));}
    const frontSecs=Object.keys(t).filter(k=>/^FRONT(_\d+)?$/.test(k)).sort((a,b)=>(Number(a.split('_')[1]||0)-Number(b.split('_')[1]||0)));
@@ -1501,12 +1602,12 @@ function populateFromPhysics(files,label='import'){
    const type=`${F?.TYPE_HINT||''} ${F?.NAME||''}`.toLowerCase();
    // TYPE_HINT=SLICK does not prove radial construction. Only explicit construction
    // clues are marked direct; otherwise historical research is allowed to resolve it.
-   if(/vintage|bias|cross/.test(type)){$('construction').value='bias';markImported('construction',tyre.path);}
-   else if(/\bradial\b/.test(type)){$('construction').value='radial';markImported('construction',tyre.path);}
+    if(/vintage|bias|cross/.test(type)){setConstructionWithProvenance('bias',window.ACLMProfileState.PROVENANCE.IMPORTED_EXISTING_PHYSICS,{sourceIds:[tyre.path],confidence:"explicit imported tire-type clue",reason:"existing physics import"});markImported('construction',tyre.path);}
+    else if(/\bradial\b/.test(type)){setConstructionWithProvenance('radial',window.ACLMProfileState.PROVENANCE.IMPORTED_EXISTING_PHYSICS,{sourceIds:[tyre.path],confidence:"explicit imported tire-type clue",reason:"existing physics import"});markImported('construction',tyre.path);}
    if(!["cSoft","cMedium","cHard","cInter","cWet"].some(id=>$(id).checked)) $("cMedium").checked=true;
    updateHistoricalCompoundLabels();
  }
- const setup=fileByBase(files,'setup.ini'); if(setup){const s=parseIniText(setup.text); const pressureSecs=Object.keys(s).filter(k=>/PRESSURE|TYRE|TIRE/.test(k)); if(pressureSecs.length) rows.push(importedRow('Setup pressure controls',pressureSecs.slice(0,10).join(', '),setup.path));}
+ const setup=fileByBase(files,'setup.ini'); if(setup){const s=parseIniText(setup.text); const pressureSecs=Object.keys(s).filter(k=>/^PRESSURE_(LF|RF|LR|RR)$/.test(k));if(pressureSecs.length){const control=sec=>({min:numIni(s[sec],'MIN'),max:numIni(s[sec],'MAX'),step:numIni(s[sec],'STEP'),default:numIni(s[sec],'DEFAULT'),source:setup.path,section:sec}),front=[control('PRESSURE_LF'),control('PRESSURE_RF')].filter(x=>x.step),rear=[control('PRESSURE_LR'),control('PRESSURE_RR')].filter(x=>x.step);if(front.length)importedSetupPressureControls.front=front[0];if(rear.length)importedSetupPressureControls.rear=rear[0];rows.push(importedRow('Setup pressure controls',pressureSecs.map(sec=>`${sec}: ${s[sec].MIN}-${s[sec].MAX} psi, step ${s[sec].STEP}${s[sec].DEFAULT!==undefined?`, default ${s[sec].DEFAULT}`:', no DEFAULT'}`).join('; '),setup.path));}}
  const acd=Object.keys(files).some(k=>basename(k)==='data.acd'); if(acd) notes.push('data.acd was found. Tire Lab cannot decode encrypted/packed ACD data; include the unpacked data folder or a ZIP containing the loose physics files.');
  const lutCount=Object.keys(files).filter(k=>/\.lut$/i.test(k)).length; const iniCount=Object.keys(files).filter(k=>/\.ini$/i.test(k)).length;
  rows.push(importedRow('Physics files read',`${iniCount} INI / ${lutCount} LUT`,label));
@@ -1530,7 +1631,7 @@ async function doFolderImport(){const fs=$('physicsFolder').files; if(!fs?.lengt
 $('importZip').addEventListener('click',doZipImport);$('importFolder').addEventListener('click',doFolderImport);
 $('researchProfile').addEventListener('click',()=>researchHistoricalProfile());
 $('applyResearchChoice').addEventListener('click',applyResearchChoices);
-$('clearImport').addEventListener('click',()=>{importedPhysics={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';});
+$('clearImport').addEventListener('click',()=>{importedPhysics={};importedSetupPressureControls={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();renderHistoricalCoherence();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';});
 
 // Offline support only. Tire Lab uses one version-aware launcher and does not create additional browser-app shortcuts.
 if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
@@ -1545,7 +1646,8 @@ $("downloadZip").addEventListener("click",()=>{
  const blob=zipStore(generatedFiles);const a=document.createElement("a");a.href=URL.createObjectURL(blob);
  a.download=currentExportZipName||makeOutputZipName(v("car"));a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
 });
-applyPreset("auto");
+ renderConstructionProvenance();renderSupplierProvenance();
+ applyPreset("auto");
 try{
   generatedFiles=build();
   const vr=validate(generatedFiles);
@@ -1571,10 +1673,17 @@ refreshLoadDutyStatus();
 updateOutputName();
 
 
-["pIdeal","pRefTemp"].forEach(id=>$(id).addEventListener("input",()=>{
+["pIdeal","pIdealF","pIdealR","pRefTemp","pInitialCore","pReferenceDuty"].forEach(id=>$(id).addEventListener("input",()=>{
+ if(id==="pIdeal"&&!$("axleIdealPressure").checked){$("pIdealF").value=$("pIdeal").value;$("pIdealR").value=$("pIdeal").value;}
  refreshSolvedPressures();
  try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
 }));
+$("pReferenceDriver")?.addEventListener("change",()=>{refreshSolvedPressures();try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}});
+$("axleIdealPressure").addEventListener("change",()=>{
+ if(!$("axleIdealPressure").checked){$("pIdealF").value=$("pIdeal").value;$("pIdealR").value=$("pIdeal").value;}
+ refreshSolvedPressures();
+ try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
+});
 $("autoSolvePressure").addEventListener("change",()=>{
  refreshSolvedPressures();
  try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
@@ -1591,7 +1700,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.9.2";
+const ACLM_APP_VERSION="0.10.2";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 
@@ -1675,3 +1784,9 @@ async function importKnowledgePackage(){
 $("knowledgeFile").addEventListener("change",()=>{$("importKnowledge").disabled=!$("knowledgeFile").files.length;});
 $("importKnowledge").addEventListener("click",importKnowledgePackage);
 setTimeout(loadCurrentKnowledge,250);
+window.ACLMCurrentTelemetryManifest=()=>{
+ try{
+  if(!generatedFiles["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]){generatedFiles=build();const result=validate(generatedFiles);if(result.errors?.length)throw new Error("Generate/validation must pass before telemetry starts: "+result.errors.join(" "));renderValidation(result);renderFiles(generatedFiles);}
+  const manifest=JSON.parse(generatedFiles["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]);if(!manifest?.appVersion)throw new Error("Generated telemetry manifest is incomplete.");return manifest;
+ }catch(error){throw new Error("Telemetry manifest handoff failed: "+error.message);}
+};

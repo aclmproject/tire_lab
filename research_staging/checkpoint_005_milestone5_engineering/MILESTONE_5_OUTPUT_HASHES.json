@@ -1,0 +1,21 @@
+{
+  "docs/Engineering_Report_Milestone_5_v0100.md": "667c8ad0c3ebe495bd982b27ca639366a2043378304a2cabda981d532c1b985b",
+  "docs/MILESTONE_5_RECOVERY_MATRIX.md": "02b117be04688e84d1c97bd2361185977b4bbf71b5392f686461f927c55ed12a",
+  "docs/FAMILY_CONSTRUCTION_AUDIT_v0100.json": "4138ed6c8cf4339022e18bdc1f61e971e1583bf82b3f25c7b7b24ce605bafa3c",
+  "manifests/ACLM_Tire_Lab_latest.json": "d24383711549d877573ea36e083fa33398991146f638e9b8db03f23a5f297290",
+  "src/payload/app/profile_state.js": "f94695b05dfb1ede6bcab4c3ca3624f4ae8823916a98567582ecc25cd75067d9",
+  "src/payload/app/pressure_solver.js": "7327069c92863866804b5c641672e9459c516a1b88eadf69fd7eb3489e2a578c",
+  "src/payload/app/wear_model.js": "c6a70e0009cc34c5de5128f3c318f2692937b1a7ffacb135357a8dd158bf31df",
+  "src/payload/app/integrity.js": "30558e1731d10b9e6a73df3e64460127038fa080c9043231f712a32117e5b4f9",
+  "src/payload/app/app.js": "82b7a6438451e8f0a0ce31e743a64c10ce8f1c392fe65668be0849890bc94a80",
+  "src/payload/app/index.html": "ee7ba55146b092d6023c65f310ecbc27d4ba66c4b8baf4693135d534980ace55",
+  "src/payload/app/validation_core.js": "1d3b7c1643ca117537484d10f940cf26eeb135490cb1f4f171f9612692c7ab33",
+  "src/payload/app/telemetry_logger.js": "15615a005562a423302523803083e1e2432f5bcb2c232c8c91aa85817c73c26a",
+  "src/payload/Server_ACLM_Tire_Lab.ps1": "4b9f6595b9af4cd1c2ecd758e83020c078d0d86278413fa468ffcfa9285ecbf6",
+  "src/payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1": "cfb64e9017c53cd176a8cd477bb8c7ccfd29927ea7db08a281541e0876fff7d5",
+  "tests/fixtures/milestone5/fixture_index.json": "928ab8d9b0f2b249313a1db5d1f4f05ef376ca72b99f3aa4ff92408057832649",
+  "tests/milestone5_engineering.test.js": "8610d3aad842ad9add6d588efd1b7fee68b4b0b5bc0460f79d8aa20bf931f43d",
+  "tests/milestone5_static_fixtures.test.js": "14ec1cf0079e1f97dd9693fe8723d5dca49532911a002ae4f9299153bb27e21a",
+  "tests/milestone5_sidecar.test.js": "948d2583a783c488563c27a87e7c18ecd1823258fe71e2cf2226288b8a573293",
+  "dist/ACLM_Tire_Lab_Setup_v0.10.0.zip": "c677ed5c8df73ad4121a9f4a56dd2dcde7d545015421f6b94439e00b58b4c132"
+}

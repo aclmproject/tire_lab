@@ -1,0 +1,329 @@
+=== PDF PAGE 1 ===
+14. NASA STUDIES ON EFFECT OF GROOVED RUNWAY OPERATIONS
+ON AIRCRAFT VIBRATIONS AND TIRE WEAR
+By Thomas J. Yager
+NASA Langley Research Center
+SUMMARY
+Some tire tread wear data obtained from tests conducted at the Langley landing-
+loads track for a variety of aircraft tire sizes and types on various transversely grooved
+surfaces are presented and discussed. Comparative tire tread wear data and main strut
+vibration data obtained during the McDonnell Douglas F-4D and Convair 990 aircraft tests
+on grooved and ungrooved surfaces at the landing research runway at NASA Wallops
+Station are also discussed. Within the test limitations of these studies the results indi-
+cate that transversely grooved runway surfaces do not significantly increase aircraft
+vibrations or tire tread wear.
+INTRODUCTION
+The purpose of this paper is to discuss the effects of transverse runway grooves on
+aircraft tire tread wear and aircraft vibrations. Tire tread wear data obtained with
+various aircraft tires tested at the Langley landing-loads track and the landing research
+runway at NASA Wallops Station are presented. Vibration data obtained from vertical
+accelerometers mounted on the right main strut of the F-4D and 990 aircraft during the
+full-scale tests at NASA Wallops Station are also presented.
+AIRCRAFT TIRE TREAD WEAR
+During normal aircraft operations on a relatively high friction level surface, some
+tread wear, cutting, and/or damage occurs. The extent or magnitude of this tire tread
+degradation is dependent on several different factors, some of which are as follows:
+(1) Pavement texture or roughness
+(2) Pavement contaminants
+(3) Tread type and construction
+(4) Amount of skidding
+(5) Loading
+189
+
+
+
+=== PDF PAGE 2 ===
+Pavement texture or roughness and the amount and type of pavement contaminants,
+such as water, slush, ice, dirt, oil, or rubber deposits, directly affect the level of friction
+developed between the tire and pavement that causes tire tread wear. Tire tread type
+and construction (that is, whether the tire has all rubber tread or fabric-reinforced rub-
+ber tread) also affect the susceptibility of the tread to shear or cut. The wear associated
+with skidding depends on the amount of time a tire is subjected to finite slip ratios, the
+slip-ratio value, and the drag load. (See ref. 1.) Tire loading includes the amount and
+the variation of tire loading such as occurs at touchdown or during abrupt changes in the
+friction level developed between the tire and the pavement.
+In an attempt to determine the effect of transverse pavement grooves on aircraft
+tire tread wear and cutting, tests with various types of aircraft tires were made at the
+landing-loads track. Figure 1 shows the results obtained with a 3-groove fabric-
+reinforced 30 X 11.5-14.5, type VIII, aircraft tire during a low-speed (4 knots) braking
+test run on the 1- x 1/4- X 1/8-inch transversely grooved test surface for a dry surface
+condition. The test tire was inflated to 210 lb/inz and the test was conducted at Oo yaw.
+As shown in the photographs of figure 1, tread rubber was deposited on the test surface
+but the tire tread did not receive any cuts or damage during this run from a free-rolling
+condition to a locked-wheel condition. Some tread wear, however, did occur at relatively
+high slip-ratio values. In contrast to the normal trend observed on smooth surface run-
+ways where the rubber deposits adhered to the surface, the tread rubber deposited in the
+dry surface grooves during locked-wheel braking was powdery or granular in form and
+could be easily brushed away.
+Comparative braking test runs at a ground speed of 4 knots were also made on
+grooved and ungrooved surfaces for damp conditions. The grooved concrete surface had
+a groove configuration of 1 X 1/4 X 1/8 inch. The ungrooved surface was a bituminous
+asphalt overlay containing abrasive aggregate material. The aircraft tire used in these
+tests had a fabric-reinforced rubber tread and was constrained to run at 4' yaw. Results
+obtained from these tests are shown in figures 2 and 3.
+As indicated by the photographs of the tire skid area, some tire wear occurred for
+locked-wheel conditions on the 1- x 1/4- X 1/8-inch grooved surface, but on the ungrooved
+abrasive asphalt surface for the same test conditions, substantial damage to the tire tread
+occurred. Some of the tread cuts resulting from the braking run on the ungrooved sur-
+face were as deep as the tire cord. Considerable side force was developed by this test
+tire at 4O yaw during the run prior to the locked-wheel condition but no other tread wear
+or cu ing occurred except for that shown in figures 2 and 3.
+' \ \
+After the braking runs with this tire, the tread deposit on the grooved test surface
+was also composed of powdery or granular rubber particles which could be easily brushed
+190
+
+
+
+=== PDF PAGE 3 ===
+off. On the ungrooved surface the tire tread deposit consisted of rubber and fabric in an
+abraded form which could also be brushed off.
+By using a new 30 X 11.5- 14.5, type VIII, aircraft tire, a braking test run at
+102 knots was made at the landing-loads track to evaluate further the effect of pavement
+grooves on tire tread wear. The test tire had a 3-groove fabric-reinforced rubber tread,
+and the variation in friction developed between the tire and the grooved pavement during
+braking is shown as a function of slip ratio in figure 4. The damp test surface was
+grooved 1 X 3/8 X 1/4 inch. Figure 5 shows the 5-fOOt-lOng rubber deposit from the
+tread on this grooved surface and the tire tread damage area resulting from the braking
+run. By measuring the length of the tread damage area and by calculating the rolling
+circumference and angular velocity of the tire, it was determined that the surface rubber
+deposit was initiated at a slip ratio of about 0.8. Prior to this point in the braking cycle.
+no significant tread wear occurred. The tire tread wear and the chevron-type cuts shown
+in figure 5 occurred between slip ratios of 0.8 and 1.0. Therefore, the results of this
+test indicate that to minimize tire tread wear and cutting, high slip-ratio values should
+be avoided during aircraft ground operations.
+In order to evaluate further the type and extent of the tire tread damage, locked-
+wheel tests were conducted at the track with a smooth 49 X 17, type VII, all rubber tread
+tire. The data obtained from these testb are shown in figure 6.
+The time histories of the variation of slip ratio and drag friction coefficient pdrag
+shown in figure 6 were obtained at a speed of 100 knots on 10 different grooved and
+ungrooved surfaces for damp and flooded conditions. The high friction that developed
+between the tire and the 1- X 1/4- X 1/4-inch grooved surface (fig. 6) exceeded the torque
+limitations of the brake system used on the test carriage and resulted in partial wheel
+spin-up as indicated by the variation in slip ratio. The other ungrooved and grooved test
+surfaces, which were flailed-type grooves of 1/8-inch depth, did not develop sufficient
+friction to overcome the brake torque limitation. The slip-ratio value of 1.0 indicates
+that the wheel remained locked on the other test surfaces for damp and flooded conditions.
+The condition of the tire tread as a result of the locked-wheel runs is shown in fig-
+ure 7. The numerous, small chevron-type cuts in the all rubber tread of the smooth
+49 x 17, type VII, test tire did not exceed 0.06 inch in depth. In subsequent test runs with
+this tire, the results indicated that these chevron-type cuts did not significantly impair
+the tire tread life.
+These chevron-type cuts in the tire tread were also observed during the tests of the
+990 aircraft on the landing research runway. Figure 8 shows the condition of the tire and
+surface after a firm touchdown of the 990 aircraft on dry grooved concrete. The aircraft
+was equipped with new 5-groove all rubber tread main tires. Although only the right
+191
+
+
+
+=== PDF PAGE 4 ===
+main gear touchdown area is shown here, the left main gear touchdown area showed simi-
+lar rubber deposits and all eight main gear tires had similar tread cut areas. In ana-
+lyzing these results, the width of the rubber deposit on the runway at the point of initial
+touchdown equaled the width of the tread cut area on the main tires. Since the tires did
+not have any other cutting around the tread and the rubber deposit on the runway is shown
+to increase in width, it would indicate that the chevron-type cuts shown in figure 8
+occurred only at initial touchdown when the tire was stationary. As soon as wheel spin-
+up started, the tire tread had no further cutting.
+During the maximum antiskid braking tests of the F-4D aircraft, some tire tread
+wear was experienced but no chevron-type cutting was observed. However, no prolonged
+wheel lockups occurred during the braking tests of the F-4D, and the main tires of the
+F-4D had a 3-groove fabric-reinforced rubber tread. During the maximum braking tests
+of the 990 aircraft on wet and flooded surfaces, prolonged wheel lockups occurred on the
+ungrooved surfaces particularly with the smooth all rubber tread main tires. Because
+of the normal test run procedure of applying maximum antiskid braking through adjacent
+ungrooved and grooved tests surfaces, chevron-type cuts developed on the tire tread
+when the tire encountered the grooved surface at locked-wheel conditions. Some of the
+smooth tire tread cuts are shown in figure 9. No further cutting occurred during maxi-
+mum braking test runs from a grooved to an adjacent ungrooved surface. Approximately
+50 maximum antiskid braking test runs were made with the chevron cuts in the tire tread.
+Again the maximum measured depth of these cuts did not exceed 0.06 inch. As a result
+of further braking tests, these cuts increased in number but did not increase in depth.
+In summary, the tests at the landing-loads track and the aircraft tests on the landing
+research runway have shown that tire tread wear and/or cuts occur on grooved and
+ungrooved pavements. The extent or magnitude of tire tread wear or cutting appears to
+be greatest at or near the locked-wheel condition. The small chevron-type cuts in the
+aircraft tire tread occurred only at touchdown, when the tire was stationary, or under a
+locked-wheel condition on a high friction level surface. It can be theorized that at very
+high slip- ratio values, particularly at the locked-wheel condition, local tension failures
+of the tread rubber result in the chevron-type cuts. These test results indicate, however,
+that tire tread life is not significantly impaired because of the chevron-type cutting.
+AIRCRAFT VIBRATION
+Two vertical accelerometers were mounted on the right main landing gear strut of
+the F-4D and 990 aircraft during the tests made on the landing research runway to deter-
+mine the effect of transverse runway grooves on aircraft vibration. An accelerometer
+192
+
+
+
+=== PDF PAGE 5 ===
+was mounted on the upper section of the main strut close to the wing; another accelerom-
+eter was mounted on the lower section of the main strut close to the wheel or wheels.
+The upper strut accelerometer had a natural frequency of 1000 cycles per second, and the
+lower strut accelerometer had a natural frequency of 3000 cycles per second. Some typi-
+cal vibrations obtained from these strut accelerometers during the tests of the F-4D air-
+craft on grooved and ungrooved surfaces are shown in figures 10 and 11.
+The upper and lower strut accelerometer traces shown in figure 10 were obtained
+for free-rolling conditions on dry ungrooved and grooved concrete. These data show that
+the magnitude of the lower strut vibration is greater than that measured at the upper strut
+on both test surfaces. As the aircraft ground speed increased from 61.5 to 96.0 knots
+(fig. ll),t he amplitude of the strut vibrations also increased. No change in amplitude
+could be observed when results obtained on grooved and ungrooved surfaces at the same
+speed were compared. When the time scales of figures 10 and 11 were expanded, no sig-
+nificant difference was measured in the frequency of the lower strut vibration on the dry
+grooved surface as compared with the dry ungrooved surface at both test speeds.
+Strut accelerometer data similar to the data for the F-4D aircraft were obtained at
+speeds of 83 knots and 123 knots during the tests of the 990 aircraft on grooved and
+ungrooved surfaces as shown by the examples in figures 12 and 13. The magnitude of the
+strut vibrations for the 990 aircraft on dry grooved and ungrooved asphalt at both test
+speeds is less than that shown for the F-4D aircraft in figures 10 and 11. As in the case
+of the vibration data of the F-4D aircraft, no significant difference was measured in the
+frequency or amplitude of the lower strut vibration of the 990 aircraft on the dry grooved
+surface as compared with the dry ungrooved surface at both test speeds. On the basis of
+these test results, it is believed that grooved runways do not significantly alter aircraft
+vibration.
+CONCLUDING REMARKS
+Braking tests using several types of aircraft tires were conducted at the Langley
+landing-loads track on various grooved and ungrooved surfaces. The result&i ndicated
+that the grooves caused no significant increase in tire wear or tire damage. Tire tread
+degradation, however, was found to increase at the higher slip ratios and was greatest
+during the locked-wheel skid condition. Full-scale aircraft tests conducted on the landing
+research runway at NASA Wallops Station substantiated these test results and furthermore
+indicated that the chevron-type cuts that were developed in the tire tread at the higher slip
+ratios on the grooved surfaces did not reduce tire tread life. Aircraft strut vibrations
+measured during operations on 1- x 1/4- X 1/4-inch transversely grooved surfaces were
+found to be the same as those measured on ungrooved surfaces. Full-scale tests at the
+193
+
+
+
+=== PDF PAGE 6 ===
+landing research runway for a variety of additional aircraft types and tire loadings are
+planned to obtain further evaluations of the effect of grooved runway operations on air-
+craft vibrations and tire tread wear.
+REFERENCE
+1. Batterson, Sidney A.: A Study of the Dynamics of Airplane Braking Systems as
+Affected by Tire Elasticity and Brake Response. NASA TN D-3081, 1965.
+194
+
+
+
+=== PDF PAGE 7 ===
+Figure 1.- Condition of grooved surface and tire after braking test. 3- roove fabric-
+reinforced 30 X 11.5-14.5, type VIII, tire; inflation pressure, 210 lbIn2; dry surface;
+ground speed, 4 knots; 00 yaw.
+Figure 2.- Condition of grooved surface and tire after braking test. Fabric-reinforced
+rubber tread tire; inflation pressure, 400 Ib/inZ; damp surface; ground speed, 4 knots;
+40 yaw.
+19 5
+
+
+
+=== PDF PAGE 8 ===
+Figure 3.- Condition of ungrooved surface and tire after braking test. Fabric-reinforced
+rubber tread tire; inflation pressure, 400 Ib/in2; damp surface; ground speed, 4 knots;
+4O yaw.
+-
+.4 ON RUNWAY
+*-D-u--un
+FR 1 CTIO N I
+COEFFICIENT, -2 -d
+P ' P
+I
+I
+Figure 4.- F-4D aircraft tire during braking on grooved surface. 30 X 11.5-14.5, type VI I I,
+tire; damp concrete; ground speed, 102 knots.
+196
+
+
+
+=== PDF PAGE 9 ===
+Figure 5.- Condition of test surface and tire after braking.
+-G- DAMP
+-eF-LOOD ED
+(0.1 TO 0.3 in.)
+.6
+.4
+I-ldrag
+.2
+0 .2 .4 .6 1.0 1.2
+TIME. sec
+I I I I I
+0 50 100 150 200
+BRAKING DISTANCE, ft
+Figure 6.- Comparison of locked-wheel braking on various test surfaces. Smooth 49 X 17,
+type VII, tire; inflation pressure, 170 Ib/in2; ground speed, 100 knots: yaw angle, 40.
+197
+
+
+
+=== PDF PAGE 10 ===
+Figure 7.- Condition of tire tread after locked-wheel runs.
+Figure 8.- Condition of grooved surface and tire tread after firm touchdown of 990 aircraft.
+Dry concrete; inflation pressure, 160 Ib/in?
+198
+
+
+
+=== PDF PAGE 11 ===
+Figure 9.- Effect of braking tests on smooth main tire tread of 990 aircraft. 41 X 15.0-18,
+type VIII, main tires; inflation pressure, 160 Ib/in?
+-15 t-UNGROOVED+ROOVED- j
+r
+"15 i /-RUBBER BELT DAM
+I
+ACCEL, 0
+g units -5
+' I I
+- l o p LOWER STRUT
+-15
+I I I I I I I
+0 1 2 3 4 5 6 7
+TIME, sec
+Figure 10.- Free-rolling vibrations from main strut of F-4D aircraft. Dry concrete;
+ground speed, 61.5 knots.
+199
+
+
+
+=== PDF PAGE 12 ===
+15 r
+VERTICAL
+ACCEL, 0 UPPER STRUT
+g units -5
+I I I 1 1 1
+0 1 2 3 4 5
+TIME, sec
+Figure 11.- Free-rolling vibrations from main strut of F-4D aircraft. Dry concrete;
+ground speed, 96.0 knots.
+-B/
+VERTICAL
+ACCEL , UPPER STRUT
+g units -.25
+ACCEL , ILOWER STRUT
+g units --.2.5
+50
+-.
+75
+I I I 1 1 1
+0 1 2 3 4 5
+TIME, sec
+Figure 12.- Free-rolling vibrations from main strut of 990 aircraft. Dry asphalt;
+ground speed, 83 knots.
+200
+
+
+
+=== PDF PAGE 13 ===
+UPPER STRUT
+NGROOVED-------G ROOVED-
+I
+..5705
+-.75 L
+I I I I
+0 1 2 3 4
+TIME, sec
+Figure 13.- Free-rolling vibrations from main strut of 990 aircraft. Dry asphalt;
+ground speed, 123 knots.
+201

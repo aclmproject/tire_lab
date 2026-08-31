@@ -1,0 +1,785 @@
+=== PDF PAGE 1 ===
+N A S A TECHNICAL NOTE -NA S _ A - TN _- D-2770 _ _
+i
+ca
+A N INVESTIGATION OF THE
+INFLUENCE OF AIRCRAFT TIRE-TREAD
+WEAR O N WET-RUNWAY BRAKING
+by T~ufforJd. W. Leland und Glenn R. Taylor
+Lungley Reseurch Center
+Lungley Station, Humpton, Va.
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION WASHINGTON, D. C. APRIL 1965
+
+
+
+=== PDF PAGE 2 ===
+NASA TN D-2770
+AN INVESTIGATION O F THE INFLUENCE OF AIRCRAFT
+TIRE-TREAD WEAR ON WET-RUNWAY BRAKING
+By Trafford J. W. Leland and Glenn R. Taylor
+Langley Research Center
+Langley Station, Hampton, Va.
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+For sale by the Clearinghouse for Federal Scientific and Technical Information
+-
+Springfield, Virginia 22151 Price $1.00
+
+
+
+=== PDF PAGE 3 ===
+AN INVESTIGATION OF THE INFLUENCE OF AIRCRAFT
+TIRE-TREAD WEAR ON WET-RUNWAY BRAKING*
+.
+By Trafford J W. Leland and Glenn R. Taylor
+Langley Research Center
+SUMMARY
+Wet-runway braking tests were conducted at the Langley landing-loads track
+in which smooth and dimple-tread tires were used to represent completely worn
+tires. Five circumferential grooves were then cut into the tires to depths
+representing varying degrees of tread wear. Two types of wear were simulated:
+uniform wear with all grooves cut to the same depth, and nonuniform wear with
+the center groove wearing completely smooth while significant depths remain in
+the outer grooves. For comparative purposes tests were made on dry and damp
+concrete surfaces and through water depths of 1 inch. On the wet runway, a
+gradual degradation in braking effectiveness was experienced up to about the
+80-percent-worn tire-tread condition, where the wet-runway friction coeffi-
+cients dropped markedly. The completely worn tire was observed to develop, at
+the higher speeds, only about one-half the braking effectiveness of a new tire.
+INTRODUCTION
+Previous tire research, as exemplified by references 1 and 2, has indicated
+that the wet-runway braking effectiveness of an aircraft tire is highly depend-
+ent on the original tire-tread design. An important corollary to this fact is
+that even a good tread design may lose effectiveness as the tire becomes worn
+through normal use. It was the primary purpose of this investigation to deter-
+mine at what degree of wear a tire tread begins to lose braking effectiveness
+and to aid in determining when the tire should be removed most economically
+from service without compromising safety requirements.
+TEST APPARATUS AND PROCEDURE
+Test Facility
+The investigation was conducted at the Langley landing-loads track, which
+has been used for several years to investigate many different facets of the
+*
+Some of the material presented in this report was originally presented at
+the 1st AIAA Annual Meeting at Washington, D.C., June 29-Jd.y 2, 1964, in a
+paper by the authors entitled "Effects of Tread Wear on the Wet Runway Braking
+Effectiveness of Aircraft Tires.''
+
+
+
+=== PDF PAGE 4 ===
+landing and ground-handling problems of aircraft. The landing-loads track, as
+shown schematically in figure 1, consists of a large hydraulic water-jet cata-
+pult which accelerates the 60-foot-long t e s t carriage (fig. 2) t o speeds up t o
+120 knots. A complete description of the catapult system is given i n refer-
+ence 3 and a description of the operation of the track, in reference 4. Close
+control of such t e s t parameters as forward speed, sinking speed, vertical load,
+and runway-surface condition coupled with versatile instrumentation capabilities
+permits a detailed independent investigation of each of the many variables
+affecting landing-gear and tire performance. Excellent repeatability of t e s t
+conditions can also be achieved for purposes of comparison and control.
+T i r e s Tested
+In the tests 32 x 8.8, type V I I , 22-ply-rating aircraft tires were used.
+One was a specially molded smooth tire and the others were standard dimple-
+tread and three-groove tires. Tire-tread wear was simulated by using the smooth
+and dimple-tread tires t o represent completely worn t i r e s and then cutting pro-
+gressively deeper grooves into the t i r e treads t o simulate various wear condi-
+tions. Five circumferential grooves were cut into a l l the t i r e s with the saw
+and j i g arrangement shown i n figure 3 . The saw was held rigidly in a special
+fixture, and an adapter plate on the bottom of the saw permitted close'control
+of groove depth.
+Photographs of the t i r e s tested are shown in figure 4. The dimple-tread
+tire (tire I, fig. &(a))w as grooved t o represent nonuniform tread wear, as
+suggested by airline experience of t i r e wear, with the center groove wearing
+at a faster rate than the outer grooves. The smooth t i r e ( t i r e 11, fig. 4(b))
+was grooved t o simulate uniform tread wear, with a l l grooves wearing evenly.
+After the uniform 20-percent-worn tread was tested, it was judged unsafe t o cut
+the grooves as deeply as necessary t o represent a new tire; therefore, a stand-
+ard three-groove fighter-airplane tire ( t i r e 111, fig. 4(c)) was modified by
+cutting two additional grooves t o represent a new five-groove t i r e . Groove
+depths for a l l tires were measured and recorded before and after each test with
+both a micrometer depth gage and a dial indicator. The depth of each groove
+was measured at approximately the same location in six different places around
+the circumference of the t i r e . The average depths recorded for each groove and
+the tolerances maintained are shown in table I. T i r e footprints were also taken
+at each wear point.
+Test Conditions
+Most of the tests were made on a wet runway for a tire pressure of 150 psi.
+The test section of the track was provided with a sprinkler system t o achieve
+essentially constant wetness which because of runway uneveness varied in the
+t e s t section from 0 . 1 t o 0.3 inch of w a t e r . Some tests were made for a t i r e
+pressure of 90 psi, both on the wet runway and on a runway covered with 1 inch
+of water. The static vertical load on the t i r e for all runs was 10 500 pounds.
+Magnetic pickups placed at intervals along the track initiated braking cycles
+and controlled the number and location of these cycles for each run. Pressure
+was metered t o the brake through a micrometer needle valve, which acted as a
+controllable orifice. This metering was done so that brake-pressure rise t i m e
+2
+
+
+
+=== PDF PAGE 5 ===
+could be varied with the forward speed and anticipated friction conditions to
+give approximately the same braking distance per run. Several tests were made
+with the new five-groove tire on a damp surface, in which the surface closely
+resembled a runway as it might be in the early morning following a heavy dew
+with no puddles or standing water. A few tests were made on dry concrete to
+provide comparative data for other braking conditions.
+The test tires were mounted in the special test fixture shown schematically
+in figure 5, which is the same one used in previous investigations (refs. 1, 2,
+and 5). The vertical load and drag load were measured at the axle, and errors
+due to the inertia of the lower mass were corrected by accelerometers. These
+corrected values were used to compute the true instantaneous tire-ground fric-
+tion coefficients throughout the entire brake cycle. Also recorded were wheel
+angular displacement, velocity, and acceleration; brake torque and brake pres-
+sure; wheel vertical displacement; and carriage forward velocity.
+TEST RESULTS
+Instantaneous braking-friction coefficients were computed for all.braking
+cycles from a freely rolling wheel to a locked wheel. However, the braking-
+effectiveness test results discussed in this paper are expressed in terms of
+the average friction coefficient developed between a slip ratio of 0.1 to
+pAv,
+0.5 (shown schematically in fig. 6). The presentation of data in this manner
+tends to smooth any uncharacteristic peaks or low points in individual brake
+cycles which may be caused by localized slippery spots or runway contaminants.
+As indicated in figure 6, the curve of friction coefficient p as a function
+of slip ratio for wet runways flattens out, so that the average friction coef-
+ficient pAv, the maximum friction coefficient pw, and the skidding friction
+coefficient pSKID all tend toward a commom value. The average friction coef-
+ficient is also more likely to be the overall friction coefficient obtained with
+modern antiskid systems.
+Tire-Wear Effects
+Previous experience (ref. 1) had suggested little difference in wet-runway
+braking effectiveness between smooth and dimple-tread tires, a conclusion sup-
+ported by the results shown in figure 7 where tire I (dimple) and tire I1
+(smooth) are compared before any grooves were cut.
+Nonuniform wear.- Figure 8 summarizes the results of the nonuniform-wear
+investigation in which the dimple tire was used. Friction coefficients for all
+wear points drop rapidly with increasing forward speed, with the worn tire
+developing only about one-half the friction of the new tire at the higher
+speeds. It should be recalled that when the nonuniformly worn tire is 100 per-
+cent worn, only the center groove is worn smooth while significant groove depths
+remain in the outer grooves, as shown in table I. This fact accounts for the
+relatively high friction levels at this wear condition as compared with the
+results obtained for the ungrooved dimple-tread tire. The effect of tread wear
+3
+
+
+
+=== PDF PAGE 6 ===
+is illustrated more clearly in figure 9, where a gradual degradation in braking
+effectiveness is noted as the wear progresses from a new tire to about the
+80-percent-worn tire-tread condition. Further tread wear noticeably reduces
+the braking-friction levels at all velocities, with as much braking effective-
+ness being lost between the 80- and 100-percent-worn tire-tread condition as
+was lost between the 0- and 80-percent-worn condition.
+Uniform wear.- The trends noted in the nonuniform-wear investigation were
+also observed in the uniform-wear investigation; these results are summarized
+in figure 10. As in the nonuniform-wear case, a noticeable decline in braking
+effectiveness occurs near the 80-percent-worn tire-tread condition. As previ-
+ously mentioned, total tire tread wear prevented regrooving tire I1 beyond the
+20-percent-worn tire-tread condition, but apparently the results would follow
+the trend in figure 9, with very little change in braking effectiveness occur-
+ring between the 0- and 20-percent-worn conditions.
+A possible explanation of the poor braking performance of a worn tire is
+offered in figure 11, where the tire footprints taken at the five highest uni-
+formly worn conditions are shown. In taking the tire footprint, the entire
+lower surface of the tire was covered with chalk, including the grooves. The
+tire was then lowered onto a piece of paper stretched over an aluminum plate,
+and allowed to settle until full static vertical load was attained. The foot-
+print taken at the 95-percent-worn condition (fig. ll(b)) shows heavy evidence
+of chalk in all five grooves; this indicates that tire deformation has, in
+effect, eliminated the grooves at this wear condition. At the 90-percent-worn
+condition (fig. ll(c)) slight chalking is still evident in all grooves, whereas
+at the 85-percent-worn condition (fig. ll(d)) chalking is found in the outer
+grooves only. The tire shows no evidence of chalking in the grooves at the
+80-percent-worn condition (fig. ll(e)), and it is at this percent of tread wear,
+as shown previously in figure 10, that tire performance begins to deteriorate
+most rapidly with increasing wear. Thus, it seems that the effects on braking
+performance of the degree of tread wear of a tire cannot accurately be gaged
+by eye, since a continuous tread pattern is visible in figure 11 even at the
+95-percent-worn condition although the tire behaves very much like a smooth tire
+during braking.
+Tire spin-up.- Excessive tire-tread wear can greatly increase the time
+required for the wheel to spin up following brake release, as shown in fig-
+ure 12. Spin-up time in this figure is understood to be the elapsed time
+between brake release following a full skid and the achievement of equivalent
+free-roll forward velocity. Spin-up time for the new tire on a dry runway is
+seen to be below 0.1 second for all forward velocities, whereas the addition of
+water to the runway more than doubles the spin-up time for this tire at the
+higher velocities. As shown in figure 12, spin-up time at the higher velocities
+increases rapidly with increasing tread wear. For example, at 40 knots the
+100-percent-worn tire requires about 0.1 second for spin-up, whereas at 80 knots
+the same tire requires a full second for spin-up. In many of the high-speed
+tests with the smooth tire, spin-up following brake release never occurred
+within the limited length of the test track. The reason for the long spin-up
+times noted is, of course, due +Uo the extremely low friction coefficients devel-
+oped under these conditions. It is of interest to note the magnitude of the
+time increase, however.
+4
+
+
+
+=== PDF PAGE 7 ===
+Other Effects
+Groove- configuration.- Because of slight differences in the tire-grooving
+technique and the different tires used, the groove widths and groove locations
+differed for the various tires tested. The importance of the difference in
+groove width is shown in figure 13. Tire I11 having a nominal groove width of
+0.375 inch developed notably better friction coefficients at all speeds than
+the nonuniformly 0-percent worn tire I, which had a nominal groove width of
+0.290 inch. Although tire I11 had somewhat deeper grooves than tire I
+(table I), it is believed that the groove width was the primary factor respon-
+sible for the increased braking friction, since the average water depth
+(0.2 inch) in both tests was less than the average groove depth. This conclu-
+sion is further supported in figure 13 by comparing the braking effectiveness
+for the nonuniformly 50-percent-worn tire I (nominal groove width of 0.290 inch)
+with that for the uniformly 60-percent-worn tire I1 (nominal groove width of
+0.220 inch), which had about the same groove depth in the three center grooves.
+The improved wet-runway braking effectiveness of the wider groove is probably
+a result of better or more rapid escape of water from the footprint region and
+of higher local tire-ground bearing pressures.
+Although the grooves were cut into the tires symmetrically spaced about
+the center groove, small differences did exist in the groove spacing between
+tires, as shown in figure 14. These differences are thought to have less of a
+an effect on braking performance than groove width. Tire 111, a modified pro-
+duction tire, also had grooves of different shape, as shown schematically in
+figure 14(c), with the three central grooves having a rounded shape, whereas
+the other two grooves in this tire and all grooves in the other tires were
+rectangular. It is uncertain what effect this change in shape may have, but
+there is an obvious need for further investigation of the effects of tire groove
+width, spacing, and shape in hopes of optimizing tire-tread design.
+Tire-inflation pressure.- Figure 15 shows the effects of tire-inflation
+pressure on braking effectiveness on dry and wet runways. The lower tire pres-
+sure (90 psi) resulted in somewhat higher friction coefficients on dry-runway
+braking, an effect previously noted in reference 1. On wet-runway braking,
+however, only slight differences were observed between the two tire pressures.
+Shallow water.- Small amounts of water on the runway can have a significant
+effect on braking effectiveness. Figure 16 illustrates the loss in braking
+effectiveness of tire I11 for an inflation pressure of 90 psi, caused by a damp
+runway such as might be found early in the morning following a heavy dew. One
+run was actually made under these conditions, shown by the solid symbols in this
+figure. Such conditions were simulated for the rest of the test by wetting the
+runway and then brushing off all standing water. Also included for comparison
+in this figure are the results for tire I11 braking on a wet runway, with water
+depth ranging from 0.1 to 0.3 inch. Braking-effectiveness test results for
+tire I11 for an inflation pressure of 150 psi show the same trends (fig. 17).
+-
+Rolling resistance. Free-rolling resistance force was measured for
+tire I11 on dry, damp, and wet concrete surfaces and the results are presented
+in figure 18. A straight line is faired through the dry-runway values for the
+two tire pressures investigated (90 and l5O psi) and, as might be expected, a
+5
+
+
+
+=== PDF PAGE 8 ===
+somewhat higher rolling resistance is obtained for the lower tire pressure.
+It is of interest to note the effect of runway-surface condition on rolling
+resistance. Somewhat lower rolling resistance is obtained on the damp runway
+surface than on the dry surface, undoubtedly because of lubrication by the water
+film; however, higher rolling resistance is obtained on the wet surface (water
+depth 0.1 to 0.3 inch) and must be due to fluid drag on the tire.
+Deep water.- In order to explore the effects of tire-tread wear on tire
+hydroplaning (ref. 6) and on braking in deep water, tests were made concurrently
+with the aforementioned tests but with a water depth of 1 inch. In these tests,
+with a tire inflation pressure p of 90 psi, the tire was allowed to roll
+freely for a time before the brakes were applied to determine the magnitude of
+the fluid-displacement. drag created on the tire. The results of the free-
+rolling portion of the investigation are shown in figure 19 and indicate that
+tire-tread depth has no discernible effect on fluid-displacement drag. The
+tire-hydroplaning-velocity equation, developed in reference 6 and shown in
+figure 19, is substantiated by the results as indicated by the peak in fluid
+drag and by tire spin-down (denoted by the flagged symbols). It should be noted
+-
+that the fluid drag shown in this figure is incremental fluid drag that is,
+the rolling resistance shown in figure 18 has been subtracted out to give only
+the added drag due to fluid displacement by the tire.
+The effect of tread wear when braking in deep water is shown in figure 20.
+This figure indicates a very definite drop in braking effectiveness in 1 inch
+of water as tire wear progresses past the 60-percent-worn tread condition. The
+much higher friction levels developed by the new tire is due, as previously
+explained, to the wider grooves in the tire. For all wear conditions, however,
+the friction coefficient reaches a minimum at or near the tire hydroplaning
+speed Vp. The apparent friction coefficients of figure 20 include the effects
+of fluid-displacement drag. In order to determine the contribution of the brake
+itself, the fluid-displacement drag must be subtracted as illustrated in fig-
+ure 21 for tire 111. The net retarding effect of the brake at hydroplaning
+speeds is seen to be at a level comparable to the free rolling resistance of the
+tire (fig. 18), which would indicate that while attempting to brake at speeds
+in excess of tire hydroplaning speeds, the retardation developed on an aircraft
+must come from sources other than braking friction.
+CONCLUDING REMIW(S
+This investigation has demonstrated the important effects of tire-tread
+wear on the wet-runway braking effectiveness of aircraft tires. For the two
+- -
+types of tread wear that were simulated that is, uniform and nonuniform wear
+gradual degradation in braking effectiveness was experienced as tread wear pro-
+gressed from a new tire, or 0-percent-worn condition, to a 60- to 80-percent-
+worn tire. As tread wear passed the 80-percent-worn condition, however, braking
+effectiveness dropped markedly. These results indicate that aircraft tires
+should be replaced before the tread is worn completely smooth if safety
+6
+
+
+
+=== PDF PAGE 9 ===
+requirements are not t o be compromised. Further study of the depth, width,
+spacing, and shape of t i r e grooves is needed in order t o optimize wet-runway
+braking effectiveness.
+Langley Research Center,
+National Aeronautics and Space Administration,
+Langley Station, Hampton, Va., February 2, 1965.
+REFERENCES
+1. Horne, Walter B.; and Leland, Trafford J. W.: Influence of Tire Tread
+Pattern and Runway Surface Condition on Braking Friction and Rolling
+Resistance of a Modern Aircraft Tire. NASA TN D-1376, 1962.
+2. Horne, Walter B.; and Leland, Trafford J. W.: Runway Slipperiness and Slush.
+J. Roy. Aeron. SOC , . vol. 67, no. 633,. Sept. 1963, pp. 559-571.
+3. Joyner, Upshur T.; and Horne, Walter B. : Considerations on a Large Hydraulic
+Jet Catapult. NACA TN 3203, 1954. (Supersedes NACA RM L51B27. )
+4. Joyner, Upshur T.; Horne, Walter B.; and Leland, Trafford J. W. : Investiga-
+tions on the Ground Performance of Aircraft Relating t o Wet Runway Braking
+and Slush Drag. AGARD Rept. 429, Jan. 1963.
+5. Horne, Walter B.; Joyner, Upshur T.; and Leland, Trafford J. W.: Studies of
+the Retardation Force Developed on an Aircraft Tire Rolling i n Slush or
+Water. NASA TN D-552, 1960.
+6. Horne, Walter B.; and Dreher, Robert C. : Phenomena of Pneumatic Tire Hydro-
+planing. NASA TN D-2056, 1963.
+7
+
+
+
+=== PDF PAGE 10 ===
+TABLE I.- GROOVE DIMENSIONS FOR TIFBS INVESTIGATED
+C
+-
+0.250 0.250 0.250 0.199 0.227 0.212 0.202 0.195 0.189 0.216 0.198 0.190 0.184 0.290
+.125 .i55 .216 .206 ,150 .120 .i37 .203 .i95 .136 .lo4 .126 .192
+.050 .098 .194 .185 .098 .047 .lo3 .I83 .177 .093 .037 .094 .172
+.037 .094 .175 .177 .093 .037 .094 .172 .l7O .088 .O32 .087 .168
+100 0 .o?g .073 .071 .052 o .051 .072 .058 .043 o .Ob1 .053
+J
+20 0.192 0.192 0.192 0.192 0.192 0.188 0.193 0.192 0.193 0.187 0.180 0.186 0.186 0.186 0.179 0.
+60 .144 .144 .144 .144 .144 .142 .150 .145 .136 .135 .138 .147 .142 .130 .130
+75 .o60 .060 .060 .060 .060 .064 .066 .064 .073 .061 ,039 .060 .o60 .068 .a50
+80 .048 .048 ,048 .048 .048 .ob9 .ob5 .049 .ob7 .046 .044 .oh0 .044 .040 .o40
+85 (1 .036 .036 .036 .036 .036 .036 .039 .039 .043 .036 .029 .035 .035 .038 ,033
+90 .024( .024( .024/, 0241 .024((. 024/. 023( .024( .w4( .023((. 021( .oi8( .022( .020( .0201
+r
+0 0.240 0.240 0.240 0.240 0.240 0.242 0.242 0.238 0.235 0.241 0.230 0.230 0.225 0.223 0.230
+
+
+
+=== PDF PAGE 11 ===
+ARRESTING GEAR
+TEST CARRIAGE
+Figure 1 - Schematic of Langley landing-loads track.
+9
+
+
+
+=== PDF PAGE 12 ===
+L-65-31
+Figure 2.- Main test carriage at Langley landing-loads track, with catapult in background.
+
+
+
+=== PDF PAGE 13 ===
+L-65r32
+Figure 3.- Saw and jig arrangement used for grooving all test tires.
+11
+
+
+
+=== PDF PAGE 14 ===
+(a) Tire I (dimple-tread tire) before and after grooving.
+m
+(b) Tire I I (smooth tire) before and after grooving.
+(c) Tire I I I (new tire). L-65-33
+Figure 4.- Tires used in tread-wear investigation.
+12
+
+
+
+=== PDF PAGE 15 ===
+WHEEL ANGULAR VELOCITY
+WACHCEEELLE ROA"N"'"G ULAR AND ANG
+IM
+UL
+n
+A
+lP
+R
+A
+D
+T
+I
+n
+S
+R
+P
+<
+L ACEMENT
+\;/--&NE TORQUE LINKS
+Figure 5.- Schematic of test fixture used for all tires.
+FREE FULL
+-ROLL
+pAv (SLIP RATIO, 0.1 to 0.5)
+S-KID
+FRICTION
+COEFFICIENT,
+CI
+0 .2 .4 .6 .8 1.0
+SLIP RATIO
+Figure 6.- Schematic comparison of various friction coefficients, showing hod ~ A Vwa s derived.
+
+
+
+=== PDF PAGE 16 ===
+-
+.5
+I
+1Q
+-
+.4
++E-- OTIRE II (SMOOTH TIRE, NO GROOVES)
+0 oTIRE I (DIMPLETREAD TIRE, NO GROOVES)
+LgL - 5 \
+.3
+s?
+z c V .2 - ob, >#e$
+u-
+::
+\
+0 0
+W
+E .1 - -0.”;.-,
+9
+-42-
+a
+0 I I I I I I I I I I I
+Figure 7.- Wet-runway braking effectiveness of smooth and dimple-tread tires.
+Tire pressure, 150 psi.
+TIRE I
+NONUNIFORM -
+.6 WEAR CONDITIONS
+.-
++ 0 PERCENT WORN
+= > a .5 - ... - ..1 1 50 PERCENT WORN
+___ A 75 PERCENT WORN
++-
+E-
+-
+2 .4
+xLLLL
+0
+zs! . 3 -
+I--
+0
+E .2 -
+W0
+a -_
+E5 -
+> .I ’ca?
+a
+\
+01 I I I I I I I I 1 I I
+0 10 20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY, KNOTS
+Figure 8.- Effects of nonuniform tread wear and forward velocity on wet-runway braking
+effectiveness. Tire pressure, 150 psi.
+14
+
+
+
+=== PDF PAGE 17 ===
+I
+e
+5 /30 KNOTS
+3 ..56
+u-
+w
+u
+d
+y .1
+a
+0 1 I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+TREAD WEAR, PERCENT
+Figure 9.- Effects of nonuniform tread wear on wet-runway braking effectiveness at selected
+velocities for tire I. Tire pressure, 150 psi.
+.6 -
+>
+3 4 . .5 -
++-
+5- &-
+2 .4 -
+LLLL 50 KNOTS
+FJ n----- --- ______
+0 - --__
+z .3
+0 i=--.
+o E b- - .2 - A A -_ - f - 70 KNO \- T - S - ----__ -------- n n - n - K - ..A .0 n
+wu r
+a g o---------- 90
+. l -
+4
+0 I 1 I I I I I I I I
+10 20 30 40 50 60 70 80 90 100
+TREAD WEAR. PERCENT
+Figure 10.- Effects of uniform tread wear on wet-runway braking effectiveness at selected
+velocities for tire I I. Tire pressure, 150 psi.
+
+
+
+=== PDF PAGE 18 ===
+(a) 100 percent worn. (b) 95 percent worn.
+(c) 90 Dercent worn. (d) 85 percent worn.
+(e) 80 percent worn. L-65-34
+Figure 11.- Photographs of tire footprints and tire profiles at various conditions of uniform tread wear. Tire I I.
+16
+
+
+
+=== PDF PAGE 19 ===
+I O 0
+---A
+v&)
+80
+z
+Y
+-
+F
+I= 60 UNIFORM - WEAR CONDlT' I ON S
+0
+0
+- W' I 0 PERCENT, TIRE III , DRY RUNWAY
+40 -0 0 PERCENT, TIRE III , WET RUNWAY
+n
++ 2 0 PERCENT,TIRE II , WET RUNWAY
+--A6 0 PERCENT,TlRE II , WET RUNWAY
+4 8 0 PERCENT,TIRE II , WET RUNWAY
+--__-- a 100 PERCENT,TlRE II , WET RUNWAY
+I I I 1 1 I I
+0 .2 .4 .6 .8 1.0 1.2 I .4
+SPIN-UP TIME, SEC
+Figure 12- Effects of uniform tread wear on tire spin-up time following brake release.
+Tire pressure, 150 psi.
+NOMINAL GROOVE TIRE-WEAR
+-W IDTH, INCH CONDITION
+-40 .375 0 PERLENT, TIRE IX
+._.... 290 0 PERCENT, TIRE I
+,220 60 PERCENT, TIRED
+.._ ~ ... ,290 50 PERCENT, TIRE I
+I I I - I I I I I I I
+20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY. KNOTS
+Figure 13.- Effects of tire-groove width on wet-runway braking effectiveness.
+Tire pressure, 150 psi.
+
+
+
+=== PDF PAGE 20 ===
+(a) Tire I, nonuniform wear.
+I
+A A
+(b) Tire I I, uniform wear.
+(c) Tire I I I, new tire.
+Figure 14.- Schematic cross sections of tires tested showing spacing of grooves.
+(All dimensions are in inches. Drawing not to scale. 1
+20- PERCENT-
+WORN { '
+TIRE INFLATION
+BO-PERCENT- $[ , '. PRESSURE
+I
+-150 DRY
+.__..90 PSI
+4 1 5 0 P SI
+~~
+__0 _9O_PSI.
+O u 1; 2; 3; 40 50 Qo 7b oi do Ida 1;o
+FORWARD VELOCITY. KNOTS
+Figure 15.- Effects of tire inflation pressure on dry- and wet-runway braking effectiveness at
+selected uniform-wear conditions.
+18
+
+
+
+=== PDF PAGE 21 ===
+0
+0 0
+00
+'.
+RUNWAY CONDITION
+\
+\.
+.---{ DRY
+.. 0 DAMP (ARTIFICIAL) \
+DAMP (NATURAL)
+_ _ 0 WET
+O o\'
+0 ' I I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY, KNOTS
+Figure 16.- Effects of runway-surface condition on the braking effectiveness of tire I I I.
+Tire pressure, 90 psi.
+-
+.7
+00
+-
+> .6
+4I--
+. 5 -
+0
+u.
+sYW -
+.4
+z
+E
+-.I -
+0 .3
+E "-boa-"
+Y
+Wc 3 -
+.2
+W>
+a
+.1 -
+0 I I I I I 1 I I I I 1
+10 20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY, KNOTS
+Figure 17.- Effects of runway-surface condition on the braking effectiveness of tire II I.
+Tire pressure, 150 psi.
+
+
+
+=== PDF PAGE 22 ===
+A
+A a
+A 0 2F-S
+I I I I I
+70 80 90 100 110 1
+uz FORWARD VELOCITY, KNOTS
+Ii= I
+v-, (a) Tire intiation pressure, 150 psi.
+v~ ,
+.06 RUNWAY
+COND I TI ON
+A
+n u
+0 DAMP 0
+U n U U & O
+.02 tP 0 0
+I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY. KNOTS
+(b) Tire inflation pressure, 90 psi.
+Figure 18.- Effect of tire inflation pressure and runway-surface condition on the rolling
+resistance of unbraked tire I I I.
+%I&$;
+0 0 PERCENT, TIRE III
+T 20 PERCENT, TIRE II A@ d
+10 -
+ab 876050 PPPEEERRRCCCEEENNNTTT
+-m--I 70%0 &
+2- 8 - 0 85 PERCENT *%
+90 PERCENT
+En
+-c3 0 95 PERCENT
+d3 6 - 0 100 PERCENT - HYDROPLANING
+Y VELOCITY,
+J \/ii
+g 4 - $" Vp = 9 (REF. 6)
+wE Q
+0 -z 2 - k&%
+*?Im
+""0: I
+0 I I I I I I 1 I
+Figure 19.- Fluid-displacement drag developed by a tire rolling unbraked through water
+1 inch deep. Tire pressure, p, 90 psi. (Flagged symbols denote tire spin-down. 1
+
+
+
+=== PDF PAGE 23 ===
+UN IFORM-WEAR CONDITIONS
+___-_-o{ 0 PERCENT, TIRE LEI
+- - -. T 20 PERCENT, TIRE II
+60 PERCENT
+75 PERCENT
+>.6- A 80 PERCENT
+i?
+90 PERCENT
++- I
+z - 95 PERCENT
+w .5
+0
+k gw
+.4-
++.... \ LH
+DROPL
+Y
+AN ING V ELOCI
+zz
++
+u- .3 -
+112
+Y
+W
+c.7
+Q, .2-
+9
+a
++
+J .1 -
+aCL
+ae
+a
+0 I I I I I I I 1 I I I I
+20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY, KNOTS
+Figure 20.- Effect of uniform tread wear on the braking effectiveness of a tire in water
+1 inch deep. Tire pressure, p, 90 psi.
+-
+.7 0
+0 0
+0 0
+-
+> .6
+a
+1 -%-=I%= Q--o-
++- -
+J- .5 ax-...
+2 -HYDROPLANING
+sYWY
+.4 - RUNW AY CONDITION v
+VE
+p
+L
+=
+O C
+9
+I
+\
+N
+r?
+,
+i (REF. 6)
+zz +
++ - DRY
+u- .3
+CL
+-...n 1 INCHWATER
+Y (APPARENT FR IC TI ON)
+w2
+. 2 - --A 1 INCH WATER,
+s112 FLU IO DRAG
+a SUBTRACTED
+-
+.1
+0 - I I I I I I I I I I I I
+10 20 30 40 50 60 70 80 90 100 110
+FORWARD VELOCITY, KNOTS
+Figure 21.- Comparison d apparent and actual friction coefficients developed by tire I I I braking
+in water 1 inch deep. Tire pressure, p, 90 psi.
+L-4104
+NASA-Langley, 1965 21

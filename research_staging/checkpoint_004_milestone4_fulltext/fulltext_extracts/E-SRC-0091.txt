@@ -1,0 +1,1526 @@
+=== PDF PAGE 1 ===
+BR.fF._'4k-. ,oodn;-h
+
+
+
+=== PDF PAGE 2 ===
+NASA CONTRACT No. NAS 9-12049
+DRL NO. T-685
+LINE ITEM NO. 9
+DRD NO. MA-129T
+BFG DOCUMENT NUMBER ATD-2751
+FINAL TEST REPORT
+LIGHTWEIGHT TIRE CONCEPT
+FOR
+SPACE SHUTTLE
+OCTOBER 30, 1973
+THE B.F.GOODRICH COMPANY
+AKRON, OHIO
+
+
+
+=== PDF PAGE 3 ===
+NASA CONTRACT No. NAS 9-12049
+DRL NO. T-685
+LINE ITEM NO. 9
+DRD NO. MA-129T
+BFG DOCUMENT NUMBER ATD-2751
+FINAL TEST REPORT
+LIGHTWEIGHT TIRE CONCEPT
+FOR
+SPACE SHUTTLE
+OCTOBER 30, 1973
+Prepared by: _
+W. T. Shuf ~botham
+Sr. Product Engineer
+Approved by:
+.F. M. Mitch, Manager
+Aircraft Tire Development
+rg
+THE B.F.GOODRICH COMPANY
+AKRON, OHIO
+
+
+
+=== PDF PAGE 4 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+DISTRIBUTION LIST
+(1) Copy: National Aeronautics & Space Administration
+Lyndon B. Johnson Space Center
+Research & Technology Procurement Branch
+Houston, Texas 77058
+Attn: John J. Cunningham, Mail Code BC73
+Contract NAS 9-12049 Line Item 9
+(4) Copies: National Aeronautics & Space Administration
+Lyndon B. Johnson Space Center
+Technical Library Branch
+Houston, Texas 77058
+Attn: Retha Skirkey, Mail Code JM6
+Contract NAS 9-12049 Line Item 9
+(1) Copy: National Aeronautics & Space Administration
+Lyndon B. Johnson Space Center
+Management Services Division
+Houston, Texas 77058
+Attn: John T. Wheeler, Mail Code JM7
+Contract NAS 9-12049 Line Item 9
+(5) Copies: National Aeronautics & Space Administration
+Lyndon B. Johnson Space Center
+Mechanical Systems Branch
+Houston, Texas 77058
+Attn: J. F. Martin, Mail Code ES4
+Contract NAS 9-12049
+(2) Copies: The B.F.Goodrich Company
+Aerospace Sales Department
+(2) Copies: The B.F.Goodrich Company
+Aircraft Tire Development Department
+iii
+
+
+
+=== PDF PAGE 5 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+ABSTRACT
+This section of the final report summarizes the work done in evaluating
+and testing a lightweight tire. This work was done under NASA Contract
+Number NAS 9-12049 that also included evaluating and testing a
+lightweight wheel and brake. The work on the wheel and brake was done
+by the B.F.Goodrich Aerospace and Defense Products Division at Troy,
+Ohio.
+All of the various tests were conducted on a 49x17/26 PR aircraft tire
+that had been designed as a lightweight tire for use on the C-5A
+military transport. This tire is approximately 25 per cent lighter than
+a tire of the same size and ply rating that would be used in commercial
+airline service.
+The tires were tested at 40 per cent, 37 per cent and 35 per cent
+deflections. These deflections were obtained by adjusting the inflation
+pressure while the load on the tire remained constant at 60,000 pounds.
+It was determined that the tire would operate successfully under the
+test conditions at 357 deflection. Prior to testing, the tires were
+subjected to conditions of high vacuum and low temperature. It was
+determined that the tires were not adversely affected by these conditions.
+G7GE 3LANK
+NOT p.Pf
+iv
+
+
+
+=== PDF PAGE 6 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+TABLE OF CONTENTS
+PAGE
+DISTRIBUTION LIST iii
+ABSTRACT iv
+TABLE OF CONTENTS v
+DEFINITIONS 1
+TEST RESULTS 2
+CONCLUSIONS 3
+RECOMMENDATIONS 4
+DISCUSSION 5
+APPENDIX A - B.F.Goodrich Standard Dynamic Al - A5
+Test 4917-NASA
+APPENDIX B - Contained Air Temperature And Bl - B23
+Inflation Pressure Data
+APPENDIX C - New Technology Report C-I
+APPENDIX D - Summary of Reliability Efforts D-1
+APPENDIX E - Summary of Safety Efforts E-1
+V
+
+
+
+=== PDF PAGE 7 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+DEFINITIONS
+% Deflection
+The difference between the loaded and unloaded section heights of the
+tire divided by the unloaded section height above the top of the rim
+flange multiplied by 100.
+d = deflection (difference between loaded and unloaded
+section heights)
+FH = free height (unloaded section height above the top of the
+rim flange)
+B = % deflection
+B = d x 100
+FH
+This value is a measure of the stresses that a tire must withstand due
+to the deformation of the tire as it revolves.
+It must be noted that the inflation pressure required to obtain a given
+% deflection on a flat surface is not the same as the pressure required
+to obtain this same % deflection when the tire is loaded against a
+curved dynamometer roadwheel. The inflation pressures used for the
+dynamic tests were those required to obtain the required % deflection
+on the curved dynamometer roadwheel.
+Burst Factor
+The value obtained by dividing the inflation pressure at which a tire
+will burst by the normal operating inflation pressure. This value is a
+measure of the severity of the stresses a tire must withstand due to
+the inflation pressure within it.
+1
+
+
+
+=== PDF PAGE 8 ===
+NAS 9-12049
+BFG Doc.No. ATD-2751
+TEST RESULTS
+(1) Tire Test Number N83-1208 N83-1208 N83-1208 N83-1208 N83-1208
+-2 -3 -4 -5 -6
+(2) Tire Serial Number 1229AK0596 1228AK0595 1224AK0642 1159AK0268 1161AK0200
+(3) Tire Load (Pounds) 60,000 60,000 60,000 60,000 N/A
+(4) Maximum Speed (MPH) 207 207 207 207 N/A
+(5) % Deflection 40 37 35 35 N/A
+(6) Vacuum Chamber No No No Yes Yes
+(7) 7-Day Cold Soak Yes Yes Yes Yes No
+(8) Take-Off Cycles 5 5 5 10 0
+(9) Landing Cycles 5 5 5 10 0
+(10) Taxi Cycles 10 10 10 20 0
+(11) Inflation Prior To
+Cold Soak (PSI) 291 323 350 350 N/A
+(12) Inflation After Cold
+Soak (PSI) 194 217 195 240 N/A
+(13) Max. Tire Inflation
+During Landing-Taxi
+After Cold Soak (PSI) 306 333 297 346 N/A
+(14) Max. Tire CAT* During
+Landing-Taxi After Cold
+Soak (oF.) 134 124 139 ** N/A
+(15) Inflation Prior to
+Landing-Taxi or Taxi-
+Take-Off (PSI) 223 247 268 268 N/A
+(16) Max. Tire Inflation
+During Landing-Taxi (PSI) 274 285 295 312 N/A
+(17) Max. Tire CAT* During
+Landing4Taxi (OF.) 180 168 170 180 N/A
+(18) Max. Tire Inflation
+During Taxi-Take-Off (PSD 265 280 287 310 N/A
+(19) Max. Tire CAT*
+During Taxi-Take-Off (OF.) 189 189 186 186 N/A
+(20) Burst Pressure (PSI) N/A N/A N/A 640 800
+(21) Condition of Tire After
+Testing '" Unsatis- Unsatis- Satis- Satis- Satis-
+factory factory factory factory factory
+*Contained Air Pressure.
+**Not Recorded.
+2
+
+
+
+=== PDF PAGE 9 ===
+NAS 9-12049
+BFG Doc.No. ATD-2751
+CONCLUSIONS
+Prolonged exposure to conditions of low temperature or high vacuum does
+not adversely affect a pneumatic tire constructed of materials commonly
+used for the manufacture of tires for conventional aircraft.
+A tire manufactured using materials and construction techniques commonly
+utilized when minimum tire weight is a major design factor is capable of
+operating at 35 per cent deflection with a rated inflation pressure that
+is 33 per cent of its ultimate burst strength. A tire so constructed
+is also capable of withstanding the increased inflation pressure at normal
+ambient temperature that is required to maintain the rated inflation
+pressure at a contained air temperature of -550F.
+3
+
+
+
+=== PDF PAGE 10 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+RECOMMENDATIONS
+The conclusions reached are based on data obtained from very limited
+testing. This testing was conducted under conditions that were at best
+a very rough estimate of what a tire might be subjected to in actual
+service. More extensive testing should be conducted when better estimates
+of actual service conditions are available.
+One tire was subjected first to a high vacuum, then to a low temperature
+and finally to dynamic testing. A tire should be subjected to both
+high vacuum and low temperature simultaneously.
+After the 35 per cent deflection was determined to be the maximum
+that could be used successfully, only one tire was subjected to further
+testing under these conditions. Further testing should be conducted in
+order to establish some sort of reliability index. The most important
+factor for which a reliability index must be established is the ability
+of the tire and wheel assembly to maintain the proper inflation pressure
+under conditions of high vacuum and low temperature.
+4
+
+
+
+=== PDF PAGE 11 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+DISCUSSION
+The objective of this portion of the work done under NASA Contract Number
+NAS 9-12049 was to establish a set of tire design criteria which would
+provide a tire that is lighter than current designs, would meet orbiter
+environmental conditions and would meet the load conditions imposed by
+orbiter operations.
+In order to establish these criteria, an existing 49x17/2 6 PR aircraft
+tire was subjected to conditions of load and inflation that are more
+severe than those for which the tire was originally designed. The tire
+is designed to operate at a maximum load of 39,600 pounds with an
+inflation pressure of 170 PSI which results in a 32 per cent deflection.
+The minimum burst pressure is four times the rated inflation or 680 PSI.
+Quality Control checks have shown that the average burst pressure is
+723 PSI + a deviation of 43 PSI.
+Tire weight is a function of inflation pressure. The ability of a tire
+to contain the air pressure within it is dependent on the strength of
+the carcass fabric and bead wire with which the tire is constructed.
+A decrease in the inflation pressure that a tire must contain leads to
+a corresponding decrease in the amount of fabric and wire used in
+building the tire and thereby a decrease in tire weight. A decrease in
+inflation pressure can be realized if a tire is allowed to operate at
+a higher than normal per cent deflection. Tire weight can also be
+reduced if the tire is allowed to operate at an inflation pressure that
+is closer than normal to its ultimate burst strength. This value of
+burst inflation divided by operating inflation is called the burst factor
+and is normally four or greater for conventional aircraft tires.
+The dynamic tire tests were conducted using a load of 60,000 pounds with
+the inflation pressure adjusted to give 40 per cent, 37 per cent and
+35 per cent deflections. Each of the four dynamic tested tires were
+first subjected to the cold soak conditions before undergoing the first
+landing-taxi cycle. This cold soak was designed to simulate the
+environment the tire would see in space. The additional landing-taxi
+and taxi-take-off cycles were designed to simulate the ferrying operations.
+A copy of B.F.Goodrich Standard Dynamic Test 4917-NASA is in Appendix A.
+Special test wheels are normally used for dynamometer testing in order
+to obtain the required instrumentation. The initial attempts at running
+the cold soak tests were unsuccessful due to the inability of the test
+wheel O-ring to withstand the -650 F. temperature. In addition to a
+standard 0-ring, both an ethylene-propylene compounded and a silicone
+compounded 0-ring were tried unsuccessfully. After these failures, a
+standard production wheel was tried.
+5
+
+
+
+=== PDF PAGE 12 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+DISCUSSION (Cont'd)
+It was determined that there was no excessive inflation loss with the
+production wheel. However, further attempts were made using an inner
+tube with the test wheel. Satisfactory air retention was obtained with
+this configuration and tests showed that tire dynamic deflection
+characteristics were not affected. All cold soak, landing-taxi cycles
+were run with an inner tube in the tire. The inner tube was then
+removed prior to the remaining conventional taxi-take-off and landing-
+taxi cycles.
+Test Tire No. N83-1208-2 (Serial #1229AKO596) was subjected to the
+cold soak conditions and then run through a series of landing-taxi and
+taxi-take-off cycles. The tire was run at 40 per cent deflection. Upon
+completion of the testing, the tire was cut and examined and found to
+have separations of the carcass fabric in the ply turn-up area of the
+lower sidewall. These separations were quite extensive in size.
+Test Tire No. N83-1208-3 (Serial #1228AK0595) was subjected to identical
+cold soak and landing-taxi and taxi-take-off cycles. However, the
+inflation pressure in the tire was increased in order to achieve a 37
+per cent deflection condition. This tire was cut and found to have
+separations at the turn-up endings of two plies.
+Test Tire No. N83-1208-4 (Serial #1224AK0642) was also subjected to
+identical cold soak and landing-taxi and taxi-take-off cycles. The
+inflation pressure in this tire was further increased to obtain a 35
+per cent deflection condition. It must be noted that the inflation
+pressures recorded during the landing-taxi cycle, that immediately
+followed the cold soak, are lower than what they should have been to
+achieve the 35 per cent deflection. The minimum tire inflation of
+195 PSI indicates that the tire ran through this one cycle at 40 per cent
+deflection. The tire evidently developed a leak during the cold soak.
+The remainder of the taxi-take-off and landing-taxi cycles were run at
+the proper 35 per cent deflection. Analysis of the tire showed minor
+ply turn-up separations similar to those in the 37 per cent deflection
+tire.
+Test Tire No. N83-1208-5 (Serial #1159AKO268) was subjected to the cold
+soak conditions. The tire was then run to twice the number of landing-
+taxi and taxi-take-off cycles as were the previous three tires. The
+tire was run at 35 per cent deflection. The tire had undergone vacuum
+chamber testing prior to dynamic testing. The tire was statically
+burst after the completion of dynamic testing.
+Test Tire No. N83-1208-6 (Serial #1161AK0200) was subjected to vacuum
+chamber testing and statically burst. This tire was not dynamically
+tested.
+6
+
+
+
+=== PDF PAGE 13 ===
+APPENDIX A
+B.F.GOODRICH STANDARD DYNAMIC TEST 4917-NASA
+
+
+
+=== PDF PAGE 14 ===
+B. F.G OODRICH NAS 9-12049 SIZE 49x17 26 P.R.
+AIRCRAFT TIRE BFG Doc. No. ATD-2751 207 MPH
+STD. DYNAMIC I -
+TEST NUMBER 4917-NASA JTYPE -VI-I
+REFERENCE NASA RFP No. BC731-50-1-100P
+CH. . DESCRIPTION DATE BY SPEED 207 _ M.P.H.
+MAX. LOAD 60,000 LBS.
+Proposed 10/1/71 RHB RATING NFLATION_ 202, 224, 235 P.S.I
+~Revis - ed.! .DEFLECTI 40, 37,_ 35
+I .. SIZE 4 9x 17
+RIM .IN.
+, __FLGE.DIA. : 23.7-50 IN.
+- ..- -- TEMPERATURE SHOULDER 3/4 IN.
+-- i4
+-I - NEEDLE DEPTH IN ABOVE FLGE 7/8 IN.
+I2_ . ! REFERENCE FIGURE
+TEST DESCRIPTION
+Take-Off Landing Taxi Cold Box
+A B . TEST C "ICE"
+CYCLES PER TEST
+ITIRE TEMPERATURE BEFORE STARTING TEST!
+See Bel ow See Be low (USE CONTAINED AIR TEMPERATURE IF POSSIBLE) See Be low -550 F. 10-LQOPF .
+202,224,2 35 202,224,23 z ON FLAT SURFACE 202,224,235 -
+223,247,268 2 247-,268-- - 120-INCH WHEEL v--223,247,268 .. _-.291
+- -- - - P.S.I. -
+Test "ICE":
+The tire is to be initially inflated to a pressure which will result in a deflection
+of 40% once the tire has been removed from the cold box. This pressure is to be
+determined by calculation and the deflection checked prior to testing. Deflection
+tolerance to be within +3,-4% of nominal deflection. After inflating the tire in
+accordance with the above procedure, place the tire in the cold box until such time
+as the contained air temperature of the tire reaches -65oF.* while the tire is in the
+cold box, the following items are to be monitored:
+(a) Cold Box Temperature
+(b) Contained Air Temperature of Tire
+(c) Inflation Pressure of Tire
+The tire should be removed from the cold box and placed on the dynamometer within
+twenty minutes.
+A temperature of -650F. is being used in lieu of -550F. because
+of time delay experienced in transferring the tire from the
+cold box to the dynamometer.
+A-1
+PRINTED IN I.S.A.
+E3 G-0554- A
+
+
+
+=== PDF PAGE 15 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+Test "A" - Take-Off:
+With the tire loaded to 60,000 pounds, accelerate the flywheel from 0 MPH to
+207 MPH at an average rate of 5.7 Ft./Sec.2 until a roll distance of 8107
+(+20Q-0) feet has been covered in approximately 53.3 seconds. The load is to
+be applied in accordance with Figure 1.
+Test "B" - Landing:
+Land the tire against the flywheel rotating at 207 MPH and immediately increase
+the load in accordance with Figure 2. Immediately decelerate the flywheel at
+a rate of 6.0 Ft./Sec.2 until.a roll distance of 7706 (+200,-0) feet has been
+covered in approximately 50.7 seconds, at which time the tire shall be unloaded.
+Test "C" - Taxi:
+Land the tire against a stationary flywheel at 60,000 pounds load. Immediately
+accelerate the flywheel, keeping the tire fully-loaded to 5.0 MPH. Taxi the
+tire at 5.0 MPH until a roll distance of 12,000 (+200,-0) feet has been
+covered.
+Tire Temperature:
+Tire temperature prior to all Landing-Taxi cycles and Taxi-Takeoff cycles
+shall be 1100F.*100F. Tire temperature for the Landing-Taxi cycle which
+immediately follows Test "ICE" shall be -55 0 F.+0-100 F.
+A-2
+
+
+
+=== PDF PAGE 16 ===
+-
+M
+m .ZGF MGEP
+-- -- -"--.-.... . .... ... .
+'t1___
+" ' : 1.1~1: --- 1: :Ial ::"i rj' '",, : :, : I LI'w" ; Ii ' . : -:' "- ""
+"; " : '+. ::: • : : .!:: I :
+j7':
+-1i:-. 1
+J ; ;: :' ::.: : : ..+ - r.,i. . :: - e:t I.: T v : : ! "
+_ _._ __"_
+f
+.-... . ..... -. .-7. 7 F7
+i
+_. . :.:. :: .. .- . " ::i 4 :I1i ---- . ."-.
+I :: ....+ . .. ....... .. ''. . ' .. ''' I : I-i; ''. .. .i I ... it.it~ :... .
+; ..... . . ' + .. . . ....,. .:.... ... . . ..... m : t .: . .. .. .+V:..-i.
+- " : ' :.- - .
+~ i
+-_ :K ;. V f & _4
+" ,.......---- 4b - - --.
+--(-:-- ...:. ... ... +.. .+.... .-+ . ..,..:. .: -.. ... . .-i-l. , ;+. ,I + +. .: i _ = ...... .1 +.,. ... :T~l~-r = . i- +--''
+... ... .: r . . . . . :.- . . . . . .e.,.. . . +1. .. . .i: • . ' ' . . ~ . . .. . .
+;'+: - 1"-+?' + " " , + .. . . . . "~'r . . . . .. ... I:: .. ..' . . .. ri •:!:: "-::.l
+++ ":! " . .; .. . . . . !. . . . . . . ..+... .. . . , . .. . +. ... : , ' : .
+. j . .. 77 -- -- -
+...... .. ... ...: ... . . ... : :: : : : : t :. " . .. . . . . . . + : : " " I I... . .
+..-- .-.+.-. . . ... . ; . , i . . . :
+. .. . .... ..... .. ,.
+-+I:.i:. .:. ij , . . .: ,,. . . .. .-:+ :-; I : + ,. . . . I o
+7:7F
+.. . .. . .. .. . ... ... j+- l" S' -: " + . .... . .... . .. . . . . "+
+-I- ... ... . ... . .... . .. . I ' - . .. .
+.... .. ". |r _ j+ .. ... .... .I .. . ... ... ...".i .-.r .-" ... , . .... .J. .... t..: ....". .I- . . -;
+,-,I.~.:~. :~0: +, -,....., , . ... --:,- . . .. . .. . ,.
+.. t
+....
+•
+....
+-
+.
+I
+.. ....
+,,
+. i
+.
+.~ r ~l
+.
+.
+.
++i
+: i:
+.
+.
+.
+.
+. .
+. .
+.
+.
+I.
+.
+.
+. .
+. •
+..
+I I
+.
+I
+. .
+.
+.
+I
+-. . ..
+.
+.N
+. .
+. -. . _ . _. ;.
+.. +.. +.
+.
+.
+.
++.
+.
+.
+.
+r! ...
+7-r
+_ ID
+
+
+
+=== PDF PAGE 17 ===
+-- -m- " M
+"WE DMEN
+NO. 34CA-2C DIETZGEN -- -" -LDE J
+2!-,
+: !:: "7: 44iEW . ... . . .. . . . - - : _ .:.,!. ., . -.
+4. .. .... .... .
+... . . .• : :. .
+4tt
+--- . , . . - .-
+. ........
+4-
+. .... .. 4:1'2 ...... ... .. .
+i J:1 ........... : " "
+t iIOU _____~~1- Li ll:Z;: ;: :O: W!i -
+.... .. . . . ..
+.. .. . - " i.; !i! i i:: :
+' : I
+74" '::i:: .. 7 ..... 7 : - 7 - e-1 " 1 I i ' -- !- - - . -- .. ..... -'.-. . . .. T TT...-- r
+a . . "- ...... .....! . t: .:: iIi~ 4 :
+4- -.....-..
+,1 .. ;r . l ~ : . : :t 1 . . : t. . . -: -.:_:- : H > 4 : .ii .: " ~ '" :t' ~ !'- '
+____ ____ -,
+.t::l;L f1 -
+........ .... . .. ......
+~ff 7-- ;; : . 1
+___L
+41 1::: 1 -of
+i ( :: ;:: r . t
+-4___._.__._.___._ ........ ...... ., ___ L I - E - - -- - :
+.-- 0
+
+
+
+=== PDF PAGE 18 ===
+-
+~TZGL. -NE mEN
+..... ......
+---------
+;-1--I ______ __ i-l I ____ _I_ iBII - -.--- -
+-
+.-.-..-....
+,_-_. - .. -- . -...- . - - ::--- ....- 1• ' "-
+: T .. ' T-, . - - .
+. ... . ... .. : . : :: . .
+: i;. -.. -;., 7.1...~i
+,.. . .. .... . :, I.
+.... .. ... ... " : .-. ~ .. ..!1.:7. : . .: a i . . ..... : : .. ' . ' ...... .: "". .".".... I ! :i ;i': 7 . 7 .. .i . ... : p ,
+:
+71..... . 7
+. . : :
+... a. .. :: ::::'7'7 : ... .. ...
+'- :::: :: :: -'+ -: .. . ..... ' ' :. - "' T .. 1I. T. " " ' ::" Y- I '1 - i : - N 1 " . . " 4 1 . . ; . . - . . i1 . . .. . - - : . , - ! .
+.... ... .. A.::
+.. . :- -- i-: . -. -- ,
+.1.. t :I. . . 1f - 7 . V . 7 . .. _ I , . -: -1-.
+________ -- -- - -: - I..'--. ______._._. . .. ----.- :T,- ._:-
+. ,,r -.~.. .. .. 4 . . -..... . ' : t ':
+_ _ _ _::1 :: ii : ;1:: ___ _ _ _: ___ _ _ _- ___ _ _ _ _ _ _ _ 4'' ;i1 _ _ :_. [.'' _ ~ jI :- *0:
+._. ..: ,. -.- -.
+T.fW N tCr
+.... , . : _ " _ __ .. - . .. . : :' :_ :.ALL-. -o _
+
+
+
+=== PDF PAGE 19 ===
+APPENDIX B
+CONTAINED AIR TEMPERATURE AND INFLATION PRESSURE DATA
+
+
+
+=== PDF PAGE 20 ===
+A:m.A-2TZGl., !HI, im m i NE OWEN M
+IE
+: -~u-?~~,I,L I E
+~ ~ __
+... . .. . . I
+:
+_ .. . .. .. . .. . _ _ : -7_ 77 .. 7 . .. .
+1---~ ~--- --
+.-:-. '_ :::: :: ::: :: . : . .I : - . . . : : ::: : . : . .... . . . . ' .. . .. . I . : : .. . . .. . L _ . . __ . .. _ .. _ . .. . .... .7. + . . .t_
+77f 7'I : I:T-T r - 7 7: :ii1-i - ---- ..
+I: L ~: ~: ~,:~ ~~~--:~- i'::'' --:-: i:: : f : : . ]_L " : L LL - j _ - i . . L. -: ! ._ .: L : * _ ' . _ : :i -- ._ -_ _ __ ;_.]! 1 .... . I2 . I :
+". .1 .' . .. .... ... ..... . . ..... .... . . . .". . . . . .. " " l...: " . . . . .
+.......... .. . ... .... .,..... .. ,.. . . . .... I . ... I .- .:
+I
+. ..... - I0 . .. • . il
+I AI I-~
+_ _, _
+. ."-i-.. . . !.-:--..i-- q . :.].- .-L .-LJ. .-. . -: I -: . -:. .. ...1 .---. ..- Z -- -- !.":8. .. -:.. :'l- .I .:-:.- . ::-.q'',:- 1 ... -: -: : -:t " :.;- " :- , "
+.. ... . ...,. . . . .,... t i. - , -, ,- . ,, o • .. ... .] -L - - .. ..
+.: .. .... " .I. . ..I :: .i. : .:. ..... :' . : :: . . : -- .: . . .. :;. . .. '; .. i: ' ' " " .: :. .. i ' - -t t' : . ; . . .. . :: . • : ;.
+I. :-:- -.: :.-. :: .:.. :._ .-..: ..-..4I- .'. ". _.z_ ._t- : .:,: :i :-' 4 --" • _I -": : ; :- " - : "- . . . ... . . . -i :- - -._.....-...... . . .i . . - - --- - . _-q: .-:v-. -:
+~ ~ ~~
+... .. .. .... .... 4. .
+7- ---- - t.t7! - -:i
+.. .. .... I _ . . . ::- _ . .. .. _ . - . . :. -.:.:: .!.. .. :_, . . . , . I . . . - .. _ . , - . . I . •.. •" . . . .. . . . , ..
+......4. ... ....
+S . . i ' .. ... . . . ... . q:. - "
+
+
+
+=== PDF PAGE 21 ===
+NO 2AtP-2Z a r 'M' MW NEm rt .
+20 ,1 7:.
+-71 7---
+~. ~
+... ....... ... _. ''iiritii -ti_
+--- 7,- t-7-T7..7 7
+:.:: - t :. ... ..... .... ........ ....i.- L- I . . -
+L I
+. ... .-...... . . . . .. . . . .. ..
+.11 i!_
+4.-ii~ rt
+.... . .....
+1 -14 ___
+a w1
+-1 T 7 , : .. : i i:.:: w .. . . . . . . . . . ..
+:: iV 2.1 ---- vv-- r.+ ti.1
+4;-;
+-4T
+K~ V ...... .......i.
+7- .1 . V~~~~~ . . _____-
+I
+I'
+4-_
+-.. ..... .. .
+.. ... .... . . .... 1: ;
+7:I::_ : : ....... ... ~
+:ffr ---- q, :i: ~ ;: ;: :
+... . ... ..
+7--- -77 - 4% ... ... .......
+44 1-t 1 :7 7 I
+. . . . ._. . r :
+N' T INL T 5
+1-17
+
+
+
+=== PDF PAGE 22 ===
+-- -MADE..r
+NCP"A-22dWZ~.C~-2ZtrEZGP~" -r"A'W NE OME U N . A C
+20 Y 2h P .'*-
+."" . . - ....
+. .... . . . . . .. .
+t"..:
+77 - -4 71. 7-7f
+-tk ..
+: :::: :. :;:
+-
+: ... .. . .. .. ... .. .. .. . .. . ..- I - - 2 - , . .
+S
+t
+...
+4
+...
+........t.. . ..... .... ..
+.4tZ4H-
+. .. . . .... . .. .. .. ... ... - .... .. . . - - ... : : . .'
++: ,. :: ! ;7 .. :
+: : :: : : . : . - I - . - . - ~ .L - . . -- : . 'i. .. :. . : . : !~ : -- . r :cr ::I . - . : :I : :t . _... . .. . .. . . . . . . . _. , _. E . _ .C ON .T 7 . ..:.j:,. .+ . . . . . . .
++::
+"~: ::- '~ :-- -~ -~- ~ ::- ~ ~: ~ ~~... .-. .. ...... ..... ..... ........ . . :.. .......
+'I+
+:t ! i :. f . ~'~~t -t--.t~ " t: 7.. :: . ;: -i: , i : -i --- -.I :.
+7 I.~. ~ :.-::___ I _- i:- :-~:~~_- 4 '~~ 7.. ! ! : . . if . I ' , .: : :: _: : :: t _ _ _ . _ _ .: . : . .: .. .; .. :. . : . . . .: i.. _ _ _ _ - . . . . . .
+:::: .-- i-4,
+w
+..:. . . ..
+::::...:
+.-.... .. . .. . .. . .. ................... ......... .. ............. ...... .
+___ :" :.. -: 7 . ..- I ,
+._ . ..... . . - . , . ....... . 7
+_ :_ ... _ _:::::: . .
+
+
+
+=== PDF PAGE 23 ===
+N ! A- i L-Oil Illi Ml i li i E I
+21 - 20 i' ;': '
+. ........ : . ....... .
+... t.. . t.::. . .+.i- : - - . _:+': : . : : t:i: :: : . .' " :. . . . . . . . . . . .. . ' ":: .f:-: : ." i} ... • -: " : " +" ' ,
+S.. '-. .... " I
+- - j~ . _____
+-. ~ ........ : .1.7 I: . ..
+--- t. 1 ~ 4,j
+--
+..: .. ..
+.
+,,ii . . i .J 2 . . . .:. . 5.. . .. . . . . . . .. .. . . . . . .. . . . . .. . : . :; . " . , . . .. . .. I .. . . . . . . . . : . . . . : .. . : . . . .. : . . . : . + : . . . . , . . . . . . . , . . . ..t . .. ... . ... -... .-. ....:.- , i , ',' . . . . . , . . -. . . . .. . . . . .... . : ... . :. .. . . . :: . : . : . : . + -+: . . . :
+.. . .. 4. .. . .. . . .. z . i z,_ . ... . ...............
+4O
+.. .. . I. ;. ". ..: .'. :. -". + : . .+. i . :. . . . . . .. ..L __;:~ Iau : . . .-. . . . . . _ . 1 :: ,:. . .... . .... ..
+.... ' f' + . a . " +: I : I ]l l- i " : . .. : J . : . 7 . .
+..
+.
+..
+. : . .. . ... : . ':. . : . : . ; . !:,: : : . . . _ : . - . , : . " . -.- . : . +- - - , .. I : _ : _ : _. : : • .. : : , .T + ; | + - : : - . + . - . . .-.''- -. . . - . '-. . . : . . . : + "
+... .. ....... , 7 , -7 . 1 . .. ::::. ": : : t : 7 . . . . 7 .. .- . . .. . . . . . . ::71:~
+..... .. .. ~ ~~ ~ ~ ~ ~ :!: ; ; .;.:. :+:' " "'': :- : 'I :
+223 ~ -' +, ,=, + . ... . ... .: .. . . . . . .. . . w. .'. : . . .-. . . . .. . . . .• . . . . ' "" I . ..
+1 4..7
+;::
+. ...
+i
+. ... .
+:7 .
+.
+'
+~..1 .. .~.
+3l
+.
+t f -,.-,:+---_ _ :- ----., .--;m
+" '
+:. _i.
+:
+. - :.
+'
+.
+7
+-
+-
+:: .
+'..
+.
+.
++
+.
+.:. _.. " "
+- :.
+.
+T
+; . . :.i :: ...: - i :. : . . - " + ; "• i,
+i
++.
+.'. .. ...... ..-.9i ... +. ..- .- ' ' | •+ " • : : " ' :. . .. - -+-: + : - -_. .
++..+.. . .,., .... ............ ........ ......., .. . .. .. ..
+... ... .. . . . . .::i: " ": " + I... . ...- " " " " :
+.. ... ...: . | 3 " +' .... . .... 7 --- -:- - '7 "'7 :'-' 7-:-: + . . . .. . . _ . ... . ..' + : . .: . . " "
+...::. '.: --+ : .: -.--- -;.+ .::.:i .'..i .:. : .,..: + : [ : • . : :- ::. .. .+:: . .I .. . ; .
+t. ..... . .. ..
+.. -:- " " " : ':I ' : :": " :. . .. .. . . .:+ ti
+t :'
+
+
+
+=== PDF PAGE 24 ===
+=lTZ= 3rAP______NoM -40A-
+2U A213 PCPI;r
+............ . . .. ....
+-; t'- " - I -- : --- - -' ....... .. -:T
+.. ...... .. ........... .
+l
+T.... ...... . -
+.:. .: . .
+II Ii~i ~ ' I-
+-7 . ......:..
+* 2..
+. .... . .
+..
+.. .. I -= j . ........
+I
+,-. , .
+H:
+--
+~
+117
+777 7-77 .. ..
+. .. . .........j. . .
+• . .. . " .. . . ......
+. . " . . " . . -- ---- I - '" 77 -_ 77 ..'' : . -
+-
+_ 4 1-- _ --1 --u-, -
+.I ' - I : : : _ _ _ _ _ _ '_:_ .. . . _ _i:
+-a : :
+-71
+-- -777
+r----
+
+
+
+=== PDF PAGE 25 ===
+i- " ":' ,
+NFLATION VS. TIME
+- tTIRE W83-1208-2
+TAXI-TAKEOFF
+- " 4O DFLECTI ON
+bi
+o.
+-210-
+S9 1 15 1 8 2 2
+TIME IN MINUTES
+
+
+
+=== PDF PAGE 26 ===
+1 01A- 2 2 0 0 rW Y Z GE 2' P _ M A r .' N - NE 1 E7 IN m U W . S E N r CM
+, ! , . , Ii I, ! Jill
+.... - . .: .. : . 7.. " . . " . . :: :i, :
+. ... . . . .4..I .. .-- .. ........ 77 . 7. 4.... ... ........... . t~:..t. .. t .... . .. .. .
+i,
+.. ..... .. . .... ...... . . '
+.... . 1.. -;-4 .t.:...;. ...! ;'-; -;:tr, :-t ; .. :j: :.:::,: ::!::::. , . : : . ." .:. . : . . .... ! . t :: : ,, . . . .:. ...I . .: .. . ... :.''" ; ; . . :'" .. : . . ; . " :" :
+..
+. . . . . . .... ....... . . .
+..
+4~ I ! Ii:±: :!:.
+:. e:l +rtr. i::
+I,,.
+1 II
+... . . ...... . ._. _._t ._ 7tV_... .... .... .. ..-
+.... I7V . 7. . 7 . , 4 : 1 j j 4 -l . . L ~' . .... -
+- ~r: -- i' - : ; t : -- -' ' -i -: . . titH . l . t . .. . - . Hi . . :.:. . . .7- .. . " ". , .. . . . . 6t . r . . . . . . . ' .. .. . - .... . 4 s. I .: t . .
+- 1 i'~ i'2 W 17-1 .... ... l
+Illy- . . . - -7-...t --- .-... . . . ... .... .:
+... .. :;'-....: : ::: :: "::777..T..7,
+-7. 7 . . 7- 7
+iii- l. i-i ..i -F..%. ,'. . .. ..,, i+ :' - : : t : :-h ! :: : i . T1. : :.. .: : .. ;:......... .....
+n .j1 . '.. '1 .. :r. . 2.4. ..7 7.7r--.71.3_ P -t--
+::.; ::--.. ;L :dA:I .:. :4_ !::: i:-::.7 ....t! t. .;i.;. . .; ... " ..- . : .: : .! : '. .: : : : : L ' i . ] i ii i . :~!- i! _ t : : : : :. ,: . . . :: : : : : : :: :: ::.: . ::/ !i i : : "
+-777- .- ... ..
+: :i:: :i -:::-.t.-!:- .l, - r i ,li: .i.i - . .: : .. ! : i - .. : :: :::i : - ! : i . i] , :!:- . o!' :
+::::~:~:~::~: ::::::::::::::;::::::]::::: :: !-. i. !...:!. -: -: -: :: :~- :::-:: :, :L ~:-- . ~ I: - ._.._.. :...:..i -:.:.: ,:..:. .,. ' : ...
+----- -2
+S- ,I. - - :- l -r ti- ;1'' : :I.r. ... ... . .. . , ... -- i ] ' ' : :
+4- .. , . , .
+
+
+
+=== PDF PAGE 27 ===
+%- A-2MTZG0EVWAr- 041 =I' WEN [I
+Pl-.F F -I; - . A
+...... .. :... ... ...
+I
+._ . -"::: - t
+_
+..;...;. . ....... ; .. .... . ;_ 7.
+1-
+_ . ... ... . .. _
+.'. :. ...
+z:.
+1
+:. II . .... ........
+: I --- lt '1 - 'ii --- 1 ~3.- O84
+I.
+io :T RE 108-;3 ,
+. . .. 7...- : ....
+1.
+4
+; -d, *.-~*- '*'::- : "_::.:::'. ::-: " .; :: . ., ... .. .
+:12 I
+::-.t .... ] ... . . . .. 44 : i: . ::.:.: ; !- " :: -, : •: .-, . 4 . . .. :: . "" . :: ! . .. . ; . : . .: .:: ,I . :
+__ 4 ._. .... . " : .. . . ' . . 4- ___i " ';::: : ' _ - .: _ . , _ .. . ,..'. - . . . : - . . . !. . - .fi - :. -- . : - " i-:
+'Ii.
+_ _:: .. .... .::i _ .. ... ... ' . - . : " 3
+.,.. .....
+21.: :4:'
+_____ 7;: ----------- - 4r2 >..> _ _
+-.4. ... .4. .... . -:I a - 1J LA
+. .: i:t:' :f _ I :f 1_.tl ji I I i::t :::i::' -J: 1. -7. ~ :-::
+-77V
+A- 1 ~ --- 1 ---- 1941 4 . U 2
+I ___. L
+1
+---- _ -- _ - _ -- _ ---- ___ I :: t - :: i:: - -1 :: - :- - N
+L
+
+
+
+=== PDF PAGE 28 ===
+oA Ml. .oI,I0 I II,0,! I IN lI
+MAW ,N ,1. Si. A
+l ,-.-~ ~ [ : :'i • ._ii .L... ...-> . ..I....
+~~~~~ ~~~~~
+____ .._ ._ _.._. .. ... -.--____ _ -- __ .~__ . . ..... .... _ _.. _. .._ . _. _. _ ._. __. _ .. -- ....- --.. . .. .. .
+* --.4 ,i-..
+. . . . .. .... . ... .. 1 " .j....... .. .
+. . ... .. ........
+..... . ..., ..- " "...
+" 4*-.* ... -: .. : ." . .. .. . . .. ....... ..,
+- - F:T ~ T i _ _ _ _ _
+..; i: . ,. . . .. . .. . .: : . .. : .. + :; I- j .. ,. . c . . . . . . . . : . 1, I - :_ . :. . . .I. , o 7 . .. . . . . . . .. . .. . . 7 7 . . : . ' It.:
+1- r-----.-.
+HrI 22:j
+•~~~~:. :..i.:!U:. .l' - ; ,. - -.k- .' !.::.: :. _ : ,. _ !¢ _ .i. '' _ .: *K ", 1 ~ .: - . : : rT . : : T : IT; : 1 ! - ;: ' 1. : . I : j ' . / _ " _ . .: ' * .'.,..':.. . i717 : , 7 ~- / 7 :. . IfL.~.- : : t > 1 1 .....: - ~ .- t ~ : :, : - : - : ft.f" .- - . - : :S. I1 :: . 7 K" : ": .l
+1:
+.. ... . ~1 : . - -. lisp ii V.
+o: _.~.. ..:;, ...... ...71, . :77:77 - -7.
+t .. ...... .I
+~ 7KTjii : 171
+71 7'-
+-...: : . .,.. .. .;. .. .. i. . .:. :. .:.: :: . - :.:. .: .:. :. : : .. r : : ' : : :. : : : : .:.. :.. : : : - . : . . . .. .
+.. ,. ...... .. ~ . t~ . :~ . .. T7. . i . , - . -. . .. .. . . . . -7 . 7[ . . . .~ .. ~ ~ . . . . . . .77- .. : ....... • . . - .. q . . .. . . . .. . . . . - . 7 . 't ' . ' ..' '' ' .. . . .. .
+- -7
+.....--- - ..... . .... 1
+S-.. =.77. 7.77.: ": : ..:.7 -..
+,7 .........
+..... :. -: :::: :-"-- :: ' . ..: : i..T... . ...... ..i .. ........ ..... . . . ..,75.. .. , : . -.. . . [..... ... .. .... . ...
+___~~~~i TIM I 4MNTE _ _
+... . .. .. .. . .. .T. .. . .. . .. ... .. .. ... T IME I MI U E -i . ... , "" ' "[ ....: i'
+L~~~7
+' :! : : .... ::: .: " :: .::. ' : _ . . 7-7 .._ . . . . .•1 .7 , '- _ -! .
+I~ - ~ -- .. ..t..' ... ..... !... :; ;---- !. .-..... . ". . .! . - 'i, -!. ... .. .I -:-. :: .. ..r.: : -: "- ;.-':-:::.
+
+
+
+=== PDF PAGE 29 ===
+334~C O DIE-rm P.. i/ . F .U GE~ 1
+S... .. .... T .. . .. . I -.
+:..:..77
+.... . . ... .... .~. ~~~ . ...... ....
+~~ ~ ~ ~ ~ ~ ~ ~ ~ ~~~~~~ ~~~ *~~ . . .. 7._7..-..-.--.
+'.~. . . .-.' . . S . .. ,. -- ..• ... ... ..- . .. . . . ....-. ... . . . . .. . . . .. . .. . . . . . .. . . . " . . . . .... " ....
+I-- I---
+..;.....;..: t1::
+i-*.
+..... : . . . "- : . :2 " '... j ' w .:. ..: : : .: !.. ..... , I_. . ...... . .-. 777 .. ... . ." t . .. . V .
+.."-'* '.. .. . . . . . . .. . ..... 1 .-, , .... . .. . .. .. . .. . . . .. .. . . . . ... . .. . .. . . . . ... . , . . . ... ,
+.ji ..L. L., . - "i : .:.-. .. : _ , .. _: . . -_ ,_. .. .. ....
+r -t f +H
+It J
+4... 4 4;. 7..: .
+q:1
+--- ..... ... 1 -t:. .. ., 4 .. .... . : ...... .4. .. . ... I ... .... ... ! . ..
+n J'h I, .... .
+:. .7. . :. . .. : ... . ... i: - :I: i ..i. : . . . . .. . ... . .I: i ::' ! i '
+I
+.,,...... ... ....... .
+..(. .-C- . . .. ~ . .. . ~ ..~ . . ~ . ~ ~ ~ ~ _ _ ~ I ~ ~ ~ ~~~~~~.~ i .I " .. L.... . .... .'.. .L. .t2.'. .... . ",,.,. .. .:.". . "; ,'.. ..... - ::;
+. : . .. . :. . ~ . . . . : .. : , i . ._ . , - . . t -- .. '. . . ..: . ... . : . .~: . . . I:. . ! . t . T IM I N I' i N:l :iT i iS . . . .• , i . . . .. . .. . . ..
+... - .. .. .4--:- - :'-Z- :l ::!::::
+,
+~ ~ ~ ~~.
+... . •:111 ' •I . J2 ' ' 1 " 2 1 1 " ' ' -9 Al . ",18 .
+TIMIN MIUTS
+7--
+t7.
+-_7
+
+
+
+=== PDF PAGE 30 ===
+m,
+NDE. 340A-2O DIETZGEN GRAPH :- .O U ' -
+20 X 2F: PFR
+........... ...... ..... .... .
+- M. :::... ... . ,
+•:I: : !: : - T. ..- . .::" :.. . . ....... i . . . . .... .
+•77-77-.
+-_ : :-I A ... .1 ..
+i: :.4
+: .... t< F L 7.
+-- ... 7 -- ,
+7 ...... ... N M, " ... . .-
+-i T
+4 4I
+i" '? ...... ....
+::. ...... ...
+-t " fi: : : : : ::_ :-: ::: iti-::
+........ 7F7...
+2L-0-i: n -:~:: - ... ... . . :: : . i ..
+t- "-. - :"~ t ~ "~:".2. 9. ... 7;.- ..
+i--
+-7 L -L 1'' - -. .. -r - :nT. .
+7 7I
+7I . -- ... - -. 4ri 77-! ...-.
+-
+__, _ _-
+....-... ..... .. •.. .-..3.. .7......% J -.TF. ..C..'.1 .0 ._-_"
+T11
+T~ . ~ . ~ . - .. . .. --- 4j . •U T S tl. .
+..
++L -1 -- 7- 77 1.
+t ...................
+"I-__ -_._ ::.:L :: -I - -- . "
+
+
+
+=== PDF PAGE 31 ===
+NO. 340A-20 DIETZSEPN ;RA'il 'A"R
+20 X 2'*, ;-i'-
+: i. -7: T7,
+7
+ri:7-: 7
+... . .
+- i- i- . i .. ... . .. ~ . j . i : ~
+"T 7,-'T .7l : :. i r: i
+44244; w- # 4 ...... ... :
+7pi. V( W" ' '
+lz i L: .. . .. . . .... :':: "tL~-, j
+..........
+.... ...... ..
+.... 77 '..
+COrnY:,
+. . . . i ...... .. ... I ::I:...
+f tI- t ..............--
+........ ..
+... .. ..
+i 7
+...... .. .
+_I. ::i .a _'7-7 ..".F 7-
+.......... ... , 'Tt 5 -2
+UKeu-
+~. r i
+l7-
+L:
+
+
+
+=== PDF PAGE 32 ===
+NO. 34D0A-20 DIETZOEN tA;EN C-
+WI;
+2j1- Y1?1
+Mn1*
+Ir -
+S..
+..... . ... .
+-..-.- --- . . - -
+;;:~ ~~ ~ ~.. :-. .~. ...... ~ ~ ~ .. ~,. "., ~ ~,~- ":;:-. :.: ~ ~~7 .F: .. ...... .... ... .-. . .:
+44=4. . ... . . . .. 1 K . .4-... . .. .. ....
+~~~ ~~ ..-- '. .. .. .. : . ..... .
+:: :~ :..: ,. ..:r+ ., : . . - .. . . :. -. . : ' . .[ .. • . 1 : : . . ... : : . " . . . . : . : " . : . : : ' : : ; : ;
+t217t
+:; . ... . .... - -t-i ;:, t . ..". .... .-. .. . . . . . . . . . . . - ; :: ' : , : : I: : : . . : : ..:. . .I . . . . .. . . . . . . .
+7
+___7
+4 ''. ......... : :
+_ _ _ _# _:--
+. . .. :... . .
+T._ ____9 __ _ __ ,
+7 7''' :7: . 7 :: 7: -
+. .. I ..I .... i-
+" ,. ....: . __ ..... ::-:: :: :: :J" " " " " ': " .... .... . :".
+I-a
+1Jir.1F.J1 Is- .. 'F'
+__i 3: 7 7 :
+'' ;.- .,.; . '..- .-i -. . .. ... . .. .. ] . . . . . . . ... ..I .. .. . .. i ...... : :: : "" . I. . .. . . . .. .. . . ... ...
+... .. i . . . ......... ! .. ... . ".
+',.-:: .. . : : . '.::: .! .... .. . .: :: !i : :. :. . .:- :::: i: : . :: :: !.::: :' : i'• : !: .I ::.!:
+7- _7 - ____ _ ____ 7. _7- -7 __ ___ __ ~ IIil 4
+_v
+7 ..r. ;.. :
+:. ....... . . . . .. . .i .. . .. .. .. . =: ."-1 . 1.; .[ ... - ... l~ . j . ::: . .. . .+. .. ... ... ... .. . .. . .. . .. . ..... . .. m . .!. ..
+L t2--t
+i: : ]. i! :. : .' . : .:. :.I. : -.. . ! ..:. : , - -: i i . : : : : : : - : : - - . I . .... . . . . . .. . .. .. -L:L'L ~ . .LF . 1L . : .-.! :. RI " M 1:: : :: " : . . . . : . . : . :: . . ... . . ..:' : . .... .':l : : :.. ..;..
+41..
+
+
+
+=== PDF PAGE 33 ===
+20 I I , In.AT - Z AOGEN , M zGE.J:
+-- . .... ... .. ... .
+.... . .. . .. 1
+I I I-
+- ill
+4
+2~
+__ _. . .... ... .... __ _ L. .".:
+I
+- -- _ _ -__,_._T k-- _ ---- ~7': - : ~
+.. .... ' - -- . ". . ....
+......... . ..... ..... ............ .... .
+I-T
+,7, ::,: .::' :
+I,~
+" .. .. '. .:
+•' : ,-., " :L: .-...:'.. ,.:
+Ii
+~ *
+-J- t -
+. . . . : : ':, . :" . .. , 12-,I.*2 .- .... . 4
+-. . . .. ..... . ... .... ... . ..... .. i ...-::- . -.-.: ... .
+, 7 p Pi t 4::..f " .....
+-7- -7. -7
+1
+TNIi INTS
+..:.: ,. i,: . ,1 !..... ..... :q ff:': .....
+_ _
+_-.. S. I... .. I _..... ...
+II
+C~~i~tf-~15: . "i I ~-t ~ 1.8 - Ii: I mr l rb27 .:1:::i -
+;tl . 7
+::Ii:::: :i"' "'AN-N- B U... :ig
+..... . . .. . .
+..7::1. ... ...... : .... .:: :,i'T." .. ....... . .
+........ .... -.
+.. .. . ... .' I . -. . . ". . : : .. . . . : : : : ..
+a
+
+
+
+=== PDF PAGE 34 ===
+=illm m iml m m I.
+NO. 340A-20 DIETZOEN U[APH PAPER ADEL
+27; y 2'L i,-p;
+!: "(r : : ;! : fl , : ': : r ; ': :- • - ; ' : " - . . . ..... . . ... . .... . . . . .". . . . . . . . ...... .-. .-. ... £- . ... .... 7 -i:': ::-:: . - . .. . .... . . . . . ........ . _ . - I . : -- - .. . .L:. ..:. ..... . -4 . - . -. . . ~ ... . . .
+7-
+. .. .......
+..... . . . .... .......
+................................ ............ : w>; 47 J . '1' . . I 1. i b ............ ...... . ...
+-i : :: H !~- 1-:: - I === :== ==== = == == = == i:: !:: :: ;: : ::: : :: : :i: : . ): : : . : : :I:: : : ,:: .:. -, : :i- : T-.
+_::
+..... .... . .. . , :+, : ' --- : "L; :- :rf;:. . .T.t ,...~! .. ....'.. ....'.-. 1 . 1 : ::. : ::.. :; . ..... .4 T. S'o- . ] - :-; ; .';:, ". .. . .
+.... .....-. .. ... . . 71 ... . :
+... .... o - -,... ..... .... . ..
+.... . 1 (.L .. )...ci. f- r . .. . . . . ... : : : :. / .. .: . .. . ... . . : :: i .4- ... .. . . ..: : : :
+34
+. I
+_-_i__-:1a -
+___
+:~~ I i ... ____:_: _. 7 -1-
+4 ii ti S ....... . .... ....
+-: j :. ... ...:: .. :.
+'. ". ~ ' . - ... ... . . . . .. ._ .l
+- 7 :.:. -'--i -- 7 -7 "- ,7 7 7L::
+. ._.._ - - • :: ... . . ...-
+_-_
+... -iT 4i__7__, + - 7t7 7 ----l1-i1i1---- 771
+-
+" " ...: ..: ...'..1 : L :. . .. ......... .. - . :- . . ,: : '" . : . . . . :. . . .. . .. . T . '. . .- . . . .. . .: " . . . . .. . . : L - :, ' . T :. : . ! . .. - . . o ..- : -. . t - . : I ; ' [ : : : - .- . - ' : .-. : i . . . , . - ... ... " - .. - .. . ..... - . - ... : . . . . .. .. ; . .. . .. " ) 1 .- . - .. . . . . :. :: ' . ' - : - .tt- ! . - i ! : .' : - . I " : 3 : J .. " . .T . A, . 7 . . .. : . : . : . : . . : : . . - - .. . - . . . ; . . - - .. . .
+; ... I ....... .: ..... .... .... . . ... .. .. :| :i ... .............. .. -... ''") . . .
+.....: : . . . .:. . ..t. . . ,. ,I . .. .. .. .... . .. . . . . . . .. . . . . . . .. ... , . , .. . . .. . |. . .. .... . . . : . . . . . .. ........ . . . . .. . . ..... .. .. , . . ........... +.... : . ... , ..............-......-.-
+...:, .... ..(. . .. ... .... ,...........I-" .+ .. . . . ........... .-.-. . .. .. . . . ..... .... . ..
+.,. . . .)~ .~ .. . ... . . .... .. I . ....I - . ..i .. . .... .. . ... .
+::--::: .It=- -:-. :i ..... .. :. j .. ,- ... ... . .....
+.j• .. .. - . .. ...... .. . .7 -7
+
+
+
+=== PDF PAGE 35 ===
+IM I METZ ENE GF.NM
+2- . -:: -.... :.
+-.. . . . .. ... ... .
+.... .... . ..... ... ... Iw.
+. i 7
+XE t -LA &i Kt- CAX i'-.:
+V
+S. .... ... ....
+.... .- '' " ': ... -- r__ . . . -. . . . ___ . _ . . ~. V - .2 -- - * T.. . . . - ... . I.- ... ... lj i . .". "
+• ":L: ''"' " " :':: ':::'t:::I .. i.2. : :' " - : j .
+S.- .... ........ .. ..
+--- - ---- --- ----- - -- ---
+'. .. ' ... : : - i " : . " :: - - :..: :-: : " :: - - :: :: " - : :
+3. 15_T 7
+• " ' i" '"~ ~.... . .. : " "- : ' :~ : ~ ; :r: ' : .. ] " " "- '; :::: 1- " "
+... .. ........
+, .. -= I t _: i . .. _.;f . ._. . . _ . . . .- . . . .. :. .. . . . . ;. : . . . . . . . . . . . . . . I. . . . . . . . ..
+. . .. . ~ ~ ..~ ~.... . . . .. . . ' ; - - -L - - - - L - - - -
+m-- ------
+. . q . . . . .. .. . . -:... . .. . . . . i.. . . ... ' ... . w::t:: . .
+.. ... 1.. 7 . . .
+,.. !.: , t . . . . .. .. . . ,q . i
+
+
+
+=== PDF PAGE 36 ===
+~ua
+- 2 F N 4I. , A.
+A TZ - -N-E EN --
+Ir~t-~1
+tT:t
+. ...... ..T. I .t,4 .. .1.-i 4.
+-- i _ .- - - ,.: .... ..
+.........
+i....
+- 4. i . ...... ..
+.77- Li -- -D-- ----- -
+4 :::I:::: : _ _ t: . ,_.....3
+::_: ::: . : : . !----. .._ :~ ._! . ,_I . . .. ...
+-t;;. ... . ..i
+S_...._._.. 7 . . ... ........
+...... ..... ._. .. .. .: ,. . t
+:-:__:
+... . : ;: I; .
+.,1" - ji, - -r-.-
+. . . i-. - . . • , ' /
+;::i:: i: : iifi :" !: :...; .,t : •--. . -. . ....
+._,I..._
+I _
+t : "t +,i i:::: '::
+.. j ---..'... .-, •..... : ..- ----- ]: - . .
+•:: ........
+,"" 3::I: :i"
+bl.; ::: : .;: ....
+~~~~ ~
+-i .:i.: I :" i.-:"1; .. . . . i . .': A"7:.-:. .. il ' . i ; .. • ,
+: : -::: : i .. i.: :: :, . : . -i ..- '. ,:-! : ' :I " i ' "I ! : :t. ....
+. ;.- "- "~ - - : : : i;:' " " " : .: .; .
+CJ7
+
+
+
+=== PDF PAGE 37 ===
+E-TZC M
+L
+-
+J
+o .
+Z
+M
+E FlMAD
+ENL
+F ' U
+cILN
+A:
+__ _!__ __ _ :' i__,__~ -___ .,,_I -. , I n l -.,J I -
+. ... ....
+. .. . . . . .. .. : :
+" , . . . ,.- .,. . . . : " - :L: . . .. . . 2 . . .. , . - . : .. l. . ' .: ' '. 0
+II
+::: : : : : ; ::::: : .. :: .:: :::: ; 1. ' :":: i ::: "i- ' : " " : " :. . . .I. . . . . . . . . . . . . . . . .ii : . :t: : ' . !; :
+... ,. , .H - .. . . . .. . .. .... . .. . . ... . - .... ... ._ TI-•.. .. -2. 4- -9 - - -
+OD 7 .. . .. _ _ ... 4z .... . ... ._1 t_ lf-_ I- _ _ _ ''' _...... .
+- I :: - :: .:I: i • . . :::. : :-.:: == " • "t i
+- -t -I ri-l _:~i------------ 7
+I
+I- .... ... .. . . . . . . ... _ _ _ _ _, _ _ _ ... . . . . ._. ._. _. _ _ . . .. . .. .... .... .. ... ... ...
+.... . . .. ... .. ..... ... ... ::
+.... : - . . . - -
+..... ~~~i.' ! ... . .. .. . . . . .: - - : :: . . : ': : .: :... ..... : . ::: _.: . . .. , ... . I .! '-i: :
+. .. . ........
+:, w
+7 . , ' ..
+... .. "'.
+.......... .i .." : .I. . '..: .: : :r . .... . " : : : .!..".l. " : : . : I : : : . ' :, " ," " !L : . ..: _ -.. - . , "
+, C . . . w. 1 . . , " ' . . . . ::.:-. . .: . .. ... wl , " : : :
+"-• : " "". ".a " ' "
+p0 ;
+::- : ..... ..
+
+
+
+=== PDF PAGE 38 ===
+-
+NO. 34lA-20 DIENZOo NE ,: EN
+20 X 20 Prip I'.: MADE IN U . =
+r.
+• .:.,'. .. .".. - ....-. -.-.. .'.:..t. . ;.. . .. ..f.*. . ":.i{ . .. .... :-j:- . i"F. :' " " "- . .7._ . . .7.7.7 ;.. = ..I_ _._ ....'............. ... . .. .
+_.._
+.... . . .. ... . .. . . .. . . . . . .. .... ..
+. .......... ........... . . __4_ .... ..... . _. I
+: -- 1::4:: .:I
+. . .. . .. .... ::.. . ..-..- 4-
+. .. - 4.--. ..
+. ... ... M: FLE ION
+-iitH
+. .. . . . . . . . . ... . . . . .. . ..... . ... .. . ... ' T t I
+1
+444
+S. i - .. .. . .7 7 . .. ... .. ... . . ..
+. . . .. . ..... . . .. . . . ...
+•: '. ~ ' ~: ~': 'i: : : -: :-i: : 7 -,i 7 ! -. " ! : . :-. : . .... : . . .. . .. .,, . ." !: - - -_ ... :.:' :i"
+...• ; ..' .:'.' .:ri;.: ' . . . '..' ". : ' ,'4.: ' : .: ., . : : : . .: : :. .;. .... . .:.t .. .. . 3 . : . ;. ...... .- '. . :: .' • , •
+-.I. . -.- - --f. ... -. , . :.1.7. - -. . . . .. : . .:::
+. 1 ... - - -
+. .. ......... . ..... -
+. ... . :: :. • - :
+"1
+.
+S ..-
+. .
+.
+::(:-
+. .. . "4 4 T . .. T .
+L
+.
+:
+B . . : _1 . TT - p k
+I L
+T :
+-
+7: 7;* * "
+:- : I.: >.lI_
+______
+: i. . .: . :
+..
+:
+. .
+.
+_ _ _ _ t _Ir- _ _ _ _ _ _ _ _ _ _ _ __i _ _
+__ _ _ _ _ _ _ _ _ _ _ _ ±_ _ _ _ _ _
+'4 .-"-:: .. . .. . . .. . .... : . . . I .I 1 . .. 4.." . . . . . . -.. . . ... . .. . ... .. . .+ ... . . .7-. . .. . . . . . .. . . . . . ' . '
+S . . .. I~....
+.............
+
+
+
+=== PDF PAGE 39 ===
+u X 2,. 7 F .A.. U
+-. . . ' :,: --.'-;: 7-_- . -- i.'- " -.-.. _ _- . .. . . - . . . ..
+7 -.. ..... -
+... .I .... ....
+. ... .. .. . .. . . .. . , . . .. . ..... . . . . .. . . .. . ... . . . .. . . , . .
+....... . .... . . . i. .1. - .. -( .. : . t : .. .: - ' . . t . . "- .. . . j . ... . '' .' "' ':' " " .. .. T_ . . .. . . .. . . " : ' ' :: : . . .I . . . . .
+T77 = 77-177F,7:74
+V i *.*
+,AI , O..
+L - _ ___ ---
+__ - - .... . . . . . . ... . .. TAXU . - 34 .. .:
+. j:
+. .. ... . . . . . . .. . 7.. . . .. . .. .. .... ..2.. . . . .... .. . . .... . 7. .. . ..- .. . .
+:*2:i2 4 *1:::: 71. . I 7
+-tffi : r i 1: .: : : : : : ! : :.L . .: : :: .. --.. **-: .. j ... ; . : H :: . ...j ..- 4I.~ 44J - T ~ .; ---j
+--
+I:: ....f --.. .. - 1 . .. . .. ... I. -11.. . U ,:.t i
+,..
+. . .. ......
+. .....
+. .. ... .... ... .... . . .. . ..- . . . ...I . ., . . . . . . ... .... I . .. ... . .. .-..... . ... ...
+- .. . ... f.-. .. . .. . ..- . .. . . 7. 7 T-.. 7. 1- r: i. 7+'
+_1 K i:; ~ ' :,:- : .7 7 7 7 '7-t _
+7
+77- 7.-. i_. ~ ._ ~ .:: ~ . . . .::':L . .. - - . .. . I:: - --..
+_7 ____ I ___ ___
+.. .. .. . . . .. . . . . .. . . . . -... .. .7 . --. .- - . ._ . . . . .... .... . . . . . 7 . -- . . . . .
+.: : -d - : : ." : '4!: .: . ." . ".w
+" . . . . . ... .. .. .. . ... . .. :;:.: . . ... . ... .. .. .. :. .. ...... ... .. '. . . .. . . , : : , 1: - . .-
+,, I-. . .. , .,.,... . ... ..
+~.
+-.. i : 7 .i:.t : .: . :. " . .'.. -: . : . ... . . 'T :. • .
+
+
+
+=== PDF PAGE 40 ===
+Nu. 34 JA.-U DIE JA G PL IUG M E A DE ,N -E T U Z ,. i .
+20 x 2ri PEP I
+.. .... .. : : ..
+;:: o. :;. + .+.: +.. +.:+ - ++-+ -:.-.+:: : :i -:- :+:. + ++I - .. .-,.- ++ft
+_ -------- . ..... -+ - : 5
+.._.... .. ..... ...... ... .----- +.. : +: '--- : + :
+.. ............. . .
+, • : ::
+.+ ....- ... . . . ::: ++: . : +' +I :+ 5 -i+:t ...3.. .. ....:. : .+..-+ +: i" 7+...... .... . . .... . , . ,. . .
+-"7
+...-. . .. .. : ...... ._-. . - ,:.I .7i---- - _ .. .. -
+S' ... . - - :: I
+:+::_.:.+:. +5:: ++ , +T: +++ : ... .+:-. ... .i [ .i. . : ' ' I+ , ', : ;;::.:+ l+- :;' ;r.r .'.. '.+ . :" + + ...." :+
+. . . . . . ... . ..i.. .~r: _ N ::: _ :- __ ... ! . t . i ....
+W:. 4.__ .4..: 41.-. ~Z: ~.. .~: ~+ T.~ .. U . . 7 . :.. .... . . . . , . ff : ':: I+ .+. +: : :
+..'.:. 1:" ; - ,.--- .-T -- + . .] . .. ....- . : .-.. -
+: :;: ____I '~ Lie I-1
+::.:':.. _ + .._ : : __ _ .. .. :I _,, : , .. : -. : :+ : " + l I.+ __ " _._ _,.__-+_.:_..i-:. ..+.._ _+_-- ...' :.
+: -:: + l "' .LrL.::_-•t::;" " : ..! :! i " : ::" ' " ; "
+..... .... _ - _ - . _ . ..... . I . • - - .. . . .. , . r: . .. . . .. .. . . t-1- --.- . .t ___", *1 :. : - :+ ! . - " + : I t : . _ _ - __ : _ ' i . _ :. : " - , _ . _ : . _ __ i + " .: : + . . :: . : • - _ _ + _ : _ : _ L .. .17 . : : .: .: -' -
+:::: :: : i ! i: l+:. : :: .. : .. . . +: ;•. .. . .. .
+: : l : -- -::-: :, :.:.::+:!: - :+::i::::.- : -: -"
+..... +;.. - : ' - :: - : : ++7 7 ::: : : . :: ::: : . .. t ' " ':
+if:-
+TI
+. . ;...; ':'t , : i: _!_:-I .iT!T:i f ~ei :i : : : __.__:: : ; - i f . ~'
+1'_7' i~
+-IA&U AAAI
+.. ... +:'l :::: " .... .. i T::! :L iL-I ;:T . :.-I. ... . ." . "., . . .
+. . . .... . .......... . ... tI . .. :1 . . " + " - -: : r : - ... - .: " + .. .. I . .. . : . ::;7+. . . . . : . - . . .. : + I . : . :+++ : . :+: : + i- ' . ] . -: L . : .. - : . .. i : :
+i :':: +T'": :i': ':
+.. .. . . ...
+....++++:++ ' +:o+ + : :++ :: :1
+.... _ . . [ __.:+..+:+: ................ -+-.------. , --..+ -.--- -. t-- . ..... i :: --- ++: -i ++:+ ... .:-. :- . ]' .~L •i [- I-
+-- i
+
+
+
+=== PDF PAGE 41 ===
+-
+INE EWN 9
+..... . . . .. . ~. . .~ ...~ ~~. f .... .. ..... . . -." - . . " .. ......... . : 4.
+... , .... . ...... . .: ,.,,.. :I
+-MI
+I
+.....1.K .h
+.. . .. .... ... :.. ..:.:-L .". tt:. . .:.. :.... .. i. : . . ;
+~
+! . : _ . :
+i..'
+.
+.
+.
+,:
+.. . ... . :.
+-
+. ... .4. i. .... ... ..... ......... ...
+. ..... . . . . ... ....... ..,
+.....-... .: 7
+-
+" :.:: ' - " :K : . - .i. .:: ':t. .. . -.'. .' ::-t: ",. :: ,': : : ::'t: l ' ,: :.j. . .- ti : " :_ :.;... t . .1:: :; : .. : i l . . ;' "
+S: ........ . : ,_ .. , ..I.., ; ............
+-:-I t t.: I . ..... . :
+jlj
+I"
+_.
+ilo
+. _ ....:. _. __.: .r. .i .... ..... . 0- 17 ....
+..... ....... .. .. - .. .. ..:. ......
+... . ......... .. .
+""::::': ! ,: i :: _fq: :,::q r_;: :-:,-:":, : i:::"::::t ::_:::::: . :: ' .. :... .:i .. - ... .. ...I.. ....t.. ......
+:_ t; ..... ... .. i......
+~
+-~ - ;t r .. .... 17 -7 7...1
+1 " .- 1* 7 7 .. ... ....
+-1 ±1-
+. ... .....
+-:-:--:. : :: : : ::.. .: :: : : :: - ;-. ": - :: .:l- : : - .-: ..--: :- L:.-T: ... .T :: '''-: . . ..-~4 t .: . .. . ... .., : . ..
+:!!: U!~ '..:.i.".:. :..!:..... :!!: ' : : !: " . ...
+... ........ .. ... ... .: .:t .j.. . .i i: :: : .:. .,l tt
+.-. .. t . ..... .. ...... . . .
+4:: ---------
+...... . ..,... . ., . ... ...,. , ..,.,. ,. . .... , ..., .. .
+~
+--:- " ",- - :" :: : :t ~: ':.. :I-~"r--L , ::.::t--~I; ': i |:!-' : .::lt- ... ... , : , - ]-_ .:..i : ::!!. : !" . .: :.
+~ ~ ~
+i . ..: . . .. . .. 1. . . .. . ... ... . .... . . ... ..
+
+
+
+=== PDF PAGE 42 ===
+M
+m m -,"P -
+m ENEnGNM
+' , 34 A-20 DIETZGEN : -P ' 4A U.N
+.. .. ....:.... :..u -LL.-! " .... i :.- .... .......... " .... " :: "' " : ::
+:': :: !. :: !: :{ : :" ' " " L I-._ . jiI
+: I i:- 77---1
+-~~~~.
+' .
+-1 .. . ' . +. . . . " . . .. : . " .. . . . . . . : . : . : . ~ ~ ., . ~ . . . . ~ . . . . .. i . . . . . . . .. I . . .. I - ' "...i: :+: : .. .". :.. : : . . I i ." : . : . : : .. :: . . . . . . .": -.-. :.. ...+ : . :l: :. i ,. : ., • . ' , - , : i + . ! ? I!:'
+f:::.
+- ...._. ..
+• ; -,.: ::- : :. ... -a :i- ! ~ - . " . . ....- _ _ _ _ _ - . __ ... . ...... ... .:. . . . . . . :
+..
+_7
+7..... .. ." .- :t. .. ..... ... . . .:.::. .. :.':-: ,-
+___"_ + "__ . ' '-. -.... .. _.
+..... .. _ .. _- . :. . _ . ._ .. :_ . :_ :_"' _- 1 _ 7: : : if _ -7 7 . 7 . l . O .. ........ -:..... . 7 ... .. . .....
+: - : : : : : : : " . ' . - . - . .,._ : . ' . : .. .. +.i::.._ ' :w . . + S-....... ...T. tL - ~ : T : : . : - : i. ..-. 7 .7 . t . ... ' ... .. ... . ... ." : + i . " " ::-:+ ., +".+". 7 I! i - : i ..
+:;i: _,i+. : - k -T .... .. : . :'+: .... . ._..' i- ,.. ] : !: i I
+T M : N. E
+. + ,
+"'++: ... . . ..-- .i": :I -;T ..... 1 ". :~'' ' ''+ :1.:l ..- .! -:..- ' . i " i " :I. ,
+": : +-. . - :. : . . . .. .. _ : ._ : . - :: , . . . " .. . . - ... . : - + - i =---,-- i - i : : : : : + ' ' - : ~ - + : - : -- - - : - ' . -. i . . - . . + .-i I . . , -. . . . . - : : - : : ' - : , Ii:J . : ' i+ - . : :- . : . : . " + I ' _ . _ ' + .. , , : . I m . . ' : : + I' . I
+::+ ::.' i-::" i :ii! . .i . . .- : .... . .. ..- ... ' . .. L -r 4... 1 7- __i: ... 1.-..30-i ::
+. • . . ' . .+ ~ .+. .. ~ . ~ .:~j~::~S ." . .. -------- ,--- ' t - + . t-.L.--*
+. . -... . i .. ..
+- + ' l . . - ..- . .. .: : .. . I: + - ; - - , '
+. I •
+""~.~.~ ~~ +"' . .. ' 30-- ' m
+:--!:55 : -: - _
+
+
+
+=== PDF PAGE 43 ===
+APPENDIX C
+NEW TECHNOLOGY REPORT
+
+
+
+=== PDF PAGE 44 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+NEW TECHNOLOGY REPORT
+All the testing was conducted using an existing 49x17 aircraft tire.
+This tire was found to perform satisfactorily in all tests. No new
+materials or construction techniques were required or developed.
+Testing procedures were changed in some cases in order to simulate
+the space shuttle environment. These can be considered only variations
+of existing tests and not completely new testing methods.
+C-
+
+
+
+=== PDF PAGE 45 ===
+APPENDIX D
+SUMMARY OF RELIABILITY EFFORTS
+
+
+
+=== PDF PAGE 46 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+SUMMARY OF RELIABILITY EFFORTS
+After the 35 per cent deflection condition was chosen as the one that
+was to be used, a second tire was subjected to twice the number of
+cycles as was the first. This tire was also cut and analyzed and found
+to have satisfactorily passed the testing.
+D-1
+
+
+
+=== PDF PAGE 47 ===
+APPENDIX E
+SUMMARY OF SAFETY EFFORTS
+
+
+
+=== PDF PAGE 48 ===
+NAS 9-12049
+BFG Doc. No. ATD-2751
+SUMMARY OF SAFETY EFFORTS
+The most critical factors that must be controlled to insure safety in
+working with aircraft tires are heat and inflation pressure. In
+addition to adequate testing to insure that a given tire will perform
+satisfactorily under a given set of conditions, the most effective
+safety measure is the use of fuse plugs. These plugs are inserted in
+the wheel and are designed to release the inflation pressure within
+the tire if the temperature reaches a dangerous level.
+E-1

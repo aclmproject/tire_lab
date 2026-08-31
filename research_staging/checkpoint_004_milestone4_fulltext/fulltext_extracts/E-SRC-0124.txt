@@ -1,0 +1,1783 @@
+=== PDF PAGE 1 ===
+SIMPLE APPROXIMATIONS FOR
+FORCE-DEFLECTION CHARACTERISTICS
+OF AIRCRAFT TIRES
+by Smnuel K. Clurk
+I..
+,” ~ ..,,, .I,.
+Prepared under Grant No. NsG-344 by ..,
+!,
+UNIVERSITY OF MICHIGAN
+--.
+/
+Ann Arbor, Mich.
+-i
+..
+f Ot” -.. : :.
+, ’
+NATIONALA ERONAUTICASN D SPACEA DMINISTRATIO-N WASHINGTOND, . C. -r-MAY,I.h i
+
+
+
+=== PDF PAGE 2 ===
+TECHL IBRARKYA FBN, M
+lslnlllullR HllalllMlsRl
+0099562
+NASA CR-439
+SIMPLE APPROXIMATIONS FOR FORCE-DEFLECTION
+CHARACTERISTICS OF AIRCRAFT ‘TIRES
+By Samuel K. Clark
+Distribution of this report is provided in the interest of
+infor mation exchange. Responsibility for the contents
+resides in the author or organization that prepared it.
+Prepared under Grant No. NsG-344 by
+UNIVERSITY OF MICHIGAN
+Ann Arbor, Mich.
+for
+NATIONAL AERONAUTICSA ND SPACE ADMINISTRATION
+~ ----
+For sole by the Clearinghouse for Federal Scientific ond Technical Information
+Springfield, Virginia 22151 - Price $3.00
+- -. -
+
+
+
+=== PDF PAGE 3 ===
+
+
+
+
+=== PDF PAGE 4 ===
+-
+ACKNOWlZDXENTS
+The support of the National Aeronautics and Space Administration made
+this work possible, and is gratefully acknowledged, as is their permission
+to reproduce their earlier experimental data.
+iii
+
+
+
+=== PDF PAGE 5 ===
+
+
+
+
+=== PDF PAGE 6 ===
+TABLF:O FCONTENTS
+Page
+LXST OF ILLUSTRATIONS
+Vii
+NOMENCIATLTRE
+iX
+SUMMARY 1
+ANALYSIS 2
+COMPARISOONF THEORYW ITH EXPERIMENT 18
+REZEREXCES 21
+V
+
+
+
+=== PDF PAGE 7 ===
+
+
+
+
+=== PDF PAGE 8 ===
+LIST OF ILLUSTRATIONS
+Table Page
+I 11
+II Tire Section Dimensions in Inches 1-9
+Figure
+1. Side view of deformed tire. .3.
+2. Cross section of aircraft tire. 4
+3. Idealized section of aircraft tire. 7
+4. Free body diagram of deformed tire. 7
+5. String under point load. 9
+6. Fire witn negligible bending stiffness and point load. 10
+7. loaded tire with negligible bending stiffness. 11
+a. Idealized contact patch under lateral deflection. 12
+9. Laterally displaced loaded inner tube. 13
+1C. Assumed contact patch form for lateral deflection. 13
+11. Forces acting on the contact patch. 14
+12. Idealized contact patch under twist. 15
+13 Twisted loaded inner tube. 16
+l
+14. Assumed contact patch form for twist. 16
+15* Dimensions of test tires from NACAT N 2926. 22
+16. Photographs of test tires from NACAT N 2926. 23
+17. Vertical load-deflection experiments vs. predictions of
+Eg. (9) for tire A. 24
+vii
+
+
+
+=== PDF PAGE 9 ===
+LIST OF ILLUSTRATIONS( Concluded)
+Figure Page
+la. yertical load-deflection experiments vs. predictions of
+26
+Eq. (9) for tire B.
+19. Vertical load-deflection experiments vs. predictions of
+28
+Eq. (9) for tire C.
+20. Vertical load-deflection experiments vs. predictions of
+Eq. (9) for tire D. 29
+21. Vertical load-deflection experiments vs. predictions of
+Eq. (9) for tire E. 30
+22. Vertical load-deflection experiments vs. predictions of
+Eq. (9) for two types of tire E. 35
+23. Side load-deflection experiments vs. predictions of Eq. (19)
+for tire A. 38
+24. Side load-deflection experiments vs. predictions of Eq. (19)
+40
+for tire B.
+Side load-deflection experiments vs. predictions of Eq. (19)
+25.
+42
+for tire C.
+26. Side load-deflection experiments vs. predictions of Eq. (19)
+44
+for tire D.
+27. Side load-deflection experiments vs. predictions of Eq. (19)
+for tire E. 47
+28. Moment-angle of twist experiments vs. predictions of Eq. (22)
+for tire A. 49
+29. Moment-angle of twist experiments vs. predictl.ons of Eq. (22)
+53
+for tire B.
+30. Moment-angle of twist experiments vs. predictions of Eq, (22)
+56
+for tire C.
+31. Moment-angle of twist experiments vs. predictions of Eq. (22)
+for tire D. 5P
+32. Moment-angle of twist experiments vsI predictions of Eq. (22)
+62
+for tire E.
+viii
+
+
+
+=== PDF PAGE 10 ===
+NOMENCUTURE
+English Letters
+b Minor diameter of contact patch ellipse, in.
+d Tire diameter measured to carcass centerline, in.
+B Tire section height from bead to carcass centerline, in.
+Elastic spring constant for lateral tread distortion, psi
+KL
+L Major diameter of contact patch ellipse, in.
+M Torsional moment, in, lb
+0 Pead centerline point
+P Vertical load, lb
+Inflation pressure, psi
+PO
+Q I'ire side force, lb
+Section radius of curvature, in.
+S Tire side force, lb
+T Tire running band tension, lb
+J Running band lateral deflection, in.
+Section width, in.
+W
+Position along circumference of tire, in.
+X
+.>reek Letters
+Angle of lateral deflection
+Included half angle in minor diameter of contact patch ellipse
+Lateral or side deflection of tire, in.
+ix
+
+
+
+=== PDF PAGE 11 ===
+NOMENCLATUR(CEo ncluded)
+Greek Letters
+Vertical deflection of tire, in.
+*V
+AT lateral deflection at end of contact patch during twisting
+deformation, in.
+An arbitrary or experimentally determined reduction factor
+to account for contact patch distortion during tire twist,
+dimensionless
+cp Angle of twist of tire
+8 Included half angle in major diameter of contact patch ellipse
+X
+
+
+
+=== PDF PAGE 12 ===
+SUMMARY
+Simplified expressions are derived for three of the more commonly used
+force-deflection characteristics of aircraft tires in terms of tire size and
+inflation pressure. These are the vertical load-vertical deflection, side
+load-side deflection and torsional moment-angle of twist relationships. The
+derivations are based on the concept of treating the tire as a pressurized
+torua of circular cross-section with no bending rigidity, and on the concept
+of treating the outer portion of the tire, or "running band" as a string on an
+elastic foundation. Predictions from such simplified theories are compared
+with extensive experimental data obtained by N.A.C.A. in 1953, and agreement
+is generally good althollgh far from perfect.
+The primary useflllness of such expressions probably Lies in the area of
+preliminary design., where extensive parametric studies are often required to
+optimize response under many different input conditions. They may also be of
+use in ground vibration studies of aircraft.
+1
+
+
+
+=== PDF PAGE 13 ===
+ANALYSIS
+During deformation of a pneumatic tire two kinds of forces act. The first
+of these is set up by bending of the tire carcass, while the second comes about
+due to deformation of the carcass walls, which themselves carry large membrane
+forces due to inflation pressure. In an aircraft tire the latter type of
+force is predominant in many situations because the aircraft tire usually op-
+erates at a rather high inflation pressure, so that these membrane forces are
+much larger than those generated by carcass bending.
+Examination of toroidal shell equilibrium conditions shows that to a
+great extent the membrane forces due to inflation are statically determinate
+and can be calculated, or at least estimated, independkntly of tire structure
+or wall thickness. This leads to the conclusion that tire load-deflection re-
+lations which depend primarily on membrane forces might very well be calculated
+analytically. Of course, such calculations would not be valid for cases where
+the inflation pressure became small enough so that membrane effects were small
+compared to bending.
+Examination of the forces involved in tire deformations showed that three
+commonc ases might be treated by such an approach:
+a. Vertical load-vertical deflection relations
+b. Side load-side deflection relations
+c. Torsional moment-angle of twist relations.
+In all of these it is felt that inflation causes membrane forces which
+in turn cause the major part of the spring-deflection relation.
+2
+
+
+
+=== PDF PAGE 14 ===
+-
+I
+Considerable use has been made of models for predicting the steering
+characteristics of pneumatic tires. The most widely used of these models have
+been the string on the elastic foundation and the beam on the elastic founda-
+tion. In both of these the tread region is imagined to be the string or beam,
+while the sidewall region makes up the elastic foundation. One of the short-
+comings of such models has been the difficulty of estimating the magnitude of
+the elastic foundation constant. A method for overcoming this difficulty is
+presented in this report.
+Perhaps the most commons pring characteristic of a pneumatic aircraft
+tire is its vertical deflection under load. This deformation process may be
+approximated in a very rough way by a geometric calculation of the contact
+area of a tire with a flat surface. Referring to Fig. 1, which is a side view
+'Ground Plane
+Fig. 1. Side view of deformed tire.
+of a tire, it is seen that the vertical deflection Av and contact patch length
+L are related by the parameter 8:
+Av = 1-case)
+3
+
+
+
+=== PDF PAGE 15 ===
+L
+sine (2)
+d2:
+For relatively small deflections Av compared with diameter d, one may
+write
+Q2 d
+(1) '
+Av = -2- 2
+from which 236
+A,,= k (3)
+Aircraft tires are typically molded without the heavy, buttress-like
+shoulder structure used in automotive and truck tires. Their cross-sectional
+shape is closer to -a circle. On this basis, relations similar to Eqs. (I-),
+(2) and (3) may be de veloped for a cross-section of a typical aircraft tire,
+as shown in Fig. 2. Here, the vertical deflection and contact patch width
+W'
+Fig. 2. Cross section of aircraft tire.
+*Tests and more refined mathematical models both show that the contact patch
+length is only 75% to 85$ of the geometric intersection length used here.
+This will be disregarded in these approximations.
+4
+
+
+
+=== PDF PAGE 16 ===
+are related through the parameter B:
+= ri(l-cosp) (4)
+AV
+b
+-- EL *sir@ (5)
+2rl
+If Av is small compared with rl, Eqs. (4) and (5) may be simplified and
+comb,ined as before to give
+P2
+Av N r12 (4) ’
+b
+- E f3 (5) ’
+2rl
+and
+b2
+Av = 6 (6)
+Next, one may note that an aircraft tire is usually rather highly in-
+flated. The shell membrane effects become important compared with the shell
+bending effecta. Under these circumstances the tire shape approximates, but
+does not reach, a circle. Hence one further approximation may be made re-
+lating the section width w of Fig. 2 to the radius of curvature rl. in the
+W
+ri z. (7)
+-2
+and ccmbining this with Eq. (6) gives
+(8)
+The length of the contact patch is obtainable from Eq. (3), and its
+width from Eq, (8). Tests show that the contact patch in a tire of typical
+aircraft construction is approximately elliptical in shape with a pressure
+distribution which varies but whose average value is close to the inflation
+5
+
+
+
+=== PDF PAGE 17 ===
+-.
+pressure po. Hence, the vertical load P may be approximated by
+Lb
+P 2: flz2po or
+(9)
+This gives a relation between total vertical load, inflation pressure po and
+deflection Av such that
+(a) Load P is directly proportionalto deflection Av and to inflation
+pressure p.
+(b) Load P is directly proportionalto the carcass section width w and
+tire diameter d, each to the one-half power.
+Another important property of a pneumatic aircraft tire is its lateral,
+or side, force-deflection relation. This particular elastic characteristic
+has had extensive treatment in the literature since it is closely related to
+the cornering force developed by a tire while running at a slip angle. Dis-
+1
+cussions of some aspects of the lateral stiffness have been given by Andrews,
+Saito2 and Rotta.3 A review of much of this work is given in the excellent
+4
+summaryo f Frank. There, it was concluded that for tires of radial or belted
+construction, or for tires with very heavy tread sections, the beam on the
+elastic foundation is probably the best model. For tires of bias ply con-
+struction, such as an aircraft tire, the string on the elastic foundation gives
+good results, and that type of model will be adopted here.
+It is first necessary to develop a means of relating the tire parameters
+to the lateral elastic foundation modulus, or stiffness, required in the
+theory of a string on an elastic foundation. In order to do this the tire
+cross- section will be idealized rather drastically, as shown in Fig. 3a and 3b.
+6
+
+
+
+=== PDF PAGE 18 ===
+A
+t
+1 -
+t- - -
+Fig. 3. Idealized section of aircraft tire.
+The assumed lateral deflection AH is shown by the dashed lines of Fig. 3b.
+C-J
+If a unit width of the tire, as shown in Fig. 3b is considered a pin-jointed
+structure, then it may be analyzed in its assumed deformed condition as shown
+in Fig. 4, under the action of inflation pressure p. and an assumed side force
+Q.
+-
+Q1
+POW
+2
+Fig. 4. Free body diagram of deformed tire.
+7
+
+
+
+=== PDF PAGE 19 ===
+For the right hand sidewall, taking,moments about OR gives
+Q1 H cos Q = y H sin a! + p. I-I g
+l
+For small 0,
+H w AH
+Q1 ", PO 2 + PO 2 H (10)
+For the left hand sidewall, taking moments about OL gives
+-Q2 H cos QI + y Hsina = poH=g
+H w AH
+"Po2-PoF'H (11)
+-Q2
+The total side force Q is given by
+wAH
+Q = 41+&z = PO -
+H
+pow
+Q/AH= y- = KL, (12)
+where KL is a lateral foundation modulus for the string. The string itself
+may be visualized as the upper portion of the pin-jointed truss approximation
+of Fig. 4. This band of width w may be assumed to carry the entire pressure
+load. From conventional pressure vessel theory, the band tension T is given
+d
+T = wpo~ (13)
+It is difficult to check either the lateral spring rate KL or the band
+tension T, as given by Eqs. (12) and (13), directly. For example, Thorsen5
+obtains for the lateral spring rate KL the expression given in Eq. (12) mul-
+tiplied by x/4, while Stevens6 introduces a weighted band tension proportional
+to the distance from the rim. Some clarification of the general accuracy of
+8
+
+
+
+=== PDF PAGE 20 ===
+Eqs. (12) and (13) can be obtained by a simple experiment in which a tire of
+negligible carcass stiffness is loaded laterally at a point. The string on
+the elastic foundation may be used as a basic model for the force-deflection
+relation.
+The equation of static equilibrium for the string on elastic foundation
+is
+&-Ku = 0 (14)
+dx" L
+from which, letting h2 = KL/T
+-Ax
+AX
+U = Ae +Be . (15)
+Considering the tire diameter large compared with the patch length, one ob-
+tains B = 0 from which
+U = Aeshx
+But AH is a boundary condition, so that
+(u)~=o =
+U = AI[~-‘~ (16)
+du 4.x
+-
+= Slope = A&e (17)
+dx
+and the force component perpendicular to the string is given by
+S = 2T &l
+0 ax
+x=0
+as shown in Fig. 5. Using Eqs. (13) and (17),
+Fig. 5. String under point load.
+9
+
+
+
+=== PDF PAGE 21 ===
+one obtains
+(18)
+for a concentrated load.
+Experiments were conducted on a tire in which both the tread and much of
+the carcass had been stripped away, leaving a thin web or network of cords.
+This is shown in Fig. 6.
+Fig. 6. Tire with negligible bending stiffness and point load.
+In this same photograph a short length of twisted steel cable may be seen, to
+which a small weight-pan is wired. In addition, a bolt is firmly attached to
+the web of the carcass and acts as a reference point for the dial gauge.
+Figure 7 shows a somewhat larger overall view of this tire in the loaded
+condition. In spite of the length of cable used, the load is applied in al-
+most a concentrated fashion. The measured spring rate may be compared with
+
+
+
+=== PDF PAGE 22 ===
+-- -
+I
+Fig. 7. ikaded tire with negligible bending stiffness.
+that given by Eg. (18), -and the results are given below in Table I.
+TABLEI
+Inflation
+Pressure 5 9 13
+psi
+Measured
+Spring Rate 161 234 334
+lbs/in
+Calculated
+Spring
+Rate 108 195 280
+lbs/in
+
+
+
+=== PDF PAGE 23 ===
+While calculations and measurement do not agree very well here, they at
+least indicate that the lateral spring rate should probably not be reduced be-
+low the value given by Eq. (12), and that the effective band tension should
+probably not be reduced below the value given by Eq. (13), since in either event
+the calculated values would deviate even more from the measured ones. Recog-
+nizing that Eqs. (12) and (13) are relatively crude expressions anyway, they
+will be retained in that form without further modification.
+The concept of the string on the elastic foundation may be extended to
+represent the contact patch of a tire under lateral or side load. Ideally, the
+contact patch mid-line may be visualized as a straight line segment which is
+laterally displaced from the equilibrium position, as shown in Fig. 8.
+l-
+Contact
+Patch --I
+Fig. 8. Idealized contact patch under lateral deflection.
+In actuality the contact patch is not displaced in this way. Instead, the
+straight line segment is curved. This can be demonstrated clearly by loading
+and then laterally displacing a small inflated inner tube pressed against a
+Plexiglass plate, as shown in the photograph of Fig. 9. The center line of the
+distorted tube may be clearly seen to follow a curved path, and since the rela-
+tion between force and tire deflection involves the reduced deflections at the
+end of the contact area, it is necessary to take these into account in subsequent
+12
+
+
+
+=== PDF PAGE 24 ===
+Fig. 9. laterally displaced loaded inner tube.
+calculations. For this reason we adopt the distorted contact patch shown in
+Fig. 10 as a model, and introduce the reduction factor 11t o account for the dis-
+LI.
+placement of the ends relative to the center, Later on '1 will be given a
+AH
+I
+Contact Patch
+Fig. 10. Assumed contact patch form for lateral deflection.
+numerical value.
+In the contact patch region the pressure of contact just balances the
+vertical reactions caused by inflation which act on the sidewalls, shown in
+
+
+
+=== PDF PAGE 25 ===
+Fig. 4 , provided that one continues to assume a uniform pressure distribution
+.
+p. over the contact patch. Since these vertical reactions are the forces which
+help generate the lateral spring rate, their absence means that no lateral
+spring rate acts against the tread band shown in Fig. 10 in&de the contact
+patch length. It is only outside of this length that such forces act to re-
+strain the string under tension. This leads to the idea that the lateral force
+may be obtained by computing the restoring tension forces acting on the contact
+patch area, and that these tension forces are obtainable from string theory.
+A'sketch of the loaded contact patch is given in Fig. 11,
+Fig. 11. Forces acting on the contact patch.
+from which the total restoring force component perpendicular to the centerline
+is given by
+S = 2T 2h.l 2 q AHJ~T
+0 ax x=0 =
+Using Eqs. (12) and (13), and calling the side force S, gives
+(
+(B9)
+14
+
+
+
+=== PDF PAGE 26 ===
+From this expression, lateral spring rate may be obtained directly.' It
+is seen that side force S is
+(a) Linearly proportionalto side deflection AH
+(b) Lineajrly proportional to inflation pressure p. and to section width w
+(c) Proportional to the one-half power-of a dimensionless shape
+factor which is the ratio of tire diameter d to section height H.
+(d). Independent of vertical load or contact patch length.
+The concept of the "running band" as a string on an elastic foundation is
+also useful in defining the torsional stiffness of an aircraft tire under a
+twisting couple about an axis perpendicular to the ground plane and passing
+through the wheel centerline. Referring to Fig.12, it is seen that the band
+tensions ideally act to form a couple about the contact patch- center-point.
+Again, however,
+_ Contact
+-4
+Patch
+Fig. 12. Idealized contact patch under twist.
+a real tire does not act in this ideal way. Figure 13 is a photograph of the
+same inner tube used in Fig. 9, but now distorted by twisting about a central
+axis. This shows the curvature of the contact patch, and again leads to the
+concept of reducing the deflection AT of the contact patch extremity by an
+
+
+
+=== PDF PAGE 27 ===
+Fig. 13. Twisted loaded inner tube.
+amount 70 This is illustrated by the sketch of Fig. 14.
+I-- Contact
+Patch
+Fig. 14. Assumed contact patch form for twist.
+Using this factor, and the previous values of string tension and slope,
+on& may write an expression for the moment about point 0 as
+(20)
+16
+
+
+
+=== PDF PAGE 28 ===
+Using this, and Eqs. (12) and (U), one may write
+L2
+MM == c(ipJ
+-Pow=J$?l ((2211))
+2JF
+wwhheerree AATT == 1111$$ ccpp,, wwiitthh qq aass aa rreedduuccttiioonn ffaaccttoorr ffoorr ddeefflleeccttiioonn.. RReeccaalllliinngg tthhaatt
+LL'' == kkll AAvv aanndd PP == rr[[ AAvv pp.. GG,, oonnee oobbttaaiinnss,, uussiinngg rrll 22:: ww//22,,
+This leads to the interesting conclusions that torsional moment is
+(a) Linearly proportional to angle of twist +.
+(b) Linearly proportional to tire diameter d and to tire vertical load P.
+(c) Proportional to the square root of a dimensionless tire shape factor
+w/H, section width over section height.
+(d) Independent of inflation pressure po.
+17
+
+
+
+=== PDF PAGE 29 ===
+COMPARISOONF THEORYW ITH EXPERIMENT
+The expressions given in Eqs. (g), (19) and (22) are only of superficial
+interest unless they agree with experiment. It is extremely fortunate that
+7
+extensive experiments on aircraft tires have been reported by W. B. Horne, of
+the National Aeronautics and Space Administration. The expressions derived
+here are compared to the data given by Horne by means of superimposing heavy
+solid lines representing theorv upon his original plots. These are shown in
+Figs. 15 through 32. In making these, measusements taken on Fig. 9 showed that
+the reduced deflection factor 11 should be chosen numerically to be approximately
+and this has been followed in these plots.
+The tires tested by Horne are shown in cross-section in Fig.15and photo-
+graphs are given in Fig. 16. The pertinent dimensions
+w = Section width
+H = Section Height
+d = Tire diameter
+are estimated from Fig. 15by measuring to the assumed location of the tire
+carcass mid-line, which is the neutral axis in bending of the tire and is
+the centroid for the membrane forces. These dimensions are listed in Table 2.
+18
+
+
+
+=== PDF PAGE 30 ===
+TABLE II
+TIRE SECTIOND IMENSIONSIN INCHES
+Tire A B C D E
+12 14 12 12 8
+W
+H 12 12 11 10 6
+d 54 54 44 44 28
+Comparison of theory with experiment for vertical load-deflection curves
+shows that generally Eq. (9) g ives results slightly higher than experiment.
+However, the slopes of load deflection curves appear to be very close to experi-
+ment, and for this reason Eq. (9) may be useful in ground vibration studies
+where the rate is more important than the actual value.
+Similar comparisons with lateral force-deflection data and Eq. (1-g) shows
+that, on the average, predictions of side force are within the range of experi-
+mental data for cases where the inflation pressure is relatively high. This
+is because the membrane-induced lateral stiffness component is the primary
+one in this condition. In cases where the inflation pressure is low, the pre-
+dictions of Eq. (19) tend to be somewhat lower than the measured data. This
+seems reasonable, since at low.pressures the bending rigidity of the tire
+carcass becomes, relative to the membrane-induced rigidity, a more important
+factor, and this is not taken into account in this analysis.
+Torsional load deflection curves show even more hysteresis than do the
+side deflection curves. It is difficult to assign any specific torsional
+spring rate to a given set of conditions. In many cases the predictions of
+Eq. (22) are well within the hysteresis loop, particularly at the larger
+19
+
+
+
+=== PDF PAGE 31 ===
+vertical loads. At low vertical loads agreement between measured data and
+experiment is not as good in most cases, although it is difficult to generalize
+here. It is probable that Eq6 (22) would be suitable for some preliminary de-
+sign purposes.
+20
+
+
+
+=== PDF PAGE 32 ===
+REFERENCES
+1. Andrews, H., "A Discussion of the lateral Force and Moment Characteristics
+of Pneumatic Tires," Cornell Aeronautical Laboratory Report TB-902-F-1,
+Feb. 1954.
+2. Saito, Y., "A Study of Dynamic Steering Properties of Pneumatic Tires,"
+Ninth International Automobile Technical Congress, 1962.
+3. Rotta, J., "Zur Statik des Luftreifens," Ingenieur-Aychiv, v. 17, (1949),
+p. 12g- 141.
+4. Frank, F., "Grundlagen zur Berechnung der Seitenfbrungs Kennlinien von
+Reifen," Kalltschuk -u-n d Gummi. Kunststoffe, 8, 515-533 (1965).
+5= Thorsen, K. R., "A Rational Method for Predicting Tire Cornering Forces and
+Lateral Stiffness," Boeing Airplane Company Report No. D-11719, March,, l%l.
+6. Stevens, J. E., "Relaxation Characteristics of Pneumatic Tires," Jour.
+Aero/Space Sciences, June 1-959, p. 343-350.
+7 Yorne, Walter B., "Static Force-Deflection Characteristics of Six Air-
+l
+craft Tires under Combined Loading," N.A.C.A. Technical Note 2926, National
+Advisory Committee for Aeronautics, Washington, D. C. May 1953.
+21
+
+
+
+=== PDF PAGE 33 ===
+- Deflated
+--- Inflated to rated
+inflation pressure
+r
+1
+Tire A Tire B I I Tire C Tire E-l
+T@!-GJ
+I
+4 8 o 4 8 o 4 8 o 4 8 o 4 8
+Distance from tire center line, in. .
+Fig. 13. Dimensions of test tires from NACAT N 2926
+
+
+
+=== PDF PAGE 34 ===
+Tire A 56-inch (56 x 16), type VII (extra-high-pressure), 32-ply-rating
+Tire B 56-inch (56 x 16), type VII (extra-high-pressure), 24-ply-rating
+Tire C 45-inch (15.50-20), type III (low-pressure), 14-ply-rat,ing
+Tire D 44-inch, type I (smooth-contour), lo-ply-rating
+T
+Tire E-l 27-inch, type I (smooth-contour), lo-ply-rating
+~-74.867.1
+Fig. 16. Photographs of test tires from NACAT N 2926.
+
+
+
+=== PDF PAGE 35 ===
+10 x 1
+cumulative loading
+Increasing Dehrago6ing
+- Initial *ahe
+8
+-_7- _- --em ___-6 -_--
+Final *all+e
+steep gng
+A Torsion
+h
+6
+lb
+2
+ft
+i-
+4fv7 I I 27I0 pounds pI er rquare I inch. 1
+f 0,
+%
+3 10x l&
+I I
+I!
+Cumulative loading
+Increasing Decreasing
+8
+Step loading
+6 A Fore-and-oft -
+2 3 b 5 6 7
+Vertical tire deflection, in.
+Fig. 17. Vertical load-deflection experiment6 VE. predictions of Eq. (9) for
+tire A.
+24
+
+
+
+=== PDF PAGE 36 ===
+10
+Cumulative loading
+Increasing Decreasing
+-o- --d-
+8
+I I -
+Step loading
+0 Side
+Toraion
+6 - Fore-and-aft
+(c) Ikitial infiation preamre,
+200 pounds per square inch.
+( lolr
+I I I
+Cumulative loading
+Increasing Decreasing
+-- 8 -- 8 Initial value
+-- -- -- - - Final value
+I 1
+Step loading
+0 Side
+A Torsion
+6
+- b Fore-and-aft
+tlal inflation pressure,
+2 3 4 5 6 7
+VerticaLtire deflection, in.
+Fig. -17 (Concluded)
+25
+
+
+
+=== PDF PAGE 37 ===
+10 x 1
+Test data:
+Step loading
+0 Side
+8
+-Manufacturer I data:
+---
+2
+, ’ / (a) Initial inflation pressure,
+0
+L
+200 pounds per square inch,
+I I
+0 1 2 3 4 5 6 7
+Vertical tire deflection, in.
+Fig. 18. Vertical load-deflection experiments vs. predictions of Eq. (9) for
+tire B.
+26
+
+
+
+=== PDF PAGE 38 ===
+4
+10 K 10 I I
+Test dais:
+Cumulative loading
+Increasing Decreasing
+Initial value
+8 . --- -g- -TX Final value
+Step loading
+0 Side
+A Torsion
+6
+&
+2
+ft
+i
+4 0
+ri
+.; 10
+t: Test data:
+d
+Step 1oadir.g
+0 Side
+8 Cl Torsion
+Manufacturer I data:
+---
+6
+/ ’
+/ ’
+/ ’
+/ ’
+I
+it ial infl ,ion pressure,
+160 pounds per square inch.
+I I !
+2 3 4 5
+Vertical tire deflection, in.
+Fig. 1.8 (Concluded)
+27
+I.
+
+
+
+=== PDF PAGE 39 ===
+lb0
+30
+0 Torrion
+Uanufacturer I data-
+20
+10
+(a) Initial Inflation pressure,
+105 pounds per square.inch.
+0 I I I
+l&O
+f:
+; 30
+%
+l-4
+e-t
+J
+3 20
+l4
+r?l
+10
+Ot
+1 2 3 ll 5 6 7
+Vertical tire deflection, in.
+Fig. lg. Vertical load-deflection experiments vs. predictions of Eq. (9) for
+tire C.
+28
+
+
+
+=== PDF PAGE 40 ===
+Ymufacturer I data:
+- --
+32 x 103
+Test data: '
+Climulative loading
+Increasing Decre3sing l-
+2 -o- - -a- -1
+a ’ a
+a Stepl °Fiding
+e-4 ,O Eon
+2 Manufacturer I data: t
+0
+21r 103 I I
+Test data:
+Cumulative loading
+Ineng Decreasing
+"
+16 -Step loading -
+Side
+s Torsion
+Mnufacturef I data:
+---
+8 Predicted by A
+(c) Initial inflation pressure,
+35 pounds per square inch.
+1 2 3 Ir 5 6 7
+Vertical tire dcfloction, in.
+Fig. 20. Vertical load-deflection experiments vs. predictions of Eq. (9) for
+tire D.
+29
+
+
+
+=== PDF PAGE 41 ===
+18
+Tire E-2:
+Cumulative loa&ng 1
+-Q- Increasing --
+16
+-CG Decreasing
+O~tep loading (side)
+Astcp loading (torsion)
+12
+I
+Predicted by
+Eq. (9)
+I
+6
+4
+2
+0
+0 6 8 10 12
+Vertical tire deflection, in.
+(a) Initial inflation pressure, 80 pounds per square inch; tire ~-2.
+Fig. 21. Vertical load-deflection experiments vs. predictions of Eq. (9) for
+tire E.
+30
+
+
+
+=== PDF PAGE 42 ===
+xld
+I I I
+Tire E-2:
+Cumulative loading
+*Increasing
+4 Decreasing
+- OStep loading (side)
+A Step loading (torsion)
+2 4 6 8 10 12
+0 0 0
+Vertical tire deflection, in.
+(b) Initial inflation pressure, 40 pounds per square inch; tire E-2.
+Fig. 21 (Continued)
+31
+
+
+
+=== PDF PAGE 43 ===
+.--_ _--_.. -.,.,.,-_- ___.._._.-._ ._ ._
+16
+I I I
+Tire E-l:
+Cumulative loading
+12
+2 4 6 8 10 12
+0 0 0
+Vertical tire deflection, in.
+(c) Initial inflation pressure, 40 pounds per square inch; tire El.
+Hg. 21 (Continued)
+32
+
+
+
+=== PDF PAGE 44 ===
+11
+1
+10
+9
+2 h 6 8 10 12
+0 0 0 0
+Vertical tire deflection, in.
+(d) Initial inflation pressure, 32 pounds per square inch;
+tires E-l end Z-2.
+Fig. 21 (Continued)
+33
+
+
+
+=== PDF PAGE 45 ===
+,1.111. I ,..-.-1-m.-1111- . I . . ._....----.-.-
+8
+(Id I I
+T?.reE -l: Tire E-2:
+bmulative loading Cumulativel oading
+-O- Increasing
+_ + Decrearing
+7
+&Step loading (torsion)
+6
+4 6 8
+0 0 0
+Vertical tire deflection, in.
+(e) Initial inflation pressure, 24 poundsp er squarei nch;
+tires E-1 andE -2.
+Fig. 21 (Concluded)
+34
+
+
+
+=== PDF PAGE 46 ===
+I I
+I.6
+Test data:
+Cumulative loading
+Tire E-l
+l4-- I
+__---- Tire E-2
+Manufacturer II data:
+- - - From curve
+.2 - I I
+.o-
+?r
+0 1 2 3 4 5 6
+Vertical tire deflection, in.
+(a) Initial inflation pressure, 40 pounds wr square inch.
+Fig. 22. Vertical load-deflection experiments vs. predictions of Eq. (9) for
+two types of tire E.
+35
+
+
+
+=== PDF PAGE 47 ===
+“:-Tels-t d-ata-: T
+Cumulative loading
+Tire E-l
+10 - ----- Tire E-2
+Manufacturer II data:
+--- Interpolated
+8
+6
+L
+I
+5
+1 2 3 4 6
+Vertical tire deflection, in.
+(b) Initial inflation pressure, 32 pounds per square inch.
+Fig. 22 (Continued)
+36
+
+
+
+=== PDF PAGE 48 ===
+8 - ------
+Yanufacturer II data:
+--- .Interpolated
+7
+6
+3
+2
+/
+/
+1 2
+! 4
+0 1 2 3 4 5 6
+Vertical tire deflection, in.
+Initial inflation pressure, 24 poundsp er square inch.
+(c)
+Fig. 22 (Concluded)
+37
+
+
+
+=== PDF PAGE 49 ===
+_. ._..1 ,. . . ._-.-.-. .__ . _-_....- . -_._..-.._- _ ..----
+16
+Predicted by
+Eq. (191,
+I
+I I F
+rertical Inikal vertical
+Decreasing load tire deflectioo
+(lb)
+20,000
+p&y;
+9q:poo
+.~~
+0 - A .8 1.2 1.6 2.0 2.b 2.8 3.2
+Side tire deflection, in.
+(a) Initial inflation pressure, 270 pounds per equre inch.
+* ’
+20 103 I I I I I 7+
+Vertical Initial vertical
+:ncreasing Decreasing load tire deflection s - /
+(in. 1 ,“, b/ ’
+1.66 _ ’
+16
+2.68 / ’
+* ’
+3.57
+---&--- -_
+lb.90 .
+t
+f: 12
+. Predicted by
+4
+Eq. (19)
+4
+j 8
+.h .B 1.2 1.6 2.0 2.& 2.8 3.2
+Side tire deflection, in.
+(b) Initial inflation pressure, 2hO pounds per square inch.
+Fig. 23. Side load-deflection experiments vs. predictions of Eq. (19) for
+tire A.
+38
+
+
+
+=== PDF PAGE 50 ===
+20 x ld-
+l 1 I I I _-
+Vertiial Initik vertical
+IncreodngD ecreasing load t5.r. defle&nI
+(lb) On. 1
+16 -- - - - - - 20,ocQ 1.87
+-- gz: -- - - lro,cm 2.96 c
+8 -- 60,ooo
+--- A--- --- A ---
+.I4 .8 1.2 1.6 2.0 2.L 2.8 3.2 3.6
+Side tire deflection, in.
+(c) I&la1 inflation pressure, 200 pounds per equare Pnch.
+20 < 103 I
+Vertical Inltiai verticai
+DecrefuJlng
+Increasing load tire deflectioti
+n (lb) (in.)
+II&T 30,000 2.58
+16 - -o-- -+ -- 60,000 k.2
+- -+-
+90,ooo . /a---
+I /**
+-'
+r ** I'
+I ,'
+_'
+I
+' Prklcted by
+Eq. (19)
+A .8 1.2 d1e.f6le ction,2it. . 2.b 2.8
+&e tire
+!d) lnitia,linflation preeeure, 180 pounds per equare inch.
+Fig. 23 (Concluded)
+39
+
+
+
+=== PDF PAGE 51 ===
+4
+/
+/
+Predicte/d b dy ‘ I /
+I
+Eq-, /(19 ) /
+/
+/
+‘,/
+. y
+a l
+/f/ ’
+Vertical Initial vertical
+Increasing Decreasing load tire deflection
+(lb) (in.1 .
+L-- .-CL- 20,000 1.811
+--n-- -- -_
+-.o-- -_ __
+8
+---A--- ---A---
+Side tire deflection, in.
+-
+(a) Initial inflation pressure, 200 pounds per square inch.
+VerticaL Initial vertical
+Increasing Decreasing
+..5 1.0 1.5 2.0 2.5 3.0 3.5 LO
+Side tire deflection, in.
+(b) Initial inflation preeeure, 180 pounds per square inch.
+Fig. 24. Side load-deflection experiments vs. predictions of Eq. (19) for
+tire B.
+40
+
+
+
+=== PDF PAGE 52 ===
+20
+Vertical Initial vertical
+Increasing becreaeing tire deflection
+8
+s 1.0 1.5 2.0 2.5 3.0 3.5 Lo
+Side tire deflection, in.
+(c) Initial inflation pressure, 160 pounds per square Inch.
+Fig. 24 (Concluded)
+41
+
+
+
+=== PDF PAGE 53 ===
+10 x 103:
+Vertical Initial vertical
+tncreasing Decreasing load tire deflection I
+, (lb)
+- -6--- 10,obo
+8 -- 8:: I: !L :-I 20,000
+-- 30,000
+__ n -em -- -- 40,000
+Eq. (19)
+.4 .a 1.2 1.6 2.0 2.4 2.8 3.2
+Side tire deflection, In.
+(a) Initial Inflation pressure, 10.5P ounds per square inch*
+10 TX lo3 ,
+I I I I
+Vertical Initial vertical
+Increasing Decreasing load tire deflection
+I (lb) (in.1
+.4 .a 1.2 1.6 2,o 2.4 2.8
+Side tire deflection, in.
+(b) Initial inflation premure, 85 pounds per square inch.
+Fig. 25. Side load-deflection experiments vs. predictions of Eq. (19) for
+tire C.
+42
+
+
+
+=== PDF PAGE 54 ===
+2
+0 .4 .a 1.2 1.6 2.0 2.4 2.8 3.2
+Side tire deflection, in.
+(c) Initial inflation pressure, 65 pound pet rqwe inch
+Fig. 25 (Concluded)
+43
+
+
+
+=== PDF PAGE 55 ===
+: Ad.---- I
+Vutiul 1aitii1 rut1u1
+nlUUBing Dauuaiw load t5ro dofloction
+(in.1
+1.31
+q -- -- 2.2&
+3.a
+I-
+0 A .a 1.2 1.6 2..0 2.L 2.6 33
+Side tire deflection, in.
+(a) Inltlal infhtion prearura7, 5p oundpsa r ~puuein ch.
+Fig. 26. Side load-deflection experiments vs. predictions of Eg. (19) for
+tire D.
+44
+
+
+
+=== PDF PAGE 56 ===
+I
+I OartI ic+ InitiaI l rartlcaI l
+bcruaing load tlrr dafloction
+-- I-I 1; (in.1
+-- - 15
+--_&-
+-- 20
+h
+,
+,7
+,
+I
+/ //
+. / ,
+” d,
+I
+/
+I ’
+Predicted by
+Eq- (19)
+-3 I
+I
+I ’
+,‘l ’
+,
+B XI
+isl
+.b .a 1.2 1.6 2.0 2.k 2.8
+Side tb* deflection, in.
+(b) Wtial inflation preasura, 55 pounds per square inch.
+Fig. 26 (Continued)
+45
+
+
+
+=== PDF PAGE 57 ===
+K Lo3 I I
+vutica1 InAl ro&--
+Incrrtiog Dtcroating land Uro doflmction
+(in.1 T
+2.19 T
+l&.11
+5.58
+I
+I
+II
+,
+,
+I
+P
+,. ’
+i
+/ ’
+--#-
+I
+I ’
+f
+Predictedb y I
+Eq- (19)
+---L
+A .8 1.2 1.6 2.0 2.l.l 2.0 3.2
+Side tlrt deflection, in.
+Cc) Initial inflation prtttmt, 35 pouldt per tqutrt inch.
+Fig. 26 (Concluded)
+46
+
+
+
+=== PDF PAGE 58 ===
+vertical 1nltia1 *artlcal
+Increaring DocreP8ing load tlro deflactlon
+(In- 1
+0.99
+1.71
+2Ao
+3.05
+1
+0 .a 1.2 1.6 2.0 2.h
+Side tire deflection, in.
+(a) Initial inflation pressure, 80 poundsP W 6q-e inch.
+7 --T I I
+Vertical Initial vertical
+Increasing Decreasing load tire deflection
+0 .h .8 1.2 1.6 2.0 2.L
+Side tire deflection, in.
+(b) Initial inflation pressure, 40 pounds per square inch.
+Side load-deflection experiments vs. predictions of Eq. (19) for
+Fig. g.
+tire E.
+47
+
+
+
+=== PDF PAGE 59 ===
+t ld I I -I
+VertAl Init& veztical
+Increming Ikcreasing load tire deflection
+(in-)
+1.93
+3.34
+-4 .0 1.2 1.6 2.0 2.4
+Side tire deflection, in.
+(c) Initial inflation pressure, 32 pounds per square inch.
+,j< Id , I I I I
+Vertical Initial vertical
+Increasing Decreasing load tire deflection
+(lb) (in. >
+-o- A- 2,750 2.36
+-- a -- -_ 6 -- 5,500 3.80 -
+.4 .8 1.2 1.6 2.0 2.4
+Side tire deflection, in.
+(d) Initial inflation pressure, 24 pounds per square Inch.
+Fig. 27 (Concluded)
+48
+
+
+
+=== PDF PAGE 60 ===
+Vertical Initial vertical
+Increasing Decreasing load tire deflection
+(in. 1
+1.56
+2.52
+3.37
+4.55
+Predicted
+by
+Eq- (22)
+12
+10
+-
+1 2 3
+Torsion angle, deg
+(a) Initial inflation pressure, 270 pounds per square inch.
+Fig. 28. Moment-angle of twist experiments vs. predictions of Eq. (22) for
+tire A.
+49
+
+
+
+=== PDF PAGE 61 ===
+vrrtica1 Inltlalvertlul
+Increering Dacroasing load tire deflection
+(lb) (in. 1
+1.65~
+2.70
+3.59
+lb.89
+Predicted
+bY
+Eq. (22)
+0 1 2 3 & 5
+Torsion angle, deg
+(b) Initial lnflntion pressure, 2&O pounds per rquare inch.
+Fig. 28 (Continued)
+50
+
+
+
+=== PDF PAGE 62 ===
+Vertical Initial vertical
+Increoaing Decreasing load tlra deflection
+(in. 1
+1.8l,
+Predicted
+bY
+Eq. (22)
+2 3 4 6
+Torsion angle, deg
+(c) Initial inflation pressure, 200 pounds per square Inch.
+Fig. 28 (Continued)
+51
+
+
+
+=== PDF PAGE 63 ===
+Vertical Initial vertical
+Increasing Decreasing load tire deflection
+(in.1
+a.95
+3 3.15
+lr.29
+5.28
+F?edlcted
+by
+Eq- (22)
+16
+6
+I
+0 1 3 4 5 6
+Torsion angle, deg
+(d) Initial Inflation pressure, 180 pounds per 8Qua.m inch.
+Fig. 28 (Concluded)
+52
+
+
+
+=== PDF PAGE 64 ===
+Vart.ical Initial *ertical
+Increasing Decreming load tire deilktion
+(lb) (in.1
+4-b 20,000 1.73
+3 13:: _-_- 4 -- &O,OOO l3r..1073
+4 ---&--- --&r:- . g;g 5.32
+mEdicted
+by
+Eq. (22)
+-- I.
+1CP I
+2 Ii 6 8 10 12
+Torsion angle, deg
+(a) hitiol inflation pressure, 200 pounds per square inch-
+Fig. 29. Mment-angleof twist experiments vs. predictions of Eq. (22) for
+tire B.
+53
+
+
+
+=== PDF PAGE 65 ===
+Vertical Initial vartlcal
+Increoaing Decreasing load tire deflection
+(in->
+Predicted
+by
+Eq. (22)
+0 2 L 6 8 10 12
+Torsion angle, dcg
+(b) Initial inflation pressure, 180 pounds per square inch.
+Fig. 29 (Continued)
+54
+
+
+
+=== PDF PAGE 66 ===
+Vertical Initial rartical
+Increasing lhsraaoing load tire deflection
+(in- 1
+2.13
+- Predicted
+by
+Eq. (22)
+0 2 1, 6 8 10 12
+Torsion angle, deg
+(c) Initial Inflation pressure, 160 pounds per square inch.
+Fig. 29 (Concluded)
+55
+
+
+
+=== PDF PAGE 67 ===
+- .-.1.-m11..1.11mm.m , , ---. -_ .,, _- -._--.- ._.
+vmrtica1 Initial rutlul
+Incrma8lng mcr~a8ing load tlredaflactlon
+Predicted
+by
+Eq- (22)
+10x1&
+I
+I I
+0 1 2 3 IJ 5 6 7 8 9
+Torsion mgla, dug
+(a) Initial inflation ~eamwe, 105 poundrP U wua inch.
+Fig. 30. Moment-angle of twist experiments VS. predictions of Eq. (22) for
+tire C.
+56
+
+
+
+=== PDF PAGE 68 ===
+VUtic&l t In l i r ti o al rert1c.a.l
+IncroPri.ng Dwr~PaIng load deflrctlcn
+(in.1
+-a---o-- &Ill
+34
+5.09
+F'redicted
+by
+Eq- (22)
+1 2 3 II 5 6 7 8 9
+Toreion angle, deg
+(b) Initial Inflation presmire, 85 pounds per square inch.
+Fig. 30 (Continued)
+57
+
+
+
+=== PDF PAGE 69 ===
+Vutical Initial vl3rt1ca1
+Increasing Decreo6~g load tire doSection
+(In.1
+2.52
+Ib.35
+5.22
+Predicted
+by
+Eq. (22)
+0 1 2 3 h 5 6 7 8 9
+Toreion angle, deg
+(c) Initial inflation pressure, 65 pounds per square inch.
+Fig. 30 (Concluded)
+58
+
+
+
+=== PDF PAGE 70 ===
+vutica1 Inlthl rcrtiul
+Increoalng mcreaaing load tire dofloctioll
+(lb) p';;1
+4 __o__ & 5,200
+4 - - -me-- ---&-- 10&30 2:25
+-- - - -6- - ;;,6a& 3.15
+- -g- ---p&--
+4 ---&--- -s-&-m-- 2&f)
+Predicted
+by
+Eq. (22)
+-
+9
+7
+2
+1
+1 2 3 lb 5 6 7 8 9
+Toraion angle, dog
+ia) Initm itilation prossuro, 75 poundsa- r aqu- inch-
+Fig. 31. Moment-angle of twist experiments vs. predictions of Eq. (22) for
+tire D.
+59
+
+
+
+=== PDF PAGE 71 ===
+Vertical Inltl&l rutlcA1
+Incrmying D8crearing load t4.r. deflection
+(lb) on* 1
+-a---o--
+5,200
+4 - -p- --cl-- 10&0
+- Predicted
+by
+Eq- i22)
+8 -x 1d
+i-
+,-A
+7 /
+/ ’ I ’
+/
+/
+I
+1
+6 ,# ’
+/
+-l P
+-;I
+I .. ’
+Y+
+/-- ’ I/
+‘I
+I,
+-y
+I I N
+”
+0 1 2 3 IA 5 6 7 8 9
+Torsion angle, dog
+(b) Initial inflation pressure, 55 pounds per square inch.
+Fig. 31 (Continued)
+60
+
+
+
+=== PDF PAGE 72 ===
+Vutlcal Inltlal‘rutlcal
+Increa8inix mcro8rinp l(orldb ) tit. dofloctloa
++--o--u (in.1
+5.200 2.23
+4 - -a- - --lx- - lo;&00
++ -a--- --o-- ~,600
+Predicted
+Eq.b:22)
+,/”
+-~ h
+,% ’
+. ’
+/ ’ / ’ ’
+/ / ’ ’
+I a ’
+1, ’
+8 ’
+&
+-v
+1 2 3 h 5 6 7 8 9
+Toralon -10, dog
+(c) Mtial inflation promuro, 35 pound8 par aquaro inch.
+Fig. 31 (Concluded)
+61
+
+
+
+=== PDF PAGE 73 ===
+Vertical Initial rortlcal
+1ncruaing Dccrcoaing load tire doflectioo
+(lb) (in.)
+-4u --6- '- -mm- XT
+2: ILO
+3.05
+Predicted
+by
+Eq. (22)
+20 ld I I I M h r
+.18
+16
+s
+,
+:
+6
+b
+2
+14
+0 2 k 6 8 10 12
+Torsion angle, dog
+(a) Initial inflation pressure, 80 poundpae r squar.i nch.
+Fig. 32. Moment-angle of twist e-xperiments vs. predictions of Eq. (22) for
+tire E.
+62
+
+
+
+=== PDF PAGE 74 ===
+Vertical tIniirtiael rsrtlcal
+Increasing hcrea8ing load deflec;.oa
+(lb) (in.1
+2,750 1.59
+4 --a-- 5e.g 2.85
+, 3.77
+Predicted
+by
+Eq. (22)
+1--L
+I4 6 8 10 12
+Torsion angle, deg
+(b) Initial inflation pressure , 40 pounds per square inch.
+Fig. 32 (Continued)
+63
+
+
+
+=== PDF PAGE 75 ===
+Tutlcal Initial vertical
+Incrudng D~craa8ing load tirb daf
+0b.b)
+r-o---d- 2,750 ?
+4 --po- --d-- 5,500 3:
+Predicted
+18
+16
+6
+2
+0 2 I4 6 8 10 12
+Toraion angle, dog
+(c) Initial inimi011 pr088=0, 32 pounda PU l .mr0 inch.
+Fig. 32 (Continued)
+64
+
+
+
+=== PDF PAGE 76 ===
+Vutical Initial rortlcal
+Incroaaing Dacraa8lng lOXI tire deflectlgq
+(lb) (in-1
+M-fr- * 2,750 2.38
+4 --m-- -- -- 5,500 3.81
+Predicted
+by
+Eq. (22)
+201
+18
+I
+16 r- -----
+I ,* ’
+I ’
+# ’
+lb
+I
+I
+I ’
+I ’
+I ’
+I ’
+I ’
+i
+:
+:
+1 ’
+-I--+
+I ’
+6 :
+;
+, ’
+, ’
+1 ’
+:I
+:I
+:
+:
+$
+2 6 u 10 12
+'oreion angle, dsg
+(d) Initial inflation pressure, 21) pounds per aquars inch.
+Fig. 32 (Concluded)
+CR-439 65
+NASA-Langley, 1966

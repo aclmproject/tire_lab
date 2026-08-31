@@ -1,0 +1,11 @@
+weakness_id,target_document_count,why_priority,primary_fields
+W01_PRESSURE_TEMP_SETUP,1600,"Historical race cold/hot pressure, pyrometer/tread/core temperature, pressure-rise and setup evidence",pressure;temperature;pyrometer;setup
+W02_WEAR_LIFE_GRIP,1400,"Historical stint life, abrasion/service life, wear→grip/performance, degradation shape and stress severity",wear;life;stint;grip degradation
+W03_FM_STIFFNESS_TRANSIENT,1350,"F&M, vertical/lateral/longitudinal stiffness, relaxation, combined slip, camber/load/pressure sensitivities",F&M;stiffness;relaxation;combined slip
+W04_WET_INTERMEDIATE,1150,"Wet/intermediate compounds, water depth, hydroplaning, wet pressure/temperature, tread/groove and transition behavior",wet;intermediate;hydroplaning;water
+W05_CONSTRUCTION_MATERIALS,1000,"Carcass/belt/ply/cord/materials, spring-rate architecture, tread reinforcement and high-speed construction",construction;materials;ply;belt;cord
+W06_SUPPLIER_COMPOUNDS,900,"Supplier compound codes, data books, technical bulletins, dry/wet/intermediate menus and construction codes",supplier;compound codes;technical bulletins
+W07_FITMENT_GEOMETRY_REGS,900,"Exact period tire sizes, loaded radius, wheel/rim limits, homologations and technical regulations",fitment;geometry;loaded radius;regulations
+W08_GT1_1990S_MAP,700,"1992–1999 GT/BPR/Le Mans/IMSA supplier, compound, stint, pressure and fitment map",GT1;BPR;Le Mans;IMSA;GTS
+W09_HEAT_CYCLE_AGING_DAMAGE,550,"Heat-cycle degradation, aging, graining, blistering, tread chunking/break-up and recovery behavior",heat cycle;aging;graining;blistering;damage
+W10_RR_HYSTERESIS_THERMAL,450,"Rolling resistance, hysteresis, internal heat transfer, surface/carcass/core/cavity temperature and cold→hot pressure",rolling resistance;hysteresis;thermal transfer;pressure rise

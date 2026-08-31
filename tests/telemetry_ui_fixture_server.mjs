@@ -11,6 +11,8 @@ const sample = [
   "2026-08-28T20:00:00.2Z,69,70,66,67,130,1,108",
 ].join("\n") + "\n";
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".png": "image/png", ".webmanifest": "application/manifest+json" };
+let lastStartManifest = null;
+async function requestText(request){const chunks=[];for await(const chunk of request)chunks.push(chunk);return Buffer.concat(chunks).toString("utf8");}
 
 http.createServer(async (request, response) => {
   try {
@@ -23,6 +25,14 @@ http.createServer(async (request, response) => {
       response.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
       response.end(JSON.stringify({ state: "stopped", message: "Fixture logger is stopped.", samples: 3, rate_hz: 10, file: "fixture.csv" }));
       return;
+    }
+    if (request.url.startsWith("/api/telemetry-start") && request.method === "POST") {
+      const body=JSON.parse(await requestText(request)||"{}");lastStartManifest=body.manifest||null;
+      response.writeHead(lastStartManifest?.appVersion==="0.10.2"?200:400,{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store"});
+      response.end(JSON.stringify(lastStartManifest?{state:"waiting",message:"Fixture accepted generated manifest.",samples:0,rate_hz:body.rate_hz,manifest_received:true}:{error:"manifest missing"}));return;
+    }
+    if (request.url.startsWith("/api/telemetry-fixture-manifest")) {
+      response.writeHead(200,{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store"});response.end(JSON.stringify(lastStartManifest));return;
     }
     const pathname = new URL(request.url, `http://127.0.0.1:${port}`).pathname;
     const relative = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");

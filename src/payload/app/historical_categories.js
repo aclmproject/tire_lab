@@ -41,7 +41,8 @@ function resolveClass(year,series){
 }
 function contextForClass(classId,year){
  const c=classById(classId);if(!c)return null;const f=familyById(c.familyId),menu=menuForClass(classId,year),mapped=menuToSlots(menu);
- return {classId:c.id,className:c.name,familyId:c.familyId,familyName:f?.name||c.familyId,construction:c.construction,dryType:c.dryType,menu,slots:mapped.slots,warnings:mapped.warnings,confidenceSource:"ACLM historical class calibration"};
+ const supportedSuppliers=[...new Set([...(c.supportedSuppliers||[]),...Object.keys(c.supplierMenuOverlays||{}),...(f?.supportedSuppliers||[])])];
+ return {classId:c.id,className:c.name,classFrom:c.from,classTo:c.to,familyId:c.familyId,familyName:f?.name||c.familyId,familyFrom:f?.from??null,familyTo:f?.to??null,construction:c.construction,dryType:c.dryType,menu,slots:mapped.slots,warnings:mapped.warnings,supportedSuppliers,sourceIds:[...(c.sourceIds||[]),...(f?.sourceIds||[])],confidenceSource:"ACLM historical class calibration"};
 }
 function contextForFamily(familyId,year){
  const f=familyById(familyId);if(!f)return null;
@@ -51,7 +52,7 @@ function contextForFamily(familyId,year){
    f.id==="FAM006"?[{name:"Race",kind:"race",lifeKm:150},{name:"Qualifying",kind:"qualifying",lifeKm:35},{name:"Wet",kind:"wet",lifeKm:100}]:
    [{name:"Dry Race",kind:"race",lifeKm:220}];
  const mapped=menuToSlots(generic);
- return {classId:null,className:"Family-level prior",familyId:f.id,familyName:f.name,construction:f.construction,dryType:f.dryType,menu:generic,slots:mapped.slots,warnings:mapped.warnings,confidenceSource:"ACLM tire-family prior"};
+ return {classId:null,className:"Family-level prior",classFrom:null,classTo:null,familyId:f.id,familyName:f.name,familyFrom:f.from,familyTo:f.to,construction:f.construction,dryType:f.dryType,menu:generic,slots:mapped.slots,warnings:mapped.warnings,supportedSuppliers:[...(f.supportedSuppliers||[])],sourceIds:[...(f.sourceIds||[])],confidenceSource:"ACLM tire-family prior"};
 }
 function resolveContext(year,series){const r=resolveClass(year,series);return r.classId?{...contextForClass(r.classId,year),matchScore:r.score,ambiguous:r.ambiguous,candidates:r.candidates}:null;}
 

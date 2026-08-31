@@ -1,0 +1,447 @@
+{
+  "schema": "ACLM long-duration telemetry calibration analysis 1.0",
+  "fixtureId": "GT40-LONG-RUN-001",
+  "file": "ACLM_AC_20260831_022752_wsc_legends_gt40_mk2_tires_ks_monza66.csv",
+  "csvSha256": "4c8ff6b3c12ca04dbe0311be7ae42ea3cfb61300fa2a80ce0c3d7951d1e7b488",
+  "samples": 26542,
+  "configuredLoggerRateHz": 10,
+  "effectiveObservedSampleRateHz": 7.879843739144841,
+  "startTimestampUtc": "2026-08-31T02:27:52.2861691Z",
+  "endTimestampUtc": "2026-08-31T03:24:00.5000500Z",
+  "car": "wsc_legends_gt40_mk2_tires",
+  "track": "ks_monza66",
+  "observedCompoundStrings": [
+    "Dry endurance compound/spec (E)"
+  ],
+  "liveCompoundDecision": "Dry endurance compound/spec (E)",
+  "lapStart": 0,
+  "lapEnd": 34,
+  "completeLaps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "distance": {
+    "basis": "CURRENT_TIRE_SET_DISTANCE",
+    "startM": 0,
+    "endM": 198575.78774172798,
+    "spanKm": 198.575787741728
+  },
+  "conditions": {
+    "airC": {
+      "count": 26542,
+      "mean": 25.99999717203029,
+      "p95": 26,
+      "min": 25.9999886,
+      "max": 26,
+      "first": 25.9999886,
+      "last": 26
+    },
+    "roadC": {
+      "count": 26542,
+      "mean": 36.9999945367166,
+      "p95": 37,
+      "min": 36.9999771,
+      "max": 37,
+      "first": 36.9999771,
+      "last": 37
+    },
+    "requestedWearMultiplier": 1,
+    "rawAidTireRate": [
+      0
+    ],
+    "aidTireRateInterpretation": "UNKNOWN; zero is not evidence that wear was disabled"
+  },
+  "pressure": {
+    "idealPsi": 28,
+    "lateLapWindow": [
+      30,
+      33
+    ],
+    "perWheel": {
+      "fl": {
+        "meanPsi": 28.171567846233803,
+        "errorPsi": 0.1715678462338026,
+        "classification": "PASS"
+      },
+      "fr": {
+        "meanPsi": 27.14689372558443,
+        "errorPsi": -0.8531062744155697,
+        "classification": "REVIEW"
+      },
+      "rl": {
+        "meanPsi": 28.544491848441602,
+        "errorPsi": 0.5444918484416021,
+        "classification": "REVIEW"
+      },
+      "rr": {
+        "meanPsi": 27.77342383165586,
+        "errorPsi": -0.2265761683441383,
+        "classification": "PASS"
+      }
+    },
+    "axle": {
+      "front": {
+        "meanPsi": 27.659230785909116,
+        "errorPsi": -0.34076921409088357,
+        "classification": "PASS"
+      },
+      "rear": {
+        "meanPsi": 28.158957840048732,
+        "errorPsi": 0.15895784004873192,
+        "classification": "PASS"
+      }
+    },
+    "architectureClassification": "REFERENCE-AXLE LIVE PASS ON ACTUAL APPROXIMATELY 24F/24R SESSION STATE",
+    "generated24F25RRecommendationStatus": "NOT YET LIVE-VALIDATED",
+    "perCornerCorrectionsAuthorized": false
+  },
+  "thermal": {
+    "historicalPassFail": "UNRESOLVED",
+    "lateLapWindow": [
+      30,
+      33
+    ],
+    "slopeLapWindow": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "coreSlopeThresholdCPerLap": 0.1,
+    "pressureSlopeThresholdPsiPerLap": 0.03,
+    "coreStable": false,
+    "pressureStable": true,
+    "stabilizationClassification": "NOT STABILIZED",
+    "interpretation": "Cool mean cores and surfaces coexist with active transient tread heating. Do not infer universally insufficient friction heat and do not retune Thermal V2 from this run alone."
+  },
+  "wear": {
+    "fixtureId": "GT40-LONG-RUN-WEAR-FIXTURE-001",
+    "evidenceClass": "SIMULATOR TELEMETRY / CALIBRATION FIXTURE",
+    "historicalCalibrationStatus": "UNRESOLVED — STORE, DO NOT FIT",
+    "realKmToVirtualKmMappingAuthorized": false,
+    "useLoadRetained": true
+  },
+  "perWheel": {
+    "fl": {
+      "startingPressurePsi": 25.3028488,
+      "startingCoreC": 36.15164,
+      "referencePressureAt26CFromRegressionPsi": 23.99974255147138,
+      "pressureCoreRegression": {
+        "count": 26542,
+        "slope": 0.12833098410580548,
+        "intercept": 20.663136964720437,
+        "correlation": 0.999999186909442
+      },
+      "latePressurePsi": {
+        "count": 3080,
+        "mean": 28.171567846233803,
+        "p95": 28.2680368,
+        "min": 28.051754,
+        "max": 28.2860413,
+        "first": 28.141571,
+        "last": 28.2329521
+      },
+      "pressureErrorPsi": 0.1715678462338026,
+      "pressureClassification": "PASS",
+      "lateCoreC": {
+        "count": 3080,
+        "mean": 58.508530275389475,
+        "p95": 59.259728225,
+        "min": 57.5822449,
+        "max": 59.4006844,
+        "first": 58.2717934,
+        "last": 58.98374
+      },
+      "lateSurfaceMeanC": {
+        "count": 3080,
+        "mean": 61.691691728592865,
+        "p95": 96.68509066666667,
+        "min": 37.789804266666664,
+        "max": 104.384458,
+        "first": 42.104347700000005,
+        "last": 42.42053666666666
+      },
+      "lateSurfaceChannelCombinedC": {
+        "count": 9240,
+        "mean": 61.69169172859298,
+        "p95": 96.6790075,
+        "min": 37.31101,
+        "max": 105.594109,
+        "first": 41.55319,
+        "last": 42.83075
+      },
+      "coreSlopeCPerLap": 0.15349083412421904,
+      "pressureSlopePsiPerLap": 0.019696246469898662,
+      "slopeLapWindow": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "wear": {
+        "start": 100,
+        "end": 95.26633,
+        "delta": -4.733670000000004,
+        "firstDepartureThreshold": 99.999,
+        "firstDepartureDistanceKm": 28.025768609253543,
+        "firstDepartureLap": 4
+      }
+    },
+    "fr": {
+      "startingPressurePsi": 25.3030281,
+      "startingCoreC": 36.15306,
+      "referencePressureAt26CFromRegressionPsi": 23.99985341420497,
+      "pressureCoreRegression": {
+        "count": 26542,
+        "slope": 0.12832888822589464,
+        "intercept": 20.66330232033171,
+        "correlation": 0.9999991373519447
+      },
+      "latePressurePsi": {
+        "count": 3080,
+        "mean": 27.14689372558443,
+        "p95": 27.21772926,
+        "min": 27.0779476,
+        "max": 27.2418041,
+        "first": 27.1785965,
+        "last": 27.2410316
+      },
+      "pressureErrorPsi": -0.8531062744155697,
+      "pressureClassification": "REVIEW",
+      "lateCoreC": {
+        "count": 3080,
+        "mean": 50.52337581370126,
+        "p95": 51.073285395,
+        "min": 49.9911842,
+        "max": 51.25992,
+        "first": 50.7681236,
+        "last": 51.25456
+      },
+      "lateSurfaceMeanC": {
+        "count": 3080,
+        "mean": 52.7441031051947,
+        "p95": 88.81840469166666,
+        "min": 35.498714,
+        "max": 107.77046733333334,
+        "first": 38.80564933333333,
+        "last": 39.05451446666667
+      },
+      "lateSurfaceChannelCombinedC": {
+        "count": 9240,
+        "mean": 52.74410310519479,
+        "p95": 90.20354999999999,
+        "min": 34.7022629,
+        "max": 108.036789,
+        "first": 39.6875458,
+        "last": 38.05223
+      },
+      "coreSlopeCPerLap": 0.1487618452312204,
+      "pressureSlopePsiPerLap": 0.019089358602028848,
+      "slopeLapWindow": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "wear": {
+        "start": 100,
+        "end": 97.08701,
+        "delta": -2.9129899999999935,
+        "firstDepartureThreshold": 99.999,
+        "firstDepartureDistanceKm": 41.13481734725005,
+        "firstDepartureLap": 7
+      }
+    },
+    "rl": {
+      "startingPressurePsi": 25.2772713,
+      "startingCoreC": 35.95233,
+      "referencePressureAt26CFromRegressionPsi": 23.999773445207126,
+      "pressureCoreRegression": {
+        "count": 26542,
+        "slope": 0.12832924412106167,
+        "intercept": 20.663213098059522,
+        "correlation": 0.9999990326034627
+      },
+      "latePressurePsi": {
+        "count": 3080,
+        "mean": 28.544491848441602,
+        "p95": 28.63820974,
+        "min": 28.434269,
+        "max": 28.6601067,
+        "first": 28.507534,
+        "last": 28.6059647
+      },
+      "pressureErrorPsi": 0.5444918484416021,
+      "pressureClassification": "REVIEW",
+      "lateCoreC": {
+        "count": 3080,
+        "mean": 61.414696886525995,
+        "p95": 62.144718610000005,
+        "min": 60.5628433,
+        "max": 62.31607,
+        "first": 61.123436,
+        "last": 61.8902779
+      },
+      "lateSurfaceMeanC": {
+        "count": 3080,
+        "mean": 62.441221934891786,
+        "p95": 89.0607380883333,
+        "min": 41.26628556666666,
+        "max": 95.55713666666666,
+        "first": 46.909634600000004,
+        "last": 47.4984459
+      },
+      "lateSurfaceChannelCombinedC": {
+        "count": 9240,
+        "mean": 62.44122193489171,
+        "p95": 89.032131235,
+        "min": 40.3635025,
+        "max": 96.32369,
+        "first": 45.87347,
+        "last": 48.22985
+      },
+      "coreSlopeCPerLap": 0.2024373830138649,
+      "pressureSlopePsiPerLap": 0.025977140767669524,
+      "slopeLapWindow": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "wear": {
+        "start": 100,
+        "end": 85.904686,
+        "delta": -14.095314000000002,
+        "firstDepartureThreshold": 99.999,
+        "firstDepartureDistanceKm": 18.535633017473895,
+        "firstDepartureLap": 3
+      }
+    },
+    "rr": {
+      "startingPressurePsi": 25.27737,
+      "startingCoreC": 35.95312,
+      "referencePressureAt26CFromRegressionPsi": 23.999737098365646,
+      "pressureCoreRegression": {
+        "count": 26542,
+        "slope": 0.1283321469550815,
+        "intercept": 20.663101277533528,
+        "correlation": 0.9999988376098572
+      },
+      "latePressurePsi": {
+        "count": 3080,
+        "mean": 27.77342383165586,
+        "p95": 27.8511074,
+        "min": 27.665493,
+        "max": 27.8681374,
+        "first": 27.7586784,
+        "last": 27.8681374
+      },
+      "pressureErrorPsi": -0.2265761683441383,
+      "pressureClassification": "PASS",
+      "lateCoreC": {
+        "count": 3080,
+        "mean": 55.405847346363664,
+        "p95": 56.007791805,
+        "min": 54.57072,
+        "max": 56.1410446,
+        "first": 55.28823,
+        "last": 56.1410446
+      },
+      "lateSurfaceMeanC": {
+        "count": 3080,
+        "mean": 56.001661954058555,
+        "p95": 75.35845792166667,
+        "min": 39.38724366666667,
+        "max": 81.3145147,
+        "first": 43.94396903333333,
+        "last": 44.3592491
+      },
+      "lateSurfaceChannelCombinedC": {
+        "count": 9240,
+        "mean": 56.00166195405838,
+        "p95": 77.00065327499999,
+        "min": 38.16587,
+        "max": 85.3222351,
+        "first": 45.2106743,
+        "last": 42.6963577
+      },
+      "coreSlopeCPerLap": 0.2016381097687931,
+      "pressureSlopePsiPerLap": 0.025874554087743463,
+      "slopeLapWindow": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "wear": {
+        "start": 100,
+        "end": 89.69568,
+        "delta": -10.304320000000004,
+        "firstDepartureThreshold": 99.999,
+        "firstDepartureDistanceKm": 22.405975779045182,
+        "firstDepartureLap": 3
+      }
+    }
+  }
+}

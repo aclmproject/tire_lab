@@ -1,0 +1,24 @@
+{
+  "schema": "ACLM simulator wear calibration fixture 1.0",
+  "fixtureId": "GT40-LONG-RUN-WEAR-FIXTURE-001",
+  "evidenceClass": "SIMULATOR TELEMETRY / CALIBRATION FIXTURE",
+  "vehicle": "wsc_legends_gt40_mk2_tires",
+  "track": "ks_monza66",
+  "compound": { "observedName": "Dry endurance compound/spec (E)", "activeInternalSlot": "medium" },
+  "distance": { "basis": "CURRENT_TIRE_SET_DISTANCE", "kilometres": 198.5757877 },
+  "requestedWearMultiplier": 1,
+  "rawAidTireRate": 0,
+  "rawAidTireRateInterpretation": "UNKNOWN — zero is not evidence that tire wear was disabled",
+  "wearRaw": {
+    "fl": { "start": 100.0, "end": 95.26633, "firstDepartureKm": 28.0258, "firstDepartureLap": 4 },
+    "fr": { "start": 100.0, "end": 97.08701, "firstDepartureKm": 41.1348, "firstDepartureLap": 7 },
+    "rl": { "start": 100.0, "end": 85.904686, "firstDepartureKm": 18.5356, "firstDepartureLap": 3 },
+    "rr": { "start": 100.0, "end": 89.69568, "firstDepartureKm": 22.4060, "firstDepartureLap": 3 }
+  },
+  "calibrationDecision": "STORE, DO NOT FIT",
+  "prohibitions": [
+    "Do not infer historical tire life from AC wear/grip-health change.",
+    "Do not alter VIRTUALKM, USE_LOAD, wear LUTs, or production Knowledge numeric priors from this fixture.",
+    "Do not interpret raw aidTireRate=0 as wear disabled."
+  ]
+}

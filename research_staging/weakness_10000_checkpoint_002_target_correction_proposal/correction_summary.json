@@ -1,0 +1,22 @@
+{
+  "checkpoint": "Non-destructive P0 target correction proposal",
+  "rows": 1000,
+  "dispositions": {
+    "PROPOSED_CLASS_RELABEL": 443,
+    "UNCHANGED_NO_OBVIOUS_TEMPORAL_CONFLICT": 417,
+    "PROPOSED_DATE_NARROWING": 140
+  },
+  "confidence": {
+    "HIGH": 527,
+    "MEDIUM": 56
+  },
+  "safeguards": {
+    "originalIdsPreserved": true,
+    "originalFieldsRetained": true,
+    "suppliedManifestOverwritten": false,
+    "canonicalKnowledgeChanged": false,
+    "applicationChanged": false,
+    "pass": true
+  },
+  "status": "PROPOSAL_ONLY_REQUIRES_REVIEW_BEFORE_ACQUISITION"
+}

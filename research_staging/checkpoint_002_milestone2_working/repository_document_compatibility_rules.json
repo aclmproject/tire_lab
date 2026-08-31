@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "rules": [
+    {
+      "ruleId": "REPO-FIA-HOMOLOGATION",
+      "allowedWeaknesses": [
+        "W05_CONSTRUCTION_MATERIALS",
+        "W07_FITMENT_GEOMETRY_REGS",
+        "W08_GT1_1990S_MAP"
+      ],
+      "allowedTypes": [
+        "regulation/homologation",
+        "homologation form",
+        "period regulation",
+        "regulation"
+      ],
+      "repositoryPattern": "fia historic database|homologation|appendix j|appendix c|period technical regulations"
+    },
+    {
+      "ruleId": "REPO-FIA-EVENT",
+      "allowedWeaknesses": [
+        "W01_PRESSURE_TEMP_SETUP",
+        "W06_SUPPLIER_COMPOUNDS",
+        "W07_FITMENT_GEOMETRY_REGS",
+        "W08_GT1_1990S_MAP"
+      ],
+      "allowedTypes": [
+        "regulation",
+        "event/regulatory bulletin",
+        "official bulletin"
+      ],
+      "repositoryPattern": "fia\\/event|fia official|event bulletin"
+    },
+    {
+      "ruleId": "REPO-TECHNICAL",
+      "allowedWeaknesses": [
+        "W01_PRESSURE_TEMP_SETUP",
+        "W02_WEAR_LIFE_GRIP",
+        "W03_FM_STIFFNESS_TRANSIENT",
+        "W04_WET_INTERMEDIATE",
+        "W05_CONSTRUCTION_MATERIALS",
+        "W09_HEAT_CYCLE_AGING_DAMAGE",
+        "W10_RR_HYSTERESIS_THERMAL"
+      ],
+      "allowedTypes": [
+        "technical paper",
+        "peer-reviewed paper",
+        "government technical report",
+        "thesis/dissertation",
+        "test methodology",
+        "technical report",
+        "government monograph",
+        "materials technical paper",
+        "technical/race engineering paper",
+        "supplier research paper"
+      ],
+      "repositoryPattern": "sae|tire science|nasa|nhtsa|nist|epa|university|calspan|road-surface|technical textile|research paper"
+    },
+    {
+      "ruleId": "REPO-PATENT",
+      "allowedWeaknesses": [
+        "W03_FM_STIFFNESS_TRANSIENT",
+        "W05_CONSTRUCTION_MATERIALS",
+        "W09_HEAT_CYCLE_AGING_DAMAGE",
+        "W10_RR_HYSTERESIS_THERMAL"
+      ],
+      "allowedTypes": [
+        "patent",
+        "patent or technical catalog"
+      ],
+      "repositoryPattern": "patent"
+    },
+    {
+      "ruleId": "REPO-PERIOD-MOTORSPORT",
+      "allowedWeaknesses": [
+        "W01_PRESSURE_TEMP_SETUP",
+        "W02_WEAR_LIFE_GRIP",
+        "W04_WET_INTERMEDIATE",
+        "W05_CONSTRUCTION_MATERIALS",
+        "W06_SUPPLIER_COMPOUNDS",
+        "W07_FITMENT_GEOMETRY_REGS",
+        "W08_GT1_1990S_MAP",
+        "W09_HEAT_CYCLE_AGING_DAMAGE"
+      ],
+      "allowedTypes": [
+        "period race report / technical feature",
+        "period technical/race article"
+      ],
+      "repositoryPattern": "motor sport|motorsportmagazine|period motorsport magazine"
+    },
+    {
+      "ruleId": "REPO-SUPPLIER",
+      "allowedWeaknesses": [
+        "W01_PRESSURE_TEMP_SETUP",
+        "W02_WEAR_LIFE_GRIP",
+        "W03_FM_STIFFNESS_TRANSIENT",
+        "W04_WET_INTERMEDIATE",
+        "W05_CONSTRUCTION_MATERIALS",
+        "W06_SUPPLIER_COMPOUNDS",
+        "W07_FITMENT_GEOMETRY_REGS",
+        "W08_GT1_1990S_MAP",
+        "W09_HEAT_CYCLE_AGING_DAMAGE",
+        "W10_RR_HYSTERESIS_THERMAL"
+      ],
+      "allowedTypes": [
+        "supplier technical document",
+        "supplier racing document",
+        "supplier technical paper",
+        "supplier motorsport document",
+        "supplier catalog/manual",
+        "supplier technical/press document",
+        "supplier racing catalog",
+        "supplier research paper",
+        "technical/historical document",
+        "patent or technical catalog"
+      ],
+      "repositoryPattern": "manufacturer"
+    },
+    {
+      "ruleId": "REPO-TEAM-SETUP",
+      "allowedWeaknesses": [
+        "W01_PRESSURE_TEMP_SETUP",
+        "W02_WEAR_LIFE_GRIP",
+        "W03_FM_STIFFNESS_TRANSIENT",
+        "W04_WET_INTERMEDIATE",
+        "W06_SUPPLIER_COMPOUNDS",
+        "W09_HEAT_CYCLE_AGING_DAMAGE"
+      ],
+      "allowedTypes": [
+        "setup book / test sheet",
+        "technical/race engineering paper"
+      ],
+      "repositoryPattern": "team\\/setup|race engineering literature"
+    },
+    {
+      "ruleId": "REPO-RACE-EVENT",
+      "allowedWeaknesses": [
+        "W02_WEAR_LIFE_GRIP",
+        "W04_WET_INTERMEDIATE",
+        "W06_SUPPLIER_COMPOUNDS",
+        "W07_FITMENT_GEOMETRY_REGS",
+        "W08_GT1_1990S_MAP",
+        "W09_HEAT_CYCLE_AGING_DAMAGE"
+      ],
+      "allowedTypes": [
+        "race report/result/stint evidence",
+        "entry list/program",
+        "period program/entry documentation",
+        "official event retrospective/report",
+        "entry/result photo/documentation"
+      ],
+      "repositoryPattern": "race results|entry|program|24h-lemans|racingsportscars"
+    },
+    {
+      "ruleId": "REPO-GT-REGULATION",
+      "allowedWeaknesses": [
+        "W06_SUPPLIER_COMPOUNDS",
+        "W07_FITMENT_GEOMETRY_REGS",
+        "W08_GT1_1990S_MAP"
+      ],
+      "allowedTypes": [
+        "regulation"
+      ],
+      "repositoryPattern": "fia gt regulations|imsa period regulations"
+    }
+  ],
+  "preferredRepairRepositories": {
+    "W01_PRESSURE_TEMP_SETUP": [
+      "race team/setup book archive",
+      "period motorsport magazine",
+      "manufacturer technical archive"
+    ],
+    "W02_WEAR_LIFE_GRIP": [
+      "period motorsport magazine",
+      "manufacturer racing archive",
+      "SAE Mobilus"
+    ],
+    "W03_FM_STIFFNESS_TRANSIENT": [
+      "SAE Mobilus",
+      "Tire Science & Technology",
+      "Calspan/Flat-Trac methodology"
+    ],
+    "W04_WET_INTERMEDIATE": [
+      "period motorsport magazine",
+      "manufacturer racing archive",
+      "SAE Mobilus"
+    ],
+    "W05_CONSTRUCTION_MATERIALS": [
+      "manufacturer technical archive",
+      "SAE Mobilus",
+      "Google Patents"
+    ],
+    "W06_SUPPLIER_COMPOUNDS": [
+      "manufacturer racing archive",
+      "period motorsport magazine",
+      "race entry/program archive"
+    ],
+    "W07_FITMENT_GEOMETRY_REGS": [
+      "FIA Historic Database homologations",
+      "manufacturer racing catalog/manual",
+      "period technical regulations"
+    ],
+    "W08_GT1_1990S_MAP": [
+      "period motorsport magazine",
+      "race entry/program archive",
+      "FIA GT regulations"
+    ],
+    "W09_HEAT_CYCLE_AGING_DAMAGE": [
+      "manufacturer technical archive",
+      "SAE Mobilus",
+      "period motorsport magazine"
+    ],
+    "W10_RR_HYSTERESIS_THERMAL": [
+      "SAE Mobilus",
+      "Tire Science & Technology",
+      "EPA/NHTSA/NIST technical archive"
+    ]
+  },
+  "principle": "A repository is not evidence for a field it is structurally unlikely to contain. Homologation/regulation records constrain fitment and legality; they do not stand in for thermal, pyrometer, wear, or F&M measurements unless explicitly stated."
+}

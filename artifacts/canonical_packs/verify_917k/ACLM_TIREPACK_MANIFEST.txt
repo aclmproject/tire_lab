@@ -1,0 +1,27 @@
+ACLM Historical Tire Lab v0.10.2
+Car: Porsche 917 K
+Year/class: 1970 / 1968-70 World Sportscar / Group 4-6 transition
+Supplier: General / unknown
+Construction: bias
+Historical category: FAM035 - 1968-70 world sportscar tread-to-slick transition
+Class calibration: CLS035 - 1968-70 World Sportscar / Group 4-6 transition
+Compounds: Dry Endurance
+FZ0 front/rear: 1979 / 3569 N
+Load-duty thermal reconstruction: F light 8.60 N/mm | R medium 9.65 N/mm
+Load/compound checklist: ACLM_LOAD_COMPOUND_CHECKLIST.txt
+AC tire format: VERSION=10
+CSP: car.ini must use VERSION=extended-2
+Thermal: CSP Thermal Model V2 plus required Kunos THERMAL sections
+Extended contact rays: 2 lateral / 4 longitudinal per side, 60 degrees
+Calibration manifest: ACLM_THERMAL_V2_CALIBRATION.json
+Pressure closure report: ACLM_PRESSURE_CLOSURE_REPORT.json
+Pressure generation: auto-solved from explicit/predicted AC initial core (26.0 C; AMBIENT_PROXY_UNRESOLVED) to reference-duty contained-air temperature
+Imported AC cold-pressure reference: none
+Medium generated cold pressure F/R: 27.7 / 33.5 psi
+Ideal hot pressure F/R: 32.0 / 38.0 psi
+Wear calibration: provisional
+Wear note: ACLM historical class-life prior: Soft 60 km, Medium 90 km, Hard 190 km, Intermediate 75 km, Wet 90 km. Wear shape remains evidence-weighted and should be telemetry-certified for the specific car/track.
+Terminal failure: enabled; normal curve threshold 60.0% grip; failure 50.0% at +0.20 vKm
+Output ZIP: ACLM_Porsche_917_K_TirePack.zip
+NOTE: This pack is structurally complete and reference-validated. On-track grip, temperature and wear still require car-specific certification.
+Historical PDF report: ACLM_Porsche_917_K_Historical_Tire_Accuracy_Report.pdf

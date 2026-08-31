@@ -1,0 +1,657 @@
+ACLM TIRE LAB — RESEARCH INGESTION PACKET
+Prepared for the next Desktop-side canonical Tire Lab update.
+
+PURPOSE
+This packet contains:
+- 5 carry-forward research tasks from the prior discussion (4 new/targeted sources plus an expansion of existing SRC001), AND
+- exactly 50 additional sources that were checked against the current v0.9.2 / Tire Knowledge v1.7.0 knowledge_fallback.json and were not already present by title/URL/identifier.
+
+IMPORTANT OPERATING RULES FOR DESKTOP
+1. Do not merely paste these summaries into the knowledge database. Open/read the source itself.
+2. Deduplicate by DOI, title, URL, report number and bibliographic identity before creating any new source ID.
+3. For paywalled/abstract-only sources, ingest only claims supported by the accessible abstract/metadata and mark FULL_TEXT_STATUS=ABSTRACT_ONLY. Never pretend full text was reviewed.
+4. For open PDFs/pages, read the relevant sections in full. Record page/section/table references where practical.
+5. Separate evidence into: measurement, observation, scalingRule, historicalConstraint, calibrationMethod, and source-level limitation.
+6. Classify provenance distinctly: DIRECT_PERIOD_RACING, PERIOD_GENERAL_TIRE_TECHNICAL, MODERN_MOTORSPORT_SUPPLIER, GOVERNMENT/ACADEMIC_FOUNDATIONAL, MODERN_GENERAL_TIRE_TECHNICAL, or SECONDARY_HISTORICAL.
+7. Do not convert a relationship into a numerical generator coefficient unless the source contains applicable numerical evidence and the conversion is justified.
+8. Do not use passenger/truck/aircraft absolute values as racing tire absolutes. Use them primarily for mechanisms, scaling shapes, interactions and validation methods unless class applicability is established.
+9. Do not silently raise source confidence because a paper is technical. Applicability matters as much as source quality.
+10. Preserve observables: tread/surface temperature, bulk/core temperature, inner-liner/cavity temperature, pressure, and pyrometer readings are not interchangeable.
+11. Research may strengthen the generator architecture without changing any historical family prior. "No numerical prior change" is an acceptable and often preferred result.
+12. Persist approved evidence into the canonical Tire Knowledge master, increment the knowledge release, update SHA/hash and changelog, and ensure the shipped application actually uses it.
+13. Do not bundle copyrighted/paywalled full texts into the public installer. Store citation/provenance and extracted evidence; keep any legally obtained development copies outside the end-user package.
+14. At the end, produce a Research Ingestion Report with source-by-source FULL_TEXT_STATUS, extracted evidence, affected families/classes, proposed rules, rejected unsupported inferences, and a separate list of numerical generator changes (which may be empty).
+
+RECOMMENDED PRIORITY
+P0 immediate: pressure/thermal/wear mapping and current validation campaign.
+P1 high: construction, load, transient force and wet/intermediate architecture.
+P2 useful: broader history, regulations and calibration methodology.
+
+============================================================
+CARRY-FORWARD SOURCES / TASKS
+============================================================
+
+[C1] Surface Temperature of Running Tires Using Infrared Scanning
+Year: 1970
+Author/Publisher: F. S. Conant; G. L. Hall; J. D. Walter / Firestone
+Identifier: SAE 700475
+URL: https://saemobilus.sae.org/papers/surface-temperature-running-tires-using-infrared-scanning-700475
+Classification: PERIOD GENERAL TIRE TECHNICAL EVIDENCE
+Research target: Pressure, speed, load and construction interactions in tread temperature; bias/belted-bias/radial comparison.
+Constraint: Do not infer racing-specific optimum temperatures from the abstract. If full text is inaccessible, mark ABSTRACT_ONLY.
+
+[C2] Determination of Tire Energy Dissipation: Analysis and Recommended Practices
+Year: 1978
+Author/Publisher: Glenn D. Thompson; Richard N. Burgeson / U.S. EPA
+Identifier: EPA technical report
+URL: https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=94003ZCS.TXT
+Classification: PERIOD GOVERNMENT TECHNICAL EVIDENCE
+Research target: Warm-up, pressure rise, deflection, hysteresis, speed, traction and equilibrium energy dissipation.
+Constraint: Do not map passenger/truck absolute values directly into racing coefficients without applicability evidence.
+
+[C3] Grand Prix of South Africa — contemporary practice/race report
+Year: 1968
+Author/Publisher: Motor Sport
+Identifier: Period magazine technical reporting
+URL: https://www.motorsportmagazine.com/archive/article/february-1968/20/grand-prix-of-south-africa-4/
+Classification: DIRECT PERIOD RACING EVIDENCE
+Research target: Jim Clark/Dunlop: center tread cooler than edges, about +6 psi front to alter profile, inner-left tread up to about 120 C; soft compounds designed to run hot.
+Constraint: 120 C is a local event-specific tread temperature, not a universal historic optimum.
+
+[C4] Mechanics of Pneumatic Tires
+Year: 1971
+Author/Publisher: Samuel K. Clark (ed.) / NBS
+Identifier: NBS Monograph 122
+URL: https://www.govinfo.gov/content/pkg/GOVPUB-C13-a7834d3283458a60b7655045e305bd2d/pdf/GOVPUB-C13-a7834d3283458a60b7655045e305bd2d.pdf
+Classification: EXISTING FOUNDATIONAL SOURCE — EXPAND SRC001
+Research target: Re-read relevant chapters for pressure-deflection, construction, cornering stiffness, contact mechanics, hysteresis, friction, wear and temperature.
+Constraint: Do NOT create a duplicate source. Add new evidence/rules linked to existing SRC001.
+
+[C5] 24 Hours of Le Mans 1966 — Chris Amon looks back at his win
+Year: 1966 event / later ACO interview
+Author/Publisher: Automobile Club de l'Ouest / 24h-lemans.com
+Identifier: Official event retrospective/interview
+URL: https://www.24h-lemans.com/en/news/24-hours-of-le-mans-1966-chris-amon-ford-looks-back-at-his-win-1-2-40897
+Classification: DIRECT EVENT-SPECIFIC RACING EVIDENCE
+Research target: McLaren/Amon Mk II started on Firestone intermediates; tread-shedding at very high Mulsanne speed; switch to Goodyears used by other GT40s.
+Constraint: Do not encode 1966 GT40 as universally Goodyear or Firestone; retain event/weather/spec context.
+
+============================================================
+50 ADDITIONAL SOURCES — VERIFIED NOT PRESENT IN CURRENT v0.9.2 KNOWLEDGE LIST
+============================================================
+
+[NEW-01] Understanding Race Tires
+Priority: P0
+Year: 1998
+Author/Publisher: Chuck Hallum / Hallum Racing Enterprises
+Identifier: SAE 983028
+URL: https://saemobilus.sae.org/papers/understanding-race-tires-983028
+Classification: RACE-TIRE MODELING
+Research target: Contact-patch heat generation; slip, pressure, load, camber, tread thickness; deflection, spring rate and high-speed loss.
+Constraint: Treat model hypotheses as engineering model evidence, not universal measured coefficients.
+
+[NEW-02] HOW TO WORK RACE TIRES On NASCAR Ovals
+Priority: P0
+Year: 2000
+Author/Publisher: Chuck Hallum / Hallum Racing Enterprises
+Identifier: SAE 2000-01-3571
+URL: https://saemobilus.sae.org/papers/work-race-tires-nascar-ovals-2000-01-3571
+Classification: DIRECT MOTORSPORT ENGINEERING
+Research target: Race-tire slip losses and tread heating; pressure sensitivity; camber/toe/load effects.
+Constraint: NASCAR-specific magnitudes are not universal road-racing values.
+
+[NEW-03] Dynamic Traction Characteristics of Tires
+Priority: P0
+Year: 2002
+Author/Publisher: Chuck Hallum / Hallum Racing
+Identifier: SAE 2002-01-3302
+URL: https://saemobilus.sae.org/papers/dynamic-traction-characteristics-tires-2002-01-3302
+Classification: MOTORSPORT TIRE DYNAMICS
+Research target: Heat generated in the contact patch changes dynamic traction during a corner; transient interpretation of load sensitivity.
+Constraint: Do not use as a substitute for direct historical F&M data.
+
+[NEW-04] Race Car Tire Modeling: A Simplified Approach for Vehicle Dynamic Analysis and Real-Time Simulation
+Priority: P0
+Year: 2004
+Author/Publisher: Giuseppe Callea
+Identifier: SAE 2004-01-3530
+URL: https://saemobilus.sae.org/papers/race-car-tire-modeling-a-simplified-approach-vehicle-dynamic-analysis-real-time-simulation-2004-01-3530
+Classification: MOTORSPORT TELEMETRY/MODELING
+Research target: Deriving tire stiffness/force behavior from on-track data; load, camber and combined slip.
+Constraint: Use for calibration methodology, not historic target values.
+
+[NEW-05] An Analysis of Tire Traction Properties and Their Influence on Vehicle Dynamic Performance
+Priority: P1
+Year: 1970
+Author/Publisher: Howard Dugoff; P. S. Fancher; Leonard Segel / University of Michigan
+Identifier: SAE 700377
+URL: https://saemobilus.sae.org/papers/analysis-tire-traction-properties-influence-vehicle-dynamic-performance-700377
+Classification: FOUNDATIONAL COMBINED-SLIP MODEL
+Research target: Analytical longitudinal/lateral shear forces vs normal load, sideslip, inclination and longitudinal slip; combined force behavior.
+Constraint: Model architecture source; validate numerical priors independently.
+
+[NEW-06] Tire Traction Measurement on the Road and in the Laboratory
+Priority: P1
+Year: 1971
+Author/Publisher: Walter Bergman; Harold R. Clemett; Narendra J. Sheth / Ford
+Identifier: SAE 710630
+URL: https://saemobilus.sae.org/papers/tire-traction-measurement-road-laboratory-710630
+Classification: PERIOD OEM TEST METHODOLOGY
+Research target: Traction-envelope concept; road/lab correlation; cornering traction with and without power application.
+Constraint: Use test-method relationships, not generic friction values as race-slick mu.
+
+[NEW-07] Investigation of Tire-Road Traction Properties
+Priority: P1
+Year: 1971
+Author/Publisher: F. D. Smithson / GM; F. H. Herzegh / B.F. Goodrich
+Identifier: SAE 710091
+URL: https://saemobilus.sae.org/papers/investigation-tire-road-traction-properties-710091
+Classification: PERIOD OEM/SUPPLIER TRACTION
+Research target: Road-surface dependence of measured tire traction and test-surface categorization.
+Constraint: Keep road-surface effects distinct from tire construction effects.
+
+[NEW-08] Mechanical Properties of Truck Tires
+Priority: P1
+Year: 1973
+Author/Publisher: J. T. Tielking; P. S. Fancher; R. E. Wild / University of Michigan
+Identifier: SAE 730183
+URL: https://saemobilus.sae.org/papers/mechanical-properties-truck-tires-730183
+Classification: PERIOD MECHANICS DATA
+Research target: Vertical/lateral spring rates; load and inflation effects; camber/slip; ply rating, tread pattern and wear effects.
+Constraint: Truck absolute values are not race-tire targets; relationships are useful.
+
+[NEW-09] Light Truck Tire Traction Properties and Their Effect on Braking Performance
+Priority: P1
+Year: 1974
+Author/Publisher: D. J. Bickerstaff; G. Hartley / Ford
+Identifier: SAE 741137
+URL: https://saemobilus.sae.org/papers/light-truck-tire-traction-properties-effect-braking-performance-741137
+Classification: PERIOD LOAD-SENSITIVITY EVIDENCE
+Research target: Bias-ply peak traction load sensitivity and inflation-pressure influence.
+Constraint: Use the qualitative/functional relationship unless the tire class is applicable.
+
+[NEW-10] The Influence of Tire Wear on Steering Properties and the Corresponding Stresses at the Tread-Road Interface
+Priority: P1
+Year: 1974
+Author/Publisher: S. A. Lippmann; K. L. Oblizajek / Uniroyal
+Identifier: SAE 741102
+URL: https://saemobilus.sae.org/papers/influence-tire-wear-steering-properties-corresponding-stresses-tread-road-interference-741102
+Classification: WEAR -> FORCE/MOMENT EVIDENCE
+Research target: Wear state, structure, load and inflation effects on cornering stiffness and aligning-torque stiffness; interfacial stress distributions.
+Constraint: Do not equate tread depth directly with AC wear-health percentage.
+
+[NEW-11] Evaluation of Tire Abrasion in Terms of Driving Severity
+Priority: P0
+Year: 1975
+Author/Publisher: A. Chiesa; G. Ghilardi / Pirelli
+Identifier: SAE 750459
+URL: https://saemobilus.sae.org/papers/evaluation-tire-abrasion-terms-driving-severity-750459
+Classification: PERIOD SUPPLIER WEAR EVIDENCE
+Research target: Specific wear rate, wear-profile shape, front/rear wear ratio; wear-rate ratios change with driving severity.
+Constraint: Excellent architecture evidence against one fixed km-life multiplier.
+
+[NEW-12] Road and Dynamometer Tire Power Dissipation
+Priority: P1
+Year: 1975
+Author/Publisher: W. B. Crum
+Identifier: SAE 750955
+URL: https://saemobilus.sae.org/papers/road-dynamometer-tire-power-dissipation-750955
+Classification: ENERGY/ROLLING MODEL
+Research target: Driving-tire slip power dissipation; rolling-resistance moment and loaded deflection; dynamometer vs road interpretation.
+Constraint: Use to refine energy pathways, not to set racing coefficients blindly.
+
+[NEW-13] Frequency Response of Tires—Slip Angle and Lateral Force
+Priority: P1
+Year: 1976
+Author/Publisher: Rüdiger Weber; Hans-Georg Persch / Porsche
+Identifier: SAE 760030
+URL: https://saemobilus.sae.org/papers/frequency-response-tires-slip-angle-lateral-force-760030
+Classification: PERIOD PORSCHE TRANSIENT TIRE DATA
+Research target: Steady vs transient tire properties; lateral-force frequency response to changing slip angle.
+Constraint: Useful for relaxation/transient architecture; not a thermal target source.
+
+[NEW-14] Power Loss of Truck Tires Under Equilibrium and Transient Conditions
+Priority: P0
+Year: 1976
+Author/Publisher: I. Gusakov; D. J. Schuring / Calspan
+Identifier: SAE 762030
+URL: https://saemobilus.sae.org/papers/power-loss-truck-tires-equilibrium-transient-conditions-762030
+Classification: THERMAL/ENERGY TEST DATABASE
+Research target: Influences of wear, speed, load, torque, slip angle, inflation pressure, temperature, construction, tread and distance on power loss.
+Constraint: Relationships are high-value; absolute truck values need class translation.
+
+[NEW-15] The Effect of Inflation Pressure on Bias, Bias-Belted and Radial Tire Performance
+Priority: P0
+Year: 1980
+Author/Publisher: B. L. Collier; J. T. Warchol / B.F. Goodrich
+Identifier: SAE 800087
+URL: https://saemobilus.sae.org/papers/effect-inflation-pressure-bias-bias-belted-radial-tire-performance-800087
+Classification: CONSTRUCTION/PRESSURE EVIDENCE
+Research target: 16-48 psi tests; pressure effects on rolling resistance, tread wear, traction and mechanical properties across three constructions.
+Constraint: Use construction differences to constrain cross-ply/radial scaling, not race pressure targets.
+
+[NEW-16] Effect of Ambient Temperature on Radial Tire Rolling Resistance
+Priority: P1
+Year: 1980
+Author/Publisher: M. L. Janssen; G. L. Hall / Firestone
+Identifier: SAE 800090
+URL: https://saemobilus.sae.org/papers/effect-ambient-temperature-radial-tire-rolling-resistance-800090
+Classification: THERMAL/ROLLING EVIDENCE
+Research target: Ambient -20 to 40 C; inflation and viscoelastic-property effects on rolling resistance; compound/tread differences.
+Constraint: General radial data; do not map absolute RR directly to race slicks.
+
+[NEW-17] Analysis of Tire Deformation in Operation from the Data of Temperature Rise
+Priority: P0
+Year: 1980
+Author/Publisher: D. C. Prevorsek; Y. D. Kwon; R. K. Sharma; C. W. Beringer / Allied Chemical
+Identifier: SAE 800181
+URL: https://saemobilus.sae.org/papers/analysis-tire-deformation-operation-data-temperature-rise-800181
+Classification: THERMAL <-> DEFORMATION EVIDENCE
+Research target: Uses temperature rise to estimate in-service deformation amplitude and fatigue-relevant carcass behavior.
+Constraint: Use as pathway evidence linking flex/hysteresis and heat.
+
+[NEW-18] Internal Air Temperature Measurements in Tyres — A Major Advance in Earth Mover Tyre Pressure Control
+Priority: P0
+Year: 1980
+Author/Publisher: Donald M. Gordon
+Identifier: SAE 801022
+URL: https://saemobilus.sae.org/papers/internal-air-temperature-measurements-tyres-a-major-advance-earth-mover-tyre-pressure-control-801022
+Classification: PRESSURE/TEMPERATURE MEASUREMENT
+Research target: Contained-air temperature plus gas-law pressure control for hot pressure.
+Constraint: Large earthmover absolute values are irrelevant; measurement concept is useful.
+
+[NEW-19] Modeling Tire Energy Dissipation for Power Loss Calculations
+Priority: P0
+Year: 1981
+Author/Publisher: Daniel J. Segalman
+Identifier: SAE 810162
+URL: https://saemobilus.sae.org/papers/modeling-tire-energy-dissipation-power-loss-calculations-810162
+Classification: THERMO-MECHANICAL ENERGY MODEL
+Research target: Viscoelastic stress response, material distribution, temperature and deformation fields to compute unrecovered work/heat.
+Constraint: Use as physical architecture support; coefficients still require tire-specific evidence.
+
+[NEW-20] Recent Aircraft Tire Thermal Studies
+Priority: P0
+Year: 1982
+Author/Publisher: Richard N. Dodge; Samuel K. Clark / University of Michigan
+Identifier: SAE 821392
+URL: https://saemobilus.sae.org/papers/recent-aircraft-tire-thermal-studies-821392
+Classification: THERMAL NETWORK VALIDATION
+Research target: Internal temperature distribution from cyclic stress/work and diffusion; compared with buried thermocouples.
+Constraint: Aircraft duty is extreme; heat-path architecture is the main transfer value.
+
+[NEW-21] A New Way of Tire Characteristics Determination at the Tire Test Rig under Realistic Loading Conditions
+Priority: P0
+Year: 1989
+Author/Publisher: Walter Halbmann; Claudio Dori / Porsche
+Identifier: SAE 890101
+URL: https://saemobilus.sae.org/papers/a-new-way-tire-characteristics-determination-tire-test-rig-realistic-loading-conditions-890101
+Classification: PERIOD PORSCHE TEST METHOD
+Research target: Slip angle, longitudinal slip, camber, speed, pressure and tread-height effects; controlled wear during tire testing.
+Constraint: Very high priority for late-1980s/1990s family construction and test methodology.
+
+[NEW-22] Numerical Prediction of Slip Energy of a Straight Rolling Tire
+Priority: P0
+Year: 1994
+Author/Publisher: S. B. Tadepalli et al. / University of South Florida & Wright-Patterson AFB
+Identifier: SAE 941179
+URL: https://saemobilus.sae.org/papers/numerical-prediction-slip-energy-a-straight-rolling-tire-941179
+Classification: SLIP-ENERGY WEAR MODEL
+Research target: Contact-patch slip velocity and slip-energy generation; even low brake slip increases energy contributing to wear.
+Constraint: Use to improve wear-work normalization, not direct racing life.
+
+[NEW-23] The Aircraft Tire Wear Problem
+Priority: P0
+Year: 1995
+Author/Publisher: Thomas J. Yager / NASA
+Identifier: SAE 951391
+URL: https://saemobilus.sae.org/papers/aircraft-tire-wear-problem-951391
+Classification: LARGE TEST WEAR DATASET
+Research target: ~900 runs: tread temperature, loading, inflation, size, tread, construction, speed, yaw, braking and camber effects on wear.
+Constraint: Excellent multi-variable wear architecture evidence; aircraft absolute wear rates are not racing priors.
+
+[NEW-24] Orbiter Tire Traction and Wear
+Priority: P0
+Year: 1995
+Author/Publisher: C. D. Michalopoulos; David A. Hamilton
+Identifier: SAE 952019
+URL: https://saemobilus.sae.org/papers/orbiter-tire-traction-wear-952019
+Classification: ENERGY-BASED WEAR MODEL
+Research target: Side force/wear vs vertical load, slip angle, footprint and abradability; dissipated side-force energy used as wear index.
+Constraint: Use as evidence for slip-energy-to-wear coupling.
+
+[NEW-25] Truck Tire Wet Traction: Effects of Water Depth, Speed, Tread Depth, Inflation, and Load
+Priority: P1
+Year: 1996
+Author/Publisher: M. G. Pottinger et al.
+Identifier: SAE 962153
+URL: https://saemobilus.sae.org/papers/truck-tire-wet-traction-effects-water-depth-speed-tread-depth-inflation-load-962153
+Classification: WET-TRACTION MULTIVARIATE DATA
+Research target: Designed experiments on water depth, speed, tread wear, inflation and load; lateral/alignment and braking traction.
+Constraint: Use to improve wet/intermediate architecture, not direct race-wet coefficients.
+
+[NEW-26] The Paper-Tire Concept: A Way to Optimize Tire Force and Moment Properties
+Priority: P1
+Year: 1997
+Author/Publisher: Dieterich J. Schuring; Wolfgang Pelz; Marion G. Pottinger
+Identifier: SAE 970557
+URL: https://saemobilus.sae.org/papers/paper-tire-concept-a-way-optimize-tire-force-moment-properties-970557
+Classification: PARAMETRIC TIRE MODELING
+Research target: Defines a virtual tire from recognized F&M characteristics; useful separation of tire targets from implementational model parameters.
+Constraint: Architecture source; no historic priors by itself.
+
+[NEW-27] Influence of Tire Core and Surface Temperature on Lateral Tire Characteristics
+Priority: P0
+Year: 2014
+Author/Publisher: Christian Angrick; Sebastiaan van Putten; Günther Prokop
+Identifier: SAE 2014-01-0074
+URL: https://saemobilus.sae.org/articles/influence-tire-core-surface-temperature-lateral-tire-characteristics-2014-01-0074
+Classification: CORE VS SURFACE TEMPERATURE
+Research target: Measures core/surface temperature separately; effects on cornering stiffness, relaxation length, lateral mu and internal pressure.
+Constraint: High priority for mapping AC core vs tread telemetry; modern road tire values are not historic race targets.
+
+[NEW-28] A Detailed Thermo-Mechanical Tire Model for Advanced Handling Applications
+Priority: P0
+Year: 2015
+Author/Publisher: Francesco Calabrese; Manfred Baecker; Carlos Galbally; Axel Gallrein
+Identifier: SAE 2015-01-0655
+URL: https://saemobilus.sae.org/articles/a-detailed-thermo-mechanical-tire-model-advanced-handling-applications-2015-01-0655
+Classification: THERMO-MECHANICAL MODEL / MOTORSPORT VALIDATION
+Research target: Heat from cyclic deformation and contact-patch sliding; cooling to air/asphalt; local temperature changes friction; validated with motorsport measurements.
+Constraint: Use for architecture and pathway calibration, not historic absolute targets.
+
+[NEW-29] A Hybrid Approach to Model the Temperature Effect in Tire Forces and Moments
+Priority: P1
+Year: 2017
+Author/Publisher: Bibin S; Ashok Kumar Pandey
+Identifier: SAE 2017-01-9676
+URL: https://saemobilus.sae.org/articles/a-hybrid-approach-model-temperature-effect-tire-forces-moments-2017-01-9676
+Classification: TEMPERATURE -> F&M
+Research target: Temperature effects on longitudinal/lateral force and aligning moment; rubber friction/elastic-modulus variation.
+Constraint: Use functional trends; tire/sample specifics limit direct coefficients.
+
+[NEW-30] Tire Thermal Model for Enhanced Vehicle Dynamics Simulation
+Priority: P0
+Year: 2009
+Author/Publisher: Aldo Sorniotti / University of Surrey
+Identifier: SAE 2009-01-0441
+URL: https://saemobilus.sae.org/papers/tire-thermal-model-enhanced-vehicle-dynamics-simulation-2009-01-0441
+Classification: THERMAL MODEL / EXPERIMENTAL VALIDATION
+Research target: Empirical tire-temperature estimator coupled to a brush model so temperature alters tangential forces.
+Constraint: Use as calibration framework, not historic temperature truth.
+
+[NEW-31] TRT: Thermo Racing Tyre — a Physical Model to Predict the Tyre Temperature Distribution
+Priority: P0
+Year: 2013
+Author/Publisher: Flavio Farroni; Daniele Giordano; Michele Russo; Francesco Timpone
+Identifier: Meccanica 49, DOI 10.1007/s11012-013-9821-9
+URL: https://www.researchgate.net/publication/258226051_TRT_Thermo_racing_tyre_a_physical_model_to_predict_the_tyre_temperature_distribution
+Classification: MOTORSPORT THERMAL MODEL
+Research target: 3-D racing tire model: surface/bulk/inner-liner temperatures, friction energy, strain-energy loss, air/track cooling and internal heat flow; telemetry inputs.
+Constraint: High priority for CSP Thermal V2 pathway mapping; keep model-specific parameters separate.
+
+[NEW-32] TRT EVO: Advances in Real-Time Thermodynamic Tire Modeling for Vehicle Dynamics Simulations
+Priority: P0
+Year: 2018/2019
+Author/Publisher: Flavio Farroni; Michele Russo; Aleksandr Sakhnevych; Francesco Timpone
+Identifier: Proc IMechE Part D, DOI 10.1177/0954407018808992
+URL: https://journals.sagepub.com/doi/abs/10.1177/0954407018808992
+Classification: MOTORSPORT THERMAL MODEL
+Research target: Extends TRT for inhomogeneous contact-patch pressure/stress/sliding, camber effects and additional thermal influences.
+Constraint: Architecture source; verify full text before extracting numerical parameters.
+
+[NEW-33] Effect of Temperature on Wear Performance of Aircraft Tire Tread Rubber
+Priority: P0
+Year: 2019
+Author/Publisher: Jian Wu; Long Chen; Youshan Wang; Benlong Su; Zhibo Cui; Diyuan Wang
+Identifier: Polymer Testing 79, 106037
+URL: https://www.sciencedirect.com/science/article/pii/S0142941819308530
+Classification: TEMPERATURE/SLIP -> WEAR
+Research target: Wear tests across temperature and slip angle; wear mechanism changes with temperature; wear rate correlates with frictional power density.
+Constraint: Material is aircraft tread rubber; use mechanism/shape evidence, not historic race life.
+
+[NEW-34] Estimating Tire Pressure Based on Different Tire Temperature Measurement Points
+Priority: P0
+Year: 2024
+Author/Publisher: Jukka Hyttinen et al.
+Identifier: SAE 2024-01-5002
+URL: https://saemobilus.sae.org/papers/estimating-tire-pressure-based-different-tire-temperature-measurement-points-2024-01-5002
+Classification: PRESSURE/TEMPERATURE SENSOR INTERPRETATION
+Research target: Inner-liner temperature best predicts cavity pressure; driving pressure changes nearly isochoric in the tested tires.
+Constraint: Important for deciding which AC/telemetry temperature should drive pressure prediction; modern application only.
+
+[NEW-35] Tire Thermal Model with State Observer Integration for Enhanced Real-Time Temperature Prediction
+Priority: P0
+Year: 2025
+Author/Publisher: Armando Longobardi; Sanjay Balaga; Mario Labella; Mohamed El Amine Gorine / Goodyear
+Identifier: SAE 2025-01-8756
+URL: https://saemobilus.sae.org/papers/tire-thermal-model-state-observer-integration-enhanced-real-time-temperature-prediction-2025-01-8756
+Classification: CURRENT SUPPLIER THERMAL MODEL
+Research target: Goodyear 1-D multi-layer thermal model with state observer and TPMS correction.
+Constraint: Useful architecture reference; do not let modern road model overwrite historical construction priors.
+
+[NEW-36] TEMPERATURES OF PNEUMATIC TRUCK-TIRES
+Priority: P1
+Year: 1922
+Author/Publisher: F. O. Ellenwood / Goodyear
+Identifier: SAE 220048
+URL: https://saemobilus.sae.org/papers/temperatures-pneumatic-truck-tires-220048
+Classification: EARLY PERIOD THERMAL EVIDENCE
+Research target: Goodyear study of temperature measurement and effects of pressure, load, run length, stops, rim/tire size and design; identifies rapid flexing as a major heat source.
+Constraint: Very old truck tire; use mechanisms and historical chronology, not racing numbers.
+
+[NEW-37] Factors Affecting Tire Traction
+Priority: P1
+Year: 1967
+Author/Publisher: Walter E. DeVinney / Goodyear
+Identifier: SAE 670461
+URL: https://saemobilus.sae.org/papers/factors-affecting-tire-traction-670461
+Classification: PERIOD SUPPLIER WET TRACTION
+Research target: Wet traction vs speed, tread/compound, construction, inflation, surface, load and temperature.
+Constraint: Use to support wet-model multidimensionality; no generic wet mu transfer.
+
+[NEW-38] Factors Affecting Passenger Tire Traction on the Wet Road
+Priority: P1
+Year: 1968
+Author/Publisher: J. D. Kelley / Firestone
+Identifier: SAE 680138
+URL: https://saemobilus.sae.org/papers/factors-affecting-passenger-tire-traction-wet-road-680138
+Classification: PERIOD SUPPLIER WET TRACTION
+Research target: Tread design, compound, construction plus speed, surface, load, temperature and inflation pressure.
+Constraint: Use as wet/intermediate mechanism evidence.
+
+[NEW-39] Vehicle Operating Costs, Fuel Consumption, and Pavement Type and Condition Factors
+Priority: P0
+Year: 1982
+Author/Publisher: J. P. Zaniewski et al. / Federal Highway Administration
+Identifier: FHWA/PL/82/001
+URL: https://rosap.ntl.bts.gov/view/dot/1012/dot_1012_DS1.pdf
+Classification: GOVERNMENT SLIP-ENERGY WEAR MODEL
+Research target: Contains tire-wear chapter using volume loss vs slip energy and a slip-energy/volume coefficient; includes radial/bias examples and pavement effects.
+Constraint: Do not equate this road-tire wear model to racing life directly; valuable for energy-normalized wear architecture.
+
+[NEW-40] Talking Tyres
+Priority: P1
+Year: 1970
+Author/Publisher: Motor Sport — interview/discussion with racing tyre engineers
+Identifier: Period magazine technical interview
+URL: https://www.motorsportmagazine.com/archive/article/march-1970/46/talking-tyres/
+Classification: DIRECT PERIOD RACING TECHNICAL COMMENTARY
+Research target: Contemporary engineers discuss surface coefficient, compound/construction and temperature being critical; racing development feedback into low-profile, wet traction and materials.
+Constraint: Extract speaker attribution and context; avoid treating opinions as precise measurements.
+
+[NEW-41] Matters of Moment — September 1975
+Priority: P0
+Year: 1975
+Author/Publisher: Motor Sport quoting Goodyear Chief Race Tyre Engineer Bert Baldwin
+Identifier: Period technical reporting
+URL: https://www.motorsportmagazine.com/archive/article/september-1975/21/matters-of-moment-september-1975/
+Classification: DIRECT PERIOD F1 TEMPERATURE EVIDENCE
+Research target: Goodyear quote: dry race tire most effective around 220 F; wet around 170 F; wet tire on dry track can exceed 300 F and break up.
+Constraint: Extremely valuable but F1/Goodyear/event-era specific. Preserve whether temperatures refer to tread/operating tire measurement; do not apply universally.
+
+[NEW-42] Behind the Grand Prix Scene
+Priority: P0
+Year: 1982
+Author/Publisher: Motor Sport
+Identifier: Period pit-lane technical observation
+URL: https://www.motorsportmagazine.com/archive/article/april-1982/102/behind-grand-prix-scene/
+Classification: DIRECT PERIOD F1 SETUP PRACTICE
+Research target: Needle pyrometer I/M/O readings immediately after stopping; aim for consistent tread temperature; many F1 tires around 12-15 psi, making 1 psi significant.
+Constraint: F1-specific; use as evidence for pyrometer methodology and pressure sensitivity, not touring/GT pressure targets.
+
+[NEW-43] Neutral Contour
+Priority: P1
+Year: 1990
+Author/Publisher: Motor Sport / Goodyear history and technical discussion
+Identifier: Period/near-period supplier-history feature
+URL: https://www.motorsportmagazine.com/archive/article/january-1990/60/neutral-contour/
+Classification: RACING CONSTRUCTION EVOLUTION
+Research target: Goodyear neutral-contour/low-profile development; slick adoption; thinner treads reduced heat buildup; heat-resistant rubber improved traction; wet architecture discussion.
+Constraint: Separate historical narrative from directly measured engineering data.
+
+[NEW-44] Formula 2: The Toleman TG 280-Hart Team Analysis
+Priority: P1
+Year: 1980
+Author/Publisher: Motor Sport
+Identifier: Period team technical analysis
+URL: https://www.motorsportmagazine.com/archive/article/december-1980/82/formula-2-toleman-tg-280-hart-team-analysis/
+Classification: DIRECT PERIOD RACING DEVELOPMENT
+Research target: Early-season Pirelli tires had incorrect lateral stiffness; supplier development corrected stiffness while compounds evolved; chassis changes were deliberately avoided.
+Constraint: Useful evidence that tire stiffness can dominate handling diagnosis; no numeric stiffness values provided.
+
+[NEW-45] 1994 All-Japan GT Championship Unified Regulations Overview
+Priority: P0
+Year: 1994
+Author/Publisher: Japanese motorsport regulations archive / JGTC
+Identifier: Period regulation summary
+URL: https://www.fmotor.jp/00987-1994-gt
+Classification: DIRECT PERIOD SERIES REGULATION
+Research target: 250-300 km races; tire rules aimed at abolishing Q tires and limiting sets; one set reserved for race start.
+Constraint: Use for compound-menu and qualifying-tire historical constraints; Japanese text should be preserved/translated carefully.
+
+[NEW-46] 1996 IMSA GTS Technical Regulations
+Priority: P0
+Year: 1996
+Author/Publisher: IMSA / FIA Historic Database copy
+Identifier: Period technical regulations
+URL: https://historicdb.fia.com/sites/default/files/regulations/1696762039/1996_imsa_gts_web.pdf
+Classification: DIRECT PERIOD GT REGULATION
+Research target: Max complete wheel/tire diameter 28 in at operating pressure; max section width 14 in GTS-1, 12 in GTS-2; center-lock and wheel-arch constraints.
+Constraint: Regulatory maxima are not evidence of each car's actual fitment.
+
+[NEW-47] Race Track User Manual
+Priority: P2
+Year: Current
+Author/Publisher: Goodyear
+Identifier: Manufacturer track-use technical booklet
+URL: https://www.goodyear.eu/content/dam/goodyear/consumer/common/download/Goodyear-trackday-booklet.pdf
+Classification: MODERN MANUFACTURER OPERATING GUIDANCE
+Research target: Physics of tires, track condition, tread/compound, vehicle balance, tire handling and pressure basics.
+Constraint: Modern track-day product guidance; use generic operational relationships, not historic racing priors.
+
+[NEW-48] MICHELIN Motorsport — official recommendations download hub
+Priority: P2
+Year: Current
+Author/Publisher: Michelin Motorsport
+Identifier: Manufacturer technical recommendations
+URL: https://www.michelinmotorsport.com/en/motorsport/
+Classification: MODERN MANUFACTURER TECHNICAL GUIDANCE
+Research target: Official downloadable motorsport recommendations across circuit/rally/hillclimb/classic; pressure/camber/fitment/compound information where included.
+Constraint: Desktop must download/read the actual recommendation files and cite the specific document/version; landing page alone is not evidence.
+
+[NEW-49] Dunlop Hail Performance Gains in 2017 LMP2 Prototype Tyre Test
+Priority: P0
+Year: 2017
+Author/Publisher: Dunlop Motorsport / Goodyear Newsroom
+Identifier: Supplier development report
+URL: https://news.goodyear.eu/dunlop-hail-performance-gains-in-2017-lmp2-prototype-tyre-test/
+Classification: DIRECT MOTORSPORT SUPPLIER DEVELOPMENT
+Research target: Lab machine and virtual model compared grip and sensitivity to load, pressure and camber; correlation checked against driver feedback; durability/consistency emphasized.
+Constraint: Modern prototype racing; use calibration-methodology evidence, not historic values.
+
+[NEW-50] Dunlop Takes on the Toughest Race in the World — Nürburgring 24 Hours
+Priority: P0
+Year: 2017
+Author/Publisher: Dunlop Motorsport / Goodyear Newsroom
+Identifier: Supplier endurance technical report
+URL: https://news.goodyear.eu/dunlop-takes-on-the-toughest-race-in-the-world---the-nurburgring-24-hours/
+Classification: DIRECT MOTORSPORT LOAD/TEMPERATURE CONTEXT
+Research target: GT3 partial wheel loads quoted around 10-12 kN; asphalt conditions about 2 C wet to 50 C+ hot; durability, grip and tire-change minimization emphasized.
+Constraint: Modern GT3 source; useful for load/temperature envelope architecture, not 1990s GT1 targets.
+
+============================================================
+INGESTION / PROMOTION WORKFLOW TO IMPLEMENT OR USE
+============================================================
+
+For every source:
+A. SOURCE RECORD
+- canonical title
+- authors
+- publisher/organization
+- year/date
+- DOI/report number
+- canonical URL
+- sourceType
+- provenance class
+- quality
+- FULL_TEXT_STATUS: FULL_TEXT_REVIEWED / ABSTRACT_ONLY / PRIMARY_PAGE_REVIEWED / SECONDARY_ONLY
+- limitations
+
+B. EVIDENCE RECORDS
+Create individually reviewable records, each carrying source ID and page/section where available:
+- measurement: numerical observation and units/context
+- observation: non-numerical technical/historical finding
+- scalingRule: direction/shape/interaction supported by evidence
+- historicalConstraint: what a family/event/class must or must not violate
+- calibrationMethod: how a tire was measured or tuned
+
+C. APPLICABILITY
+Each evidence record should specify applicable dimensions such as:
+- era
+- tire construction: bias/cross-ply, belted-bias, radial
+- treaded/slick/wet/intermediate
+- race class or general tire
+- driven/non-driven axle relevance
+- surface/dry/wet context
+- temperature observable type
+- evidence confidence
+
+D. GENERATOR PROMOTION
+Do not change generator values automatically.
+Any proposed parameter change must show:
+1. current rule/value
+2. evidence supporting change
+3. applicable families/classes
+4. expected side effects
+5. regression fixtures to rerun
+6. confidence
+
+E. CURRENT RESEARCH QUESTIONS THIS PACKET SHOULD HELP ANSWER
+- How should cold setup pressure be predicted from AC pressure-temperature behavior without conflating PRESSURE_STATIC, PRESSURE_IDEAL and track setup pressure?
+- How do pressure, construction, speed, load and flex interact in thermal generation and cooling?
+- How should surface/tread vs core/bulk vs cavity temperature be interpreted in telemetry and historical pyrometer evidence?
+- How should slip energy / frictional power / load severity map into wear accumulation?
+- How should historical real-world stint/service/abrasion life be separated from AC virtual-km WEAR_CURVE implementation?
+- How should wear state change cornering stiffness, aligning behavior and grip rather than acting as a single linear percentage?
+- How should wet/intermediate compounds differ in heat generation, dry-track overheating, water-depth sensitivity and tread-depth effects?
+- Which construction-specific relationships distinguish bias/cross-ply, belted-bias and radial families?
+- How should transient tire response / relaxation length vary with tire state rather than remain one static number?
+
+============================================================
+REQUIRED FINAL DESKTOP OUTPUT
+============================================================
+
+Return:
+1. A deduplication report against the existing Tire Knowledge master.
+2. A table for all 55 tasks above with FULL_TEXT_STATUS and ingestion result.
+3. All new source IDs and any existing source IDs expanded.
+4. New measurements/observations/scalingRules/historicalConstraints/calibrationMethods.
+5. Affected family/class IDs for every promoted rule.
+6. A list of unsupported claims deliberately NOT promoted.
+7. A separate list of numerical generator changes. Do not mix architecture/rule improvements with numeric changes.
+8. Knowledge release version + SHA/hash + changelog entry.
+9. Regression plan for BRM FAM003, Escort FAM023, GT40 FAM022, a 1980s slick/radial family, and a 1990s GT family.
+10. A prioritized RESEARCH_GAPS list after ingestion, especially exact period racing hot pressure, tread/core temperature, wet/intermediate behavior, heat-cycle degradation and wear->grip curves.
+
+Do not claim the knowledge model is historically validated merely because these sources were ingested. This packet is intended to widen and strengthen the evidence graph, improve model architecture, and identify what still requires direct period race-tire evidence and telemetry calibration.

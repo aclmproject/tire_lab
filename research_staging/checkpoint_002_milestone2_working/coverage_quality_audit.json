@@ -1,0 +1,1211 @@
+{
+  "activeTargets": 10000,
+  "coverageCells": 8889,
+  "overrepresentedCells": [
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Avon",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 5
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 4
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Pirelli",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 4
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Bridgestone/other",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 4
+    },
+    {
+      "weakness": "W03_FM_STIFFNESS_TRANSIENT",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Group 4 Special GT — 1970-1981",
+      "supplier": "Bridgestone/other",
+      "documentType": "supplier technical paper",
+      "activeTargetCount": 4
+    },
+    {
+      "weakness": "W04_WET_INTERMEDIATE",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Avon",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 4
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Firestone",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Dunlop",
+      "documentType": "technical paper",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Michelin",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1963,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Pirelli",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1969,
+      "historicalClass": "GT40-era endurance",
+      "supplier": "Goodyear",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Goodyear",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Michelin",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Bridgestone/other",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 1969,
+      "historicalClass": "Group 2 / ETCC — 1963-1969",
+      "supplier": "Goodyear",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1974,
+      "historicalClass": "Can-Am — original",
+      "supplier": "Bridgestone/other",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Le Mans Prototype transition",
+      "supplier": "Goodyear",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1963,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Bridgestone/other",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Goodyear",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "General Racing Tire",
+      "supplier": "Dunlop",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1971,
+      "historicalClass": "General Tire Mechanics",
+      "supplier": "Dunlop",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 3
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Group 4 Special GT — 1970-1981",
+      "supplier": "Avon",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 3
+    }
+  ],
+  "underrepresentedCells": [
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Trans-Am — 1973-1981",
+      "supplier": "Goodyear",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "Club single-seater — pre-Formula Ford",
+      "supplier": "Bridgestone/other",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "Group A / production touring — 1993-2001",
+      "supplier": "Pirelli",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Japanese GT / touring — pre-JGTC",
+      "supplier": "Firestone",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "IMSA GT — 1971-1981",
+      "supplier": "Avon",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "CART / Indy-car",
+      "supplier": "Michelin",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Group 4 Special GT — 1970-1981",
+      "supplier": "Goodyear",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1958,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Formula Junior",
+      "supplier": "Bridgestone/other",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "World Rally Championship — 1987-2001",
+      "supplier": "Pirelli",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "General Racing Tire",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Trans-Am — 1982-2001",
+      "supplier": "Michelin",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1967,
+      "subjectPeriodEnd": 1971,
+      "historicalClass": "Formula Ford — 1967-1976",
+      "supplier": "Firestone",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 1969,
+      "historicalClass": "Group 2 / ETCC — 1963-1969",
+      "supplier": "Dunlop",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Japanese GT / touring — pre-JGTC",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Sports racing / prototypes — 1972-1981",
+      "supplier": "Michelin",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Goodyear",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Bridgestone/other",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Group 4 Special GT — 1970-1981",
+      "supplier": "Pirelli",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1963,
+      "historicalClass": "Formula Junior",
+      "supplier": "Firestone",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "World Rally Championship — 1987-2001",
+      "supplier": "Dunlop",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Formula 1 — turbo/radial slick era",
+      "supplier": "Avon",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "General Racing Tire",
+      "supplier": "Goodyear",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Trans-Am — 1982-2001",
+      "supplier": "Bridgestone/other",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Pirelli",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Le Mans Prototype transition",
+      "supplier": "Dunlop",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Can-Am — revival",
+      "supplier": "Avon",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Pirelli",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Firestone",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1970,
+      "historicalClass": "Formula 3 — 1964-1970",
+      "supplier": "Avon",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "NASCAR stock car — 1992-2010",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Dunlop",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1963,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 1999,
+      "historicalClass": "Le Mans Prototype transition",
+      "supplier": "Michelin",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Can-Am — revival",
+      "supplier": "Goodyear",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1970,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Bridgestone/other",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Pirelli",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Group C",
+      "supplier": "Firestone",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "NASCAR stock car — 1992-2010",
+      "supplier": "Avon",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Michelin",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1969,
+      "historicalClass": "Group 4 Sports Cars — 1966-1969",
+      "supplier": "Goodyear",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2004,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "LMP1 / LMP2",
+      "supplier": "Bridgestone/other",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1974,
+      "historicalClass": "Can-Am — original",
+      "supplier": "Pirelli",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Japanese GT / touring — pre-JGTC",
+      "supplier": "Firestone",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1994,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "IMSA GT/GTS — 1994-2001",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1979,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "CART / Indy-car",
+      "supplier": "Michelin",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Group A touring — 1982-1992",
+      "supplier": "Pirelli",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1971,
+      "historicalClass": "General Tire Mechanics",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "NASCAR stock car — 1992-2010",
+      "supplier": "Goodyear",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Bridgestone/other",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "IMSA GT — 1971-1981",
+      "supplier": "Pirelli",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Club single-seater — pre-Formula Ford",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Group A / production touring — 1993-2001",
+      "supplier": "Dunlop",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Japanese GT / touring — pre-JGTC",
+      "supplier": "Avon",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Michelin",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "IMSA GT/GTS — 1994-2001",
+      "supplier": "Goodyear",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "CART / Indy-car",
+      "supplier": "Bridgestone/other",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1969,
+      "historicalClass": "GT40-era endurance",
+      "supplier": "Pirelli",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2004,
+      "historicalClass": "International Formula 3000",
+      "supplier": "Firestone",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Group A touring — 1982-1992",
+      "supplier": "Dunlop",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Formula 1 — 3-litre/cross-ply-to-radial transition",
+      "supplier": "Avon",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "General Racing Tire",
+      "supplier": "Goodyear",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "Club single-seater — pre-Formula Ford",
+      "supplier": "Pirelli",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "Group A / production touring — 1993-2001",
+      "supplier": "Michelin",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Japanese GT / touring — pre-JGTC",
+      "supplier": "Goodyear",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1971,
+      "historicalClass": "Sports racing / prototypes — 1964-1971",
+      "supplier": "Bridgestone/other",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "IMSA GT — 1971-1981",
+      "supplier": "Pirelli",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "CART / Indy-car",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Group 4 Special GT — 1970-1981",
+      "supplier": "Dunlop",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Formula 1 — 3-litre/cross-ply-to-radial transition",
+      "supplier": "Goodyear",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "General Racing Tire",
+      "supplier": "Pirelli",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Trans-Am — 1982-2001",
+      "supplier": "Firestone",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1967,
+      "subjectPeriodEnd": 1971,
+      "historicalClass": "Formula Ford — 1967-1976",
+      "supplier": "Dunlop",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 1969,
+      "historicalClass": "Group 2 / ETCC — 1963-1969",
+      "supplier": "Avon",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Japanese GT / touring — pre-JGTC",
+      "supplier": "Michelin",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Sports racing / prototypes — 1972-1981",
+      "supplier": "Goodyear",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Bridgestone/other",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Avon",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Group 4 Special GT — 1970-1981",
+      "supplier": "Michelin",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "General Racing Tire",
+      "supplier": "Dunlop",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Trans-Am — 1982-2001",
+      "supplier": "Avon",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Michelin",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "Sports racing / prototypes — 1950-1963",
+      "supplier": "Goodyear",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1993,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "Le Mans Prototype transition",
+      "supplier": "Bridgestone/other",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Can-Am — revival",
+      "supplier": "Pirelli",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Firestone",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Dunlop",
+      "documentType": "peer-reviewed paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1982,
+      "subjectPeriodEnd": 1986,
+      "historicalClass": "Group C",
+      "supplier": "Avon",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "World Rally Championship — 2002-2010",
+      "supplier": "Goodyear",
+      "documentType": "supplier technical document",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1975,
+      "historicalClass": "Group 2 / ETCC — 1970-1975",
+      "supplier": "Avon",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1950,
+      "subjectPeriodEnd": 1959,
+      "historicalClass": "General Tire Mechanics",
+      "supplier": "Michelin",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Bridgestone/other",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 1999,
+      "historicalClass": "Le Mans Prototype transition",
+      "supplier": "Firestone",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1966,
+      "subjectPeriodEnd": 1970,
+      "historicalClass": "US GT / sports racing — pre-IMSA GT",
+      "supplier": "Avon",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 2002,
+      "subjectPeriodEnd": 2010,
+      "historicalClass": "Historic Racing Reference",
+      "supplier": "Michelin",
+      "documentType": "period technical/race article",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1987,
+      "subjectPeriodEnd": 1991,
+      "historicalClass": "Group C",
+      "supplier": "Goodyear",
+      "documentType": "period race report / technical feature",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1972,
+      "subjectPeriodEnd": 1976,
+      "historicalClass": "USAC Championship Car / Indianapolis",
+      "supplier": "Bridgestone/other",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1992,
+      "subjectPeriodEnd": 1996,
+      "historicalClass": "International Formula 3000",
+      "supplier": "Firestone",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1977,
+      "subjectPeriodEnd": 1981,
+      "historicalClass": "Group 2 / ETCC — 1976-1981",
+      "supplier": "Dunlop",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1960,
+      "subjectPeriodEnd": 1965,
+      "historicalClass": "General Tire Mechanics",
+      "supplier": "Avon",
+      "documentType": "setup book / test sheet",
+      "activeTargetCount": 1
+    },
+    {
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "subjectPeriodStart": 1997,
+      "subjectPeriodEnd": 2001,
+      "historicalClass": "NASCAR stock car — 1992-2010",
+      "supplier": "Michelin",
+      "documentType": "technical paper",
+      "activeTargetCount": 1
+    }
+  ],
+  "missingHighValueCells": [
+    {
+      "gapId": "GAP-M2-03",
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "classPattern": {},
+      "period": "1958-1965",
+      "need": "R5-era pressure and temperature",
+      "activeTargetCount": 0,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    },
+    {
+      "gapId": "GAP-M2-04",
+      "weakness": "W03_FM_STIFFNESS_TRANSIENT",
+      "classPattern": {},
+      "period": "1958-1965",
+      "need": "R5-era vertical/lateral stiffness and F&M",
+      "activeTargetCount": 0,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    }
+  ],
+  "highValueCells": [
+    {
+      "gapId": "GAP-M2-01",
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "classPattern": {},
+      "period": "1971-1976",
+      "need": "FAM023 cold/hot pressure and I/M/O pyrometer evidence",
+      "activeTargetCount": 20,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    },
+    {
+      "gapId": "GAP-M2-02",
+      "weakness": "W03_FM_STIFFNESS_TRANSIENT",
+      "classPattern": {},
+      "period": "1971-1976",
+      "need": "FAM023 cross-ply carcass/rate and F&M",
+      "activeTargetCount": 34,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    },
+    {
+      "gapId": "GAP-M2-03",
+      "weakness": "W01_PRESSURE_TEMP_SETUP",
+      "classPattern": {},
+      "period": "1958-1965",
+      "need": "R5-era pressure and temperature",
+      "activeTargetCount": 0,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    },
+    {
+      "gapId": "GAP-M2-04",
+      "weakness": "W03_FM_STIFFNESS_TRANSIENT",
+      "classPattern": {},
+      "period": "1958-1965",
+      "need": "R5-era vertical/lateral stiffness and F&M",
+      "activeTargetCount": 0,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    },
+    {
+      "gapId": "GAP-M2-05",
+      "weakness": "W07_FITMENT_GEOMETRY_REGS",
+      "classPattern": {},
+      "period": "1964-1969",
+      "need": "GT40 exact sizes and loaded radius",
+      "activeTargetCount": 11,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    },
+    {
+      "gapId": "GAP-M2-06",
+      "weakness": "W09_HEAT_CYCLE_AGING_DAMAGE",
+      "classPattern": {},
+      "period": "1993-1996",
+      "need": "1990s GT heat-cycle degradation and failure evidence",
+      "activeTargetCount": 20,
+      "status": "TARGETED_NOT_YET_CLOSED_BY_REVIEW"
+    }
+  ],
+  "coarseDuplicateIntentRiskGroups": 354,
+  "note": "Exact active intent fingerprints are unique; coarse overlap groups identify cells where different planned documents may still resolve to the same real source and therefore require source-identity deduplication during acquisition."
+}

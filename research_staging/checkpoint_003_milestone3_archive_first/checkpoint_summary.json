@@ -1,0 +1,114 @@
+{
+  "checkpoint": "MILESTONE 3 — ARCHIVE-FIRST RESEARCH IMPACT REVIEW",
+  "status": "MILESTONE_3_ABSTRACT_HARVEST_COMPLETE_FULL_TEXT_FOLLOWUP_REQUIRED",
+  "baseline": {
+    "milestone2SourceIdentities": 317,
+    "milestone2ReviewedIdentities": 49,
+    "milestone2EvidenceCandidates": 74
+  },
+  "layerE": {
+    "harvestUnits": 8,
+    "completedHarvestUnits": 3,
+    "uniqueDocumentsReviewed": 200,
+    "byArchive": {
+      "Tire Science and Technology / The Tire Society": 73,
+      "NASA / NACA / NTRS": 58,
+      "SAE Mobilus / SAE DOI corpus": 69
+    },
+    "bySourceQuality": {
+      "A2": 139,
+      "B1": 61
+    },
+    "byReviewStatus": {
+      "ABSTRACT_ONLY": 200
+    }
+  },
+  "unified": {
+    "sourceIdentities": 517,
+    "evidenceCandidates": 599,
+    "conflicts": 1
+  },
+  "evidence": {
+    "newCandidates": 525,
+    "byType": {
+      "SOURCE_METHODOLOGY": 406,
+      "OBSERVATION": 48,
+      "SCALING_RULE": 71
+    },
+    "byTopic": {
+      "THERMAL": 55,
+      "WEAR": 63,
+      "FM": 96,
+      "PRESSURE": 105,
+      "WET": 98,
+      "CONSTRUCTION": 83,
+      "TRANSIENT": 25
+    },
+    "numericAbstractSignals": 21
+  },
+  "gapMapping": {
+    "layerDTargetsPartiallyClosed": 12,
+    "mappingRecords": 466,
+    "relationships": {
+      "PARTIALLY_CLOSES": 12,
+      "CORROBORATES": 454
+    },
+    "qualification": "Abstract-level general-mechanics evidence only; historical class/supplier-specific gaps remain open unless separately supported."
+  },
+  "modelDecision": {
+    "pressureModelRedesign": "YES_ARCHITECTURE_ONLY",
+    "pressureReason": "The clean Escort A/B fixture independently validates the closure failure, the contaminated GT40 remains valid as a broad pressure regression, and the archive evidence supports coupled pressure/load/deflection/thermal architecture. Exact historical family coefficients remain unsupported.",
+    "historicalLifeToAcVkmRedesign": "NO",
+    "wearReason": "The architecture can distinguish load, slip, temperature and construction effects, but full wear curves, grip-loss mappings and historical competitive-life datasets remain insufficient."
+  },
+  "safeguards": {
+    "researchScope": "Layer E archive-first abstract harvest and evidence mapping only.",
+    "prohibitedActionsObserved": [],
+    "protectedFiles": [
+      {
+        "relativePath": "src/payload/app/app.js",
+        "sha256": "af4a26adcc3d282ae6051b1f66e148ebbf8c0a1a3f43cc7a71ba14489fbdcf1e",
+        "disposition": "PRE_EXISTING_UNCOMMITTED_PHYSICS_WORK_PRESERVED_OUT_OF_SCOPE"
+      },
+      {
+        "relativePath": "src/payload/app/index.html",
+        "sha256": "318fde29eefb2f487a9b8f42d7b273c6d84672fcc7117d5e5b7b00b0abb0b8ca",
+        "disposition": "PRE_EXISTING_UNCOMMITTED_PHYSICS_WORK_PRESERVED_OUT_OF_SCOPE"
+      },
+      {
+        "relativePath": "src/payload/app/pressure_solver.js",
+        "sha256": "389b301f2387e2b85122055b016b37ea93013859d7e3b81d68c091c27a60e17c",
+        "disposition": "PRE_EXISTING_UNCOMMITTED_PHYSICS_WORK_PRESERVED_OUT_OF_SCOPE"
+      }
+    ],
+    "physicsChanged": false,
+    "knowledgeReleaseChanged": false,
+    "buildRun": false,
+    "releaseCreated": false
+  },
+  "qualityGates": {
+    "layerESourceRows": 200,
+    "uniqueSourceIdentityIds": 200,
+    "uniqueNormalizedTitles": 200,
+    "uniqueCanonicalUrls": 200,
+    "duplicateWithMilestone2Title": 0,
+    "abstractOnlyRows": 200,
+    "excerptsAtOrBelow24Words": true,
+    "evidenceRows": 525,
+    "uniqueEvidenceIds": 525,
+    "evidenceSourceReferencesResolve": true,
+    "abstractEvidencePromotedToMeasurement": 0,
+    "targetMappingRelationships": {
+      "PARTIALLY_CLOSES": 12,
+      "CORROBORATES": 454
+    },
+    "partiallyClosedUniqueTargets": 12,
+    "protectedFileHashesMatchMilestone2": true,
+    "applicationChangedByMilestone3": false,
+    "physicsChangedByMilestone3": false,
+    "knowledgeVersionChangedByMilestone3": false,
+    "buildRun": false,
+    "releaseCreated": false,
+    "pass": true
+  }
+}

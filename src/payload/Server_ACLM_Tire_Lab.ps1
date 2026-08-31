@@ -1,7 +1,7 @@
+param([int]$Port=48765)
 $ErrorActionPreference = "Stop"
 $AppDir = Join-Path $PSScriptRoot "app"
-$Port = 48765
-$CurrentVersion = "0.9.2"
+$CurrentVersion = "0.10.2"
 $KnowledgeManifestUrls = @(
   "https://api.github.com/repos/aclmproject/tire_lab/contents/knowledge/ACLM_Tire_Knowledge_latest.json?ref=main",
   "https://raw.githubusercontent.com/aclmproject/tire_lab/main/knowledge/ACLM_Tire_Knowledge_latest.json"
@@ -21,6 +21,7 @@ $TelemetryStateDir = Join-Path ([Environment]::GetFolderPath('LocalApplicationDa
 $TelemetryScript = Join-Path $PSScriptRoot 'Telemetry\ACLM_Native_Telemetry_Logger.ps1'
 $TelemetryStatusPath = Join-Path $TelemetryStateDir 'status.json'
 $TelemetryStopPath = Join-Path $TelemetryStateDir 'stop.signal'
+$TelemetryManifestInput = Join-Path $TelemetryStateDir 'run-manifest-input.json'
 [IO.Directory]::CreateDirectory($TelemetryStateDir)|Out-Null
 [IO.Directory]::CreateDirectory($TelemetryOutput)|Out-Null
 $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback,$Port)
@@ -104,17 +105,26 @@ function Read-TelemetryStatus{
   }catch{}
   return @{state='stopped';message='Logger is stopped.';rate_hz=10;samples=0;file=$null;output_directory=$TelemetryOutput}
 }
-function Start-Telemetry([int]$RateHz){
+function Start-Telemetry([int]$RateHz,$Manifest){
   if(@(10,20,50) -notcontains $RateHz){throw 'Sample rate must be 10, 20 or 50 Hz.'}
   if(!(Test-Path $TelemetryScript -PathType Leaf)){throw 'The native telemetry logger is missing from this installation.'}
   $current=Read-TelemetryStatus
   if(@('waiting','recording','starting')-contains [string]$current.state){return $current}
-  Remove-Item $TelemetryStopPath,$TelemetryStatusPath -Force -ErrorAction SilentlyContinue
+  Remove-Item $TelemetryStopPath,$TelemetryStatusPath,$TelemetryManifestInput -Force -ErrorAction SilentlyContinue
+  $manifestReceived=$false
+  if($null-ne$Manifest){
+    if(!$Manifest.schema -or !$Manifest.appVersion -or !$Manifest.tireFileSha256){throw 'Generated telemetry manifest is incomplete; generate and validate the TirePack before starting the logger.'}
+    $manifestJson=$Manifest|ConvertTo-Json -Depth 20
+    if($manifestJson.Length-gt 262144){throw 'Telemetry manifest is too large.'}
+    Write-Utf8 $TelemetryManifestInput $manifestJson
+    $manifestReceived=$true
+  }
   $exe=Join-Path $PSHOME 'powershell.exe';if(!(Test-Path $exe)){$exe='powershell.exe'}
   $args='-NoLogo -NoProfile -ExecutionPolicy Bypass -File "'+$TelemetryScript+'" -OutputDirectory "'+$TelemetryOutput+'" -RateHz '+$RateHz+' -StatusPath "'+$TelemetryStatusPath+'" -StopPath "'+$TelemetryStopPath+'"'
+  if(Test-Path $TelemetryManifestInput -PathType Leaf){$args+=' -ManifestPath "'+$TelemetryManifestInput+'"'}
   $proc=Start-Process -FilePath $exe -ArgumentList $args -WindowStyle Hidden -PassThru
   Start-Sleep -Milliseconds 300
-  $status=Read-TelemetryStatus;if([string]$status.state -eq 'stopped'){return @{state='starting';message='Logger process is starting.';pid=$proc.Id;rate_hz=$RateHz;samples=0;output_directory=$TelemetryOutput}}
+  $status=Read-TelemetryStatus;$status|Add-Member -NotePropertyName manifest_received -NotePropertyValue $manifestReceived -Force;if([string]$status.state -eq 'stopped'){return @{state='starting';message='Logger process is starting.';pid=$proc.Id;rate_hz=$RateHz;samples=0;output_directory=$TelemetryOutput;manifest_received=$manifestReceived}}
   return $status
 }
 function Stop-Telemetry{
@@ -197,7 +207,7 @@ while($true){
     }elseif($url -eq "/api/telemetry-status"){
     try{$body=JsonBytes (Read-TelemetryStatus);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
   }elseif($url -eq "/api/telemetry-start" -and $method -eq "POST"){
-    try{$rate=10;if($requestBody){$request=$requestBody|ConvertFrom-Json;$rate=[int]$request.rate_hz};$body=JsonBytes (Start-Telemetry $rate);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
+    try{$rate=10;$manifest=$null;if($requestBody){$request=$requestBody|ConvertFrom-Json;$rate=[int]$request.rate_hz;$manifest=$request.manifest};$body=JsonBytes (Start-Telemetry $rate $manifest);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="400 Bad Request"};$mime="application/json; charset=utf-8"
   }elseif($url -eq "/api/telemetry-stop" -and $method -eq "POST"){
     try{$body=JsonBytes (Stop-Telemetry);$code="200 OK"}catch{$body=JsonBytes @{error=$_.Exception.Message};$code="500 Internal Server Error"};$mime="application/json; charset=utf-8"
   }elseif($url -eq "/api/telemetry-latest"){

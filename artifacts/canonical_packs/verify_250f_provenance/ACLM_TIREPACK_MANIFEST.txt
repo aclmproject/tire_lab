@@ -1,0 +1,27 @@
+ACLM Historical Tire Lab v0.10.2
+Car: Maserati 250F 6 cylinder
+Year/class: 1957 / 1954-58 Formula 1 / Grand Prix
+Supplier: Pirelli
+Construction: bias
+Historical category: FAM002 - 1950s GP / sports treaded bias
+Class calibration: CLS102 - 1954-58 Formula 1 / Grand Prix
+Compounds: Period Treaded Race
+FZ0 front/rear: 1107 / 1385 N
+Load-duty thermal reconstruction: F medium 11.53 N/mm | R medium 11.17 N/mm
+Load/compound checklist: ACLM_LOAD_COMPOUND_CHECKLIST.txt
+AC tire format: VERSION=10
+CSP: car.ini must use VERSION=extended-2
+Thermal: CSP Thermal Model V2 plus required Kunos THERMAL sections
+Extended contact rays: 2 lateral / 4 longitudinal per side, 60 degrees
+Calibration manifest: ACLM_THERMAL_V2_CALIBRATION.json
+Pressure closure report: ACLM_PRESSURE_CLOSURE_REPORT.json
+Pressure generation: auto-solved from explicit/predicted AC initial core (26.0 C; AMBIENT_PROXY_UNRESOLVED) to reference-duty contained-air temperature
+Imported AC cold-pressure reference: none
+Medium generated cold pressure F/R: 23.7 / 23.9 psi
+Ideal hot pressure F/R: 28.0 / 28.0 psi
+Wear calibration: provisional
+Wear note: ACLM historical class-life prior: Soft 60 km, Medium 90 km, Hard 190 km, Intermediate 75 km, Wet 90 km. Wear shape remains evidence-weighted and should be telemetry-certified for the specific car/track.
+Terminal failure: enabled; normal curve threshold 60.0% grip; failure 50.0% at +0.20 vKm
+Output ZIP: ACLM_Maserati_250F_6_cylinder_TirePack.zip
+NOTE: This pack is structurally complete and reference-validated. On-track grip, temperature and wear still require car-specific certification.
+Historical PDF report: ACLM_Maserati_250F_6_cylinder_Historical_Tire_Accuracy_Report.pdf

@@ -1,0 +1,1752 @@
+=== PDF PAGE 1 ===
+NASA TECHNICAL NOTE
+LOAN COPY: RETUF
+AFWL (DOULI
+KIRTLAND AFB, N
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION WASHINGTON, D. C. AUGUST 1972
+
+
+
+=== PDF PAGE 2 ===
+TECH LIBRARY WFB, NM
+IllllllIlllllIllllllulllllllllllllll
+I ~ 0333737 ­
+.- - i
+1. Report No. 2. Government Accession No. a. necipienr's catalog No.
+NASA TN D-6813
+I 1
+I
+4. Title and Subtitle I 5. Rewrt Date
+AIRCRAFT TIRE BEHAVIOR DURING HIGH-SPEED August 1972
+I
+6. Performing Organization Code
+OPERATIONS IN SOIL
+j
+7. Author(s) 8. Performing Organization Report No.
+Trafford J. W. Leland and Eunice G. Smith L-7641
+-I
+10. Work Unit No.
+9. PerformingOrganization Name and Address 133-61-12-01
+NASA Langley Research Center I
+11. Contract or Grant No.
+Hampton, Va. 23365
+13. Type of Report and Period Covered
+12. Sponsoring Agency Name and Address Technical Note
+National Aeronautics and Space Administration
+14. Sponsoring Agency Code
+Washington, D.C. 20546
+. .
+15. Supplementary Notes
+16. Abstract .. ~ .. -.
+An investigation to determine aircraft tire behavior and operating problems in soil of
+different characteristics was conducted at the Langley landing-loads track with a 29 X 11.0-10,
+8-ply-rating, type IIItire. Four clay test beds of different moisture content and one sand
+test bed were used to explore the effects on axle drag loads developed during operation at
+different tire inflation pressures in free rolling, locked-wheel braking, and yawed (cornering)
+modes, all at forward speeds up to 95 knots. The test results indicated a complicated
+drag-load-velocity relationship, with a peak in the drag-load curve occurring near 40 knots
+for most test conditions. The magnitude of this peak was found to vary with tire inflation
+pressure and soil character and, in certain cases, might prove large enough to make take-off
+hazardous.
+17. Key Words (Suggested by Author(s)) 18. Distribution Statement
+-
+Aircraft tires Unclassified Unlimited
+Unprepared runway opera_-ms
+Drag coefficients in soil
+I
+Braking and cornering in soil
+19. Security Uassif. (of this report) 20; Security Classif. (of this page) 21. NO. of Pages 22. Rice'
+Unclassified Unclassified 62 $3.00
+- ... . - ~~ - . -
+
+
+
+=== PDF PAGE 3 ===
+AIRCRAFT TIRE BEHAVIOR DURING HIGH-SPEED
+OPERATIONS IN SOIL
+By Trafford J. W. Leland and Eunice G. Smith
+Langley Research Center
+SUMMARY
+An investigation to determine aircraft tire behavior and operating problems in soil
+of different characteristics was conducted at the Langley landing-loads track with a
+29 X 11.0-10, 8-ply-rating, type IIItire. Four clay test beds of different moisture con­
+tent and one sand test bed were used to explore the effects on axle drag loads developed
+during operation at different tire inflation pressures in free rolling, locked-wheel
+braking, and yawed (cornering) modes, all at forward speeds up to 95 knots. The test
+results indicated a complicated drag-load-velocity relationship, with a peak in the drag-
+load curve occurring near 40 knots for most test conditions. The magnitude of this peak
+was found to vary with tire inflation pressure and soil character and, in certain cases,
+might prove large enough to make take-off hazardous.
+INTRODUCTION
+A design requirement of certain aircraft is that they be capable of conducting
+operations from hastily prepared, unpaved airfields, either on a routine basis or in
+emergencies. In the past, aircraft intended for this type of operation have been rela­
+tively light and slow, but this requirement has recently been expanded to include very
+heavy and very fast aircraft. Under these conditions, a detailed knowledge of the inter­
+action of a tire with a yielding surface is more critical to the accomplishment of a design
+which will allow the aircraft to operate safely from substandard fields. Although a great
+deal of work has been done in the past (refs. 1 and 2, for example) on the problems of
+operating heavy vehicles in soft soil, little information exists on soil-tire interactions at
+the high ground speeds associated with aircraft operations. This paper will present
+some results of a test program in which the towing facilities of the Langley landing-loads
+track were used to explore the reactions of an aircraft tire operated at high speeds on
+several different types of soil. Some potential unprepared-field operating problems will
+also be illustrated. This program was a cooperative venture between NASA, the Air
+Force Flight Dynamics Laboratory, Lockheed-Georgia Company, IIT Research Institute,
+and the U.S. Army Engineer Waterways Experiment Station. Although the results
+
+
+
+=== PDF PAGE 4 ===
+presented in this paper have been reported and compared with analyses in references 3
+to 5, the presentation and interpretation of data herein differ. The basic data presented
+in this paper should serve as a foundation to which future data may be added to establish
+a tool for further improvement of analytical approaches.
+SYMBOLS
+Values are given both in the International System of Units (SI) and in the U.S.
+Customary Units. The measurements and calculations were made in U.S. Customary
+Units.
+FD axle drag force
+measured axle drag force, SWDYN, left
+FD1
+FD2
+measured axle drag force, SWDYN, right
+FL
+axle lateral force (normal to tire plane)
+axle side force (normal to direction of motion)
+FS
+FV
+axle vertical force
+h axle vertical position
+tire inflation pressure
+Pt
+forward velocity
+VG
+average rut depth
+Z
+measured rut depth
+zm
+@ yaw angle
+w wheel angular velocity
+2
+
+
+
+=== PDF PAGE 5 ===
+ABBREVIATIONS
+AI airfield index
+CBR California bearing ratio
+D. C. direct current
+FM frequency modulated
+SAXLE single cantilevered axle
+SWDYN single -wheel dynamometer
+TAXLE tandem cantilevered axle
+WES U. S. Army Engineer Waterways Experiment Station
+APPARATUSANDTEST PROCEDURES
+Towing Apparatus
+The investigation was conducted at the Langley landing-loads track adapted for this
+program as shown schematically in figure 1. This test facility employs a water-jet
+catapult developing up to 1800 kN (400 000 lb) thrust to accelerate a test carriage to the
+desired speed in a distance of about 120 m (400 ft). The carriage then coasts freely on
+steel rails for a distance of about 370 m (1200 ft) and is stopped at the end of the run by
+arresting-gear cables. During the coasting period, where the desired tests are usually
+performed, the velocity decay is very small owing to the large mass, up to 445 kN
+(100 000 lb), of the test carriage. A section of a concrete-lined water channel which
+parallels the main test track was used as a soil test bed and was sited as far as possible
+from the water-jet catapult to minimize any inadvertent wetting of the soil surface. A
+paved area was provided adjacent to the soil bed so that the test soil could be processed
+with minimum wastage and contamination with natural soil. A small temporary building
+near this paved area served as a field soil test laboratory containing large and small
+drying ovens, scales and balances, an unconfined-compression-test machine, hand tools,
+etc. Stockpiles for the clay and sand test-bed materials were located a short distance
+from the test site. A concrete runway was installed in the channel during the later stages
+of testing, in the approximate location shown in figure 1, to provide some comparative
+3
+
+
+
+=== PDF PAGE 6 ===
+hard-surface rolling data particularly in the yawed-rolling regime. The smaller of two
+test carriages available at the facility was used as shown in the figure to support the test
+tires and fixtures.
+A special support system, shown in the photograph of figure 2 and the schematic of
+figure 3, was constructed to enable the test tire to be towed at high speeds through the
+soil beds. As shown in figure 3, a ballast basket was attached to the support frame
+through pivoted parallel arms, and the test tire and load measuring system was attached
+to this basket. A hydraulic cylinder was provided to raise and lower the ballast basket,
+as well as to act as a vertical motion damper during most of the test runs since the only
+other damping in the system was offered by the tire. The position of the parallel-arm
+linkage could be located as desired laterally on the test bed by loosening and reposition­
+ing thblateral adjustment clamps at the front of the support frame and at the hydraulic
+cylinder at the top of the frame, as shown in figure 3. In one series of tests, a rigid bar
+was welded to the main carriage structure at the rear of the fixture, as shown, to pro­
+vide a mount for a soil profile measurement system. During a series of yawed-rolling
+tests, a steadying roller, guided by a vertical channel, was installed at the rear of the
+ballast basket to provide additional lateral stiffness.
+Test Tire
+The tire used throughout this investigation was a 29 X 11.0-10, 8-ply-rating, type LII
+aircraft tire having a nominal inflated diameter of 74 cm (29 in.) and a maximum cross-
+sectional width of 28 cm (11in.). The tread pattern consisted of five straight, evenly
+spaced circumferential grooves having a depth of approximately 0.32 cm (1/8 in.). Mili­
+tary Specification gives a tire inflation pressure of 31 N/cm2 (45 lb/in2) for the rated
+tire load of 22 kN (5000 lb). This pressure was used during the test program. Also used
+were overinflation pressures of 48 N/cm2 (70 lb/in2) and 38 N/cm2 (55 lb/in2) and an
+underinflation pressure of 21 N/cm2 (30 lb/in2) to give good comparative data. Gross
+tire-footprint areas were obtained on a hard surface for three significant test inflation
+pressures at a tire loading of approximately 19 kN (4200 lb) as follows: 381 cm2
+(59.1 in2) for 48 N/cm2 (70 lb/in2), 559 cm2 (86.6 i d ) for 31 N/cm2 (45 lb/in2), and
+777 cm2 (120.4 i d ) for 21 N/cm2 (30 lb/in2). In an attempt to provide a "rigid" tire for
+comparative purposes, one test tire was filled with a polyurethane foam, foamed and
+expanded inside the tire, which gave a crushing strength on the order of 1380 N/cm2
+(2000 lb/in2).
+Support Fixtures and Instrumentation
+Single cantilevered a_x_le .- The test tire was supported by one of the three test fix-
+tures shown schematically in figure 4. The single cantilevered axle, hereinafter referred
+4
+
+
+
+=== PDF PAGE 7 ===
+to as SAXLE, figure 4(a), was bolted directly to the bottom of the ballast basket after
+having been carefully alined with the track rail to minimize yawing and rolling moments.
+Vertical, drag, and axial loads were obtained through four-arm strain-gage bridge cir­
+cuits on the axle at the location shown. When brakes were applied, brake torque was iso­
+lated from the axle and measured by noting the tension in the brake torque rod shown in
+the figure. Brake line pressure was also monitored through a pressure transducer
+located near the brake assembly. Wheel angular velocity, used to detect wheel lockup,
+was measured by a magnetic pickup mounted on the axle and a segmented ring mounted
+on the wheel. Vertical position of the ballast basket, and thus of the axle, with respect to
+the support frame, was measured by a slide-wire mounted parallel to the hydraulic posi­
+tioning cylinder shown in figure 3. Horizontal position of the test carriage was measured
+by a photocell interrupter system, with triggering provided by narrow white stripes
+painted at 3.05-m (10-ft) intervals on the blackened track-rail support wall. Carriage
+velocity at the beginning of the test section was measured by a standard time-interval
+counter, and this forward velocity was assumed constant over the remainder of the test
+bed. A pressure transducer located in the lift cylinder to monitor damping, and vertical
+and drag accelerometers located at the center of the axle completed the instrumentation
+on this fixture.
+Tandem cantilevered axles.- In order to explore the effects of two wheels running
+in tandem, two instrumented cantilevered axles were mounted on 1-m (40-in.) centers
+on a beam as shown in figure 4(b). This beam was mounted on a pivot centered under
+the ballast basket, with stability in pitch being provided by the spring-and-damper mech­
+anism shown. The instrumentation of this tandem-axle test fixture, hereinafter referred
+to as TAXLE, was quite similar to that described for the single cantilevered axle,
+SAXLE, except for repositioning the brake torque rods, as shown in the figure, and pro­
+viding a potentiometer to measure the bogie-beam pitch attitude. An improved angular-
+velocity measuring system was developed for TAXLE, in which a drive shaft located in
+the hollow axle was used to transmit rotary motion from a coupling on the wheel hub to
+an angular accelerometer and an angular-velocity generator mounted on the rear of the
+axle support beam. Ballast -basket vertical position, test -carriage horizontal position,
+and carriage forward velocity were measured as described for SAXLE.
+Single-wheel dynamometer. - The single-wheel dynamometer, hereinafter referred
+to as SWDYN, shown in figure 4(c) was used in the last series of tests primarily to
+determine braking and yawed rolling characteristics of the test tire in clay soil. This
+fixture, which has been used in many braked rolling investigations (ref. 6, for example)
+at the Langley landing-loads track, allows vertical, drag, lateral, and brake -torque
+measurements to be made with a minimum load interaction. The fixture was bolted to
+the bottom of the ballast basket through a split-ring clamp, allowing the fixture to be
+5
+
+
+
+=== PDF PAGE 8 ===
+rotated in either direction and locked to provide a fixed yaw angle for yawed rolling
+studies. As shown in figure 4(c), two load beams in compression measured axle vertical
+load; two load beams in tension measured axle drag loads; and one load beam in either
+tension or compression, depending on the sense of the yaw angle, measured lateral or
+side loads. Brake torque 'was isolated and measured by the system of tension links
+shown. Wheel rotation was transmitted by a toothed timing belt to an auxiliary axle,
+driving an angular accelerometer and an angular -velocity generator. A six-sided cam
+operating a set of breaker points was also installed on this axle to provide wheel-
+angular -displacement information. Vertical and horizontal positions, brake and lift
+cylinder pressures, and vertical and drag axle accelerations were measured as described
+for the cantilevered axle.
+Recording equipment. - Outputs from all measurement systems were processed.by
+appropriate signal conditioning units and recorded on a 14-channel FM magnetic tape
+recorder carried onboard the test carriage in an enclosed space at the front of the car­
+riage. The enclosed compartment may be seen in the photograph of figure 2, and the
+interior view of figure 5 shows the signal conditioning units, amplifiers, FM tape
+recorder, and the multiplex equipment which was used during tests with T U L E only.
+Also shown in this figure is an oscillograph used to record accelerations and loads in
+the primary carriage structure. A time code generator (not shown in fig. 5) was used to
+provide run identification and a highly accurate continuous time signal to the tape
+recorder.
+Soil Test Beds
+Selection of clay.- The channel used as a soil test bed in this investigation was
+2.44 m (8 ft) wide. The bed length of approximately 76 m (250 ft) was selected as a
+length thought to be sufficient to establish steady-state rolling and braking conditions at
+the higher test velocities and still hold the volume of soil to be processed for each test
+bed to a reasonable level. The clay soil used as a test -bed material was provided by the
+U.S. Army Engineer Waterways Experiment Station (WES) from a borrow pit located near
+Vicksburg, Mississippi, and approximately 610 rn3 (800 yd3) of this soil was delivered
+to the test site at Langley. The selection of this material - a highly plastic, heavy clay
+(locally called "buckshot") described in detail in reference 2 - was based upon past WES
+experience, which indicated the clay to be a very stable cohesive test material with
+changes in water content occurring slowly with time. Thus, once a soil bed had been
+established with the proper moisture content, reasonably constant conditions could be
+maintained for the several days necessary to complete a test series. The clay as used
+in this test program ranged from a moisture content of 35.4 percent and a dry density of
+1340 kg/m3 (83.6 lb/ft3) for the softest test beds to a moisture content of 30.1 percent
+6
+
+
+
+=== PDF PAGE 9 ===
+and a dry density of 1425 kg/m3 (89 lb/ft3) for the hardest test bed. A description of
+the sequence of events involved in .the preparation, installation, maintenance, and removal
+of a typical clay soil test bed will illustrate the considerable effort expended to provide
+the most uniform test conditions possible.
+-
+Prein. st
+_
+a
+-.
+llation clay processing. The quantity of buckshot clay provided by WES
+was sufficient to construct two complete test beds plus an allowance for wastage.
+Accordingly, enough material to construct one test bed was hauled from the stockpile to
+the processing area (fig. 1)and placed in a windrow about 122 m (400 ft) long, 4.6 m
+(15 ft) wide, and 0.46 m (1.5 ft) deep. The windrow was staked off into 6.1 m (20 ft)
+sections and the average moisture content of the batch determined by drying and mea­
+suring the weight change of samples taken from each section. Previous laboratory work
+had indicated the approximate moisture content required to obtain the desired soil bed
+test strength. Water was added to each section of the windrow in metered amounts and
+more samples taken at intervals until the required overall moisture content was achieved.
+Before and during the watering process, the large, self -propelled multiple-pass rotary
+mixer shown in figure 6 was employed continuously in the preinstallation clay processing
+to break up the large soil clods and to provide a more uniform soil-water mix. The
+processed soil was then covered with polyethylene to hold evaporation to a minimum.
+Installation of clay in test bed.- Before installing the first test bed, a 15-cm-deep
+(6-in.) layer of clean, coarse gravel was placed in the bottom of the tank to provide
+drainage under the clay. The processed soil was placed in the tank in 15- to 20-cm-deep
+(6- to 8-in.) layers or lifts using a large hydraulic excavator. A small motor grader
+was used in close coordination with the excavator to provide a uniformly thick layer of
+loose soil which was then compacted by a heavy pneumatic-tire roller making 10 to
+12 passes over the bed for each layer of soil. This process, partly illustrated in figure 7,
+was repeated until the desired soil depth of 0.76 m to 0.91 m (2.5 to 3 ft) was reached.
+A small, self -propelled, steel-wheel roller and the small grader, working together and
+using the channel wall as a reference, conducted final finishing operations to provide a
+reasonably level, smooth test surface. The completed test bed was then kept covered
+with polyethylene, except during tire tests, to retain surface moisture.
+Measurements of test-bed characteristics. - Many different soil test measurements
+were performed at intervals throughout the program to determine test -bed properties
+and uniformity. In addition to the moisture -density measurements conducted during bed
+preparation and continued at intervals during the test-bed life, these included field CBR
+(California bearing ratio) tests and AI (airfield index) measurements, as described in
+reference 7, and penetration-resistance and plate-bearing tests with a specially designed
+test assembly, as described in reference 3. The greatest statistical reliability may be
+placed on the AI measurements since those were made at 3.05-m (10-ft) intervals down
+7
+
+
+
+=== PDF PAGE 10 ===
+the intended track of the tire before each test run, whereas the other measurements
+were made at irregular intervals as opportunity offered. Airfield index numbers were
+obtained with the airfield cone penetrometer, which is a hand-operated device with a 30'
+cone having a 1.29-cm2 (0.2-in2) base area. (See fig. 8.) The operator forces the
+penetrometer into the soil at a slow, uniform rate and calls out each 5.08 cm (2 in.) of
+depth as denoted by scribed lines on the shaft. An observer then reads and records the
+penetration resistance indicated by the spring scale in the handle of the penetrometer,
+which is calibrated in terms of one scale division (one AI number) per 44 N (10 lb) of
+resisting force. A typical penetration test is shown in progress in the photograph of
+figure 9. In this program, penetration readings were obtained every 5.08 cm (2 in.) up
+to a depth of 45.7 em (18 in.) or a penetration resistance of 660 N (150 lb), whichever
+occurred first. Although this paper will use only airfield index measurements in dis­
+cussion of data because of the greater sampling frequency, figure 10 shows the approxi­
+mate correlation of AI with CBR for the clay used in this program.
+At the same location and 3.05-m (10-ft) interval as the AI measurements, eleva­
+tions of the soil-test-bed surface with respect to the track rail were obtained before each
+test run by using a standard rod-and-level survey technique. The survey was repeated
+after the test run to enable some determination to be made of the amount of soil deforma­
+tion, or rutting, caused by the tire for each test condition. These measurements proved
+of such potential importance that the profilometer shown in figure 11was developed and
+used during the later phases of the program to provide a continuous measure of test-bed
+elevation with respect to the test carriage.
+Maintenance of clay test bed. - Test-bed maintenance was concerned primarily with
+repairing surface damage caused by the test tire during a run. At the higher soil
+strengths and higher test speeds, bed damage was minimal and, by translating the test
+fixture laterally, as many as four runs could be made before any surface repair was
+necessary. At the lower soil strengths and lower speeds, however, extensive surface
+repair became necessary, sometimes after every test run. Fortunately, in the range of
+moisture content used in these tests, field measurements showed the strength of the
+buckshot clay to be nearly independent of the effort of compaction. Thus, many of the
+shallow ruts could simply be rolled flat with the steel-wheel roller, and the surface
+could then be releveled with the grader. Deep ruts caused by heavy braking at low
+speeds required use of the pneumatic-tire roller to make a sufficient number of passes
+to reduce the ruts to a depth which could be leveled by the steel-wheel roller. Occa­
+sionally, also, evaporation of water from the test-bed surface caused the formation of a
+thin, hard crust which had to be cut from the bed with the grader. The new surface was
+then lightly wetted and rolled with the steel-wheel roller to make it ready for testing.
+8
+
+
+
+=== PDF PAGE 11 ===
+Between testing and test -bed maintenance operations, more soil was transferred
+from the stockpile to the processing area, and moisture conditioning was initiated to
+prepare for the next desired soil strength.
+PreDaration of sand test bed.- Installation of the sand test bed followed the same
+general procedures outlined for installation of the buckshot clay. The sand material
+used for these tests was obtained locally and was a poorly graded, medium sand of river
+origin. Only one sand test bed was constructed, and, as finally graded and compacted,
+the sand had a density of approximately 1666 kg/m3 (104 lb/ft3) and a moisture content
+of 6 to 8 percent. A good deal of difficulty was encountered in emplacing this bed, but a
+bed having essentially constant density was achieved and maintained for this test series.
+Soil test measurements also followed the general procedure outlined for the clay tests,
+with airfield index and elevation measurements being taken at 3.05-m (10-ft) intervals
+down the intended tire path before each test run. At these same locations, samples of
+the sand were taken to establish surface density and water content.
+Sand-test-bed maintenance involved grading and compacting the bed to remove ruts
+caused by the tire tests. Because of the large amount of sand displaced by the wheel,
+only two test lanes were used in sand with the lanes located 0.305 m (1ft) on each side
+of the center of the bed. When a level surface had been achieved, the surface was
+sprinkled lightly with water to replace lost surface moisture and was then covered with
+polyethylene until the test.
+Tire Test Procedure
+The same general tire test procedures were followed on both clay and sand test
+beds. On each new bed of different soil character and for each change in tire inflation
+pressure, a series of preliminary tests were run prior to the catapult tests. The first
+test conducted was a static sinkage test in which the tire was lowered to the soil surface
+and allowed to sink under full ballast load until steady-state conditions were reached.
+The tire was then raised clear of the soil and the carriage was moved forward a few
+meters. In the second test, the tire was allowed to sink again into the soil and the
+carriage was towed forward a few meters with the tire in the soil to establish a quasi­
+drawbar-pull drag value. In the final test, the tire was raised clear of the soil and the
+carriage was towed back a sufficient distance to allow the towing tractor to accelerate
+the carriage to 6 to 8 knots for a low-speed test. When a constant forward speed was
+reached, the tire was lowered into the soil and, after steady-state free-rolling conditions
+were established, the brakes were locked for a short distance to establish braking drag
+values. The brakes were then released and the tire raised clear of the bed. All these
+tests were accomplished in one lane or track near the downstream end of the soil bed,
+9
+
+
+
+=== PDF PAGE 12 ===
+most often leaving enough virgin soil at the upstream end to permit a low-speed catapult
+run.
+Before any catapult run was made, the test fixture was positioned as desired
+laterally, then raised to its maximum height and locked. Tire and brake pressures were
+set and all data channels balanced and checked at the recorder. Knife edges were placed
+on the track according to the desired speed of each run in order to actuate switches to
+drop the tire at the desired location and to apply brakes at the proper time. A restric­
+tion in the discharge line of the hydraulic lift cylinder reduced the vertical impact
+velocity at ground contact and also acted as a vertical-motion damper during the run.
+DATA-REDUCTION PROCEDURES
+Averaging Techniques for Airfield Index
+The summarizing and comparative data to be presented in a subsequent section of this
+paper have of necessity been subjected to a great deal of averaging of both soil-test-bed
+conditions and resulting axle loads. Although each soil bed was constructed and main­
+tained as carefully as possible, the field test environment did cause a certain degree of
+nonuniform soil conditions. Table I shows how airfield index readings obtained with the
+airfield cone penetrometer varied with depth and location along a typical clay test bed.
+The gradual increase in penetration resistance with increasing depth was typical for all
+clay test beds and was thought to be partly due to penetrometer-shaft drag caused by
+insufficient relief between cone and shaft (fig. 8). In spite of this high-side bias, airfield
+index (AI) will be the standard used in this paper to compare one soil condition with
+another, since these measurements were made in the intended track of the tire before
+each run and should give the best picture of changing test conditions. Since tire pene­
+tration in clay seldom exceeded 15.2 cm (6 in.) and in order to minimize shaft-drag
+bias, AI values were averaged for the 0- to 15.2-cm-depth (0- to 6-in.) measurements
+at each test-bed station, as noted in table I. The values were averaged to give an AI
+number for that particular run (AI = 1.4 for the run shown). The AI numbers for each
+run were then averaged to determine an overall average AI for each test series or test
+bed.
+Averaging Techniques for Rut Depth
+A further variation was introduced by test-bed surface unevenness such as shown
+in figure 12(a), which is the test-bed profile before the run as measured by the profilom­
+eter pictured in figure 11. The exact effect of surface unevenness is unknown, since at
+this time it is impossible to measure or isolate the interplay of tire deflection, tire dis­
+tortion, and soil springback. That a good deal of smoothing took place during the run
+10
+
+
+
+=== PDF PAGE 13 ===
+can be inferred by comparing figure 12(a) with figure 12(b), the before-run and after-run
+profiles, but how this smoothing or rolling action affected the measured axle drag load
+is not known. Rut depth in this paper is defined as the difference between elevation
+measurements made at the same soil-bed location before and after each test run, and is
+shown in figure 12(c) as obtained from both the continuous-reading profilometer and the
+rod-and-level survey technique described earlier. The rut-depth profile Zm developed
+by either method was then averaged over the same interval as the measured axle loads
+to obtain the average rut depth z to be presented in a subsequent section. For illus­
+tration, the average airfield index obtained from table I for this test bed is included in
+figure 12(a).
+Averaging Techniques for Axle Loads
+The final averaging process was concerned with the measured axle loads during
+each series of tests. Typical time histories of vertical load, drag load, wheel angular
+velocity, and axle vertical position are shown in figure 13 for the same test run for which
+the soil test conditions were shown in figure 12. The extreme variations in measured
+loads are obvious and are thought to be due in part to the uneven soil surface and the
+nonuniform soil strength discussed previously and in part to noise induced by the basic
+carriage structure and poor system damping. In either case, in order to permit
+meaningful load comparisons between various test parameters, load averages were
+made over that period in each test run where near-steady-state conditions seemed most
+likely to occur, due regard being given to all sources of information about that run.
+Vertical- and drag-load averages were obtained during free rolling on concrete, free
+rolling on clay or sand, and locked-wheel braking in clay or sand, for all test runs where
+these conditions occurred. No attempt was made to obtain load averages in the tran­
+sient zones indicated in figure 12, or for braking conditions other than locked-wheel
+braking. In the comparisons made in the rest of this paper, the average drag loads have
+been normalized by dividing by the average vertical loads, and in each case the ratio is
+expressed as axle drag coefficient (FD/FV).
+RESULTS AND DISCUSSION
+General Considerations
+In the course of this investigation of aircraft tire behavior during high-speed
+operations in soil, a great many variables were examined in more or less detail. In
+all these tests, forward velocity was considered as the prime independent variable. A
+set of six or eight discrete, preselected velocities constituted a test series for investi­
+gating the effect of other parameters on the prime dependent variables of axle drag load
+11
+
+
+
+=== PDF PAGE 14 ===
+and rut depth. These parameters included four different tire inflation pressures, four
+clay test beds of different strength characteristics, one sand bed, and one concrete sur­
+face. Limited braking and yawed rolling studies were also made at some of the test
+conditions. The effects of these various parameters and test conditions will be dis­
+cussed in the following sections.
+Free-Rolling Axle Drag Coefficients
+-
+Single-wheel dynamometer tests. As mentioned previously, all testing was done
+~
+with the three fixtures shown in figure 4. Of these fixtures, the single-wheel dynamom­
+eter (SWDYN) has been used for several years in various braking and cornering investi­
+gations (see ref. 6, for example) at the Langley landing-loads track, and a good deal of
+experience and confidence has been gained in this load-measuring system. Also, the
+SWDYN series was among the last, chronologically, to be run in this investigation and
+benefited thereby from the experience in soil handling and testing techniques gained
+during the earlier series. For these reasons and because the most complete soil-test­
+bed information was obtained for these tests, the SWDYN series is considered to have
+provided the best quality data of the program. These data increased confidence in the
+earlier results obtained with the single cantilevered axle, which constituted the bulk of
+the data, since the same data trends were observed in both series. Figure 14 shows the
+axle drag coefficients and resulting rut depths developed by the SWDYN operating at a
+48-N/cm2 (70-lb/in2) tire pressure on AI 1.5 clay compared with the results for the
+same free-rolling conditions on concrete. The large increase in drag coefficient due to
+operation in clay is immediately obvious, in some cases being nearly 10 times the
+equivalent drag coefficient or rolling resistance experienced on concrete. It will be
+noted that this hard-surface rolling resistance is somewhat higher than might be expected
+and may be a characteristic of the low-pressure, type 111test tire. Results to be pre­
+sented subsequently will confirm that the shape of the drag-coefficient curve in soil is
+characteristic for nearly all test conditions, with the drag loads initially decreasing from
+static or low speed and then rising sharply with increasing forward speed to a peak in
+the velocity range of 40 knots. The change in drag coefficient is reflected to a certain
+degree by changes in the average rut depth as shown in figure 14. The phenomena
+causing the changing drag load with velocity are not clearly understood, but are thought
+to be related to changes in soil mechanical properties with increased effective loading
+rate and possibly to some change in tire shape producing changes in immersed body lift
+and drag coefficients.
+Effects of c-h-a nging clay strength.- The effects of changing clay strengths on the
+__--_-I
+axle drag coefficients and rut depths developed by SAXLE are shown in figures 15(a)
+and 15(b), respectively, for a tire inflation pressure of 48 N/cm2 (70 lb/inZ). An overall
+12
+
+
+
+=== PDF PAGE 15 ===
+decrease in drag coefficient with increasing soil strength is shown, with the stronger
+soil trending toward the rolling-resistance values developed on concrete. No rut-depth
+measurements were obtained for the AI 3.2 clay because penetration into the soil was
+insignificant. This fact further suggests that, for this tire and load combination, no
+operational problems would be expected on clay soil stronger than AI 3.2.
+Effects of vertical load.- The effects of reduced vertical load are shown in fig­
+ure 16, where the SAXLE nominal vertical load of 23.1 kN (5200 lb) was reduced to
+11.6 kN (2600 lb) for one test series. This load reduction significantly reduces the peak
+or hump in the axle-drag-coefficient curve but has little apparent effect in the low- and
+high-speed regimes. However, a significant reduction in rut depth is noted for the
+lighter load at all speeds.
+Effects of tire inflation pressure. - The preceding results suggest that drag coeffi­
+cients may not be directly related to rut depths, but may depend on other parameters.
+One parameter may very well be tire inflation pressure, as illustrated in figure 17 where
+axle drag coefficients and rut depths are shown as a function of forward velocity for four
+tire inflation pressures. The tire pressures were chosen to represent a realistic oper­
+ating range for this tire, as explained previously. Figure 17(a) shows the strong depen­
+dence of axle drag coefficient upon tire inflation pressure, where reducing pressure from
+48 N/cm2 to 21 N/cm2 (70 lb/in2 to 30 lb/inz) is seen to reduce peak axle drag coeffi­
+cients by more than one-half. The same trend in rut depth is noted in figure 17(b), but
+the reduction in rut depth is nearly two-thirds and persists over the entire velocity range.
+From figure 17(a), it also appears that reducing tire inflation pressure does not appre­
+ciably change the speed at which the peak drag load occurs. A similar drag-load peak
+occurs for a tire operating on a water- or slush-covered runway owing to the onset of
+hydroplaning (ref. 6), but lower tire pressures produce much lower hydroplaning speeds.
+This point suggests, then, that the peak in the soil-drag-coefficient curve is related more
+to soil properties than to tire properties. Furthermore, examination of the drag-load
+curve for a 21-N/cm2 (30-lb/in2) inflation pressure reveals a slight increase at the
+highest test velocities, a fact confirmed by two different tests conducted a week apart.
+Equipment speed limitations, however, prevented further exploration of this phenomena.
+Although the data of figure 17 were for clay of AI 1.6, the same dependency of axle
+drag coefficient on tire inflation pressures occurs in stronger soil as shown in figure 18
+for AI 2.0 clay. A definite peak in the drag-load curve is observed in figure 18(a) for
+the 48-N/cm2 (70-lb/in2) and 31-N/cm2 (45-lb/in2) tire pressures, with all drag coef­
+ficients notably reduced in magnitude with reductions in tire inflation pressure. For the
+21-N/cm2 (30-lb/in2) tire pressure, no clearly defined peak appears, possibly owing to
+scatter or inaccuracy of the data as drag loads approach the level of those measured on
+concrete. The rut depths developed by SAXLE in AI 2.0 clay are seen to follow the same
+13
+I
+
+
+
+=== PDF PAGE 16 ===
+general trends noted in AI 1.6 clay for all three tire inflation pressures, although the
+degree of penetration is much less. (See fig. 18(b).)
+As mentioned previously, some tests were run with a so-called rigid tire filled
+with polyurethane foam i.n an attempt to isolate the effects of tire deformation from the
+effects of soil deformation. Unfortunately, tire bounce due to insufficient system damp­
+ing casts doubt on the measured load data, but it is significant to note that the soil failure
+mode during free rolling resembled that occurring during locked-wheel braking with a
+pneumatic tire.
+Comparison of clay and sand data.- Up to this point, all tests discussed have been
+those in which buckshot clay was used in the soil test bed. This type of clay is an almost
+purely cohesive soil whose strength or resistance to penetration is determined by cohe­
+sive bonds between soil particles. However, the strength of most in situ soils depends
+upon some combination of cohesion and internal friction, that is, the resistance to pene­
+tration caused by friction of individual soil particles at their contact point. Quite differ­
+ent penetration resistance characteristics occur in sand and in clay as shown in figure 19
+where the average airfield index reading with depth for the sand test bed is compared with
+the readings for a typical clay test bed. The sudden reduction in penetration resistance
+of the sand at the 30.5-cm (12-in.) depth is thought to be due to poor drainage of the test
+bed. Test holes dug in the sand at intervals along the bed revealed that capillary action
+of water from the channel floor had created a false water table in the sand, with standing
+water observed in the holes at a level of about 0.76 m (2.5 ft) above the channel floor.
+It is uncertain how this phenomenon affected the test results, although tire penetrations
+seldom exceeded 5 cm (2 in.) except during braking.
+Axle drag coefficients and rut depths for the SAXLE tests in sand at tire inflation
+pressures of 48, 31, and 21 N/cm2 (70, 45, and 30 lb/in2) are shown in figure 20(a) and
+figure 20(b), respectively. The variation in drag load with forward speed in sand is
+similar to that found in clay, as compared in figure 20(a), although the magnitude of the
+load is smaller. The results shown suggest that operations in natural soil, having com­
+bined cohesive and frictional properties, will reflect a hump or peak in the drag-load
+curve which may rise to a significant level. Drag coefficients of this magnitude may
+prove helpful in stopping an aircraft, but could greatly increase the required take-off
+distance.
+Other Ground Operating Problems
+Braking drag coefficients.- The braking problem was investigated in a limited way,
+with brakes being applied for a short distance following steady-state free rolling. The
+most complete braking data were obtained during tests of the SWDYN. As shown in fig­
+ure 2l(a), locked-wheel axle drag coefficients greatly exceed the free-rolling values at
+14
+
+
+
+=== PDF PAGE 17 ===
+all speeds, but do show the same tendency to reach a peak value near 40 knots. As noted
+for the free-rolling cases, the rut depths shown in figure 21(b) do not necessarily follow
+the same trends as the drag coefficients, although rut depths for braking are generally
+higher than those for free rolling except at the highest speeds. For this series only, rut
+cross sections were obtained by driving an aluminum plate into the soil across the ruts
+left by the tire during free rolling and braking. Paint was then sprayed over these plates
+to leave a silhouette of the rut cross section. Tracings of these silhouettes are shown in
+figure 22 for the free-rolling and locked-wheel braking series presented in figure 21. A
+profile of the inflated but unloaded tire is included for comparison. It can be noted from
+these profiles that measuring rut depths from the reference elevation shown does not give
+a true picture of the soil actually displaced by the tire. For instance, in figure 22(b),
+the measured rut depth during braking is approximately 8.9 cm (3.5 in.) whereas the
+distance from the lowest point to the highest point is approximately 17.8 cm (7.0 in.).
+The difference in the method of soil failure during free-rolling and braking is
+shown in figure 23. The free-rolling rut was characteristically smooth and offered a
+clean, well-molded contour clearly showing the tire tread pattern. This pattern could be
+observed also in the braking rut, but the soil clearly failed in shear, with a great amount
+of material being displaced outside the rut. In fact, some of this material was dispersed
+so widely as to suggest a possible operating problem should chunks of soil impinge on the
+aircraft structure during braking. Movies taken during these runs also showed a great
+deal of material being ejected ahead of the locked wheel, and this inferred the presence
+of a bow wave of some magnitude in the soil. An indication of the size of this bow wave
+is shown in the photograph of figure 24. This photograph was taken after a sink-and-tow
+or drawbar-pull test, described earlier, when the carriage had stopped and the tire was
+raised vertically. A static sinkage footprint may be observed in the background.
+Rut appearances similar to those for clay were noted during braking and free roll­
+ing in sand, as shown in figure 25 where the free rolling rut is in the foreground, locked-
+wheel braking in the middle distance, and free rolling again in the background. Note the
+heavy amount of sand displaced on and over the top of the channel during braking, an indi­
+cation of a different type of soil failure than during free rolling. It should be remarked
+in passing that this type of failure took place in sand whenever any significant brake
+torque was applied to the wheel, as contrasted with the shearing failure in clay which
+took place only when the wheel was locked.
+As mentioned previously, some braking was attempted during the latter part of
+most of the free-rolling runs, but in the early runs wheel lockup was not possible at
+speeds much above 40 knots. The reason for this is not understood although the opposite
+trend would normally be expected on concrete. However, the brake used in the early
+SAXLE series was replaced with a larger one for the SWDYN series, and lockup then
+15
+
+
+
+=== PDF PAGE 18 ===
+occurred for all test speeds. Comparison of braking values in soils for conditions other
+than full skid, or locked wheel, will not be attempted in this paper owing to a lack of defi­
+nition of effective rolling radius, and hence of tire slip ratio, when the surface is pene­
+trated. The change in rolling radius may be significant, as shown by the wheel-angular­
+velocity trace of figure 13 where an abrupt change is noted as the tire goes from concrete
+to clay. However, this abruptness may also be due to the presence of tire slippage even
+under free-rolling conditions in clay, a fact which could cause improper antiskid system
+operation under these conditions. The locked-wheel axle drag coefficients obtained for
+those few conditions where wheel lockup was achieved are presented in figure 26 for
+AI 1.6 clay and for sand. The drag coefficients are seen to be very high, just as observed
+for SWDYN in figure 21, and increased somewhat with velocity up to 40 knots. If the
+trends established in figure 21 are valid for all cases, these values are probably near
+maximum and will likely diminish with increased velocity.
+A potential operating problem not investigated at all is suggested by the photograph
+of figure 27, showing the touchdown and wheel spin-up area during a typical run in clay.
+The sink rate used in these tests was very low, of the order of a few centimeters per
+second, because there was no shock strut in the system. However, the photograph shows
+the same type of soil failure experienced during locked-wheel braking, and it might be
+expected that very high spin-up drag loads might be encountered at the high sink rates
+common among assault airplanes.
+Side-force coefficients.- Limited studies were made to compare the yawed rolling
+(cornering mode) characteristics of a tire on concrete and on soil with the SWDYN at yaw
+angles of 3O and 6O. The tests encompassed a full velocity range; however, they were
+made for one tire inflation pressure and one soil strength only. Side force is defined
+herein as the force developed normal to the direction of motion, and drag force, as the
+force in opposition to the direction of motion. These forces were derived (see fig. 28)
+from the loads measured by the beams shown in figure 4(c). The results of the yawed-
+rolling studies are summarized in figure 29, where side-force coefficients at yaw angles
+of 3O and 6' are compared for concrete and for clay. The drastic reduction in side force
+which is seen to occur when going from concrete to clay is a clear indication of a poten­
+tial loss of ground maneuverability for aircraft operating from unprepared fields. Yaw
+angle is shown to have only a slight effect on drag force coefficient and no significant
+effect on rut depth as shown in figure 30(a) and figure 30(b), respectively.
+As illustrated in figure 31, should locked-wheel braking occur when the tire is
+yawed, the already meager side forces drop to insignificant values. This effect, which is
+similar to the combination of braking and loss of steering noted for tires operating on
+concrete in reference 8, adds further emphasis to the need for cautious brake application
+when operating in soil. The braking drag forces are not greatly influenced by yaw angle,
+16
+
+
+
+=== PDF PAGE 19 ===
+as shown in figure 32, although a moderate increase over the 0' yaw case is noted here,
+as well as for the unbraked condition shown in figure 30.
+Effect of tandem wheels.- In order to determine the gross effects of two wheels
+operating in tandem, a brief test series was conducted using the tandem-axle test fixture
+(TAXLE) shown in figure 4(b). This fixture was run only on the clay soil test bed having
+an average airfield index of 1.5. Unfortunately, test-carriage structural limitations pre­
+vented ballast loading of the TAXLE fixture to the equivalent single-wheel loading used
+in'the SAXLE series; therefore, additional vertical loading was attempted by using the
+hydraulic positioning cylinder shown in figure 3. After a short test series, it was found
+that loads of this magnitude were dangerously stressing the test-carriage structure;
+therefore, the heavyweight series was discontinued and the rest of the TAXLE investiga­
+tion was conducted at the lighter load. Although incomplete, the results of the heavy­
+weight series are presented in figure 33, with axle drag coefficients for each axle com­
+pared with the results for a similar SAXLE series conducted on clay of AI 1.6. The drag
+coefficients for the tandem wheels are of the same order of magnitude as a single wheel
+but apparently have a different relationship with forward velocity. At the heavyweight
+condition (FV = 22 kN or 5000 lb per wheel), there is an obvious difference in the drag
+loads experienced by the leading wheel and the trailing wheel with, surprisingly, the
+trailing wheel experiencing the higher drag load. No such clear-cut distinction is noted
+in the lightweight cases (Fv = 11 kN or 2500 lb per wheel) shown in figure 34, although
+considerable variation in drag load exists between leading and trailing wheels. Some of
+the same trends are noted for the tandem wheels as for the single wheels, particularly
+the higher tire pressures resulting in higher drag loads and an apparent hump or peak in
+the drag-load curve near a forward speed of 40 knots. The rut depths measured for
+these test conditions are shown in figure 35 and, again, are compared to similar SAXLE
+test series on AI 1.6 clay.
+CONCLUSIONS
+An investigation to determine the relationships between tire and ground when
+operating in soils at high speeds has been made and some of the problems which might
+be encountered should such operations become necessary have been explored. Signifi­
+cant conclusions of this program are summarized as follows:
+1. In general, axle drag loads are highly dependent on forward velocity, with loads
+initially decreasing from static or low speed and then rising sharply with increasing
+forward speed to a peak in the velocity range of 40 knots for the configurations tested.
+Further increases in speed bring about a reduction in drag load by phenomena not pres­
+ently understood.
+17
+
+
+
+=== PDF PAGE 20 ===
+2. In a given soil strength, the magnitude of the axle drag loads is strongly a
+function of tire inflation pressure, with higher inflation pressures resulting in higher
+axle drag coefficients.
+3. Changing soil strengths or soil character altered the magnitude of the peak in
+the drag-load curve, although the peak was still present in most cases. In certain soil
+strength and tire pressure combinations, the axle drag coefficients rose to a level suffi­
+cient to be troublesome at take-off for some aircraft.
+4. Braking in soft soils will cause operating problems because of the high drag
+loads and because of the large amount of soil displaced from the locked wheel with con­
+sequent possible impingement on aircraft surfaces. Furthermore, proper antiskid sys­
+tem operation is questionable in these circumstances since a change in effective rolling
+radius occurs with soil penetration.
+5. Problems may be encountered in developing enough side forces for adequate
+ground maneuverability on soft soils. As on concrete, complete loss in steering forces
+will occur should the wheels become locked.
+6. The load relationship between wheels in a tandem pair is quite complex. The
+brief test program described in this paper indicated no significant difference in the mag­
+nitude of drag load or rut depth for tandem wheels when compared with the results for a
+nearly equivalent single -wheel axle; however, in some cases, the trailing wheel experi­
+enced a higher drag load than the leading wheel.
+Langley Research Center,
+National Aeronautics and Space Administration,
+Hampton, Va., June 30, 1972.
+18
+
+
+
+=== PDF PAGE 21 ===
+REFERENCES
+1.'Wismer, R. D.: Performance of Soils Under Tire Loads. Rep. 3 - Tests in Clay
+Through November 1962. Tech. Rep. No. 3-666, US. Army Eng. Waterways Exp.
+Sta., Corps Eng., Feb. 1966.
+2. Smith, J. L .: Strength-Moisture-Density Relations of Fine-Grained Soils in Vehicle
+Mobility Research. Tech. Rep. No. 3-639, U.S. Army Eng. Waterways Exp. Sta.,
+Corps Eng., Jan. 1964.
+3. Crenshaw, B. M.; Butterworth, C. K.; and Truesdale, W. B.: Aircraft Landing Gear
+Dynamic Loads From Operation on Clay and Sandy Soil. AFFDL-TR-69-51, U.S.
+Air Force, Feb. 1971.
+4. Crenshaw, B. M.; Truesdale, W. B.; and Nelson, R. D.: Aircraft Landing Gear
+Dynamic Loads Induced by Soil Landing Fields. AFFDL-TR-70-169, vols. I and 11,
+U.S. Air Force, June 1972.
+5. Crenshaw, B. M.: Soil/Wheel Interaction at High Speed. prepring 710181, SOC.
+Automot. Eng., Jan. 1971.
+6. Horne, Walter B.; and Leland, Trafford J. W.: Influence of Tire Tread Pattern and
+Runway Surface Condition on Braking Friction and Rolling Resistance of a Modern
+Aircraft Tire. NASA TN D-1376, 1962.
+7. Anon.: Materials Testing. TM 5-530 and AMF 88-51, U.S. Army and U S . Air Force,
+Feb. 1966.
+8. Byrdsong, Thomas A.: Investigation of the Effect of Wheel Braking on Side-Force
+Capability of a Pneumatic Tire. NASA TN D-4602, 1968.
+19
+
+
+
+=== PDF PAGE 22 ===
+TABLE I.- MEASURED AIRFIELD INDEX (AI) VALUES AND AVERAGES OBTAINED FOR A TYPICAL CLAY TEST BED
+AI readings at depths shown:
+'Test -bed 1 I 1
+station Average AI for
+- 1 cm 15.2 cm Z0.3 cm Z5.4 cm 30.5 cm 35.6 cm 40*7 cm 45'7 cm 0 to 15.2 cm (0 to 6 in.) of depth
+1 1 1
+I
+m ft 1 in. 6 in. 8 in. 10 in. 12 in. 14 in. 16 in. 18 in.
+24.4 80 2 2 2 2 2.5 1.75
+27.4 90 1.5 2 3 3 4 1.5
+30.5 100 1.5 1.5 1.5 1.5 2 1.5 1.5 2 1.25
+33.5 110 1 1 1.5 2 2 2 2 2 2.5 1.25
+'
+36.6 120 1 1 1 1.5 1.5 1.5 1.5 1.5 2 2 3 1.25
+39.6 130 2 1 1.5 1.5 1.5 2 2 1.5
+42.7 140 1.5 1 1 1 1.5 2 2 2 1.25
+i
+45.7 150 1 1.5 1.5 1.5 2 3 1.25
+48.8 160 1.5 1 1 1.5 1.5 1.13
+1 51.8 170 2 1.5 2 2.5 2.5 3 1.63
+l 1
+54.9 180 1 1.5 1.5 2 2.5 , 1.13
+I
+57.9 190 1.5 1 1 1 2 2 2.5 3 1 4 i 4 4.5 1.38
+,
+I 61.0 200 1.5 2 2.5 3+ - - I - - - 3.5 4 1 5 1 1.38
+--- --- ----
+64.0 210 ,
+~
+67.0 ' 220 2 1.5 1 1.5 , 2 I, 2 2.5 2.5 ~ 3.5 4.5 j 5 1.75
+70.1 230 1.5 1 I 1 ' 1.5 2 2 2 i 2 1 2 2.5 ' 1.25
+1
+' 73.1 2 4 0 1 1 1 1' 1 1.5 I 1.5 ~ 1.5 1 2 i 2 1 3 3.5 1.13
+1 ' 7 7 6 9 . . 2 3 2 2 5 6 0 0 1 1 .5 1 1 1 1 1 1 . .5 5 1 1 . . 5 5 ! 2 2 .5 ~ 2 3 . 5 ' 1 3 3 . . 5 5 1 ' 3 4 .5 1 4 5 .5 !' 5 5. 5 , 1 1 . . 3 2 8 5
+82.3 270 1 1 1 ~ 1 1.5 1.5 2.5 1 2.5 i 4.5 I 4.5 i 5 ~ 1.25
+~ 1 , I
+85.3 280 1 1 1.5 1.5 1.5 1.5 2.5 ' 3 3.5 1.25
+~ ~
+
+
+
+=== PDF PAGE 23 ===
+-//
+Soil test bad
+-
+Small test carriage
+Figure 1.- Schematic of Langley landing-loads track as arranged for soils test program.
+
+
+
+=== PDF PAGE 24 ===
+N
+N
+­
+Tnstrmnent comnartnent
+h
+L-69-5535.1
+Figure 2.- Small test carriage with tire test fixture installed.
+
+
+
+=== PDF PAGE 25 ===
+Direction of travel
+Lateral-adjustment clamps7
+potentiometer
+Parallel-ann linkage
+Split ring for paw-angle adjustnrmt
+Profilweter - teral stabilizing rolle
+support bar
+Single-wheel -
+Soil test bed surface
+dynamometer fixture
+Figure 3.- Schematic of tire test fixture support structure.
+
+
+
+=== PDF PAGE 26 ===
+Orce&Sr op*r ing and damper 7 r Brake torque rod
+I 1/1 I/-""" torque rod Pitch potentiometer 7 I I 1 f' \ I
+I
+I
+/ x f l I
+'\ -
+L-k-I- ------;LIrutrume/n ted
+\
+Magnetic pickup \ \\ \ / / axle section
+�or wheel angular
+position
+Brake torque rod
+/ ' \ / / \ I ! -
+Instrumented
+axle section
+L m - 1 angular velocity
+and acceleration instruments
+(a) Single cantilevered axle (SAXLE). (b) Tandem cantilevered axle (TAXLE).
+Figure 4.- Schematic of test fixtures used in the soils test program.
+
+
+
+=== PDF PAGE 27 ===
+Wheel angular acceleration,
+Drag-load beam
+Vertical- load beam
+Auxiliary axle
+Brake-torque links
+Drag-load beam
+Lateral-load beam
+Vertical- load beam
+(c) Single-wheel dynamometer (SWDYN).
+Figure 4.- Concluded. \ '...
+
+
+
+=== PDF PAGE 28 ===
+OsciLfoari
+421
+L-72-2461
+Figure 5.- Interior of instrument compartment on small test carriage.
+
+
+
+=== PDF PAGE 29 ===
+L-72-2462
+Figure 6.- Self-propelled multiple-pass rotary mixer used in preinstallation soil processing.
+
+
+
+=== PDF PAGE 30 ===
+N
+aJ
+.
+L-72-2463
+Figure 7.- Installation of processed soil in test bed.
+
+
+
+=== PDF PAGE 31 ===
+n (1/2 in.)
+.95 CIP (3/8 in.)
+Figure 8.- Schematic of airfield cone penetrometer.
+
+
+
+=== PDF PAGE 32 ===
+W
+0
+L-72-2464
+Figure 9.- Airfield penetrometer test in progress.
+
+
+
+=== PDF PAGE 33 ===
+0
+Field CBR measurements
+Average CBR
+I I I J
+0 L 2 3 4
+Average airfield index
+Figure 10.- Correlation of airfield index with California bearing ratio (CBR) for clay.
+Average values shownfor 0 to 15.2 cm (0 to 6 in.) of depth.
+31
+
+
+
+=== PDF PAGE 34 ===
+W
+N
+L-69-5533
+Figure 11.- Continuous-reading profilometer. TAXLE in background.
+
+
+
+=== PDF PAGE 35 ===
+ElevatIon
+cm in.
+0 - r Profile
+O - /
+,--Airfield
+index
+71 12:.;0
+Average 8irfield
+index, AI
+20
+(a) Profile before test run.
+Elevation
+In.
+OT
+0 ­
+5 - 2 ­
+10 - 4 ­
+15 - 6 -
+(b) Profile after test run.
+Rut depth, z,,,
+cm in.
+0 0 Rod 6 level survey
+-
+-Profilcmaeter
+5
+Transition Transition
+- -
+clay free rolling -#Caly locked-uheel braking
+15 1 I I J
+40 60 ao loo 120 140 160 180 200 220 240 260 280 300 320 340 ft
+2 1 5 5 I 0 7 I 5 10 I 0 m
+Test bed station
+(c) Derived rut depth.
+w
+w Figure 12.- Test-bed profiles before and after a typical test run.
+
+
+
+=== PDF PAGE 36 ===
+Vertical load, FTJ Wheel angular
+kN lb velocity, w. radlsec
+I 5.0 x 103
+21
+4.2
+18 ­
+15 - 3.4 20 I
+- 2.6 ­ 10 ­
+9 ­
+1.8 +, 0 I I I ,
+Concrete Free rolling Braking
+Drag load, FD
+kli lb
+18r 4.0 x 103
+15 ­
+3.2 Axle vertical
+position, h
+12 ­ Cm in.
+2.4 0
+9 ­
+\
+1.6 5 2 c
+6 -
+.8 10
+3 -
+0 - 0 ' I I I 1 15 I I I I
+0 2 4 6 8 10 0 2 4 6 0 10
+Time, sec Time, sec
+I I I ! I I b I I I I 8
+0 50 100 150 200 250 300 350 f t 0 50 100 150 200 250 300 3O; f t
+L I I I I I
+0 50 100 m 0 50 100 m
+Test bed station Test bed station
+Figure 13.- Time histories for a typical test run. SWDYN; AI 1.5 clay; pt = 48 N/cm2 (70 lb/in2); VG = 21 knots.
+
+
+
+=== PDF PAGE 37 ===
+- -
+.30 \ Clay free rolling
+drag coefficient
+e25
+Axle drag Average rut depth, z
+,
+coefficient
+in. cm
+­
+FD/FV .20 - 2.0 - 5
+- 4
+- 1.5
+I - 3
+- 1.0
+- - -- -- - - ----u-- I: 1 :
+.05
+0
+Concrete drag coefficient
+0 1 I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+Figure 14.- Axle drag coefficients and rut depths developed by SWDYN. AI 1.5 clay; pt = 48 N/cm2 (70lb/in2).
+
+
+
+=== PDF PAGE 38 ===
+w
+Q)
+1
+d \
+.45
+I
+.30 A .
+Axle drag -A. \
+coefficient, I / \ \ \
+\
+p’ \
+\
+0 ’ I I I I I I I I I 1
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+(a) Axle drag coefficients.
+Figure 15.- Axle drag coefficients and rut depths developed by SAXLE in several different soil strengths.
+= 48 N/cm2 (70 lb/in2).
+Pt
+
+
+
+=== PDF PAGE 39 ===
+Average rut depth, z
+cm in.
+7 r 2.8r
+I AI 1.6 clay
+---A
+AI 2.0 clay
+6-
+5 ­
+4 ­
+3 ­
+2 - .8 ­
+-
+.4
+0 I I I I I 1 I I 1 I
+W
+4
+
+
+
+=== PDF PAGE 40 ===
+-T
+W
+co
+.
+45 .-----
+Axle drag Rut
+coefficient Vertical load, Fv depth
++
+423.1 Id4 (5200 la) I
+I
+----- -0 11.6 LN (2600 lb)
+.35
+1
+.30 Average rut depth, z
+-
+2.5
+Axle drag - 6
+coefficient,
+-
+PD/FV 2.0 - 5
+-0 - - 4
+1.5
+- 3
+-
+1.0
+2
+- -
+05
+-05
+1 1
+0 I 1 I I I I I I I 1 - 0 - 0
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+Figure 16.- Axle drag coefficients and rut depths developed by SAXLE at two different vertical loads.
+AI 2.0 clay; pt = 48 N/cm2 (70 lb/in2).
+
+
+
+=== PDF PAGE 41 ===
+.50 ­
+­
+.45
+Tire inflation pressure
+.4a 48 N/cm2 (70 lb/in.’)
+--+
+38 N/cm2 (55 lblin.2)
+.35 ___--0­ 31 N/cm2 (45 lb/in.2)
+-4
+21 l/a2(30 lb/in.2)
+.30
+Axle drag
+coefficient, \ \ \
+‘DiFV .25
+.20
+<
+15
+.10
+05
+Concrete(frw figure 14)
+0 I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+(a) Axle drag coefficients.
+Figure 17.- Axle drag coefficients and rut depths developed by SAXLE at four different tire inflation pressures.
+AI 1.6 clay.
+w
+CD
+
+
+
+=== PDF PAGE 42 ===
+Average rut depth, z
+Cm in 0
+3.2
+8
+,
+Tire inflation pressure
+7 2.8 48 N/cm2 (70 lb/in.2)
+-- 4 38 N/cm2 (55 lb/in.2)
+6 2.4 ---- U 31 N/m2 (45 lb/in.2)
+- 21 N/m2 (30 1b/ine2)
+2.0
+5
+"
+\
+\ \
+1.6
+4
+3 1.2
+2 .a
+1 .4
+0 0 I 1 I I I I I I I 10I 0
+0 10 20 30 40 50 60 70 80 90
+Forward velocity, knots
+(b) Rut depths.
+Figure 17.- Concluded.
+
+
+
+=== PDF PAGE 43 ===
+Tire iafl8tioa prea8urc
+40Cr
+-0 48 N/cm2 (70 1b/ixb2)
+-----
+.35 r 0 31 N/cm2 (45 lb/ine2)
+- __.c) 21 N/m2 (30 lb/io.2)
+Axle drag
+coefficient,
+FD/FV
+figure
+0 I I 1 I I I I I I 1
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+(a) Axle drag coefficients.
+Figure 18.- Axle drag coefficients and rut depths developed by SAXLE at three different tire inflation pressures.
+AI 2.0 clay.
+
+
+
+=== PDF PAGE 44 ===
+Average rut depth, z
+cm in.
+Tire inflation pressure
+7
+,-0 48 N/cm2 (70 lb/in.2)
+- _-_-0 31 N/cm2 (45 lb/in.2)
+6
+- 21 N/cm2 (30 lb/in.2)
+2.0
+5
+4 1.6
+3
+2
+1
+0
+'-
+Forward velocity, knots
+(b) Rut depths.
+Figure 18.- Concluded.
+
+
+
+=== PDF PAGE 45 ===
+-
+__O Sand-test-bedaverage AI all
+-
+_ _ _ _0
+Clay-teat-bed average AI typical
+O
+0
+J
+2
+I
+4
+I
+6
+I aI
+1
+I
+0 1
+I
+2 1
+I
+4 1
+I
+6 1
+J
+8
+AI reading depth, in.
+I I I I I I I I I I I
+0 5 10 15 20 25 30 35 40 45 50
+AI reading depth, cm
+Figure 19.- Variation of airfield index with depth for sand and for clay.
+
+
+
+=== PDF PAGE 46 ===
+Tire inflation presnurc
+-0 48 N/cm2 (70 lb/ine2)
+.*3450 ! -__-0- 31 N/cm2 (45 l b / h 2 )
+- 21 N/cm2 (30 lb/in.2)
+Axle drag
+-
+coefficient,
+clay of AI 2.0, pt 48 ~/cm2(70 lb/in.2)
+W V (from figure 16)
+*05 tl \-
+Concrete (from figure 14)
+0 ' I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+(a) Axle drag coefficients.
+Figure 20.- Axle drag coefficients and rut depths developed in sand by SAXLE at
+three different tire inflation pressures.
+
+
+
+=== PDF PAGE 47 ===
+Average rut depth, z
+is.
+2.8 r Tire inflation prcs8ure
+__O 48 N/cm2 (70
+­
+2.4 --- -0 31 N / a 2 (45 lb/in.2)
+- 4 21 N/cmZ (30 lb/in.2)
+-
+\
+f ­Clay of AI 2.0, pt = 48 N/m2 (70 lb/ In.2,
+(from figure 16)
+\
+-
+1.2
+3 -
+2 ­
+1 -
+‘0
+0- I I I I I I I I I J
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, bots
+(b) Rut depths.
+Figure 20.- Concluded.
+
+
+
+=== PDF PAGE 48 ===
+-
+.9 '.
+,----
+D
+'s
+e 8 - d'
+\
+\
+\
+\
+.7 - \ -0 Free rolling
+\
+\
+\ ---- -0 Locked-wheeS braking
+\
+- \
+.6
+\
+\
+1
+-
+.2
+f -Concrete, free rolling (fraa figure 14)
+.l-
+0 I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+(a) Axle drag coefficients.
+Figure 21.- Axle drag coefficients and rut depths for SWDYN locked-wheel braking compared to free rolling on
+AI 1.5 clay. pt = 48 N/cm2 (70 lb/in2).
+
+
+
+=== PDF PAGE 49 ===
+Average rut depth, z
+in.
+­
+4.0
+­
+3.5
+\ __O Free rolling
+-
+3.0 '\ , -__--0 Locked-wheel braking
+\
+2.5 -
+\ \
+\
+\
+\
+-
+2.0 \
+\
+2 -
+T
+0 - 0' 0 1 I 0 2 I 0 3 I 0 4 I 0 5 I 0 6 I 0 7 I 0 8 I 0 9 I 0 10 I 0
+Forward velocity, knots
+(b) Rut depths.
+.-
+Figure 21 Concluded.
+
+
+
+=== PDF PAGE 50 ===
+cp
+m
+Free rolling
+Reference elevation 1
+--- - - - - Locked-vheel brakina
+(d) VG 62.5 bots
+-
+(b) vG 27.3 knots
+_,
+,I _ ,- . I I ,I--. '..-, 0 2 in. 4 6 I ,-----.
+&- '\ I
+..-_
+--.
+l /
+,/'
+r ' ---r----+/ *­
+I
+(f) VG 87.3 knots
+(c) VG 43.5 knot8 Unloaded tire profile
+I
+Figure 22.- Rut cross-sectional profiles created by free rolling and locked-wheel braking of SWDYN.
+AI 1.5 clay; pt = 48 N/cm2 (70 lb/in2).
+
+
+
+=== PDF PAGE 51 ===
+L-72- 2465
+Figure 23.- Typical tire ruts in clay, showing transition from free rolling to locked-wheel braking.
+
+
+
+=== PDF PAGE 52 ===
+L- 69-6973
+Figure 24.- Bow wave following low-speed tow of SWDYN. AI 1.5 clay.
+50
+
+
+
+=== PDF PAGE 53 ===
+L-72-2466
+Figure 25.- Free rolling and braking ruts in sand test bed.
+
+
+
+=== PDF PAGE 54 ===
+P
+-
+Tire inflation pressure
+.4 c
+---O 48 N/cm2 (70 lb/in.2)
+-
+.3 ----El 31 N/m2 (45 lb/in.2)
+c
+- 4 21 N/m2 (30 l b / h 2 )
+­
+.2
+0 ' I I I I J I I I I I
+0 10 20 30 40 50 0 10 20 30 40 50
+Forward velocity, knots
+(a) Clay of AI 1.6. (b) Sand.
+Figure 26.- Locked-wheel braking drag coefficients-developedby SAXLE in clay and sand test beds.
+
+
+
+=== PDF PAGE 55 ===
+L-72-2467
+Figure 27.- Typical wheel spin-up area in clay test bed.
+
+
+
+=== PDF PAGE 56 ===
+Direction of travel
++ +
+FD F D C~O SY F D C~O SY Ft S h y
+-
+= pL cosy pD1 einy -FD2 sin Y
+FS
+Figure 28.- Schematic of forces on SWDYN during yawed rolling.
+54
+
+
+
+=== PDF PAGE 57 ===
+­
+.9
+6" yaw angle
+­
+.7 __O Concrete
+--@ Clay of AI 1.5
+­
+.6
+3" yaw angle
+.5 - -- - -0 Concrete
+Side-forte
+---a
+, Clay of AI 1.5
+coefficient
+I I I I I I 1 I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+Figure 29.- Side-force coefficients developed by tire on concrete and on AI 1.5 clay at two yaw angles.
+SWDYN; pt = 48 N/cm2 (70 lb/in2).
+
+
+
+=== PDF PAGE 58 ===
+-8.­
+-
+.7
+46' yaw angle
+-
+.6 - -- -Cl 3' yaw angle
++
+- 0' yaw angle
+­
+.2
+.l­
+0 . I I I I I I I I I J
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knot0
+(a) Drag force coefficient.
+Figure 30.- Drag force coefficients and rut depths developed in AI 1.5 clay by SWDYN during free rolling at
+Oo, 3O, and 6' yaw angles. pt = 48 N/cm2 (70 lb/in2).
+
+
+
+=== PDF PAGE 59 ===
+Average rut depth, z
+in.
+Qll
+10 - 4.0
+3.5
+6' yaw angle
+----a
+3.0 3' yaw angle
+-+
+- Oo yaw aagle
+2.5
+(
+2.0'
+4
+1.5
+1.0
+U
+.5
+0 I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, h o t s
+(b) Rut depths.
+Figure 30.- Concluded.
+
+
+
+=== PDF PAGE 60 ===
+.40
+e 35
+.30 3" Yaw (from figure 29) --0 Free rolling
+,-a
+Locked-wheel br8king
+3" yaw angle
+25
+Side-force - - - -0 Free rolling
+coefficient,
+W F V e 20
+15
+.10
+.05
+. .
+.
+.
+.
+,0 0 \ .
+-
+0 / I I -I -4 I
+0 10 20 30 40 50 60 70 8 I 0 90 100
+Forward velocity, hots
+Figure 31.- Comparison of side-force coefficients developed by SWDYN during free rolling and locked-wheel braking.
+AI 1.5 clay; pt = 48 N/cm2 (70 lb/in2).
+
+
+
+=== PDF PAGE 61 ===
+1.c
+..
+C
+.7
+.6
+Drag force
+coefficient,
+FD/FV .5
+.4
+-0 6" yaw angle
+.3 -- - -0 3" yaw angle
+.2
+.1
+0 _.1 1 1 I 1 1 1 I I I
+~~
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, h o t s
+Figure 32.- Drag force coefficients developed by SWDYN during locked-wheel braking at
+Oo, 3O, and 6O yaw angles. AI 1.5 clay; pt = 48 N/cm2 (70 lb/in2).
+59
+
+
+
+=== PDF PAGE 62 ===
+ua
+0
+-e
+Leading wheel, AI 1.5 clay
+-0 Trailing wheel, AI 1.5 clay
+-
+-25
+Axle drag
+coefficient,
+/ / \ \ S E E , AI 1.6 clay (from figure 17)
+\ / /
+­
+,10
+0 ' I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, knots
+Figure 33.- Comparison of axle drag coefficients of a single wheel with each wheel in a tandem pair.
+= 21 N/cm2 (30 lb/in2); FV = 22 kN (5000 lb) per wheel.
+Pt
+
+
+
+=== PDF PAGE 63 ===
+Leading wheel Trailing wheel
+­
+-40
+­
+.35
+-
+.30
+Axla drag *
+,
+cocff icisnt
+'D"V
+\
+\ --.
+m \
+I \ .;c -
+\
+,
+0 ' I I I I I I I I I I
+0 10 20 30 40 50 60 70 80 90 100
+Forward velocity, h o t s
+Figure 34.- Axle drag coefficients for tire operating in AI 1.5 clay. Each axle in a tandem pair;
+FV = 11 kN (2500 lb) per wheel.
+
+
+
+=== PDF PAGE 64 ===
+Q,
+N
+Average rut depth, z
++
+Pt = 48 N/m2 (70 lb/in.2)
+QI in. p - V- 22 k~ (5000 lb)
+----El Pt 21 N/cm2 (30 lb/in.2)
+.[ pv= 45 k~ (10 000 Ib)
+- Pt 21 N/m2 (30 lb/in.2)
+Fv” 22 kN (5000 lb)
+3
+2 ,
+l + I” B-%-­0
+t
+!
+O L O 0 2 ‘L I I I I I I I I I 10I 0
+0 10 20 30 40 50 60 70 80 90
+Forward velocity, h o t s
+e
+-(N3D Figure 35.- Rut depths in AI 1.5 clay resulting from passage of tandem wheels.
+
+
+
+=== PDF PAGE 65 ===
+NATIONAL AERONAUTICS AND SPACE ADMISTRATION
+WASHINGTON, D.C. 20546
+POSTAGE AND FEES PAID
+NATIONAL AERONAUTICS AND
+O~FICIALBUSINESS FIRST CLASS MAIL SPACE ADMINISTRATION
+PENALTY FOR PRIVATE USE 1300
+U
+NASA 451
+012 OC-1 C1 U 02 720722 SC09030S
+OEPT OF THE A I R FflRCE
+AF WEAPONS L A B (AFSCI
+TECHNICAL L IBRARY/OCUL/
+ATTN: E LOU B O W M A N , CHIEF
+KIRTLANO AFB NM 87117
+If Undeliverable (Section 158
+Postal Manual) Do Not Return
+“The aeronautical and space activities of the United Stntes shall be
+conducted so as to contribute . . . to the expansion of human knowl­
+edge of phenoniena in the atniosphere and space. The Administration
+shall provide for the widest practicable and appropriate dissemination
+of information concerning its activities and the restilts thereof.”
+-NATIONALAERONAUTICASND SPACEACTOF 1958
+NASA SCIENTIFIC A N D TECHNICAL PUBLICATIONS
+TECHNICAL REPORTS: Scientific and TECHNICAL TRANSLATIONS: Information
+technical information considered important, published in a foreign language considered
+complete, and a lasting contribution to existing to merit NASA distribution in English.
+knowledge.
+SPECIAL PUBLICATIONS: Information
+TECHNICAL NOTES: 1nformation.less broad derived from or of value to NASA activities.
+in scope but nevertheless of importance as a Publications include conference proceedings,
+contribution to existing knowledge. monographs, data compilations, handbooks,
+sourcebooks, and special bibliographies.
+TECHNICAL MEMORANDUMS:
+Information receiving limited distribution TECHNOLOGY UTILIZATION
+because of preliminary data, security classifica­ PUBLICATIONS: Information on technology
+tion, or other reasons. used by NASA that may be of particular
+interest in commercial and other non-aerospace
+CONTRACTOR REPORTS: Scientific and
+applications. Publications include Tech Briefs,
+technical information generated under a NASA
+Technology Utilization Reports and
+contract or grant and considered an important
+Technology Surveys.
+contribution to existing knowledge.
+Details on the availability of fhese publications may be obtained from:
+SCIENTIFIC AND TECHNICAL INFORMATION OFFICE
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+Washington, D.C. PO546

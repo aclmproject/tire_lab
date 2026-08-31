@@ -1,0 +1,1111 @@
+=== PDF PAGE 1 ===
+NASA TECHNICAL NOTE NASA TN D-/351
+CO
+py
+CORNERING CHARACTERISTICS OF
+A 40 x 14-16 TYPE VII AIRCRAFT TIRE
+AND A COMPARISON WITH CHARACTERISTICS
+OF A C40 x 14-21 CANTILEVER AIRCRAFT TIRE
+by John A. Tanner and Robert C. Dreher
+Laug/ey Research Center
+Hampton, Va. 23665
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION • WASHINGTON, D. C. • OCTOBER 1973
+
+
+
+=== PDF PAGE 2 ===
+1. Report No. 2. Government Accession No. 3. Recipient's Catalog No.
+NASA TN D-7351
+4. Title and Subtitle 5. Report Date
+CORNERING CHARACTERISTICS OF A 40 X 14-16 TYPE VH October 1973
+AIRCRAFT TIRE AND A COMPARISON WITH CHARACTER- 6. Performing Organization Code
+ISTICS OF A C40 X 14-21 CANTILEVER AIRCRAFT TIRE
+7. Author(s) 8. Performing Organization Report No.
+John A. Tanner and Robert C. Dreher L-9046
+10. Work Unit No.
+9. Performing Organization Name and Address 501-38-12-02
+NASA Langley Research Center
+11. Contract or Grant No.
+Hampton, Va. 23665
+13. Type of Report and Period Covered
+12. Sponsoring Agency Name and Address Technical Note
+National Aeronautics and Space Administration
+14. Sponsoring Agency Code
+Washington, D.C. 20546
+15. Supplementary Notes
+16. Abstract
+An investigation was conducted at the Langley aircraft landing loads and traction facility
+to determine the cornering characteristics of a 40 X 14-16 type VTJ aircraft tire. These
+characteristics, which include the cornering -force and drag -force friction coefficients and
+self -alining torque, were obtained for the tire operating on dry, damp, and flooded runway sur-
+faces over a range of yaw angles from 0° to 20° and at ground speeds from 5 to 100 knots, both
+with and without braking.
+The results of this investigation indicated that the cornering capability of the 40 X 14-16
+type Vn aircraft tire is degraded by high ground speeds, thin -film lubrication and tire hydro-
+planing effects on the wet surfaces, and brake torque. The cornering capability is greatly
+diminished when locked-wheel skids are encountered.
+A comparison of the cornering characteristics of the 40 x 14-16 type VII aircraft tire
+and those of the C40 x 14-21 cantilever aircraft tire presented in NASA TN D-7203 indicated
+that the cornering capability of the cantilever tire is greater than the cornering capability of
+the conventional tire on the dry surface but is less than that of the conventional tire on the wet
+surfaces at high ground speeds. At 100 knots, the conventional tire develops a higher drag-
+force friction coefficient than the cantilever tire for most test conditions.
+17. Key Words (Suggested by Author (s) I 18. Distribution Statement
+Aircraft tire
+Unclassified - Unlimited
+High-speed cornering
+Friction coefficients
+19. Security Oastif. (of this report) 20. Security Classif . (of this page) 21. No. of Pages 22. Price*
+Domestic, $2.75
+Unclassified Unclassified 25 Foreign, $5.25
+For sale by the National Technical Information Service, Springfield. Virginia 22151
+
+
+
+=== PDF PAGE 3 ===
+CORNERING CHARACTERISTICS OF A 40 X 14-16 TYPE VH AIRCRAFT
+TIRE AND A COMPARISON WITH CHARACTERISTICS OF A
+C40 X 14-21 CANTILEVER AIRCRAFT TIRE
+By John A. Tanner and Robert C. Dreher
+Langley Research Center
+SUMMARY
+An investigation was conducted at the Langley aircraft landing loads and traction
+facility to determine the cornering characteristics of a 40 x 14-16 type VII aircraft tire.
+These characteristics, which include the cornering-force and drag-force friction coeffi-
+cients and self-alining torque, were obtained for the tire operating on dry, damp, and
+flooded runway surfaces over a range of yaw angles from 0° to 20° and at ground speeds
+from 5 to 100 knots, both with and without braking.
+The results of this investigation indicated that the cornering capability of the
+40 x 14-16 type VEI aircraft tire is degraded by high ground speeds, thin-film lubrication
+and tire hydroplaning effects on the wet surfaces, and brake torque. The cornering capa-
+bility is greatly diminished when locked-wheel skids are encountered.
+A comparison of the cornering characteristics of the 40 x 14-16 type VTI aircraft
+tire and those of the C40 x 14-21 cantilever aircraft tire presented in NASA TN D-7203
+indicated that the cornering capability of the cantilever tire is greater than the cornering
+capability of the conventional tire on the dry surface but is less than that of the conven-
+tional tire on the wet surfaces at high ground speeds. At 100 knots, the conventional tire
+develops a higher drag-force friction coefficient than the cantilever tire for most test
+conditions.
+INTRODUCTION
+As the costs and program risks associated with aircraft flight tests increase rapidly,
+many airplane manufacturers are relying on computer simulations to play a major role in
+the development of new airplane designs and modifications. Recently the scope of these
+computer studies has expanded to include landing-gear design problems. One of the con-
+sequences of this computer technology boom has been an increased demand for experimen-
+tal data on the aircraft tire high-speed lateral-friction characteristics needed to define
+aircraft cornering capabilities and to update tire shimmy analyses. References 1 to 5 are
+
+
+
+=== PDF PAGE 4 ===
+examples of early research papers which present the results of studies of the low-speed
+yawed-rolling characteristics of several aircraft tires. Reference 6, a more recent
+-paper, presents the results of a study of the high-speed cornering characteristics of a
+C40 x 14-21 aircraft tire of cantilever design. However, no data are available on the
+.high-speed cornering characteristics of the conventional 40 x 14-16 aircraft tire which
+is used on many of the same commercial and military aircraft as the cantilever tire.
+The purpose of this paper is to present the results of an investigation conducted at
+the Langley aircraft landing loads and traction facility to define the cornering character-
+istics of a 40 x 14-16 type VTI aircraft tire and to compare the results of this investiga-
+tion with the cornering characteristics of the C40 x 14-21 cantilever tire presented in
+reference 6. These characteristics, which include the cornering-force and drag-force
+friction coefficients and self-alining torque, were obtained for the tire operating on dry,
+damp, and flooded runway surfaces over a range of yaw angles from 0° to 20° at ground
+speeds from 5 to 100 knots, both with and without braking.
+SYMBOLS
+Measurements and calculations were made in U.S. Customary Units and converted
+to SI units. Values are given in both SI and U.S. Customary Units.
+TJ
+T,D brake torque measured on dry surface
+T self-alining torque
+z
+V ground speed
+/LI, drag-force friction coefficient parallel to direction of motion
+u cornering-force friction coefficient perpendicular to direction of motion
+s
+* wheel yaw angle
+APPARATUS AND TEST PROCEDURE
+Test Tires
+The tires used in this investigation were size 40 x 14-16, type VII, bias-ply aircraft
+tires of 22 ply rating and had a rated maximum speed of 200 knots (1 knot = 0.5144 m/sec).
+Photographs of the conventional tire and of a cantilever tire of similar outside dimension
+
+
+
+=== PDF PAGE 5 ===
+are presented in figure 1. The conventional tire is shown before testing, and the cantile-
+ver tire is shown after testing. Throughout this investigation, the tire inflation pressure
+was maintained at 1070 kPa (155 psi) and the vertical load was fixed at a nominal value ~
+of 111 kN (25 000 Ib). (These loading conditions are the same as those used during the
+cantilever tire tests of ref. 6.) The tire was replaced when approximately 50 percent of •
+the original tread was worn off.
+The cross section of the cantilever tire and that of the conventional tire are shown
+in figure 2. As illustrated, the larger rim opening available with the cantilever tire pro-
+vides space for a larger brake assembly without increasing the tire outside diameter.
+An additional advertised feature of the cantilever tire is its "run-flat" capability. In the
+event of complete loss of inflation pressure, the tire purportedly collapses symmetrically
+without folding to one side as does the conventional tire.
+Runway Surface Conditions
+For the tests described in this paper, approximately 174 m (570 ft) of a concrete
+test section were divided into three subsections to provide tire cornering data on dry,
+damp, and flooded surfaces. The first 76 m (250 ft) of the test section were maintained
+dry; the next 37 m (120 ft) were dampened (no visible standing water); and the remaining
+61 m (200 ft) were surrounded by a dam and flooded with water to a depth of approxi-
+mately 0.8 cm (0.32 in.). Thus, during one test, data were obtained for the three sur-
+face wetness conditions. The dry subsection was necessarily long to provide time for
+full wheel spinup and, for those tests which involve braking, time for brake actuation.
+The concrete surface in the test section had a light broom finish which was somewhat
+smoother than that of most operational concrete runways.
+Test Facility
+The investigation was performed at the Langley aircraft landing loads and traction
+facility, which is described in reference 7, and utilized the main test carriage which
+weighs approximately 534 kN (120 000 Ib). Figure 3 is a photograph of the carriage with
+the installed test wheel assembly, and figure 4 is a closeup view of the wheel and shows
+details of the instrumented dynamometer which supports the wheel and measures the vari-
+ous axle loadings. In figure 5 is presented a schematic of the dynamometer instrumenta-
+tion which consisted of load beams to measure vertical, drag, and lateral forces and links
+to measure brake torque, all at the wheel axle. Additional instrumentation was provided
+to measure brake pressure, wheel angular displacement, and carriage horizontal displace-
+ment. Continuous time histories of the output of the instrumentation were recorded by an
+oscillograph mounted on the test carriage. For this investigation, a landing-gear strut
+was not employed because the dynamometer was needed to measure the forces and
+moments accurately.
+3
+
+
+
+=== PDF PAGE 6 ===
+Test Procedure
+The test procedure consisted of setting the dynamometer and tire assembly to the
+preselected yaw angle, propelling or towing the test carriage to the desired ground speed,
+releasing the drop-test fixture to apply the preselected vertical load to the tire, and
+monitoring the output from the onboard instrumentation. The yaw angle was increased
+in 5° increments from 0° to 20° and ground speeds ranged from 5 to 100 knots. To obtain
+a speed of 5 knots, the test carriage was towed by a ground vehicle; for higher speeds, the
+carriage was propelled by the hydraulic jet as described in reference 7. In tests which
+incorporated wheel braking, the brake was actuated after the vertical load had been
+applied and the tire was in a steady-state rolling condition. Time histories of the output
+of the instrumentation were recorded as the tire passed consecutively over the dry, damp,
+and flooded test surfaces.
+40 x 14-16 TYPE VH AIRCRAFT TIRE RESULTS
+Time histories of forces in the vertical, drag, and side directions; brake torque;
+and wheel angular velocity were recorded on an oscillograph throughout each test. These
+time histories were used to compute steady-state values of the cornering-force friction
+coefficient \i perpendicular to the direction of motion and the drag-force friction coef-
+s
+ficient y. j parallel to the direction of motion. The self-alining torque T is a ground
+z
+torque in the footprint which is developed about the vertical or steering axis of the wheel
+and which alines the tire with the direction of motion when positive; it is computed from
+the load transfer between the two drag-load beams shown in figure 5. In this section are
+discussed the effects of yaw angle, ground speed, brake torque, and surface wetness on
+the cornering characteristics of the 40 x 14-16 type VII aircraft tire.
+Effect of Yaw Angle
+The effect of yaw angle on the cornering-force and drag-force friction coefficients
+and self-alining torque of the 40 x 14-16 type VH aircraft tire is presented in figure 6 for
+various ground speeds, surf ace-wetness conditions, and braking torques.
+Cornering-force friction coefficient.- Data which describe the effect of yaw angle
+on the cornering-force friction coefficient /i developed with and without braking are
+g
+presented in figure 6. The brake torque values given in the figure were those measured
+on the dry surface; these same brake pressures were used in the tests on the damp and
+flooded surfaces. For the unbraked condition, the data presented in figure 6(a) indicate
+that, in general, /i increases with an increase in yaw angle, reaches a maximum value,
+g
+and then decreases with further increases in *. Increasing the ground speed reduces the
+value of [i , particularly at the higher yaw angle and on the wet surfaces. Furthermore,
+increasing the ground speed reduces the yaw angle at which maximum cornering is devel-
+4
+
+
+
+=== PDF PAGE 7 ===
+oped. Typically, the maximum cornering at 5 knots is developed at a yaw angle of approxi-
+mately 15°, whereas the maximum cornering at 100 knots appears to occur at about 10°.
+The data presented in figures 6(b) and 6(c) indicate that the braking effort of these tests -
+resulted in a locked-wheel skid on the flooded surface at all yaw angles with corresponding
+negligible values of /^ . Partial wheel spindown occurred with light braking on the damp
+g
+surface at a yaw angle of 15° and locked-wheel skids occurred at all yaw angles on that
+surface during heavy braking.
+Drag-force friction coefficient.- Figure 6 also shows the effect of yaw angle on the
+drag-force friction coefficient /n,. The data obtained without brake torque (fig. 6(a))
+indicate that p., generally increases with an increase in yaw angle and decreases with
+increasing ground speed on all three surfaces, particularly at high yaw angles. Data
+obtained with light and heavy braking (figs. 6(b) and 6(c)) also indicate that /i^ increases
+with increasing yaw angle but, as expected, at a higher level at a ground speed of 5 knots.
+At 100 knots, either wheel spindown or wheel lockup reduces the value of fi, to about
+0.1 or less on the damp and flooded surfaces.
+Self-alining torque.- The effect of yaw angle on the self-alining torque T is also
+z
+shown in figure 6. The data indicate that for most test conditions presented, T gener-
+z
+ally increases from zero to a maximum positive value at a 5° yaw angle and then decreases
+with a further increase in yaw angle. The self-alining torque generally decreases when the
+ground speed is increased, especially on the wet surfaces. The increase in T for the
+z
+high yaw angles at 100 knots on the damp surface for the unbraked and lightly braked tire
+is due to nonuniform surface wetness. Negative values of T are noted for the unbraked
+z
+tire (fig. 6(a)) at high yaw angles, particularly on the dry surface. Larger negative values
+of T are generally noted for the tire on all three surfaces with the introduction of brak-
+z
+ing (figs. 6(b) and 6(c)) and the crossover between positive (self-alining) and negative
+(divergent) values generally occurs at smaller yaw angles. At high ground speeds under
+heavy braking, no positive self-alining torque is observed at any yaw angle for all three
+surfaces.
+Effect of Ground Speed
+The effect of ground speed on the cornering-force and drag-force friction coeffi-
+cients and self-alining torque of the 40 x 14-16 type VH aircraft tire is presented in fig-
+ure 7. These data were obtained with the tire freely rolling (unbraked) at a yaw angle of
+10° over a speed range from 5 to 100 knots.
+Cornering-force friction coefficient.- Figure 7 shows that ground speed has little
+effect on the cornering-force friction coefficient u on the dry surface; however, on
+s
+the wet surfaces /i decreases significantly with an increase in ground speed. On the
+s
+damp surface, the reduction in jj. is attributed to thin-film lubrication (sometimes
+g
+referred to as viscous hydroplaning); on the flooded surface, the reduction is attributed
+
+
+
+=== PDF PAGE 8 ===
+to dynamic hydroplaning effects. The calculated hydroplaning speed for this tire is
+112 knots (ref. 8).
+Drag-force friction coefficient.- The drag-force friction coefficient p., for the
+unbraked tire is the result of tire rolling resistance and the drag-force component gen-
+erated by the yawed-rolling condition. The data presented in figure 7 indicate that ji ,
+is unaffected by variations in ground speed on the dry surface and decreases only slightly
+with an increase in ground speed on the damp and flooded surfaces.
+Self-alining torque.- The self-alining torque T is shown in figure 7 to reach
+z
+peak values at approximately 30 knots and then gradually to decrease with a further
+increase in ground speed for most test conditions.
+Effect of Brake Torque
+Appropriate data from figure 6 are presented in figure 8 to show more clearly the
+effect of brake torque on the cornering-force and drag-force friction coefficients and
+self-alining torque of the 40 x 14-16 type VII aircraft tire. The data in figure 8 were
+obtained at 100 knots.
+Cornering-force friction coefficient.- The data presented in figure 8 indicate that
+on a dry runway the maximum value of the corner ing-force friction coefficient \i
+s
+occurs at a 10° yaw angle and decreases about 15 or 20 percent when the brake torque is
+increased from 0 to 11 524 N-m (8500 ft-lb). Heavy braking at a 15° yaw angle causes
+a partial wheel spindown. Similarly, on the damp surface the maximum value of ju
+S
+for the unbraked wheel and lightly braked wheel occurs at a 10° yaw angle, but the effect
+of brake torque is more pronounced. Light braking reduces the maximum value of ji
+S
+by about 30 percent, and heavy braking results in locked-wheel skids and a nearly com-
+plete loss of J L L. On the flooded surface with heavy braking, the value of fj. never
+s s
+exceeds 0.08.
+Drag-force friction coefficient.- Figure 8 shows that the drag-force friction coef-
+ficient fx , increases with an increase in brake torque on the dry surface for all yaw
+angles. Heavy braking on the damp surface results in locked-wheel skids. On the flooded
+surface, brake torque has little effect on the magnitude of \± > since both light braking
+and heavy braking cause locked-wheel skids.
+Self-alining torque.- The self-alining torque T is shown in figure 8 to decrease
+z
+as the brake torque is increased on the dry and damp surfaces and to be affected very
+little on the flooded surface.
+Effect of Surface Wetness
+To better illustrate the effect of surface wetness on the cornering characteristics
+of the 40 x 14-16 type VII aircraft tire, selected data of figure 6 are presented in figure 9.
+6
+
+
+
+=== PDF PAGE 9 ===
+These data were obtained at a ground speed of 100 knots with no brake torque and covered
+a range of yaw angles from 0° to 20°.
+Cornering -force friction coefficient.- The maximum value of cornering -force fric-
+tion coefficient u is shown to reduce appreciably when the surface becomes wet. For
+s
+the test conditions shown in figure 9, the damp surface causes a reduction in fi of
+S
+about 50 percent from the dry-surface value for most yaw angles. When the surface is
+flooded, the percent reduction in u from the dry -surf ace values is even greater. The
+reductions are attributed to tire hydroplaning effects.
+Drag -force friction coefficient.- Figure 9 shows that surface wetness reduces the
+value of the drag -force friction coefficient \i , from the dry-surface value for yaw
+angles above 10°. This reduction is also attributed to tire hydroplaning effects. At the
+lower yaw angles, increased fluid drag causes ju, to be slightly higher on the flooded
+surface than on the dry and damp surfaces.
+COMPARISON OF CORNERING CHARACTERISTICS OF 40 X 14-16 TYPE VH
+AIRCRAFT TIRE AND C40 X 14-21 CANTILEVER AIRCRAFT TIRE
+A comparison of the cornering characteristics of the 40 x 14-16 type VII aircraft
+tire and the C40 x 14-21 cantilever aircraft tire is presented in this section. The faired
+data describing the variation of cornering -force friction coefficient JJL , drag -force fric-
+S
+tion coefficient JLI _,, and self -alining torque T with yaw angle and ground speed for the
+z
+cantilever tire were obtained from reference 6.
+Effect of Yaw Angle
+The effect of yaw angle on the cornering -force and drag -force friction coefficients
+and self -alining torque of the 40 x 14-16 type VH aircraft tire and of the C40 x 14-21
+cantilever aircraft tire is presented in figure 10 for various surf ace -wetness conditions
+and braking torques at a ground speed of 100 knots.
+Cornering-force friction coefficient.- The unbraked yawed-rolling data presented in
+figure 10(a) and the lightly braked data presented in figure 10(b) indicate that on the dry
+surface the cantilever tire develops higher values of cornering -force friction coefficient
+\i than the conventional tire for yaw angles above approximately 5°. On the damp and
+o
+flooded surfaces where hydroplaning effects have reduced the traction available the con-
+ventional tire is shown to develop the higher values of u . The heavily braked data
+S
+presented in figure 10(c) also indicate that the cantilever tire develops higher values of
+jn on the dry surface; however, on the wet surfaces, where locked-wheel skids were
+S
+encountered for both tires, no significant differences are noted between the values of u
+S
+developed by the conventional and cantilever tires.
+
+
+
+=== PDF PAGE 10 ===
+Drag-force friction coefficient.- The data presented in figure 10 indicate that the
+conventional tire generally develops higher values of drag-force friction coefficient ji,
+than the cantilever tire for most test conditions. The one exception to this trend occurs
+on the damp surface during heavy braking. For the light braking tests, the higher values
+of fj. for the conventional tire are attributed, in part, to the slightly larger brake torque
+d
+values measured for that tire during the investigation.
+Self-alining torque.- The unbraked data presented in figure 10(a) indicate that on
+the dry surface, the maximum positive value of self-alining torque T for both tires
+z
+occurs at a 5° yaw angle and decreases to negative values as ^ is increased to 20°.
+On the damp surface the maximum positive value of T occurs at approximately 10°
+z
+for both tires. As mentioned previously, the increase in T at the higher yaw angles
+z
+noted for the conventional tire is attributed to nonuniform surface wetness. On the
+flooded surface the values of T for the conventional tire are slightly greater than for
+z
+the cantilever tire. With the introduction of light braking, the data (fig. 10(b)) indicate
+that on the dry surface, the maximum positive value of T occurs at a 5° yaw angle for
+z
+both tires with the conventional tire developing the greater values. In addition, negative
+values of T are obtained at smaller yaw angles than with the unbraked tires. On the
+z
+damp surface, negative values of T are noted at yaw angles above 5° for the conven-
+z
+tional tire and for all yaw angles for the cantilever tire. (As mentioned previously, the
+increase in T at the higher yaw angles observed for the conventional tire is attributed
+z
+to nonuniform surface wetness.) On the flooded surface, T for both tires approaches
+z
+negligible values. The data presented in figure 10(c) shows that with heavy braking, neg-
+ative values of T are obtained for both tires on the dry and damp surface for all yaw
+z
+angles. Negligible values of T are noted for both tires on the flooded surface.
+z
+Effect of Ground Speed
+The effect of ground speed on the cornering-force and drag-force friction coeffi-
+cients and self-alining torque of the 40 x 14-16 type VH aircraft tire and of the C40 x 14-21
+cantilever aircraft tire is presented in figure 11. These data were obtained for both tires
+at a fixed yaw angle of 10° with no braking and covered a speed range from 5 to 100 knots.
+Cornering-force friction coefficient.- The faired data presented in figure 11 indicate
+that the values of cornering-force friction coefficient u are generally higher for the
+s
+cantilever tire than for the conventional tire on the dry and damp surfaces, and essentially
+no difference is noted in the ju values for the two tires on the flooded surfaces. These
+S
+results indicate that the vulnerability of the cantilever tire to friction losses caused by
+tire hydroplaning effects noted earlier for a ground speed of 100 knots may not exist
+throughout the entire speed range.
+
+
+
+=== PDF PAGE 11 ===
+Drag-force friction coefficient.- Data presented in figure 11 indicate that the values
+of drag-force friction coefficient /LL , are slightly higher for the conventional tire than
+for the cantilever tire for the test conditions shown, and that the values are affected very
+little by ground speed.
+Self-alining torque.- Figure 11 indicates that the self-alining torque T reaches-
+z
+a peak value for the conventional tire at approximately 30 knots on all three surfaces.
+No peaking in T is noted for the cantilever tire. The figure also shows that the
+z
+values of T for the conventional tire are greater than or equal to those for the canti-
+z
+lever tire at all speeds on all three surfaces.
+SUMMARY OF RESULTS
+Tests were conducted at the Langley aircraft landing loads and traction facility to
+determine the cornering characteristics of a 40 x 14-16 type VII aircraft tire. These
+characteristics, which included the cornering-force and drag-force friction coefficients
+and self-alining torque, were obtained for the tire operating on dry, damp, and flooded
+runway surfaces over a range of yaw angles from 0° to 20° and at ground speeds from
+5 to 100 knots, both with and without braking. The results from the tests of the
+40 x 14-16 type VII aircraft tire are summarized as follows:
+1. The cornering-force friction coefficient was shown (1) to increase with increas-
+ing yaw angle, to reach a peak value, and then to decrease with a further increase in yaw
+angle; (2) to decrease with an increase in ground speed, particularly on the wet surfaces;
+(3) to decrease significantly with increasing brake torque on wet surfaces at high speeds;
+and (4) to be negligible when locked-wheel skids were encountered.
+2. The drag-force friction coefficient was shown (1) to increase slightly with an
+increase in yaw angle; (2) to decrease slightly with an increase in ground speed; and
+(3) to increase with increasing brake torque and then to decrease to a skidding value
+when a locked-wheel skid was encountered.
+3. The self-alining torque was shown (1) to reach a maximum positive value at a
+5° yaw angle with no brake torque; (2) to become negative with high yaw angles and/or
+brake torques; and (3) to be sensitive to nonuniform surface wetness.
+A comparison of the cornering characteristics of the 40 x 14-16 type VII aircraft
+tire and those of the C40 x 14-21 cantilever aircraft tire presented in NASA TN D-7203
+indicated that the cornering capability of the cantilever tire was greater than that of the
+conventional tire on the dry surface but was less than that of the conventional tire on the
+
+
+
+=== PDF PAGE 12 ===
+wet surfaces at high ground speeds. At 100 knots, the conventional tire developed a
+higher drag-force friction coefficient than the cantilever tire for most test conditions.
+Langley Research Center,
+National Aeronautics and Space Administration,
+Hampton, Va., July 31, 1973.
+REFERENCES
+1. Home, Walter B.: Static Force-Deflection Characteristics of Six Aircraft Tires Under
+Combined Loading. NACA TN 2926, 1953.
+2. Home, Walter B.; Stephenson, Bertrand H.; and Smiley, Robert F.: Low-Speed Yawed-
+Rolling and Some Other Elastic Characteristics of Two 56-Inch-Diameter, 24-Ply -
+Rating Aircraft Tires. NACA TN 3235, 1954.
+3. Home, Walter B.; Smiley, Robert F.; and Stephenson, Bertrand H.: Low-Speed Yawed-
+Rolling Characteristics and Other Elastic Properties of a Pair of 26-Inch-Diameter,
+12-Ply-Rating, Type VII Aircraft Tires. NACA TN 3604, 1956.
+4. Home, Walter B.; and Smiley, Robert F.: Low-Speed Yawed-Rolling Characteristics
+and Other Elastic Properties of a Pair of 40-Inch-Diameter, 14-Ply-Rating,
+Type VII Aircraft Tires. NACA TN 4109, 1958.
+5. Thompson, Wilbur E.; and Home, Walter B.: Low-Speed Yawed-Rolling Characteris-
+tics of a Pair of 56-Inch-Diameter, 32-Ply-Rating Type VTI Aircraft Tires. NASA
+MEMO 2-7-59L, 1959.
+6. Dreher, Robert C.; and Tanner, John A.: Experimental Investigation of the Cornering
+Characteristics of a C40 x 14-21 Cantilever Aircraft Tire. NASA TN D-7203, 1973.
+7. Joyner, Upshur T.; Home, Walter B.; and Leland, Trafford J. W.: Investigations on the
+Ground Performance of Aircraft Relating to Wet Runway Braking and Slush Drag.
+AGARD Rep. 429, Jan. 1963.
+8. Home, Walter B.; and Dreher, Robert C.: Phenomena of Pneumatic Tire Hydroplaning.
+NASA TN D-2056, 1963.
+10
+
+
+
+=== PDF PAGE 13 ===
+(a) Conventional tire.
+(b) Cantilever tire. L-73-6818
+Figure 1.- Conventional 40 x 14-16 type VH test tire and C40 x 14-21
+cantilever test tire.
+11
+
+
+
+=== PDF PAGE 14 ===
+Conventional, 1+0 x lU-l6 Cantilever, 1*0 x lk-
+Ul cm
+(16 in.)
+102 cm
+(hO in.)
+53 cm
+(21 in.)
+Figure 2.- Conventional and cantilever tire cross sections.
+12
+
+
+
+=== PDF PAGE 15 ===
+o
+rt
+<4H
+O
+• r-l
+-4->
+Ort
+Cfl
+T3
+I
+13
+o
+rt
+I HB' J^k.NP"M?""" .O5J
+c
+FH
+rt
+•raH
+CO
+0)
+(H
+13
+
+
+
+=== PDF PAGE 16 ===
+CO
+~M
+CO
+01
+-4->
+.3
+•o
+CP
+CO
+cu
+-*->
+IOJ
+•^
+CD
+14
+
+
+
+=== PDF PAGE 17 ===
+Vertical-load beam
+Drag-load beam
+FORWARD
+Vertical-load beam
+Side-load beam
+Wheel
+Drag-load beam
+Vertical and drag
+accelerometers
+Brake torque links
+Figure 5.- Schematic of dynamometer showing location of load beams.
+15
+
+
+
+=== PDF PAGE 18 ===
+'c
+o o
+o o
+o o
+a o
+rn
+r n O tn J
+P —1i o
+1 CM
+, 't
+•tso
+-
+<u
+1 \ /I
+o- <u
+O
+' / * o §
+\
+0>
+v ^ i
+1 I
+So-i ^U
+o• «*-i* r<^tH
+Pf )- ii SP >-i
+Li Q 2 ^
+H -o &
+)-
+\ i
+\ O) to
+TJ O i-H
+0) f-c I
+*V «^ **OT* ^^H
+)-
+f-i •«*
+(U
+£,— 5nj
+o *^
+1 1
+o ^
+o>
+be rt
+t»
+o
+£
+<AJ o ft>
+n
+16
+
+
+
+=== PDF PAGE 19 ===
+<D
+T3
+O
+O
+\ a
+a
+T3
+55 01
+o i
+CO
+0Ir0t
+u
+Q
+rv
+H
+3.
+•3r-t
+(H
+JD
+•a
+-»->
+m
+17
+
+
+
+=== PDF PAGE 20 ===
+1
+C
+7
+0
+o
+§O
+00
+f a
+!Z "V
+D ^H Q)
+'\ Tl< *O
+<M ^
+rH C
+1 7 5
+f
+m OJ
+bC
+5
+rt
+cd
+01
+18
+
+
+
+=== PDF PAGE 21 ===
+n
+-p
+o
+c
+o
+o
+o
+00
+4-1
+Oa
+O
+O
+o r.
+b vo + 0 3
+s r.
+fo
+o
+V£> -3- o o O i O r»
+-
+"-
+f
+19
+
+
+
+=== PDF PAGE 22 ===
+I
+O
+O
+O
+8
+CO
+1
+CO
+11
+o 2
+is -S
+5? 8 §
+u 1-1
+c
+O 73
+£ o>
+.S o,
+(H CO
+<1> s"S
+s
+O JH
+^T O
+•c a
+o
+!H
+«t-(
+I
+O
+§ x
+I:
+ot* -r5*
+O
+0
+a
+w
+i
+•
+00
+n •ti 0>
+tn
+20
+
+
+
+=== PDF PAGE 23 ===
+in
+S d
+3 3
+1
+I E
+I 5
+.2 g
+8 ?.
+C M
+.2 3
+•*-> c
+5 *
+h o
+•" o
+•? I
+SP &
+•s •§
+0)
+t)
+hC •
+<L o CU
+•d .2 ^
+0e1
+§ £
+CO -
+CO CO
+cu
+o
+i i
+gfi
+^. fc
+QJ >>
+(H
+Jfi
+21
+
+
+
+=== PDF PAGE 24 ===
+5
+•a
+o
+o o
+I o o
+o
+-rrHf
+O
+rH
+rH
+o • rH
+rt
+rH
+-18 C O O CU
+•d •§ 0)
+rt c
+O <L> ed
+^_ o
+a H I s
+CO -H
+>d -aP DO
+o a
+o o
+o
+o o
+•*
+IO
+CD
+o
+-4-> CO
+<O—> -4§->
+T3
+r«
+>o CD
+a<D
+"
+rH CO
+8? O rH 1
+PH
+rt o
+O
+rH
+O
+Q
+a
+>> to'
+CU
+o
+ed
+I I
+rH <<-H
+O
+irH
+O
+8 c
+o X
+<u 0
+r—t
+§b£ a a
+1
+o
+o o
+OJ
+O 0)
+\o o '-' 3 O
+CM o
+ir\
+m " a O -rH
+3.
+22
+
+
+
+=== PDF PAGE 25 ===
+o o
+o o
+o o
+o
+ro
+O
+o
+o
+a s
+a i-i
+O dJ fc
+•H t>
+43 Q)
+a H
+- a d ; a; -H bO C CM O
+II
+if)
+Oo o o
+I
+o> •a
+_ w 0 c 01 . 0)
+o
+o •rH f 1
+\ o ir\ Iod> o
+U
+\v -*. ^ Q) 1
+\ bO o
+ft \ 0 T 1) 3 i— 1 i *(_. t o — 1
+H „ $^ r^tJ
+Q /I o 01
+11 - I
+o
+L^
+' fc
+S
+i i V.' i I
+a
+0
+CO
+a
+H
+D3
+bO
+0)
+o o
+OJ o o
+BS
+LT\
+ro
+EH S
+23
+
+
+
+=== PDF PAGE 26 ===
+§ ;> a
+H 0
+1 0
+a
+0 8
+CO C 1 0 o
+1 1 i i
+OS
+-
+— 8 ~
+gfc
+3£
+S5
+gd IT\ ^
+\ '
+cq
+-d
+« 2
+— _ o -d 'H
+H , -o
+* §
+- - LT\ ^
+•iH
+i
+|
+r^
+L 1
+O Mo
+„
+g
+o .3 ^
+t-<
+O
+O
+Ql
+'
+*w rt
+lo& " o
+C
+>
+/ &
+/
+/
+i s
+I / i
+CM
+m
+a
+00
+h£
+1
+•g
+o o 0)
+o K
+no LTx
+00
+24
+
+
+
+=== PDF PAGE 27 ===
+O N I O
+o o 8 O O .5 Q)
+C !H
+1 1 !a e3
+0
+y -i O (MU «^
+/ •o •-
+g C a* r ^ t
+- w g
+•c £
+i CO a; ^
+•FH
+•d ^ O > o c " 1
+o o S «* H H O rt
+0)
+n o 0 1-H
+1 _3r U CM
+/
+f 2C ^^
+8
+t x
+-
+'C o
+,
+*+^ ^^
+a, U
+1 1 o
+O n,
+£ *
+0
+- o
+rH l\
+73 rt
+0 "§ "
+CO rt i o
+w QJ ' II
+s 1 " ^ Q
+-
+/
+/
+*«N
+«0hM fotlH fH,f~l
+-
+/ _ o ^ a rt
+/ *^H • •>.
+/ * ^ " S H o o
+|s."
+f ' - 8
+I ,
+\ 0 >, A.
+\ « **
+\ J3 O
+1 1 o
+'. *~i W
+§ ^ g
+\ ~ 8 •g x -g
+- $ o 3
+H
+CCOU T* CO
+- _ •O . r r ) t 7 < 3 U
+- cS C C •«
+S £ 1
+to t-< g i—i
+bD £ •«
+o •£
+\o °
+c <4H > "O
+i
+/ jj O rt
+- / _ o > • 0 0) " u O< -
+/ / S3 x: g
+/
+W ** rt
+/ /
+/ - 8 iH '. ° 0) " > ^ >
+/
+/ \\ i-H 3 (H
+\ i \ / a C » S ? ^ a
+i
+^r cvi o 8 3 S Q 5 ~
+ITS t-^
+^
+NASA-Langley, 1973 L-9046 25
+
+
+
+=== PDF PAGE 28 ===
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+WASHINGTON. D.C. 2O546
+POSTAGE AND FEES PAID
+IATIONAL AERONAUTICS AND
+OFFICIAL BUSINESS SPACE ADMINISTRATION
+PENALTY FOR PRIVATE USE S3OO SPECIAL FOURTH-CLASS RATE 451
+BOOK
+If Undeliverable (Section 158
+POSTMASTER : Postal Manual) Do Not Return
+"The aeronautical and space activities of the United States shall be
+conducted so as to contribute . . . to the expansion of human knowl-
+edge of phenomena in the atmosphere and space. The Administration
+shall provide for the widest practicable and appropriate dissemination
+of information concerning its activities and the results thereof."
+—NATIONAL AERONAUTICS AND SPACE ACT OF 1958
+NASA SCIENTIFIC AND TECHNICAL PUBLICATIONS
+TECHNICAL REPORTS: Scientific and TECHNICAL TRANSLATIONS: Information
+technical information considered important, published in a foreign language considered
+complete, and a lasting contribution to existing to merit NASA distribution in English.
+knowledge.
+SPECIAL PUBLICATIONS: Information
+TECHNICAL NOTES: Information less broad
+in scope but nevertheless of importance as a derived from or of value to NASA activities.
+contribution to existing knowledge. Publications include final reports of major
+projects, monographs, data compilations,
+TECHNICAL MEMORANDUMS:
+handbooks, sourcebooks, and special
+Information receiving limited distribution
+bibliographies.
+because of preliminary data, security classifica-
+tion, or other reasons. Also includes conference
+TECHNOLOGY UTILIZATION
+proceedings with either limited or unlimited
+PUBLICATIONS: Information on technology
+distribution.
+used by NASA that may be of particular
+CONTRACTOR REPORTS: Scientific and interest in commercial and other non-aerospace
+technical information generated under a NASA applications. Publications include Tech Briefs,
+contract or grant and considered an important Technology Utilization Reports and
+contribution to existing knowledge. Technology Surveys.
+Details on the availability of these publications may be obfoined from:
+SCIENTIFIC AND TECHNICAL INFORMATION OFFICE
+N A T I O N AL A E R O N A U T I CS A ND S P A CE A D M I N I S T R A T I ON
+Washington, D.C. 20546

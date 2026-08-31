@@ -1,0 +1,202 @@
+=== PDF PAGE 1 ===
+An Overview of the Annual NASA Tire/Runway Friction Workshop and
+Lessons Learned
+By
+Yager, T.J.
+NASA Langley Research Center
+Hampton, Virginia, USA
+ABSTRACT
+This paper summarizes the organization efforts, objectives, scope, agenda, test procedures and
+results from eleven years of conducting the NASA Tire/Runway Friction Workshop. The paper
+will also summarize the lessons learned between 1994 and 2004. A description of the various
+friction, texture and roughness equipment used during these workshops at NASA Wallops Flight
+Facility on the eastern shore of Virginia will be provided together with the range of test surfaces
+available for evaluation. The need for friction measuring equipment calibration centers is
+discussed and plans for future workshops are identified.
+KEYWORDS
+Tire/pavement friction, pavement texture, surface roughness, test procedures
+
+
+
+=== PDF PAGE 2 ===
+1. BACKGROUND AND TYPICAL AGENDA
+The first annual NASA workshop was held in May 1994 at NASA Wallops Flight Facility on the
+eastern shore of Virginia near the town of Chincoteague. There were six (6) friction devices and
+six (6) texture techniques (no roughness measurements were taken) on 18 different surfaces by
+sixty attendees. At the eleventh annual workshop last year there were 14 friction vehicles, 5
+texture and 5 roughness measurement devices evaluating 33 different test surfaces by nearly
+100 attendees.
+The overall, one week, workshop agenda starts on Monday with technical presentations
+describing new equipment, test techniques and projects. Prior to start of actual testing on
+Tuesday, a comprehensive safety briefing is held with all participants to insure operational
+safety and to emphasize the importance of maintaining communication with the tower at all
+times when out on the airfield. Tuesday morning is also used to inspect the test equipment and
+perform necessary pre-test calibrations and check-outs. Special daily data compilation sheets
+and run number designations are handed out to each operator. Tuesday afternoon through
+Friday morning, friction, texture and roughness measurements are collected and compiled at the
+end of each day.
+Each test day morning, an overall briefing is held with all participants to review tests conducted
+the day before as well as the tests planned for that day. In addition, discussion at these
+morning briefings often provided solutions to problems encountered during the previous day.
+Everyone was made aware of which vehicles would be testing and at which of three test sites –
+runway 4/22, taxiway Echo and taxiway Alpha. Often during a workshop, a contractor would
+demonstrate installing different kinds of surface treatments including overlays, micro-surfacing,
+shotpeening, grinding, grooving and rubber removal.
+For each year, a test procedures document is prepared as well as a test data compilation report.
+The procedures document lists the test equipment, the workshop attendees and includes copies
+of Monday’s technical presentations. The data compilation report lists all the data collected for
+each test device in each of the three categories – friction, texture and roughness. All attendees
+are mailed copies of these documents and copies are made available at next year’s workshop.
+Workshop group photographs are taken each year with prints made available to the individual
+participants. During most workshops, video coverage is also obtained to further document
+workshop activities and test operations. An edited, narrated video depicting the scope and
+objectives of these annual NASA workshops is also available upon request.
+2. TEST EQUIPMENT
+2.1 FRICTION
+Both continuous friction measuring vehicles (CFME) and spot friction measuring devices
+(SFMD) perform dry, self-wet, water truck wet and rain wet tests on the surfaces at Wallops.
+Runs are conducted at fixed speeds from 8 to 96 kph (5 to 60 mph). The CFME equipment
+have included the runway friction tester, the surface friction tester, the IMAG and international
+reference vehicle, the GripTester, the Mu-meter, the BV-11 and BV-14, the airport surface
+2
+
+
+
+=== PDF PAGE 3 ===
+friction tester, the OSCAR, ROAR, RUNAR and SALTAR. The SFMD equipment have included
+the NASA diagonal-braked vehicle and instrumented tire test vehicle, the E274 skid trailer, the
+dynamic friction tester and the electronic recording decelerometer.
+2.2 PAVEMENT TEXTURE
+Several different laser devices have been used together with a circular texture meter, a British
+pendulum tester and an outflowmeter. Two volumetric techniques, sand patch and grease test,
+have also been used to quantify the micro- and macro-texture characteristics of the different test
+surfaces.
+2.3 PAVEMENT ROUGHNESS
+Profiler devices, both light weight and high speed, have been used at Wallops along with a laser
+device, dipsticks and rod and level measurements.
+3. TEST PROCEDURE
+When aircraft traffic permits, all three test sites at Wallops are occupied with either friction,
+texture or roughness measuring equipment (see refs. 1-5). The friction devices concentrate on
+the eight (8), in-line, test surfaces on runway 4/22, test site 1 whereas the roughness equipment
+measures on taxiway Alpha, test site 3. The texture measuring equipment collect data on these
+two test sites as well as site 2, taxiway Echo.
+Normally, it takes 4 to 8 hours for one test group to finish their evaluation of the different
+surfaces at a given test site. When appropriate, the friction, texture and roughness teams rotate
+to another test site and repeat their normal test procedure on a non-interference basis. Most
+friction and texture measuring equipment make a minimum of three (3) and often six (6) repeat
+measurements on a given test surface. Since the roughness measurements normally require
+more time to complete, one or two sets of data are collected on each test surface.
+The importance of daily morning check-out of test equipment and careful calibration is stressed
+in order to minimize data inaccuracies and/or loss. Test equipment that operates at different
+speeds, such as the friction devices, are never mixed with the stationary texture and roughness
+devices. Data collection with the texture and roughness equipment also requires a dry surface
+condition so testing immediately after the self wet friction measurements is not feasible. The
+stationary, dynamic friction tester usually collects data with the texture measurement team. This
+friction device and the outflowmeter which both use water, are positioned to collect their data
+after the other texture measuring equipment. Care is taken not to measure friction or texture by
+other devices in pavement areas where the grease sample method had been used. This grease
+sample pavement area is normally not very large since only 1 cu.in. of grease is spread on the
+surface in a rectangular pattern. Normally, traffic and weathering removes the grease in 3 to 6
+months.
+For the friction measuring devices testing at 32, 64 and 96 kph (20, 40 and 60 mph) using self
+wetting, each repetitive run series with more than 4 vehicles is conducted by alternating the test
+vehicle run order. On the first series, the order would be A, B, C, and D, and then on the
+3
+
+
+
+=== PDF PAGE 4 ===
+second series, D, C, B, and A. This change in order of the test vehicles would continue for all
+test series on each test surface.
+4. LESSONS LEARNED
+4.1 GENERAL
+These are the major overall lessons that saved time, minimized repeating tests and helped
+insure safety of test personnel and equipment:
+• Do not mix friction, texture and roughness equipment at the same test site
+• CFME’s should run before spot friction measurement devices
+• Conduct most if not all tests in dry weather conditions
+• Morning briefings for all test personnel is essential for efficient operation
+• Difficult to obtain consistent, uniform wet surface conditions when relying on natural
+precipitation
+• Daily test equipment checkout and calibration is critical to collecting acceptable data
+• During tests conducted at active airports, communication is critical
+• Document all test activities with video and photographic coverage
+• Test time is minimized if different test surfaces are in line with each other
+4.2 FRICTION TESTS
+These are lessons learned in collecting data with the friction measurement equipment:
+• Cannot mix different speeds when conducting tests with more than one device
+• Found that self wetting at 1 mm (0.04 in.) provided repeatable and reliable data
+• Wet surface evaluation for hydroplaning requires a minimum of three speeds
+• For vehicle data comparisons, minimum of six (6) repetitive runs needed
+• Normally data from first two runs are found to be outliers
+• Test surfaces need to be at least 100m (300 ft) in length and 1m (3 ft) wide
+• For vehicle data comparisons, lateral test surface displacement is desired
+• If test surface width prevents lateral displacement of the different devices, the vehicle
+order must be changed for each test run on a given surface
+• Vehicle data considered acceptable if within +/- 3 % of other similar vehicles
+• Have individual vehicle operators evaluate their recorded data and submit summary
+report with data CD/floppy submittal
+4.3 TEXTURE TESTS
+These are lessons learned in collecting data with the pavement texture measuring equipment:
+• Requires not only dry pavement surface but also one free of any loose material
+• Sand patch texture measurements require wind protection
+• A minimum of three (3) texture measurements required for each test surface
+• For data comparisons on a given surface, use data average for each technique
+• Manual data tabulation sheets on clipboards required for some techniques
+4
+
+
+
+=== PDF PAGE 5 ===
+• Have individual operators submit summary data compilation and evaluation report
+4.4 ROUGHNESS TESTS
+These are lessons learned in collecting data with the pavement roughness measuring
+equipment:
+• Need test surface length which meets SAE and ASTM requirements
+• Requires not only dry pavement surface but also one free of any loose material
+• Conduct high speed vehicle test runs first followed by low speed and/or spot
+measurements
+• Rod and level measurements should be taken at a minimum of 0.3m (1 ft) intervals for
+data comparison to other devices
+• Manual data tabulation sheets on clipboards required for some techniques
+• Have individual operators submit summary data compilation and evaluation report
+5. FUTURE PLANS
+The Twelfth Annual NASA Tire/Runway Workshop at Wallops Flight Facility, Virginia is
+scheduled for May 16-20, 2005. There is an eight person Russian group, a six person
+Canadian group and a five person Japanese group planning to be among the approximately 90
+attendees. There will be participation by representatives from ten different countries operating
+friction, texture and roughness devices.
+The Thirteenth Annual NASA Workshop will also be at Wallops Flight Facility, Virginia, May 22-
+26, 2006. New test surfaces will be available for participants evaluation and several improved
+friction, texture and roughness devices will collect data for comparison with other similar
+equipment. During the week prior to this workshop, May 15-19, 2006, there will be a meeting of
+PIARC Committee C1 on tire/pavement interaction and a joint meeting of ASTM E17 and F09
+Committees on Vehicle-Pavement Systems and Tires.
+For the past year, there has been a lot of discussion in the US and Canada on establishing
+regional calibration centers for the airport/runway friction measuring devices as well as definition
+of a practical and acceptable calibration procedure. A minimum of four (4) test surfaces with
+friction levels varying from 0.1 to 0.9 are suggested. In the US, calibration centers at Tampa,
+FL, State College, PA, Dallas, TX have been identified with hopes of getting two more on the
+West coast. Partnerships with small businesses, academia and government are envisioned to
+cover initial set-up costs with subsequent operational expenses covered by user fees. Efforts
+are continuing to get ICAO, FAA and Transport Canada support for these calibration centers
+6. REFERENCES
+1. J.C. Wambold; C.E. Antel; J.J.Henry; and Z. Rado: “International PIARC Experiment to
+Compare and Harmonize Texture and Skid Resistance Measurements”, Final Report,
+World Road Association (PIARC), Paris, 1995
+5
+
+
+
+=== PDF PAGE 6 ===
+2. Anon: “Annual Book of ASTM Standards”, Section Four, Construction, Vol. 04.03, Road
+and Paving Materials; Vehicle-Pavement Systems, 2004, pp. 916-1242.
+3. Anon: “NASA Wallops Tire/Runway Friction Workshops 1993-2002”, CDRM, Inc.,
+Transport Canada report TP14190E, Sept. 2002.
+4. T.J. Yager; and F. Buhlmann: “Macrotexture and Drainage Measurements on a Variety
+of Concrete and Asphalt Surfaces”. Pavement Surface Characteristics and Materials,
+ASTM STP 763, C.M. Hayden, Editor. American Society for Testing and Materials,
+February 1982, pp. 16-30
+5. Anon: “The Tire Pavement Interface”, ASTM STP 929, M.G. Pottinger and T.J. Yager,
+Editors. American Society for Testing and Materials, June 1986
+6

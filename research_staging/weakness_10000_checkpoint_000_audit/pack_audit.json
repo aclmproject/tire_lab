@@ -1,0 +1,80 @@
+{
+  "checkpoint": "Weakness corpus package audit before document acquisition",
+  "input": {
+    "zipSha256": "aa52ee6597c6653aab273cb7fc75190615cd28c8c25170c19bfe2ccd13542df8",
+    "manifestSha256Computed": "f7f5cddd6637cad895ccc7013232d41ff393c76696a0f2b0fc1e572f68b9fb50",
+    "manifestSha256Declared": "f7f5cddd6637cad895ccc7013232d41ff393c76696a0f2b0fc1e572f68b9fb50"
+  },
+  "corpus": {
+    "manifestTargets": 10000,
+    "p0Targets": 1000,
+    "shardCount": 20,
+    "shardRows": 10000,
+    "seedRows": 50,
+    "uniqueManifestIds": 10000,
+    "uniqueP0Ids": 1000,
+    "uniqueShardIds": 10000,
+    "p0WeaknessCounts": {
+      "W01_PRESSURE_TEMP_SETUP": 700,
+      "W02_WEAR_LIFE_GRIP": 201,
+      "W03_FM_STIFFNESS_TRANSIENT": 85,
+      "W04_WET_INTERMEDIATE": 14
+    },
+    "p0RepositoryCounts": {
+      "motorsportmagazine.com archive": 118,
+      "FIA Historic Database": 116,
+      "SAE Mobilus": 163,
+      "Tire Science & Technology": 156,
+      "race team/setup book archive": 117,
+      "manufacturer technical archive": 130,
+      "Motor Sport archive": 34,
+      "race results/stint reports": 38,
+      "manufacturer racing archive": 42,
+      "NASA NTRS": 28,
+      "Calspan/Flat-Trac methodology": 28,
+      "NHTSA/NIST technical corpus": 6,
+      "university thesis repository": 16,
+      "manufacturer technical paper": 4,
+      "manufacturer motorsport technical": 4
+    }
+  },
+  "scopeAudit": {
+    "statusCounts": {
+      "TEMPORAL_LABEL_CONFLICT": 443,
+      "TEMPORALLY_PLAUSIBLE": 125,
+      "PARTIAL_TEMPORAL_OVERLAP": 140,
+      "NO_OBVIOUS_TEMPORAL_CONFLICT": 292
+    },
+    "temporalConflictCount": 443,
+    "partialOverlapCount": 140,
+    "exactDuplicateQueryCount": 0,
+    "duplicateTargetTupleCount": 7,
+    "note": "Temporal flags are target-quality findings, not claims that a searched document does or does not exist."
+  },
+  "seedDedup": {
+    "suppliedSeedCount": 50,
+    "exactCanonicalUrlMatchesToPriorCandidateMap": 0,
+    "actuallyReviewedThisCheckpoint": 0,
+    "resolvedUniqueDocumentsThisCheckpoint": 0
+  },
+  "integrity": {
+    "manifestHashMatches": true,
+    "manifestHas10000Rows": true,
+    "p0Has1000Rows": true,
+    "manifestIdsUnique": true,
+    "p0IdsUnique": true,
+    "p0ExactlyMatchesManifestP0": true,
+    "shardsHave10000Rows": true,
+    "shardIdsUnique": true,
+    "shardsCoverManifestExactly": true,
+    "everyLedgerRowHasNoCountClaim": true,
+    "pass": true
+  },
+  "disposition": {
+    "canonicalKnowledgeChanged": false,
+    "applicationChanged": false,
+    "numericalGeneratorChanges": [],
+    "acquisitionCanStart": true,
+    "caution": "Correct or constrain temporal-label conflicts before spending searches on those targets."
+  }
+}

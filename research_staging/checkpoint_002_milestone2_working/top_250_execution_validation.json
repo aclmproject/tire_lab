@@ -1,0 +1,11 @@
+{
+  "queuedTargets": 250,
+  "resultRows": 250,
+  "uniqueTargetIds": 250,
+  "allQueueTargetsResolvedToDisposition": true,
+  "allowedStatusesOnly": true,
+  "targetsLinkedToReviewedDocuments": 7,
+  "uniqueReviewedDocumentsLinked": 3,
+  "noDocumentFound": 243,
+  "pass": true
+}

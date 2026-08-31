@@ -1,0 +1,51 @@
+﻿shard,filename,records,groups,priorities,sha256
+1,corpus_shard_01_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P0"": 1000}",0a9bc3b74b94a6b721b56d36c0168bd35d5a24cccef1913b222b4d60f645eedc
+2,corpus_shard_02_of_50.jsonl,1000,"{""source_deep_mining"": 105, ""targeted_source_discovery"": 895}","{""P0"": 1000}",79e60ca5b425844ddd8cf3384403e04badf3f72181d7c124d4d3410ec1d3ceab
+3,corpus_shard_03_of_50.jsonl,1000,"{""cross_source_synthesis"": 895, ""targeted_source_discovery"": 105}","{""P0"": 1000}",cb35bea03d9c1970586bfa518dfb8acc86f78a85e06740fd7224f6436f77fed8
+4,corpus_shard_04_of_50.jsonl,1000,"{""cross_source_synthesis"": 305, ""source_deep_mining"": 695}","{""P0"": 1000}",e1e1e76d3549921fc2b9201571b08ef198a8e40334040d3b145d60355a35e9b7
+5,corpus_shard_05_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P0"": 1000}",83bf28257613484a97547bc5f56280d0770eda1c5b76c3f8c60d6c59fdff6a91
+6,corpus_shard_06_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P0"": 1000}",c01c1091ee0d3ce0b7f5462cc42ec0c6aebaa66ce8c50def3ad907104fd5a5a7
+7,corpus_shard_07_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P0"": 1000}",39fffeae29556acbff8a2d3d7807b57823f9dad1da0cfa82249a6c75d4a4a5f6
+8,corpus_shard_08_of_50.jsonl,1000,"{""evidence_to_ac_bridge"": 700, ""source_deep_mining"": 300}","{""P0"": 1000}",381d73804d57063ae98e5f4d853d806d6574043e36707abda2a0e240ac43c7b4
+9,corpus_shard_09_of_50.jsonl,1000,"{""evidence_to_ac_bridge"": 400, ""targeted_source_discovery"": 600}","{""P0"": 1000}",f4039a2b92dc8162ce4c9901029d0a9890035c0b08bcfb6b335c04a0c56c777e
+10,corpus_shard_10_of_50.jsonl,1000,"{""targeted_source_discovery"": 1000}","{""P0"": 1000}",da1a4f5a4bd9fe1b8c6489e648cb10abd3133284e94763f98a5a19146ed67ebe
+11,corpus_shard_11_of_50.jsonl,1000,"{""targeted_source_discovery"": 1000}","{""P0"": 1000}",4038aafac11805e9be04f91d64d8f5f4fb029b4595f8913e658921f3a3c53c31
+12,corpus_shard_12_of_50.jsonl,1000,"{""source_deep_mining"": 950, ""targeted_source_discovery"": 50}","{""P0"": 50, ""P1"": 950}",e0523be624224e49ad9b52dc576509d091b8d31f11f5dfc27c82cdc0a292cd57
+13,corpus_shard_13_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",551ea30a9f96c291301fca01f78648ce59de941023f05927bbb1af13e28c16f5
+14,corpus_shard_14_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",384d85cc3887df7b5ffbaff3d74d664af69e32c66899baef92e47b02992fd9ca
+15,corpus_shard_15_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",a70ef88cee979996dc445df2df57ae5fe79c98f8abe27fd0ccd41784d1cc0c8b
+16,corpus_shard_16_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",22bfb2cee6fe19a56de6c5ef75edcd93052bb3eaaa18bb5e1e8dd13ce438a5b6
+17,corpus_shard_17_of_50.jsonl,1000,"{""cross_source_synthesis"": 607, ""source_deep_mining"": 393}","{""P1"": 1000}",1573ff6a72f67d6ea112252ac4faa7c3cbde6a8856e811aae720af57e55702e9
+18,corpus_shard_18_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",a92ec44fb807c8684aa66e04ea360a813fae0f12e82de3b40ff564255518b695
+19,corpus_shard_19_of_50.jsonl,1000,"{""cross_source_synthesis"": 193, ""source_deep_mining"": 807}","{""P1"": 1000}",e56d541d7cdfc09109a51d6861ed9ef63516dd6ec6420f07db591072c48f6e6f
+20,corpus_shard_20_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",2e3a3254998c34bdaa95a226ee98009369cd5462e4fd693ce7f94a90bbae439e
+21,corpus_shard_21_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",fb1875c9cb233d168a3e33543992feb12a0c68656034cc45d2209dd90e7fa928
+22,corpus_shard_22_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",744eef3fdaba0b5ec94cd5b30d9f54e0f07a89ac61f272aaae392f46a3ca29c5
+23,corpus_shard_23_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",7d85b5449e5fd61f93854774f5099f9c87ca7e1427aef8ccbe4ce1604c0df6d9
+24,corpus_shard_24_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",0356b1c8d19ceff67127092277ec734b762b6ad617d1e165eaca563dde6c34b3
+25,corpus_shard_25_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",014077ff0093b59157095d037010c76c586447f0b3cef53564eb53a0c20156e9
+26,corpus_shard_26_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",d65189bfda95880c2c30766da2c7c64ecdb50b2c42730311cb425772e8991f8f
+27,corpus_shard_27_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",ddcc2b8462f764352eeabda784e1d06277aa8d901882977b333ace8964e6b971
+28,corpus_shard_28_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",4757de5387e2ebdbe7409326353ad2184de148857204c3875f24bd051fb1fdf6
+29,corpus_shard_29_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",f797135237120a5dd4d3f193a07d289e1c713e6e6594f02519eb2039eaea2279
+30,corpus_shard_30_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",64fa4e25b20db65be885c14cd4828ce6ce92379ec466ec2c669a00eb2353a8de
+31,corpus_shard_31_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",a8831817dc0d5cf9697df8b47b3193b796d8468b2adb1e7d5ff4d8e914363485
+32,corpus_shard_32_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",8048446d992aaf37406392a66dac1658c5b5c98b597d9cedd50a75482158874c
+33,corpus_shard_33_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",55d38d6dec0416c8132cf15deae7bfb6810e274274b6fda4c2138fb5d27f787c
+34,corpus_shard_34_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",d32d1705eaad085e0716188e24fb65bb081096a4f695d06fa8017c06526ca126
+35,corpus_shard_35_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",bd4f7d59576d19b0f9358a5f9319f1b75bf6d780d23df267f707d209b4fc47d1
+36,corpus_shard_36_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",84a3d8a004cb8ab3b643446402dd59c694b1e3e05d2c1b5398749dfb67448cac
+37,corpus_shard_37_of_50.jsonl,1000,"{""source_deep_mining"": 1000}","{""P1"": 1000}",70903d71eeeff641103ca51e1c565cb980c47c7d3762e8e81dc6287a7a233e76
+38,corpus_shard_38_of_50.jsonl,1000,"{""evidence_to_ac_bridge"": 490, ""source_deep_mining"": 510}","{""P1"": 1000}",a426c74a406701c904f97d9578c29e66ed5bf4defb20596cf1e5ffdacd1b1ddf
+39,corpus_shard_39_of_50.jsonl,1000,"{""evidence_to_ac_bridge"": 910, ""targeted_source_discovery"": 90}","{""P1"": 1000}",1dcb557a796c5a14ca1f533e0dc8e3c85d48de9c1ef3863c696f9cf3413dcba4
+40,corpus_shard_40_of_50.jsonl,1000,"{""targeted_source_discovery"": 1000}","{""P1"": 1000}",59273bac695e921187a5559e183d141ccd9ae4bf06dec4c41c2f881239c9d8bb
+41,corpus_shard_41_of_50.jsonl,1000,"{""targeted_source_discovery"": 1000}","{""P1"": 1000}",cc24e55f00acbfc2838a26c3d06977655e8d42a9550887bf2329ab165d30c3cc
+42,corpus_shard_42_of_50.jsonl,1000,"{""targeted_source_discovery"": 1000}","{""P1"": 1000}",7a7f5bb6006c4286cc1bd9568de0ea122983e88412f1f5bf3d5aade218314acb
+43,corpus_shard_43_of_50.jsonl,1000,"{""cross_source_synthesis"": 240, ""targeted_source_discovery"": 760}","{""P1"": 1000}",02c8a9afcde40db0b542713959639457ceaae3cf528c7e286d25a8f3eceffc0c
+44,corpus_shard_44_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",2e29b9484108590365c6b24d30edbb844f3c25773a04f21ac07a066a21bbe6fd
+45,corpus_shard_45_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",ef7d69182512a2e314f58ccf1541438b138c5ea5baf2e77c094f79e40c633c6a
+46,corpus_shard_46_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",42efd05707df2f10bb8576d84f502291442faa2ee4669ec75ed223d27855ab9f
+47,corpus_shard_47_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",34764a70b8dff4b6c14f8404d83a9505e5408b73ee51e4d4fc9a4f5f3307579a
+48,corpus_shard_48_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",912256eab7c12c1b6dd6be543aa08c15d60ba7547ac3ce41e18eaf4e5ae97a35
+49,corpus_shard_49_of_50.jsonl,1000,"{""cross_source_synthesis"": 1000}","{""P1"": 1000}",8858d8ad1c6f0840d44837042a3f304161200d2617e1e736eff7ff01222e4586
+50,corpus_shard_50_of_50.jsonl,1000,"{""cross_source_synthesis"": 760, ""source_deep_mining"": 240}","{""P1"": 760, ""P2"": 240}",60d7f1cd17b27a0964b7a14c7e6b803d594fbf6c69c9865ec30e3fa30a65957c

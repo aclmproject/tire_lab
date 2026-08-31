@@ -1,0 +1,710 @@
+ACLM HISTORICAL TIRE LAB — UNIFIED RESEARCH INGESTION / CORPUS EXPANSION PROMPT
+
+WORK ON THE CANONICAL ACLM HISTORICAL TIRE LAB RESEARCH / TIRE KNOWLEDGE MASTER.
+
+This prompt supersedes the separate ingestion instructions contained in the three research results supplied with it. Use those files as the research corpus, but follow THIS prompt for ordering, deduplication, promotion, quality gates, checkpointing, and final reporting.
+
+PURPOSE
+We now have three nested research layers:
+
+LAYER A — CURATED SOURCE SEED PACKET
+- ACLM_Tire_Lab_50_New_Sources_Desktop_Ingestion_Prompt.txt
+- Contains 5 carry-forward research tasks plus 50 additional curated source candidates / source-specific review tasks.
+- This is the authoritative bibliographic/source-seed layer for those items.
+
+LAYER B — 500-RECORD CORPUS EXPANSION
+- ACLM_Tire_Lab_500_Content_Corpus.jsonl
+- CSV mirror may also be present for inspection.
+- Contains exactly 500 auditable research work units, including deeper mining of existing knowledge sources, tasks derived from the curated source packet, additional fresh-source tasks, and focused gap missions.
+
+LAYER C — 50,000-RECORD DEEP CORPUS
+- ACLM_Tire_Lab_50000_Content_Corpus.jsonl
+- P0_P1_FIRST_5000.jsonl
+- QUALITY_GATES.md
+- SHARD_INDEX.csv where present
+- Contains exactly 50,000 auditable work units: source deep-mining, cross-source synthesis, targeted source discovery, and evidence-to-AC/CSP bridge tasks.
+
+IMPORTANT: THESE ARE NESTED/RELATED LAYERS, NOT 50,555 UNIQUE SOURCES.
+Do not inflate source counts. Build a lineage graph so that a source reviewed in Layer A can satisfy or partially satisfy parent/child tasks in Layers B/C without duplicate source ingestion.
+
+============================================================
+0. NON-NEGOTIABLE OPERATING PRINCIPLES
+============================================================
+
+1. Do not rebuild or modify the Tire Lab physics/generator merely because research ingestion has begun.
+
+2. First create a RESEARCH STAGING AREA / KNOWLEDGE CANDIDATE layer. Promote to the canonical Tire Knowledge master only after evidence review and integrity checks.
+
+3. Do not treat a research task as evidence. A task becomes evidence only after the cited/source material is actually reviewed to the level claimed.
+
+4. Do not claim full-text review if only an abstract, metadata page, search snippet, secondary quotation, or inaccessible reference was available.
+
+5. Every processed task must receive an auditable final status.
+
+Allowed status vocabulary should include at least:
+- FULL_TEXT_EVIDENCE_PROMOTED
+- PRIMARY_SCAN_EVIDENCE_PROMOTED
+- ABSTRACT_ONLY_LIMITED_EVIDENCE
+- SECONDARY_ONLY
+- DUPLICATE_EXISTING_EVIDENCE
+- DUPLICATE_PARENT_TASK_SATISFIED
+- NOT_PRESENT_OR_NOT_APPLICABLE
+- INACCESSIBLE
+- NO_DIRECT_SOURCE_FOUND
+- CONFLICT_RETAINED
+- INSUFFICIENT_EVIDENCE_NO_MODEL_CHANGE
+- DEFERRED_WAITING_FOR_PARENT_EVIDENCE
+- DEFERRED_UNTIL_SOURCE_REVIEW
+
+6. Deduplicate sources by bibliographic identity, not merely URL:
+- DOI
+- report/paper number
+- normalized title
+- authors
+- publication year
+- publisher/organization
+- canonical URL
+- scan/reprint identity
+
+7. Preserve source review status explicitly:
+- FULL_TEXT_REVIEWED
+- PRIMARY_SCAN_REVIEWED
+- ABSTRACT_ONLY
+- SECONDARY_CITATION_ONLY
+- METADATA_ONLY
+- INACCESSIBLE
+
+8. Keep copyrighted/paywalled documents out of the public/end-user installer unless licensing explicitly permits distribution. Persist bibliographic metadata, citations, extracted evidence, and provenance. Development-only legally obtained copies can remain outside the distributable application.
+
+============================================================
+1. BUILD A SOURCE/TASK LINEAGE GRAPH BEFORE INGESTION
+============================================================
+
+Before processing evidence, create a lineage/index table with:
+
+- task/content ID
+- layer: A / B / C
+- parent task ID if any
+- source candidate ID / bibliographic identity
+- existing Tire Knowledge source ID if matched
+- source URL / DOI / report number
+- task type
+- priority
+- domain/topic
+- affected family/class if stated
+- current status
+- evidence records produced
+
+The purpose is to prevent redundant work.
+
+Example:
+If Layer A source NEW-01 is reviewed in full, and Layer B contains two extraction tasks based on that source, do not create two additional source records. The Layer B tasks should reference the already-reviewed source and extract any genuinely new evidence required by those tasks.
+
+Likewise, Layer C deep-mining tasks that descend from a Layer B parent must not cause the same source to be re-added.
+
+============================================================
+2. PROCESSING ORDER
+============================================================
+
+PHASE 1 — CURATED SOURCE SEEDS
+Read the complete Layer A curated source packet first.
+
+For every source/task in it:
+- check current Tire Knowledge master for duplicates
+- open/read the actual source where accessible
+- extract evidence only to the level supported
+- retain page/section/table/figure references where possible
+- create/update source records only after verification
+- mark abstract-only honestly
+- do not change numerical generator values yet
+
+This phase establishes bibliographic anchors and avoids wasting later corpus tasks on identity/deduplication work.
+
+PHASE 2 — 500 PARENT CORPUS
+Load all 500 Layer B records into the lineage/task registry.
+
+Process all 500 as parent-level research work units, but use Phase 1 results to satisfy overlapping source-review requirements.
+
+The 500 records must each receive an auditable disposition. Do not claim 500 sources were added. Report the actual unique new-source count separately.
+
+PHASE 3 — 50K HIGH-PRIORITY PILOT
+Read QUALITY_GATES.md before starting Layer C.
+
+Process P0_P1_FIRST_5000.jsonl first, or equivalently the first 5,000 highest-priority records from the 50k corpus.
+
+Do NOT process all 50,000 in one reasoning context.
+
+After the first 5,000:
+- checkpoint the research staging database
+- run integrity tests
+- issue a research-impact report
+- identify ingestion/schema problems
+- resolve problems before continuing
+
+PHASE 4 — REMAINING 45K
+Continue the remaining Layer C records in batches of 5,000.
+
+Checkpoint after every 5,000 records.
+
+Do not rebuild the Tire Lab after each batch.
+
+A knowledge release or application build occurs only at an explicit promotion milestone.
+
+============================================================
+3. EVIDENCE TYPES
+============================================================
+
+Promote evidence into explicit typed records rather than unstructured prose.
+
+Support at least:
+
+MEASUREMENT
+Direct numerical measurement or table value.
+
+OBSERVATION
+Source-supported non-numeric or qualitative technical observation.
+
+SCALING_RULE
+Evidence-backed relationship or directional/functional behavior.
+
+HISTORICAL_CONSTRAINT
+A rule the historical generator should not violate: construction, dimensions, supplier/event identity, compound availability, regulations, warmers, etc.
+
+FITMENT_EVIDENCE
+Vehicle/event/tire dimensions and configuration evidence.
+
+EVENT_SUPPLIER_EVIDENCE
+Supplier, compound/specification, change, failure, stint, weather/event context.
+
+CALIBRATION_METHOD
+How a manufacturer/team/researcher measured or correlated tire behavior.
+
+CALIBRATION_FIXTURE
+Only for ACLM's own simulator telemetry/regression evidence, never to be confused with historical evidence.
+
+SOURCE_LIMITATION
+Known applicability, method, accessibility, context, or uncertainty restriction.
+
+============================================================
+4. REQUIRED PROVENANCE ON EVERY PROMOTED EVIDENCE ITEM
+============================================================
+
+Preserve where available:
+
+- source ID
+- source review status
+- page
+- section
+- table
+- figure
+- quote/paraphrase locator
+- publication year
+- tire manufacturer/supplier
+- tire size
+- construction: cross-ply/bias, belted-bias, radial, etc.
+- carcass/tread/belt material if known
+- compound/specification if known
+- vehicle/class/event
+- test rig/track/road context
+- wheel load
+- inflation pressure and whether cold/hot/measurement pressure
+- speed
+- camber
+- slip angle
+- slip ratio
+- drive/brake state
+- tire temperature measurement location:
+  * surface
+  * inner/middle/outer tread
+  * carcass/core
+  * cavity/internal air
+  * rim
+  * unspecified pyrometer/IR location
+- ambient/road temperature where known
+- wet/water depth/tread depth where relevant
+- direct measurement vs fitted model vs derived calculation vs author interpretation
+- units
+- uncertainty / confidence
+- applicability scope
+
+Do not silently convert between observables.
+
+============================================================
+5. EVIDENCE HIERARCHY / APPLICABILITY
+============================================================
+
+Classify provenance distinctly, for example:
+
+DIRECT_PERIOD_RACING
+DIRECT_EVENT_SPECIFIC_RACING
+PERIOD_MANUFACTURER_TECHNICAL
+PERIOD_GENERAL_TIRE_TECHNICAL
+GOVERNMENT_ACADEMIC_FOUNDATIONAL
+MODERN_MOTORSPORT_SUPPLIER
+MODERN_HISTORIC_OPERATIONAL_GUIDANCE
+MODERN_GENERAL_TIRE_TECHNICAL
+SECONDARY_HISTORICAL
+ACLM_TELEMETRY_CALIBRATION
+
+Source quality and applicability are separate dimensions.
+
+A high-quality passenger/truck/aircraft study can provide excellent universal mechanism/equation evidence while being unsuitable as a direct absolute racing coefficient source.
+
+A contemporary racing report can be excellent fitment/supplier/pressure/temperature evidence for a specific event while being unsuitable as a universal tire-mechanics equation.
+
+============================================================
+6. PRESERVE HISTORICAL TARGETS VS ASSETTO CORSA IMPLEMENTATION
+============================================================
+
+Never collapse these layers.
+
+HISTORICAL REALITY / TARGETS include:
+- dimensions
+- loaded radius
+- pressure
+- construction
+- force behavior
+- operating temperature evidence
+- wear/stint/service evidence
+- wet/intermediate behavior
+- supplier/event configuration
+
+AC/CSP IMPLEMENTATION includes:
+- RATE
+- DAMP
+- FLEX / FLEX_GAIN
+- PRESSURE_STATIC
+- PRESSURE_IDEAL
+- PRESSURE_TEMPERATURE_GAIN
+- PRESSURE_SPRING_GAIN
+- PRESSURE_FLEX_GAIN
+- load sensitivity
+- DY/DX curves
+- camber LUTs
+- THERMAL_FRONT/REAR
+- THERMAL2_FRONT/REAR
+- WEAR_CURVE
+- VIRTUALKM / USE_LOAD
+- CSP extended rays
+
+Rules:
+- real-world km is NOT automatically AC virtual km
+- tread/pyrometer temperature is NOT automatically AC core temperature
+- historical hot pressure is NOT automatically PRESSURE_STATIC
+- a documented local tread temperature is NOT automatically PERFORMANCE_CURVE optimum
+- physical tread/service life is NOT automatically competitive grip life
+
+============================================================
+7. ACTIVE RESEARCH PRIORITIES
+============================================================
+
+Weight the corpus toward the current ACLM calibration problems.
+
+P0 / HIGHEST VALUE:
+
+A. COLD -> HOT PRESSURE CLOSURE
+Find direct and mechanistic evidence for:
+- cold/hot pressure behavior
+- contained-air temperature
+- pressure vs carcass deflection
+- pressure vs vertical rate
+- pressure vs flex/hysteresis
+- pressure effects on tread profile / I-M-O temperature
+- nitrogen/air effects where period-relevant
+
+B. THERMAL OBSERVABLES / HEAT PATHWAYS
+Find:
+- surface vs core/carcass vs cavity temperature
+- warm-up time constants
+- speed cooling
+- surface-to-carcass/core transfer
+- brake/rim heat transfer
+- hysteresis / rolling heat
+- construction effects: bias/belted/radial
+- pressure/load/speed interactions
+
+C. HISTORICAL WEAR -> AC WEAR/VKM MAPPING
+Find:
+- wear vs slip energy
+- wear vs load
+- wear vs temperature
+- wear vs driving severity
+- wear vs tread depth
+- wear -> grip/performance degradation
+- heat-cycle degradation
+- competitive stint life vs physical/service life
+
+D. FORCE / MOMENT / STIFFNESS
+Find:
+- vertical stiffness
+- lateral/cornering stiffness
+- longitudinal stiffness
+- relaxation length
+- load sensitivity
+- camber sensitivity
+- combined slip
+- transient force response
+
+E. WET / INTERMEDIATE
+Find:
+- water depth
+- tread depth
+- pressure effects
+- hydroplaning speed
+- wet thermal window
+- intermediate compounds
+- wet wear and tread degradation
+
+F. DIRECT HISTORICAL TARGETS
+Prioritize:
+- 1971–76 Group 2 / ETCC slick pressure and pyrometer records
+- exact racing carcass/rate data
+- 1960s sports-prototype/endurance tire fitments and pressures
+- supplier/event-specific 1993–96 BPR/Le Mans/GT1/GT2 data
+- primary supplier F&M sheets
+- setup books
+- stint telemetry
+- period wet/intermediate technical documents
+
+============================================================
+8. CURATED SOURCE PACKET — SPECIAL HANDLING
+============================================================
+
+Use ACLM_Tire_Lab_50_New_Sources_Desktop_Ingestion_Prompt.txt as the authoritative instructions for its listed sources.
+
+Important carry-forward items include, among others:
+- Firestone / SAE 700475 surface-temperature scanning
+- U.S. EPA 1978 tire energy-dissipation report
+- 1968 South African GP Dunlop pressure/tread-temperature evidence
+- NBS Mechanics of Pneumatic Tires source expansion; do not duplicate existing SRC001 if matched
+- 1966 GT40 Mk II event-specific Firestone/Goodyear evidence
+
+The packet also contains 50 additional curated sources checked against the then-current knowledge source list.
+
+Do not blindly trust the old deduplication result: recheck against the CURRENT canonical knowledge master because the knowledge base may have advanced since the packet was created.
+
+============================================================
+9. 500-RECORD CORPUS — SPECIAL HANDLING
+============================================================
+
+The 500-record Layer B corpus is a research work plan, not 500 facts.
+
+It includes:
+- deep-mining tasks across existing sources
+- tasks derived from the curated source packet
+- additional source-ingestion tasks
+- focused research missions
+
+For existing-source deep mining:
+- compare proposed extraction against current measurements/scalingRules first
+- add only genuinely new evidence, stronger provenance, conflict context, or improved applicability
+- do not double-count an existing fact just because the microtask wording differs
+
+Every content_id gets a final status.
+
+============================================================
+10. 50,000-RECORD CORPUS — SPECIAL HANDLING
+============================================================
+
+The 50k corpus contains four broad groups:
+
+- ~30,000 SOURCE_DEEP_MINING microtasks
+- ~10,000 CROSS_SOURCE_SYNTHESIS tasks
+- ~7,500 TARGETED_SOURCE_DISCOVERY missions
+- ~2,500 EVIDENCE_TO_AC_BRIDGE tasks
+
+SOURCE_DEEP_MINING:
+Review evidence at fine granularity; link to already-established source records.
+
+CROSS_SOURCE_SYNTHESIS:
+Do not complete until supporting sources are reviewed. Preserve construction/supplier/era/test-method differences; do not average away conflicts.
+
+TARGETED_SOURCE_DISCOVERY:
+Search deeply for primary/near-primary evidence. Prefer manufacturers, teams, sanctioning bodies, contemporary technical reports, government/academic work, period setup books, technical magazines, homologation/regulation documents and scanned manuals over generic modern summaries.
+
+EVIDENCE_TO_AC_BRIDGE:
+Do not invent coefficients. Produce an evidence -> interpretation -> AC/CSP semantic mapping. A correct output can be "architecture strengthened; no numeric coefficient justified."
+
+============================================================
+11. CONFLICT MANAGEMENT
+============================================================
+
+Add/maintain an explicit conflict register.
+
+If credible sources disagree:
+- keep both
+- record supplier
+- tire size
+- construction
+- compound
+- vehicle
+- axle
+- event/track
+- test method
+- pressure
+- temperature measurement method
+- date
+- source quality
+- possible reason for difference
+
+Do not average contradictory measurements into a fake universal value.
+
+============================================================
+12. CONFIDENCE / RESEARCH GAPS
+============================================================
+
+Update confidenceGaps / Research Needed after every 5,000-record checkpoint.
+
+For each gap track:
+- evidence currently available
+- direct vs indirect status
+- families/classes affected
+- what exact missing document/data would reduce uncertainty most
+- priority
+
+A research item may reduce one uncertainty while exposing another; preserve that honestly.
+
+============================================================
+13. NO SILENT NUMERICAL GENERATOR CHANGES
+============================================================
+
+CORPUS INGESTION DOES NOT AUTOMATICALLY AUTHORIZE A PHYSICS CHANGE.
+
+Before any numerical generator change, produce a trace:
+
+SOURCE EVIDENCE
+-> EXTRACTED MEASUREMENT/RULE
+-> APPLICABILITY INTERPRETATION
+-> HISTORICAL TARGET OR MECHANISM
+-> AFFECTED GENERATOR RULE/PARAMETER
+-> EXPECTED CROSS-FAMILY EFFECT
+-> REGRESSION FIXTURES THAT MUST PASS
+
+If the source supports only directionality/mechanism, change a rule/constraint or confidence model, not an invented coefficient.
+
+"NO NUMERICAL CHANGE JUSTIFIED" is a valid and desirable outcome.
+
+============================================================
+14. AC/CSP BRIDGE OUTPUT
+============================================================
+
+For evidence-to-AC tasks, classify findings into one of:
+
+DIRECT_HISTORICAL_OVERRIDE
+Example: documented racing tire dimension for a specific car/event.
+
+FAMILY_PRIOR_UPDATE
+Example: strong class/supplier evidence narrows a pressure or temperature range.
+
+SCALING_RULE_UPDATE
+Example: pressure/load/construction interaction strengthens a formula architecture.
+
+VALIDATION_CONSTRAINT
+Example: period evidence proves a tire generation could sustain high local tread temperature, but does not define a universal optimum.
+
+CALIBRATION_METHOD_UPDATE
+Example: source defines how to correlate F&M, pyrometer, or rig/on-track telemetry.
+
+NO_MODEL_CHANGE
+Evidence is valuable context but does not justify generator modification.
+
+============================================================
+15. BATCH CHECKPOINT OUTPUT — EVERY 5,000 LAYER C RECORDS
+============================================================
+
+Produce:
+
+A. INGESTION LEDGER
+One row per processed content_id.
+
+B. SOURCE REVIEW SUMMARY
+- unique sources newly identified
+- unique sources newly reviewed
+- existing sources expanded
+- full-text count
+- primary-scan count
+- abstract-only count
+- secondary-only count
+- inaccessible count
+
+C. EVIDENCE COUNTS
+- measurements
+- observations
+- scaling rules
+- historical constraints
+- fitment evidence
+- event/supplier evidence
+- calibration methods
+- calibration fixtures
+
+D. DUPLICATE / NOT-APPLICABLE / NO-DIRECT-SOURCE COUNTS
+
+E. CONFLICT REGISTER ADDITIONS
+
+F. CONFIDENCE GAP DELTA
+What improved and what remains unresolved.
+
+G. MODEL IMPACT PROPOSALS
+No silent numeric changes.
+
+H. AFFECTED FAMILY / CLASS MATRIX
+
+I. INTEGRITY TEST RESULTS
+
+J. PRIORITY RECOMMENDATIONS FOR NEXT 5K BATCH
+
+============================================================
+16. KNOWLEDGE INTEGRITY TESTS
+============================================================
+
+Run after Phase 1, after all 500 parent records, and after each 5,000 Layer C records.
+
+At minimum verify:
+- unique source IDs
+- unique evidence IDs
+- unique content/task IDs
+- no orphan sourceRefs
+- valid evidence types
+- valid units
+- URL/DOI/report metadata structure
+- source review status present
+- applicability/confidence present where required
+- measurement location preserved for thermal records
+- direct vs derived status present
+- no historical-real-km == AC-vKm semantic collapse
+- no tread temp == core temp semantic collapse
+- no duplicate bibliographic records
+- conflict references valid
+- knowledge version/hash internally consistent
+
+============================================================
+17. PROMOTION MILESTONES
+============================================================
+
+Do NOT rebuild the application after each research batch.
+
+Recommended milestones:
+
+MILESTONE 1:
+Layer A + Layer B complete + first 5,000 Layer C records processed.
+Output a major Research Impact Review.
+
+At this point identify whether the evidence materially strengthens the planned pressure/wear architecture update.
+
+MILESTONE 2:
+25,000 Layer C records processed.
+Update research impact/conflict/gap report.
+
+MILESTONE 3:
+50,000 Layer C records processed.
+Prepare the proposed Tire Knowledge release.
+
+Only after explicit review/promotion should the canonical knowledge release be versioned, hashed and bundled into the application.
+
+============================================================
+18. FINAL OUTPUT AFTER ALL THREE LAYERS
+============================================================
+
+Produce a single UNIFIED RESEARCH INGESTION REPORT containing:
+
+1. EXACT CORPUS ACCOUNTING
+- Layer A tasks/sources processed
+- 500 Layer B content_ids accounted for
+- 50,000 Layer C content_ids accounted for
+- actual unique bibliographic source count reviewed
+- actual unique new-source count added
+- existing-source count expanded
+
+Never claim "50,555 sources."
+
+2. SOURCE REVIEW STATUS BREAKDOWN
+
+3. EVIDENCE TYPE COUNTS
+
+4. TOP NEW DIRECT HISTORICAL MEASUREMENTS
+
+5. TOP NEW GENERAL MECHANICS / SCALING RULES
+
+6. TOP NEW MOTORSPORT CALIBRATION METHODS
+
+7. FITMENT / SUPPLIER / COMPOUND / EVENT EVIDENCE MATRIX
+
+8. PRESSURE KNOWLEDGE IMPACT
+Especially cold-hot closure, pressure/deflection, pressure/rate, pressure/temperature, tread-profile interaction.
+
+9. THERMAL KNOWLEDGE IMPACT
+Especially surface vs carcass/core/cavity, construction, pressure/load/speed, heat generation/transfer/cooling.
+
+10. WEAR KNOWLEDGE IMPACT
+Especially slip energy, load, temperature, driving severity, abrasion vs competitive grip life, wear->grip.
+
+11. FORCE/MOMENT/STIFFNESS KNOWLEDGE IMPACT
+
+12. WET/INTERMEDIATE KNOWLEDGE IMPACT
+
+13. HISTORICAL CLASS/FAMILY IMPACT MATRIX
+
+14. CONFLICT REGISTER
+
+15. CONFIDENCE GAPS BEFORE/AFTER
+
+16. PROPOSED MODEL/RULE CHANGES
+Separated into:
+- justified numerical changes
+- architecture/rule changes only
+- no-change conclusions
+- insufficient evidence
+
+17. AC/CSP BRIDGE PROPOSALS
+Historical target -> AC implementation, with evidence trace.
+
+18. KNOWLEDGE RELEASE PROPOSAL
+- proposed version
+- SHA/hash
+- changelog summary
+- source/evidence counts
+- integrity-test result
+
+19. REMAINING HIGHEST-PRIORITY RESEARCH MISSIONS
+
+============================================================
+19. MOST IMPORTANT ACCEPTANCE CRITERIA
+============================================================
+
+A. EVERY Layer B 500 content_id has an auditable final status.
+
+B. EVERY Layer C 50,000 content_id has an auditable final status, including valid "not present," "not applicable," "no direct source," "duplicate," or "insufficient evidence" outcomes.
+
+C. Every Layer A curated source/task has an auditable review result.
+
+D. The final knowledge base is MORE EVIDENCE-DENSE AND TRACEABLE, not merely larger.
+
+E. No source is counted multiple times because it appears in multiple corpus layers.
+
+F. No numerical generator change is made without evidence -> interpretation -> model -> regression trace.
+
+G. Historical targets and AC/CSP implementation remain explicitly separated.
+
+H. Full-text/abstract/secondary status is never misrepresented.
+
+I. Conflicting credible evidence is retained contextually rather than averaged into fake certainty.
+
+J. The final report states the ACTUAL unique source/evidence counts, not task counts presented as source counts.
+
+============================================================
+20. FIRST ACTION
+============================================================
+
+Before doing any physics coding or application rebuild:
+
+1. Read this unified prompt.
+2. Read the Layer A curated-source packet.
+3. Load/register all Layer B 500 task records.
+4. Read QUALITY_GATES.md.
+5. Load the Layer C first-priority 5,000 records.
+6. Build the source/task lineage graph and deduplication map.
+7. Process Layer A, Layer B, and the first 5,000 Layer C records to the degree required by the instructions above.
+8. Return the MILESTONE 1 RESEARCH IMPACT REVIEW.
+9. DO NOT modify/rebuild the Tire Lab yet unless a separate engineering prompt explicitly authorizes it after this research review.
+
+END OF UNIFIED INGESTION PROMPT

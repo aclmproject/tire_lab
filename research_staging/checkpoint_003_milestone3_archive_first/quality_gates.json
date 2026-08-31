@@ -1,0 +1,25 @@
+{
+  "layerESourceRows": 200,
+  "uniqueSourceIdentityIds": 200,
+  "uniqueNormalizedTitles": 200,
+  "uniqueCanonicalUrls": 200,
+  "duplicateWithMilestone2Title": 0,
+  "abstractOnlyRows": 200,
+  "excerptsAtOrBelow24Words": true,
+  "evidenceRows": 525,
+  "uniqueEvidenceIds": 525,
+  "evidenceSourceReferencesResolve": true,
+  "abstractEvidencePromotedToMeasurement": 0,
+  "targetMappingRelationships": {
+    "PARTIALLY_CLOSES": 12,
+    "CORROBORATES": 454
+  },
+  "partiallyClosedUniqueTargets": 12,
+  "protectedFileHashesMatchMilestone2": true,
+  "applicationChangedByMilestone3": false,
+  "physicsChangedByMilestone3": false,
+  "knowledgeVersionChangedByMilestone3": false,
+  "buildRun": false,
+  "releaseCreated": false,
+  "pass": true
+}

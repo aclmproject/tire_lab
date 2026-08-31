@@ -1,0 +1,32 @@
+{
+  "candidates": [
+    {
+      "evidenceId": "EVC-M2-ARCH-001",
+      "evidenceType": "COMPOUND_APPLICABILITY",
+      "type": "COMPOUND_APPLICABILITY",
+      "sourceIdentityId": null,
+      "supportingEvidenceIds": [
+        "WEVC-0005",
+        "WEVC-0006",
+        "WEVC-0012",
+        "WEVC-0013"
+      ],
+      "provenanceLayer": "D",
+      "claim": "Compound suitability is vehicle/load/context dependent and may vary with mass, normal load/FZ0, axle duty, tire dimensions, construction, thermal capacity, circuit energy demand, wetness, and ambient/track state.",
+      "applicability": "Evidence-backed architectural candidate only. No hard mass threshold or generator coefficient is authorized.",
+      "modelImpact": "SUPPORTED_ARCHITECTURE_CANDIDATE_NO_IMPLEMENTATION",
+      "status": "EVIDENCE_BACKED_ARCHITECTURAL_CANDIDATE",
+      "futureSearchTags": [
+        "same compound different-weight cars",
+        "intermediate choice by vehicle weight",
+        "supplier compound recommendation by axle load",
+        "overheating related to vehicle mass or tire load",
+        "endurance compound choice versus tire load"
+      ],
+      "claimFingerprint": "ae6cf05befe8c3ac92bed024",
+      "corroboratingEvidenceIds": []
+    }
+  ],
+  "numericalRulesImplemented": 0,
+  "applicationFilesChanged": 0
+}

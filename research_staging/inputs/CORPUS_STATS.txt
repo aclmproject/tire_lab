@@ -1,0 +1,31 @@
+ACLM TIRE LAB 500-PIECE CORPUS EXPANSION — STATS
+
+Total content-ingestion records: 500
+Current source records deep-mined: 145 x 2 = 290
+Previous 50 new-source packet: 50 x 2 = 100
+Fresh additional source candidates: 50 x 2 = 100
+Cross-source high-priority gap missions: 10
+Unique exact source titles across current + prior + fresh: 245
+Exact-title duplicate warnings: 0
+
+Record groups:
+  current_knowledge_deep_mine: 290
+  previous_50_source_packet: 100
+  fresh_50_sources: 100
+  cross_source_gap_mission: 10
+
+Domain tagging (records can have multiple):
+  motorsport: 252
+  forces: 228
+  wear: 177
+  construction: 162
+  pressure: 152
+  thermal: 143
+  wet: 122
+  geometry: 95
+  transient: 39
+  regulation: 20
+  general_tire_physics: 6
+
+Design note:
+“500 pieces” is implemented as 500 discrete evidence-ingestion/research records, not 500 unvetted URLs. This deliberately deep-mines the 145 sources the tool already knows, fully ingests the prior 50-source queue, adds 50 further source candidates, and opens 10 targeted gap missions. Desktop must actually read/verify sources before promoting evidence.

@@ -1,62 +1,81 @@
 (function(root){
 "use strict";
 const ATM_PSI=14.6959;
-
-function solveColdPsi(idealHotPsi,targetHotC,referenceColdC,atmPsi=ATM_PSI){
-  idealHotPsi=Number(idealHotPsi);
-  targetHotC=Number(targetHotC);
-  referenceColdC=Number(referenceColdC);
-  if(!Number.isFinite(idealHotPsi)||!Number.isFinite(targetHotC)||!Number.isFinite(referenceColdC)) return NaN;
-  const th=targetHotC+273.15, tc=referenceColdC+273.15;
-  if(th<=0||tc<=0) return NaN;
-  return (idealHotPsi+atmPsi)*(tc/th)-atmPsi;
+const VOLUME_PROVENANCE=Object.freeze({DIRECTLY_SUPPORTED:"DIRECTLY_SUPPORTED",CONSTRUCTION_PRIOR:"CONSTRUCTION_PRIOR",GEOMETRY_DERIVED:"GEOMETRY_DERIVED",TELEMETRY_CALIBRATED:"TELEMETRY_CALIBRATED",UNKNOWN_ASSUMED_UNITY:"UNKNOWN_ASSUMED_UNITY"});
+const REFERENCE_DRIVER=Object.freeze({AI_REFERENCE:"AI_REFERENCE",HUMAN_REFERENCE:"HUMAN_REFERENCE",UNKNOWN:"UNKNOWN",UNSPECIFIED:"UNKNOWN"});
+const INITIAL_STATE_SOURCE=Object.freeze({DIRECT_TELEMETRY:"DIRECT_TELEMETRY",VALIDATED_AC_FIXTURE:"VALIDATED_AC_FIXTURE",EXPLICIT_SETUP_REFERENCE:"EXPLICIT_SETUP_REFERENCE",AMBIENT_PROXY_UNRESOLVED:"AMBIENT_PROXY_UNRESOLVED"});
+const CONSTRUCTION_CAVITY_PRIOR_C=Object.freeze({bias:1.5,radial:-0.5,unknown:0,provenance:"CONSTRUCTION_PRIOR",confidence:"low bounded engineering prior; direction is evidence-supported, magnitude requires telemetry",sourceIds:Object.freeze(["E-SRC-0096","E-SRC-0098"])});
+const CALIBRATIONS=Object.freeze({
+ FAM023:Object.freeze({status:Object.freeze({pressure:"PROVISIONAL LIVE PASS; axle pressure architecture closes in the clean v0.10.1 Escort run, while the historical target remains provisional",temperature:"UNRESOLVED; coherent v0.10.1 telemetry is descriptive simulator evidence, not a period optimum source"}),reference:Object.freeze({car:"Ford Escort RS1600 Group 2",track:"Brands Hatch GP",idealPsi:27,initialCoreC:Object.freeze({AI_REFERENCE:34.2}),containedAirC:Object.freeze({HUMAN_REFERENCE:Object.freeze({front:61.8,rear:62.3}),AI_REFERENCE:Object.freeze({front:58.5,rear:54.5})})}),evidence:Object.freeze({fixtureId:"ESCORT-RS1600-BRANDS-PRESSURE-AB-002",aiFixtureId:"ESCORT-RS1600-BRANDS-AI-V0100-001",liveFixtureId:"ESCORT-RS1600-BRANDS-LIVE-V0101-003",confidence:"human A/B plus clean controlled v0.10.1 AI live pressure closure",limitation:"Simulator pressure-reference calibration only. Absolute historical temperature, pressure and wear calibration remain unresolved; no global coefficient retune is authorized."})}),
+ FAM003:Object.freeze({status:Object.freeze({pressure:"calibration hold",temperature:"warm/cold convergence measured; historical absolute target unresolved"}),legacyColdHold:true,evidence:Object.freeze({fixtureId:"BRM-P48-CSPV2-AB-001",confidence:"controlled thermal A/B; pressure question unresolved",limitation:"Retains the prior BRM cold recommendation until a pressure-corrected BRM A/B exists."})}),
+ FAM022:Object.freeze({status:Object.freeze({pressure:"architecture regression only",temperature:"old run construction-contaminated"}),evidence:Object.freeze({fixtureId:"GT40-SOFTWARE-PRESSURE-REGRESSION-001",confidence:"software/pressure regression",limitation:"Old radial-contaminated GT40 telemetry must not fit FAM022 thermal coefficients."})})
+});
+function finite(value,fallback=NaN){const n=Number(value);return Number.isFinite(n)?n:fallback;}
+function clamp(value,low,high){return Math.max(low,Math.min(high,value));}
+function kelvin(c){return finite(c)+273.15;}
+function volumeModel(options={}){
+ const explicit=finite(options.hotToColdVolumeRatio);
+ if(explicit>0)return {hotToColdVolumeRatio:explicit,provenance:options.volumeProvenance||VOLUME_PROVENANCE.DIRECTLY_SUPPORTED,confidence:options.volumeConfidence||"explicit input",sourceIds:[...(options.volumeSourceIds||[])]};
+ return {hotToColdVolumeRatio:1,provenance:VOLUME_PROVENANCE.UNKNOWN_ASSUMED_UNITY,confidence:"low; Milestone 4 found no defensible universal racing-tire hot-volume-growth coefficient",sourceIds:["M4-FORMULA-009"]};
 }
-function predictHotPsi(coldGaugePsi,hotC,referenceColdC,atmPsi=ATM_PSI){
-  coldGaugePsi=Number(coldGaugePsi);
-  hotC=Number(hotC);
-  referenceColdC=Number(referenceColdC);
-  if(!Number.isFinite(coldGaugePsi)||!Number.isFinite(hotC)||!Number.isFinite(referenceColdC)) return NaN;
-  const th=hotC+273.15, tc=referenceColdC+273.15;
-  if(th<=0||tc<=0) return NaN;
-  return (coldGaugePsi+atmPsi)*(th/tc)-atmPsi;
+function pressureRatio(hotC,coldC,hotToColdVolumeRatio=1,temperatureGain=1){
+ const th=kelvin(hotC),tc=kelvin(coldC),vr=finite(hotToColdVolumeRatio,1),gain=finite(temperatureGain,1);
+ if(!(th>0&&tc>0&&vr>0&&gain>0))return NaN;
+ return 1+gain*((th/tc)/vr-1);
 }
-function classifyClosure(errorPsi){
-  const e=Math.abs(Number(errorPsi));
-  if(!Number.isFinite(e)) return "UNRESOLVED";
-  if(e<=0.5) return "GOOD";
-  if(e<=1.5) return "REVIEW";
-  return "FAIL / pressure model mismatch";
+function solveColdPsi(idealHotPsi,containedAirHotC,referenceColdC,atmPsi=ATM_PSI,hotToColdVolumeRatio=1,temperatureGain=1){
+ const ideal=finite(idealHotPsi),ratio=pressureRatio(containedAirHotC,referenceColdC,hotToColdVolumeRatio,temperatureGain);
+ return Number.isFinite(ideal)&&ratio>0?(ideal+atmPsi)/ratio-atmPsi:NaN;
+}
+function predictHotPsi(coldGaugePsi,containedAirHotC,referenceColdC,atmPsi=ATM_PSI,hotToColdVolumeRatio=1,temperatureGain=1){
+ const cold=finite(coldGaugePsi),ratio=pressureRatio(containedAirHotC,referenceColdC,hotToColdVolumeRatio,temperatureGain);
+ return Number.isFinite(cold)&&Number.isFinite(ratio)?(cold+atmPsi)*ratio-atmPsi:NaN;
+}
+function initialThermalState(options={}){
+ const observed=finite(options.actualInitialCoreC);
+ if(Number.isFinite(observed))return {temperatureC:observed,source:INITIAL_STATE_SOURCE.DIRECT_TELEMETRY,confidence:"authoritative observed AC session state",sourceIds:[...(options.initialStateSourceIds||[])]};
+ const explicit=finite(options.referenceSetupTemperatureC);
+ if(Number.isFinite(explicit))return {temperatureC:explicit,source:INITIAL_STATE_SOURCE.EXPLICIT_SETUP_REFERENCE,confidence:"explicit setup/reference input; validate against AC telemetry",sourceIds:[...(options.initialStateSourceIds||[])]};
+ const familyId=String(options.familyId||options.referenceDuty?.familyId||"").toUpperCase(),driver=String(options.referenceDriver||options.referenceDuty?.driver||REFERENCE_DRIVER.UNKNOWN).toUpperCase();
+ if(familyId==="FAM023"&&driver===REFERENCE_DRIVER.AI_REFERENCE)return {temperatureC:CALIBRATIONS.FAM023.reference.initialCoreC.AI_REFERENCE,source:INITIAL_STATE_SOURCE.VALIDATED_AC_FIXTURE,confidence:"observed repeatable AC AI session start for pressure screening; not a universal ambient offset",sourceIds:[CALIBRATIONS.FAM023.evidence.aiFixtureId]};
+ const ambient=finite(options.ambientAirC,finite(options.referenceColdC,26));
+ return {temperatureC:ambient,source:INITIAL_STATE_SOURCE.AMBIENT_PROXY_UNRESOLVED,confidence:"unresolved fallback only; ambient is not asserted to equal AC initial tire core",sourceIds:[]};
+}
+function normalizeSetupControl(control={}){control=control||{};const min=finite(control.min),max=finite(control.max),step=finite(control.step),rawDefault=control.default,defaultPsi=rawDefault===null||rawDefault===undefined||String(rawDefault).trim()===""?NaN:finite(rawDefault);return {min:Number.isFinite(min)?min:null,max:Number.isFinite(max)?max:null,step:step>0?step:null,default:Number.isFinite(defaultPsi)?defaultPsi:null,source:control.source||null,section:control.section||null};}
+function quantizeSetupPressure(pressurePsi,control={}){const value=finite(pressurePsi),c=normalizeSetupControl(control);if(!Number.isFinite(value)||!c.step)return {continuousPsi:value,achievablePsi:value,quantized:false,control:c,deltaPsi:0};const anchor=c.min??0;let achievable=anchor+Math.round((value-anchor)/c.step)*c.step;if(c.min!==null)achievable=Math.max(c.min,achievable);if(c.max!==null)achievable=Math.min(c.max,achievable);const precision=Math.max(0,(String(c.step).split(".")[1]||"").length);achievable=Number(achievable.toFixed(Math.min(8,precision+2)));return {continuousPsi:value,achievablePsi:achievable,quantized:Math.abs(achievable-value)>1e-9,control:c,deltaPsi:achievable-value};}
+function predictFromObservedState(initialPressurePsi,initialCoreC,finalCoreC,options={}){return predictHotPsi(initialPressurePsi,finalCoreC,initialCoreC,finite(options.atmPsi,ATM_PSI),finite(options.hotToColdVolumeRatio,1),finite(options.temperatureGain,1));}
+function classifyClosure(errorPsi){const e=Math.abs(finite(errorPsi));return !Number.isFinite(e)?"UNRESOLVED":e<=.5?"PASS":e<=1.5?"REVIEW":"FAIL";}
+function constructionModel(construction){
+ const c=String(construction||"").toLowerCase(),key=/bias|cross/.test(c)?"bias":/radial/.test(c)?"radial":"unknown";
+ return {construction:key,mechanicalResponse:key==="bias"?"higher carcass/deflection sensitivity must be retained":key==="radial"?"belted response must be retained":"construction response unresolved",numericVolumeCoefficient:"not assigned; no M4 racing coefficient",sourceIds:["E-SRC-0096","M4-FORMULA-009"]};
+}
+function predictedContainedAir(options={}){
+ const familyId=String(options.familyId||options.referenceDuty?.familyId||"").toUpperCase(),axle=options.axle||options.referenceDuty?.axle||"front",explicit=finite(options.predictedContainedAirC);
+ if(Number.isFinite(explicit))return {temperatureC:explicit,mode:"explicit thermal/reference-duty estimate",confidence:options.containedAirConfidence||"explicit engineering input",uncertaintyC:finite(options.containedAirUncertaintyC,8),sourceIds:[...(options.containedAirSourceIds||[])]};
+ const compound=String(options.compound||options.inputs?.compound||"").toLowerCase();
+ const driver=String(options.referenceDriver||options.referenceDuty?.driver||REFERENCE_DRIVER.UNKNOWN).toUpperCase();
+ if(familyId==="FAM023"&&(!compound||compound==="medium"||compound==="race")&&(driver===REFERENCE_DRIVER.AI_REFERENCE||driver===REFERENCE_DRIVER.HUMAN_REFERENCE)){const duty=CALIBRATIONS.FAM023.reference.containedAirC[driver];return {temperatureC:duty[axle]??((duty.front+duty.rear)/2),mode:`telemetry-calibrated ${driver===REFERENCE_DRIVER.AI_REFERENCE?"AI":"human"} dry-race reference-duty contained-air/core proxy`,confidence:driver===REFERENCE_DRIVER.AI_REFERENCE?"controlled AI live run; simulator pressure diagnostic only":"controlled human pressure A/B",uncertaintyC:driver===REFERENCE_DRIVER.AI_REFERENCE?8:5,sourceIds:[driver===REFERENCE_DRIVER.AI_REFERENCE?CALIBRATIONS.FAM023.evidence.aiFixtureId:CALIBRATIONS.FAM023.evidence.fixtureId],referenceDriver:driver};}
+ const i=options.inputs||{},cold=finite(options.referenceColdC,26),loadN=Math.max(100,finite(i.referenceTireLoadN,finite(i.loadN,2500))),widthM=Math.max(.08,finite(i.widthM,.2)),volume=Math.max(.008,finite(i.estimatedInternalAirVolumeM3,.03)),duty=clamp(finite(options.trackDutyFactor,finite(i.trackDutyFactor,1)),.75,1.3);
+ const loadDensity=loadN/(widthM*1000),volumeScale=volume/.03,construction=constructionModel(i.construction),constructionDeltaC=CONSTRUCTION_CAVITY_PRIOR_C[construction.construction]||0;
+ const rise=clamp(31+0.55*(loadDensity-11)-2*(volumeScale-1)+7*(duty-1)+constructionDeltaC,20,52);
+ return {temperatureC:cold+rise,mode:"reference-duty thermal-network screening estimate",confidence:"low/provisional; contained-air telemetry required",uncertaintyC:12,sourceIds:["E-SRC-0113","M4-FORMULA-007","M4-FORMULA-008"],factors:{loadDensityNPerMm:loadDensity,internalVolumeScale:volumeScale,trackDutyFactor:duty,construction,constructionCavityTemperatureAdjustmentC:constructionDeltaC,constructionPrior:CONSTRUCTION_CAVITY_PRIOR_C}};
+}
+function solveRecommendedColdPsi(options={}){
+ const familyId=String(options.familyId||options.referenceDuty?.familyId||"").toUpperCase(),initial=initialThermalState({...options,familyId}),contained=predictedContainedAir({...options,familyId,referenceColdC:initial.temperatureC}),volume=volumeModel(options),ideal=finite(options.idealPsi),coldC=initial.temperatureC,temperatureGain=clamp(finite(options.pressureTemperatureGain,1),.1,3);
+ const raw=solveColdPsi(ideal,contained.temperatureC,coldC,ATM_PSI,volume.hotToColdVolumeRatio,temperatureGain),legacy=Number.isFinite(finite(options.legacyTargetHotC))?solveColdPsi(ideal,finite(options.legacyTargetHotC),coldC,ATM_PSI,1,temperatureGain):NaN;
+ let recommended=raw,guardrail="none";
+ if(familyId==="FAM003"&&Number.isFinite(legacy)){recommended=legacy;guardrail="BRM calibration hold retains v0.9.2 recommendation; tread optimum is not relabelled as cavity temperature";}
+ const predicted=predictHotPsi(recommended,contained.temperatureC,coldC,ATM_PSI,volume.hotToColdVolumeRatio,temperatureGain);
+ const quantized=quantizeSetupPressure(recommended,options.setupPressureControl),achievablePredicted=predictHotPsi(quantized.achievablePsi,contained.temperatureC,coldC,ATM_PSI,volume.hotToColdVolumeRatio,temperatureGain);
+ return {recommendedColdPsi:recommended,achievableSetupColdPsi:quantized.achievablePsi,setupQuantization:quantized,predictedHotPsi:predicted,predictedHotFromAchievablePsi:achievablePredicted,predictedHotPressureErrorPsi:predicted-ideal,predictedAchievableHotPressureErrorPsi:achievablePredicted-ideal,predictedContainedAirC:contained.temperatureC,predictedInternalCoreC:contained.temperatureC,initialThermalState:initial,referenceColdC:coldC,containedAirModel:contained,volumeModel:volume,pressureTemperatureGain:temperatureGain,pressureResponseFactor:temperatureGain,legacyColdPsi:legacy,rawPhysicalColdPsi:raw,guardrail,classification:classifyClosure(predicted-ideal),achievableClassification:classifyClosure(achievablePredicted-ideal),constructionModel:constructionModel(options.inputs?.construction)};
 }
 function pressureReport(options={}){
-  const staticPsi=Number(options.staticPsi),idealPsi=Number(options.idealPsi),referenceColdC=Number(options.referenceColdC),targetHotC=Number(options.targetHotC);
-  const predictedHotPsiValue=predictHotPsi(staticPsi,targetHotC,referenceColdC),predictedRisePsi=predictedHotPsiValue-staticPsi,errorPsi=predictedHotPsiValue-idealPsi;
-  return {
-    generatedPressureStaticPsi:staticPsi,
-    generatedPressureIdealPsi:idealPsi,
-    referenceColdTemperatureC:referenceColdC,
-    referenceStabilizedTemperatureC:targetHotC,
-    predictedHotPressureRisePsi:predictedRisePsi,
-    predictedStabilizedHotPressurePsi:predictedHotPsiValue,
-    predictedHotPressureErrorPsi:errorPsi,
-    closureClassification:classifyClosure(errorPsi),
-    referenceDuty:options.referenceDuty||null,
-    inputs:options.inputs||null,
-    modelScope:"constant-volume ideal-gas first-order pressure prediction",
-    modeledFactors:["starting pressure","starting temperature","reference stabilized internal temperature"],
-    pendingCalibrationFactors:["internal air volume and dimensional growth","vehicle and axle load","rolling/flex heating","construction and carcass compliance","track duty","compound","measured surface/carcass/core transfer"],
-    decision:"diagnostic prediction only; do not force every track to the same hot pressure"
-  };
+ const familyId=String(options.familyId||options.referenceDuty?.familyId||"").toUpperCase(),model=options.model||solveRecommendedColdPsi({...options,familyId}),staticPsi=finite(options.staticPsi,model.recommendedColdPsi),idealPsi=finite(options.idealPsi),coldC=model.referenceColdC,hotC=finite(options.predictedContainedAirC,model.predictedContainedAirC),volume=model.volumeModel||volumeModel(options),gain=finite(model.pressureTemperatureGain,1),predicted=predictHotPsi(staticPsi,hotC,coldC,ATM_PSI,volume.hotToColdVolumeRatio,gain),error=predicted-idealPsi,quantized=quantizeSetupPressure(model.recommendedColdPsi,options.setupPressureControl),observed=finite(options.observedStartingPressurePsi);
+ const rawSelected=options.selectedSetupPressurePsi,selected=rawSelected===null||rawSelected===undefined||String(rawSelected).trim()===""?NaN:finite(rawSelected),rawDefault=quantized.control?.default,setupDefault=rawDefault===null||rawDefault===undefined||String(rawDefault).trim()===""?NaN:finite(rawDefault);
+ return {generatedPressureStaticPsi:staticPsi,acPhysicsReferencePressurePsi:staticPsi,recommendedSetupColdPressurePsi:model.recommendedColdPsi,achievableSetupColdPressurePsi:quantized.achievablePsi,setupPressureQuantization:quantized,setupDefaultColdPressurePsi:Number.isFinite(setupDefault)?setupDefault:null,selectedSetupColdPressurePsi:Number.isFinite(selected)?selected:null,observedSessionStartingPressurePsi:Number.isFinite(observed)?observed:null,pressureConcepts:{physicsReference:"PRESSURE_STATIC in tyres.ini",continuousRecommendation:"reference-duty solver output",achievableSetup:"recommendation quantized to imported setup.ini controls when known",setupDefault:"DEFAULT from setup.ini when the host defines it",setupSelected:"actual AC/Content Manager setup selection when supplied; a persisted last.ini can override the generated recommendation",observedStart:"authoritative recorded AC shared-memory pressure",trackSpecificCornerTuning:"post-run validation output; never hard-coded into tyres.ini"},acImplementationBinding:"PRESSURE_STATIC, continuous recommendation, setup grid, setup default, setup selected value and observed starting pressure are independent reported concepts",generatedPressureIdealPsi:idealPsi,ambientAirTemperatureC:finite(options.ambientAirC),roadTemperatureC:finite(options.roadTemperatureC),referenceSetupTemperatureC:finite(options.referenceSetupTemperatureC),acInitialCoreTemperatureC:model.initialThermalState?.temperatureC??null,initialThermalState:model.initialThermalState,referenceColdTemperatureC:coldC,predictedContainedAirHotTemperatureC:hotC,containedAirTemperatureUncertaintyC:model.containedAirModel?.uncertaintyC??null,treadGripCurveOptimumTemperatureC:finite(options.targetHotC),predictedHotToColdVolumeRatio:volume.hotToColdVolumeRatio,volumeRatioProvenance:volume.provenance,volumeRatioConfidence:volume.confidence,predictedHotPressureRisePsi:predicted-staticPsi,predictedStabilizedHotPressurePsi:predicted,predictedHotPressureErrorPsi:error,closureClassification:classifyClosure(error),pressureTemperatureGain:gain,oldV092ColdPredictionPsi:model.legacyColdPsi,coldPredictionChangePsi:model.recommendedColdPsi-model.legacyColdPsi,predictionMode:model.containedAirModel?.mode,guardrail:model.guardrail,constructionModel:model.constructionModel,calibrationStatus:CALIBRATIONS[familyId]?.status||{pressure:"provisional physical reconstruction",temperature:"historical absolute target unresolved"},provenance:CALIBRATIONS[familyId]?.evidence||null,referenceDuty:options.referenceDuty||null,inputs:options.inputs||null,modelScope:"absolute-pressure gas relationship using contained-air temperature and an explicit hot/cold volume ratio",formula:"P2_abs = P1_abs × (T2_air/T1_air) × (V1/V2)",acParameterAudit:{PRESSURE_TEMPERATURE_GAIN:"retained as an effective simulator input; exact AC semantics require telemetry closure and it is not silently treated as a gas-law coefficient",PRESSURE_STATIC:"physics reference; it is not asserted to be an exact selectable setup value",PRESSURE_IDEAL:"grip-optimum pressure",PRESSURE_SPRING_GAIN:"retained generator prior; not used as a gas-law coefficient",PRESSURE_FLEX_GAIN:"retained generator prior; not used as a gas-law coefficient",PRESSURE_D_GAIN:"retained generator prior; not used as a gas-law coefficient",PRESSURE_RR_GAIN:"retained generator prior; not used as a gas-law coefficient"},pendingCalibrationFactors:["internal air volume and dimensional growth","measured racing hot/cold cavity-volume ratio","contained-air temperature by family and duty","construction-specific pressure/compliance telemetry","AC pressure-gain parameter closure"],decision:"reference axle recommendation only; track-specific per-corner tuning belongs to post-run validation"};
 }
-function optimalTempFromLutText(text){
-  const pts=String(text||"").split(/\r?\n/).map(line=>line.trim()).filter(Boolean).map(line=>{
-    const p=line.split("|"); return [Number(p[0]),Number(p[1])];
-  }).filter(p=>Number.isFinite(p[0])&&Number.isFinite(p[1]));
-  if(!pts.length) return NaN;
-  const max=Math.max(...pts.map(p=>p[1]));
-  const peak=pts.filter(p=>Math.abs(p[1]-max)<1e-9).map(p=>p[0]);
-  return (Math.min(...peak)+Math.max(...peak))/2;
-}
-const api={ATM_PSI,solveColdPsi,predictHotPsi,classifyClosure,pressureReport,optimalTempFromLutText};
-if(typeof module!=="undefined"&&module.exports) module.exports=api;
+function optimalTempFromLutText(text){const pts=String(text||"").split(/\r?\n/).map(x=>x.trim()).filter(Boolean).map(x=>x.split("|").map(Number)).filter(p=>Number.isFinite(p[0])&&Number.isFinite(p[1]));if(!pts.length)return NaN;const max=Math.max(...pts.map(p=>p[1])),peak=pts.filter(p=>Math.abs(p[1]-max)<1e-9).map(p=>p[0]);return (Math.min(...peak)+Math.max(...peak))/2;}
+const api={ATM_PSI,VOLUME_PROVENANCE,REFERENCE_DRIVER,INITIAL_STATE_SOURCE,CONSTRUCTION_CAVITY_PRIOR_C,CALIBRATIONS,pressureRatio,volumeModel,solveColdPsi,predictHotPsi,predictFromObservedState,initialThermalState,normalizeSetupControl,quantizeSetupPressure,classifyClosure,constructionModel,predictedContainedAir,solveRecommendedColdPsi,pressureReport,optimalTempFromLutText};
+if(typeof module!=="undefined"&&module.exports)module.exports=api;
 root.ACLMPressure=api;
 })(typeof window!=="undefined"?window:globalThis);

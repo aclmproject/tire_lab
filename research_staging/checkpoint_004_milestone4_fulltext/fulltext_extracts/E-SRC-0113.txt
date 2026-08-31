@@ -1,0 +1,1142 @@
+=== PDF PAGE 1 ===
+DOE/NASA/51 044-24
+NASA TM-82836 NASA-TM-82836 19820020910
+Rolling Resistance of Electric Vehicle
+Tires from Track Tests
+....
+Miles O. Dustin and Ralph J. Slavik
+National Aeronautics and Space Administration
+Lewis Research Center
+June 1982
+LA GlEY RESr- C,R " \, H CENTER
+LIBRARY. N<>.SA
+HAMPTON. VIRGINIA
+Prepared for
+U.S. DEPARTMENT OF ENERGY
+Conservation and Renewable Energy
+Office of Vehicle and Engine R&D
+I
+J
+
+
+
+=== PDF PAGE 2 ===
+NOTICE
+This report was prepared to document work sponsored by the United States
+Government. Neither the United States nor ItS agent, the United States Department of
+Energy, nor any Federal employees, nor any of their contractors, subcontractors or their
+employees, makes any warranty, express or implied, or assumes any legal liability or
+responsioillty for the accuracy, completeness, or usefulness of any information,
+apparatus, product or process disclosed. or represents that its use would not infringe
+privately owned rights.
+- -- -- -----------
+
+
+
+=== PDF PAGE 3 ===
+r·~-- --------
+DOE/NASA/51 044-24
+NASA TM-82836
+Rolling Resistance of Electric Vehicle
+Tires from Track Tests
+Miles O. Dustin and Ralph J. Slavik
+National Aeronautics and Space Administration
+Lewis Research Center
+Cleveland, Ohio 44135
+June 1982
+Work performed for
+U.S. DEPARTMENT OF ENERGY
+Conservation and Renewable Energy
+Office of Vehicle and Engine R&D
+Washington, D.C. 20545
+Under Interagency Agreement DE-AI01-77CS51 044
+- ---. - -- .
+..J
+
+
+
+=== PDF PAGE 4 ===
+ROLLING RESISTANCE OF ELECTRIC VEHICLE
+TIRES FKOM TRACK TESTS
+o.
+Miles Dustin and Ralph J. Slavik
+National Aeronautics and Space Administration
+Lewis Research Center
+Cleveland, Ohio
+SUMMARY
+Two sets of low-rolling-resistance tires were track tested to obtain
+realistic tire characteristics for use in programming the Road Load
+Simulator, a special dynamometer facility located at the NASA Lewis Research
+Center. One set was specially made by Goodyear Tire and Rubber Company for
+DOE's ETV-1 electric vehicle, and the other was a set of standard commercial
+automotive tires. The tests were conducted over an ambient temperature
+range of 15° to 32° C (59° to 89° F) and with tire pressures of 207 and 276
+kPa (30 and 40 psi).
+('V)
+o
+Both sets of tires had very low rolling resistance. The commercial
+N
+r tires, which were manufactured approximately 3 years after the electric
+I
+W vehicle tires, exhibited lower rolling resistance than the electric vehicle
+tires. This is a result of the continuing effort by the tire manufacturers
+to reduce rolling resistance in order to improve fuel economy. At a
+contained-air temperature of 38° C (100° F) and a pressure of 207 kPa (30 .
+psi), the resistance of the electriG vehicle tires was 0.0102 kilogram per
+kilogram of vehicle weight and the resistance of the commercial tires was
+0.0088 kilogram per kilogram of vehicle weight. At a contained-air
+temperature of 38° C (100° F) and a pressure of 276 kPa (40 psi), the
+resistance of the electric vehicle tires was 0.009 kilogram per kilogram of
+vehicle weight and the resistance of the commercial tires was 0.0074
+kilogram per kilogram of vehicle weight. The average time for the tires to
+reach an equilibrium temperature after startup was 20 minutes for the
+tests regardless of vehicle speed and 27 minutes for the SAE
+constan~-speed
+J227a Schedule D driving cycle tests. The average change in rolling
+resistance from startup to final equilibrium value was 5 percent for all
+tests. There was very little heating of the tires from velocity-dependent
+losses. The predominant heating source for these tires was radiation
+heating from the Sun . .
+INTRODUCTION
+A test facility located at NASA's Lewis Research Center is used for
+test and evaluation of electric vehicle propulsion systems that result from
+the Department of Energy's (DOE) Electric Vehicle Program. This facility,
+the Road Load Simulator (RLS) (ref. 1) provides a means for testing
+propulsion systems under road load conditions that the system would
+experience in a vehicle. To obtain realistic performance characteristics of
+propulsion systems, it is important to program the RLS with accurate
+aerodynamic and tire rolling resistance values.
+Many independent tire tests have been carried out to determine the
+rolling resistance of bias-ply, bias-belted, and radial-belted tires under
+controlled laboratory conditions (refs. 2 to 7). These references indicate
+
+
+
+=== PDF PAGE 5 ===
+that rolling resistance decreases of more than 50 percent could be expected
+during" the first 30 minutes of operation. However, high rolling resistance
+during those first few minutes of operation can greatly affect the operating
+range of an electric vehicle.
+Special low-rolling-resistance tires were made by Goodyear Tire and
+Rubber Company for the Electric Test Vehicle One (ETV-1), an electric
+~
+vehicle built by the General Electric Company and the Chrysler Corporation
+for DOE. These tires were tested by NASA's Lewis Research Center to acquire
+data for realistically programming the RLS. Tests were also conducted on a
+set of standard commercial automotive tires. These were Goodyear's Viva
+tires. Both sets of tires were tested under actual operating conditions on
+the test track at the Transportation Research Center of Ohio.
+u.S. customary units were used for recording experimental data. The
+units were converted to the International System of Units (SI) for
+presentation in this report. U.S. customary units are presented in
+parentheses.
+TEST PROCEDURE
+The tests were conducted between April 28, 1981, and August 26, 1981,
+at the State of Ohio's Transportation Research Center. The Center is
+located 72 km (45 miles) northwest of Columbus along U.S. Route 33 near East
+Liberty, Ohio. A layout of the track is shown in figure 1.
+Test Vehicle
+A 1981 Chevette with automatic transmission was used as the test
+vehicle. The vehicle weight was adj usted by adding sandbag ballast until
+the gross vehicle weight including i nstrumentation and driver was brought up
+to 1402 kg (3090 lb). The gross vehicle weight was divided evenly between
+the front and rear axles.
+Test Tires
+Rolling resistance tests were conducted on two sets of size P175/75R13
+radial tires. The firs t set was specially made in 1978 by Goodyear for
+General Electric to be" used on the ETV-1. These tires are steel belted and
+use a special low-loss compound. The other set, Goodyear Viva tires, have
+two fiberglass and one polyester tread belt and one polyester sidewall ply.
+This tire, a standard commercial tire used on passenger cars, is load rated
+for 505 kg (1113 lb) at 240 kPa (35 psi).
+Instrumentation
+One re ar tire was instrumented for temperature and the other for
+pressure. A thermocoupl e mounted in a passthrough in the rim was located in
+the center of the t ire to measure the contained-air temperature of the
+tire. Slip rings used to remove the signal from the wheel are shown in
+figure 2. A rotating union was used on the other rear wheel to take the
+tire pressure from the rotating wheel to a pressure transducer in the
+vehicle (fig. 3). It was not possible to mount the slip ring and rotating
+union to the same wheel. Both variables were recorded on strip-chart
+2
+
+
+
+=== PDF PAGE 6 ===
+recorders within the vehicle. During the driving, test vehicle speed was
+recorded from a fifth wheel mounted on a rear bumper bracket. A dc-to-ac
+inverter was used to power the recorder and the instrumentation electronics.
+A load cell was used between the test vehicle and a towing vehicle to
+measure the force required to tow vehicle. The force signal was
+~he t~st
+filtered with a 0.05-Hz-time-constant, second-order response filter before
+recording.
+Procedure
+The tires were first broken in by driving 650 km (400 miles) at 80
+km/hr (50 mph) prior to the test program.
+Because the road load could not be measured directly during the driving
+tests, it was determined in two steps. Contained-air temperature in the
+tire as a function of time was found during the driving tests. Then the
+relationship between the contained-air temperature and the tire rolling
+resistance was found by towing the vehicle. This procedure is explained in
+more detail as follows: First the vehicle was driven either at constant
+I.
+speed or over a driving cycle, starting with the tires as close to ambient
+temperature as possible. Tire contained-air temperature as a function of
+time was recorded during this test. An example test record is shown in
+figure 4. The temperature trace has been retraced from another recorded
+chart to get the temperature, pressure, and speed traces on one chart. The
+tests were run at constant speeds of 24, 56, 72, and 88 km/hr (15, 35, 45,
+and 55 mph) and over the SAE J227a Schedules B, C, and D (ref. 8). The
+tests and test conditions are tabulated in tab le I. The initial tire
+pressure was set at 21 0 C (700 F).
+The second set of data were taken while towing the test vehicle with
+another vehicle for approximately 1.6 km (1 mile) at about 5 km/hr (3 mph)
+and measuring the force required to tow the vehicle, the contained-air
+temperature of the tire, and the pressure of the opposite tire. These tests
+were conducted with initial tire pressures of 207 and 276 kPa (30 and 40
+psi) and over a range of stabilized contained-air temperatures of 21 0 to
+47° C (700 to 1160 F). The force measurement was done by attaching a load
+cell to the front bumper of the test vehicle, as shown in figure 5. The
+towing vehicle was then connected to the test vehicle with a light wire, as
+shown in figure 6. Care was taken to keep the wire level and in line with
+the direction of travel. To protect the load cell, the wire size was
+selected to break or untwist from the load cell if the load became
+excessive. A sample trace of the recorded force is shown in figure 7. The
+filter inserted in the load-cell signal conditioner reduced the large
+undulations present in the force trace. These undulations are a result of
+the small slope changes in the test track surface. Small variations in
+track surface cause large changes in the force required to tow the vehicle.
+The engine of the test vehicle was left idling and the transmission was left
+in neutral during the tests. It was found that, when both rear wheels were
+lifted from the ground, there was enough torque transmitted through the
+transmission to just keep the wheels turning. Thus, the contributions to
+the road load from the rear brakes, the differential, and the transmission
+were cancelled out and only the tire rolling resistance was measured during
+3
+
+
+
+=== PDF PAGE 7 ===
+the towing tests. The contributions from the front wheel bearings and front
+disk brakes are still in the test results but are small.
+DATA REDUCTION
+The tire rolling resistance as a function of time while driving a
+vehicle at constant speeds over driving cycles was determined in three steps:
+(1) The tire contained-air temperature was measured as a function of
+time for each driving mode during the driving tests. The tests were
+repeated for a range of ambient temperatures and at two initial tire
+pressures.
+(2) The rolling resistance was determined as a function of tire
+contained-air temperature by slowly towing the test vehicle and measuring
+the force required to maintain a fixed speed.
+(3) From these two sets of data the tire rolling resistance as a
+function of time was determined. The assumption was made that the change in
+rolling resistance is due to the change in tire pressure and the tire
+material temperature and that the resistance is not affected by the speed of
+the vehicle. These assumptions are substantiated by laboratory tests
+described in references 2, 3, 5, 6, and 7.
+Driving Tests
+The tire contained-air temperature data for a particular run, as shown
+in figure 8, were fitted with a second-order curve by means of a
+least-squares fit. The curve ends where the temperature began to drop in
+value. It was assumed that the temperature reached equilibrium at this
+point. Actually the temperature continued to incrEase and decrease in an
+undulating manner throughout the test for reasons that are discussed later
+under TEST RESULTS.
+Towing Tests
+A smooth curve was drawn through the force trace, as shown in figure 9,
+as an average force. In most cases only the last 10-minute portion of the
+trace was used to assure that the temperature had reached equilibrium.
+Depending on the time of day and the position of the Sun, the temperature
+did not always reach equilibrium. The tests were run in both directions on
+the track, and the force due to the average slope was added to or subtracted
+from the force values depending on the direction of the tow. The values
+determined from both directions were then averaged.
+TEST RESULTS
+Rolling Resistance as a Function of Temperature
+The t owi ng test data were used to plot rolling resistance as a funct ion
+of tire contained-air temperature. This relationship is shown for the
+special electric vehicle tires in figure 10 and for the Viva tires in figure
+11; curves for 207 and 276 kPa (30 and 40 psi) are shown.
+4
+- - -.--- ------
+
+
+
+=== PDF PAGE 8 ===
+Goodyear ran rolling resistance tests on P195/75R14 tires made of the
+same material as the special electric vehicle tires on a 170.8-cm
+(67.23-in.) drum tire test facility. The results of their tests are also
+plotted in figure 10. A correction factor specified by Goodyear was applied
+to their experimental data to correct for the curvature of the drum. The·
+Goodyear tests were performed with a cold inflation pressure of 179 kPa
+(26 psi). .
+Contained-Air Temperatures as a Function of Time
+The results of the tests to determine the contained-air temperature as
+a function of time for constant-speed tests on both the special electric
+vehicle tires and the Viva tires are shown in figure 12. Table II lists the
+tire type, the inflation pressure, the type of test, and the figure in which
+the test results are shown. Each figure contains the actual test points as
+taken from the strip-chart recorder and the best second-order fit to the
+test points as determined by the least-squares method.
+Rolling Resistance as a Function of Time
+Figure 13 shows the rolling resistance values as a function of time for
+both sets of tires as obtained by using the method outlined in the section
+DATA REDUCTION. Table III lists the tire type, the inflation pressure, the
+type of tests, and the figure in which the data appear.
+DISCUSSION OF RESULTS
+Many factors that are not encountered in laboratory tests affect the
+results of tests conducted on a test track. In fact, carefully conducted
+laboratory tests usually avoid factors such ftS ambient temperature changes,
+radiation heat input to the tires from the Sun, and test track temperature.
+These factors become very important when evaluating low-rolling-resistance
+tires designed for vehicles.
+electri~
+Ambient conditions have a large influence on contained-air temperature
+and therefore on tire pressure, ·which in turn affects the rolling resistance
+(ref. 4).
+In figure 14 is shown an example of the effect of radiation from the
+Sun on contained-air temperature. These data were taken on the Viva tires
+with 276-kPa (40-psi) pressure on a day that was described as partly sunny.
+The track surface temperature went from 27 0 C (80 0 F) at the beginning of
+the test to 300 C (86 0 F) at the end of the test. The vehicle was being
+driven over a Schedule D driving cycle. The time to negotiate one lap is
+shown on the curve as 15 minutes. Note that the period of the temperature
+undulations was also 15 minutes. Each time the vehicle came around the
+track so that the Sun shined on the tire the contained-air temperature
+increased, and as the tire was shaded by the vehicle, the tire cooled. The
+same effect was noted on all the data taken during sunny days.
+In contrast, one test was run late in the evening after the track and
+air temperatures had dropped. The temperature trace for this run is shown
+as the lower trace in figure 15. Also in the same figure, the upper trace
+is of the temperature taken under identical circumstances earlier the same
+5
+
+
+
+=== PDF PAGE 9 ===
+day while the Sun was still high. A couple of observations can be made from
+this figure. The Sun effects are apparent in the upper trace, where the
+temperature undulations have the same period as the time to traverse one
+lap. This effect is not seen in the lower trace. The lower trace shows
+very little temperature increase at higher speeds. The entire temperature
+spread is only 3° C (5° F). Apparently the convection cooling effect of the
+higher speed compensates for increased losses. The upper trace shows that
+the tire actually cools down at the beginning of each constant-speed run and
+heats up at the end of the run while the vehicle is stopped. This is also
+probably due to convection cooling of the tires when the vehicle is moving
+and heating from the Sun when the vehicle is standing.
+CONCLUDING REMARKS
+Track tests were conducted on two sets of low-rolling-resistance tires
+to provide means for accurately programming the Road Load Simulator. One
+set of tires was specially made of low-rolling-resistance material for use
+on electric vehicl es. The other was a set of standard commercial automotive
+tires. The rolling resistances of both sets of tires were indeed much lower
+than those of other radial tires . The Viva tires, which were manufactured
+approximately 3 years after the special electric vehicle tires, had even
+lower rolling resistance than the special tires. This illustrates the
+continuing improvement in automotive tire materials and construction methods
+in an effort to reduce fuel consumption (private communication from G. E.
+Pollard, Goodyear Tire and Rubber Co., Akron, Ohio). Other observations
+were made as follows:
+1. The average change in rolling resistance when starting the test
+with tires at ambient temperature was 5 percent at equilibrium. The tests
+were conducted in the summer with a lowest ambient temperature of about
+15° C (59° F). Tests conducted in the laboratory of the Firestone Tire and
+Rubber Company suggest that the change in rolling resistance is much larger
+at lower ambient temperatures.
+2. For the constant-speed tests the average time for the rolling
+resistance to reach an equilibrium condition after starting the test with
+the tires at ambient temperature was 23 minutes and was not affected by the
+vehicle speed. For all SAE J227a driving cycle tests the average time to
+reach equilibrium was 32 minutes.
+3. With low-rolling-resistance tires there is very little heating of
+the tires from velocity-dependent losses. The heating that does occur is
+apparently compensated for by increased convection cooling of the tires.
+4. The predominant heating source for these low-resistance tires was
+radiation heating from the Sun. Tests run at dusk showed less than 3° C
+(5° F) change in t i re temperature at speeds up to 88 km/hr (55 mph).
+6
+
+
+
+=== PDF PAGE 10 ===
+REFERENCES
+1. Sargent, N. B.: A Laboratory Fa .c i 1 ity for E1 e ctri c Vehi c 1e Propul s i on
+System Testing. DOE/NASA/11011-32, NASA TM-81574, 1980.
+2. Curtiss, W. W.: Low Power Loss Tires. SAE Paper 690108, Jan. 1969.
+3. Elliott, D. R.; Klamp, W. H.; and Kraemer, W. E.: Passenger Tire Power
+Consumption. 5AE Paper 710575, 1971.
+4. Janssen, M. L.; and Hall, G. L.: Effect of Ambient Temperature on
+Radial Tire Rolling Resistance. SAE Paper 800090, Feb. 1980.
+5. Floyd, C. W.: Power Loss Testing of Passenger Tires. 5AE Paper 710576,
+1971.
+6. Clark, S. K.; et al.: Rolling Resistance of Pneumatic Tires. OOT-TSC
+OST- 74-33, Department of Transportation, 1975. (PB-242985.)
+7. Schuring, D. J.: Rolling Resistance of Tires Measured Under Transient
+and Equilibrium Conditions on Calspan's Tire Research Facility. DOT-T5C-
+05T-76-9, Department of Transportation, 1976. (PB-251932.)
+8. Electric Vehicle Test Procedure. SAE J227a, Feb. 1976, SAE.
+7
+
+
+
+=== PDF PAGE 11 ===
+-
+r~-
+TABLE I. - RANGE OF TEST CONDITIONS FOR DRIVING TESTS
+[Tire types, Viva and special electric vehicle tires.]
+Tire pressure, kPa (psi) •••• .• 207 and 276 (30 and 40)
+Ambient temperature, °c (OF) •••• . • • • • 15 to 32 (59 to 89)
+Vehicle speed, km/hr (mph) ••• • • • • . • • • . .24, 56, 72, 88
+(15, 35, 45, 55)
+Driving cycles, SAE J227a Schedules . • ••• B, C, D
+TABLE II. - INDEX OF FIGURES FOR TIRE-CONTAINED-AIR TEMPERATURE
+AS A FUNCTION OF TIME
+Tire Ti re Test speed Figure
+type pressure or
+driving cycle
+kPa psi
+km/hr mph
+EVa 276 40 24 15 12(a)
+276 40 56 35 12(b)
+276 40 72 45 12(c)
+276 40 88 55 12(d)
+207 30 24 15 12(e)
+207 30 56 35 12(f)
+207 30 72 45 12(g)
+207 30 88 55 12(h)
+Viva 276 40 24 15 12(i)
+276 40 56 35 12 (j)
+276 40 72 45 12(k)
+276 40 88 55 12(1 )
+207 30 24 15 12(m)
+207 30 56 35 12(n)
+207 30 Schedule D Schedule D 12(p)
+276 40 Schedule D Schedule D 12(q)
+EV 276 40 Schedule D Schedule 0 12(r)
+Viva 207 30 Schedule C Schedule C 12(s)
+Vi va 276 40 Schedule C Schedule C 12(t)
+EV 207 30 Schedule C Schedule C 12(u)
+EV 276 40 Schedule C Schedule C 12(v)
+Viva 207 30 Schedule B Schedule B 12(w)
+EV 207 30 Schedule B Schedule B 12(x)
+EV 276 40 Schedule B Schedule B 12(y)
+aSpecial elect ric vehicle tires.
+
+
+
+=== PDF PAGE 12 ===
+TABLE III. - INDEX OF FIGURES FOR ROLLING RESISTANCE
+AS A FUNCTION OF TIME
+Tire Tire Test speed Figure
+type pressure or
+driving cycle
+kPa ps i
+km/hr mph
+EVa 276 40 24 15 13(a)
+276 40 56 35 13(b)
+276 40 72 45 13( c)
+276 40 88 55 13(d)
+207 30 24 15 13( e)
+207 30 56 35 13(f)
+207 30 72 45 13(g)
+207 30 88 55 13(h)
+Vi va 276 40 24 15 13( i)
+276 40 56 35 13(j)
+276 40 72 45 13(k)
+276 40 88 55 13(1)
+207 30 24 15 13(m)
+207 30 56 35 13( n)
+207 30 Schedule D Schedule D 13(p)
+276 40 Schedule D Schedule D 13( q)
+EV 276 40 Schedule 0 Schedule 0 13(r)
+Viva 207 30 Schedule C Schedule C 13( s)
+Vi va 276 40 Schedule C Schedule C 13(t)
+EV 207 30 Schedule C Schedule C 13 (u)
+EV 276 40 Schedule C Schedule C 13( v)
+Viva 207 30 Schedule B Schedule B 13(w)
+EV 207 30 Schedule B Schedule B 13(x)
+EV 276 40 Schedule B Schedule B 13(y)
+aSpecial electric vehicle tires.
+-
+-------~ -~--~--
+
+
+
+=== PDF PAGE 13 ===
+,, 0.730 km R (0.45 mile)
+,
+\ ,
+,
+5.6 km 1. 6° km
+(3. 5 miles) (1. mile)
+3.0 km
+(1. 88 ~ Weather station and
+miles) Traffic entry / / control tower
+0
+0.228 and exit
+Percent
+slope
+! I O. 228 Percent
+t
+slope
+I)
+Traffic direction
+Figure 1. - Characteristics of Transportation Research Center test track,
+East Liberty, Ohio.
+Figure 2. - Slip-ring unit mounted on rear wheel of Chevette. Thermocouple passthrough in upper left of wheel.
+
+
+
+=== PDF PAGE 14 ===
+Figure 3. - Rotating union used to measure pressure i[1 tire.
+Speed-\
+40 110 36 - ,..,... \ \
+r "
+u..
+0
+e- 100 30 "- Ti re te mpe ratu re"
+.3
+V e c> - . 30 E c E Q) . 90 . E c c . 24 I--' ~ --- T - I . - r - e - p - ressu re..J / -----/'
+2 "0-
+Q)
+e ~ 'n '- ; 80 Q ~ ) 18 f-
+;
+e c
+::
+. 20 c' " n Qc I0 ; ) 70
+>
+~ .
+Q
+Q c
+)
+) 12 -
+e
+u0
+60 6 -
+;::
+10 50 0 -l 5 min I--
+Figu re 4. - Sample test record taken du ring 56-km/h r (35-mph) constant-speed tests. (Temperature
+trace was copied from another record.)
+-------- -- -- . -- - ----
+
+
+
+=== PDF PAGE 15 ===
+Figure 5. - Load cell installed on front bumper of Chevette.
+Figure 6. - Small-diameter wire connecting load cell to towing vehicle.
+
+
+
+=== PDF PAGE 16 ===
+----
+--------~
+150 50 50
+130 45 40
+~
+E-
+Towing force
+::::J
+E
+'" . V0>- :!:!
+E 0 - llO E- 40 ",- 30
+. . l . ! . l . V ::: > :J ~ ~ Tir , e pressure
+'iii .V'.".>. en
+~ "'c 0I " : 90 ; E 0 = - 35 ~ '~ c: 20
+c:
+8
+E
+;=
+70 30 10
+Ti re tempe ratu re
+50 25 0
+Figure 7, - Sample record from towing test (Temperature trace
+was copied from another record, )
+40
+u
+0
+E-
+o u .. 100 .a
+E- E
+.a ' 0 " -
+E
+E .l!l
+' 0 " - 95 .... 35
+E '"
+. . l . ! . l . a I l
+c:
+- ' b " :§
+'" c:
+3
+c: 90 u0
+u c 0 : ; E =
+E
+;= 85 5 10 15 20
+Time, min
+Figure 8, - Tire contained-air temperature as a function of time for
+constant-speed test. Speed, 56 kmlh r (35 mph),
+
+
+
+=== PDF PAGE 17 ===
+-----_._-----
+150 50 5C
+Smooth Iine7
+I
+I
+I
+130 45 I
+u..
+0
+~
+::J Towing force
+1§
+' 0 " . 110 V 0 > . 40 :e 30
+! E .'.:.!. ." : . : ., J .- . " ~ E ,- Tire pressure
+' a « 1 l i V V .'."> > .. C <: 1\
+C 0. .~
+~ 90 ; ~ :: 35 ~ 20
+c
+u0
+'.."..
+;::
+70 30 10
+Tire temperature
+50 25 0
+Figure 9. - Sample record from towing test with smooth line
+through force data. (Temperature trace was copied from
+another record. )
+Tire pressure,
+kPa (psi)
+D. 207 (30)
+o Z16 (40)
+o 179 (26) (Goodyea r data,
+.012 tire II
+:E o 179 (26) (Goodyea r data,
+'a<::1; \ tire 2)
+~
+'"
+~ .Oll
+.c
+'"
+>
+'0
+~
+11' .0lD
+",-
+u
+.ce ;
+'Vi
+~ .009
+.0"'1
+"0
+0::
+.008
+20 30 ~ 40 ~ ~
+Tire contained-air temperature, °c
+70 80 90 100 110 120
+Tire contained-air temperatu re, OF
+Figure 10. - Rolling resistance as a function of contained-air
+temperatu re fo r special electric veh icle ti res.
+
+
+
+=== PDF PAGE 18 ===
+__
+--- - ----
+-------~-------
+---------- _. - . ..-
+Tire pressure,
+kPa (psi)
+l'> 207 (30)
+0 276 (40)
+.0lD
+:c
+o::n
+.(i;
+~
+:' < Q l> .009
+.c
+><l>
+"0
+g
+. ~
+",-
+uc:
+.l!I
+.V;;>;
+~
+o::n
+c:
+0
+0::
+.006
+20 25 30 35 40 <5 50
+Tire contained-air temperature, °c
+I
+70 80 90 100 110 120
+Tire contained-air temperature, of
+Figure ll. - Rolling resistance as a function of contained-air
+temperature for Goodyear Viva tires.
+
+
+
+=== PDF PAGE 19 ===
+-------~
+35 o
+o
+90
+00
+80
+70
+(a)
+20
+45
+no
+4(}
+100 u
+0
+~
+~-
+~
+E :J ~ .'."..
+Q)
+Q0)- 90
+E
+0-
+E
+~....
+~....
+'n;
+'n; I
+I 'il
+a c l 80 c:
+~
+~ c: 25
+u
+c
+0
+: u0
+.Q..). i E = 50
+i=
+45
+no
+000
+100
+90
+80
+25
+0 o 10 20
+Time, min
+(a) Run, 28; tire type, EV; tire pressure, Z76 kPa (40 psj); date, 5-21-81; time, Uk 20 a. m.; wind speed, 3 to 6 kmlh r (2 to 4 mph); vehicle speed,
+24 km/hr (l5 mph); ambient temperature, 180 C (650 F); track temperature, 210 C (700 Fl.
+(b) Run, 20; ti re type, EV; ti re pressure, 276 kPa (4() psil; date, 5-19-81; time, 3: 30 p. m.; wind speed, 8 to 24 kmih r (5 to 15 mph); vehicle speed,
+56 km/hr (35 mph); ambient temperatu re, 150 C (5cfl F); tracktemperatu re, 220 C (720 F).
+(e) Run, 26; ti re type, EV; tire pressure, Z76 kPa (4() psj); date, 5-20-81; time, 5:55 p. m.; wind speed, 8 to 11 km/h r (5 to 7 mph); vehicle speed,
+72 km/hr (45 mph); ambient temperature, 19'1 C (660 F); track temperature, 29'l C (850 Fl.
+(d) Run, 23; tire type, EV; tire pressure, 276 kPa (40psil; date, 5-20-81; time,l2:30p.m.; wind speed, 6to14km/hr(4t09mph); vehicle speed,
+88 km/hr (55 mph); ambient temperature, 170 C (6ZO F); track temperature, 340 C (930 Fl.
+(e) Run, 38; tire type, EV; tire pressure, 207 kPa(30 psj); date, 6-1-81; time, 12:55 p.m.; wind speed, 8to 16 kmihr(5to 10 mph); vehicle speed,
+24 km/hr (IS mph); ambient temperature, 170 C (630 F); track temperature, 330 C (910 Fl.
+(f) Run, 44A; tire type, EV; tire pressure, 207 kPa (30 psj); date, 6-2-81; time, 6:09 p. m.; wind speed, 8 to 14 kmihr (5 to 9 mph); vehicle speed,
+56 km/h r (35 mph); ambient temperatu re, 260 C (780 F); track temperatu re, 320 C (89'l Fl.
+(9) Run, 45; tire type, EV; tire pressure, 207 kPa (30 pSi.); date, 6-2-81; time, 7:34 p. m.; wind speed, 10 to 14 kmihr (6 to 9 mph); vehicle speed,
+72 km/h r (45 mph); ambient temperatu re, 250 C mo F); track temperatu re, 310 C (880 Fl.
+(h) Run, 46; tire type, EV; tire pressure, 207 kPa (30 psj); date, 6-2-81; wind speed, 0 km/hr to mph); vehicle speed, 88 kmihr (55 mph); ambi I
+ent temperature, 21 0 C (JOo Fl; track temperature, 280 C 1830 Fl. • I
+(j) Ru n, 61; ti re type, Viva; ti re pressu re, 276 kPa (4() psI); date, 6-15-81; time, 4: 24 p. m.; wind speed, 10 to 37 kmih r (6 to 23 mph); veh icle
+speed, 24 km/hr (l5 mph); ambient temperature, 320 C (89'l F); track temperature, 410 C 11050 Fl.
+Figu re 12. - Contained-air temperatu re as a function of time.
+
+
+
+=== PDF PAGE 20 ===
+50 '
+120
+00000
+llO
+100
+35
+u... u
+0 0
+E 90 E-
+" : E :l .a (j)
+30
+E
+'c" . E 'c".
+n ~... ; . ~ E .... 45
+llO .;;;
+-b
+'c": a I l
+c:
+~ c: i9 40
+8 c:
+E 100 u0
+i= > E =
+35
+90
+30
+80
+25
+70 (m)
+20
+0 10 30 40 0 10 20 30 40 0 10 20 30
+Time, min
+•
+(j) Run, 60; tire type, Viva; tire pressure, 276 kPa (40 psil; date, 6-15-81; time, 1:55 p. m.; wind speed, 16 to 24 km/hr no to 15 mph); vehicle
+speed, 56 km/hr (35 mph); ambient temperature, 310 C (880 F); track temperature, 42D C noso FI.
+(k) Run, 64; tire type, Viva; tire pressure, 276 kPa (4Opsil; date, 6-17-81; time, 5:07p.m.; wind speed, 2to5km/hrnt03mph); vehicle speed,
+72 kmihr (45 mph); ambient temperature, 220 C 1710 F); track temperature, 310 C (870 Fl.
+• II) Run, 59; tire type, Viva; tire pressure, 276 kPa (40 psil; date, 6-15-81; time, 12:05 p. m.; wind speed, 16 to 24 km/hr no to 15 mph); vehicle
+speed, 88 kmihr (55 mph); ambient temperature, 290 C (850 FI; track temperature, 380 C nOlO FI.
+(m) Run, 50; tire type, Viva; tire pressure, 207kPa(30psil; date, 6-15-81; time, 9:17a.m.; wind speed, 8to 14kmihr(5t09 mph); vehicle
+speed, 24 km/hr 115 mph); ambient temperature, 230 C 1730 F); track temperature, 280 C (8~ F).
+(n) Run, 49; tire type, Viva; tire pressure, 207 kPa (30 psi); date, 6-4-81; time, n55 p. m.; wind speed, 11 to 18 kmlhr (7 to 11 mph); vehicle
+speed, 56 kmih r (35 mph); ambient temperatu re, 240 C (760 F); track temperatu re, 330 C (920 Fl.
+c
+(0) Ru n, 54; ti re type, Viva; ti re pressu re, 207 kPa (30 psil; date, 6-8-81; ti me, 34 p. m.; wind speed, 26 to 39 kmlh r 116 to 24 mph); vehicle
+speed, 72 kmlhr (45 mph); ambient temperature, 280 C (830 F); track temperature, 390 C no~ FI.
+Figu re 12. - Continued.
+I
+I'
+I
+
+
+
+=== PDF PAGE 21 ===
+- ------ --- --
+45
+110
+40 o
+100
+35
+0
+90
+30
+u.. 80 u
+0 o...j 0 .a..t 25
+.a
+:::J ...
+~ '"
+..! 0 Q E !.!. ) . 70 .. Q ! E 0 .!.! ) . 20
+.;;; .~
+~ c " cQ C ) (p)
+~ c ~ c 15
+8 u0
+45
+l!! E
+>=
+>= 110
+40
+100
+o
+35
+90
+30
+80
+(s)
+25
+0 10 20 30 40 0 10 20 30 40 0 10 20 30 40
+Time, min
+(p) Run, 52; ti re type, Viva; tire pressure, 207 kPa (30 psi); date, 6-8-81; time, 10:47 a. m.; wind speed, 16 to 24 kmlh r no to 15 mph); driving cycle,
+Schedule D; ambient temperature, 240 C (760 Fl; track temperature, 3()0 C (860 Fl.
+(q) Run, 58; tire type, Viva; tire pressure, 276 kPa (40 psi); date, 6-15-81; time, 9:30 a. m.; wind speed, 11 to 23 kmlhr (7 to 14 mph); driving cycle,
+Schedule D; ambient temperature, 270 C (WO F); track temperatu re, 280 C (830 F).
+(r) Run, 22; ti re type, EV; ti re pressu re, 276 kPa (40 psi!; date, 5-20-81; time, 10:40 p. m.; wind speed, 5 to 11 kmlh r (3 to 7 mph); driving cycle,
+Schedule D; ambient temperature, 150 C (590 F); track temperature, 240 C (750 Fl.
+(s) Run, 51; tire type, Viva; tire pressure, 207 kPa (30 psiJ; date, 6-5-81; time, 12:45 p. m.; wind speed, 10 to 16 km/hr (6 to 10 mph); driving cycle,
+Schedule C; ambient temperature, 27 0 C (8()0 8; track temperature, 3~ C OOZO Flo
+(t) Run, 67; tire type, Viva; ti re pressure, 276 kPa (40 psiJ; date, 6-19-81; time, 9:41 a. m.; wind speed, 8 to 14 kmlh r ( 5 to 9 mph); driving cycle,
+Schedule C; ambient temperature, 240 C <750 F); track temperature, 3~ C (9(jl FJ.
+(u) Run, 36; tire type, EV; tire pressure, 207 kPa (30 psiJ; date, 5-29-81; wind speed, 6 to 16 kmlhr (4 to 10 mph); driving cycle, Schedule C; am
+bient temperature, 250 C mo F); track temperature, 340 C (940 Fl.
+Figure 12. - Continued.
+
+
+
+=== PDF PAGE 22 ===
+40
+100
+35
+90
+u
+u.. 0
+0
+80 ~-
+~- .a
+:J E
+~ C1>
+0-
+~ E
+E .!!!
+.! .. ! .. ! . 70 · . r . o ... 20 (v)
+a t I o l " cC0 I 1 >
+: c ii i J c 9 35
+u
+c
+0 90 ~
+u0
+E ;::
+;::
+80
+70 (x)
+10 20 30 40 0 10 20 30 40
+Time, min
+(v) Run, 41; tire type, EV; tire pressure, 276kPa (4Opsil; date, 6-2-81; time, 1Q35a.m.; wind speed, IOto
+16 kmlhr (6 to 10 mph); driving cycle, Schedule C; ambient temperature, 180 C (640 F); track temperature,
+260 C (780 F). .
+(w) Run, 47; tire type, Viva; tire pressure, 207 kPa (30 psil; date, 6-3-81; time, 4:22 p. m.; wind speed, 13 to
+19 km/h r (8 to 12 mph); driving cycle, Schedule B; ambient temperature, 260 C (780 F); track temperature,
+310 C (880 F).
+(x) Run, 37; tire type, EV; ti re pressu re, 207 kPa (30 psil; date, 6-1-81; time, 1Q 28 a. m.; wind speed, 8 to
+16 kmlh r (5 to 10 mph); driving cycle, Schedule B; ambient temperatu re, 150 C (51JO F); track temperature,
+260 C (7~ F).
+(y)Run, 40; tire type, EV; tire pressure, 276kPa(4Opsil; date, 6-2-81; time, 8:57a.m.; wind speed, 8to
+13 kmlhr (5 to 8 mph); driving cycle, Schedule B; ambient temperature, 170 C (630 Fl; track temperature,
+210 C (690 Fl.
+Figure 12. - Concluded.
+.
+
+
+
+=== PDF PAGE 23 ===
+.0100 .0100 .0100
+.0095
+(a) fbI (c)
+.0090 .0090 .0090
+~ .0100 .0ll5 .0110
+'(j;
+~
+:<g1>
+.c
+>Q)
+'5 .0095
+~
+~
+0;
+u
+.1 c 3 : (d) (f)
+.~ .0090 .0100
+e
+cC: l .0115 .0115 .0010
+'0
+0::
+.0110 .0075
+.0105 .0070
+.0100 a 10 20 30 ' . I r V l 0100 '-0 ----"-'- 1 ' 0 - -----'--- 2 - 0 ---'---- 3 - 0 ' -------- 4 ' 0 .0 065 1 a . .. ( . j . ) - -"-' 1 - 0 - --'----. 2 . 0 . .1....--- 3 - 0 -'------- 4 ' 0
+Time, min
+(a) Run, 28; tire type, EV; tire pressure, 'lT6 kPa (40 psil; date, 5-21-81; time, 10:20 a. m.; wind speed, 3 to 6 km/hr (2 to 4 mph); vehicle speed,
+24 km/hr 05 mph); ambient temperature, 180 C (650 F); track temperature, 210 C mfJ F).
+(b) Run, 20; tire type, EV; tire pressure, 'lT6kPa(4Opsil; date, 5-19-81; time, 3:30p.m.; wind speed, 8t024km/hr (5 to 15 mph); vehicle speed,
+56 km/hr (35 mph); ambient temperature, 150 C (590 F); track temperature, 2~ C (7~ F).
+(e) Run, 26; tire type, EV; tire pressure, 'lT6 kPa (40 psil; date, 5-20-81; time, 5:55 p. m.; wind speed, 8 to 11 kmlhr (5 to 7 mph); vehicle speed,
+72 km/hr (45 mph); ambient temperature, 190 C (660 F); track temperature, 290 C (850 Fl.
+(d) Run, 23; tire type, EV; tire pressure, 'lT6 kPa (40 psil; date, 5-20-81; time, lc30 p. m.; wind speed, 6 to 14 kmlhr (4 to 9 mph); vehicle speed,
+88 km/hr (55 mph); ambient temperature, 170 C (62<> F); track temperature, 340 C (930 Fl.
+(e) Run, 38; tire type, EV; tire pressure, 207 kPa(30psil; date, 6-1-81; time, 12:55 p.m.; wind speed, 8to 16 km/hr (5 to 10 mph); vehicle speed,
+24 km/hr 05 mph); ambient temperature, 170 C (630 F); track temperature, 330 C (910 Fl.
+(f) Run, 44A; tire type, EV; tire pressure, 207 kPa (30 psil; date, 6-2-81; time, 6:09 p. m.; wind speed, 8 to 14 kmlhr (5 to 9 mph); vehicle speed,
+56 km/hr (35 mph); ambient temperature, 260 C (780 F); tracktemperature, 32<> C (890 Fl.
+(9) Ru n, 45; ti re type, EV; ti're pressu re, 207 kPa (30 psil; date, 6-2-81; ti me, 7: 34 p. m.; wi nd speed, 10 to 14 kmlh r (6 to 9 mph); veh icl e speed,
+72 km/hr (45 mph); ambient temperature, 250 C mo F); track temperature, 310 C (880 F).
+(h) Run, 46; tire type, EV; tire pressure, 207 kPa (30 psil; date, 6-2-81; wind speed, 0 kmlhr (Q mph); vehicle speed, 88 kmlhr (55 mph); am
+bient temperature, 210 C mil F); track temperatu re, 280 C (830 F).
+(j) Run, 61; tire type, Viva; tire pressure, 276 kPa (40 psi); date, 6-15-81; time, 4:24 p. m.; wind speed, 10 to 37 kmlhr (6 to 23 mph); vehicle
+speed, 24 kmlhr (1S mph); ambient temperature, 320 C (890 F); track temperature, 410 C (1OSo Fl.
+Figure 13. - Tire rolling resistance as a function of time.
+
+
+
+=== PDF PAGE 24 ===
+.0075 .0075
+--
+.0070 .0080 .0070
+(j) (I)
+:E .0065 .0075 .0065
+.liZ'
+Q ~ ) .0100 .0095 .0095
+Q)
+~
+'ai
+>
+'0
+E
+~ .0095 .0090
+Q)-
+u
+c:
+.J3
+VI
+'Vi (m) (n)
+~ .0090 .0085
+c0:>
+0 (5 :: .0095 .0080
+'------- .0075
+.0085 (p) 0070 (q) 0090 (r)
+0 40' 0 10 20 30 40' 0 10 20 30 40
+Time, min
+Ij) Run, 60; ti re type, Viva; ti re pressure, 276 kPa (40 psil: date, 6-15-81 i time, 1:55 p. m.; wind speed, 16 to 24 km/h r (10 to 15 mph); vehicle speed,
+56 km/h r (35 mph); ambient temperatu re, 310 C (880 F); track temperatu re, 4ZO C (1080 F).
+(kl Run, 64; tire type, Viva; tire pressure, 276 kPa (40 psi); date, 6-17-81; time, 5:07 p. m.; wind speed, 2 to 5 km/hr n to 3 mph); vehicle speed,
+72 km/hr (45 mph); ambient temperatu re, 2ZO C
+mo
+F); track temperatu re, 310 C (870 Fl.
+(I) Run, 59; tire type, Viva; tire pressure, 276 kPa (40 psi); date, 6-15-81; time, 12:05 p. m.; wind speed, 16 to 24 km/hr no to 15 mph); vehicle
+speed, 88 kmlhr (55 mph); ambient temperature, 290 C (850 F); track temperature, 380 C nOlO Fl.
+(m) Run, 50; ti re type, Viva; ti re pressu re, 207 kPa (30 psi); date, 6-5-81; time, 9: 17 a. m.; wind speed, 8 to 14 km/h r (5 to 9 mph); vehicle speed,
+24 km/hr (15 mph); ambient temperature, 230 C 1730 F); track temperatu re, 280 C (820 F).
+(n) Run, 49; tire type, Viva; tire pressure, 207 kPa (30 psi); date, 6-4-81; time, &55 p. m.; wind speed, 1 to 18 kmlhr (7 to 11 mph); vehicle speed,
+56 km/hr!35 mph); ambient temperature, 240 C (760 F); track temperature, 330 C (920 Fl.
+(0) Run, 54; tire type, Viva; tire pressure, 207 kPa (30 psi); date, 6-8-81; time, 2:34 p. m.; wind speed, 26 to 39 kmlhr n6 to 24 mph); vehicle speed,
+72 km/hr (45 mph); ambient temperatu re, 280 C (830 F); track temperature, 390 C (1030 Fl.
+(p) Run, 52; tire type, Viva; tire pressure, 207 kPa (30 psi); date, 6-8-81; time, Hl47 p. m.; wind speed, 16 to 24 kmlhr no to 15 mph); driving
+cycle, Schedule D; ambient temperature, 240 C (760 F); track temperature, 300 C (860 Fl.
+(q) Run, 58; tire type, Viva; tire pressure, 276 kPa (40 psi); date, 6-15-81; time, 9:30 a. m.; wind speed, 11 to 23 kmlhr!7 to 14 mph); driving
+cycle, Sc edule D; ambient temperature, 270 C (SOO F); track temperature, 2SO C (830 Fl.
+(r) Run, 22; tire type, EV; tire pressure, Zl6 kPa (40 psi); date, 5-20-81; time, In 40 p. m.; wind speed, 5 to 11 kmlhr (3to 7 mph); driving
+cycle, Schedule D; ambient temperatu re, 150 C (590 Fl; track temperature, 240 C (750 Fl.
+Figu re 13. - Continued.
+I
+I
+L
+
+
+
+=== PDF PAGE 25 ===
+.0100 .0090 .0110
+-.0095 .0085
+.c
+'gC;>
+~
+uQ)
+,0090
+~
+>
+'0
+g
+~ (s) (u)
+.0085 .0095
+uQ )"
+c:
+.!!3
+.'v"; .0100 .0095 .0115
+f:!
+Cc:>
+(5
+IX
+(v) (w) (x)
+.0090 0 10 20 30 «!.0085 0 10 20 30 40. 0105 0
+OlOO~"
+I j
+.0095 0 10 20 30 40
+Time, min
+(5) Run, 51; tire type, Viva; tire pressure, 207 kPa (30 psj); date, 6-5-81; time, 12:45 p. rn.; wind speed, 10 to 16 kmihr (6 to 10 mph); driving cycle,
+Schedule C; ambient temperatu re, 270 C (sao Fl; track temperatu re, 3lJO C 11020 Fl.
+It) Run, 67; tire type, Viva; tire pressure, 276 kPa(40psj); date, 6-19-81; time, 9:41a.m.; wind speed, 8to 14kmihr(5t09 mph); driving cycle,
+Schedule C; ambient temperatu re, 240 C (750 F); track temperatu re, 320 C (9(1) F).
+(u) Run, 36; tire type, EV; tire pressure, 207 kPa (30 psi); date, 5-29-81; wind speed, 6 to 16 kmihr (4 to 10 mph); driving cycle, Schedule C;
+ambient temperature, 250 C 1770 Fl; track temperature, 340 C (940 Fl.
+(v) Run, 41; tire type, EV; tire pressure, 276 kPa (40 psj); date, 6-2-81; time, lU35 a. m.; wind speed, 10 to 16 kmlhr (6 to 10 mph); driving cycle,
+Schedule C; ambient temperature, 180 C (640 F); track temperature, 260 C (780 Fl.
+(w) Run, 47; tire type, Viva; tire pressure, 207kPa(30psj); date, 6-3-81; time, 4:22p.m.; wind speed, 13 to 19kmihr(8to 12 mph); driving
+cycle, Schedule B; ambient temperature, 260 C (780 F); track temperature, 310 C (880 F).
+(x) Run, 37; tire type, EV; tire pressure, 207 kPa (30 psj); date, 6-1-81; time, lU28 a. m.; wind speed, 8 to 16 kmihr 15 to 10 mph); driving cycle,
+Schedule B; ambient temperature, 150 C 1590 F); tracktemperature, 260 C (790 Fl.
+(y) Run, 40; tire type, EV; tire pressu re, 276 kPa (40 psi); date, 6-2-81; time, 8:57 a. m.; wind speed, 8 to 13 kmih r (5 to 8 mph); driving cycle,
+Schedule B; ambient temperatu re,. 170 C (630 F); track temperatu re, 210 C (6(}0 Fl.
+Figu re 13. - Concl uded.
+
+
+
+=== PDF PAGE 26 ===
+e- 45
+... 110 ::l
+~
+'(0 L.L. ' C " .
+IG1 0 ",- E 40
+._c- .... ..l.!..l
+~ 100 ·- u
+~E .b 0
+< .0 , u . ~ '- ' " E c " . . 'c s " 35
+~~ c
+8
+90
+e
+>=
+5 10 15 20 25 30 35
+Time, min
+Figure 14. - Contained-air temperature as a function of time for SAE J227a Schedule Dd riving
+cycle test, showing effect of Sun radiation.
+Vehicle
+speed,
+kmlh r (mph)
+120 50 h!:rl r-(:)-1
+u... 110
+0 u
+e- 100 o e - 40 Test conducted
+::l in sunshine
+~ ::l
+' E c" . 90 ~ 'c". 30
+..l.!.l. E
+80 ..l.!.l. Test
+'"
+'
+~
+'c 0 I " 70 ' - 'c n b " ; 20 h;~r-l h~;rl h:r-1 a c t o n d d u u sk ct ed
+c :§
+u0 60 c
+e 8
+i= 50 > .'." = .. 10
+40
+0 20 l() 60 80 100 120 140 160
+Time, min
+Figure 15. - Comparison of contained-air temperature during tests conducted in sunshine and at dusk.
+
+
+
+=== PDF PAGE 27 ===
+I
+1. Report No. 2. Government Accession No. 3. Recipient's Catalog No.
+NASA TM-82836
+4. Title and Subtitle 5. Report Date
+June 1982
+Rolling Resistance of Electric Vehicle Tires from Track Tests
+6. Performing Organization Code
+778-36-06
+7. Author(s) 8. Performing Organization Report No.
+E-1203
+Miles O. Dustin and Ralph J. Slavik
+10. Work Unit No.
+9. Performing Organization Name and Address
+National Aeronautics and Space Administration
+11. Contract or Grant No.
+Lewis Research Center
+Cleveland, Ohio 44135
+13. Type of Report and Period Covered
+12. Sponsoring Agency Name and Address Technical Memorandum
+U. S. Department of Energy
+Office of Vehicle and Engine R&D 14. Sponsoring AgencY~ReportNo.
+Washington, D. C. 20545
+DOE/ NASA/ 51044-24
+15. Supplementary Notes
+Final report. Prepared under Interagency Agreement DE-AIOl-77CS51044.
+16. Abstract
+Special low-rOIling-resistance tires were made for DOE's ETV-1 electric vehicle. Tests
+were conducted on these tires and on a set of standard commercial automotive tires to
+determine the rolling resistance as a function of time during both constant-speed tires and
+SAE J227a driving cycle tests. The tests were conducted on a test track at ambient temper-
+atures that ranged from 150 to 320 C (590 to 890 F) and with tire pressures of 207 to 276 kPa
+(30 to 40 psi). At a contained-air temperature of 380 C (1000 F) and a pressure of 207 kPa
+(30 psi) the rolling resistances of the electric vehicle tires and the standard commercial
+tires, respectively, were 0. 0102 and 0.0088 kilogram per kilogram of vehicle weight. At
+a contained-air temperature of 380 C (1000 F) and a pressure of 276 kPa (40 psi) the rolling
+resistances were 0.009 and 0. 0074 kilogram per kilogram of vehicle weight, respectively.
+17. Key Words (Suggested by Author(s) ) 18. Distribution Statement
+Electric vehicle Unclassified - unlimited
+Tires STAR Category 44
+Test DOE Category UC-96
+19. Security Classif. (of this report) 20. Security Classif. (of this page) 21. No. of Pages 22. Price
+Unclassified Unclassified
+• For sale by the National Technical Information Service, Springfield. Virginia 22161

@@ -1,0 +1,1494 @@
+=== PDF PAGE 1 ===
+(NASA-Ca-s78 ) CHEMILUMINESCENCE
+5 6 STUDY ON N76-.28423]
+THERMAL DEGRADATION OF AIRCRAFT TIRB
+LASTONERS Final Report (Battelle Columbus
+Labs., Ohio.), 63 p HC $4.50 CSCL 110 Unclas
+RESEARCH REPORT
+0~rIG
+Ballel
+Columbus Laboratories
+ft <
+: ASAsi;jmvT
+
+
+
+=== PDF PAGE 2 ===
+BATTELLE'S COLUMBUS LABORATORIES comprises the origi­
+nal research center of an international organization devoted to research
+and development.
+Battelle is frequently described as a "bridge" between science and
+industry - a role it has performed in more than 90 countries. It
+conducts research encompassing virtually all facets of science and its
+application. It also undertakes programs in fundamental research and
+education.
+Battelle-Columbus - with its staff of 2500 - serves industry and
+government through contract research. It pursues:
+o research embracing the physical and life sciences, engi­
+neering, and selected social sciences
+o design and development of materials, products, processes,
+and systems
+o information analysis, socioeconomic and technical eco­
+nomic studies, and management planning research.
+505 KING AVENUE 0 COLUMBUS, OHIO 43201
+
+
+
+=== PDF PAGE 3 ===
+NASA CR 137856
+CHEMILUMINESCENCE STUDY ON THERMAL DEGRADATION
+OF AIRCRAFT TIRE ELASTOMERS
+by
+G. David Mendenhall, T. B. Stanford, and
+Richard A. Nathan
+FINAL REPORT
+June 30, 1976
+Distribution of this report is provided in the interest of information
+exchange. Responsibility for the contents resides in
+the author or organization that prepared it.
+Prepared under Cdntract No. NAS2-8195 by
+BATTELLE
+Columbus Laboratories
+505 King Avenue
+Columbus, Ohio 43201
+for
+AMES RESEARCH CENTER
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+
+
+
+=== PDF PAGE 4 ===
+TABLE OF CONTENTS
+Page
+SUMMARY . . . . ..... .... i
+INTRODUCTION .... 1I. .....
+EXPERIMENTAL SECTION ................... .. ...... 2
+RESULTS AND DISCUSSION ................. .. ....... 6
+Oxidation of Polymers at 250C.............. .... 6
+Chemiluminescence of Polymer Films at 1720C ..... 7
+FTIR Spectra of Polymers Oxidized for Different
+Times at 1150 C .............. ............ .... 8
+Chemiluminescence from Polymers at 91-143°C ...... ...... 9
+Spectral Distribution of Chemiluminescence.... ....... ... 12
+Chemiluminescence from Hydroperoxidized
+cis-l,4-Polyisoprene ........... ......... ... . 15
+Conclusions .............. .............. ....15
+REFERENCES ................ ................. ... . 17
+
+
+
+=== PDF PAGE 5 ===
+LIST OF FIGURES
+Page
+FIGURE 1. SCHEMATIC VIEW OF CHEMILUMINESCENCE APPARATUS . . . . 18
+FIGURE 2. ARTIST'S SKETCH - OF CHEMILUMINESCENCE APPARATUS. . . . 19
+FIGURE 3. PHOTOMULTIPLIER DARK CURRENT VS APPLIED VOLTAGE . . . 20
+FIGURE 4. INFRARED SPECTRUM OF SINGLET OXYGENATED
+cis-1,4-POLYISOPRENE ....... .......... .. 21
+FIGURE 5. EFFECT OF ATMOSPHERE ON CHEMILUMINESCENCE FROM
+cis-1,4-POLYISOPRENE AT 1720C.... ...... ..... .. 22
+FIGURE 6. EFFECT OF ATMOSPHERE ON CHEMILUMINESCENCE FROM
+trans-POLYPENTENAMER AT 172..C.... . . ... . . . . 23
+FIGURE 7. EFFECT OF ATMOSPHERE ON CHEMILUMINESCENCE FROM
+cis-1,4-POLYBUTADIENE AT 1720C ... .......... 24
+FIGURE 8. SAMPLE NO. 1. cis-1,4-POLYBUTADIENE, PURE FILM. . . 25
+FIGURE 9. SAMPLE NO. 2. cis-1,4-POLYBUTADIENE AFTER
+11 MINUTES IN OXYGEN AT 115'C; ... ......... 25
+FIGURE 10. SAMPLE NO. 3. cis-1,4-POLYBUTADIENE AFTER
+21 MINUTES IN OXYGEN.AT 115°C.... ........ .. 26
+FIGURE 11. cis-1,4-POLYBUTADIENE DIFFERENCE
+SPECTRUM (NO. 4 minus 0.8 x NO. 2) .. ........ . 26
+FIGURE 12. SAMPLE NO. 4. cis-1,4-POLYISOPRENE, PURE FILM . . . . 27
+FIGURE 13. SAMPLE NO. 5. cis-1,4-POLYISOPRENE AFTER
+12 MINUTES IN OXYGEN AT 115'C.... ........ .. 28
+FIGURE 14. SAMPLE NO. 6. cis-1,4-POLYISOPRENE AFTER
+22 MINUTES IN OXYGEN AT 115'C.... .......... 29
+FIGURE 15. cis-1,4-POLYISOPENE DIFFERENCE
+SPECTRUM (0.8 x NO. 6 minus NO. 5).. ...... .. 30
+FIGURE 16. SAMPLE NO. 7. trans-POLYPENTENAMER, PURE FILM . . . . 31
+FIGURE 17. SAMPLE NO. 8. trans-POLYPENTENAMER AFTER
+17 MINUTES IN OXYGEN AT 115°0.C... ............ ... 32
+FIGURE 18. SAMPLE NO. 9. trans-POLYPENTENAMER AFTER
+27 MINUTES IN OXYGEN AT 115°0.C.... ........ ... 33
+FIGURE 19. trans-POLYPENTENAMER DIFFERENCE
+SPECTRUM (0.55 x NO. 9 minus NO. 8)......... ... 34
+
+
+
+=== PDF PAGE 6 ===
+LIST OF FIGURES
+(Continued)
+Page
+FIGURE 20. SAMPLE NO. 10. 1,2-POLYBUTADIENE, PURE FILM .... .. 35
+FIGURE 21. SAMPLE NO. 11. 1,2-POLYBUTADIENE AFTER
+24 MINUTES IN OXYGEN AT 1150 C.... ........ ... 36
+FIGURE 22. SAMPLE NO. 12. 1,2-POLYBUTADIENE AFTER
+37 MINUTES IN OXYGEN AT 1150C .... ........... 37
+FIGURE 23. 1,2-POLYBUTADIENE DIFFERENCE SPECTRUM
+(NO. 11 tinus 0.5 x NO. 10) .......... ..... 38
+FIGURE 24. REPRESENTATIVE CURVES FOR OXIDATIVE
+CHEMILUMINESCENCE FROM cis-1,4-POLYISOPRENE
+AT 96-142CC........ ............. 39
+FIGURE 25. TEST OF CHEMILUMINESCENCE DATA FROM cis-1,4-
+POLYISOPRENE FOR KINETIC ORDER IN INITIATOR.. .40
+FIGURE 26. ARRHENIUS PLOT OF MAXIMUM CHEMILUMINESCENCE
+FROM cis-,4-POLYISOPRENE IN OXYGEN... .... .... 41
+FIGURE 27. CHEMILUMINESCENCE EMISSION AND SPECTRAL
+DISTRIBUTION FROM cis-1,4-POLYBUTADIENE AT
+110oC IN ARGON ..... .... .......... 42
+FIGURE 28. CHEMILUMINESCENCE EMISSION AND SPECTRAL
+DISTRIBUTION FROM cis-I,4-POLYBUTADIENE AT
+1100C IN OXYGEN....... ............. 43
+FIGURE 29. CHEMILUMINESCENCE EMISSION AND SPECTRAL
+DISTRIBUTION FROM trans-POLYPENTENAMER AT
+114 C UNDER ARGON... . .............. 44.
+FIGURE 30. CHEMILUMINESCENCE EMISSION AND SPECTRAL
+DISTRIBUTION FROM trans-POLYPENTENAMER AT
+115 C IN OXYGEN...... .... . ........ 45
+FIGURE 31. CHEMILUMINESCENCE EMISSION AND SPECTRAL
+DISTRIBUTION FROM 1,2-POLYBUTADIENE AT
+1310C IN ARGON ...... ..... ........ 46
+FIGURE 32. CHEMILUMINESCENCE EMISSION AND SPECTRAL
+DISTRIBUTION FROM 1,2-POLYBUTADIENE AT
+1290C IN OXYGEN...... ........ ....... 47
+FIGURE 33. CHEMILUMINESCENCE AND SPECTRAL DISTRIBUTION FROM
+cis-1,4-POLYISOPRENE IN OXYGEN AT 1180 C. THE
+F(X) VALUES WERE OBTAINED FROM SEVERAL RUNS. .... 48
+
+
+
+=== PDF PAGE 7 ===
+LIST OF FIGURES
+(Continued)
+Page
+FIGURE 34. TEMPERATURE DEPENDENCE OF MAXIMUM
+CHEMILUMINESCENCE FROM 1,2- AND cis-l,4-
+POLYBUTADIENE, AND FROM trans-POLYPENTENAMER
+IN OXYGEN ......... ...................... .. 49
+FIGURE 35. TEMPERATURE DEPENDENCE OF MAXIMUM
+CHEMILUMINESCENCE FROM trans-POLYPENTENAMER
+UNDER ARGON ....... .............. .... .50
+FIGURE 36. ARRHENIUS PLOTS OF i/t FOR 1,2- AND cis-
+1,4-POLYBUTADIENE IN 3?GEN... ... .. . . 51
+FIGURE 37. ARRHENIUS PLOT OF 1/t 1 FOR trans-
+POLYPENTENAMER UNDER-ARGON . . . .......... 52
+FIGURE 38. ARRHENIUS PLOT OF i/t FOR cis-1,4­
+POLYISOPRENE IN OXYG 2. . . -_ . . . . . . . . . 53
+FIGURE 39. ARRHENIUS PLOT FOR CHEMITUMINESCENCE IN
+TEMPERATURE-JUMP EXPERIMENT WITH AUTOXIDIZED
+cis-1,4-POLYISOPRENE .... ................ . 54
+FIGURE 40. CHEMILUMINESCENCE AS A FUNCTION OF
+TEMPERATURE FOR AUTOXIDIZED AND SINGLET
+OXYGENATED cis-1,4-POLYISOPRENE.. EACH RUN
+CONTAINED 0.5 PERCENT 9,10-DIPHENYLANTHRACENE. . . . 55
+
+
+
+=== PDF PAGE 8 ===
+LIST OF TABLES
+Page
+TABLE 1. CHEMILUMINESCENCE FROM PURE POLYMER FILMS AS
+A FUNCTION OF TIME .......... ............. 6
+TABLE 2. CHEMILUMINESCENCE FROM POLYMER FILMS ON
+SILVER CHLORIDE............... ........... 9
+TABLE 3. EXPRESSIONS FOR MAXIMUM CHEMILUMINESCENCE
+INTENSITY FROM POLYMERS AS A FUNCTION OF
+TEMPERATURE..... ........... ......... 13
+TABLE 4. EQUATIONS TO DESCRIBE TEMPERATURE
+DEPENDENCE OF tl/2 FOR POLYMERS ......... ..... 13
+
+
+
+=== PDF PAGE 9 ===
+SUMMAR)
+Chemiluminescence, or the light accompanying a chemical
+reaction, is observed during 4utoxidation of many organic materials.
+Since the autoxidative process accounts in part for the degradatX6n of
+rubber, including aircraft tires, it was felt that a study of the chem­
+iluminescence from unsaturated elastomers could contribute significantly
+to an understanding of the degradation mechanism. The study has revealed
+similarities in chemiluminescence behavior between the four elastomers in­
+vestigated that probably reflect similar oxidation mechanisms. A detailed­
+interpretation of the results, at least at the higher temperatures in the
+study, is not yet possible because of the complicated nature of the system.
+Oxidative chemiluminescence was observed from purified samples
+of cis-l,4-polybutadiene, cis-l,4-polyisoprene, trans-polypentenamer, and
+1,2-polybutadiene in an oxygen atmosphere at 25-1500C. The emission was
+associated with oxidative changes. Under argon chemiluminescence from the
+thermal decomposition of peroxides and hydroperoxides was observed.
+The time-dependence of the chemiluminescence at 91-1430C from
+cis-l,4-polyisoprene could be predicted by several semi-empirical equations.
+The emission from the other polymers under these conditions was complicated
+by a high counting rate from the polymers at the very beginning of the oxi­
+dation runs, which indicated the presence of peroxidic materials in the
+original samples.
+The activation energies for chemiluminescence from partially
+oxidized and hydroperoxidized (with singlet molecular oxygen) cis-l,4­
+polyisoprene were both 24 + 1 kcal/mole in the range 25-500C. This in­
+dicates a common mode of initiation, presumably by thermal decomposition
+of hydroperoxides in either system.
+Future work in this area should be carried out at extended
+reaction times at temperatures between 50%0 and 910C, with larger samples,
+and with use of chemiluminescence in conjunction with other spectral
+(infrared, nuclear magnetic reasonance) techniques or with simultaneous
+measurement of oxygen uptake. It would be in fact preferable to work with
+simple, nonpolymeric model hydrocarbons that are (1) more easily purified and
+(2)whose oxidation products and excited state products are known or can be
+characterized by conventional analytical techniques.
+i
+
+
+
+=== PDF PAGE 10 ===
+CHEMILUMINESCENCE STUDY ON THERMAL DEGRADATION
+OF AIRCRAFT TIRE ELASTOMERS
+by
+G. David Mendenhall, T. B. Stanford, and
+Richard A. Nathan
+INTRODUCTION
+NASA-Ames Research Center currently has a strong interest
+in the thermal oxidative behavior of polymeric materials used in
+aircraft tires. These include cis-l,4-polyisoprene, cis-l,4­
+polybutadiene, 1,2-polybutadiene, and trans-polypentenamer. Because
+aircraft tires are subjected to friction-induced high temperatures
+and mechanical stress, new and stronger materials are continually
+being sought. In addition, currently used elastomers are studied in
+an attempt to understand the thermal degradative mechanism so as to
+lead to materials with improved stability through structure modifica­
+tion or the use of additives.
+Battelle-Columbus recommended the use of a novel tech­
+nique, chemiluminescence, for the study of the oxidation properties
+of elastomers used in aircraft tires. Chemiluminescence is greatly
+superior to other possible methods in that high sensitivity and
+extreme precision can be achieved at low extents of reaction. Rates
+of oxidation uptake on the order of 10-6 to 10-14 mole/year can be
+studied conveniently by this technique.
+It was hoped that the benefits from this program would
+allow the design and formulation of elastomers with high stability
+toward thermal oxidation.
+Although some previous work has been carried out on the
+chemiluminescent behavior of saturated polymers, there have been
+few reports of chemiluminescence studies on unsaturated polymers
+or elastomers. Clearly a need existed for such work. Furthermore,
+1
+
+
+
+=== PDF PAGE 11 ===
+2
+with only limited reports available on the chemiluminescence from
+olefin oxidations, there is a parallel interest in the study of the
+chemiluminescence of appropriate model compounds of unsaturated
+elastomers.
+EXPERIMENTAL SECTION
+Materials. cis-l,4-Polyisoprene and cis-l,4-polybutadiene
+were obtained from the B. F. Goodrich Research and Development
+Center, Brecksville, Ohio. trans-Polypentenamer was obtained from
+the Farbenfabriken Bayer GmbH, Leverkusen, Germany. 1,2-Polybuta­
+diene was obtained from the Institut Francais du P4trole, Vernaison,
+France. The polymers were purified by three reprecipitations from
+benzene solution with methanol as precipitant. The solvents were
+reagent grade and were degassed by flushing with argon before use.
+Operations with the solutions were carried out in an argon or
+nitrogen atmosphere, and the final benzene stock solutions (@15g/l)
+were stored in the dark under positive argon pressure. Polymer
+films were prepared by spreading layers of stock solution over plate
+glass sheets and allowing the solvent to evaporate. The glass (2-mm
+thick, single-strength sheet) was scratched on the reverse side to
+facilitate breaking into rectangular samples (3.7-cm x 3.5-cm cross
+section, with an average exposed weight of 4.2 mg polyisoprene).
+The glass-supported films were then mounted in aluminum 35-mm slide
+holders and stored in argon prior to chemiluminescence experiments.
+The films showed no noticeable differences in properties up to
+several months after preparation.
+
+
+
+=== PDF PAGE 12 ===
+:3
+Apparatus and Procedure. A schematic view and an artist's
+view of the chemiluminescence apparatus are presented in Figures 1
+and 2,respectively. The heart of the instrument is a 600-watt
+oven (with accessories for cooling) surrounded by a water-cooled
+shield to prevent the entire light-tight box from reaching the
+oven temperature. The oven is equipped for accurate variable
+temperature control (Foxboro Co. heater-proportional control unit)
+and with gas inlets for introducing any desired atmosphere. The
+mounted polymer films were placed on the stainless steel conveyor
+belt, then passed through a double set of pressure-activated doors
+into the sample chamber. The correct position of the film samples
+was determined by appropriate marks on the conveyor belt.
+Chemiluminescence emission from the samples was focussed
+with a 2-inch quartz lens onto the detector of a 12-stage photomulti­
+plier (RCA Model 4501/V4). Figure 3 shows the photomultiplier
+dark current plotted vs. applied voltage. From this figure we con­
+cluded that a voltage of 1500 volts optimally reduced variations due
+to changes in line voltage. The photomultiplier output was connected
+to a counter (General Radio Model 1191) whose output, expressed in
+analog or digital form, was usually set to average the photon counts
+over a 10-sec interval. This allowed us to eliminate spurious signals
+due to high-frequency noise in the line voltage (appearing when room
+lights were on or from unidentified sources). A strip-chart recorder
+connected to the counter permitted automatic data collection. A
+wheel containing up to 20 filters was positioned in the optical
+path to permit spectral analysis of the chemiluminescence by measuring
+the relative emission intensity after the light passes through the
+various filters. A manual and an automatic shutter were also positioned
+in the optical path to permit background counting.
+For chemiluminescence experiments below 117'C, the polymer
+film, initially at 250C, was placed in the oven preheated to the desired
+temperature. For experiments above 1170C, the time to warm the film to
+the oven temperature introduced a significant distortion in the shape of
+
+
+
+=== PDF PAGE 13 ===
+4
+the chemiluminescence intensity-time plots. To circumvent this
+difficulty, the'film was placed in the oven at 2500 and flushed
+with argon for more than 20 min, and the oven was then heated to
+the desired temperature. At the start of the chemiluminescence
+measurement, the argon stream was changed to oxygen.
+The low-intensity chemiluminescence from partially
+oxidized polyisoprene films (as well as from hydroperoxidized
+samples obtained through prior singlet oxidation) was corrected
+for background emission. The latter signal, amounting to 30450
+counts/sec under the experimental conditions employed, remained
+stable during 6 months' operation and is believed to be due
+to stray sources of light originating in the oven and photo­
+multiplier housing, inherent noise from the photomultiplier tube,
+and cosmic radiation.
+Reaction with Singlet Molecular Oxygen (102). A solution
+of 0.19 g of purified cis-l,4-polyisoprene in 25 ml of benzene,
+containing,0.2 g of Rose Bengal chemically bound to polystyrene
+beads, (i) was placed in a Pyrex flask with provision for magnetic
+stirring and flushed with oxygen for 1 min. The flask was con­
+nected to a gas burrette filled with oxygen, and the stirred
+mixture was irradiated for 50 min with the output from a 500-W
+projector lamp filtered through a Corning CS3-71 cutoff filter.
+After 55 min the solution absorbed 13.0 + 0.5 ml of oxygen, cor­
+responding to about one hydroperoxide group per five monomer units.
+Absorption of oxygen by the solution was negligible before and
+after irradiation. The solution was filtered from the sensitizer
+beads and used immediately for casting films for chemiluminescence
+measurements or infrared analysis. The infrared spectrum of the
+1 02 -treated polyisoprene (Figure 4) showed an 0-H band at 3400 cmf­
+and a weak C-0 absorption at 1000 cm-l; the presence of a weak carbonyl
+absorption at 1700 cm- indicated the occurrence of a small amount
+of polymer decomposition.
+
+
+
+=== PDF PAGE 14 ===
+5
+Examination of Polymer Autoxidation by Fourier Transform
+Infrared Spectroscopy. Benzene solutions of cis-l,4-polyisoprene,
+cis-l,4-polybutadiene, trans-polypentenamer, and 1,2-polybutadiene
+were prepared as described above and stored in an argon atmosphere.
+In order to allow simultaneous determination of chemiluminescence and
+of the changes in the infrared spectra, we chose to use silver chloride
+sheets as the support for the polymer films. The sheets were weighed
+carefully before and after depositing a film. Constancy in the final
+weight indicated the virtual absence of residual solvent in the sample.
+Contrary to our expectations, films prepared in air did not oxidize
+to an extent detectable by Fourier Transform infrared for several hours
+after preparation.
+All of the film preparations on silver chloride were thus
+carried out in air and the samples were either used immediately or
+stored under nitrogen or argon until use. We expected the results to
+be comparable to those from films prepared by evaporation in a glove box
+in earlier studies, since we believe that significant residual amounts
+of oxygen were probably entrained in the silver chloride in the latter
+system.
+The area of the silver chloride sheets was approximately
+9.7 cm2 (1 in. x 1.5 in.). From the weights of polymer deposit, which
+varied between 0.0117 and 0.0050 g, and an approximate density for the
+polymers of 0.8, we calculate an average film thickness between 1.5 x 10 3
+and 6.4 x 10- 4 cm for our samples.
+Silver chloride was found to react with the aluminum sample
+holders over extended periods. A dark, granular material was produced
+on the surface of the silver chloride film. This material is pro­
+bably silver metal formed by the simple displacement reaction:
+3 AgCl + Al + AICl + Ag
+3
+To prevent this reaction we used only the aluminum base
+plates to mount the samples, and the AgCl sheet was separated from
+it by a glass slide.
+
+
+
+=== PDF PAGE 15 ===
+6
+RESULTS AND DISCUSSION
+Oxidation of Polymers at 250C
+Initially we planned to follow chemiluminescence and infrared
+spectral changes at 250C from films of cis-l,4-polyisoprene, cis-l,4­
+polybutadiene, trans-polypentenamer, and 1,2-polybutadiene. As seen from
+the data in Table 1, after periods up to 24 hours in air, only minor
+differences in chemiluminescence intensities were observed in the samples.
+Comparison of Fourier Transform infrared spectra made by substracting the
+latter from the initial spectra revealed only minor changes whose inter­
+pretation was not clear.
+TABLE 1. CHEMILUMINESCENCE FROM PURE POLYMER FILMS
+AS A FUNCTION OF TIME
+Count/sec after
+Polymer, weight Initial counts/sec(a ) (hr) in air(b)
+cis-l,4-Polybutadiene, 0.0052 g 2.4 2.8 (22)
+trans-Polypentenamer, 0.0059 g 6.6 6.5 (24)
+1,2-Polybutadiene, 0.0038 g 4.4 4.2 (24)
+cis-,4-Polyisoprene, 0.0040 g 0.8 3.9 (24)
+(a) In oxygen atmosphere.
+(b) At 25C.
+At ?50C conditions are rather ideal for study of polymer
+oxidation and chemiluminescence, since these conditions correspond to
+the average ambient ones. The changes in samples allowed to stand in air
+are quite slow, as would be expected. Chemiluminescence was seen­
+easily in samples initially and after standing (Table 1). The dif­
+ferences, are small, however, while consistent with the lack of any
+major changes in the infrared spectra and indicates that the oxidation
+of the samples has not proceeded to any great extent. The chemiluminescence
+measured from fresh polymer films was ascribed to ongoing oxidation,_ even
+though these films for infrared purposes were taken to be "pure"!
+
+
+
+=== PDF PAGE 16 ===
+7
+Chemiluminescence of Polymer
+Films at 1720C
+Initial experiments were carried out at'1720C with films'
+of cis-l,4-polybutadiene, trans-polypentenamer, and cis-l,4-polyisoprene
+on aluminum. Counting rates in an oxygen atmosphere were among the
+highers ever recorded with our instrument. The rates dropped rapidly on
+replacement of the oxygen with argon (Figures 5-7), and this effect was
+nearly reversible, at least qualitatively. Superimposed on the changes
+to an argon atmosphere is a rather smooth decline in counting rate in
+oxygen with time. Under these conditions the samples became deeply
+colored and took on a mottled appearance.
+At this temperature the degradation of the samples was
+so extensive that we attach no more than qualitative significance to
+our results. From the results shown in Figures 5 - 7 it is apparent
+that the presence of oxygen enhances chemiluminescence, as others(2)
+have also shown. It is rather surprising, in view of the deep-seated
+changes in the samples indicated by their appearance after exposure to
+these conditions, that there is not a greater variation in the counting
+rate with time. The overall decrease in counting rate in oxygen with
+time can be ascribed in part to self-absorption, due to production of
+colored products. Another factor may be the dilution of the sample with
+oxidation products, which would retard the rate of oxidation. 1,2-Poly­
+butadiene was not examined at 1720C, although it would be expected to
+show very similar behavior.
+We concluded that 1729C represented an upper limit to the
+study, while at 250C the changes appeared inconveniently slow and the
+chemiluminescence could not be measured very accurately. We chose to
+repeat the experiment at intermediate temperatures, following changes both
+by chemiluminescence and by infrared. The latter study was performed with
+samples at 1150C on silver chloride sheets.
+
+
+
+=== PDF PAGE 17 ===
+U
+FTIR Spectra of Polymers Oxidized for
+Different Times at 1150C
+Three samples each of cis-l,4-polyisoprene, cis-1,4-poly­
+butadiene, trans-polypentenamer, and 1,2-polybutadiene were prepared
+as films on silver chloride. The first served as a reference sample.
+The second was placed in the oven until the counting rate was nearly con­
+stant. The third sample was placed in the oven for the same time as the
+second sample plus an increment of about 10 minutes. All three samples
+were scanned by Fourier Transform infrared spectroscopy and subtractive
+differences noted. The FTIR results appear in Figures 8 through 23.
+Sample numbers in these figures correspond to samples in Table 2 which
+lists the chemiluminescence data.
+At 115C the four polymers described above oxidized rapidly,
+as indicated by large chemiluminescence counts and gross changes in
+the infrared spectra of the samples (Figures 8 through 23). All
+samples show appearance of infrared bands at 3600-3200 cm-I (OH),
+1700-1800 cm-1 (C=0), and around 1000 cm-I (C-0). These correspond
+to absorption bands of expected oxidation products, including hydro­
+peroxides, alcohols, ketones, aldehydes, etc. The shape of the
+carbonyl band indicates multiple products, and this is confirmed by
+splitting in the carbonyl region of the difference spectra (except
+in the 1,2-polybutadiene difference spectrum). The'autoxidation is
+accompanied also by decreases in C=C and olefinic C-H absorptions.
+Some of these are revealed as positive bands in the difference
+spectra.
+Due to the inconvenience (and expense) of preparing films
+on silver chloride, the remainder of the study was carried out with
+films deposited on glass slides. It was also reasoned that the IR
+changes would not give unexpected results, whereas the chemilumi­
+nescence behavior of the polymers was largely unknown.
+
+
+
+=== PDF PAGE 18 ===
+9
+TABLE 2. CHEMILUMINESCENCE FROM POLYMER FILMS
+ON SILVER CHLORIDE
+Sample Weight,
+No. Polymer (g) Treatment Counts/sec
+1 cis-1,4-Polybutadiene 0.0117 None, stored in Ar (a)
+2 cis-l,4-Polybutadiene 0.0076 11 min/1150 C/0 2 3.2 x i0
+3 cis-l,4-Polybutadiene 0.0086 21 min/ll50 C/0 2 2.5 x 104
+4 cis-l,4-Polyisoprene 0.0053 None, stored in Ar (a)
+5 cis-l,4-Polyisoprene 0.0056 12 min/1150C/0 2 3.6 x 104
+6 cis-l,4-Polyisoprene 0.0066 22 min/1150C/0 2 3.7 x 104
+7 trans-Polypentenamer 0.0051 None, stored in Ar (a)
+8 trans-Polypentenamer 0.0060 17 min/1150C/0 2 2.3 x i04
+9 trans-Polypentenamer 0.0083 27 min/1150 C/0 2 2.5 x 104
+10 1,2-Polybutadiene 0.0075 None, stored in Ar (a)
+11 1,2-Polybutadiene 0.0098 24 min/1150C/0 2 3.5 x 104
+12 1,2-Polybutadiene 0.0071 37 min/1150C/0 2 2.4 x 104
+(a) Chemiluminescence not measured. Used for infrared reference.
+Chemiluminescence from Polymers at 91-1430 C
+Chemiluinescence-Autoxidation. Representative curves
+obtained for the oxidative chemiluminescence from cis-l,4-polyisoprene
+at 96-142oC are shown in Figure 24. The parameters used to characterize
+these curves are Imax the maximum intensity of'chemiluminescence,(3 ) and
+,
+1/n, the time required to reach (i/n)Imax. These parameters, in the
+ideal case, are related to rate constants for the autoxidation and
+excited state reaction sequence.
+The autoxidation mechanism was assumed to involve the
+generally accepted sequence of initiation, propagation, and termination
+steps involving free radicals. The initiation steps in the autoxidation
+may be bi- or unimoleeular, or pseudounimolecular. In the bimolecular
+case, Scheme I is assumed to hold.(4 5 )
+
+
+
+=== PDF PAGE 19 ===
+10
+Scheme I
+2 RO2H -- (R02H) 2 (1)
+(R011) RO- + R0 . + H20 (2)
+2 2 - 2
+ROO + RH ROH + R. (3)
+R. + 02-- R0 . (4)
+2
+R0 • + RH-- R0 H + R • (5)
+2 2
+2 R0 2 " - nonradical products + 02 (6)
+2RR02 2 ' -- P* (7)
+P* P + hv (8)
+P* + Q P (9)
+-
+In this scheme P* is the electronically excited product
+responsible for chemiluminescence, Q is the principal quenching
+species, presumably oxygen, RH is the polymer, and R. denotes
+different radical sites on the polyisoprene backbone. The use
+of steady-state approximation for R-, R0 -, RO2H and P*, by
+2 ,
+analogy to derivations by Lundeen and Livingston,(a) and by
+Tobolsky, Metz, and Mesrobian (5b) for tetralin autoxidation, lead
+to the following expressions:
+nl/2­
+kk_ 1/2 1 (l2L (10)
+6 J 1 -1/n 1 n 1/2
+k [RE] (2n) ­
+5
+(n > 1)
+
+
+
+=== PDF PAGE 20 ===
+Figure 25 shows the variation of L with change in n at three different
+temperatures. Scheme I leads into eq. (11).
+Imax =4q1
+k52 RH ]2
+where ql = k k / (k + k (Q)>
+7 8 8 9
+An Arrhenius plot for I is presented in Figure 26, from which a
+max
+value of E = 16.2 kcal/mol is obtained.
+The initiation, however, may be a unimolecular process, as
+in step (12), followed by steps (4) through (9), where M represents
+R0 2 H + M +- 2R" (12)
+some functional group or metal ion at constant concentration. In
+that case, the corresponding equations would be:
+k12= 2 n 1/2 121/2 (13)
+(t1/n- t 12n) n1/2 1
+Imax = qk 5 2 [RHI 2
+k
+6
+Included in Figure 25 is the variation of k12 with change in n at
+three different temperatures. It is apparent from the near constancy
+of L that this parameter gives a better description of the oxidative
+chemiluminescence than k12' for n > 4.
+Chemiluminescence from cis-1,4-polybutadiene, trans-poly­
+pentenamer, and 1,2-polybutadiene was examined under the same con­
+ditions as cis-l,4-polyisoprene. Representative curves for emission
+under oxygen and under argon are shown in Figures 27-32. The results
+were rendered difficult to interpret by the fact that relatively
+strong chemiluminescence was observed from the original samples
+when heated under argon, even though, as noted above, the films
+appeared spectroscopically pure. This result precluded an exact
+
+
+
+=== PDF PAGE 21 ===
+12
+analysis as was done for cis-1,4-polyisoprene, because it could not
+be assumed that the initial chemiluminescence behavior was due solely
+to the autocatalytic buildup of initiating species. In any case,
+the spectral shifts noted for cis-l,4-polyisoprene (Figure 33)-also ap­
+peared during the autoxidation of the other polymers, which indicated
+the presence of multiple emitters and introduced an additional
+uncertainty into the treatment. We have made Arrhenius plots of
+both l/tl/ and Ima from the polymers, which show fairly linear
+2 x
+behavior and can be described with the parameters given in Tables 3 and 4,
+respectively. The results are shown graphically in Figures 26 and
+33-37 along with a plot of the tl/ function for cis-l,4-polyisoprene.
+2
+A linear plot of l/tl/ vs T-1 is expected from a first-order
+2
+initiation mode from which the following equation can be derived:
+2=A e- E /RT = 2 n - [ROOH]1/2/[ROOHII/2 (14)
+2 2
+tl/2 1 - I/n11 2
+Equations 11 and 14 apply reasonably well even to describe the emission
+from trans-polypentenamer in argon (Tables 3 and 4), which presumably did
+.not arise from an oxidative process. In the application bfflX_4) we
+assumed [ROOH]o = 0.
+Spectral Distribution of Chemiluminescence
+While the nature of the emitters in the autoxidation of the
+polymers is not known, the high wavelengths in the spectral distri­
+bution do not correspond to simple aliphatic ketones. Recently,
+Beaven ahd Phillips(6) recorded phosphorescence spectra from oxidized,
+1,4-polybutadiene films, at liquid nitrogen temperatures, and assigned
+the emission to c,-unsaturated ketones. Interestingly, their
+phosphorescence wavelengths appear to be close to those observed
+for chemiluminescence from cis-l,4-polyisoprene. Although in­
+frared spectra of several polyisoprene films autoxidized on silver
+-1
+chloride sheets revealed no characteristic absorption at 1650 cm ,
+the presence of a,O-unsaturated ketones in these films could not
+be ruled out since the amount necessary to account for the observed
+
+
+
+=== PDF PAGE 22 ===
+13
+chemiluminescence is well below the limit of IR detection. We were
+unable to record phosphorescence emission from partially oxidized
+films at -196C. This may have been due simply to the small amount
+of material present on the glass slides.
+TABLE 3. EXPRESSIONS FOR MAXIMUM CHEMILUMINESCENCE INTENSITY
+FROM VARIOUS POLYMERS AS A FUNCTION OF TEMPERATURE
+Imax(photons/g-sec)=Ae-Ea/RT
+A, Ea,
+Polymer Atmosphere photons/g-sec Kcal/mole I at 100 C
+max
+cis-l,4-Polybutadiene Oxygen 1.91 x 1020 20.4 2.3 x 108
+1,2-Polybutadiene Oxygen 4.83 x 1023 25.2 8.3 x 108
+cis-l,4-Polyisoprene Oxygen 1.58 x 1018 16.2 5.1 x 108
+trans-Polypentenamer Argon 3.22 x 1021 23.8 3.6 x 107
+TABLE 4. EQUATIONS TO DESCRIBE TEMPERATURE DEPENDENCE OF
+tl/2 FOR VARIOUS POLYMERS
+I/tl/2 = Ae-Ea/RT
+Polymer Atmosphere A, Sec-1 Ea,Kcal/mole
+cis-l,4-Polybutadiene Oxygen 2.65 x 104 14.2
+cis-1,4-Polyisoprene Oxygen 5.1 x 109 23.4
+trans-Polypentenamer Argon 6.89 x 103 13.3
+
+
+
+=== PDF PAGE 23 ===
+14
+In all the polymers examined the spectral distribution
+changes with time both in oxygen and in argon (Figures 26L31). This
+result implicates the presence of at least two emitters in the
+samples. In some figures there is an apparent crossover of the
+f(X) values, which is apparently an artifact due to light emission
+from a cutoff filter.
+Temperature-Jump Measurements. A film of cis-l,4­
+polyisoprene was allowed to oxidize at 1180C until the chemiluminesceice
+reached a maximum intensity, at which point the film was cooled rapidly
+to 280C. The steady state emission was measured at this and several
+higher temperatures up to 660C. The temperature was again lowered to
+280C and the procedure repeated. Under these low temperature conditions,
+the amount of initiator and the chemiluminescence intensity do not
+change appreciably during a given measurement. In terms of the two
+modes of initiation, the following equations can then be:
+Unimolecular:
+Rinit f Rterm
+d[RO 2 H]Idt k 12 [RO 2 H] k 6 [RO 2 12
+I - d(hv)/dt kk8[R02"] 2 k k81 2[RO2H]_ (16)
+k + k [Q] k6% + k [Q])
+8 9 9
+E E7 '+ E8 + El 2 - E 6 - 9 (17)
+E12
+Bimolecular:
+2
+k{ER011) = k [RO .]
+2 2 6
+k 7 k 8 k24RO 2 H) 2 1 k 1 k 2 k 7 k 8 [(RO 2 H)I
+k6(R 8 + k 9 [Q]) k 1 k 6k 8 + k 9 [Q]) (18)
+E I E + 2 + E7 + E8 - E-1 -E - E9 (19)
+1
+E + E -E
+1
+
+
+
+=== PDF PAGE 24 ===
+15
+From the Arrhenius plot for the tempetature-jump approach (Figure 39),
+ET was found to be 19.8 + 0.7 kcal/mol.
+Since the chemiluminescence emission from the oxidized film
+was relatively weak, a second film was oxidized similarly, cooled, and
+9,10-diphenylanthracene (0.5% by weight) was added to the product.
+The mixture was dissolved in benzene and the solvent allowed to
+evaporate. The chemiluminescence was greatly enhanced by this treat­
+ment, and an activation energy of 25.3 kcal/mol was obtained from the
+temperature dependence of the emission (Figure 40) between 29C and
+660C. It should be noted that the activation energy obtained under
+these conditions was expected to be a different quantity than the EImax
+values obtained at higher temperatures (Figure 35). This difference is
+due to different limiting conditions.of the autoxidation process.
+Chemiluminescence from Hydroperoxidized
+cis-l,4-Polyisoprene
+The technique of generating singlet oxygen with polymer­
+bound dye sensitizer in our hands produced a cleaner product than by
+conventional photosensitization with dissolved or solubilized sensi­
+tizers.(7) The fact that similar activation energies(8) are observed from
+singlet oxygenated and autoxidized polymers (Figure 40) suggests that
+hydroperoxides are the initiating species in both samples under these
+conditions.
+Conclusions
+The chemiluminescence emission from elastomers (cis-l,4­
+polyisoprene, cis-l,4-polybutadiene, trans-polypentenamer, and 1,2­
+polybutadiene) above 90C show similar features of an autocatalytic
+buildup of chemiluminescence in oxygen to a maximum value followed
+by a decline. The decay of the chemiluminescence is probably associ­
+ated with a slowing in the rate of oxidation of the materials, which
+
+
+
+=== PDF PAGE 25 ===
+16
+have already undergone extensive oxidation by the time the maximum
+intensity has been reached. This conclusion is similar to that drawn
+from results in liquid systems, (5a) and is in.part a consequence of the
+decrease in the effective hydrocarbon concentration by dilution with
+oxidation products.
+In argon a weaker level of chemiluminescence was observed
+that is ascribed to the decomposition of residual peroxides and
+hydroperoxides in the samples. Kock and Hol(2e) reached similar con­
+clusions from the behavior of commercial polybutadiene samples.
+The time and temperature dependence of the chemiluminescence
+from cis-l,4-polyisoprene in oxygen could be predicted reasonably well
+between 91 and 1430C from equations developed from a simplified reaction
+scheme. This result suggests that, in spite of the complicated nature
+of the oxidation, there is a similar overall mechanism operating for
+oxidative degradation over this temperature range.
+The results and discussion are elaborated in more detail in
+a manuscript now in preparation. This manuscript will be an extension
+of the preprint, "Chemiluminescence Study of the Autoxidation of cis­
+1,4-Polyisoprene", submitted for the San Francisco meeting-of the
+American Chemical Society, August 30-September 3, 1976.
+
+
+
+=== PDF PAGE 26 ===
+17
+REFERENCES
+(1) A. P. Schaap, A. L. Thayer, E. C. Blossey, and D. C. Neckers,
+J. Amer. Chem. Soc., 97, 3741 (1975).
+(2) (a) G. E. Ashby, J. Polym. Sci., 50, 99 (1961); (b) J. Stauff,
+H. Schmidkunz and G. Hartmann, Nature, 198, 281 (1963);
+(c) M. P. Schard and C. A. Russell, J. Appl. Polym. Sci., 8,
+985, 997 (1964); (d) R. E. Barker, Jr., J. H. Daane, and P. M.
+Rentzepis, J. Polym. Sci., A, 3, 2033 (1965); (e) L. Reich and
+S. S. Stivala, ibid., A, 3, 4299 (1965); (f) R. J. de Kock and
+P.A.H.M. Hol, Int. Syn. Rubber Symp., Lect., 4th (2), 53 (1969);
+Chem. Abstr., 74, 4425 (1971); (g) U. Isacsson and G. Wettermark,
+Anal. Chim. Acta, 68, 339 (1974); (h) T. V. Pokholok, 0. N.
+Karpukhin, and V. Ya. Shlyapintok, J. Polym. Sci., Polym. Chem.
+Ed., 13,525 (1975).
+(3) The intensity values in Figure 24 were those indicated on the
+chemiluminescence recorder and were not corrected for a geo­
+metrical factor (,150) and for photomultiplier counting efficiency
+(15%+ 10%, between 300 and 500 nm), which is a function of the
+emission wavelength. The data in Table 3 and in Figures 33-35.
+have been corrected for both factors.
+(4) (a) R. F. Vassil'ev, in "Progress in Reaction Kinetics", Vol. 4,
+G. Porter, Ed., Permagon Press, Oxford, 1967, pp 305-352; (b) V.
+Ya. Shlyapintokh, 0. N. Karpukhin, L. M. Postnikov, V. F. Tsepalov,
+A. A. Vichutinskii, and I. V. Zakharov, "Chemiluminescence Tech­
+niques in Chemical Reactions", Consultants Bureau, New York,
+1968; (c) R. F. Vassil'ev, Russ. Chem. Rev., 39, 529 (1970);
+(d) R. E. Kellogg, J. Amer. Chem. Soc., 91, 5433 '(1969).
+(5) (a) G. Lundeen and R. Livingston, Photochem. Photobiol., 4,
+1085 (1965); (b) A. V. Tobolsky, D. J. Metz, and R. B. Mesrobian,
+J. Amer. Chem. Soc., 72, 1942 (1950).
+(6) S. W. Beavan and D. Phillips, Europ. Polym. J., 10. 593 (1974);
+Rubber Chem. Technol., 48, 692 (1975).
+(7) M. L. Kaplan and P. G. Kelleher, Rubber Chem. Technol., 45, 423
+(1972).
+(8) The temperature-dependence of chemiluminescence from the hydro­
+peroxidized cis-l,4-polyisoprene has the same expression as that
+for the temperature jump approach.
+
+
+
+=== PDF PAGE 27 ===
+18
+F-
+PHOTOMULTIPLIER
+-SHUTTER LIGHT SHIELD
+WCOLLECTOR SALE
+LENS 4.4"
+DOOR
+2.375"
+5WNDOWS 4.4"
+0U2.-
+WATER-COOLED SAMPLE OVEN SAMPLE
+OVEN SHIELD
+FIGURE I. SCHEMATIC VIEW OF CHEMILUMINESCENCE APPARATUS
+
+
+
+=== PDF PAGE 28 ===
+P11OCTOW COUNTI. /N$I'RMMENTAT/ON
+FOR CNEM/W1MIN CENCE STUD/CS
+POTOM/LT/PL/I1R SAMPLE BAN/K
+AND C-ARR6
+COMPUTER OP'7-9-
+"
+CIIOPPER(5//077 .F.)_RWH
+9t6R7-7 WINDOWS
+LIUI SAMPL.E
+t ----
+fATCOA7OL&e 4A' Ao< 'E
+OVffN S/I/Et AMC '.
+SAMPLE BANk OE
+AUTOMAT/C COOPS
+E"x CZSOL// SAMPLES
+FIGURE 2. ARTIST' S SKETCH OF,.CH t4IUMINES CE NCE APPARATS
+
+
+
+=== PDF PAGE 29 ===
+20
+100
+90­
+80 -
+70
+60
+.50
+C
+0
+40
+30 - 0
+20 -
+I0
+01
+600 700 800 900 l000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000
+Photomultiplier Voltage
+FIGURE 3. PHOTOMULTIPLIER DARK CURRENT VS APPLIED VOLTAGE
+ORIGINAL PAGE IS POOR
+
+
+
+=== PDF PAGE 30 ===
+Wavelength (microns)
+2 5 3 4 5 6 7 8 9 I0 12 15 20 30 40
+100 - 1 1. 1 1 1 1 1 1 1
+la
+'9 60
+w0
+U
+CC-,
+= 40
+N)
+20 -
+H- 20
+0 -- I I I I I I I I I 1
+4000 3500 3000 2500 2000 1800 1600 1400 1200 1000 800 600 400 200
+Frequency (cr'l)
+FIGURE 4. INFRARED SPECTRUM OF SINGLET OXYGENATED cis-1,4-POLYISOPRENE
+
+
+
+=== PDF PAGE 31 ===
+22
+O6_
+Q2
+lop
+*-I0
+I0
+05_
+(.)
+Ar
+'02 -
+102'
+I
+0d
+0 1 1 1 1 1
+0 20 40 60 80 100 120
+Time (min)
+FIGURE 5. 'EFFECT OF ATMOSPHERE ON CHEMILUMINESCENCE FROM cis-,4-POLYISOPRENE
+AT 1720C
+
+
+
+=== PDF PAGE 32 ===
+23
+02
+02
+0 Ar Ar Ar
+C')
+se io3
+C
+0
+102 _
+i01
+I I I
+0 !
+0 10 20 30 40 50 60
+Time (min)
+FIGURE 6. EFFECT OF ATMOSPHERE ON CHEMILUIJNESCENCE FROM
+trans-POLYPENTENAMER AT 172°CC
+
+
+
+=== PDF PAGE 33 ===
+24
+106
+02O
+10,
+02 02
+o4
+03
+Ar
+102
+Ar
+I
+I
+00 30
+0 30 60 90 120 150 180
+Time (min)
+FIGURE 7. EFFECT OF ATMOSPHERE ON CHEMILUMINESCENCE FROM
+cis-1,4-POLYBUTADIENE AT 1720C
+
+
+
+=== PDF PAGE 34 ===
+3600 3000 2400 1800 1200 600
+Wave Number (c-m1 )
+;nFGURE 8. SAIAYLE NO. 1. ci-,4-POLYBUTAD)IENft, PURE FILM
+3600 ,3000
+-2400 .1800 1200 600
+Nuriber (cu-l)'
+-Wave
+[FIGURE 9. SAMPLE NO.. 2. cis-1,4-POLYBUTADIENE AFTER
+11' MThVTrI TNT vVrIrT" Am 11 guf
+
+
+
+=== PDF PAGE 35 ===
+U .
+3500 3000 2400 1800 1200 600'
+Wave Number (cm-1)
+FIGURE 10. SAMPLE NO. 3 cis-,4-POLYBUTADIENE
+AFTER 21 MINUTES, INOXYGEN AT 115'C
+2400 1800 1290 60
+Wave Number (cm-_)
+FIGURE Ii. 'c-i'4-POLYBUTAfIENE DIFFERENCE SPECTRM:{j . 4 minus 0.8 t)NO. 2)
+-
+
+
+
+=== PDF PAGE 36 ===
+27
+t!
+Li
+3600 3000 2400 1800 1200 600
+Wave Number (cm - I )
+FIGURE -12. SAMPLE NO. 4. cis- 1, 4-POLYISOPRENE,
+PURE FILM
+
+
+
+=== PDF PAGE 37 ===
+28
+3600 .3000 2400 1800 1200 600
+Wa~ve Number (cm - 1
+FIGURE 13. SAMPLE NO. 5. cis-I,4-POLYISOPRENE
+AFTER 12 MINUTES IN OXYGEN AT 115'C
+
+
+
+=== PDF PAGE 38 ===
+29
+t
+U,
+0)
+C
+rn
+3600 3000 2400 1800 1200 600
+Wave Number (cm- I
+FIGURE 14. SAMPLE NO. 6. cis-1,4-POLYISOPRENE
+AFTER 22 MINUTES IN OXYGEN AT 1150 C
+
+
+
+=== PDF PAGE 39 ===
+30
+0
+3600 3000 2400 1800 1200 600
+Wave Number (cm - )
+FIGURE 15. cis-I,4-POLYISOPRENE DIFFERENCE SPECTRUM
+T0.8 x NO. 6 minus NO. 5)
+
+
+
+=== PDF PAGE 40 ===
+31
+ifi
+5 600 3000 2400 1800 1200 600
+Wave Number (cm - I)
+FIGURE 16. SMMLE NO. 7. trans-POLYPENTENAMER,
+PURE FILM
+
+
+
+=== PDF PAGE 41 ===
+32
+C
+C)
+.)
+3600 3000 2400 1800 1200 600
+Wave Number (cm - I )
+FIGURE 17. SAMPLE NO. 8. trans-POLYPENTENLMER
+AFTER
+17 MINUTES IN OXYGEN AT 115°0C
+
+
+
+=== PDF PAGE 42 ===
+33
+i2
+3600
+3000
+2400
+1800
+1200
+600
+Wave Number (cm - 1)
+FIGURE 18. SAMPLE NO. 9. trans-POLYPENTENAMER
+AFTER
+27 MINUTIES IN OXYGEN AT 115°0C
+
+
+
+=== PDF PAGE 43 ===
+'I,
+C!
+3600 30,00 2400 1800 1200 600
+Wave Number (cm- 1)
+FIGURE 19. trans-POLYPENTENAM4ER DIFFERENCE SPECTRUM
+TO0.55 x NO. 9 minus NO. 8)
+I EPRODUOIBILITY OF THA
+OIGINAI, RAGE IS PO01t
+
+
+
+=== PDF PAGE 44 ===
+35
+CJ
+3600 3000 2400 1800 1200 600
+Wave Number (cm - I )
+FIGURE 20. SMPLE NO. 10. 1,2-POLYlBUTADIENE,
+PURE FILM
+
+
+
+=== PDF PAGE 45 ===
+36
+3600 3000 2400 1800 1200 600
+Wve Number (cm - I )
+FIGURE 21. SAMPLE NO. 11. 1,2-POLYBUIADIENE AFTER
+24 MINUTES IN OXYGEN AT 1150C
+
+
+
+=== PDF PAGE 46 ===
+37
+II
+5600 3000 2400 1800 1200 600
+Wave Number (cm - I
+FIGURE 22. SAMPLE NO. 12. 1.,2-POLYBUTADIENE AFTER
+37 MINUTES IN OXYGEN AT 115°0C
+
+
+
+=== PDF PAGE 47 ===
+38
+:3600 3000 2400 1800 1200 600
+Wave Number (cm­ 1I
+FIGURE 23,. 1,2-POLYBUTADIENE DIFFERENCE SPECTRUM
+_(NO. 11 minus 9.5 x NO. 10)
+
+
+
+=== PDF PAGE 48 ===
+14 1
+12
+in +02 -- products+hy
+10 142W n
+x 8 ­
+-
+) ­
+0
+0
+0G
+961 1O-C0 ' _
+21
+0 I 2. 3 4 5 6
+Time, hr
+FIGURE 24. REPRESENTATIVE CURVES FOR OXIDATIVE CHEMILUMINESCENCE FROM cis-1,4-OLYISOPRENE
+AT 96-1420C
+
+
+
+=== PDF PAGE 49 ===
+40
+I I I I tIII lj I I
+40­
+20 o ­
+00
+91c
+2000­
+I *I..i...iII0110C
+I 1060C
+00
+cn 600 -
+400
+200
+600 nn
+100 1 l l t-[l I
+I 2 4 681I0 20 40
+FIGURE 25. TEST OF CHEMILUMINESCENCE DATA FROM dis-1,4-POLYISOPRENI
+FOR KINETIC ORDER. IN INITIATOR
+
+
+
+=== PDF PAGE 50 ===
+41
+107
+0
+Ea= 16.2 kcal/mole
+0
+U,'
+C:
+0
+E
+- 0
+00
+4 I IoI
+1050
+2.3 2.4 2.5 2.6 2.7 2.8
+103/T
+FIGURE 26. ARRHENIUS PLOT OF MAXIMUM. CHEMILUMINESCENCE FROM
+cis-1,4-:OLYISOPRENEIN OXYGEN
+
+
+
+=== PDF PAGE 51 ===
+100
+90
+f (442)
+80- 46 0
+70 ­ -700
+o 600
+500
+O50-
+400
+40 -f(540)
+004
+30 300
+H
+L30
+-200
+20
+100
+1 o 0 01111111111 I ' II I I I I
+0
+0 20 40 60 80 100 120 140 160 180 200 220 240 260 280 300 320 340 360 380 400
+Time,min
+FIGURE 27. CHEMILUMINESCENCE EMISSION AND SPECTRAL DISTRIBUTION FROM cis-l,4-POLYBUTADIENE
+AT 1100C IN ARGON.
+
+
+
+=== PDF PAGE 52 ===
+2600
+2400
+- 2200
+tO0- - 2000
+90 ­ - 1800
+80- - 1600
+70- - 1400
+60- - 1200 u
+E "
+50- - 1000
+40- - 800
+0 30- - 600
+20 - - 400
+I0- -2 00
+(I I0I
+0
+0
+0 10 20 30 40 50 60 70 80 90 100 10 120 130 140 150 200 210 220 230 240
+Time,min
+FIGURE 28. CHEMILUMINESCENCE EMISSION AND SPECTRAL DISTRIBUTION FROM cis-1,4-
+POLYBUTADIENE AT 1100C IN OXYGEN.
+
+
+
+=== PDF PAGE 53 ===
+100
+90­
+80­
+70o 700
+c 60
+= 50- f(426) -500
+40- 401 400
+30­
+20- f (40) -200
+0r I I I I I I I I I I 1 1 o_50
+0 10 20 30 40 50 60 70 80 90 100 1JO 120 130 140 150 160 170 80 270 280
+Timer,min
+FIGURE 29. CHEMILUMINESCENCE EMISSION AND SPECTRAL DISTRIBUTION FROM trans-
+POLYPENTENAMER AT 1140C UNDER ARGON.
+
+
+
+=== PDF PAGE 54 ===
+100
+90 -9000
+80 8000
+7-, 7000
+60
+- 6000
+p
+50- -- 5000
+Sf (426)
+40 ­ - 4000
+~-f (442)
+30 - - 3000 0
+H
+'20- f(490) -00
+10 -- 1000O
+0r ,--t l I I I _- _0
+0 I0 20 30 40 50 60 70 ­ 80 90 I00 I1I0 120 130 140 150 160 170 18T0( "250 - J60
+Time, rmin
+FIGURE 30. CHEMILUMINESCENCE EMISSION AND SPECTRAL DISTRIBUTION FROM trans-
+POLYPENTENAMER AT 1150C IN OXYGEN.
+
+
+
+=== PDF PAGE 55 ===
+2500
+rc0- 2000
+90
+80
+1500
+70 f (442)
+70-)
+670
+U,
+50 - I 0
+Sf (426)
+40
+253000-
+C- 500
+0 4 490
+or I I I I I , I I I I I I I I I I I 1 1 0o
+0 II-0I 20 30 40 50 60 70 BO 90 100 110 120 130 140 150 160 170 180 190 200
+Time,rm
+FIGURE 31. CHEMILUMINESCENCE EMISSION AND SPECTRA&L DISTRIBUTION FROM 1,2-
+POLYBUTADIENE AT 1310C IN ARGON.
+
+
+
+=== PDF PAGE 56 ===
+I00
+90 -
+80 ­
+7C 7000
+0 6000
+CL 60 - ,(4)5f (020 f -
+0
+40 20 3000 40
+140 FGURE)3. -- 1000 C
+20 - -­ 2000
+10 -­ /, "- 000
+0 0IO-I 20 30 40 5Q 60 70. 80 90 100 11I0 120 130 140 150 160 170 I80 I90 200
+time ,rn
+FIGURE 32. CHEHILJUMINESCENCE EMISSION AID SPECTRAL DISTRIBUTION FROM 1,2-
+POLYRUTADIENE AT 1290 C IN OXYGEN.
+
+
+
+=== PDF PAGE 57 ===
+IOO I I [0I
+80-
+~41n3m----8
+80 8
+- 60 -4 U
+0 -­ n 6"40
+.420- -2
+C, I 'I0
+0 L 1
+0 00 200 300 400
+Time, min
+FIGURE 33. CHEMILUMINESCENCE AND SPECTRAL DISTRIBUTION FROM
+Dc cis-1,4-POLYISOPRENE IN OXYGEN AT 118°C. THE
+F() VALUES WERE OBTAINED FROM SEVERAL RUNS
+
+
+
+=== PDF PAGE 58 ===
+49
+1,2 - Polybutodiene
+Ea= 25.2 kcol/mole
+I ,4-Polybutadiene,
+o E :20.4 kcal/mole
+0
+--
+00
+0,0
+1050
+Trans - Polypenternnmer Ift
+2.4 2.5 2.6 2.7 2.8 2.9
+103/T
+FIGURE 34. TEMERTRE DEPENDENCE OF 14AI14UM CHE14LMINESCENCE
+FROM 1,2- AND cis-1,4-POLYBUTADIENE, AND FROM rans-
+POLYPENTENAMER IN OXYGEN.
+
+
+
+=== PDF PAGE 59 ===
+50
+107
+0
+6
+10
+0
+0 E, 23.8 kcal/mole
+105
+104
+2.6
+2.A 2.5
+10/T
+FIGURE 35. TEMPERATURE DEPENDENCE OF MIAXI19M CEEMILTUMINESCENCE
+FROM trans-POLYPENTENAMdER UNDER ARGON.
+
+
+
+=== PDF PAGE 60 ===
+51
+10-3
+**o
+\0
+E = 14.2 kcal/mole
+a
+A 2.65 0 4 sec-'
+10­
+1,2 Polybutcidiene
+-
+- 1,4- Polybutadiene
+0-51I I 1
+2.4 2.5 2.6 2.7 2.8 2.9 3.0
+103/ T
+FIGURE 36, ARRHENIUS PLOTS OF 1/t / FOR 1,2- AND cis-1,4-POLYBUTADIENE
+1 2
+IN OXYGEN.
+
+
+
+=== PDF PAGE 61 ===
+52
+10-2
+10- 3 -
+Ea= 13.3 kcal/mole
+A =6.89x103sec ­
+0
+0
+0
+2.2 2.3 2.4 2.5 2.6 2.7
+103/T
+FIGURE 37. ARRHENIUS PLOT OF l/tl/ 2 FOR trans-POLYPENTENAMER
+UNDER ARGON.
+
+
+
+=== PDF PAGE 62 ===
+53
+10-2
+0
+E = 23.4 kcal/mole
+0
+10-3 -
+0
+10-4
+0-5
+o I II
+23 2.4 25 2.6 2.7 2.8
+103/T
+FIGURE 38. ARRHENIUS PLOT OF 1/t / FOR cis-1,4-POLISOPRENE
+1 2
+IN OXYGEN.
+
+
+
+=== PDF PAGE 63 ===
+54
+TOC
+66.0 56.7 47.5 38.2 29.0
+4.8 lI
+0
+3.7-0 42
+O /"E = 19.8 kcoI/mole
+1
+(83.7 014 \0
+0\0
+cU
+o0 "a0--05
+8 E 2.7 -­ 5t
+aX
+-
+0
+'0.64 -III- '.
+2.949 5.040 3.150 3.220 3.311
+103/Tabs
+FIGURE 39. ARRiqENIUS PLOT FOR CHEMILUMINESCENCE IN TEMPER&TURE-JUMP
+EXPERIMENT WITH AUTOXIDIZED cis-I,4-POLYISOPRENE
+
+
+
+=== PDF PAGE 64 ===
+55
+1000
+0
+\
+0
+E 23.6 kcal/mole
+100
+0
+0
+00
+0
+00
+I I I
+!3o0 3.1 3.2 3.3 3.4 3.5
+103/Tabs
+FIGURE 40. CHEMILUMINESCENCE AS A FUNCTION OF TEMPERATURE FOR
+AUTOXIDIZED (13) AND SINGLET OXYGENATED (0) IS-1,4-
+POLYISOPRENE. EACH RUN CONTAINED 0. 5 PERCENT 9,10-
+DIPHENYLANTHRACENE.

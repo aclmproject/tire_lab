@@ -1,0 +1,76 @@
+{
+  "product": "ACLM Tire Lab Validation Workspace",
+  "schemaVersion": "1.2.0",
+  "generatedUtc": "2026-08-31T15:42:05.795Z",
+  "car": "Maserati 250F 6 cylinder",
+  "series": "1954-58 Formula 1 / Grand Prix",
+  "track": null,
+  "telemetry": null,
+  "pressureAB": {
+    "baseline": null,
+    "corrected": null,
+    "comparison": null
+  },
+  "simulation": null,
+  "balance": [],
+  "sweep": [
+    {
+      "coldPsi": 22.2,
+      "camberDeg": -2.5,
+      "predictedHotPsi": 30.4,
+      "score": 4.07
+    },
+    {
+      "coldPsi": 22.2,
+      "camberDeg": -3,
+      "predictedHotPsi": 30.4,
+      "score": 4.77
+    },
+    {
+      "coldPsi": 22.2,
+      "camberDeg": -2,
+      "predictedHotPsi": 30.4,
+      "score": 4.77
+    },
+    {
+      "coldPsi": 22.2,
+      "camberDeg": -1.5,
+      "predictedHotPsi": 30.4,
+      "score": 5.47
+    },
+    {
+      "coldPsi": 22.2,
+      "camberDeg": -1,
+      "predictedHotPsi": 30.4,
+      "score": 6.17
+    },
+    {
+      "coldPsi": 23.2,
+      "camberDeg": -2.5,
+      "predictedHotPsi": 31.6,
+      "score": 7.73
+    },
+    {
+      "coldPsi": 23.2,
+      "camberDeg": -3,
+      "predictedHotPsi": 31.6,
+      "score": 8.43
+    },
+    {
+      "coldPsi": 23.2,
+      "camberDeg": -2,
+      "predictedHotPsi": 31.6,
+      "score": 8.43
+    }
+  ],
+  "strategy": [],
+  "testProfile": null,
+  "researchDraftCount": 0,
+  "limitations": [
+    "screening simulation only",
+    "track KN5 geometry is not decoded",
+    "standard AC shared memory has wheelSlip but no dedicated slip-angle array",
+    "recorded telemetry is authoritative only when channel mapping and sensor units are verified",
+    "accelerated-wear normalization is an estimate, not a direct 1x measurement"
+  ]
+}

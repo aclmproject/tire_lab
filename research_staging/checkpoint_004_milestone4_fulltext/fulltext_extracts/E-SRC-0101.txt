@@ -1,0 +1,703 @@
+=== PDF PAGE 1 ===
+NASA
+Tech ni ca I
+Paper
+2790
+March 1988
+Cornering Characteristics
+of the Main-Gear Tire of
+the Space Shuttle Orbiter
+Robert H. Daugherty,
+Sandy M. Stubbs,
+and Martha P. Robinson
+NASA
+
+
+
+=== PDF PAGE 2 ===
+NASA
+Tech ni c a I
+Paper
+2790
+1988
+Cornering Characteristics
+of the Main-Gear Tire of
+the Space Shuttle Orbiter
+Robert H. Daugherty,
+Sandy M. Stubbs,
+and Martha P. Robinson
+Langley Research Center
+Hampton, Virginia
+National Aeronautics
+and Space Administration
+Scientific and Technical
+Information Division
+
+
+
+=== PDF PAGE 3 ===
+Summary
+The characteristics include side force, side-force co-
+efficient, drag force, drag-force coefficient, aligning
+An experimental investigation was conducted at
+the NASA Langley Research Center to study the ef- torque, and overturning torque. Data were gener-
+ated for yaw angles ranging from 0' to 10' and for
+fects of various vertical-load and yaw-angle condi-
+vertical loads ranging from approximately 15 000 to
+tions on the cornering behavior of the main-gear tire
+122 000 lb. Test speeds ranged from approximately
+of the Space Shuttle orbiter. The parameters mea-
+5 knots (for towing tests) to 224 knots (the maximum
+sured to evaluate cornering behavior included side
+speed of the test facility). These parameters cover
+force, side-force coefficient] drag force, drag-force co-
+the full range of load, yaw-angle, and speed condi-
+efficient, aligning torque, and overturning torque.
+tions expected during orbiter landing operations.
+The results of the investigation are useful in char-
+acterizing the main-gear-tire behavior in flight sim-
+Symbols
+ulators so that accurate vehicle performance in re-
+sponse to crosswind forces or pilot steering inputs is All values for parameters in this report are pre-
+modeled. sented in US. Customary Units.
+The orbiter main-gear tire was found to behave
+D distance between vertical beams (or
+like most other tires in response to variations in ver-
+drag beams)
+tical load and yaw angle. The side-force coefficient,
+which is a measure of cornering efficiency]w as found total drag force parallel to wheel
+Fd
+to increase with increases in yaw angle and decrease plane, lb
+with increases in vertical load. Drag force was found
+drag force measured on north side of
+to increase with increases in vertical load at constant Fd,n
+tire, lb
+yaw angles. Aligning torque was found to be positive
+for all conditions tested, a result indicating that the Fd,s drag force measured on south side of
+tire is stable in yaw. Overturning torque was found tire, lb
+generally to increase with increases in vertical load
+FS side force perpendicular to wheel
+or yaw angle.
+plane, Ib
+Introduction total vertical force on tire, Ib
+F Z
+The Space Shuttle orbiter is the first spacecraft Fz,n vertical force measured on north side
+of its kind intended to land on conventional landing of tire, lb
+gear and runways. This kind of mission flexibility Fz,s vertical force measured on south side
+requires the vehicle to operate in a variety of envi- of tire, lb
+ronments and conditions, and thus factors affecting
+the handling qualities of the vehicle need to be fully Mz overturning torque, ft-lb
+understood. The response of the orbiter tires to MZ aligning torque, ft-lb
+crosswind forces and steering inputs greatly influ-
+R load ratio
+ences the way that the vehicle handles on the run-
+way. Previous studies have documented the corner- P coefficients of curve-fitting equations
+ing behavior of the orbiter nose tires under simulated
+drag-force coefficient parallel to wheel
+Pd
+operating conditions (ref. 1). To aid further in the plane
+understanding of vehicle performance on the runway,
+a study of the main-tire cornering behavior was per- P S side-force coefficient perpendicular to
+formed. Road-wheel dynamometer studies have been wheel plane
+conducted on the main tires, but these tests were 1L tire yaw angle, deg
+performed mainly to examine tire carcass strength.
+When these tests are used to examine cornering Abbreviation:
+behavior, however, the data are usually incorrect be-
+cause of the surface texture and rubber contamina- KSC Kennedy Space Center
+tion of the steel drum used to roll the tire on.
+The purpose of this paper is to present the re- Apparatus and Test Procedure
+sults of tests conducted at the Langley Aircraft Land-
+ing Dynamics Facility (ALDF) to determine the cor- Test Tires
+nering characteristics of the main tires of the Space The tires used in this study were 44.5 x 16.0-
+Shuttle orbiter under simulated flight conditions. 21 bias-ply aircraft tires with a 34-ply rating. A
+
+
+
+=== PDF PAGE 4 ===
+photograph of a new tire is shown in figure 1. The of the wheel axle to permit the acceleration forces of
+tires have a 5-groove tread pattern made of natural the lower mass to be isolated from the tire-contact-
+rubber with the grooves l/lO-in. deep. The tires have plane force data in all three axes. The lower mass is
+16 actual carcass plies and their rated load and infla- the effective mass that the load beams support and
+tion pressure are 60900 Ib and 315 psi, respectively. includes the mass of the axle, wheel, tire, and part
+All tests were conducted at this inflation pressure. of the dynamometer itself. The acceleration data as-
+sure that final calculations of loads data represent
+Test Facility
+the forces generated only by the tire.
+All tests in this investigation were conducted Analog data from each transducer were converted
+at the Langley Aircraft Landing Dynamics Facility to digital signals onboard the carriage by the pulse-
+(ALDF). The facility consists of a set of rails 2800 ft code-modulation system and were serially teleme-
+long on which a go-ft-long, 108 000-lb carriage trav- tered to a receiving station where the data stream
+els. A photograph of the facility is shown in figure 2. was decommutated. This set of data remained in dig-
+The carriage is propelled at speeds up to 224 knots ital form and was fed into a desktop computer. The
+by a high-pressure water jet and is arrested by a set same set of data was also passed through a digital-
+of water turbines connected by nylon tapes. A more to-analog converter and fed through a lkchannel
+detailed description of the facility can be found in frequency-modulated tape recorder; ultimately, the
+reference 2. data were reproduced by a 14-channel oscillograph to
+Tires were mounted on one of two main wheels of give an immediate accounting of carriage and trans-
+the Space Shuttle orbiter, and an existing axle was ducer performance during a run. The telemetry sys-
+modified to allow the wheel and tire to be mounted tem is capable of providing a 200-Hz response. The
+in the dynamometer, which is described below. Brass digital signals transmitted from the carriage permit-
+lugs were designed to simulate the polar moment of ted a data resolution of 1 part in 256. Normally,
+inertia of the rotating portion of the actual brake and full-scale span on each channel was approximately
+were installed in the wheel. 75 percent of the maximum, thus resulting in a reso-
+Tests were conducted on both a smooth concrete lution of the system of approximately 0.5 percent.
+surface and a concrete surface simulating the run-
+Test Procedure
+way at the NASA Kennedy Space Center (KSC).
+The simulated runway, shown in figure 3, was an The test procedure consisted of rotating the dy-
+extremely rough surface with l/Qin-wide by 1/4-in- namometer and wheel assembly to the desired yaw
+deep grooves cut transverse to the direction of motion angle, accelerating the carriage to the desired speed,
+1i
+and spaced on in. centers. The average texture lowering the tire, applying the preselected vertical
+depth was 0.004 in. for the smooth runway surface load, and recording the output from the transducers.
+and 0.03 in. for the rough runway surface. The av- The yaw angles tested were O', lo, 2', 4', and 10'.
+7O,
+erage texture depth of a surface is determined by Some runs were conducted at speeds up to 224 knots,
+spreading a known volume of grease on the desired whereas others were conducted using a tug to tow the
+surface and then measuring the area it covers. A de- carriage at walking speeds. Normally, a vertical load
+tailed description of the technique can be found in of approximately 70 000 lb is the maximum capability
+reference 3. In all tests, the runway surface was level of the test carriage; however, for tests using vertical
+and dry. loads up to approximately 122 000 lb, approximately
+50 000 lb of dead weight was added to the carriage
+Instrumentation
+before tow tests were conducted. This configuration
+The parameters measured in this study included is shown in figure 5.
+tire vertical load, side load, and drag load. These
+Data Reduction
+forces were measured by using the dynamometer that
+is pictured and sketched in figure 4. Vertical load During a run, the digital data received from the
+was measured by using two separate strain-gauged carriage are recorded by the desktop computer at a
+beams, and variations in their load distribution pro- rate of 1600 samples per second. Typically, force and
+vided a measure of overturning torque. Likewise, acceleration data are retrieved from the computer
+drag load was measured by using two separate in- memory at a rate of 400 samples per second and
+strumented beams, and variations in their load dis- then mathematically filtered to 30 Hz. As stated,
+tribution gave a measure of aligning torque. Side vertical load was obtained by adding the outputs of
+load was measured using a single instrumented beam two load beams, and it was then corrected using axle
+mounted in line with the wheel axle. A three-axis ac- acceleration data to account for lower mass inertial
+celerometer package was mounted directly to one end effects. Side force and drag force were obtained in
+2
+
+
+
+=== PDF PAGE 5 ===
+a similar manner. The side-force coefficient p3 was
+defined by the relationship
+and the drag-force coefficient pd was defined by the
+relationship
+pd = Fd lFz
+Aligning torque Mzw as defined by
+Overturning torque Mz was defined by
+Arm for
+side force
+&-,
+Load ratio R was defined by
+R = Fz/60 900 FS
+Sketches A and B, which are drawn showing posi-
+tive sign conventions, display the forces and torques
+acting on a yawed rolling tire.
+Steering axis
+Top view
+Sketch B
+Results and Discussion
+Data gathered during 19 tests are presented in
+table I. Listed for each run are one or more vertical-
+load and yaw-angle conditions along with the as-
+sociated drag force and side force, drag-force and
+side-force coefficients, and overturning and aligning
+torques. The vertical load is also expressed by the
+parameter R which is the ratio of vertical load to
+the rated load of 60900 lb. One should note that
+the rated load for a tire is that load which pro-
+duces approximately 35 percent deflection at the
+rated inflation pressure. Although R is a nondi-
+mensional value, it cannot be used to compare char-
+acteristics between two different tires. For exam-
+ple, one cannot expect the orbiter nose-gear tire to
+produce the same side-force coefficients a5 the or-
+biter main-gear tire even though their yaw angles
+Arm for
+and R values may be identical. Results reported
+vertical force
+I in references 1 and 4 indicate that on dry concrete,
+Fz tire-contact-plane forces and moments are normally
+insensitive to variations in speed. All the main-tire
+data were found to be insensitive to variations in
+Rear view speed as well, but for completeness speed is pre-
+sented in table I for each run. All tests reported
+Sketch A in the main body of this report were conducted
+3
+
+
+
+=== PDF PAGE 6 ===
+on a dry concrete runway. Limited tests on other The plot shows that while a constant yaw angle
+surface types under wet and dry conditions were is maintained, increasing the values of R produces
+also conducted, and the results are presented in the increased drag force. For constant values of R up to
+appendix. approximately 1.00, increasing the yaw angle results
+All data are presented in the form of carpet plots in a relatively flat curve plot. Increasing the yaw
+to show the behavior of each parameter as a func- angle at constant loads appears to have a larger effect
+tion of vertical load (R)a nd yaw angle. Each carpet on increasing the drag force for load ratios greater
+plot shows the measured data points from table I than 1.00 than less than 1.00. This result may be
+and the result of a least-squares bicubic curve fit to due in part to the excessive tire deflections at these
+the test data. The carpet plots show lines of con- loads.
+stant load and yaw angle to aid the reader. Note The drag-force data are also presented as drag-
+that these carpet plots represent three-dimensional force coefficient in figure 9. This parameter is derived
+data surfaces projected onto a two-dimensional sur- in the same manner as the side-force coefficient.
+face. Table I1 presents the coefficients of bicubic in- Figure 9 shows a concentration of the experimental
+terpolation. The following paragraphs discuss the data and the curve fit in the region of a drag-
+effects of vertical load and yaw angle on the corner- force coefficient of 0.02 for low yaw angles and all
+ing characteristics of the main-gear tire of the Space loads. This indicates that 0.02 represents the rolling
+Shuttle orbiter . resistance (or deceleration) of the basic tire. Note
+that none of the data are resolved into increments
+Side Force
+smaller than a drag-force coefficient of 0.01 since
+The effects of vertical load and yaw angle on the it is unrealistic in practice to make more accurate
+side force produced by the tire are shown in figure 6. measurements. Agreement of the curve fit with these
+I
+The side force Fs is perpendicular to the wheel plane; data is not sufficient to draw logical conclusions of the
+therefore, to determine the effect of side force on behavior of this parameter throughout the range of
+, vehicle handling, one would have to translate the the conditions tested.
+force into a cornering force that acts normal to the
+Aligning Torque
+direction of motion. The plot in figure 6 shows that
+increasing the value of R while holding the yaw angle Aligning torque is the torque developed by a
+constant increases the side force up to a point where yawed-rolling tire that tends to return the tire to a
+R is equal to between 0.75 and 1.50. The data show zero-yaw condition. Consequently, negative aligning
+that the tire is literally load limited in terms of side torque indicates an unstable condition. Aligning
+force to a point where further increases in vertical torque is the sum of two torques. One is the torque
+load actually reduce the magnitude of the developed developed by the side force acting behind the steering
+side force. At low values of R, side force increases axis. The other is torque due to the drag force acting
+with yaw angle until a peak is reached, and thereafter through a laterally shifted center of drag and side
+increases in yaw angle cause the side force to be force. The forces and arms depicting these torques
+reduced. can be seen in the sketches in the data reduction
+The side-force data are also shown in figure 7 section of this report. Figure 10 shows the response
+in the form of side-force coefficient, which is simply of aligning torque to variations in yaw angle and load
+the side force normalized by the vertical load on the ratio. The plot shows that increases in load at a
+tire. This coefficient can be used to express the constant yaw angle generally increase the aligning
+,
+efficiency of the tire in producing side force. The torque. At loads corresponding to R = 0.50 and less,
+figure shows in general that for any load condition, changes in aligning torque are small for changes in
+increases in yaw angle produce increases in the side- yaw angle. These data also indicate that the aligning
+force coefficient. The only exception to this occurs torque reaches a maximum for all load conditions,
+at values of R of 0.75 and less with the yaw angle and that these maximum values occur at a higher
+greater than 7'. The plot also shows that for a yaw angle as the load is increased.
+given yaw angle, increases in vertical load result in
+Overturning Torque
+' a decrease of the side-force coefficient or efficiency in
+side-force development. These results are similar to Overturning torque is the torque developed by a
+those reported in references 1 and 4. yawed-rolling tire that tends to tilt the wheel plane
+away from vertical. Overturning torque is the sum
+Drag Force
+of two torques. As can be seen in sketches A and
+The effects of vertical load and yaw angle on the B shown earlier, one torque is produced by the side
+drag force produced by the tire are shown in figure 8. force acting through the axle-to-ground distance, and
+4
+
+
+
+=== PDF PAGE 7 ===
+the other torque is produced by the tire vertical load were evaluated by examining parameters such as side
+acting through a laterally shifted center of pressure. force, side-force coefficient, drag force, drag-force
+Figure 11 shows a carpet plot of overturning torque coefficient, aligning torque, and overturning torque.
+as a function of yaw angle and load ratio. The The results of the investigation indicated that the
+figure shows that holding the yaw angle constant and tire behaves in a manner similar to that of other
+increasing the vertical load causes the overturning tires in that the side-force coefficient, or efficiency,
+torque to increase up to loads corresponding to about basically increases with yaw angle and decreases with
+R = 1.50. Thereafter, slight decreases are seen in vertical load. Previous tests have shown similar tire
+the overturning torque up to R = 2.00. Holding a cornering behavior to be insensitive to variations
+constant vertical load and increasing the yaw angle in speed on dry concrete surfaces, and this was
+causes the overturning torque to increase except for determined to be true for the orbiter main-gear tire
+loads corresponding to R = 0.50 or less at yaw angles as well. Drag force was found to increase as vertical
+greater than 7'. Slight decreases in the overturning load was increased at a constant yaw angle. At high
+torque are seen in this region of low vertical load and loads, increasing the yaw angle was found to increase
+high yaw angle. the drag force.
+Aligning torque developed by the tire is positive
+Concluding Remarks
+for virtually all conditions tested, an indication that
+An experimental investigation was conducted to the tire is stable in yaw for all expected flight con-
+examine the cornering characteristics of the main- ditions. Overturning torque generally increases with
+gear tire of the Space Shuttle orbiter. Data were increasing yaw angle or increasing load.
+obtained at the Langley Aircraft Landing Dynamics
+Facility at tire yaw angles up to 10' and at loads
+up to approximately 122000 lb. These conditions
+NASA Langley Research Center
+span the range of conditions likely to be experienced Hampton, Virginia 23665-5225
+in flight operations. The cornering characteristics December 14, 1987
+5
+
+
+
+=== PDF PAGE 8 ===
+Appendix developed on the KSC surface (highly textured and
+grooved) regardless of its wetness condition.
+The KSC surface was painted with runway paint
+Effect of Surface Type and Wetness
+I
+(coverage was 100 ft2/gal) as shown in figure A2,
+Condition on Side-Force Coefficient
+and tests were conducted on it. The dry-condition
+As part of a separate series of tests to examine side-force coefficient was about 0.26, although the
+the wear characteristics of the main-gear tire of the coefficient dropped to approximately 0.14 when the
+Space Shuttle orbiter on various surface types under surface was wet.
+wet and dry conditions, data were produced to al- Figure A3 shows the KSC surface after sandblast-
+low comparisons of side-force coefficient on various ing. The texture of the surface was greatly reduced,
+surface types and conditions to be made. and the corners of the land areas near the grooves
+Figure A1 shows such a comparison for a tire were highly rounded. Tests on this surface showed
+yaw angle of 4' and a vertical load of approximately a decrease in the dry performance compared with
+55 0oO lb. The tire pressure was 315 psi for all condi- that on the untreated KSC surface, thus yielding a
+tions and the speed for each test was approximately side-force coefficient of about 0.22. When wet, a side-
+200 knots. All surfaces were tested both wet and force coefficient of 0.16 was obtained. Finally, tests
+dry, and the wetness condition for each surface was were conducted on a smooth concrete surface without
+representative of a recently passed rain shower. For grooves. The average texture depth on this surface
+example, after wetting, each surface was more than was 0.004 in. The side-force coefficient on this sur-
+damp, but no puddles were present. Figure A1 shows face was 0.25 when dry and was reduced to about
+that a side-force coefficient between 0.27 and 0.28 was 0.06 when wet.
+6
+
+
+
+=== PDF PAGE 9 ===
+a
+l 7 Y
+7'
+
+
+
+=== PDF PAGE 10 ===
+rs
+ORIGINAL PAGE
+8
+L;38: EWlt QUALITY,
+
+
+
+=== PDF PAGE 11 ===
+ORIGINAL PAGE IS
+OF POOR QUALTTY
+9
+
+
+
+=== PDF PAGE 12 ===
+References Facility With New Capabilities. SAE Tech. Paper
+Ser. 851938, Oct. 1985.
+3. Leland, Trafford J. W.; Yager, Thomas J.; and Joyner,
+1. Vogler, William A,; and Tanner, John A.: Cornering Upshur T.: Effects of Pavement Texture on Wet-Runway
+Characteristics of the Nose-Gear Tire of the Space Shuttle Braking Performance. NASA TN D-4323, 1968.
+Orbiter. NASA TP-1917,1 981. 4. Tanner, John A.; Stubbs, Sandy M.; and McCarty,
+2. Davis, Pamela A.; Stubbs, Sandy M.; and Tanner, John L.: Static and Yawed-Rolling Mechanical Properties
+John A.: Aircraft Landing Dynamics Facility, A Unique of Two Q p e VIII Aircraft Tires. NASA TP-1863,1 981.
+10
+
+
+
+=== PDF PAGE 13 ===
+Table I. Summary of Test Conditions and Results
+-
+Yaw Vertical Drag Side Drag- Side-
+Speed, angle. load, force, force, force force
+Run knots deg lb -R lb lb coefficien coefficient ft-lb
+.oo
+1 200 0 60 900 1 1 000 -7 00 0.02 -0.01
+2 208 1 66 000 1.08 1 100 4 300 .02 .07 2 200 11 100
+3 201 2 65 000 1.07 1 200 9 100 .02 .14 4 100 18 700
+4 206 4 66 500 1.09 1 800 15 200 .03 .23 4 200 31 500
+5 195 4 59 000 .97 1 100 16 000 .02 .27 2 500 32 500
+6 200 4 30 500 0.50 600 12 500 0.02 0.41 500 25 100
+4 45 700 .75 800 13 200 .02 .29 1 400 28 600
+4 53 000 - .87 1 000 13 900 .02 .26 2 000 30 100
+7 5 1 15 200 0.25 400 2 100 0.03 0.14 500 3 600
+1 30 500 .50 600 3 200 .02 .10 1 000 6 000
+1 45 700 .75 900 4 100 .02 .09 1 400 7 700
+1 60 900 1.00 1 400 4 300 .02 .07 2 000 8 400
+8 5 2 15 200 0.25 200 4 300 0.01 0.28 700 7 600
+2 30 500 .50 500 6 800 .02 .22 1 500 12 300
+2 45 700 .75 700 8 200 .02 18 2 500 15 200
+*
+2 60 900 1-.00 1 300 8 600 .02 .14 3 500 16 700
+9 5 4 15 200 3.25 100 6 800 0.01 0.45 500 11 400
+4 30 500 .50 300 11 600 .01 .38 1 500 20 400
+4 45 700 .75 600 14 500 .01 .32 2 800 26 100
+4 60 900 1 - .00 1 500 15 700 .02 .26 3 900 29 300
+10 5 7 15 200 1.25 100 7 600 0.01 0.50 200 13 200
+I
+7 30 500 .50 300 14 400 .01 .47 500 25 900
+I
+7 45 700 .75 700 18 200 .02 .40 1 300 33 800
+~
+7 60 900 I 1.00 1100 21 900 .02 .36 3 000 41 500
+11
+
+
+
+=== PDF PAGE 14 ===
+Table I. Continued
+-
+Yaw Vertical Drag Side Drag- Side- Aligning herturnin!
+speed angle, load, force, force, force force torque, torque,
+Run knots deg lb -R lb lb coefficient coefficieni ft-lb ft-lb
+11 10 15 200 0.25 0 7 300 0 0.48 100 13 000
+10 30 500 .50 100 13 600 0 .45 -200 24 700
+10 45 700 .75 300 19 600 .01 .43 0 36 800
+10 60 900 1.00 900 25 000 .01 .41 600 48 000
+12 1 76 100 1.25 300 3 800 0 0.05 2 900 14 400
+1 91 400 1.50 1 300 2 800 .01 .03 3 100 13 600
+1 106 600 1.75 1 800 2 400 .02 .02 3 600 13 100
+1 115 900 -1.90 3 400 1 800 .03 .02 3 500 12 200
+13 2 78 200 1.28 1 100 6 800 0.01 0.09 4 700 19 100
+2 91 400 1.50 1 300 6 100 .01 .07 5 100 18 300
+2 106 600 1.75 1 800 5 400 .02 .05 6 300 17 500
+2 116 700 -1.92 1 700 4 500 .01 .04 6 600 17 800
+14 4 78 000 1.28 1 300 12 500 0.02 0.16 8 200 32 100
+4 91 400 1.50 1 600 11 000 .02 .12 9 100 30 000
+4 106 600 1.75 2 300 9 500 .02 .09 10 100 28 700
+4 118 400 1.94 2 400 8 900 .02 .08 10 400 27 000
+15 76 100 1.25 1 700 22 300 0.02 0.29 7 300 51 600
+91 400 1.50 2 300 22 200 .03 .24 10 000 52 500
+106 600 1.75 4 500 20 700 .04 .19 12 100 51 000
+114 100 1.87 4 900 19 500 .04 .17 12 400 49 900
+12
+
+
+
+=== PDF PAGE 15 ===
+Table I. Concluded
+Yaw Vertical Drag Side Drag- Side- Aligning Overturning
+Speed, angle, load, force, force, force force torque, torque,
+Run knots deg lb R lb lb coefficient coefficient ft-lb ft-lb
+16 5 10 76 100 1.25 1800 26 600 0.02 0.35 4 900 60 700
+10 91 400 1.50 2 100 27 100 .02 .30 8 400 63 100
+10 106600 1.75 3 600 27 300 .03 .26 11 400 65 600
+10 114 800 1.89 4 800 26 600 .04 .23 12 500 65 600
+17 221 0 45 700 0.75 1 000 700 0.02 0.02 200 1 800
+18 220 0 45 700 .75 1 000 -600 .02 -.01 0 2 100
+19 224 0 45 700 .75 1000 0 .02 0 400 2 400
+13
+
+
+
+=== PDF PAGE 16 ===
+Table 11. Bicubic Interpolation Equations
++ + + + + + + + +
+[Characteristic = Po P1R P2R2 P3R3 P4$ Psq2 P6103 P7R$ P8R$2 PsR2$]
+4
+Coefficients
+Fd, 1b Pd MZ, ft-lb MZ, ft-lb
+PS
+-0.5996 E+04 -0.1967 E+03 0.4484 E-01 0.2396 E-01 0.2496 E+04 -0.5982 E+04
+PO
+.1736 E+05 .3377 E+04 -.2305 E-01 .1362 E-01 -.lo39 E+05 .lo33 E+05
+P1
+-.1452 E+05 -.2853 E+04 -.7313 E-01 -.2807 E-01 .1285 E+05 .1354 E+04
+P2
+.3331 E+04 .8713 E+03 .4014 E-01 .9778 E-02 -.4372 E+04 -.2231 E+04
+P3
+.3564 E+04 -.2888 E+03 .1481 E+OO -.7383 E-02 .1868 E+03 .5647 E+04
+P4
+-.4131 E+03 .8056 E+02 -.lo98 E-01 .1168 E-02 -.9751 E+02 -.6067 E+03
+P5
+.5466 E+01 -.5548 E+01 .4707 E-04 -.8159 E-04 .8568 E+01 .6419 E+OO
+p6
+.2035 E+04 -.1618 E+03 -.5476 E-01 .4032 E-02 .8347 E+03 .4045 E+04
+P7
+.1477 E+03 -.2939 E+01 .6026 E-02 -.7533 E-04 -.1449 E+03 .2728 E+03
+P8
+l% -.lo38 E+04 .1936 E+03 -.8438 E-02 -.3974 E-04 .6827 E+03 -.1740 E+04
+
+
+
+=== PDF PAGE 17 ===
+ORIGINAL PAGE IS OSCIGINAL PAGE rs
+OF POOR QUAU?% OF PO" : ' ,
+15
+
+
+
+=== PDF PAGE 18 ===
+ORIGINAL PAGE IS
+16 OF POOR QU-
+
+
+
+=== PDF PAGE 19 ===
+OKTGINAL PAGE IS
+OF POOR QUALITX
+L-85- 12,239
+Figure 3. Photograph of rough runway surface.
+17
+
+
+
+=== PDF PAGE 20 ===
+ORIGINAL PAGE IS
+OF POOR QUALITY
+Vertical-load beam
+Drag-load beam
+South side
+Side-load beam
+Vertical-load beam
+oothed wheel speed sensor
+Vertical, side, and
+/ /
+drag accelerometers 1 \ /'/
+'%--& //
+North side
+Figure 4. Photograph and sketch of dynamometer.
+18
+
+
+
+=== PDF PAGE 21 ===
+19
+
+
+
+=== PDF PAGE 22 ===
+0
+cv 3-
+II
+3
+m I mI mI mI 0 I m I
+m m m m m m
+m m m m m m
+m
+m m m
+Ln Ln
+m N N d 4 Ln
+20
+
+
+
+=== PDF PAGE 23 ===
+4,
+0
+0 0
+0 d
+II
+( I u I 3
+trl I
+i
+t
+0
+m
+0
+.-
+t,
+Id
+L
+U
+Id
+0
+c
+U
+t
+Id
+Q)
+c
+Ln
+t
+Id
+3
+Id
+>
+u- rn
+N m
+21
+
+
+
+=== PDF PAGE 24 ===
+0
+0
+m m m
+m m m m
+m m
+19
+LD -3- N
+22
+
+
+
+=== PDF PAGE 25 ===
+0
+0
+c
+0
+Y
+= - I
+w w
+a - a
+x o
+w x
+0
+1 I I I I
+m In . m d- . m m . N m. U m. m
+23
+
+
+
+=== PDF PAGE 26 ===
+0
+m 1 m I m I m I m 1
+m m m m m m
+m m m m m
+Ln N a, u3 m
++
+4
+q i - % j ‘ a n b ~ o q6 u t u 6 1 1 t j
+I 24
+
+
+
+=== PDF PAGE 27 ===
+0
+1
+II
+3
+I I I
+m m m
+m m m
+m m m m
+m
+Ln Ln
+L in N
+26
+
+
+
+=== PDF PAGE 28 ===
+Report Documentation Page
+b.
+Report No. 12. Government Accession No. 13. Recipient’s Catalog No.
+NASA TP-2790
+4. Title and Subtitle 5. Report Date
+Cornering Characteristics of the Main-Gear Tire of the Space
+Shuttle Orbiter
+6. Performing Organization Code
+7. Author(s)
+8. Performing Organization Report No.
+Robert H. Daugherty, Sandy M. Stubbs, and
+L- 16370
+Martha P. Robinson
+10. Work Unit No.
+9. Performing Organization Name and Address
+551-15-01-05
+NASA Langley Research Center
+Hampton, VA 23665-5225 11. Contract or Grant No.
+13. Type of Report and Period Covered
+12. Sponsoring Agency Name and Address
+Technical Paper
+National Aeronautics and Space Administration
+Washington, DC 20546-0001 14. Sponsoring Agency Code
+16. Abstract
+An experimental investigation was conducted at the NASA Langley Research Center to study the
+effects of various vertical-load and yaw-angle conditions on the cornering behavior of the main-gear
+tire of the Space Shuttle orbiter. Measured parameters included side force, side-force coefficient, drag
+force, drag-force coefficient, aligning torque, and overturning torque. Side-force coefficient increased
+as the yaw angle was increased but decreased as the vertical load was increased. Drag force was found
+to increase as the vertical load was increased at constant yaw angles. Aligning-torque measurements
+indicated that the tire is stable in yaw.
+17. Key Words (Suggested by Authors(s)) 18. Distribution Statement
+Side force Unclassified-Unlimited
+19. Security Classif.(of this report) 20. Security Classif.(of this page) 21. No. of Pages 22. Price
+Unclassified Unclassified 26 A03

@@ -1,11 +1,33 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.9.2",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.9.2.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.9.2",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.9.2/ACLM_Tire_Lab_Setup_v0.9.2.zip",
-  "sha256": "12800dfb9984a6e56319b96c6d40242bdc3d5d77df95b670c24f29c2f52dd462",
-  "published_utc": "2026-08-29T02:43:14Z",
-  "notes": "Adds the Escort Brands Hatch pressure/compliance calibration gate, per-wheel hot-pressure closure, same-tire cold-pressure A/B workflow, unsafe-baseline stop flag and per-pack pressure prediction report. The generator and historical family coefficients are unchanged pending corrected Escort telemetry."
+  "version": "0.10.2",
+  "knowledge_version": "1.7.0",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.10.2.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.10.2",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.10.2/ACLM_Tire_Lab_Setup_v0.10.2.zip",
+  "release_status": "canonical local corrective artifact built and validated; GitHub publication not performed",
+  "sha256": "2a5c227f8604c27f2cb715098efdcfd040ea64c03accfc9be95c2ac9997249e0",
+  "bytes": 411353,
+  "built_utc": "2026-08-31T04:43:48.4999533Z",
+  "published_utc": null,
+  "source_revision": {
+    "baseline_commit": "fbf502d5fae024bd8618361bba376b80b13b0e19",
+    "working_tree": "uncommitted Milestone 5 plus v0.10.1 and v0.10.2 integrity changes; exact artifact integrity is the installer SHA-256"
+  },
+  "knowledge_sha256": "9a74deaec72b09b92ec08b79abcf1f9f7db139402e13e6d80feddfae117f9200",
+  "test_summary": {
+    "node_tap_tests": 49,
+    "logger_schema_self_test": "PASS — schema 1.2, 84 columns",
+    "runtime_manifest_merge_test": "PASS — MATCH and STALE/HASH_MISMATCH paths preserve generated, active and observed states",
+    "canonical_package_test": "PASS — 39 files, version/path/inventory checks",
+    "in_app_browser_gates": [
+      "1984 plus CLS022/FAM023 blocks; explicit override is visible and non-authoritative",
+      "Kunos-style Escort setup.ini import exposes general MIN/MAX/STEP quantization and displays 23.94 -> 24 psi front and 24.42 -> 24 psi rear",
+      "browser logger start materializes and posts the current v0.10.2 TirePack manifest with app/knowledge/profile/hash fields",
+      "blanket capability/recommendation/session state and requested/observed conditions remain separate"
+    ],
+    "unexplained_failures": 0
+  },
+  "notes": "v0.10.2 hashes active installed loose physics and referenced LUTs, separates generated configuration from active installed and observed runtime state, reports stale handoffs explicitly, and separates short pressure screening from extended thermal observation. The GT40 long-run wear trace is stored but not fitted. Thermal V2 coefficients, wear curves, VIRTUALKM and production Tire Knowledge v1.7.0 numerical priors are unchanged."
 }

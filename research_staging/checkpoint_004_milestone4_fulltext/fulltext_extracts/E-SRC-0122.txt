@@ -1,0 +1,607 @@
+=== PDF PAGE 1 ===
+0
+ITHRUI
+P- IACCESSIONfiUMBER)
+U
+E /
+a-
+>c (PAGES1 "Z I
+KI,WB'd(
+i2l
+(NASA CR OR Tux OR AD NUMBER) (CATEGORY)
+oQQinTgir e der Load
+- . ...--
+I
+Samuel K. Clark
+CFSTl PRICE(S) $
+Dept, of Engineering Mechanics, University of Michigan
+vfl
+I
+Hard copy (HC)
+I
+Microfiche (MF)
+t&
+ff 653 July 85
+I
+Mid-Y ear R'i eeti ng
+Chicago, 111. 650493
+May 17-21, 1965
+
+
+
+=== PDF PAGE 2 ===
+650493
+lling Tire der Loa I
+Samuel K. Clark
+Dept. of Engineering Mechanics, University of Michigan
+IT IS A reasonably good approximation to state that most In view of the many current problems associated with
+pneumatic tire problems can be separated into two groups, pneumatic tire motion in the plane of the wheel, it was felt
+these being: desirable to attempt to extend these analytical techniques
+to those dynamic cases that could be profitably studied.
+1. Those involving motion in the plane of the wheel or
+rim. BASIC DYNAMIC MODEL FOR A ROLLING TIRE
+2. Those involving motion transverse to the plane of the
+wheel or rim. We consider first a generalized cylindrical shell under
+arbitrary loads. This is shown in Fig. 1, 'taken from Flugge
+There are, of course, occasional exceptions to this com- (4).
+partmentalization, but in the main it is felt that consider- From Fig. 1, force equilibrium equations may be written
+able knowledge could be gained by developing methods for for the element of cylindrical shell surface. Generally, ,
+separately studying pneumatic tire performance, either in these equations are directed in the "xa and "rn directions,
+the plane of the wheel or transverse to the plane of the and are given as
+wheel. i
++ N ' + P . a = o
+Preliminary efforts have been made by such writers as x ex x
+Saito (1)* and Thorsen (2) in developing techniquesfor pre-
+dicting cornering forces and other effects transverse to the
+plane of the wheel. To the best of the writer's knowledge,
+no systematic attempts prior to Ref. 3 have been made to M " + G x e + 3 +*MI + a N e - P a2 = o
+study motion in the plane of the wheel. In that report, the
+9 ex x r
+use of an elastically supported cylindrical shell was proposed
+as a means for studying the static loading of a pneumatic The following symbols are used:
+tire against an infinitely rigid, frictionless plane. The re-
+sults obtained from that anlysis seemed to agree fairly well
+with contact patch length measurements made on real pneu-
+It is next necessary to consider displacements of a cylin-
+matic tires.
+drical shell, where we let
+Numbers in parentheses designate References at end of u = Displacement along the generator, positive in the
+paper. direction of increasing "xa
+ABS TRACT
+Methods are presented for calculating dynamic contact contact patch areas are obtained analytically, and the tech-
+patch areas of an elastically supported cylindrical shell used niques involved are given. The shell is used as a basis for
+to model the dynamic rolling of a loaded pneumatic tire. calculating load carrying and drag properties of a pneumatic
+These areas are shown to be influenced considerably by roll- tire SO that various tire parameters may be a2proxirnated.
+ing velocity, constructional parameters of the tire, and its The results given here are typical of information obtainable
+loss characteristics. Dynamic pressure distributions within from such a model.
+
+
+
+=== PDF PAGE 3 ===
+,
+'.
+v = Displaccrnent along a circle of radius -a", positive
+.
+in direction of increasing 8
+w = Radial displacement, positive outward a
+Using this notation and assuming that:
+1. All points lying on one normal to the middle surface
+~
+before deformation do the same after deformation.
+If one uses Eqs. 3 and substitutes them into Eqs. 1, it is
+2. For all kinematic relations, the distance "2" of apoint
+possible to obtain the three equations of equilibrium in
+from the middle surface may be considered as unaffected by
+terms of the three differential equations in displacements
+the deformations of the shell.
+u, v, and w of the middle surface of the shell. Theseequa-
+3. The stress a may be considered negligible compared
+r tions become
+I with the stresses a and a
+I X 0'
+By use of such assumptions, and by consideration of the + u + +- - I.1 u" + -1 + p v + '+ pw + 01 2
+2 2
+definitions of shell forces, one may finally express the vari-
+ous shell forces and moments in terms of the deformation
+by means of the following equations:
+-
+=Da * K
+Ne (v' + w + PU) + 3 (W + w")
+a
+b . K ++
+, N X = - ( ~ + p v m+ p ~ ) - - W
+a 3
+a
+p Z + v ' + w
+- I
++ a 2 [1z - p 0u' * - S u I. -- 3 - p + v + ' + +w. ++ I2 3' t wl" + 2w" + w
+2
+= - - D + Lv ) +-* K -1 - p ( L v - w L ' )
+Nxe a 2 a 3 2
+(4)
+K ++
+Me =-(W + w"+ p ~ )
+2
+a
+We next wish to consider the specific case of a rathernar-
+row cylindrical shell that has no variation of loading with
+respect to the direction. In this case, the shell takes on
+"XI
+the form shown in Fig. 2, where a shell of width b and
+W
+A r
+I
+I
+-
+Fig. 1 Shell stress
+dx
+x8
+resultant conventions
+and nomenclature
+
+
+
+=== PDF PAGE 4 ===
+~~
+g 3
+% ' '.
+k: 2
+thickness "h" iqmade of material of modulus E and density radial pressures exist. Note that the constant a is given by
+,
+p, the radius of the cylinder being "a."
+2 h2
+If the loading is uniform with respect to the "x" direc- I a = -
+- 2
+tion, and if the width b is small enough so that contrac 12a
+W
+cion in the .x" direction may be neglected, then one may In Eq. 7 it is desirable to include most of the properties
+visualize that all derivatives with respect to "x" in Eqs. 4 of a teal pneumatic tire by means of adjusting the radial
+will vanish. In addition, all displacements "u" in the "x' pressure term p for various tire effects. Specifically, it is
+r
+direction become negligible and will be dropped, as will
+desired to support the elastic shell by means of some kind of
+pressure components in the "x" direction. Allowing these
+generalized impedance, in such a way that both real elastic
+simplifying assumptions to be used in Eqs. 4 causes them to
+moduli and imaginary elastic moduli can be operative. This
+reduce to
+might be thought of, in some respects, as filling the inside
+2 of the shell with a massless foamlike material.
+a
+= o For purposes of this report, the generalized impedance
+-
+will be reduced to the specific case of a real elastic and vis
+cous loss support system, but it is readily understood that the
+viscous loss support mechanism may be replaced by other
+mechanisms such as a hysteresis type of loss. For the pres-
+ent, the viscous loss mechanism represents a very simple de-
+vice which is easily treated analytically, and for that reason
+There are several ways that one may proceed to analyze
+will be retained here.
+I
+Eqs. 5. Perhaps the simplest of these is to visualize, that for a As an additional feature of Eq. 7, it is desirable to in-
+frictionless plane P6 vanishes, so that the first of Eqs. 5
+clude both a uniform internal inflation pressure and an ex-
+simply states that ternal pressure loading term denoting contact pressures com-
+(z ing from contact with the ground surface.
+Finally, inertia terms form part of the radial loading,
++ w) =Constant
+since it may be anticipated that the shell in question will
+be accelerating in the "wn direction as well as being sub-
+This same term occurs in the second of Eqs. 5. It is im- jected to an overall rigid body rotation of angular velocity
+mediately recognized as being connected to the circumfer - 62. After accounting for all these factors, one may write the
+entia1 membrane strain through the well-known relation total radial pressure of the shell in the form
+2
+pr = -ph[G -(a + w)62 1 (8a)
+a p, = - kw (8b)
+Pr = cw ( 8 ~ )
+It is simplest to carry this term along in the equations for
+some time before assigning it a specific value. Hence, Eqs. P, = Po
+5 may now be written as
+P, = -P(e)
+2
+assuming that tangential velocities are negligible and where
+This equation now represents the equation for deflection
+-
+By including all these effects into Eq. 7, one finally ob
+of a cylindrical shell against a frictionless load, so that only
+tains
+2 2
+a € i-a wi -a c \;I + Ct2WIV + 2a2w.
+Eh
+m' c 2
+1
++ w [ ~ t ' + ~ - - ] = ~ [ p ~2 - ) o + p h n 6 2 "1
+-
+Fin. 2 Narrow cvlindrical shell notation (9)
+Y
+
+
+
+=== PDF PAGE 5 ===
+In this equation, the presence of the O2 term is due to Introducing the variable
+the fact that the shell is assumed to be rotating with angular
+velocity 51. We shall next allow loads to move in the 52a -
+' ,=51
+opposite direction to 52, around the periphery of the rotating c,
+I
+shell, by means of transforming the'shell equations into a
+new independent variable:
+one finally obtains Eq. 13 in the form:
+- a 2 - ( - (") - 2n( * ) + 61 2 ( )" = - a [-,(e) + po + phaQ I'
+2
+at (10) Eh
+Using these, one obtains In Eq. 15, we define the new constants as follows:
+f
+2
++ a2wIV + 2a w" +.w a + - - - and dividing by a , one finally obtains the equation of mo-
+2 [2 tion:
+e
+'rn i' c . 2z2
+- + - + - z --i'+ ZIV+
+2 2 2
+a2 a a U
+where --
+=f
+c
+a
+1 P
+Next, introduce the new variables (see Ref. 5): --P E fi2 Po
+= +-+-
+a a2 a2
+tC -
+-W= z; - =1 r ; c 2 --E
+a a 1 P where:
+- 2
+ka
+from which the equation of motion of the shell may now be k = -
+Eh
+written in the form
+.. Eq. 17 is an equation for motion of the cylindrical shell
+acc
+1.. 2a61 2 IV and contains all terms necessary for representing most of the
+e + z + - z - - i ' + a z
+Eh C phenomena that can be observed in a rolling pneumatic
+'rn 1
+tire. Loss terms are represented through the viscous loss
+( constant F, dynamic terms through the quantity E, and elas-
+a2 +-k-a-2 Q2a2) z tic terms through the quantity E. The angular velocity of
+E h E h the wheel is given by the dimensionless angular velocity 5 ,
+so that Eq. 17 in effect represents a circular cylindrical
+shell, supported as indicated in Fig. 3, with a moving load
+of angular velocity 52.
+r 1
+In addition to this angular velocity 52, one may super-
+impose a rigid body rotation of angular velocity Sa in the
+opposite direction, as was done with the inertia term of
+
+
+
+=== PDF PAGE 6 ===
+5
+the form (a + w)Q 2 *. i n Eq. 8. This term, whose effect is to which implicitly defines the dimensionless displacement "z"
+superimpose the rigid body rotation of angular velocity as being measured from the inflated position. Using this,
+on the entire system, results in Eq. 17, now representing the Eq. 19 may be written in the form
+rotating tire with stationary impressed load, such as is shown
+in Fig. 3. IV+ ( 2 + WA) Z'' - (CWA)Z
+W e now consider steady-state solutions to Eq. 17. Under
+this condition, all time derivatives vanish, and by making
+substitutions of constants in the form
+where Z is used to emphasize that this displacement is meas-
+ured from the inflated tire as a reference. From this equa -
+tion one sees that the static problem may be obtained read-
+01 01 a ily by allowing the values of both W A and CW A to vanish
+(18) simultaneously. This causes Eq. 21 to reduce immediately
+-PE -PO to
+= p; =PA
+2 - 2 -
+01 ci z IV + 2z" + (1 + K A ) =~ - pe ( 22)
+' one sees this reduces to
+which was used in Ref. 3.
+€
+-
+'rn + zIv + (2 + WA)z" - (CWA)z' + (1 + KA - WA)z THE CONTACT PATCH REGION
+2
+a.
+-
+= PA PO + WA ( 19) There are two problems associated with attempting to
+define the region or length of contact of the tire model
+where, of course, the primes represent derivatives with re- pressed against a frictionless plane. The first of these is the
+spect to the variable 8 and, in general, Eq. 19 represents determination in some form or another of some of the elas-
+1
+tic constants that fit into the various equations of motion
+steady-state, or standing-wave, solutions to the deformation
+just developed, particularly Eq. 21, which is the primary
+of the rotating cylindrical shell.
+@ I 2 s tatement of deformation from the inflated state.
+It is now necessary to define the constant E 01 .This
+One method of accomplishing this is to observe that the
+m
+static case of Eq. 21, given in this report as Eq. 22, indi-
+will be done by making the following basic assumptions: -
+cates that the static problem of contact is a relatively sim
+ple one involving only a single elastic constant, the dimen-
+1. The process of inflation will be considered as one in-
+sionless foundation modulus denoted here by the symbol KA.
+volving membrane effects only.
+It should be possible to determine the value of KA by appro-
+2. The process of deforming the tire in the contactpatch
+priate tests on various real tires, in which certain deflections
+will be considered as one involving bending effects only.
+are imposed and the resulting contact patch lengths are
+measured. Experiments indicate that this may indeed be
+Based on these ideas, we may let
+~ done.
+Similar techniques have not yet been developed for the
+direct measurement of other elastic constants appearing in
+Eq. 21. For purposes of this report, tire construction may
+be used as a guide in calculating some of the constants
+appearing in this equation, and ,in this respect we are rather
+fortunate in having available a background in the material
+properties of cord rubber laminates. By the use of such in-
+formation, one could generally hope to obtain the remaining
+constants necessary in Eq. 21.
+In connection with Eq. 21, one must next decide on tech-
+niques for treating the deformation of the cylindrical shell
+model against a frictionless plane. In doing this, it is seen
+that the left side of the equation contains terms invoIving
+deflections, and the right side contains only the external
+pressure loading term. If one could know the deflections
+of the shell model inside the contact patch regioii, then it
+- might be possible to specify the values "z" on the left side
+Fig. 3 Shell cham- of Eq. 21 and to calculate the particular values of e, for
+teristics which the external pressure vanished, by means of the right
+
+
+
+=== PDF PAGE 7 ===
+side vanishing in Eq. 21. This may be accomplished by ref- and most direct of these would be to manufacture a model
+erence to Fig. 4. from which one may deduce by geometry of the type visualized here and actually to conduct tests in-
+that volving its rolling over some essentially frictionless plane,
+in such a way that pressure distributions, total vertical loads,
+cos e and drag forces could be measured accurately.
+(23) If the properties of the model were well known, then the
+e
+COS
+predictions of the theory could be compared with measured
+z
+where = w/ao data. However, such a series of experiments becomes rather
+difficult when they must be done on a flat plane as visual-
+ized here, since the equipment for rolling a wheel on such
+The first, second, and fourth derivatives of this function
+a flat surface is expensive and complicated. For that reason
+are needed, and these work out to be
+a different approach will be used here, where one attempts
+to utilize physical data that closely approximates those of a
+real tire, and attempts to predict some of the known oper-
+ating characteristics of such a tire.
+In some respects this method is less satisfactory than the
+first process, since it is known that many of the important
+operating characteristics of a tire depend heavily on the
+form of its internal loss. These internal loss characteristics
+are not necessarily well defined for rubber-cord combina-
+- cos e tions. It is clear that a simple viscous loss law does not rep-
+IV
+resent such loss characteristics very well, but the form is
+cos e 4
+COS e quite simple and will serve to illustrate the method of cal-
+culation. For this reason it should be pointed out clearly
+Once having obtained these derivatives, it may be seen that the purpose of this example is not to model a specific
+at once that, given the proper elastic constants, all terms tire exactly, but rather to introduce a technique that, given
+of Eq. 21 may be evaluated by using Ms. 23-26, which the proper loss characteristics, can be used to perform such
+-
+physically means that the outer surface of the shell is in modeling. Hence, the resulting calculations are only indi
+contact with the flat plane of Fig. 4. We then search for cations of the general nature of tire behavior under such con-
+the pressures Pe in Eq. 21, which cause this situation to oc- ditions. The fact that some of the important characteristics
+cur, seem to agree with actual tire characteristics gives hope that
+Inside the region of the contact patch such pressures will the theoretical framework outlined here will have some util-
+be positive, and outside the'contact patch region such pres- ity as a tool in predicting the response of a real pneumatic
+m.
+sures will )e negative. Thus we search for solutions to tire.
+21 in which the right-hand side is zero. Such solutionsmust One must first turn to the constants needed in evaluating
+e,
+be functions of the angle and such solutions thus give an- Eq. 21. Basically, these constants are exactly those that one
+gles 8 that define the ends of the contact patch. must use to define the overall characteristics of a circular
+Note that all functions on the left side of Eq. 21areeven
+except for the first derivative function, which occurs incon-
+nection with the damping term. If the damping is nonzero,
+then it may be seen that the forward and aft angular loca-
+tions of the contact patch will not be equal to one another,
+and in general this has been observed to be a fact. Use of
+Eq. 21 thus gives dynamic information concerning the con-
+tact patch in a rolling tire under the assumptions of com-
+plete contact with the flat plane.
+h a later section of this paper a specific example of the
+calculation of contact patch length under dynamic condi -
+tions will be presented. For the moment, the theory is com-
+plete and need be worked out only for the proper numerical
+cases.
+CALCULATIONS AND EXAMPLES
+There are at least two methods for attempting to verify
+-
+some of the thoretical ideas brought out by the use of a Fig. 4 Geometry of intersection of elastic shell with rigid
+model such as that proposed in this report. Perhaps the best plane surface
+
+
+
+=== PDF PAGE 8 ===
+-~ ~~ , , , , . . . . .. , .. . . , .. . ,
+I
+7
+cylindrical shell of the type proposed here. An attempt has complishcd by fixing the angle 0 of Eq. 23 or of Fig, 4.
+0
+bccn mad,: to chose such chnractcristics to be compatible
+Oncc thc limits of the coiltact patch arc known, one may
+with n 7.50 x 14.00 automotive tire, and the resulting nu-
+utilize Eqs. 21 and Eqs. 23-26 to calculate the prcssure dis-
+merical values are being used for subsequent calculations:
+tribution in the contact patch. Given the pressure distribu-
+tion, the total load and the drag force may be obtained by
+b = 4.25 in. E = 10,000 psi
+W integration. For this example, the vertical tire deflection
+will be allowed to vary from 0.5 to 2.0 in. The linear ve-
+a = 12.35 in. h = 1.14 in. (27) locity will be allowed to range from 0 to 120 mph, and the
+inflation pressure will take on four values, 0, 15, 24, and
+-4 2 4
+a = 13.35 in. p = 1 X 10 lb-sec /in. 40 psi.
+0
+In these calculations it is necessary to have some value
+c/a2
+Using this particular value of the outside radius of the for the dimensionless foundation modulus = KA. It was
+wheel, a (namely, 13.35 in.), one finds that the angular previously pointed out that this quantity can be obtained di-
+0
+rectly from a static test in which the length of the contact
+velocity is related to the linear speed in miles per hour by
+patch is measured, and for the particular tire in question,
+the relation
+a value of KA = 325 was obtained.
+The results of these calculations are first given in Fig. 5,
+Q = 1.32 rad/sec/mph (28)
+where the forward and aft boundaries of a typical contact
+patch are plotted as a function of rolling velocity.
+Consider next the problem of calculating the response of
+One might note from Fig. 5 that, generally speaking, the
+a pneumatic tire having the properties given in Eqs. 27 un-
+tire exhibits a forward shift of the contact patch with speed,
+der conditions of given velocity and load. For this purpose,
+in that both the forward and aft edges move forward with
+one must first specify the loss law to be used. The viscous
+velocity. This causes the entire pressure distribution to
+loss type of law previously discussed will be utilized here,
+move forward and results in a shift of the center of pressure
+and the damping factor "c" will be chosen as
+forward of the axle point so as to cause a drag force. This
+again seems to agree generally with experience.
+c = 0.10 (29)
+In Fig. 6 are shown curves of the influence of rolling ve-
+locity on vertical load carried at constant tire deflection.
+This is based on interpretation of oscillograph records from
+These curves are plotted for two different values of inflation
+free vibration tests of a pneumatic subjected to an impul-
+pressures. Generally, the influence of speed is to increase
+sive blow.
+load at fixed deflection. Conversely, at fixed load, one
+A digital computer program has been constructed, which
+would expect deflection to decrease with speed. Hence, roll-
+first calculates the forward and aft edges of the contactpatch
+ing radius would increase with speed, as has been observed.
+at a fixed value of damping constant and for various values
+In Fig. 7, the drag force is plotted as a function of tire
+of the other parameters listed in Eqs. 27 and 28. Thisisdone
+- deflection for four different values of internal pressure, all
+by specifying ;he tire deflection, which is effectively ac
+data being calculated at a constant forward speed of 40 mph
+These curves are almost entirely dependent upon the de-
+-
+AFT -FWD
+7 80 n I4 TIRE AWROX.
+wirn visccus LOSS
+7 50 a 14 SIZE APPROX
+flXED TIRE DEFLECTKWI. wiin VISCOUS LOSS LAW
+FIXE0 TIRE DEFLECTION OF 1.
+I'
+0
+5.40~~1
+0
+1000
+t
+I
+-
+PATCH TERMINAL POINT RADIANS
+-
+Fig. 5 Contact patch length and position as a function of VELOCITY, MPM
+-
+)'. t I Fia. 6 VFrricgl lonrl nc a f'tlnctinn -f -.*--A
+
+
+
+=== PDF PAGE 9 ===
+'8
+tailed form of the loss lzw that is assumed for this particular So far all the results presented have been speculative in
+model, a viscous law with losses assigned only to the foun- the sense that good experimental data have not been avail-
+dation. Nevertheless. the calculations do illustrate the gen- able as a check. However, there is one static quantity that
+I era1 form of the results obtained, and show that cvcn for this can be easily measured, and that is the load deilcction
+crude loss mechanism, the drag force increases both with curve. The particular tire that was being modeled here was
+deflection and with inflation pressure, as it should. inflated to various pressures and loaded to obtain such
+One advantage to plotting data in this fashion is that such curves. These results are compared with calculation in Fig.
+constant speed plots eliminate some, but not all, of the dif- 10, where it is seen that predictions tend to be a little more
+. ficulties of the problem of correcting the loss law for tem- accurate at lower deflections than at higher, which might
+perature increaxs, and hence loss increases, as speed is in- be expected from such a linearized theory.
+creased. By restricting attention to a constant speed, one
+does not see these temperature effects quite so clearly. It
+should also be noted that Fig. 7 does not contain any loss 7
+from scrubbing in the contact patch, although this may be
+a small factor in the overall picture. Fig. 7 is intended as 730 n 14 SIZE APPROX
+a general presentation OF the type of information that can WITH VISCOUS LOSS LAW /
+FIXE0 OEFLECTW I'
+be obtained by calculation from this model, and should not
+be interpreted as representing the characteristics of the gen- I
+/
+eral model.
+In Fig. 8, the maximum contact pressures in the contact
+patch are plotted as a function of rolling velocity for the
+same two internal pressures as previously treated. The
+results shown in Fig. 8 seem to indicate that at the usual
+inflation of 24 psi, contact pressures would normally not
+exceed 40 psi under ordinary driving conditions.
+Fig. 9 shows plots of the contact pressure distribution in
+the contact patch at two different speeds, 0 and 100 mph
+for a single inflation pressure. The static pressure distribu-
+tion is symmetric and almost rectangular. On the other
+hand, the dynamic pressure distribution evaluated at 100
+mph shows rather large differences between the peak pres- i
+sure near the center of the contact patch and the inflation
+10
+pressure. In addition, the entire pressure distribution has
+shifted forward. This causes a forward movement of the
+center of pressure, which results in drag forces.
+TIRE DRAG FORCE n DEFLECTON
+FOR VARIOUS PRESSURES
+?:SO I 14 m e oppm. PRESSURE DISTRIBUTION IN r so 14 SIZE IPPROX
+Vllcoul lola lor CONTICT WTCU FOR TWO WITH VISCOUS LOSS L&W
+Mmph SFJ- VELOCITIES
+FIXED DEFLECTION 1.
+'b' 24
+I I , I ,
+i
+01 I I I I I I 1 I 1
+0 0 2 04 06 0.e 1.0 1.2 1.4 1.6 1.8 z
+DEFLECTION, INCHES
+-
+Fig. '7- Drag force as a function of speed
+
+
+
+=== PDF PAGE 10 ===
+9
+erated and also dictates to some extent the nature of the
+contact patch shift as velocity increases. Therefore it should
+be emphasized that users of this type of mathematical model
+will probably find it necessary to generate their own indi-
+1
+vidual loss laws and to insert them into the appropriate
+equations of this report. Only by this process will it be pos-
+sible to obtain realistic tire performance data from a mathe-
+matical model such as this.
+REFERENCES
+1. Y. Saito, "A Study of the Dynamic Steering Properties
+of Pneumatic Tires, " 9th International Automobile Tech-
+t
+nical Congress, 1962, Published by the Institution of Me-
+I chanical Engineers, London.
+10
+- DEFLECTION 2. K. R. Thorsen, "A Rational Method for Predicting Tire
+Fig. 10 Static load deflection curves. experimen- Cornering Forces and Lateral Stiffness, " Boeing Airplane
+tal versus calculated Company Report No. D-11719. 1951.
+3. S. K. Clark, "An Analog for the Static Loading of a
+In e- 1 it might be said that by use of the equations Pneumatic Tire, " The University of Michigan, Office of
+discuJJbL iti~psa per, it is possible to calculate many of Research Administration, Report 02957 -19 -T, March 1964.
+the in'lortant quantities dealing with the rolling of a pneu- 4. Wilhelm Fl;gge, "Stresses in Shells." Berlin: Spring-
+matic tire in a straight line under constant velocity condi- er-Verlag. 1960.
+tions. One very important characteristic in such calcula- 5. J. N. Goodier and J. K. McJvor, "The Elastic Cylin-
+tions is the form of the loss law, since this determines almost drical Shell Under Heavily Uniform Radial Impulse." ASME
+completely the general form of the drag forces that are gen- Paper No. 63, APMW -6, 1963.
+This paper ir rubject to revision, Statements and opinions advanced published in Transactions, or in a Technical Progress or Advances in
+in papers or discussion are the author's and are his responsibility. not Engineering volume. For permission to publish this paper in full or in
+the Soclety's: however, the paper has been edited by SAE for uniform part, contact the SAE Publications Division and th-e authors.
+styling and format. Dircusrion will be printed with the paper if it il 12 page booklet Prlntcd in U. S. A.

@@ -1,0 +1,2478 @@
+=== PDF PAGE 1 ===
+NASA Technical Paper 3573
+j,/ y
+Computational Methods for Frictional Contact
+With Applications to the Space Shuttle Orbiter
+Nose-Gear Tire
+Comparisons of Experimental Measurements and Analytical
+Predictions
+John A. Tanner
+May 1996
+
+
+
+=== PDF PAGE 2 ===
+
+
+
+
+=== PDF PAGE 3 ===
+NASA Technical Paper 3573
+Computational Methods for Frictional Contact
+With Applications to the Space Shuttle Orbiter
+Nose-Gear Tire
+Comparisons of Experimental Measurements and Analytical
+Predictions
+John A. Tanner
+Langley Research Center • Hampton, Virginia
+National Aeronautics and Space Administration
+Langley Research Center • Hampton, Virginia 23681-0001
+May 1996
+
+
+
+=== PDF PAGE 4 ===
+Acknowledgment
+This report is based on a dissertation submitted to the faculty of
+the school of Engineering and Applied Sciences of The George
+Washington University in partial satisfaction of the requirements for
+the degree of Doctor of Science.
+Available electronically at the following URL address: http://techreports.larc.nasa.gov/ltrs/Itrs.html
+Printed copies available from the following:
+NASA Center for AeroSpace Information National Technical Information Service (NTIS)
+800 Elkridge Landing Road 5285 Port Royal Road
+Linthicum Heights, MD 21090-2934 Springfield, VA 22161-2171
+(301) 621-0390 (703) 487-4650
+
+
+
+=== PDF PAGE 5 ===
+Contents
+Abstract ........................................................................... 1
+Introduction ....................................................................... 1
+Objectives and Scope .............................................................. 2
+Nomenclature ...................................................................... 2
+Geometric and Stiffness Characteristics of Space Shuttle Orbiter Nose-Gear Tire ................. 3
+Tire Description ................................................................... 3
+Modeling of Tire Geometry ......................................................... 3
+Evaluation of Stiffness Coefficients of Two-Dimensional Shell Model ........................ 4
+Experimental Measurements .......................................................... 5
+Measurements of Inflated Cross-Sectional Profile and Vertical Load-Deflection Response ........ 5
+Close-range photogrammetry measurements ........................................... 5
+Static vertical load-deflection measurements ........................................... 5
+Tire Footprint Geometry ............................................................ 6
+Footprint length and width measurements under static loading conditions .................... 6
+Footprint area measurements under static loading conditions .............................. 6
+Tire Footprint Load Intensities ....................................................... 6
+Tire footprint-force transducer ...................................................... 6
+Tire footprint areas and load intensity measurement procedures ........................... 6
+Symmetries exhibited by Space Shuttle nose-gear tire footprint ............................ 7
+Contour plots ................................................................... 7
+Normal footprint load intensities .................................................... 7
+Tangential load intensities in lateral direction .......................................... 7
+Tangential load intensities in fore and aft direction ...................................... 8
+Numerical Results and Correlation With Experimental Results ............................... 8
+Description of Finite-Element Models ................................................. 8
+Correlation Between Analytical Results and Experimental Measurements ..................... 9
+Tire response to inflation-pressure loading ............................................ 9
+Tire load-deflection and load-contact-area characteristics ................................ 9
+Tire contact load-intensity distributions ............................................. 10
+Influence of Model Refinement on Predicted Contact Load-Intensity Distributions ............. 11
+Effect of Tread Grooves and Friction on Predicted Contact Load-Intensity Distributions ........ 11
+Strain Energy Density Distributions .................................................. 12
+Conclusions ...................................................................... 12
+Appendix--Fundamental Equations of Shell Theory Used in Present Study .................... 14
+References ....................................................................... 16
+Tables ........................................................................... 18
+Figures .......................................................................... 21
+ill
+
+
+
+=== PDF PAGE 6 ===
+
+
+
+
+=== PDF PAGE 7 ===
+Abstract
+A computational procedure is presented for the solution of frictional contact
+problems for aircraft tires. A Space Shuttle nose-gear tire is modeled using a two-
+dimensional laminated anisotropic shell theory which includes the effects of varia-
+tions in material and geometric parameters, transverse-shear deformation, and
+geometric nonlinearities. Contact conditions are incorporated into the formulation by
+using a perturbed Lagrangian approach with the fundamental unknowns consisting of
+the stress resultants, the generalized displacements, and the Lagrange multipliers
+associated with both contact and friction conditions. The contact-friction algorithm is
+based on a modified Coulomb friction law. A modified two-field, mixed-variational
+principle is used to obtain elemental arrays. This modification consists of augmenting
+the functional of that principle by two terms: the Lagrange multiplier vector associ-
+ated with normal and tangential node contact-load intensities and a regularization
+term that is quadratic in the Lagrange multiplier vector. These capabilities and com-
+putational features are incorporated into an in-house computer code. Experimental
+measurements were taken to define the response of the Space Shuttle nose-gear tire to
+inflation-pressure loads and to combined inflation-pressure loads and static normal
+loads against a rigid flat plate. These experimental results describe the meridional
+growth of the tire cross section caused by inflation loading, the static load-deflection
+characteristics of the tire, the geometry of the tire footprint under static loading con-
+ditions, and the normal and tangential load-intensity distributions in the tire footprint
+for the various static vertical-loading conditions. Numerical results were obtained for
+the Space Shuttle nose-gear tire subjected to inflation-pressure loads and combined
+inflation-pressure and contact loads against a rigid flat plate. The experimental mea-
+surements and the numerical results are compared.
+Introduction strong enough to cause tire failures during individual
+landing operations (refs. 5 and 6). Therefore, an under-
+Contact-friction problems are inherently nonlinear
+standing of these tire friction forces and the resulting slip
+and path dependent. Nonlinearity occurs partly because
+velocities is critical to the design of aircraft tires for the
+both the contact area and the contact-load intensities are
+next generation of high-performance aircraft, such as the
+not known beforehand and vary during the loading National Aero-Space Plane and the High-Speed Civil
+history. Path dependency is a result of the nonconserva-
+Transport.
+tive (irreversible dissipative) character of the frictional
+forces. Modeling contact phenomena in the tire footprint is a
+formidable task partly because of difficulty of modeling
+A review of static contact problems presented in ref-
+tire response. Distribution of tractions and the footprint
+erence 1, which includes a bibliography of approxi-
+geometry are both functions of the normal, frictional, and
+mately 700 papers, points out that contact problems are
+inflation tire loads. Moreover, the complex mechanisms
+important to thermomechanical stress analyses, fracture
+of dynamic friction, which allow the tire to develop the
+mechanics, mechanical problems involving elastic foun-
+necessary steering and braking forces for aircraft control
+dations, the mechanics of joints, geomechanics, and tires.
+during ground operations, are not fully understood
+Contact problems occupy a position of special (ref. 7). The tire analyst thus is forced to choose among
+importance in aircraft tire mechanics because the contact several friction theories. When the tire contact problem
+zone is where the forces are generated to support, guide, includes frictional effects, the solution becomes path
+and maneuver the airplane. Distributions of contact loads dependent and a unique solution is not guaranteed.
+and frictional forces define the moments and shears that
+are applied to the landing gear system (ref. 2). Under The aircraft tire is a composite structure of rubber
+rolling conditions, the distribution of sliding velocities and textile constituents that exhibit anisotropic and non-
+within the tire footprint combined with the frictional homogeneous material properties. Normal tire operating
+forces developed by the tire defines the rate of energy conditions create loads that can produce large deforma-
+dissipation associated with the loading conditions and tions. Elevated operating temperatures from the com-
+provides a measure of tire wear (refs. 3 and 4). In the bined effects of material hysteresis and frictional heating
+case of the Space Shuttle orbiter, this wear mechanism is can cause variations in the material characteristics of the
+
+
+
+=== PDF PAGE 8 ===
+tireconstituents
+(refs. 8-10). The laminated carcass of Numerical studies presented for an inflated Space
+the aircraft tire is thick enough to allow significant Shuttle nose-gear tire under static load on a flat surface
+transverse-shear deformations. demonstrate the capabilities of the analysis techniques.
+These analyses incorporate both friction and frictionless
+These facts and attendant difficulties emphasize the contact. Detailed studies are made of the effects of tire
+need to develop modeling strategies and analysis
+tread pattern on the contact-force intensities, the influ-
+methods that include efficient, powerful and ence of friction coefficient variations on the distribution
+economical contact algorithms. Intense research has
+of tire contact-force intensities, the convergence charac-
+recently focused on nonlinear analyses of static and
+teristics of the contact algorithm, and the history of
+dynamic problems involving contact. Novel techniques
+energy dissipation in the static footprint.
+that have emerged from these efforts include semi-
+analytic finite-element models for nonlinear analysis of Experimental measurements were carried out on the
+shells of revolution (refs. 11 and 12), reduced methods Space Shuttle orbiter nose-gear tire to define its response
+(refs. 13 and 14), and operator splitting techniques to combined inflation-pressure and static vertical-loading
+(refs. 15-17). References 14, 17, and 18 summarize conditions. This report discusses experimental proce-
+applications of these new tire modeling techniques. dures used to define the tire structural response to load-
+ing conditions and to measure the footprint-force
+Objectives and Scope intensities and empirical procedures used to define the
+geometry and construction details of the tire for model-
+Langley tire modeling research concentrates on ing purposes. Finally, the analytical results are compared
+developing an accurate and efficient strategy for predict- with the experimental measurements.
+ing aircraft tire responses to a variety of loading condi-
+tions. This research focuses on developing tire contact This report describes numerical studies, experimen-
+modeling techniques, and the specific objectives of this tal measurements, and comparisons between analytical
+research are (I) to develop a contact algorithm with fric- results and experimental measurements. Reference 27
+tion effects included to predict tire response to combined describes development of this contact algorithm.
+inflation-pressure and static vertical-loading conditions,
+(2) to demonstrate the capabilities of this algorithm Nomenclature
+through numerical studies, and (3) to validate these
+cij, dij,._j tire stiffness coefficients (i, j = 1, 2, 6)
+numerical results with experimental data. Distribution of
+normal and frictional forces in the tire contact zone (or d nylon cord diameter
+footprint area) is of particular interest.
+El, E2 Young' s moduli
+The contact algorithm is incorporated into a E, Gc nylon cord moduli
+mixed-formulation, two-field, two-dimensional finite-
+element model based on the moderate-rotation E, Gr rubber moduli
+Sanders-Budiansky shell theory, including the effects of G23, GI3, G12 shear moduli
+transverse-shear deformations, laminated anisotropic L volume fraction of nylon cord
+material response, and nonhomogeneous shell character-
+h total thickness of tire
+istics (refs. 19 and 20). A perturbed Lagrangian formula-
+tion (refs. 21 and 22) is the basis for this contact
+hk thickness of individual tire plies
+algorithm. The Lagrangian formulation uses the pre-
+n normal vector to reference surface
+conditioned conjugate gradient (PCG) iteration proce-
+dure (refs. 23-25) to determine contact area, distribution P0 intensity of inflation pressure
+of normal-force intensities, and allocation of friction-
+RI, R2 principal radii of curvature in meridional
+force intensities. A modified version of the Coulomb
+and circumferential directions
+friction law is incorporated into the contact algorithm in
+which the friction coefficient at the onset of sliding is normal distance from tire axis to reference
+surface
+different from that during sliding. This algorithm also
+monitors the energy dissipated within the sliding portion shell coordinates of tire
+of the contact zone. In this investigation it will be
+assumed that the tire is loaded on a surface that is much displacement components of reference
+surface of tire in meridional, circumferen-
+stiffer than the tire, thus the surface will be treated as
+tial, and normal directions (see fig. 1)
+rigid. Hence, the static tire contact problem will be
+treated as a unilateral contact problem. Reference 26 normal displacement at e = 0 = 0 (see
+summarizes the characteristics of this algorithm. fig. 7)
+
+
+
+=== PDF PAGE 9 ===
+two-dimensional position vector (see vertical-loading conditions. These sections also present
+eq. (3)) an evaluation of the tire stiffness characteristics.
+Y data vector
+Modeling of Tire Geometry
+x, y, z Cartesian coordinate system
+extensional strains of tire reference surface A Space Shuttle nose-gear tire was cut into sections
+E l , E2, Es,
+and used to obtain accurate measurements of the cross-
+v-.0,2es0
+sectional profile of an uninflated tire. A smoothed spline
+2£s3, 2E03 transverse-shear strains of tire under tension was used to fit a curve through the mea-
+shear strains of tire reference surface sured coordinates of the cross-sectional profile in a least-
+Y23, Y13, Y12
+squares sense. (See refs. 28 and 29.) Because of symme-
+Poisson' s ratio
+Vl2, V21
+try, only half the cross section was modeled. A piecewise
+1_l , I_2 curvatures (see eq. (6)) linear and continuous estimate of the second derivative
+Ks, _0, 2_s0 bending strains of tire d2x/dz 2 was required by the cubic spline function, and
+this was achieved by adjusting the standard deviations of
+ff tension factor (see eq. (1))
+the measured profile at the data points. The second deriv-
+O' normalized tension factor ative with the effect of tension included is denoted by
+01 , 0 2 elongation stresses of tire
+0 circumferential (hoop) coordinate of tire
+X(S)-G2X(S) IX(Si) 2 7Si+l-fS
+(see fig. 1) = -0 yiJ_/+(_Si
+nylon cord orientation angle (see eq. (22))
+dimensionless coordinate along meridian + [X(Si+ l) - 2 Yi+ljsi+l ] _ _ S L-_Si i (1)
+(see fig. 4)
+rotation about normal to tire reference sur- for (S i <--S <--Si+ 1) where x = [x(s), z(s)] is the position
+vector for points along the segment, Yi = [x, z]i is the
+face (see eq. (A9))
+corresponding data at point i, and a dot over a symbol
+d_s,_0 rotational components of reference surface denotes a derivative with respect to s. The chordal length
+of tire (see fig. 1) (polygonal arc length) si is given by the following
+shear stresses of tire equation:
+"[23, "[13, "t12
+Geometric and Stiffness Characteristics of
+Space Shuttle Orbiter Nose-Gear Tire E 211' (2)
+Sl=O ]
+Si Si - 1 + (Xi -- Xi - 1)2 + (Z i _ Zi _ 1)
+Tire Description
+Numerical studies conducted assess the accuracy of After solving equation (1) for x(s) and replacing x(si)
+the two-dimensional shell tire model, effectiveness of the
+with Yi, the following expression is obtained:
+proposed computational procedure, and performance of
+the contact algorithm. The 32 x 8.8, type VII, 16-ply-
+rating Space Shuttle orbiter nose-gear tire was modeled
+during these studies as a two-dimensional laminated shell x(s) = +
+with variable thickness and variable stiffness characteris- sinhff(si+ 1-si) si+ 1-si
+tics. The outer surface of the tire was used as the refer-
+ence surface of the shell model. Figure 1 gives geometric
+characteristics of the tire. The tire carcass is constructed + + (3)
+of 10 lamina of nylon and rubber with an additional rein- sinhff(si + I - si) si + 1- si
+forcing ply beneath the tire tread. (See fig. 2.) The tire
+Upon differentiating equation (3) and equating right-
+has a three-groove tread pattern. The rated load for the
+and left-side derivatives at si (for i = 2, 3..... I - 1), a set
+tire is 15 000 lbf at an inflation pressure of 320 psi. All
+of linear algebraic equations for x(si) is obtained. With
+experiments and analyses were conducted at an inflation
+the assumption of a nonperiodic spline function in which
+pressure of 300 psi.
+the slopes at s I and sI are given, the tridiagonal differen-
+The following sections describe the empirical proce- tial equation is easily solved. Once the second deriva-
+dures used to establish the tire geometry and to define the tives at point i = 1, 2..... 1 are obtained, the first and
+global elastic response of the tire to inflation and static second derivatives at the interpolation points x(s) and
+
+
+
+=== PDF PAGE 10 ===
+_(s) areevaluatebdydifferentiatinegquatio(n3).Refer-
+individual carcass plies was measured at the interfaces
+ence2s9-31giveadetaileddescriptioonfsplinesmooth-
+between the regions and these values are given in table 1.
+ingtechniques. A linear variation was assumed for the thickness within
+A normalizetdensionfactoris usedtoeliminatea each region. Thickness of the tire tread and sidewall cov-
+nonlineabrehaviobrysetting(seeref.32) eting was computed by subtracting the sum of the indi-
+vidual ply thicknesses from the total thickness of the
+carcass at each location.
+t3($ l -- Sl)
+o' - (4)
+1-1 Material properties of the different plies were
+obtained with the mechanics of materials approach,
+In practice, if this factor is less than 0.001, the resulting
+which is widely applied to rigid composites. (See refs. 33
+curve is approximately a cubic spline; if it is greater than
+and 34.) Table 2 presents elastic constants of the tire
+50, the curve is nearly piecewise linear. It should be
+constituents used in this study. It was assumed that nylon
+noted that the variable s in equations (1)--(4) is not the
+cords of two different diameters were used in the
+actual arc length but the chordal length approximation of
+construction of the tire. In region I, d = 0.022 in. for the
+s. Thus, the accuracy of the arc length approximation is a
+bottom two plies and the tread reinforcement, and d =
+function of the number of points used in the smoothing
+0.031 in. for all other plies. Table 3 gives cord end counts
+procedure.
+(epi) for individual plies at the region interfaces. A linear
+Computed arc length s, coordinates x and z, and first variation was assumed for epi within each region.
+and second derivatives x(s) and x(s) are used to evalu-
+Stress-strain relationships of the individual ortho-
+ate the various geometric parameters of the tire.
+tropic and unidirectional layers are given by
+Normal vector:
+O 1 Cll C!2 • • • E l
+n = _sin_l : _J(dxlds)2+(dzlds)2 (5) O 2 c12 c22 • • • E2
+(8)
+[cos_] ] -ddxz//ddss 1 %23 • C44 • • ]t23
+L_[(dxlds) 2 + (dzlds) 2 '_13 e • • c55 • TI3
+Curvatures: "C12 • • • C66 ]t12
+1 _cos3,(d2xl where the reduced stiffnesses c.g are given by
+x:, - R1 - k_z2j (6)
+E l
+- (9)
+Cll 1 - VI2V21
+_ 1 _ cos_ (7)
+K2 R 2 x
+ElV21
+- (1o)
+Figure 3 presents the resulting geometric characteris-
+c12 1 -VI2V21
+tics of the Space Shuttle nose-gear tire. Thicknesses of
+the tire carcass at the node points of the finite-element
+E 2
+model were computed along the normal vector to the tire - (11)
+reference (outer) surface by locating the points of inter- c22 1 - VI2V21
+section of the normal vectors with the inner surface of the
+tire carcass. To facilitate these computations the tire c44 = G23 (12)
+inner surface was approximated by a set of third-degree
+polynomials. c55 = G13 (13)
+Evaluation of Stiffness Coefficients of
+c66 = GI2 (14)
+Two-Dimensional Shell Model
+The cord-rubber composite was treated as a lami- Elastic constants are computed by the law of mix-
+nated material. For the purpose of computing stiffness tures (see ref. 34)
+variations in the meridional direction, the tire model was
+divided into seven regions. (See fig. 2.) Thickness of the El = Ecfc + Er(1 -fc) (15)
+4
+
+
+
+=== PDF PAGE 11 ===
+vl2= v_/c+vAl-fc) (16) Measurements of Inflated Cross-Sectional Profile
+and Vertical Load-Deflection Response
+Er[Ec(1 + 2fc)+ 2Er( 1-fc)] Close-range photogrammetry measurements. Close-
+E2 = Ec(l -fc)+2Er( 1+0.5fc ) (17) range photogrammetry techniques were used to define
+the inflated profile of the Space Shuttle orbiter nose-gear
+tire. To facilitate these measurements, 209 circular,
+Gr[Gc+Gr+(Gc-Gr)fcl
+reflective targets were attached to the Space Shuttle
+GI2 = GI3 = [Gc+Gr_(Gc_Gr)fc ] (18)
+nose-gear tire as shown schematically in figure 5. Tar-
+gets were aligned along 19 meridional lines of the tire
+G23 = 0.6G12 (19) sidewall and a video camera was used to record the target
+positions from 10 different camera locations. A stereo-
+photography triangulation technique (refs. 35 and 36)
+v 12E2
+(20) was used to define the location of each target in a global
+V21 - El coordinate system from these video images. The root
+mean square (rms) measurement accuracies were found
+where subscripts c and r represent the quantities of the to be 1.3 mils, 2.9 mils, and 1.5 mils in the x-, y-, and
+z-coordinate directions, respectively.
+nylon cord and the rubber, respectively, andfc is the vol-
+ume fraction of the nylon cord The same triangulation techniques were used to
+assess the ability of the loading fixture to subject the tire
+rtd2(epi) and wheel to a pure vertical load. Results of this triangu-
+(21)
+fc - 4h k lation study (illustrated in table below) indicate that there
+is a significant misalignment in the loading fixture that
+must be taken into account when analyzing the experi-
+where d is cord diameter, hk is layer thickness, and epi is mental results.
+cord end count (in ends per inch).
+Fore and aft Lateral Vertical
+Stress-strain relationships of the two-dimensional
+displacement displacement displacement
+shell were obtained by first transforming the stiffness of
+0.09 in. -0.02 in. 1.42 in.
+each of the individual layers to the global shell coordi-
+nates s and 0 and then integrating these coefficients
+through the thickness. Table 4 gives cord orientations in Figure 6 shows unloaded and loaded profiles of a
+the individual plies of each region. The following for- portion of the Space Shuttle nose-gear tire sidewall. The
+mula was used to determine Ok , the angle (in degrees) intersections of the lines in figure 6 denote the locations
+measured from the s-axis to the 0-axis, at the numerical of the photogrammetry targets shown in figure 5. The
+quadrature points: dashed lines represent the tire sidewall geometry under a
+uniform inflation-pressure loading of 300 psi. The solid
+lines in the figure represent the tire sidewall geometry
+= max[(54.382 - 3.884_ - 148.96_2) °, 33 °] (22)
+when the inflated tire is loaded onto a rigid, flat plate.
+For this static-loaded case, the tire cross section was
+where _ is the dimensionless coordinate along the tire deflected approximately 1.42 in. in the direction normal
+meridian.
+to the surface. Three data points are missing for the
+loaded case because the flat plate that the tire was loaded
+The appendix gives the resulting shell constitutive
+against interfered with the field-of-view of the camera.
+relations. Figure 4 shows meridional variations of the
+Data in figure 6 indicate that the tire sidewall in the
+stiffness coefficients.
+vicinity of contact bulges outward radially under the
+influence of the vertical load.
+Experimental Measurements
+Static vertical load-deflection measurements. Static
+A substantial experimental program has been under- vertical load-deflection tests conducted on the inflated
+way at Langley for several years to obtain measurements Space Shuttle nose-gear tire provide a global measure of
+of the Space Shuttle nose-gear tire response to various tire elastic response. For these tests the tire was slowly
+loading conditions. The following sections describe these lowered onto the flat plate until a maximum vertical load
+experimental measurements and the techniques used to of approximately 30000 Ibf was obtained and then
+obtain them. slowly unloaded until the tire lost contact with the
+
+
+
+=== PDF PAGE 12 ===
+surfaceD. uringthisloadingprocesasn
+x-y plotter was Footprint area measurements under static loading
+used to monitor the resulting tire hysteresis loop. (See conditions. Figure 11 plots the footprint area of the
+fig. 7.) The resulting load-deflection curve indicates that Space Shuttle nose-gear tire as a function of the applied
+the nonlinear response of the tire is similar to a hardening vertical load. Numerical integration techniques were
+spring. The hysteresis loop provides a measure of the used to acquire the area measurements for each of the tire
+damping of the tire, but for this study the damping term footprints at various vertical-loading conditions. For
+was omitted. each footprint, two measurements were taken. The first
+measurement was obtained by computing the total area
+Tire Footprint Geometry enclosed in the tire contact zone, including the tread
+groove area(s). These data are denoted by the circular
+Reference 37 presents data on the footprint geometry symbols in figure 11 and are referred to as the gross foot-
+for a number of tires, including the Space Shuttle print areas. The second measurement was obtained by
+nose-gear tire. The footprint shapes were obtained by computing the contact area of the individual contact
+applying a mixture of lightweight oil and graphite pow- lobes independently. These measurements, denoted by
+der on the tire tread area and statically loading the tire at the square symbols in figure 11, are referred to as the net
+preselected vertical loads onto posterboard affixed to the footprint areas and exclude the tread groove area(s) for
+rigid flat plate. The following paragraphs provide infor- each footprint. Both the gross and net footprint areas
+mation on the measured geometric characteristics of the increase in a linear fashion as the vertical load is
+Space Shuttle nose-gear tire footprints obtained over a increased over the range of loads investigated. The linear
+range of vertical-loading conditions at an inflation pres- least-squares curve fit to each data set, along with its
+sure of 300 psi. equation, is presented in figure 11.
+Figure 12 plots the ratio of net to gross footprint
+Footprint length and width measurements under areas for the Space Shuttle nose-gear tire as a function of
+static loading conditions. Figure 8 plots the length of the vertical load. The data in figure 12 indicate that the ratio
+Space Shuttle nose-gear tire footprint as a function of of net to gross footprint areas is nearly constant over the
+vertical load. The symbols denote the specific incremen- range of vertical-loading conditions tested. This ratio is
+tal load applications ranging from 2000 lbf to 30 000 lbf. approximately 0.8 for the 2000-1bf load case and about
+The line through the points represents a cubic least- 0.81 for the 30000-1bf load case.
+squares curve fit to the data. Figure 8 also lists the equa-
+tion representing the curve fit. Footprint length grew
+Tire Footprint Load Intensities
+from slightly over 4 in. at a load of 2000 lbf to approxi-
+mately 14 in. at 30 000 lbf. The data indicate that the rate
+Tire footprint-force transducer. Reference 37 de-
+of increase in footprint length decreases as the vertical
+scribes the tire footprint-force transducer used to obtain
+load increases.
+triaxial measurements in the contact region of the stati-
+cally loaded Space Shuttle nose-gear tire. The force
+Figure 9 plots the width of the Space Shuttle
+transducer includes 10 beam-columns spaced 1.36 in.
+nose-gear tire footprint as a function of vertical load. from center to center with a 0.25 in2 surface area. Each
+Various incremental loads between 2000 lbf and
+beam-column was instrumented to measure force compo-
+30000 lbf are denoted by the circular symbols in
+nents in the normal and the two tangential directions. The
+figure 9, and the cubic least-squares curve fit to the data
+two tangential forces represent the components of the
+is denoted by the line through the points. The equation of
+friction forces in the footprint.
+the curve fit is included in figure 9. Footprint width
+grows from slightly more than 2 in. at the 2000-1bf nor- The beam-columns measure total force within the
+mal load case to a maximum width of about 7 in. at the beam-column contact surface. It should be noted that the
+30 000-1bf loading condition. Data presented in figure 9 instrumentation could not distinguish between distrib-
+indicate that the rate of growth in footprint width dimin- uted loads and concentrated loads at discrete points. For
+ishes as the vertical load increases. the purpose of this investigation, the forces were
+assumed to be distributed load intensities over the net
+Figure 10 plots footprint width for the Space Shuttle contact area of the individual beam-columns.
+nose-gear tire as a function of footprint length. Data pre-
+sented in this fashion indicate that there is a linear rela- llre footprint areas and load intensity measure-
+tionship between the length and width of the Space mentprocedures. Figure 13 shows schematically the tire
+Shuttle nose-gear tire over the range of vertical loads footprint areas and the map of tire footprint-force trans-
+investigated. The least-squares equation expressing this ducer locations used to obtain the data with the Space
+relationship is shown in figure 10. Shuttle nose-gear tire for three distinct vertical-loading
+
+
+
+=== PDF PAGE 13 ===
+cases2:000lbf,15000Ibf,and30000lbf.Thesequence
+symmetry rather than reflective symmetry. The misalign-
+oftestingplacesthetirefootprint-forcteransducoenr top
+ments of the rotated dashed footprint outline relative to
+of therigid flat platewiththerow of beam-columns
+the solid footprint outline are a function of both the
+alignedwiththemeridionacloordinatoef thetire.The
+uncertainty of the footprint outline from the scrubbing
+transducewrasinitiallypositioneadtapproximatetlhye during the loading history and imperfections in the tire
+centeorf thefootprintT. heloadwasthenappliedincre- construction.
+mentallyuptothemaximumloadof 30000lbf,anddata
+wererecordedfor eachvertical-loadiningcremenFt.or Contour plots. Figures 15-17 present contour plots
+succeedinlgoad applicationsth, e tire footprint-force of measured tire footprint load intensities in the normal
+transducewrasmovedeitherforwardor and two tangential directions. Figure 13 shows the loca-
+aft at half-inch
+tion of the sensors used to obtain these load-intensity
+increments in the footprint so that the entire footprint
+measurements. Caution should be exercised when inter-
+region was eventually covered.
+preting this contour information because the contour pat-
+In figure 13 the map of the tire footprint-force trans- terns are sensitive to the sensor locations that were used
+to obtain the measurements. Note that for the 2000-1bf
+ducer locations is superimposed on the tire footprint. A
+trial-and-error iterative process was used to make small and 15000-1bf load cases the data used to produce the
+adjustments in positioning the transducer map on the tire contour plots were derived from a single row of sensors
+footprint shapes. The final position of the transducer map for each tire footprint contact lobe. For the 30000-1bf
+shown in figure 13 is consistent with the pattern of non- load case a single row of sensors was used for the two
+zero force measurements for the various vertical-load inner lobes and a double row of sensors was employed
+cases reported in reference 37. The footprint shapes and for the outer lobes. The solid lines outlining the contour
+the transducer outlines are drawn to scale in figure 13. It plots represent the experimentally-determined footprint
+should be noted, however, that there is some uncertainty areas for each load case.
+in the definition of the experimental footprint areas out-
+Normal footprint load intensities. Figure 15 pre-
+lines from forces such as scrubbing (or squirm) in the sents the distribution of normal load intensities in the
+footprint areas during the application of the static vertical
+form of contour plots for normal loads of 2000 Ibf,
+loads.
+15 000 lbf, and 30000 lbf. Rated load for the Space Shut-
+tle nose-gear tire is 15 000 lbf at an inflation pressure of
+Figure 13 also identifies the centers of contact for
+each beam-column and the percentage of actual contact 320 psi. For the 2000-1bf normal load case (fig. 15(a))
+for each beam-column that experienced less than full peak normal load intensity is between 450 and 500 psi.
+contact, i.e., loss of contact at the edge of the footprint or At this loading condition only the two inner tread ribs (or
+in the vicinity of tread grooves. This information was lobes) are in contact with the surface. At a normal load of
+used to convert the transducer-force measurements into 15 000 lbf, the tire contact zone expands to include the
+load intensity by dividing each normal- or tangential- two outer tread ribs. (See fig. 15(b).) Maximum normal
+force measurement by the appropriate beam-column con- load intensity for the 15 000-1bf load case is also 450 psi
+tact area. The information in figure 13 also defines the to 500 psi, but the footprint area of the tire increases sub-
+stantially over the 2000-1bf load case footprint.
+contact boundary along the footprint periphery and along
+the edges of the tread grooves. Thus, each tire tread con- The contour plot in figure 15(c) for the 30000-1bf
+tact area (the ribs between the tread grooves) was treated normal load condition indicates the presence of a local-
+as an independent zone or lobe of contact. ized maximum load intensity along the outer edge of one
+of the outside circumferential tread grooves, and is
+Symmetries exhibited by Space Shuttle nose-gear
+shown in the bottom right corner of the tire contact zone
+tire footprint. Figure 14 shows the symmetry exhibited
+in figure 15(c). This peak load intensity ranges between
+in the Space Shuttle nose-gear tire contact area. For each
+650 psi and 700 psi. In the center of the outer contact
+vertical-loading condition, the tire footprint is shown two
+lobes the normal load intensities range between 500 psi
+ways. The first plot shows the mirror image of the left
+and 550 psi, and in the center of the inner lobes the nor-
+half of the tire footprint (denoted by the dashed outline)
+mal load intensities range between 400 psi and 450 psi
+superimposed over the fight half of the footprint. The for the 30000-1bf normal load condition. These maxi-
+second plot shows the image of the left half of the tire
+mum load intensities are equal in magnitude to approxi-
+footprint (denoted by the dashed outline) rotated by 180 °
+mately 150 percent to 180 percent of the inflation
+about the centroid of contact superimposed over the right
+pressure.
+half of the footprint. The centroids of the contact areas
+are denoted by the plus signs in figure 13. The data pre- Tangential load intensities in lateral direction. Fig-
+sented in figure 14 indicate that the footprint of the Space ure 16 shows the lateral friction load-intensity distribu-
+Shuttle nose-gear tire exhibits rotational or inversion tions for the Space Shuttle nose-gear tire. For the
+
+
+
+=== PDF PAGE 14 ===
+2000-1bnformalloadcase(fig.16(a)),thelateraflriction
+72 psi to 84 psi. About one quarter of the tire contact area
+load-intensitymeasuremenitnsdicatenegativeload
+is subjected to negative drag friction load intensities, and
+intensitieosf-24 psito-30 psionthebottomcontact
+the remaining three quarters of the tire footprint are sub-
+lobeanda maximumpositivelateralloadintensityof
+jected to positive drag friction load intensities. Positive
+6psito 12psiontheuppercontacltobe.Theselateral-
+drag friction load intensities are minimum at the center
+tractionloadintensitiersetardthelateralgrowthof the
+of contact for each of the normal load cases. (See
+tirefootprintL. ossofskewsymmetryinthelateraflric-
+figs. 17(a)-(c).)
+tionload-intensidtyistributionforthe2000-1blofadcase
+is attributedtothemisalignmenint theloadingfixture
+Numerical Results and Correlation With
+whichalloweda slightlateraldisplacemeonft thetire
+Experimental Results
+duringapplicationof the normalload.Arrowsin
+figure16(a)indicatethe directionsof tire deflection
+associatewdiththismisalignmenWt.henthenormalload Description of Finite-Element Models
+isincreasetdo 15000lbf (fig.16(b))t,hemagnitudoef
+To develop the finite-element models used in the
+thepeaklateraflrictionloadintensityisalsoincreasetod
+analysis of the Space Shuttle nose-gear tire, the cubic
+75psito90psiandthefourcontacltobesexhibiat distri-
+spline approximation of the outer meridional surface of
+butionoflateralloadintensitiewshichfeatureasnalter-
+the tire half cross section was discretized into 75
+natingsequencoef positiveandnegativeload-intensity
+potential node points. (See fig. 18.) From this population
+regionsA. t 30000lbf (fig.16(c))peaklateralfriction
+of possible nodes, a smaller number of nodes was chosen
+loadintensitieasreincreasetdo125psito150psiandthe
+to approximate the tire cross section. To model the tire
+alternatinbgandsof positiveandnegativesurfacetrac-
+inflation response, a single strip of 30 finite elements was
+tionsareespeciallpyrominenLt.ossof skewsymmetry
+used to approximate the complete tire cross section. This
+inthelateraflrictionloadintensitieiss notasobvioufsor
+model employed 61 nodes to characterize the tire
+thelargernormalloadcaseassit isforthe2000-1bnfor-
+meridian, and there were a total of 480 stress-resultant
+malloadcaseP. eaklateraflrictionloadintensitieosccur
+parameters and 293 nonzero generalized-displacement
+nearthelaterael xtremitieosf thetire footprinftor the
+parameters to synthesize the tire inflation response.
+loadconditionisnvestigated.
+Finite-element models employed to analyze the con-
+tact behavior and friction characteristics of the Space
+Tangential load intensities in fore and aft
+Shuttle nose-gear tire used 41 node points in one half of a
+direction. Figure 17 shows measured fore and aft tangen-
+meridional cross section (81 nodes for the entire cross
+tial (or drag) friction load-intensity distributions for the
+section) and these nodes are denoted as the circular sym-
+Space Shuttle nose-gear tire inflated to 300 psi. For the
+bols in figure 18. Nodes associated with the circumferen-
+2000-1bf normal load case shown in figure 17(a), drag
+tial tread grooves are also highlighted in figure 18. In the
+friction load-intensity measurements indicate that posi-
+meridional direction, the tread area of the tire was mod-
+tive load intensities are present in both contact lobes and
+eled with the highest density of nodes and the sidewall
+peak positive load intensities of 10 psi to 15 psi are
+and bead areas were modeled with progressively fewer
+located about 1 in. left of the center of contact. Fore and
+nodes. This meridional node pattern was used for each of
+aft extremities of the tire footprint exhibit negative drag
+the two-dimensional finite-element tire models employed
+friction load intensities ranging up to -15 psi. Positive
+in this investigation. The circumference of the tire was
+load intensities retard forward displacement of the tire
+divided into 240 possible node points and a smaller num-
+footprint associated with misalignment of the loading
+ber of nodes was chosen from that population to con-
+fixture. Arrows in figure 17(a) indicate the directions of
+struct the tire finite-element models. To refine the mesh
+tire deflection associated with this misalignment. At a
+in specific areas such as the contact zone, a higher den-
+normal load of 15 000 lbf (fig. 17(b)) drag friction load
+sity of nodes was chosen from the population in the spe-
+intensities increase to a maximum positive value of
+cific region of interest.
+32 psi to 40 psi in the two inner lobes about 3 in. on
+either side of the contact center. Maximum negative drag Figure 19 shows a map of elements and node loca-
+friction load intensities of-8 psi to -16 psi are observed tions for one of the models used to analyze the contact
+near the fight edge of contact in the two center lobes in problem. Figure 19 shows an array of elements, with 40
+figure 17(b) and there is a sharp transition between posi- elements in the meridional direction and 18 elements in
+tive and negative forces about 4 in. right of the center of the circumferential direction. Numbers in the left and
+contact. When normal force is increased to 30000 Ibf right margin of the figure denote the beginning and end-
+(fig. 17(c)) the transition between positive and negative ing element numbers in specific rows. Black dots super-
+drag friction load intensities is very prominent. Peak drag imposed over the square grid of elements denote the
+friction load intensities, both positive and negative, are individual nodes of the finite-element model. Several
+
+
+
+=== PDF PAGE 15 ===
+individualelementsare shadedand shownin
+an a number of tire cross sections (denoted by the different
+expanded scale to illustrate the node numbering sequence symbols) are compared with the model predictions in fig-
+that was used to minimize the bandwidth for the ure 21. These results clearly illustrate the axisymmetric
+finite-element models. The complicating factor here is characteristics of the tire response to inflation loads. Ref-
+that the elements in the circumferential direction are erence 38 presents additional information on inflation
+joined along the top and bottom edge. The numbering pressure results.
+scheme that is illustrated in the example shown in figure
+19 provides a minimum bandwidth for this tire model. Tire load-deflection and load-contact-area charac-
+For this specific example the bandwidth is 1635. The six teristics. One global measure of tire response to static
+rows of elements in the middle of the array, containing contact loading is the normal load-deflection curve. Fig-
+elements 1 through 240, comprise the possible contact ure 22 presents measured and calculated normal load-
+region for this model. Also shown in figure 19 is the deflection curves for the Space Shuttle nose-gear tire
+location of the circumferential tread grooves of the Space inflated to 300 psi and loaded against a flat plate. The
+Shuttle nose-gear tire. measured load-deflection curve is denoted by square
+symbols in figure 22 and a quadratic curve is used to fair
+Three different models were used in the analysis of the measurements in a least-squares fashion. The calcu-
+the Space Shuttle nose-gear tire in contact with a flat lated load-deflection response of the tire was obtained by
+plate. These models, denoted as model 1, model 2, and taking the product of the predicted normal load intensi-
+model 3, are depicted in figure 20. Each model employed fies and the calculated contact area at each contact node
+480 elements in the region outside the contact zone and summing them over all contact nodes. Circular sym-
+(0 < -0.2r_, 0 > 0.2rt). Model 1 includes 240 elements in bols denote the predicted load-deflection response based
+the contact region of the tire (-0.27t < 0 < 0.2r0 for a total on the Newton-Cotes quadrature calculation of the
+of 720 elements. (See fig. 19.) Model 1 includes 14076 contact areas associated with each contact node. Triangu-
+nonzero generalized displacement parameters, 23040 lar symbols denote the predicted load-deflection
+stress resultant parameters, and 3159 contact load- response based on the contact area algorithm described in
+intensity parameters. Model 2 used a refined mesh within reference 27. Both calculation procedures perform well
+the contact region, with 480 contact elements and a total in matching the measured normal tire load-deflection
+of 960 elements. Model 2 includes 18 776 nonzero gener- response, but the calculation procedure based on the con-
+alized displacement parameters, 30 720 stress resultant tact area algorithm appears to be more accurate over the
+parameters, and 6075 contact load-intensity parameters. load range analyzed.
+Model 3 employed a more refined mesh in the contact
+zone, with 960 contact elements and a total of 1440 ele- A second global measure of tire response to static
+contact loading is the normal-load-contact-area behavior.
+ments. Model 3 employed 28 152 generalized displace-
+ment parameters, 46 080 stress resultant parameters, and Figures 23 and 24 present measured and calculated
+normal-load-contact-area characteristics of the Space
+11 907 contact load-intensity parameters. A single itera-
+Shuttle nose-gear tire subjected to static contact loading
+tion for model 1required about 12 min on a Cray 2 com-
+against a flat plate. In figure 23 measured and predicted
+puter, and a single iteration for model 3 required about
+12 min on a Cray Y-MP computer. net footprint areas are plotted as a function of the applied
+normal load. Net footprint area is defined as the sum of
+the contact areas of the individual tire tread ribs or lobes
+Correlation Between Analytical Results and
+(see fig. 15, for example) and excludes the areas associ-
+Experimental Measurements
+ated with the circumferential grooves. In figure 24 the
+gross footprint areas are plotted as a function of the
+Tire response to inflation-pressure loading. To
+applied normal load. Gross footprint area is defined as
+assess the accuracy of the high fidelity carcass model of
+the total contact area of the tire, and the groove areas are
+the Space Shuttle nose-gear tire, profile deformations
+included in this parameter. For a smooth tread tire, the
+produced by a uniform inflation pressure of 300 psi and
+net and gross footprint areas are identical.
+acting normal to the interior surface were calculated
+using a strip of geometrically nonlinear shell finite Figures 23 and 24 denote experimental data by
+elements described above. Figure 21 presents inflated square symbols. Predicted contact areas based upon the
+and uninflated cross-sectional profiles for the Space Newton-Cotes quadrature calculation are denoted by cir-
+Shuttle nose-gear tire. The primary effect of inflation cular symbols and the dashed linear curve representing a
+pressure is to expand the tire profile in the cross-sectional least-squares fairing of the analytical results. Predicted
+regions I-V. (See fig. 2.) The predicted inflated profile is contact areas based upon the contact-area algorithm cal-
+in excellent agreement with the measured profiles from culations are denoted by triangular symbols and the solid
+the photogrammetry studies. Photogrammetry data from linear curve least-squares fairing of the analytical results.
+9
+
+
+
+=== PDF PAGE 16 ===
+Resultspresentedin
+figures 23 and 24 indicate that along these ridges is between 900 psi and 1000 psi.
+contact-area predictions based upon the contact-area Experimental measurements of the normal load-intensity
+algorithm are much more accurate than those based upon distribution cannot confirm the existence of these high
+the Newton-Cotes quadrature calculation. Predicted net load-intensity ridges since no load transducers were
+footprint areas are more accurate than those of the gross located in the critical region along the edge of the center
+footprint areas regardless of the calculation method used. groove for this normal load condition. For the remainder
+Results presented in figures 23 and 24 also indicate that of the footprint area the predicted magnitudes of normal
+additional fine-tuning of the contact-area algorithm is load intensities are slightly less than the measured inten-
+needed for improved contact-area predictions, especially sities, and the predicted distribution of normal load inten-
+at the higher normal load conditions. sities is generally in fair agreement with experimental
+measurements. These results are consistent with analyti-
+Figure 25 presents the method of obtaining a predic-
+cal results for a tire tread presented in reference 39.
+tion of the tire footprint shape from the analytical results.
+Figure 25 shows a map of contact nodes, denoted by For the 15 O00-1bf normal load case the analysis pre-
+square symbols, in and around the footprint area pro- dicts ridges of high load intensities along each edge of
+jected onto the contact surface. Dark symbols represent the three circumferential tread grooves. Magnitudes
+nodes that are in contact with the flat surface and light associated with these ridges range between 500 psi and
+symbols represent nodes that are not in contact. A solid 800 psi, and are generally lower than the peak load inten-
+line denotes the measured footprint outline obtained from sities predicted for the 2000-1bf normal load case. Pre-
+the lightweight oil and graphite powder footprint stamps dicted and measured normal load-intensity distributions
+described previously in reference 37. A dashed line rep- are in good agreement.
+resents an elliptical curve approximation of the footprint
+Figure 27 shows comparison of measured and pre-
+shape based on the distribution of contact nodes. For the
+dicted lateral friction load-intensity distributions. For the
+2000-1bf normal load case shown in figure 25(a), mea-
+2000-1bf normal load case (fig. 27(a)), both measured
+sured and calculated footprint widths are in close agree-
+and predicted lateral friction load-intensity distributions
+ment, but predicted footprint length is less than the
+exhibit loss in skew symmetry across the width of the
+measured length. These measured and/or calculated foot-
+footprint due to misalignment in the loading fixture.
+print shapes are included in figures 26-31 as an aid in
+Measured and calculated lateral friction load-intensity
+interpreting the footprint load-intensity data. For the
+distributions are in good agreement, and the magnitudes
+15000-1bf normal load case shown in figure 25(b), mea-
+of the measured and predicted lateral friction load inten-
+sured and calculated footprint shapes are in close agree-
+sities are in fair agreement.
+ment. It should be noted that the footprint outline looks
+distorted in figure 25(b) due to a difference in scaling For the 15 000-1bf normal load case (fig. 27(b)), both
+factors between the two coordinates. predicted and measured lateral friction load intensities
+are shown to reach their maximum magnitudes in the lat-
+Tire contact load-intensity distributions. Fig- eral extremities of the tire footprint. This trend is more
+ures 26-28 present comparisons of measured and pre- apparent for predicted results than for measured values.
+dicted tire footprint load-intensity distributions. Data Both predicted lateral friction load intensities and
+presented in the form of contour plots and measured measured results exhibit bands of alternating positive and
+load-intensity distributions shown in figures 15-17 are negative friction values across the width of the tire
+reproduced here to aid in the comparison. Boundary con- footprint.
+ditions used to produce the analytical results were chosen
+Figure 28 shows comparison of measured and pre-
+to simulate the misalignment in the loading fixture
+described earlier and arrows in figures 26-28 denote the dicted drag friction load-intensity distributions. For the
+direction, but not the magnitude, of tangential displace- 2000-1bf normal load case (fig. 28(a)) predicted drag
+ments that occurred during the normal loading sequence friction load intensities are higher than the measured val-
+ues. Experimental measurements and analytical predic-
+as a result of the misalignment. Part (a) of each figure
+presents results from the 2000-1bf normal load case, tions both indicate local maximums in the drag friction
+load intensities in the fore and aft sections of the tire
+and part (b) of each figure presents results from the
+15 000-1bf load case. All analytical results shown in fig- footprint. However, the small negative drag friction load
+ures 26-28 were obtained using model 1. intensities seen in the experimental results are not present
+in the analytical predictions. Overall, the comparison
+For the 2000-1bf normal load case the analysis between measured and predicted drag friction load-
+predicts a ridge of high normal load intensities along intensity distributions indicate that analytical predictions
+both edges of the center circumferential tread groove. give a reasonable approximation of the drag friction dis-
+(See fig. 26(a).) The magnitude of normal load intensities tribution of the tire for static loading conditions, but
+10
+
+
+
+=== PDF PAGE 17 ===
+additionaml odefline-tuningeffortsareneedetdobring
+for the loading case considered. Both models predict a
+analyticaalndexperimentdarlagfrictionload-intensity
+loss in lateral friction load-intensity skew symmetry due
+resultsintoclosear greement.
+to the unsymmetric loading condition and this lack
+Forthe15000-1bnformalol adcase(fig.28(b))b, oth of symmetry is more pronounced for the model 1
+predictedandmeasureddragfrictionload-intensidtyis- predictions.
+tributionsareshowntoexhibitlocalpositiveandnega-
+Figure 29(c) presents calculated drag friction load-
+tivemaximumisn theforeandaft sectionosf thetire
+intensity distributions for the models. Predicted drag fric-
+footprinat ndtoexhibitminimummagnitudensearthe
+tion load intensities from model 3 are consistently higher
+centerof the footprint.Predicteddragfrictionload-
+than those from model 1, and the model 3 drag friction
+intensitymagnitudeasregenerallhyigherthanmeasured
+load-intensity distribution is more uniform over the tire
+values.Theanalysispredictsthe formationof larger
+contact region than the predicted drag friction load-
+pocketsof negativedragfrictionloadintensitieisn the
+intensity distribution from model 1.
+leadingedgeofthefootprin(ttherightedgeofthefoot-
+printin fig.28(b))thanthemeasuremenintsdicateb,ut In summary, predicted contact load-intensity distri-
+thistrendis consistenwtiththeexperimentmaleasure- butions for model I and model 3 are generally in close
+mentsobtainedfor the 30000-1bnf ormalloadcase agreement. Model 3 softens the predicted peak normal
+showninfigure17(c). load intensities along the edges of the center tread
+groove, but predicts larger friction load-intensity magni-
+Correlationbetweentheanalyticapl redictionasnd
+tudes than model 1. Predicted normal load-intensity
+experimentmaleasuremeonfttsirefootprinat rean, ormal
+distribution from model 3 is in closer agreement with the
+load-intensidtyistributionas,ndtangentialol ad-intensity
+experimental measurements (see figs. 15-17 and
+distributionasppearstobestrongefror the15000-1bf
+figs. 26-28 for examples) than that from model 1, but
+normalloadcasethanforthe2000-1blofadcase.
+predicted lateral friction and drag friction load-intensity
+distributions from model 1 are closer to the experimental
+Influence of Model Refinement on Predicted measurements than those from model 3. Both models
+Contact Load-Intensity Distributions predict a shorter tire footprint length than the experimen-
+tal measurement for the 2000-1bf normal load case.
+The contour plots in figure 29 show predicted con-
+tact load-intensity distributions for the Space Shuttle
+nose-gear tire subjected to an inflation pressure of Effect of Tread Grooves and Friction on
+300 psi and unsymmetric static loading conditions asso- Predicted Contact Load-Intensity Distributions
+ciated with the experimental loading fixture misalign-
+Figure 30 presents a comparison of predicted contact
+ment. Load-intensity distribution predictions were made
+load-intensity distributions for a smooth-tread Space
+with model 1 and model 3 (figs. 19 and 20) for the
+Shuttle nose-gear tire and a circumferentially-grooved
+2000 lbf normal load case. Tangential displacement
+tread Space Shuttle nose-gear tire subjected to a normal
+directions associated with the loading fixture misalign-
+load of 2000 lbf. Analysis of both tread configurations
+ment are denoted by arrows in figure 29. Calculated con-
+was conducted with model 1, and for these results, tire
+tact area for each model is denoted by a dashed outline in
+normal loading was assumed to be symmetric with no
+each contour plot and there is no significant difference
+tangential displacements associated with load fixture
+between the two calculated footprint shapes. Figure 29(a)
+misalignments. Figure 30(a) shows normal load-intensity
+shows calculated normal load-intensity distributions. The
+distributions. Smooth-tread tire results indicate peak nor-
+more refined model 3 and model 1 each predicted the
+mal load intensities between 300 psi and 400 psi near the
+existence of a ridge of high load intensities along both
+center of contact. When the smooth tread is replaced with
+edges of the center tread groove for this loading case, but
+a circumferentially-grooved tread, two ridges of high
+the predicted magnitudes of these load intensities from
+normal load intensities are observed along the edges of
+model 3 were about 200 psi lower than those predicted
+the center groove. Magnitude of normal load intensities
+by model 1. This result is consistent with results pre-
+along these ridges is between 900 psi and 1000 psi. It
+sented in reference 38 for frictionless contact. Overall,
+should be noted that normal load-intensity distribution
+the predicted normal load-intensity distribution from
+for the symmetrically-loaded grooved-tread tire is nearly
+model 3 is smoother than the predicted distribution from
+identical to the predicted normal load-intensity distribu-
+model 1.
+tion shown in figure 26(a) for the unsymmetrically
+Figure 29(b) presents calculated lateral friction load- loaded tire. The presence of the circumferential tread
+intensity distributions for model 1 and model 3. Gener- grooves also affects the predicted footprint shape. The
+ally, the predicted lateral friction load-intensity magni- grooved-tread footprint is slightly longer and thinner
+tudes from model 3 are larger than those from model 1 than the smooth-tread footprint.
+11
+
+
+
+=== PDF PAGE 18 ===
+Figure30(b)showscomparisoonfthelateraflriction
+energy density. For the load cases shown, the total strain
+load-intensidtyistributionfsorthegrooveda-ndsmooth-
+energy density is primarily influenced by the inflation
+treadtireandfigure30(c)showsthedragfrictionload-
+pressure load. Since the normal loads associated with
+intensitydistributioncomparisonL.ateralfrictionload
+contact are compressive, the total strain energy density is
+intensitiesfor bothtreadconfigurationesxhibitskew
+reduced in the region of contact. Total strain energy den-
+symmetridcistributionascrostshewidthofthetirefoot-
+sity is also reduced in the lower tire sidewall near the
+print andthe presenceof the centercircumferential
+bead. Transverse-shear strain energy density is maxi-
+groovedoesnothavea significanet ffectonthelateral
+mized in the tire sidewall near the contact zone and along
+frictionload-intensitdyistributionI.nsensitivityof the
+the lower sidewall near the bead. In the upper sidewall
+lateraflrictionload-intensidtyistributiontothepresence
+and shoulder of the tire near the contact region (see
+ofacentegr rooveisattributedtothenaturadlistribution
+fig. 32(b) insert) the transverse-shear strain energy repre-
+oflateraflrictionloadintensitiewshichconcentrattheese
+sents about 25 percent to 50 percent of the total strain
+frictionforcesin thelaterael xtremitieosfthefootprint.
+energy associated with static contact.
+Predicteddragfrictionloadintensitiefsorthissymmetric
+loadingconditionareuniformlysmallovertheentire
+Conclusions
+footprinat ndshouldbecomparewdiththepredicteddrag
+frictionloadintensitiesfor the unsymmetrilcoading
+A computational procedure is presented for the solu-
+case(.Seefig.28(a).)
+tion of frictional contact problems for aircraft tires. The
+Space Shuttle nose-gear tire is modeled using a two-
+In summarya, comparisoonf thepredictedload-
+intensitydistributionpsresenteidn figure30withthose dimensional laminated anisotropic shell theory with the
+presenteind figures26-28indicatesthatpredictednor- effects of variations in material and geometric parame-
+malload-intensitdyistributionasrestronglyinfluenced ters, transverse-shear deformation, and geometric non-
+linearities included.
+by the presenceof treadgroovesandgenerallyun-
+affectedby unsymmetrilcoadingconditionasssociated
+Experimental results are presented that describe the
+withtheloadingfixturemisalignmenCtso. nversellya,t-
+response of the Space Shuttle nose-gear tire to inflation-
+eralfrictionanddragfrictionload-intensidtyistributions
+pressure loads and to combined inflation-pressure loads
+wereunaffectebdythepresencoeftreadgroovefsorthe
+and normal static loads against a rigid fiat plate. These
+loadingconditionesxaminedb,utwereverysensitivteo
+experimental results describe the meridional growth of
+tangentiadlisplacemenatsssociatewdiththemisalign-
+the tire cross section due to inflation loading, the static
+menitntheloadingfixture.
+load-deflection characteristics of the tire, the geometry of
+Figure31presentascomparisoonfpredictendormal the tire footprint under static loading conditions, and the
+loadintensitiefsorfrictionaal ndfrictionlescsontacotfa normal and tangential load-intensity distributions in the
+grooved-treaSdpaceShuttlenose-geatirre.Bothanaly- tire footprint for the various static vertical-loading
+conditions.
+seswereconductewdithmodel1.Thecomparisopnre-
+sentedin figure31 indicatesthatthe normalload-
+Numerical results are presented for the Space Shuttle
+intensitydistributionforsymmetricstaticloadingcases
+nose-gear tire subjected to inflation-pressure loads and
+is unaffectedby thepresencoef frictionforces.This
+combined inflation-pressure and contact loads against a
+resultimpliesthata reasonablmeodelingstrategyfor
+rigid fiat plate.
+tiressubjectetdostaticloadingcontacctonditionms ight
+involveoperatosrplittingtechniquetsofirst applythe
+Results from this investigation lead to the following
+normalloadwitha frictionlesscontacatssumptioannd observations and conclusions:
+thenapplysubsequetnatngentialol adswitha contact-
+frictionalgorithm. • The predicted inflated profile is in excellent agree-
+ment with measured profiles from the photogram-
+metry studies. Predicted normal and tangential
+Strain Energy Density Distributions
+contact load-intensity distributions are in fair to
+One method of showing the regions of high strain good agreement with experimental measurements,
+due to the imposed loads on a complex structure such as though additional experimental and analytical stud-
+a tire is strain energy density. Calculated variations in the ies are needed. Correlation between analytical pre-
+strain energy density for the Space Shuttle nose-gear tire dictions and experimental measurements of tire
+are presented in figure 32 in the form of contour plots. footprint area, normal load-intensity distributions,
+Results are shown for normal loading cases of 2000 lbf and tangential load-intensity distributions appears
+and 15 000 lbf. Figure 32(a) presents total strain energy to be stronger for the 15 000-1bf normal load case
+density and figure 32(b) presents transverse-shear strain than for the 2000-1bf load case.
+12
+
+
+
+=== PDF PAGE 19 ===
+2.Predictednormalload-intensitdyistributionfrom
+. Normal load-intensity distributions for symmetric
+themodewl itharefinedgridinthetirecontacatrea
+static loading cases are unaffected by the presence
+is incloseragreemewntiththeexperimentmalea-
+of friction forces. This result implies that a reason-
+surementtshan the distributionfrom the least
+able modeling strategy for tires subjected to static-
+refinedmodelusedin thisinvestigatiobnu, tpre-
+loading contact conditions might involve operator
+dictedlateralfriction and dragfriction load-
+splitting techniques to first apply the normal
+intensitydistributionfsromthatleasrtefinedmodel
+load with a frictionless contact assumption and
+areclosertotheexperimentmaleasurementhtsan
+then apply subsequent tangential loads with a
+thosefromtherefinedmodel.
+contact-friction algorithm.
+3.Predictednormalload-intensitdyistributionasre
+, In the upper sidewall and shoulder of the tire near
+stronglyinfluencedby the presenceof tread
+the contact region the transverse-shear strain
+groovesandgenerallyunaffectebdyunsymmetric
+energy represents about 25 percent to 50 percent of
+loadingconditionasssociatewdiththeloadingfix-
+the total strain energy associated with static
+turemisalignmenLtsa.teraflrictionanddragfric- contact.
+tionload-intensitdyistributionasreunaffectebdy
+thepresencoeftreadgroovefsortheloadingcondi-
+tionsexaminedb,utareverysensitivteotangential
+NASA Langley Research Center
+displacemenatsssociatewdiththemisalignmenint
+Hampton, VA23681-0001
+theloadingfixture.
+February 6, 1996
+13
+
+
+
+=== PDF PAGE 20 ===
+Appendix
+Fundamental Equations of Shell Theory Used in Present Study
+This appendix summarizes the fundamental equations of the Sanders-Budiansky type shell of revolution used in this
+study. Effects of laminated, anisotropic material response and transverse-shear deformation are included in these
+relationships.
+Strain-Displacement Relationships
+w
+(A1)
+es :
+%=-7-a.+sr_ a0v+ +w l(-_2 - _a0wJ2 1 2 (A2)
+2ese !aoU / asr _ u v (A3)
+Ks = as¢s (A4)
+_o = a -- s r r_ s+ _ao_o (A5)
+(A6)
+U
+2_s3 = - RI + asW + _s (A7)
+2E03 = -R2+ aoW+_o (A8)
+where es and g0 are extensional strains in the meridional and circumferential directions, 2CsO is the in-plane shear
+strain, _cs and 1<0are bending strains in the meridional_aand circumferential directions, 2_sO is the twisting strain, 2es3
+and 2e03 are transverse-shear strains, as -- _-, a 0 - _--_,and _ is the rotation around the normal to the shell, which is
+vV
+given by _S
+¢P= L!aeU+Ias+_--Srr-lvl (A9)
+Nonlinear terms that account for moderate rotations are underlined with dashes in equations (A 1) -(A3).
+Constitutive Relations
+The shell is assumed to be made of a laminated, anisotropic, linearly elastic material. Every point of the shell is
+assumed to possess a single plane of elastic symmetry parallel to the middle surface. The relationships between the
+stress resultants and the strain measures of the shell are given by
+14
+
+
+
+=== PDF PAGE 21 ===
+N S ell c,2 @ fll f12 (_ • • E s
+N o c22 f12 f22 (_) • • £0
+Nso c66 _ _ f66 • • 213s0
+............................
+M
+s dll d12 (_ • • 1¢s
+(AIO)
+M o d22 (_ • • 1¢0
+Mso Symmetric d66 • • 2_¢s0
+as
+c55 c@ 2Cs3
+Oo c44 2E03
+where cij, fij, and dij (i,j = 1, 2, 6) are shell stiffness coefficients. Nonorthotropic (anisotropic) terms are circled and dots
+indicate zero terms.
+15
+
+
+
+=== PDF PAGE 22 ===
+References 17. Noor, Ahmed K.; Andersen, Carl M.; and Tanner, John A.:
+Exploiting Symmetries in the Modeling and Analysis of 7ires.
+1. Zhong, Zhi-Hua; and Mackerle, Jaroslav: Static Contact Prob- NASA TP-2649, 1987.
+lems_A Review. Eng. Comput., vol. 9, Feb. 1992, pp. 3-37.
+18. Noor, Armed K.; and Tanner, John A.: Advances in Contact
+2. Tanner, J. A.: Static and Yawed-Rolling Mechanical Properties
+Algorithms and Their Application to Tires. NASA TP-2781,
+of Two Type Vll Aircrafi Tires. NASA TP-1863, 1981. 1988.
+3. Stubbs, Sandy M.; Tanner, John A.; and Smith, Eunice G.:
+19. Sanders, J. L., Jr.: Nonlinear Theories for Thin Shells. Q. Appl.
+Behavior of Aircraft Antiskid Braking Systems on Dry and Wet
+Math., vol. 21, no. I, Apr. 1963, pp. 21-36.
+Runway Surfaces---A Slip-Velocity-Controlled, Pressure-Bias-
+Modulated System. NASA TP-1051, 1978. 20. Budiansky, Bernard: Notes on Nonlinear Shell Theory.
+J. Appl. Mech., vol. 35, no. 2, June 1968, pp. 393-401.
+4. Tanner, John A.; Dreher, Robert C.; Stubbs, Sandy M.; and
+Smith, Eunice G.: 7ire Tread Temperatures During Antiskid 21. Simo, Juan C.; Wriggers, Peter; and Taylor, Robert L.: A Per-
+Braking and Cornering on a Dry Runway. NASA TP-2009, turbed Lagrangian Formulation for the Finite Element Solu-
+1982. tion of Contact Problems. Comput. Methods Appl. Mech. &
+Eng., vol. 50, no. 2, Aug. 1985, pp. 163-180.
+5. Daugherty, Robert H.; and Stubbs, Sandy M.: Cornering and
+Wear Behavior of the Space Shuttle Orbiter Main Gear 7ire. 22. Stein, E.; Wagner, W.; and Wriggers, P.: Finite Element Post-
+SAE Paper 871867, Oct. 1987. buckling Analysis of Shells With Nonlinear Contact
+Restraints. Finite Element Methods for Nonlinear Problems.
+6. Daugherty, Robert H.; and Stubbs, Sandy M.: Spin-Up Studies
+P. G. Bergan, K. J. Bathe, and W. Wunderlich, eds., Springer-
+of the Space Shuttle Orbiter Main Gear 7ire. SAE Paper
+Verlag, 1986, pp. 719-744.
+881360, Oct. 1988.
+23. Wriggers, Peter; and Nour-Omid, Bahram: Solution Methods
+7. Oden, J. T.; and Martins, J. A. C.: Models and Computational
+for Contact Problems. Rep. No. UCB/SESM-84/09 (Contract
+Methods for Dynamic Friction Phenomena. Comput. Meth-
+N00014-76-C-0013), Dep. of Civil Engineering, Univ. of
+ods Appl. Mech. & Eng., voi. 52, nos. 1-3, Sept. 1985,
+California, July 1984.
+pp. 527_534.
+24. Concus, Paul; Golub, Gene H.; and O'Leary, Dianne P.: A
+8. Clark, Samuel K.; and Dodge, Richard N.: Heat Generation in
+Generalized Conjugate Gradient Method for the Numerical
+Aircraft Tires Under Free Rolling Conditions. NASA
+CR-3629, 1982. Solution of Elliptic Partial Differential Equations. Sparse
+Matrix Computations. James R. Bunch and Donald J. Rose,
+9. Clark, Samuel K.; and Dodge, Richard N.: Heat Generation in eds., Academic Press Inc., 1976, pp. 309-332.
+Aircraft Tires Under Braked Rolling Conditions. NASA
+CR-3768, 1984. 25. Adams, Loyce: M-Step Preconditioned Conjugate Gradient
+Methods. SlAM J. Sci. & Stat. Comput., vol. 6, no. 2, Apr.
+10. McCarty, John L.: Temperature Distribution in an Aircraft Tire 1985, pp. 452-463.
+at Low Ground Speeds. NASA TP-2195, 1983.
+26. Tanner, J. A.; Martinson, V. J.; and Robinson, M. P.: Static
+11. Schaeffer, H. G.; and Ball, R. E.: Nonlinear Deflections of Frictional Contact of the Space Shuttle Nose Gear Tire.
+Asymmetrically Loaded Shells of Revolution. AIAA-68-292, Tire Sci. & Tech., TSTCA, vol. 22, no. 4, Oct.-Dec. 1994,
+Apr. 1968. pp. 242-272.
+12. Wunderlich, W.; Cramer, H.; and Obrecht, H.: Application of 27. Tanner, John A.: Computational Methods for Frictional Con-
+Ring Elements in the Nonlinear Analysis of Shells of Revolu- tact With Applications to the Space Shuttle Orbiter Nose-Gear
+tion Under Nonaxisymmetric Loading. Comput. Methods 7ire--Development of Frictional Contact Algorithm. NASA
+Appl. Mech. & Eng., vol. 51, Sept. 1985, pp. 259-275. TP-3574, 1996.
+13. Noor, A. K.: On Making Large Nonlinear Problems Small. 28. User's Manual--ISML Math(cid:0)Library, Version 1.1, MALB-
+Comput. Methods Appl. Mech. & Eng., vol. 34, nos. 1-3, Sept. USM-PERFCT-EN8901-1.1, IMSL, Inc., Jan. 1989.
+1982, pp. 955-985.
+29. Cline, Alan Kaylor: Fitpack A Software Package for Curve
+14. Noor, Ahmed K.; Andersen, Carl M.; and Tanner, John A.:
+and Surface Fitting Employing Splines Under Tension.
+Mixed Models and Reduction Techniques for Large-Rotation,
+Pleasant Valley Software, 1985.
+Nonlinear Analysis of Shells of Revolution With Application to
+Tires. NASA TP-2343, 1984. 30. De Boor, Carl: A Practical Guide to Splines. Springer-Verlag,
+1978.
+15. Noor, Ahmed K.: Reduction Method for the Non-Linear Anal-
+ysis of Symmetric Anisotropic Panels. Int. J. Numer. Methods 31. Reinsch, Christian H.: Smoothing by Spline Functions. Numer.
+Eng., vol. 23, July 1986, pp. 1329-1341. Math., vol. 10, no. 3, 1967, pp. 177-183.
+16. Noor, Ahmed K.; and Peters, Jeanne M.: Nonlinear Analy- 32. Cline, A. K.: Scalar- and Planar-Valued Curve Fitting Using
+sis of Anisotropic Panels. AIAA J., vol. 24, Sept. 1986, Splines Under Tension. Commun. ACM, vol. 17, no. 4, Apr.
+pp. 1545-1553. 1974, pp. 218-220.
+16
+
+
+
+=== PDF PAGE 23 ===
+33.JonesR, obertM.:
+Mechanics of Composite Materials. Field Testing of the 15-Meter Hoop-Column Antenna. NASA
+McGraw-Hill Book Co., 1975. TM-4073, 1989.
+34. Walter, J. D.: Cord Reinforced Rubber. Mechanics of Pneu- 37. Howell, William E.; Tanner, Sharon E.; and Vogler, William
+matic 7ires, Samuel K. Clark, ed., U.S. Dep. of Transportation, A.: Static Footprint Local Forces, Areas, and Aspect Ratios for
+1981, pp. 123-202. Three Type VII Aircraft Tires. NASA TP-2983, 1991.
+38. Kim, Kyun O.; Noor, Ahmed K.; and Tanner, John A.: Model-
+35. Karara, H. M., ed.: Non-Topographic Photogrammetry, Sec-
+ing and Analysis of the Space Shuttle Nose-Gear Tire With
+ond ed. American Soc. for Photogrammetry and Remote Sens-
+Semianalytic Finite Elements. NASA TP-2977, 1990.
+ing, 1989.
+39. Gall, R.; Tkacik, P.; and Andrews, M.: On the Incorporation of
+36. Schroeder, Lyle C.; Adams, Richard C.; Bailey, M. C.; Belvin, Frictional Effects in the Tire/Ground Contact Area. 17re Sci.
+W. Keith; Butler, David H.; and Campbell, Thomas G.: Near- and Tech., vol. 21, no. 1, Jan.-Mar. 1993, pp. 2-22.
+17
+
+
+
+=== PDF PAGE 24 ===
+Table 1. Variation of Ply Thickness hk/h 0
+[ho = 0.7513 in.]
+hklh 0 for region--
+Ply number
+(top to bottom) II HI IV V VI VII
+16
+1
+h = h-Zh k
+(tread and sidewall)
+k=2
+a2 0.0865- 0.0865- 0.0658- 0.0692- 0.0801- 0.0681- 0.0918-
+.0865 .0658 .0692 .0813 .0937 .1238 .1240
+3 0.0865- 0.0865- 0.0658- 0.0692- 0.0801- 0.0681- 0.0918-
+.0865 .0658 .0692 .0813 .0937 .1238 .1240
+0.0865- 0.0666- 0.0506- 0.0692- 0.0488- 0.0523- 0.0652-
+.0865 .0506 .0532 .0813 .0571 .0950 .0880
+0.0666- 0.0666- 0.0506- 0.0426- 0.0488- 0.0523- 0.0652-
+.0666 .0506 .0532 .0500 .0571 .0950 .0880
+0.0666- 0.0666- 0.0506- 0.0426- 0.0488- 0.0523- b0.2662-
+.0666 .0506 .0532 .0500 .0571 .0950 .3594
+0.0666- 0.0666- 0.0506- 0.0426- 0.0488- 0.0523- 0.0652-
+.0666 .0506 .0532 .0500 .0571 .0950 .0880
+0.0666- 0.0666- 0.0506- 0.0426- 0.0488- 0.0523- 0.0652-
+.0666 .0506 .0532 .0500 .0571 .0950 .0880
+0.0666- 0.0666- 0.0506- 0.0426- 0.0488- 0.0523- 0.0652-
+.0666 .0506 .0532 .0500 .0571 .0950 .0880
+10 0.0666- 0.0466- 0.0354- 0.0426- 0.0488- 0.0523- 0.0652-
+.0666 .0354 .0373 .0500 .0571 .0950 .0880
+11 0.0466- 0.0466- 0.0354- 0.0346- 0.0488- 0.0523- b0.2662-
+.0466 .0354 .0373 .0407 .0571 .0950 .3594
+12 0.0466- 0.0798- 0.0798- 0.0346- 0.0375- 0.0523- 0.0652-
+.0466 .0798 .0798 .0407 .0439 .0950 .0880
+13 0.0798-- 0 0.0798- 0.0375-- 0.0523- 0.0652-
+.0798 .0798 .0439 .0950 .0880
+14 0 0 0 0.0798- 0.0366-- 0.0466-
+.0798 .0666 .0629
+15 0 0 0 0.0366- 0.0466-
+.0666 .0629
+16 0 0 0 0 0 0.0798- 0.1464--
+.1464 .1597
+aSecond layer of region I represents layer which has reinforcement (see fig. 2).
+bRepresents thickness of bead wires.
+18
+
+
+
+=== PDF PAGE 25 ===
+Table2. ValuesofElasticConstanotsfTireConstituenUtssedinPresenSttudy
+Tireconstituent Young'smodulusp,si Sheamr odulusp,si Poisson'rsatio
+Rubber 4.5x 102 1.51x 102 0.49
+Nyloncord 3.5x 105 7.00x 102 .66
+Beaad 2.9x 107 1.10x 107 .30
+aSince deformations are small in bead area, itis reasonable to assume that bead wires are isotropic.
+Table 3. Variation of Nylon Cord End Counts in Different Plies Along Meridian
+Cord end count, ends per inch, for region--
+Ply number
+(top to bottom) I II III IV V VI VII
+1 Rubber Rubber Rubber Rubber Rubber Rubber Rubber
+(tread and sidewall)
+2 16-16 18-14 14-14 14-14 14-14 14-14 14-14
+3 18-18 18-14 14-14 14-14 14-14 14-14 14-14
+4 18-18 21-20 20-18 18-16 16-16 16-14 14-14
+5 23-21 21-20 20-18 18-16 16-16 16-14 14-14
+6 23-21 21-20 20-18 18-16 16-16 16-14 Bead
+7-9 23-21 21-20 20-18 18-16 16-16 16-14 14-14
+10 23-21 29-26 26-25 18-16 16-16 16-14 14-14
+11 30-29 29-26 26-25 25-24 16-16 16-14 Bead
+12 30-29 Rubber Rubber 25-24 24-22 16-14 14-14
+13 Rubber Rubber 24-22 16-14 14-14
+14 Rubber 22-22 22-22
+15 22-22 22-22
+16 Rubber Rubber
+19
+
+
+
+=== PDF PAGE 26 ===
+Table4. VariationofCordOrientatioonfIndividuaPl lies,6k,AlongMeridian
+6
+k , deg, for region--
+Ply number
+(top to bottom) I II III IV V V! VII
+1 Rubber Rubber Rubber Rubber Rubber Rubber Rubber
+2 -6-6 6 6 6 6 6 6
+3 6 -6 -6 -6 -6 -6 -6
+4 -6 6 -6 -6 -6
+5 6 -6 -6 6 6 -6
+6 -6 6 6 -6 6 -6 Bead
+7 6 -6 -6 -6 -6
+8 -6 6 6 -6 6 -6 6
+9 6 -6 -6 6 -6 6 -6
+10 -6 6+6 6+6 -6 -6 6
+11 6+6 -6-6 -6-6 6+6 -6 Bead
+12 -6-6 Rubber Rubber -6-6 6+6 6
+13 Rubber Rubber -6-6 -6 -6
+14 Rubber 6+6 6+6
+15 -6-6 -6-6
+16 Rubber Rubber
+2O
+
+
+
+=== PDF PAGE 27 ===
+Z
+I
+I
+ItI
+b1= 15.1734 in.
+b2 = 4.12 in.
+At Q At®
+s=_ =o s = 9.76 in.
+_=o.5
+ho = 0.75 in.
+r=b I
+I
+I
+I
+I
+bI '1
+Boundary conditions:
+At _ = 0.5 At _ = 0
+u = v = w = 0 Symmetry condition:
+_ = _o=0 u =v =_s=% =0
+Figure 1. Geometric characteristics of Space Shuttle nose-gear tire.
+21
+
+
+
+=== PDF PAGE 28 ===
+Nylon cords
+0.1102
+h=l
+.... .2562
+=.696 .... .3176
+_= .785
+..... .3535
+h= .974
+--.3843
+= 1.587
+Wire beads
+VII .4483
+= 2.185
+Figure 2. Cross section of Space Shuttle nose-gear tire showing seven model regions.
+22
+
+
+
+=== PDF PAGE 29 ===
+1.5 m
+1.0
+....
+.5
+Normalized
+0
+parameter
+-.5 "'"',, Or
+-, c_s
+-1.0
+W I I I I
+-1.5
+.1 .2 .3 .4 .5
+K1/KI,o
+-5
+-10
+I I I I I
+-15
+.1 .2 .3 .4 .5
+Figure 3. Meridional variation of geometric parameters of two-dimensional shell model of Space Shuttle nose-gear tire.
+Reference surface chosen to be outer surface, r0 = 15.1737 in., _:2,o = 0.0659 in -1- K1,o 0.1091 in -1.
+23
+
+
+
+=== PDF PAGE 30 ===
+20 x 103
+0 fll _----,,
+-- ell , C2_,/-']
+__
+32
+C..
+IJ
+EToh ° 24
+16
+f12 ""
+f66 -12 x 103
+I [ [ fill -24 × 103
+.1 .2 .3 .4 .5 0 .1 .2 .3 .4 .5
+I
+_=0
+32 × 103 6 x 103
+-- dll, d22//_
+/ __-_4x 103
+24
+__ ddj_2-_L J 16 x 103
+.20
+d.. C.. I
+-- tj .15 J
+'ETo_ho18 EToho -__. C5 5
+12 '-" d I .10
+"'. _..2 dll/_ _
+.05
+I I I I
+0 .1 .2 .3 .4 .5 0 .1 .2 .3 .4 .5
+(a) Stiffness coefficients associated with uncoupled (orthotropic) response.
+Figure 4. Meridional variation of stiffness coefficients of two-dimensional shell model of Space Shuttle nose-gear tire.
+Ezo = 1160.3 psi; h0 = 0.7513 in.
+24
+
+
+
+=== PDF PAGE 31 ===
+o__1,,,, 1.00
+I .75
+-.5 -- c26 j I !
+i
+i
+!
+.50
+C aj . -1.0 C16 f aj . ---_"f_"-..., ,
+ET0h0 F--_0h02 .25 - f,6 "'" !'/
+-1.5
+-2.0 I I I I I I I I I I
+0 .1 .2 .3 .4 .5 •1 .2 .3 .4 .5
+I
+_-0_
+0 x 103
+.25 --
+-.5 m
+-.25 ''"-/J "" -1.0 -
+d .
+C45
+E_ohO_
+EToho -1.5 -
+I
+i/I d26 ____J
+-.75 /
+-2.0 --
+-.50
+-i.oo I I I I I -2.5 I I I I I
+0 .1 .2 .3 .4 .5 0 .1 .2 .3 .4 .5
+(b) Coupling (nonorthotropic) stiffness coefficients, a = 1,2.
+Figure 4. Concluded.
+25
+
+
+
+=== PDF PAGE 32 ===
+z
+x
+I
+Figure 5. Arrangement of photogrammetry targets on Space Shuttle nose-gear tire.
+/
+s
+- - -J....... L.........
+Loaded profile _ Unloaded profile
+Figure 6. Unloaded and loaded sidewall profiles for Space Shuttle nose-gear tire.
+26
+
+
+
+=== PDF PAGE 33 ===
+- S
+30
+I I
+25
+II I/I
+20
+Vertical
+load, 15
+kips
+10
+_1_1 i/ I _ 'ncreasin_ load
+5 __ ,_/0 / .lff i .... --D Decreasing load
+Jr"" I ' I I
+0 ! 2 3
+Deflection, w, in.
+Figure 7. Static vertical load-deflection curve for Space Shuttle nose-gear tire.
+16_-
+14
+12
+10
+Footprint
+length, 8
+in.
+6
+4
+\_Length = 3.398 + 7.873 × 10-4 (Fz) - 2.408 × 10-8 (F2) + 3.404 × 1013 (F_)
+I 1 I I
+0 10 20 30 40 x 103
+Vertical load, lbf
+Figure 8. Footprint length as a function of vertical load for Space Shuttle nose-gear tire. Inflation pressure = 300 psi.
+27
+
+
+
+=== PDF PAGE 34 ===
+©
+Footprint
+width,
+in.
+Width = 1.28 + 4.959 × 10.4 (Fz) - 1.675 × 10.8 (F2) + 2.436 × 10-13 (F3 )
+I I I I
+0 10 20 30 40 x 103
+Vertical load, Ibf
+Figure 9. Footprint width as a function of vertical load for Space Shuttle nose-gear tire. Inflation pressure = 300 psi.
+8 -
+7
+6
+5
+Footprint
+width, 4
+in.
+3
+2
+1
+I
+0 2 4 6 8 10 12 14 16
+Footprint length, in.
+Figure 10. Footprint width as a function of footprint length for Space Shuttle nose-gear tire. Inflation pressure = 300 psi.
+28
+
+
+
+=== PDF PAGE 35 ===
+100 Gross area _ / /
+Net area
+60
+Footprint
+area,
+in2 Gross area= 3.672 + 3.177 × 10-3 FZ
+40
+Net area = 1.491 + 2.802 x 10-3 Fz
+20
+I I I I
+0 10 20 30 40 × 103
+Vertical load, Fz, lbf
+Figure 11. Footprint area as a function of vertical load for Space Shuttle nose-gear tire. Inflation pressure = 300 psi.
+1.0 Ratio = 0.805 + 2.17 x 10.6 Fz -"-7
+.6
+Footprint
+area
+ratio
+.4
+.2
+I I I I
+0 10 20 30 40 × 103
+Vertical load, Fz, lbf
+Figure 12. Footprint area ratio as a function of vertical load for Space Shuttle nose-gear tire. Inflation pressure = 300psi.
+29
+
+
+
+=== PDF PAGE 36 ===
+-.23 I
+(a) Vertical load = 2000 lbf.
+Figure 13. Footprint area and map of tire footprint-force transducer locations for Space Shuttle nose-gear tire.
+30
+
+
+
+=== PDF PAGE 37 ===
+I:
+-_°
+q
+13 12'_
+,18 -10
+/
+/ .22_0
+/-¸22"- .0_ _".20
+m
+I
+m I
+4.
+m I
+n
+m
+i I
+,L
+m
+m m
+i I I
+4,
+I I i
+i i
+m i i
+m
+-.25"..211
+/ -.08
+m / -.03
+.O6 -18
+-.2o._____
+I
+I
+"-.-.3j1"2.
+10
+.i16 35%
+(b) Vertical load = 15000 lbf.
+Figure 13. Continued.
+31
+
+
+
+=== PDF PAGE 38 ===
+52%
+(c) Vertical load = 30000 Ibf.
+Figure 13. Concluded.
+32
+
+
+
+=== PDF PAGE 39 ===
+Left half of footprint reflected Left half of footprint rotated
+onto right half of footprint onto right half of footprint
+I "
+iI
+/////
+(a) Vertical load = 2000 lbf.
+Figure 14. Symmetries exhibited by footprint of Space Shuttle nose-gear tire.
+33
+
+
+
+=== PDF PAGE 40 ===
+Left half of footprint reflected Left half of footprint rotated
+onto right half of footprint onto right half of footprint
+t
+t
+I
+/,I I t J
+tI
+(b) Vertical load = 15000 Ibf.
+Figure 14. Continued.
+34
+
+
+
+=== PDF PAGE 41 ===
+Left half of footprint reflected Left half of footprint rotated
+onto right half of footprint onto right half of footprint
+\
+(C) Vertical load = 30000 lbf.
+Figure 14. Concluded.
+35
+
+
+
+=== PDF PAGE 42 ===
+Tangential displacement directions Normal load intensity, psi
+800
+700
+600
+500
+d footprint area
+400
+Footprint
+widthin, . 0
+300
+200
+-2
+I I I I I I I
+-g -2 0 2 4 100
+Footprint length, in.
+0
+(a) Normal load, 2000 Ibf.
+Footprint
+width, in. 0
+-4
+I I I I I I I
+-8 -4 0 4 8
+Footprint length, in.
+(b) Normal load, 15000 lbf.
+4
+i i i i I i i
+-4 0 4 8
+Footprint length, in.
+(c) Normal load, 30000 lbf.
+Figure 15. Color contour plot of measured footprint normal load-intensity distribution for Space Shuttle orbiter nose-
+gear tire subjected to an inflation pressure of 300 psi.
+36
+
+
+
+=== PDF PAGE 43 ===
+Tangentdiaislplacemdeirnetctions
+Lateral friction load intensity, psi
+48
+42
+36
+30
+____ Measured footprint area 24
+18
+12
+Footprint 6
+widthin, . O
+-6
+-12
+-18
+-24
+-2 -30
+-4 I I I I I I I -36
+-2 0 2 4 -42
+Footprint length, in. -48
+(a) Lateral friction load intensity for a normal load of 2000 lbf.
+Lateral friction load intensity, psi
+120
+105
+90
+4
+75
+60
+45
+30
+15
+Footprint 0 0
+width, in.
+-15
+-30
+-45
+-60
+-75
+-4
+I I [ I I T I I -90
+-8 -4 0 4 8 -105
+Footprint length, in. -120
+(b) Lateral friction load intensity for a normal load of 15000 lbf.
+Lateral friction load intensity, psi
+200
+175
+150
+125
+100
+75
+50
+E-" i i!!iiii!ii_iiii_ii__ii_!__!,i_ii!i!i!_ 25
+Footprint
+width, in. 0
+-25
+-50
+-75
+-100
+-4 -125
+I I I f [ I I I -150
+-8 -4 0 4 8 -175
+Footprint length, in. -200
+(c) Lateral friction load intensity for a normal load of 30000 lbf.
+Figure 16. Color contour plot of measured footprint lateral load-intensity distribution for Space Shuttle orbiter nose-
+gear tire subjected to an inflation pressure of 300 psi.
+37
+
+
+
+=== PDF PAGE 44 ===
+Tangential displacement directions
+v
+Drag friction load intensity, psi
+4O
+35
+30
+2
+25
+20
+15
+ed footprint area 10
+5
+Footprint 0 0
+width, in.
+-5
+-10
+-15
+-20
+-25
+-2
+I I I I I I r I -30
+-4 -2 0 2 4 -35
+Footprint length, in. -40
+(a) Drag friction load intensity for a normal load of 2000 lbf.
+Drag friction load intensity, psi
+96
+84
+72
+60
+48
+36
+24
+12
+Footprint 0 0
+width, in.
+-12
+-24
+-36
+-48
+-60
+-4
+I 1 f I I I I I -72
+-8 -4 0 4 8 -84
+Footprint length, in. -96
+(b) Drag friction load intensity for a normal load of 15 000 lbf.
+Drag friction load intensity, psi
+96
+84
+72
+60
+48
+36
+24
+12
+Footprint 0 0
+width, in.
+-12
+-24
+-36
+i -48
+-60
+-4 I I I F l I I I -72
+-8 -4 0 4 8 -84
+Footprint length, in. -96
+(C) Drag friction load intensity for a normal load of 30000 lbf.
+Figure 17. Color contour plot of measured footprint drag load-intensity distribution for Space Shuttle orbiter nose-gear
+tire subjected to an inflation pressure of 300 psi.
+38
+
+
+
+=== PDF PAGE 45 ===
+-- Groovneodes
+4
+Nodueseidnmode(tlypical)
+_ Pmoosdserieblnflioendefemorent
+(typical)
+z,in. 0
+1 2 3
+y,in.
+-1
+-2
+-3
+-4
+Figure18.MeridionaplrofileofSpaceShuttlenose-geatirremodelsdenotinngodepointlocations.
+39
+
+
+
+=== PDF PAGE 46 ===
+=[(157-81252)+1]'5=1635
+0 1 168 339 504 680
+t_
+641 i i /z ir:i'l'I'vi "/ ir'r'.:J i]" • "t" tit [M:.'_.v.il-rzt_'tir:i:i:i'i_'r: 680
+561 :"r-r'r:ir!r!:!rJ'_ 7"::: .t iJ" • • /" _ "-'-,_"_'i'i'l'_"r'r'r'r'r-l_'r_'i: 600
+481 ............................ j _ D _ _'_'{:t_'l'i'i'i'r'r'r'r'r_'i_'i:l'_i: '520
+4Ol i 7i7iii7i7i7i7i:/ 7i7i7tlfi f i t: t ....... [ :lilii:lilifilrl:t_'rri:I:l:
+440
+321 : / 7l:t't't:t:tki:t:t:t:t'l [t:t:t:.':' t_ ....... t_:l'Iil:i:i_'"':i:i:i:l'i'l: 360
+241 :/" 7t:[:t:t:t:,/':t:t:t:t:t:i _t't't't:rt :TTT'r:i_ll:i'i'i'i'_i';:i'r'i:T:l:l'_i: 280
+161 :!' 'i.i.l;l;l:7 .l,i.i.l; ;I !f:f7t7fi_t .:.::::lilt{f{t7tit7l{f7t:f.[.t:t:t71: 20o
+8_ ;;i;i;i;i;i;i;i;, .... ; .... {{ t ....... tt ................ 12o
+1 ,;,,;i;i;t;i;i;i;i;i;i:i:i;.; i; t ....... tS:i:i:i_'i:r:ielel_'r_'i:iei;': 40
+41 ............................ Ii ........ _ ....... t_ ................. 80
+121 '!l'l'l'l_'i_l_'l_ .7.,......I...I.... r'i" l. t ....... ttll_'!:!;!:!:!'!_'i:ier:r:r:l'r" 16o
+201 "'-77373777-''-7 :/ ;l.t.l.i;-;l I'.._':';:':7"t "_.''_''37i_'l'i'i'i'r'l'_l';I_'i_'I:iTlTr" 240
+281 .............. k ........... i!..' ....... t ...... tin7 iii'_T:T 7r_"I_'i:':r:i'i'T'r: 320
+ii;i;i;i;i;'?}iTiiiTiTiT:7I
+361 V..:::::..t 71"17.'tl:i:l'_l:l'l:t:l:i'r-r'r:l:r" 400
+521 'il:I:l:l:lY":I:l:l'i'i'l" /'q _,:'i:l'l'l_ " "_"t_: .......................... 560
+fw. 7i}iiiTiTi, iiiiiiTi{i{iTi{
+6Ol ::t:t7t7t:7/.. :t:t:t "i:l: >' :!t_{':titit:lt " >/" 64o
+681 "'''7'7"71i7 ..... • ..... " /" :ill,'';';'''_ V/. " i_'I:I:i.17,X .l:l-!'-i-iTl;-,{ 720
+Groove
+129 296 465 633 720
+Figure 19. Typical array of finite elements and nodes used to model Space Shuttle nose-gear tire.
+4O
+
+
+
+=== PDF PAGE 47 ===
+Model 1 Model 2 Model 3
+i
+I
+Displacement nodes Stress-resultant nodes
+M9-4 finite element
+Sector Number of elements (M9-4) for--
+Model 1 Model 2 Model 3
+-0.2n < 0 _<0.2n 240 (40 x 6) 480 (40 x 12) 960 (40 x 24)
+0<-0.2x, 0 > 0.2_ 480 (40 x 12) 480 (40 x 12) 480 (40 x 12)
+Total 720 (40 x 18) 960 (30 x 24) 1440 (40 x 36)
+Figure 20. Finite-element models of Space Shuttle nose-gear tire used in present study.
+Internal inflation loading,
+300 psi
+Analysis
+Uninflated
+..... Inflated
+Experiment
+/
+,¢
+s"
+Figure 21. Inflated and uninflated profiles of Space Shuttle nose-gear tire.
+41
+
+
+
+=== PDF PAGE 48 ===
+[] Experimental measurement
+/_ Contact area algorithm calculation
+O Newton-Cotes quadrature calculation
+4O 000
+3O 000
+Tire normal
+load, lbf 20 000
+O
+10000
+L I I I
+0 .5 1.0 1.5 2.0 2.5 3.0
+Tire normal deflection, in.
+Figure 22. Comparison of calculated and measured normal load-deflection curve for Space Shuttle nose-gear tire. Infla-
+tion pressure = 300 psi.
+42
+
+
+
+=== PDF PAGE 49 ===
+[] Experimental measurement
+'A Contact area algorithm calculation
+-0 Newton-Cotes quadrature calculation
+100
+90
+i/I
+80
+70
+60
+Net footprint
+area, in2 50
+40 /-
+30
+20
+10
+I I 1
+0 10 000 20 000 30 000 40 000
+Tire normal load, lbf
+Figure 23. Comparison of calculated and measured net tire footprint areas for Space Shuttle nose-gear tire. Inflation
+pressure = 300 psi.
+43
+
+
+
+=== PDF PAGE 50 ===
+[] Experimental measurement
+-A Contact area algorithm calculation
+"O Newton-Cotes quadrature calculation
+100
+/
+I
+90 /
+!
+/
+80 !
+!
+!
+70 /
+!
+!
+60
+Gross footprint
+50
+area, in2
+40
+30
+20
+10
+I I t I
+10 000 20 000 30 000 40 000
+Tire normal load, lbf
+Figure 24. Comparison of calculated and measured gross tire footprint areas for Space Shuttle nose-gear tire. Inflation
+pressure = 300 psi.
+44
+
+
+
+=== PDF PAGE 51 ===
+- Measured footprint _ Node out of contact (typical)
+f . / /_Node in contact (typical)
+I m
+_ Calculated footpnnt
+Footprint 0 --
+width, in.
+\ • •
+F
+-2 l J I I I I I I
+-L -3 -2 -1 0 1 2 3 4
+Footprint length, in.
+(a) Normal load = 2000 lbf.
+_ Measured footprint
+/.,,,,_.__. _S N°de in c°ntact (typical)
+--'_--! ! i i _'_-_ i /--- N°de °ut °f c°ntact (typical)
+Footprint
+width, in. O n
+: ." ..- _-
+._ . _. . .
+._ . .
+=.c - : =. " m -
+-2 m
+.... Calculated footprint
+-4 I I I I I I I I
+-8 -6 -4 -2 0 2 4 6 8
+Footprint length, in.
+(b) Normal load = 15000 lbf.
+Figure 25. Measured and calculated footprints for Space Shuttle nose-gear tire. Inflation pressure = 300 psi; analytical
+results from model 1.
+45
+
+
+
+=== PDF PAGE 52 ===
+Normal load
+Tangential displacement directions
+intensity, psi
+y
+1000
+900
+Experimental measurement Analytical prediction
+800
+700
+600
+Footprint 500
+widthin, .
+400
+300
+-2
+I r I I I 1 I I I 200
+_z -2 0 2 -2 0 2
+100
+Footprint length, in. Footprint length, in.
+0
+(a) Normal load = 2000 lbf.
+__._ _ Calculated
+?..otpfin/area
+s' x
+Footprint
+width, in. 0
+-4 _ _ _ _ _ _ _ _ _ _ _ r _ _ _
+-8 -4 0 4 8 -8 -4 0 4 8
+Footprint length, in. Footprint length, in.
+(b) Normal load = 15000 tbf.
+Figure 26. Comparison of measured and predicted footprint normal load-intensity distribution for Space Shuttle
+nose-gear tire subjected to an inflation pressure of 300 psi. For model l: Idstatic = 0.6; hi.dynamic = 0.51; en = 1.0E+12;
+et = 2.0E+03; Erela x = 0.5.
+46
+
+
+
+=== PDF PAGE 53 ===
+Tangential displacement directions
+Lateral friction
+load intensity, psi
+48
+42
+Experimental measurement Analytical prediction 36
+30
+24
+18
+12
+6
+0
+-6
+-12
+Footprint 0 -18
+width, in. -24
+-30
+-36
+-42
+-2
+I I I I I I I I [ I I I I
+-Z -2 0 2 4 -4 -2 0 2
+Footprint length, in. Footprint length, in.
+(a) Lateral friction load intensity for a normal load of 2000 lbf.
+Lateral friction
+load intensity, psi
+120
+105
+90
+75
+60
+footprint area _ Calculated 45
+-_ Measured footprint area 30
+15
+O
+-15
+-30
+Footprint ..... _ i__ii_i_ _i_ ¸- .... I _15
+width, in. 0
+I j -60
+.................................. _:_i7ii_i -75
+-90
+_. / ] ]i _,_ "_ -105
+-120
+-4 T I I I i I _ I I I l I I I l I
+-8 -4 0 4 8 -8 -4 0 4 8
+Footprint length, in. Footprint length, in.
+(b) Lateral friction load intensity for a normal load of 15000 lbf.
+Figure 27. Comparison of measured and predicted footprint lateral friction load-intensity distribution for Space Shuttle
+nose-gear tire subjected to an inflation pressure of 300 psi. For model 1: btstatic = 0.6; Iddynamic = 0.51; £n = 1.0E+ 12;
+E1-- 2.0E+03; Erela x = 0.5.
+47
+
+
+
+=== PDF PAGE 54 ===
+Tangential displacement directions
+Drag friction
+load intensity, psi
+40
+35
+Experimental measurement Analytical prediction 30
+25
+20
+15
+10
+5
+0
+-5
+-10
+Footprint -15
+width, in. 0 -20
+-25
+-30
+-35
+-2 -4 I -2 I I 0 I I 2 I I 4 I -4 t -2 1 I 0 I I 2 I I 4 I
+Footprint length, in. Footprint length, in.
+(a) Drag friction load intensity for a normal load of 2000 lbf.
+Drag friction
+load intensity, psi
+96
+84
+72
+60
+48
+Measured footprint area 36
+-- Calculated 24
+12
+area 0
+-12
+-24
+Footprint -36
+width, in. 0 -48
+_!i}S_iUili3? _ qViii!ii3iiii!J -60
+-72
+-84
+-96
+-4
+I I I I I 1 I t I I 1 I I I
+-8 -4 0 4 8 -8 -4 0 4 8
+Footprint length, in. Footprint length, in.
+(b) Drag friction load intensity for a normal load of 15 000 lbf.
+Figure 28. Comparison of measured and predicted footprint drag friction load-intensity distribution for Space Shuttle
+nose-gear tire subjected to an inflation pressure of 300 psi. For model 1: ktstatic = 0.6; _tdynami c = 0.51; £n = 1.0E+12;
+et = 2.0E+03; Erela x = 0.5.
+48
+
+
+
+=== PDF PAGE 55 ===
+Tangential displacement directions
+Load
+intensity, psi
+1000
+Model 1 Model 3 with refined grid in contact zone
+900
+800
+700
+600
+/ /
+Footprint -m .... __- 500
+width, in. 400
+300
+20O
+100
+-2 I i i I I I I I I I I I I 0
+-4 -2 0 2 4 -4 0 2
+Footprint length, in. Footprint length, in.
+(a) Normal load = 2000 lbf.
+Load
+intensity, psi
+48
+42
+Calculated 36
+30
+_ footprint area
+24
+18
+j _
+/ 12
+Footprint 6
+width, in. 0
+-6
+-12
+-18
+-24
+-2 -30
+I I -36
+-L -2 0 2 4 -4 -2 0 2 4 -42
+48
+Footprint length, in. Footprint length, in.
+(b) Lateral friction load intensity, normal load = 2000 lbf.
+Load
+intensity, psi
+40
+35
+2 30
+25
+20
+15
+10
+Footprint 5
+width, in. 0 0
+-5
+-10
+-15
+-20
+-2 -25
+I I I I I [ [ I I I I I I I r i -30
+-4 -2 0 2 4 -4 -2 0 2 4 -35
+Footprint length, in. Footprint length, in.
+(c) Drag friction load intensity, normal load = 2000 lbf.
+Figure 29. Effect of contact-area grid refinement on predicted contact load-intensity distributions. Space Shuttle
+nose-gear tire subjected to an inflation pressure of 300 psi and unsymmetric static loading conditions. For model 1:
+_static = 0.6; _dynamic = 0.51; En = 1.0E+12; at = 2.0E+03; Erela x = 0.5.
+49
+
+
+
+=== PDF PAGE 56 ===
+Load
+intensity, psi
+1000
+Circumferentially grooved tread tire Smooth tread tire 900
+800
+700
+600
+Footprint 500
+widthin, .O 400
+-"_,7"-'-.- 7 t:r77
+300
+_, .... _i¸¸¸ ,,, 200
+100
+-2 0
+-4 I I I I T I I I I I I
+-2 0 4 -4 -2 0
+Footprint length, in. Footprint length, in.
+(a) Normal load = 2000 lbf.
+Load
+intensity, psi
+48
+42
+36
+2 Calculated 30
+footprint area 24
+18
+i • 12
+6
+Footprint 0
+width, in. 0 I !
+" / -6
+/ -12
+-18
+-24
+-30
+-2 i -36
+I I I I I I I I I I I I I
+-4 -2 0 2 4 -4 -2 0 2 4 -42
+-48
+Footprint length, in. Footprint length, in.
+(b) Lateral friction load intensity, normal load = 2000 lbf.
+Load
+intensity, psi
+40
+35
+30
+25
+20
+15
+I • 10
+5
+Footprint 0
+width, in. 0 I I -5
+-10
+-15
+-20
+-25
+-2 i -30
+I -2 i , I 0 I ! 2 I 4 I -4 I -2 I I | 0 I 2 i 4 -35
+-Z
+-40
+Footprint length, in. Footprint length, in.
+(c) Drag friction load intensity, normal load = 2000 lbf.
+Figure 30. Comparison of circumferentially-grooved tread tire and smooth-tread tire contact load intensities. Space
+Shuttle nose-gear tire subjected to an inflation pressure of 300 psi and symmetric static loading conditions. For
+model 1: btstatic = 0.6; [.tdynami c = 0.51; En = 1.OE+12; Et = 2.0E+03; Erelax = 0.5.
+5O
+
+
+
+=== PDF PAGE 57 ===
+Frictional contact
+Normal load intensity, psi
+2 m 1000
+Calculated footprint area
+__ 900
+800
+I x
+Footprint
+width, in. 0 - ..... .---------------- 700
+x /
+600
+500
+-2 I I I 400
+-4 -2 0 2
+300
+Footprint length, in.
+200
+100
+Frictionless contact
+2 - 0
+Calculated footprint area
+,d '_'_ -,- ,_ /m
+Footprint
+width, in,
+J
+-2 I I I
+-4 -2 0 2 4
+Footprint length, in.
+Figure 31. Comparison of normal load intensities from frictional and frictionless contact. Space Shuttle nose-gear
+tire subjected to an inflation pressure of 300 psi and symmetric static loading conditions. For model 1:/U.static -- 0.6;
+_dynamic = 0.51; En = i.0E+12; et = 2.0E+03; F_,relax = 0.5.
+51
+
+
+
+=== PDF PAGE 58 ===
+Normal load = 2000 lbf Normal load = 15 000 lbf
+Total strain energy density,
+in-lb
+90
+80
+70
+60
+50
+0
+40
+30
+20
+10
+0
+-.5 -.25 0 .25 .5
+S
+(a) Total strain energy density.
+Transverse-shear strain energy density,
+in-ib
+27
+24
+21
+18
+15
+0 i'i,
+0 -
+12
+ililiiiiiiil]
+9
+6
+Detail
+3
+0
+ii
+[ r ] I
+-.5 -.25 0 .25 .5 -.5 -.25 0 .25 .5
+S S
+(b) Transverse-shear strain energy density.
+Figure 32. Variation of calculated strain energy density distribution. Space Shuttle nose-gear tire subjected to an
+inflation pressure of 300 psi and symmetric static loading conditions. For model 1: _tstatic = 0.6; Iddynamic = 0.51;
+en = 1.0E+12; _t = 2.0E+03; Erela x = 0.5.
+52
+
+
+
+=== PDF PAGE 59 ===
+
+
+
+
+=== PDF PAGE 60 ===
+Form Approved
+REPORT DOCUMENTATION PAGE OMBNo0.704-0188
+Pubtic reporting burden forthis coUecti(>nof information isestimated to average 1 hourper response, including the time for reviewing instructions, searching existing data sources,
+gathering and maintaining the data needed, and coml_eting and reviewing the collection of information. Send comments regarding this burden estimate or any other aspect of this
+collection of information, including suggestions for reducing this burden, to Washington Headquarters Services, Directorate for information Operations and Reports, 1215 Jefferson
+Davis Highway, Suite 1204, Arlington, VA 22202J.30_, and to the Office of Management and Budget, Paperwork Reduclion Proiest (0704-0188), Washington, DC 20503
+1. AGENCY USE ONLY (Leave blank) 2. REPORT DATE 3. REPORT TYPE AND DATES COVERED
+May 1996 Technical Paper
+4. TITLE AND SUBTITLE 5. FUNDING NUMBERS
+Computational Methods for Frictional Contact With Applications to the
+Space Shuttle Orbiter Nose-Gear Tire WU 505-63-50-19
+Comparisons of Experimental Measurements and Analytical Predictions
+6. AUTHOR(S)
+John A. Tanner
+7. PERFORMING ORGANIZATION NAME(S) AND ADDRESS(ES) 8. PERFORMING ORGANIZATION
+REPORT NUMBER
+NASA Langley Research Center L-17211A
+Hampton, VA 23681-0001
+9. SPONSORING/MONITORIANGGENCYNAME(S)ANDADDRESS(ES) 10. SPONSORING/MONITORING
+AGENCY REPORT NUMBER
+National Aeronautics and Space Administration NASA TP-3573
+Washington, DC 20546-0001
+11. SUPPLEMENTARY NOTES
+1211. DISTRIBUTION/AVAILABILITY STATEMENT 12b. DISTRIBUTION CODE
+Unclassified-Unlimited
+Subject Category 39
+Availability: NASA CASI (301) 621-0390
+13. ABSTRACT (Maximum 200 words)
+A computational procedure is presented for the solution of frictional contact problems for aircraft tires. A Space
+Shuttle nose-gear tire is modeled using a two-dimensional laminated anisotropic shell theory which includes the
+effects of variations in material and geometric parameters, transverse-shear deformation, and geometric nonlinearities.
+Contact conditions are incorporated into the formulation by using a perturbed Lagrangian approach with the funda-
+mental unknowns consisting of the stress resultants, the generalized displacements, and the Lagrange multipliers asso-
+ciated with both contact and friction conditions. The contact-friction algorithm is based on a modified Coulomb
+friction law. A modified two-field, mixed-variational principle is used to obtain elemental arrays. This modification
+consists of augmenting the functional of that principle by two terms: the Lagrange multiplier vector associated with
+normal and tangential node contact-load intensities and a regularization term that is quadratic in the Lagrange multi-
+plier vector. These capabilities and computational features are incorporated into an in-house computer code. Experi-
+mental measurements were taken to define the response of the Space Shuttle nose-gear tire to inflation-pressure loads
+and to inflation-pressure loads combined with normal static loads against a rigid flat plate. These experimental results
+describe the meridional growth of the tire cross section caused by inflation loading, the static load-deflection character-
+istics of the tire, the geometry of the tire footprint under static loading conditions, and the normal and tangential load-
+intensity disu'ibutions in the tire footprint for the various static vertical-loading conditions. Numerical results were
+obtained for the Space Shuttle nose-gear tire subjected to inflation pressure loads and combined inflation pressure and
+contact loads against a rigid flat plate. The experimental measurements and the numerical results are compared.
+14. SUBJECT TERMS 15. NUMBER OF PAGES
+Finite elements; Frictional contact; Nose-gear; Shell theory; Shuttle; Tire modeling 55
+16. PRICE CODE
+A04
+17. SECURITY CLASSIFICATION 18. SECURITY CLASSIFICATION 19. SECURITY CLASSIFICATION 20. LIMITATION
+OF REPORT OF THIS PAGE OF ABSTRACT OF ABSTRACT
+Unclassified Unclassified Unclassified
+NSN 7540-01-280-5500 Standard Form 298 (Rev. 2-89)
+Prescribed by ANSI Std, Z39-18
+298-102
+
+
+
+=== PDF PAGE 61 ===
+
+
+
+
+=== PDF PAGE 62 ===
+

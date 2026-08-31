@@ -1,0 +1,74 @@
+[
+  {
+    "harvestUnitId": "E-HU-001",
+    "archive": "Tire Science and Technology / The Tire Society",
+    "searchTheme": "measured pressure, load, F&M, thermal, wear, transient, wet and construction mechanics",
+    "dateRange": "1973-2005",
+    "documentType": "peer-reviewed journal paper",
+    "status": "COMPLETE",
+    "reviewedDocuments": 73
+  },
+  {
+    "harvestUnitId": "E-HU-002",
+    "archive": "NASA / NACA / NTRS",
+    "searchTheme": "pressure/deflection, friction, yaw, temperature, wear, hydroplaning and construction",
+    "dateRange": "1950-2005 prioritized",
+    "documentType": "government technical report/paper",
+    "status": "COMPLETE",
+    "reviewedDocuments": 58
+  },
+  {
+    "harvestUnitId": "E-HU-003",
+    "archive": "SAE Mobilus / SAE DOI corpus",
+    "searchTheme": "pressure, thermal, F&M, wear, transient, construction and wet behavior",
+    "dateRange": "1950-2005",
+    "documentType": "industry technical paper",
+    "status": "COMPLETE",
+    "reviewedDocuments": 70
+  },
+  {
+    "harvestUnitId": "E-HU-004",
+    "archive": "Period motorsport technical archives",
+    "searchTheme": "supplier engineering, pressure, temperature, compound, failure and stint evidence",
+    "dateRange": "1950-2000",
+    "documentType": "contemporary period page",
+    "status": "DEFERRED_NEXT_FOCUSED_BATCH",
+    "reviewedDocuments": 0
+  },
+  {
+    "harvestUnitId": "E-HU-005",
+    "archive": "Supplier technical literature",
+    "searchTheme": "catalogues, pressure guides, construction and compound charts",
+    "dateRange": "1950-2005 plus modern methodology",
+    "documentType": "supplier technical document",
+    "status": "DEFERRED_NEXT_FOCUSED_BATCH",
+    "reviewedDocuments": 0
+  },
+  {
+    "harvestUnitId": "E-HU-006",
+    "archive": "FIA Historic Database",
+    "searchTheme": "homologation, wheel/tire dimensions and period regulations",
+    "dateRange": "1950-2005",
+    "documentType": "official regulation/homologation",
+    "status": "DEFERRED_NEXT_FOCUSED_BATCH",
+    "reviewedDocuments": 0
+  },
+  {
+    "harvestUnitId": "E-HU-007",
+    "archive": "TRID / TRB",
+    "searchTheme": "transport tire mechanics and bibliographic resolution",
+    "dateRange": "1950-2005",
+    "documentType": "transport research paper",
+    "status": "DEFERRED_NEXT_FOCUSED_BATCH",
+    "reviewedDocuments": 0
+  },
+  {
+    "harvestUnitId": "E-HU-008",
+    "archive": "Historical patents",
+    "searchTheme": "construction and materials mechanisms",
+    "dateRange": "1950-2000",
+    "documentType": "patent",
+    "status": "DEFERRED_NEXT_FOCUSED_BATCH",
+    "reviewedDocuments": 0
+  }
+]

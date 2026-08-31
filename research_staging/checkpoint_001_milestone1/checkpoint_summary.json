@@ -1,0 +1,85 @@
+{
+  "checkpoint": "Milestone 1: registration plus initial source review over first-priority 5,000 lineage",
+  "scope": {
+    "layerATasksRegistered": 55,
+    "layerBTasksRegistered": 500,
+    "layerCPilotTasksRegistered": 5000,
+    "layerCFullCorpusVerified": 50000,
+    "sourceTasksActuallyReviewed": 17
+  },
+  "sourceReviewStatuses": {
+    "ABSTRACT_ONLY": 6,
+    "FULL_TEXT_REVIEWED": 2,
+    "PRIMARY_SCAN_REVIEWED": 8,
+    "METADATA_ONLY": 38,
+    "INACCESSIBLE": 1
+  },
+  "taskStatuses": {
+    "ABSTRACT_ONLY_LIMITED_EVIDENCE": 616,
+    "FULL_TEXT_EVIDENCE_PROMOTED": 2,
+    "PRIMARY_SCAN_EVIDENCE_PROMOTED": 8,
+    "DEFERRED_UNTIL_SOURCE_REVIEW": 2712,
+    "INACCESSIBLE": 123,
+    "DUPLICATE_PARENT_TASK_SATISFIED": 14,
+    "DEFERRED_WAITING_FOR_PARENT_EVIDENCE": 2080
+  },
+  "evidenceCounts": {
+    "OBSERVATION": 11,
+    "MEASUREMENT": 6,
+    "SCALING_RULE": 1,
+    "EVENT_SUPPLIER_EVIDENCE": 1,
+    "CALIBRATION_METHOD": 4,
+    "HISTORICAL_CONSTRAINT": 3
+  },
+  "evidenceCandidateCount": 26,
+  "conflictRegisterAdditions": 1,
+  "identityAccounting": {
+    "uniqueBibliographicCandidates": 242,
+    "researchMissionsNotSources": 10,
+    "matchedExistingIdentities": 143,
+    "existingIdsRepresented": 145,
+    "existingBibliographicDuplicateGroups": [
+      {
+        "title": "Dunlop Vintage R5 Range",
+        "sourceIds": [
+          "SRC025",
+          "SRC098"
+        ]
+      },
+      {
+        "title": "Michelin GT tire stint behavior at Sebring",
+        "sourceIds": [
+          "SRC030",
+          "SRC081"
+        ]
+      }
+    ],
+    "candidatesNotYetReviewed": 99,
+    "note": "Identity count is not a reviewed-source count."
+  },
+  "integrity": {
+    "duplicateEvidenceIds": 0,
+    "orphanEvidenceSourceIds": [],
+    "contentRowsWithoutStatus": [],
+    "sourceReviewRowForEveryLayerA": true,
+    "ledgerRowForEveryRegisteredTask": true,
+    "noCanonicalKnowledgeWrite": true,
+    "noApplicationBuild": true,
+    "noNumericalGeneratorChange": true,
+    "pass": true
+  },
+  "limitations": [
+    "This is a staging checkpoint, not canonical evidence promotion.",
+    "Only 17 of 55 Layer A sources have an actual review result in this checkpoint; the remainder are metadata-only and deferred.",
+    "The first 5,000 Layer C tasks are registered and auditable, but most remain deferred until their parent source or lens is reviewed.",
+    "Abstract-only evidence is limited to claims supported by the official abstract.",
+    "No historical family prior, simulator coefficient, application code, knowledge release, or public build was changed."
+  ],
+  "outputHashes": {
+    "lineage": "b03ccffffdc35e674f9b48f2ef55a96cf0d6a75cc149cf6ddd02d9e614319dc7",
+    "ledger": "2b97ddab7e2c35e65c5af121b1b04b371f305dddd80a519c54800cecbf4258bc",
+    "sourceReviews": "81b6461b03dcc02bd3c3850be3d6f75131603e431442a0e21c56d772d99b998f",
+    "evidenceCandidates": "63e613cfbe58ca63a8ec8820a0533da69aba0d99a739410ed70858921c5f45f2",
+    "conflictRegister": "d7a0b13d232f32f3b9bb9056e400a960260b6e7bdb83e773f3abc419c09d1667"
+  }
+}
