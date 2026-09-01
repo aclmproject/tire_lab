@@ -1,5 +1,5 @@
 function Read-ACLMGeneratedManifest {
-  param([string]$Path,[string]$FallbackVersion='0.10.3')
+  param([string]$Path,[string]$FallbackVersion='0.10.4')
   if($Path -and (Test-Path -LiteralPath $Path -PathType Leaf)){
     $manifest=(Get-Content -Raw -Encoding UTF8 -LiteralPath $Path)|ConvertFrom-Json
     if(!$manifest.schema){throw 'Generated telemetry manifest schema is missing.'}
@@ -90,7 +90,7 @@ function Get-ACLMPressureIntentAssessment {
 }
 
 function Merge-ACLMRunManifest {
-  param($Generated,$ActiveInstalledPhysics,$Observed,$Runtime,[string]$FallbackVersion='0.10.3')
+  param($Generated,$ActiveInstalledPhysics,$Observed,$Runtime,[string]$FallbackVersion='0.10.4')
   if($null-eq$Generated){$Generated=Read-ACLMGeneratedManifest -FallbackVersion $FallbackVersion}
   $generatedCopy=(($Generated|ConvertTo-Json -Depth 40)|ConvertFrom-Json)
   $result=[ordered]@{};foreach($property in $Generated.PSObject.Properties){$result[$property.Name]=$property.Value}

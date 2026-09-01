@@ -8,6 +8,7 @@ const path=require("node:path");
 
 const root=path.join(__dirname,"..");
 const app=fs.readFileSync(path.join(root,"src/payload/app/app.js"),"utf8");
+const html=fs.readFileSync(path.join(root,"src/payload/app/index.html"),"utf8");
 const canonicalRoot=path.join(root,"artifacts/canonical_packs/verify_917k");
 
 test("canonical 917K embedded telemetry identity matches its tyres.ini",()=>{
@@ -41,7 +42,8 @@ test("canonical 917K embedded telemetry identity matches its tyres.ini",()=>{
 test("telemetry handoff verifies imported identity and never reuses stale generated files",()=>{
  const handoff=app.slice(app.indexOf("window.ACLMCurrentTelemetryManifest="));
  assert.match(app,/verifiedTelemetryHandoffFromImport/);
- assert.match(app,/actual!==expected/);
+ assert.match(app,/ACLMTelemetryHandoffCompat\.validate/);
+ assert.match(html,/telemetry_handoff_compat\.js/);
  assert.match(handoff,/if\(verifiedImportedTelemetryHandoff\)return/);
  assert.match(handoff,/withCurrentRunMetadata/);
  assert.match(app,/selectedSetupColdPressurePsi=selected/);

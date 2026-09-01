@@ -1,6 +1,6 @@
 # ACLM Historical Tire Lab — current project checkpoint
 
-Checkpoint basis: application v0.10.3, Knowledge v1.7.1, branch `codex/csp-thermal-v2` from verified remote base `5ba73d02917d8843f188fed7be6b52c58b2d28f1`.
+Checkpoint basis: application v0.10.4, Knowledge v1.7.1, branch `codex/csp-thermal-v2`; handoff hotfix based on verified remote SHA `3b54b917afdbf902194aec01577d66d27d82a710`.
 
 ## Completed software work
 
@@ -10,6 +10,7 @@ Checkpoint basis: application v0.10.3, Knowledge v1.7.1, branch `codex/csp-therm
 - Per-lap distance is a current-tire-set lap span. Logger-cumulative, session, stint and tire-set distance bases remain separately labelled.
 - The TirePack handoff now carries stable canonical IDs where identity is proven, visible pressure role/ID/corrections, intent-completeness warnings and session-start lap advice.
 - Duplicate-start protection and `physicsHashMatch=true` fail-closed behavior remain mandatory.
+- The import compatibility gate accepts only current v0.10.4 or certified canonical v0.10.2 schema-1.1 handoffs, always with exact imported `tyres.ini` SHA-256 verification. Unsupported versions remain rejected.
 
 No tire-physics, pressure/compliance, Thermal V2, wear, LUT or Knowledge numerical value changed.
 
@@ -39,7 +40,7 @@ The overnight M0–M5 and weakness-corpus outputs are inventoried in `docs/OVERN
 
 ## Next unfinished item
 
-Run the canonical Maserati 250F live card only after installing the certified v0.10.3 application and the unchanged canonical v0.10.2 TirePack into the car. Exit AC completely, launch a fresh session, import the installed car, select AI_REFERENCE/baseline, verify `physicsHashMatch=true`, and collect the 24 psi all-corner short screen. Do not begin another 917K run.
+Run the canonical Maserati 250F live card only after installing the certified v0.10.4 application and the unchanged canonical v0.10.2 TirePack into the car. Exit AC completely, launch a fresh session, import the installed car, select AI_REFERENCE/baseline, verify `physicsHashMatch=true`, and collect the 24 psi all-corner short screen. Do not begin another 917K run.
 
 ## Guardrails
 

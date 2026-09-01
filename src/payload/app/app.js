@@ -1348,10 +1348,10 @@ function verifiedTelemetryHandoffFromImport(files){
  if(!manifestFile||!tyreFile)return null;
  let manifest;
  try{manifest=JSON.parse(manifestFile.text);}catch{throw new Error("Embedded telemetry manifest is not valid JSON.");}
- if(manifest.schema!=="ACLM telemetry calibration manifest 1.1"||manifest.appVersion!==ACLM_APP_VERSION)throw new Error(`Embedded telemetry manifest is not compatible with Tire Lab v${ACLM_APP_VERSION}.`);
- const actual=window.ACLMIntegrity.sha256(tyreFile.text),expected=String(manifest.tireFileSha256||"").toLowerCase();
- if(!/^[a-f0-9]{64}$/.test(expected)||actual!==expected)throw new Error("Embedded telemetry manifest does not match the imported tyres.ini SHA-256.");
- return {manifest:JSON.parse(JSON.stringify(manifest)),manifestPath:manifestFile.path,tyrePath:tyreFile.path,tireFileSha256:actual};
+ const actual=window.ACLMIntegrity.sha256(tyreFile.text);
+ if(!window.ACLMTelemetryHandoffCompat)throw new Error("Telemetry handoff compatibility policy is unavailable.");
+ const verified=window.ACLMTelemetryHandoffCompat.validate({manifest,currentAppVersion:ACLM_APP_VERSION,actualTyresIniSha256:actual});
+ return {manifest:verified.manifest,manifestPath:manifestFile.path,tyrePath:tyreFile.path,tireFileSha256:actual,compatibility:verified.compatibility};
 }
 
 
@@ -1771,7 +1771,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.10.3";
+const ACLM_APP_VERSION="0.10.4";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 

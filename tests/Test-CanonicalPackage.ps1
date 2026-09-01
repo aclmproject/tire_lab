@@ -1,4 +1,4 @@
-param([string]$Version='0.10.3')
+param([string]$Version='0.10.4')
 $ErrorActionPreference='Stop'
 $Repository=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $Dist=Join-Path $Repository 'dist';$Archive=Join-Path $Dist "ACLM_Tire_Lab_Setup_v$Version.zip"
@@ -9,11 +9,12 @@ $scratch=Join-Path ([IO.Path]::GetTempPath()) ('aclm-package-test-'+[Guid]::NewG
 [IO.Directory]::CreateDirectory($scratch)|Out-Null
 try{
   [IO.Compression.ZipFile]::ExtractToDirectory($Archive,$scratch)
-  foreach($required in @('Install_ACLM_Tire_Lab.cmd','payload/Launch_ACLM_Tire_Lab.cmd','payload/Server_ACLM_Tire_Lab.ps1','payload/app/index.html','payload/app/app.js','payload/app/profile_state.js','payload/app/pressure_solver.js','payload/app/wear_model.js','payload/app/integrity.js','payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1','payload/Telemetry/ACLM_Telemetry_Manifest.ps1','payload/Tools/analyze_post_run_telemetry.js','payload/Tools/analyze_long_run_telemetry.js')){if(!(Test-Path -LiteralPath (Join-Path $scratch $required) -PathType Leaf)){throw "Missing package file: $required"}}
-  $app=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/app.js');$html=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/index.html');$server=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/Server_ACLM_Tire_Lab.ps1');$analyzer=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/Tools/analyze_post_run_telemetry.js')
+  foreach($required in @('Install_ACLM_Tire_Lab.cmd','payload/Launch_ACLM_Tire_Lab.cmd','payload/Server_ACLM_Tire_Lab.ps1','payload/app/index.html','payload/app/app.js','payload/app/telemetry_handoff_compat.js','payload/app/profile_state.js','payload/app/pressure_solver.js','payload/app/wear_model.js','payload/app/integrity.js','payload/Telemetry/ACLM_Native_Telemetry_Logger.ps1','payload/Telemetry/ACLM_Telemetry_Manifest.ps1','payload/Tools/analyze_post_run_telemetry.js','payload/Tools/analyze_long_run_telemetry.js')){if(!(Test-Path -LiteralPath (Join-Path $scratch $required) -PathType Leaf)){throw "Missing package file: $required"}}
+  $app=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/app.js');$html=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/index.html');$server=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/Server_ACLM_Tire_Lab.ps1');$analyzer=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/Tools/analyze_post_run_telemetry.js');$compat=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/telemetry_handoff_compat.js')
   $escapedVersion=[regex]::Escape($Version)
   if($app-notmatch('ACLM_APP_VERSION="'+$escapedVersion+'"')-or$html-notmatch('v'+$escapedVersion+' Browser App')-or$server-notmatch('CurrentVersion = "'+$escapedVersion+'"')){throw 'Package version alignment failed.'}
   foreach($token in @('LITERAL_AC_LAPS','SESSION_RELATIVE_REBASED','INCOMPLETE/UNRESOLVED','MIN_MOVING_SAMPLES_PER_LAP','pressureChannelsComplete')){if($analyzer-notmatch[regex]::Escape($token)){throw "Packaged analyzer lacks $token"}}
+  foreach($token in @('ACLM telemetry calibration manifest 1.1','0.10.2','CERTIFIED_V0.10.2_CANONICAL_HANDOFF','actualTyresIniSha256')){if($compat-notmatch[regex]::Escape($token)){throw "Packaged handoff compatibility policy lacks $token"}}
   foreach($token in @('pressureABIntentStatus','stableTirePackIdFromHandoff','UNCLASSIFIED_GENERIC_TELEMETRY')){if($app-notmatch[regex]::Escape($token)){throw "Packaged intent-integrity UI lacks $token"}}
   $bad=New-Object Collections.Generic.List[string]
   $slash=[IO.Path]::DirectorySeparatorChar;$windowsHomePattern=('C:'+([regex]::Escape([string]$slash))+'Users'+([regex]::Escape([string]$slash))+'[^'+([regex]::Escape([string]$slash))+']+');$forward=[char]47;$unixHomePattern=([string]$forward+'home'+[string]$forward+'[^'+[string]$forward+']+'+[string]$forward)

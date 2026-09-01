@@ -2,7 +2,7 @@
 
 ## Identity gate
 
-- App: ACLM Historical Tire Lab v0.10.3
+- App: ACLM Historical Tire Lab v0.10.4
 - Car: Kunos `ks_porsche_917_k`
 - TirePack: `artifacts/canonical_packs/ACLM_Porsche_917_K_TirePack.zip`
 - TirePack SHA-256: `74fd82729ee2f2c250f03e6c7e7ee3667f9084ca15916a5e88ba731458cec963`

@@ -61,7 +61,7 @@ Next source-review priority is period primary or supplier material that can clos
 
 ## Production authority after ingestion
 
-- Application identity advances to v0.10.3 for telemetry-analysis integrity only.
+- Application identity advances to v0.10.4 for telemetry handoff compatibility only.
 - Knowledge remains v1.7.1: release SHA-256 `ca0b0fcf498e8f4714354f22ffef269cca1c813b3b19eda8eb9d1b77f0dd8954`, content SHA-256 `14f92adf97786556ac3472f05496a469bdfd0713b2b49fd4c146e529912ff14f`.
 - Production families, classes, measurements, generator priors and scaling numerics are unchanged.
 - No candidate Knowledge release is created because this batch does not yet offer a taxonomy/evidence-safe change requiring promotion.

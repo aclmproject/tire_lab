@@ -2,7 +2,7 @@
 
 ## Current version
 
-- Application: v0.10.3 telemetry-analysis integrity release; no tire-physics change.
+- Application: v0.10.4 handoff-compatibility hotfix; no tire-physics change.
 - Knowledge: v1.7.1, a taxonomy-only successor to v1.7.0.
 - Working branch: `codex/csp-thermal-v2`.
 - No application release has been published from this working tree.

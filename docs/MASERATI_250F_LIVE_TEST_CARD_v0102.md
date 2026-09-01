@@ -13,7 +13,7 @@ Purpose: collect the first controlled AI-reference pressure screen for the canon
 
 | Field | Required value |
 |---|---|
-| Application / Knowledge | v0.10.3 / v1.7.1 |
+| Application / Knowledge | v0.10.4 / v1.7.1 |
 | Car | Kunos Maserati 250F 6 cylinder (`ks_maserati_250f_6c`) |
 | Historical profile | 1957, CLS102, FAM002, treaded bias/cross-ply |
 | Supplier scope | Pirelli for this vehicle/year fixture only; not universal |
