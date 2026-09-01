@@ -44,10 +44,16 @@ test("telemetry handoff verifies imported identity and never reuses stale genera
  assert.match(app,/actual!==expected/);
  assert.match(handoff,/if\(verifiedImportedTelemetryHandoff\)return/);
  assert.match(handoff,/withCurrentRunMetadata/);
- assert.match(app,/TELEMETRY_HANDOFF_METADATA_IDS/);
  assert.match(app,/selectedSetupColdPressurePsi=selected/);
  assert.match(handoff,/generatedFiles=build\(\)/);
  assert.doesNotMatch(handoff,/if\(!generatedFiles\[/);
+});
+
+test("verified imported handoff persists until import replacement or explicit clear",()=>{
+ const clearCalls=app.match(/clearVerifiedImportedTelemetryHandoff\(\)/g)||[];
+ assert.equal(clearCalls.length,3,"handoff should clear only in its function declaration, a new import, and Clear imported data");
+ assert.doesNotMatch(app,/TELEMETRY_HANDOFF_METADATA_IDS/);
+ assert.doesNotMatch(app,/document\.addEventListener\([^\n]+clearVerifiedImportedTelemetryHandoff/);
 });
 
 test("physics import applies curated identity before its final preview rebuild",()=>{

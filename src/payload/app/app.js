@@ -9,7 +9,6 @@ let importedTireReference={};
 let importedSetupPressureControls={};
 let lastThermalCalibrations=[];
 let verifiedImportedTelemetryHandoff=null;
-const TELEMETRY_HANDOFF_METADATA_IDS=new Set(["nativeTelemetryRate","pSelectedF","pSelectedR","telemetryRequestedAir","telemetryRequestedRoad","telemetryWearMultiplier","telemetryRequestedFuelRate","telemetryRequestedDamageRate","telemetryStartingFuel","telemetrySessionBlankets"]);
 
 function clearVerifiedImportedTelemetryHandoff(){verifiedImportedTelemetryHandoff=null;}
 function withCurrentRunMetadata(baseManifest){
@@ -1663,10 +1662,9 @@ $('researchProfile').addEventListener('click',()=>researchHistoricalProfile());
 $('applyResearchChoice').addEventListener('click',applyResearchChoices);
 $('clearImport').addEventListener('click',()=>{clearVerifiedImportedTelemetryHandoff();importedPhysics={};importedSetupPressureControls={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();renderHistoricalCoherence();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';});
 
-// An embedded manifest is authoritative only for the unedited TirePack that supplied it.
-// Any physics/profile edit returns handoff to a fresh build; run metadata is overlaid safely.
-for(const eventName of ["input","change"]){document.addEventListener(eventName,event=>{if(!TELEMETRY_HANDOFF_METADATA_IDS.has(event.target?.id))clearVerifiedImportedTelemetryHandoff();},true);}
-for(const id of ["researchProfile","applyResearchChoice","resetCompoundNames","reset","applyTestProfile"]){$(id)?.addEventListener("click",clearVerifiedImportedTelemetryHandoff,true);}
+// A verified imported manifest describes the installed TirePack under test, not the
+// generator preview. Keep it authoritative until another pack is imported or the
+// import is explicitly cleared. Active installed physics hashing remains the final gate.
 
 // Offline support only. Tire Lab uses one version-aware launcher and does not create additional browser-app shortcuts.
 if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});

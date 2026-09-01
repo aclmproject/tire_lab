@@ -48,7 +48,7 @@ if([string]::IsNullOrWhiteSpace($stateRoot)){$stateRoot=[IO.Path]::GetTempPath()
 if([string]::IsNullOrWhiteSpace($StatusPath)){$StatusPath=Join-Path $stateRoot 'aclm-telemetry-status.json'}
 if([string]::IsNullOrWhiteSpace($StopPath)){$StopPath=Join-Path $stateRoot 'aclm-telemetry-stop.signal'}
 
-$script:Samples=0;$script:CsvPath=$null;$script:Car='';$script:Track='';$script:Started=[DateTime]::UtcNow;$script:LastStatus=[DateTime]::MinValue
+$script:Samples=0;$script:CsvPath=$null;$script:Car='';$script:Track='';$script:Started=[DateTime]::UtcNow;$script:LastStatus=[DateTime]::MinValue;$script:BlockedReason=$null
 $script:LoggerDistance=0.0;$script:SessionDistance=0.0;$script:StintDistance=0.0;$script:TireSetDistance=0.0;$script:LastSampleUtc=$null;$script:LastSessionKey='';$script:LastPit=$null;$script:LastWear=$null;$script:ManifestSidecar=$null;$script:ObservedAirStart=$null;$script:ObservedRoadStart=$null;$script:ObservedAirLatest=$null;$script:ObservedRoadLatest=$null;$script:ObservedPressureStart=$null;$script:ObservedCoreStart=$null;$script:ObservedPressureLatest=$null;$script:ObservedCoreLatest=$null;$script:ObservedAidTireRate=$null;$script:ObservedCompoundStart=$null;$script:ObservedCompoundLatest=$null;$script:ActiveInstalledPhysics=$null;$script:PhysicsIdentityMessage='Active physics identity pending session start.'
 $script:GeneratedManifest=Read-ACLMGeneratedManifest -Path $ManifestPath -FallbackVersion '0.10.2'
 function Write-Status([string]$State,[string]$Message){
@@ -102,9 +102,12 @@ try{
           $script:Car=WS $s.View $StaticOffsets.carModel 33;$script:Track=WS $s.View $StaticOffsets.track 33;$script:ObservedCompoundStart=WS $g.View $GraphicsOffsets.compound 33;$script:ObservedCompoundLatest=$script:ObservedCompoundStart
           $script:ActiveInstalledPhysics=Get-ACLMActiveInstalledPhysics -CarId $script:Car -ObservedCompoundString $script:ObservedCompoundStart -AssettoCorsaRoot $AssettoCorsaRoot
           $activeHash=[string]$script:ActiveInstalledPhysics.tyresIniSha256;$generatedHash=[string]$script:GeneratedManifest.tireFileSha256
-          if($activeHash-and$generatedHash-and$activeHash-ne$generatedHash){$script:PhysicsIdentityMessage='WARNING: generated handoff is STALE/HASH_MISMATCH; active installed physics is authoritative.'}elseif($activeHash-and$generatedHash){$script:PhysicsIdentityMessage='Active installed physics hash MATCH.'}else{$script:PhysicsIdentityMessage='Active installed physics could not be hash-matched; observed identity is retained with a warning.'}
           $stamp=[DateTime]::UtcNow.ToString('yyyyMMdd_HHmmss');$script:CsvPath=Join-Path $OutputDirectory ("ACLM_AC_${stamp}_$(Safe-Name $script:Car)_$(Safe-Name $script:Track).csv")
           $script:ManifestSidecar=[IO.Path]::ChangeExtension($script:CsvPath,'.manifest.json')
+          if($activeHash-and$generatedHash-and$activeHash-eq$generatedHash){$script:PhysicsIdentityMessage='Active installed physics hash MATCH.'}
+          elseif($activeHash-and$generatedHash){$script:BlockedReason='BLOCKED: STALE/HASH_MISMATCH. Re-import the TirePack whose tyres.ini is installed in the active car, then restart the logger.'}
+          else{$script:BlockedReason='BLOCKED: active and generated physics identity could not be hash-matched. Recording requires physicsHashMatch=true.'}
+          if($script:BlockedReason){$script:PhysicsIdentityMessage=$script:BlockedReason;Write-RunManifest;Write-Status 'blocked' $script:BlockedReason;[IO.File]::WriteAllText($StopPath,[DateTime]::UtcNow.ToString('o'));break}
           $csvStream=[IO.FileStream]::new($script:CsvPath,[IO.FileMode]::Create,[IO.FileAccess]::Write,[IO.FileShare]::ReadWrite)
           $writer=[IO.StreamWriter]::new($csvStream,(New-Object Text.UTF8Encoding($false)));$writer.WriteLine(($Headers-join ','));$writer.Flush();$script:Started=[DateTime]::UtcNow
           Write-RunManifest
@@ -133,6 +136,6 @@ try{
       if(!(Test-Path -LiteralPath $StopPath)){Write-Status 'waiting' ($_.Exception.Message+' Retrying...');Start-Sleep -Milliseconds 1000}
     }finally{if($writer){$writer.Flush();$writer.Dispose();Write-RunManifest};Close-Map $p;Close-Map $g;Close-Map $s}
   }
-  Write-Status 'stopped' 'Telemetry logger stopped cleanly.'
+  if($script:BlockedReason){Write-Status 'blocked' $script:BlockedReason}else{Write-Status 'stopped' 'Telemetry logger stopped cleanly.'}
 }catch{Write-Status 'error' $_.Exception.Message;exit 1}
 finally{if(Test-Path -LiteralPath $StopPath){Remove-Item -LiteralPath $StopPath -Force -ErrorAction SilentlyContinue}}

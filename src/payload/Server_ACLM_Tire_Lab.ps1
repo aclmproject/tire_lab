@@ -101,7 +101,7 @@ function App-UpdateInfo{
 
 function Read-TelemetryStatus{
   try{
-    if(Test-Path $TelemetryStatusPath -PathType Leaf){$x=(Get-Content -Raw -Encoding UTF8 $TelemetryStatusPath)|ConvertFrom-Json;if($x.pid){try{Get-Process -Id ([int]$x.pid) -ErrorAction Stop|Out-Null}catch{$x.state='stopped';$x.message='Logger process is not running.'}};return $x}
+    if(Test-Path $TelemetryStatusPath -PathType Leaf){$x=(Get-Content -Raw -Encoding UTF8 $TelemetryStatusPath)|ConvertFrom-Json;if($x.pid){try{Get-Process -Id ([int]$x.pid) -ErrorAction Stop|Out-Null}catch{if(@('blocked','error')-notcontains[string]$x.state){$x.state='stopped';$x.message='Logger process is not running.'}}};return $x}
   }catch{}
   return @{state='stopped';message='Logger is stopped.';rate_hz=10;samples=0;file=$null;output_directory=$TelemetryOutput}
 }
