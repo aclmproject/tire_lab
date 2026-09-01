@@ -11,8 +11,8 @@ This finding rejects the initial Dunlop assumption for the chosen case. No revie
 | Category | Classification | Accepted result | Limitation |
 |---|---|---|---|
 | identity | STRONG_PERIOD_SECONDARY | 1957 lightweight six-cylinder works 250F | Kunos host is named GP54 and spans multiple evolutions |
-| class | UNKNOWN | null | Knowledge v1.7.0 has no 1954–58 GP class |
-| family | GENERATOR_PRIOR | FAM002 candidate | cannot activate without coherent class |
+| class | PARTIALLY SOURCED TAXONOMY | CLS102 — 1954–58 Formula 1 / Grand Prix | Knowledge v1.7.1 mapping is a compatibility classification, not a period citation |
+| family | GENERATOR_PRIOR | FAM002 — 1950s GP / sports treaded bias | activated through CLS102; numerical family priors remain reconstructed |
 | construction | RECONSTRUCTED | narrow treaded bias/cross-ply | no reviewed casing sheet |
 | supplier | DIRECT_PRIMARY | Pirelli for 1957 Fangio works case | not universal to every 250F |
 | Dunlop/R5 | UNKNOWN / rejected for fixture | null | no support for chosen 1957 case |
@@ -35,10 +35,12 @@ This finding rejects the initial Dunlop assumption for the chosen case. No revie
 | scrub state | UNKNOWN | null | — |
 | wear behavior | UNKNOWN | null | survival target is not wear curve |
 
-## Taxonomy decision
+## Taxonomy and generation decision
 
-Knowledge v1.7.0 contains FAM002, *1950s GP / sports treaded bias*, but lacks a compatible 1954–58 Formula/Grand Prix class. CLS002 begins in 1959 and maps to FAM003 Dunlop R5. Using it would contaminate year, family, and supplier. The clean Kunos host is preserved, but generation is **blocked pending an approved taxonomy correction**.
+Knowledge v1.7.1 closes the former class gap with CLS102, *1954–58 Formula 1 / Grand Prix*, mapped to FAM002, *1950s GP / sports treaded bias*. CLS102 is supplier-neutral and adds no numerical life, thermal, wear, pressure, rate, or flex prior. Pirelli applies only to the curated 1957 Fangio works fixture through vehicle/year evidence. CLS002 remains a 1959-onward FAM003/Dunlop R5 context and must not be substituted.
+
+The canonical v0.10.2 250F TirePack has been generated and verified from the clean Kunos host. It contains one `Period Treaded Race` (`R`) compound, CSP Thermal V2/extended-2 metadata, and a provisional pressure screen of 23.73 psi front / 23.86 psi rear continuously, quantized to 24 psi at all four setup controls. Its provisional hot ideal is 28 psi. These are engineering controls awaiting hash-matched live telemetry, not historical absolute-pressure evidence.
 
 Key reviewed evidence: the [Alfieri/250F technical account](https://www.motorsportmagazine.com/archive/article/july-2005/68/buone-forte-veloce/), the contemporary [1956 Italian GP report](https://www.motorsportmagazine.com/archive/article/october-1956/30/gran-premio-deuropa/), the [250F chassis history](https://www.motorsportmagazine.com/archive/article/may-1966/48/the-250f-maserati/), and [Moss on pressure sensitivity](https://www.motorsportmagazine.com/archive/article/july-1997/44/maserati-250f/).
 
-No thermal, pressure, rate, flex, wear, or Knowledge numeric prior is changed by this evidence pass.
+No thermal, pressure, rate, flex, wear, or Knowledge numeric prior is changed by this taxonomy resolution or evidence pass.

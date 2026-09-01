@@ -4,7 +4,7 @@
 
 - Application: v0.10.2 (unchanged).
 - Knowledge: v1.7.1, a taxonomy-only successor to v1.7.0.
-- Working branch: `codex/csp-thermal-v2`.
+- Working handoff branch: `codex/csp-thermal-v2-handoff-persistence`, targeting `codex/csp-thermal-v2`.
 - No application release has been published from this working tree.
 
 ## Last completed task
@@ -33,8 +33,9 @@ The 1954–1958 Formula 1 / Grand Prix taxonomy gap was closed without renumberi
 
 ## Tests run and results
 
-- Focused taxonomy, canonical-pack, and post-run-analyzer suite: **10 passed, 0 failed**.
-- Complete Node test suite: **59 passed, 0 failed, 0 skipped**.
+- Original taxonomy/canonical-pack cutoff: focused suite **10 passed, 0 failed**; complete Node suite **59 passed, 0 failed, 0 skipped**.
+- Current Linux handoff validation: all runnable tests **70 passed, 0 failed, 1 intentional skip**.
+- The complete current invocation reports only two expected `ENOENT` failures because the ignored canonical 917K and 250F ZIP archives are absent from this transient checkout. The authenticated Desktop must run those archive tests with the canonical ZIPs restored before packaging.
 - Browser generation validation passed for the 917K and 250F packs.
 - Both packs contain 19 files, `tyres.ini VERSION=10`, CSP Thermal V2, extended-2 metadata, provenance, pressure reports, and active/generated identity metadata.
 - The current knowledge package embedded-content SHA-256 was independently recomputed and matched.
@@ -75,29 +76,24 @@ The 1954–1958 Formula 1 / Grand Prix taxonomy gap was closed without renumberi
 
 ## Post-run analyzer status
 
-The existing post-run analyzer remains implemented and its regression tests pass. No live 917K calibration result has yet been ingested.
+The post-run analyzer now keeps the canonical short pressure decision window (complete laps 2–5) separate from later-lap and last-four-lap observations. Hash-matched 917K A/B evidence has been ingested and preserved in `artifacts/porsche_917k/Porsche_917K_Monza_Pressure_AB_Report.md` and `.json`.
 
 ## Protocol, dossier, audit, and research status
 
-- The 917K live engineering-control protocol is now fixed in the test card.
-- No 917K live thermal calibration has started.
+- The 917K AI-reference baseline A and corrected B pressure screens are complete on matching active/generated physics.
+- Baseline A is `FAIL`; corrected B is `REVIEW`, with LF/LR passing and RF/RR narrowly outside the ±0.5 psi pass threshold.
+- The short screen does not start or certify historical thermal calibration; thermal remains unresolved and wear is store-only.
 - No new historical research sweep, dossier expansion, or numeric calibration audit was started in this pass.
 - The prior GT40 analysis was not repeated.
 
 ## First unfinished item
 
-Capture one controlled Porsche 917K live telemetry session exactly as specified by `docs/917K_LIVE_TEST_CARD_v0102.md`, then run the existing post-run analyzer against the CSV and matching run manifest. Treat the result as an engineering-control observation; do not fit or alter thermal, wear, pressure, or production knowledge numeric parameters from one run.
-
-## Exact next command after capture
-
-```powershell
-node tools/analyze_post_run_telemetry.js --csv '<917K telemetry CSV>' --manifest '<matching .run-manifest.json>' --out artifacts/917k/live_1x
-```
+The authenticated Windows Desktop must push the local handoff commits, run the complete suite with both canonical ZIP fixtures present, build and certify one replacement v0.10.2 installer, and install it. Only after the logger reports active installed physics hash `MATCH` may driving resume. The next controlled run is either one final 917K 30F/35R confirmation with persisted intent metadata or the first 250F 24F/24R baseline in `docs/MASERATI_250F_LIVE_TEST_CARD_v0102.md`.
 
 ## Blockers
 
-- The next step requires a new human-driven Assetto Corsa telemetry capture.
-- No code or taxonomy blocker remains for the 917K or 250F canonical fixtures.
+- This Linux workspace lacks GitHub authentication and PowerShell; push and canonical installer certification require the authenticated Windows Desktop.
+- No physics or taxonomy blocker remains. Driving is blocked until the rebuilt installed logger reports `physicsHashMatch=true`.
 
 ## Guardrails preserved
 
@@ -107,4 +103,5 @@ node tools/analyze_post_run_telemetry.js --csv '<917K telemetry CSV>' --manifest
 - **NO PRODUCTION TIRE-KNOWLEDGE NUMERIC PRIOR CHANGES.**
 - Preserve raw telemetry and distinguish requested conditions from observed AC conditions.
 - Do not infer universal suppliers from vehicle-specific evidence.
-- Do not start live thermal calibration until the controlled 917K session exists.
+- Do not promote either short pressure screen into live historical thermal calibration.
+- Preserve the four-host cross-ply program: Maserati 250F + Ford GT40 Mk II + Porsche 917K + Ford Escort RS1600.

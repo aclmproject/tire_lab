@@ -4,7 +4,19 @@
   "recommendedCalibrationYear": 1957,
   "yearRationale": "The 1957 lightweight works 250F is the best-defined high-performance state: Fangio's championship season, documented 48:52 dry balance, Pirelli stock prepared after the 1956 withdrawal, and a stated 17-inch rear-wheel safety decision. It is not a Dunlop R5 fixture.",
   "acHost": "ks_maserati_250f_6c",
-  "taxonomy": { "familyCandidate": "FAM002", "classId": null, "status": "BLOCKED_GENUINE_CLASS_GAP", "reason": "Knowledge v1.7.0 has FAM002 for 1950–58 treaded GP/sports bias tires but no 1954–58 Formula/Grand Prix class. CLS002 starts in 1959 and maps to FAM003 Dunlop R5, which would be historically wrong for the chosen 1957 Pirelli case." },
+  "taxonomy": { "familyId": "FAM002", "classId": "CLS102", "status": "RESOLVED_KNOWLEDGE_V1_7_1", "reason": "Knowledge v1.7.1 adds the supplier-neutral 1954–58 Formula 1 / Grand Prix class CLS102 and maps it to FAM002. It adds no numeric life, pressure, thermal, wear, rate or flex prior. CLS002 remains a 1959-onward FAM003/Dunlop R5 context and is historically wrong for the chosen 1957 Pirelli fixture." },
+  "canonicalFixture": {
+    "appVersion": "0.10.2",
+    "knowledgeVersion": "1.7.1",
+    "tirePack": "artifacts/canonical_packs/ACLM_Maserati_250F_6_cylinder_TirePack.zip",
+    "tirePackSha256": "0fa34b08f0f3c67f4f2fdf5542cddb42bbc7b348c14c7126b94d8a695456f10a",
+    "compoundName": "Period Treaded Race",
+    "compoundShortName": "R",
+    "continuousColdPressurePsi": { "front": 23.72693632131557, "rear": 23.856643554484926 },
+    "achievableSetupColdPressurePsi": { "front": 24, "rear": 24 },
+    "provisionalHotIdealPressurePsi": { "front": 28, "rear": 28 },
+    "liveStatus": "PENDING_HASH_MATCHED_AI_REFERENCE_BASELINE"
+  },
   "sources": [
     { "id": "250F-S01", "title": "Maserati 250F: Buone, forte, veloce — Giulio Alfieri account", "author": "Doug Nye / Giulio Alfieri", "organization": "Motor Sport", "date": "2005-07", "url": "https://www.motorsportmagazine.com/archive/article/july-2005/68/buone-forte-veloce/", "contentStatus": "FULL_TEXT_REVIEWED", "quality": "HIGH", "applicationRelevance": "HIGH; attributable chief-engineer account" },
     { "id": "250F-S02", "title": "1956 Italian Grand Prix race report", "author": "Denis Jenkinson", "organization": "Motor Sport", "date": "1956-10", "url": "https://www.motorsportmagazine.com/archive/article/october-1956/30/gran-premio-deuropa/", "contentStatus": "FULL_TEXT_REVIEWED", "quality": "HIGH", "applicationRelevance": "HIGH period supplier/rim/safety report" },
@@ -16,8 +28,8 @@
   ],
   "categories": [
     { "category": "identity", "classification": "STRONG_PERIOD_SECONDARY", "value": "Maserati 250F, six-cylinder; 1957 lightweight works configuration selected", "sourceIds": ["250F-S01", "250F-S04"] },
-    { "category": "class", "classification": "UNKNOWN", "value": null, "sourceIds": [], "limitation": "ACLM v1.7.0 class gap for 1954–58 Formula/Grand Prix" },
-    { "category": "family", "classification": "GENERATOR_PRIOR", "value": "FAM002 candidate — 1950s GP / sports treaded bias", "sourceIds": ["FAM002"], "limitation": "cannot be activated without a coherent class mapping" },
+    { "category": "class", "classification": "PARTIALLY_SOURCED_TAXONOMY", "value": "CLS102 — 1954–58 Formula 1 / Grand Prix", "sourceIds": ["SRC146", "SRC147"], "limitation": "the ACLM compatibility class is not itself a period citation" },
+    { "category": "family", "classification": "GENERATOR_PRIOR", "value": "FAM002 — 1950s GP / sports treaded bias", "sourceIds": ["FAM002"], "limitation": "activated through CLS102; numerical family priors remain reconstructed" },
     { "category": "construction", "classification": "RECONSTRUCTED", "value": "narrow treaded bias/cross-ply", "sourceIds": ["250F-S01", "250F-S02"], "limitation": "no reviewed Pirelli casing ply-angle/material sheet" },
     { "category": "supplier", "classification": "DIRECT_PRIMARY", "value": "Pirelli for the 1957 Fangio works case", "sourceIds": ["250F-S01", "250F-S03"], "limitation": "not every 250F in every year/event" },
     { "category": "Dunlop/R5 applicability", "classification": "UNKNOWN", "value": null, "sourceIds": ["250F-S07"], "limitation": "R5 public chronology is 1958 onward; no accepted evidence places it on the chosen 1957 works car" },
@@ -40,5 +52,5 @@
     { "category": "scrub state", "classification": "UNKNOWN", "value": null, "sourceIds": [] },
     { "category": "wear behavior", "classification": "UNKNOWN", "value": null, "sourceIds": [], "limitation": "survival target is not a wear curve" }
   ],
-  "decision": "Do not generate a 250F TirePack until a 1954–58 Formula/Grand Prix class is added or approved. Preserve the clean official host snapshot. Do not identify the chosen 1957 fixture as Dunlop or R5."
+  "decision": "The v0.10.2 canonical 250F TirePack is generated and verified under Knowledge v1.7.1. Preserve the clean official host snapshot, require generated-vs-active physicsHashMatch=true before driving, and do not identify the chosen 1957 fixture as Dunlop or R5. No thermal, wear, pressure-coefficient or production numeric-prior change is authorized."
 }
