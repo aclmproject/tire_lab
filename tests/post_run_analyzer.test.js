@@ -29,18 +29,20 @@ function writeSyntheticSession(directory, options = {}) {
   const endLap = options.endLap ?? 12;
   for (let lap = startLap; lap <= endLap; lap += 1) {
     const isOutLap = options.outLap !== false && lap === startLap;
-    const points = 101;
+    const isPartialLap = options.partialLap === lap;
+    const points = isPartialLap ? 41 : 101;
     const lapDistance = isOutLap ? 2268 : 5760;
     for (let point = 0; point < points; point += 1) {
       const first = sample === 0;
-      const fraction = point / (points - 1);
+      const fraction = isPartialLap ? point / 100 : point / (points - 1);
       const base = {
         timestamp_utc: new Date(Date.UTC(2026, 8, 1, 0, 0, sample / 10)).toISOString(), elapsed_ms: sample * 100,
         car: options.car || "ks_porsche_917_tires", track: "ks_monza66", compound: options.csvCompound || "Dry Endurance (D)", lap,
         lap_time_ms: Math.round((isOutLap ? 215337 : 90500) * fraction), normalized_track_position: first && isOutLap ? 0.985 : fraction,
         logger_cumulative_distance_m: (options.loggerStartM || 50000) + distance,
         session_distance_m: distance, stint_distance_m: distance, tire_set_distance_m: distance,
-        in_pit: isOutLap && point < 20 && options.startInPit !== false ? 1 : 0, speed_kmh: first && isOutLap ? (options.startSpeedKmh ?? 0) : 220,
+        in_pit: isOutLap && point < 20 && options.startInPit !== false ? 1 : 0,
+        speed_kmh: options.insufficientMovingLap === lap && point >= 10 ? 0 : (first && isOutLap ? (options.startSpeedKmh ?? 0) : 220),
         air_temp_c: 26, road_temp_c: 37, aid_tire_rate: 0, accg_lat: 0, accg_long: 0
       };
       const expected = { fl: 33.3554542326, fr: 32.5208593982, rl: 39.3586275034, rr: 38.5787996146 };
@@ -162,6 +164,43 @@ test("session-relative rebase maps AC laps 9-12 to relative laps 2-5 only after 
   fs.rmSync(directory, { recursive: true, force: true });
 });
 
+test("raw lap 7 out-lap and raw lap 16 partial capture are excluded while raw laps 9-12 remain the decision window", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "aclm-relative-partial-tail-"));
+  const { csv, manifest } = writeSyntheticSession(directory, { startLap: 7, endLap: 16, partialLap: 16 });
+  const report = analyzePostRun(csv, manifest, { fixtureId: "SYNTHETIC-REBASED-PARTIAL-TAIL" });
+  assert.equal(report.pressure.shortScreen.status, "AVAILABLE");
+  assert.deepEqual(report.pressure.shortScreen.rawAcLapWindow, [9, 10, 11, 12]);
+  assert.deepEqual(report.pressure.shortScreen.excludedRawAcLaps, [7, 16]);
+  assert.deepEqual(report.laps.partialOrInvalid, [16]);
+  assert.deepEqual(report.pressure.lateLapWindow, [12, 13, 14, 15]);
+  fs.rmSync(directory, { recursive: true, force: true });
+});
+
+test("interrupted or partial decision capture remains unresolved", () => {
+  for (const options of [
+    { startLap: 7, endLap: 11 },
+    { startLap: 7, endLap: 12, partialLap: 12 }
+  ]) {
+    const directory = fs.mkdtempSync(path.join(os.tmpdir(), "aclm-interrupted-"));
+    const { csv, manifest } = writeSyntheticSession(directory, options);
+    const report = analyzePostRun(csv, manifest, { fixtureId: "SYNTHETIC-INTERRUPTED" });
+    assert.equal(report.pressure.shortScreen.status, "INCOMPLETE/UNRESOLVED");
+    assert.equal(report.pressure.shortScreen.selectionBasis, "UNRESOLVED");
+    assert.match(report.pressure.shortScreen.selectionReasons.join(" "), /fewer than five complete pit-free timed laps/i);
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test("a nominally complete lap with insufficient moving samples cannot enter the decision window", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "aclm-insufficient-moving-"));
+  const { csv, manifest } = writeSyntheticSession(directory, { startLap: 7, endLap: 12, insufficientMovingLap: 10 });
+  const report = analyzePostRun(csv, manifest, { fixtureId: "SYNTHETIC-INSUFFICIENT-MOVING" });
+  assert.equal(report.pressure.shortScreen.status, "INCOMPLETE/UNRESOLVED");
+  assert.equal(report.laps.byLap.find((lap) => lap.lap === 10).movingSamples, 10);
+  assert.match(report.pressure.shortScreen.selectionReasons.join(" "), /sufficient moving samples/i);
+  fs.rmSync(directory, { recursive: true, force: true });
+});
+
 test("ambiguous mid-track capture never receives a session-relative pressure decision", () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "aclm-ambiguous-"));
   const { csv, manifest } = writeSyntheticSession(directory, { startLap: 7, endLap: 12, startInPit: false, startSpeedKmh: 180, startDistanceM: 5000 });
@@ -178,7 +217,8 @@ test("missing pressure channels remain null and never become fake negative axle 
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "aclm-null-pressure-"));
   const { csv, manifest } = writeSyntheticSession(directory, { startLap: 0, endLap: 6, outLap: false, loggerStartM: 0, missingFront: true });
   const report = analyzePostRun(csv, manifest, { fixtureId: "SYNTHETIC-NULL" });
-  assert.equal(report.pressure.shortScreen.selectionBasis, "LITERAL_AC_LAPS");
+  assert.equal(report.pressure.shortScreen.status, "INCOMPLETE/UNRESOLVED");
+  assert.equal(report.pressure.shortScreen.selectionBasis, "UNRESOLVED");
   assert.equal(report.pressure.shortScreen.perWheel.fl.meanPsi, null);
   assert.equal(report.pressure.shortScreen.perWheel.fl.errorPsi, null);
   assert.equal(report.pressure.shortScreen.perWheel.fl.classification, "UNRESOLVED");
@@ -186,6 +226,7 @@ test("missing pressure channels remain null and never become fake negative axle 
   assert.equal(report.pressure.shortScreen.axles.front.errorPsi, null);
   assert.equal(report.pressure.shortScreen.axles.front.classification, "UNRESOLVED");
   assert.notEqual(report.pressure.shortScreen.axles.front.errorPsi, -32);
+  assert.match(report.pressure.shortScreen.selectionReasons.join(" "), /pressure channels are missing/i);
   fs.rmSync(directory, { recursive: true, force: true });
 });
 

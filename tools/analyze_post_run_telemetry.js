@@ -6,6 +6,8 @@ const crypto = require("node:crypto");
 const { analyze: analyzeLongRun } = require("./analyze_long_run_telemetry.js");
 
 const WHEELS = ["fl", "fr", "rl", "rr"];
+const MIN_MOVING_SAMPLES_PER_LAP = 50;
+const MIN_MOVING_FRACTION_PER_LAP = 0.5;
 
 function parseCsvLine(line) {
   const cells = [];
@@ -134,6 +136,10 @@ function lapSummary(rows, completeLaps) {
     const tireSetDistances = finite(samples.map((row) => number(row, "tire_set_distance_m")));
     const sessionDistances = finite(samples.map((row) => number(row, "session_distance_m")));
     const loggerDistances = finite(samples.map((row) => number(row, "logger_cumulative_distance_m")));
+    const movingSamples = samples.filter((row) => {
+      const speed = number(row, "speed_kmh");
+      return Number.isFinite(speed) && speed > 5;
+    }).length;
     const lapDistanceKm = tireSetDistances.length ? (Math.max(...tireSetDistances) - Math.min(...tireSetDistances)) / 1000 : null;
     return {
       lap,
@@ -151,12 +157,27 @@ function lapSummary(rows, completeLaps) {
       loggerCumulativeAtLapStartKm: loggerDistances.length ? loggerDistances[0] / 1000 : null,
       loggerCumulativeAtLapEndKm: loggerDistances.length ? loggerDistances.at(-1) / 1000 : null,
       pitSamples: samples.filter((row) => number(row, "in_pit") === 1).length,
+      movingSamples,
+      movingFraction: samples.length ? movingSamples / samples.length : 0,
       speedKmh: stats(samples.map((row) => number(row, "speed_kmh"))),
       pressurePsi: Object.fromEntries(WHEELS.map((wheel) => [wheel, mean(samples.map((row) => number(row, `pressure_psi_${wheel}`)))])),
       coreC: Object.fromEntries(WHEELS.map((wheel) => [wheel, mean(samples.map((row) => number(row, `core_temp_c_${wheel}`)))])),
       wearRaw: Object.fromEntries(WHEELS.map((wheel) => [wheel, mean(samples.map((row) => number(row, `wear_raw_${wheel}`)))]))
     };
   });
+}
+
+function pressureChannelsComplete(rows, rawAcLapWindow) {
+  const selected = rows.filter((row) => rawAcLapWindow.includes(number(row, "lap")));
+  if (!selected.length) return { complete: false, missing: [...WHEELS] };
+  const missing = WHEELS.filter((wheel) => selected.some((row) => !Number.isFinite(number(row, `pressure_psi_${wheel}`))));
+  return { complete: missing.length === 0, missing };
+}
+
+function isDecisionQualityLap(lap) {
+  return Boolean(lap?.complete && lap.pitSamples === 0 && lap.lapTimeMs > 0 &&
+    Number.isFinite(lap.lapDistanceKm) && lap.lapDistanceKm > 0 &&
+    lap.movingSamples >= MIN_MOVING_SAMPLES_PER_LAP && lap.movingFraction >= MIN_MOVING_FRACTION_PER_LAP);
 }
 
 function monotonicallyNondecreasing(rows, key, tolerance = 1) {
@@ -178,19 +199,22 @@ function resolvePressureWindow(rows, laps, completeLaps, manifest, identity, csv
   const activeCar = manifest?.activeInstalledPhysics?.carId || manifest?.observedRuntimeState?.car || null;
   const coherentIdentity = identityProven && cars.length === 1 && tracks.length === 1 && csvCompounds.length === 1 && (!activeCar || activeCar === cars[0]);
   const literalLaps = relativeLapWindow.map((lap) => laps.find((item) => item.lap === lap));
-  const literalAvailable = literalLaps.every((lap) => lap?.complete && lap.pitSamples === 0 && lap.lapTimeMs > 0 && Number.isFinite(lap.lapDistanceKm) && lap.lapDistanceKm > 0);
+  const literalAvailable = literalLaps.every(isDecisionQualityLap);
   const literalTimeCv = coefficientOfVariation(literalLaps.map((lap) => lap?.lapTimeMs));
   const literalDistanceCv = coefficientOfVariation(literalLaps.map((lap) => lap?.lapDistanceKm));
   const literalCoherent = literalAvailable && Number.isFinite(literalTimeCv) && literalTimeCv <= 0.15 && Number.isFinite(literalDistanceCv) && literalDistanceCv <= 0.15;
   if (literalCoherent && coherentIdentity) {
+    const channelCheck = pressureChannelsComplete(rows, relativeLapWindow);
     return {
-      available: true,
-      selectionBasis: "LITERAL_AC_LAPS",
+      available: channelCheck.complete,
+      selectionBasis: channelCheck.complete ? "LITERAL_AC_LAPS" : "UNRESOLVED",
       relativeLapWindow,
       rawAcLapWindow: relativeLapWindow,
       lapMapping: relativeLapWindow.map((lap) => ({ relativeLap: lap, rawAcLap: lap })),
       excludedRawAcLaps: [1],
-      reasons: ["Complete literal AC laps 2-5 are present and generated-vs-active identity is proven."]
+      reasons: channelCheck.complete
+        ? ["Complete literal AC laps 2-5 have sufficient moving samples, complete pressure channels and proven generated-vs-active identity."]
+        : [`Pressure channels are missing in the candidate decision window: ${channelCheck.missing.map((wheel) => wheel.toUpperCase()).join(", ")}.`]
     };
   }
 
@@ -212,9 +236,9 @@ function resolvePressureWindow(rows, laps, completeLaps, manifest, identity, csv
   if (!firstLap || firstLap.pitSamples < 1) reasons.push("first recorded AC lap is not a provable pit/out-lap segment");
   if (!monotonicallyNondecreasing(rows, "session_distance_m") || !monotonicallyNondecreasing(rows, "tire_set_distance_m")) reasons.push("session or tire-set distance resets within the capture");
 
-  const useful = laps.filter((lap) => lap.complete && lap.lap > rawStartLap && lap.pitSamples === 0 && lap.lapTimeMs > 0 && Number.isFinite(lap.lapDistanceKm) && lap.lapDistanceKm > 0);
+  const useful = laps.filter((lap) => lap.lap > rawStartLap && isDecisionQualityLap(lap));
   const firstFive = useful.slice(0, 5);
-  if (firstFive.length < 5) reasons.push("fewer than five complete pit-free timed laps remain after the out-lap");
+  if (firstFive.length < 5) reasons.push("fewer than five complete pit-free timed laps with sufficient moving samples remain after the out-lap");
   if (firstFive.length === 5 && !firstFive.every((lap, index) => lap.lap === firstFive[0].lap + index)) reasons.push("the first five useful timed laps are not consecutive");
   const timeCv = coefficientOfVariation(firstFive.map((lap) => lap.lapTimeMs));
   const distanceCv = coefficientOfVariation(firstFive.map((lap) => lap.lapDistanceKm));
@@ -225,15 +249,30 @@ function resolvePressureWindow(rows, laps, completeLaps, manifest, identity, csv
     return { available: false, selectionBasis: "UNRESOLVED", relativeLapWindow, rawAcLapWindow: [], lapMapping: [], excludedRawAcLaps: [], reasons };
   }
   const mapping = firstFive.map((lap, index) => ({ relativeLap: index + 1, rawAcLap: lap.lap }));
+  const rawAcLapWindow = mapping.slice(1).map((item) => item.rawAcLap);
+  const channelCheck = pressureChannelsComplete(rows, rawAcLapWindow);
+  const excludedRawAcLaps = [...new Set(laps.filter((lap) => lap.pitSamples > 0 || !lap.complete).map((lap) => lap.lap))].sort((a, b) => a - b);
+  if (!channelCheck.complete) {
+    return {
+      available: false,
+      selectionBasis: "UNRESOLVED",
+      relativeLapWindow,
+      rawAcLapWindow,
+      lapMapping: mapping,
+      excludedRawAcLaps,
+      warmupRawAcLap: mapping[0].rawAcLap,
+      reasons: [`Pressure channels are missing in the candidate decision window: ${channelCheck.missing.map((wheel) => wheel.toUpperCase()).join(", ")}.`]
+    };
+  }
   return {
     available: true,
     selectionBasis: "SESSION_RELATIVE_REBASED",
     relativeLapWindow,
-    rawAcLapWindow: mapping.slice(1).map((item) => item.rawAcLap),
+    rawAcLapWindow,
     lapMapping: mapping,
-    excludedRawAcLaps: [rawStartLap],
+    excludedRawAcLaps,
     warmupRawAcLap: mapping[0].rawAcLap,
-    reasons: ["Logger began stationary in the pits with fresh session/tire-set distances; the out-lap was excluded and five consecutive coherent full laps were proven."]
+    reasons: [`Logger began stationary in the pits with fresh session/tire-set distances; the out-lap was excluded and five consecutive coherent full laps with at least ${MIN_MOVING_SAMPLES_PER_LAP} moving samples and ${(MIN_MOVING_FRACTION_PER_LAP * 100).toFixed(0)}% moving coverage were proven.`]
   };
 }
 

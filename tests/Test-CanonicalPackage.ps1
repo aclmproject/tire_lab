@@ -1,4 +1,4 @@
-param([string]$Version='0.10.2')
+param([string]$Version='0.10.3')
 $ErrorActionPreference='Stop'
 $Repository=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $Dist=Join-Path $Repository 'dist';$Archive=Join-Path $Dist "ACLM_Tire_Lab_Setup_v$Version.zip"
@@ -13,7 +13,7 @@ try{
   $app=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/app.js');$html=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/app/index.html');$server=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/Server_ACLM_Tire_Lab.ps1');$analyzer=Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $scratch 'payload/Tools/analyze_post_run_telemetry.js')
   $escapedVersion=[regex]::Escape($Version)
   if($app-notmatch('ACLM_APP_VERSION="'+$escapedVersion+'"')-or$html-notmatch('v'+$escapedVersion+' Browser App')-or$server-notmatch('CurrentVersion = "'+$escapedVersion+'"')){throw 'Package version alignment failed.'}
-  foreach($token in @('LITERAL_AC_LAPS','SESSION_RELATIVE_REBASED','INCOMPLETE/UNRESOLVED')){if($analyzer-notmatch[regex]::Escape($token)){throw "Packaged analyzer lacks $token"}}
+  foreach($token in @('LITERAL_AC_LAPS','SESSION_RELATIVE_REBASED','INCOMPLETE/UNRESOLVED','MIN_MOVING_SAMPLES_PER_LAP','pressureChannelsComplete')){if($analyzer-notmatch[regex]::Escape($token)){throw "Packaged analyzer lacks $token"}}
   foreach($token in @('pressureABIntentStatus','stableTirePackIdFromHandoff','UNCLASSIFIED_GENERIC_TELEMETRY')){if($app-notmatch[regex]::Escape($token)){throw "Packaged intent-integrity UI lacks $token"}}
   $bad=New-Object Collections.Generic.List[string]
   $slash=[IO.Path]::DirectorySeparatorChar;$windowsHomePattern=('C:'+([regex]::Escape([string]$slash))+'Users'+([regex]::Escape([string]$slash))+'[^'+([regex]::Escape([string]$slash))+']+');$forward=[char]47;$unixHomePattern=([string]$forward+'home'+[string]$forward+'[^'+[string]$forward+']+'+[string]$forward)

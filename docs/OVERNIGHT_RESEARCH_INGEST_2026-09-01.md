@@ -4,6 +4,14 @@
 
 The overnight corpus is fully registered as **research staging**, not production Tire Knowledge. It materially strengthens evidence architecture, coupled pressure/thermal/wear methodology, wet/intermediate applicability and provenance discipline, but it does not justify changing Knowledge v1.7.1, any historical numeric prior, any scaling rule, or tire physics. Stable staging IDs and the existing milestone registries remain authoritative; no duplicate source IDs were created in this pass.
 
+## Continuation reconciliation
+
+The post-analyzer continuation re-inventoried the checked-in corpus rather than restarting acquisition. The Milestone-4 store contains 39 uniquely identified retrieved PDFs: 30 already represented by the reviewed source register and nine still pending review. There are no duplicate acquired IDs and no duplicate reviewed IDs. No new finding was promoted during this reconciliation.
+
+The nine quarantined retrieved-but-unreviewed records are `E-SRC-0077`, `E-SRC-0082`, `E-SRC-0083`, `E-SRC-0093`, `E-SRC-0099`, `E-SRC-0101`, `E-SRC-0121`, `E-SRC-0126` and `E-SRC-0129`. Their presence on disk is not a review. No unnamed, temporary or unfinished PDF was treated as evidence; any such artifact remains excluded until it has a stable source ID, a complete-file check, full-text review, provenance and applicability assessment.
+
+Next source-review priority is period primary or supplier material that can close a named racing-host gap. The NASA reports remain useful primary technical sources for architecture, but aircraft/runway findings stay indirect and may not be transferred numerically to a racing family. Within the pending set, period force/deflection and pressure work (`E-SRC-0082`, `E-SRC-0083`) precedes later overview material; racing supplier/period sources with explicit vehicle, event and year scope outrank all of them for production historical claims.
+
 ## Inventory and disposition
 
 | Staging checkpoint | Material reviewed/registered | Evidence quality and result | Disposition |
@@ -53,7 +61,7 @@ The overnight corpus is fully registered as **research staging**, not production
 
 ## Production authority after ingestion
 
-- Application identity remains v0.10.2.
+- Application identity advances to v0.10.3 for telemetry-analysis integrity only.
 - Knowledge remains v1.7.1: release SHA-256 `ca0b0fcf498e8f4714354f22ffef269cca1c813b3b19eda8eb9d1b77f0dd8954`, content SHA-256 `14f92adf97786556ac3472f05496a469bdfd0713b2b49fd4c146e529912ff14f`.
 - Production families, classes, measurements, generator priors and scaling numerics are unchanged.
 - No candidate Knowledge release is created because this batch does not yet offer a taxonomy/evidence-safe change requiring promotion.

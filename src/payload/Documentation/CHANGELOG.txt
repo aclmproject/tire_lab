@@ -1,10 +1,11 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
-Unreleased corrective work
+2026-09-01 - v0.10.3
 - Prevents rapid repeated Start clicks from launching duplicate native telemetry logger processes by publishing a server-owned starting state before child-process launch and adding a client-side pending guard.
 - Persists pressure A/B role, tire-pack ID, intended per-corner pressure adjustments and feedback in new telemetry manifest handoffs.
-- Makes the deterministic post-run analyzer report complete laps 2-5 as the canonical short-pressure decision window while retaining the last-four-lap diagnostic separately.
+- Makes the deterministic post-run analyzer use valid session-relative complete laps 2-5 while retaining raw AC lap numbers and the last-four-complete-lap diagnostic separately.
+- Fails the short pressure screen closed for pit/outlaps, interrupted or partial decision captures, insufficient moving samples, missing pressure channels, identity mismatch and ambiguous reused lap counters.
 - Accepts the AC compound display string `Name (Short)` as a match for the installed compound identity.
 - Adds the hash-matched Porsche 917K Monza pressure A/B evidence. Corrected B improved all four corners from baseline FAIL to overall REVIEW; physics, Thermal V2, wear curves and knowledge priors remain unchanged.
 

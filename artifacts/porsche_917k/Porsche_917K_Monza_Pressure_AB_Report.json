@@ -105,6 +105,13 @@
     "csvSha256": "76868db94ba76ecfb6fc51173e702cb76b577eeb2550f784b01aca0be95a6bf3",
     "manifestSha256": "f0e95dff7339b29a78f75e0b20f098837e5060d1f78772522f77e0b72d22ec38",
     "setupPressurePsi": { "front": 30, "rear": 35 },
+    "testState": {
+      "referenceDriver": "AI_REFERENCE",
+      "warmers": "OFF",
+      "freshTireSet": true,
+      "observedAirC": 25.9999981,
+      "observedRoadC": 36.9999962
+    },
     "intentMetadata": {
       "status": "UNCLASSIFIED_GENERIC_TELEMETRY",
       "role": "unclassified",
@@ -115,6 +122,7 @@
     "windowSelection": {
       "basis": "SESSION_RELATIVE_REBASED",
       "excludedRawAcLap": 7,
+      "excludedPartialRawAcLaps": [16],
       "relativeWarmupLap": 1,
       "rawWarmupLap": 8,
       "relativeLaps": [2, 3, 4, 5],
@@ -126,7 +134,8 @@
         { "relativeLap": 4, "rawAcLap": 11 },
         { "relativeLap": 5, "rawAcLap": 12 }
       ],
-      "proof": "Logger began stationary in the pits at reset session/current-tire-set distance; raw lap 7 is the pit/out-lap segment and raw lap 8 is the first coherent full timed lap."
+      "laterCompleteRawAcLapsReportedSeparately": [12, 13, 14, 15],
+      "proof": "Logger began stationary in the pits at reset session/current-tire-set distance; raw lap 7 is the pit/out-lap segment, raw lap 8 is the first coherent full timed lap, and raw lap 16 is partial and excluded."
     },
     "canonicalWindow": {
       "fl": { "meanPsi": 33.3554542326, "errorPsi": 1.3554542326, "classification": "REVIEW" },

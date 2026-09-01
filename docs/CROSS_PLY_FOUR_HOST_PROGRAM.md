@@ -13,7 +13,7 @@ The controlled comparison set is fixed: Maserati 250F + Ford GT40 Mk II + Porsch
 
 Every new run must use the intended canonical TirePack, a matching car identity, a matching active/generated `tyres.ini` SHA-256, and `physicsHashMatch=true`. A `STALE`, `HASH_MISMATCH`, unresolved, compatibility-only, or wrong-car identity blocks driving and calibration use.
 
-For short pressure screens, use AI-reference duty, warmers OFF, 1× wear, fixed dry conditions, 10 Hz logging, lap 1 as warm-up, and complete laps 2–5 as the decision window. Preserve requested and observed conditions separately. Do not merge duplicate logger captures of one physical run.
+For short pressure screens, use AI-reference duty, warmers OFF, 1× wear, fixed dry conditions and 10 Hz logging. The first proven full session-relative lap is warm-up; full session-relative laps 2–5 are the decision window even if AC reuses a higher raw lap counter. Preserve the raw AC mapping, requested and observed conditions separately. Pit/outlaps, partial laps, interrupted captures, insufficient-moving-sample laps and missing pressure channels fail closed. Do not merge duplicate logger captures of one physical run.
 
 ## Promotion rule
 

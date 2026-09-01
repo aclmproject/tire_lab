@@ -66,6 +66,9 @@ test("durable checkpoints preserve completed 917K result and frozen Knowledge au
 test("overnight research ingest remains evidence-staged and numerically frozen", () => {
   const ingest = read("docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md");
   assert.match(ingest, /30 targeted full texts/);
+  assert.match(ingest, /39 uniquely identified retrieved PDFs/);
+  assert.match(ingest, /nine still pending review/);
+  assert.match(ingest, /No unnamed, temporary or unfinished PDF was treated as evidence/);
   assert.match(ingest, /10 measurements, 18 observations, 10 scaling rules and 8 methodology records/);
   assert.match(ingest, /443 temporal-label conflicts/);
   assert.match(ingest, /No candidate Knowledge release is created/);

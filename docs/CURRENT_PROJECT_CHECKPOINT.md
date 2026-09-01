@@ -1,12 +1,12 @@
 # ACLM Historical Tire Lab — current project checkpoint
 
-Checkpoint basis: application v0.10.2, Knowledge v1.7.1, branch `codex/csp-thermal-v2` from verified remote base `5ba73d02917d8843f188fed7be6b52c58b2d28f1`.
+Checkpoint basis: application v0.10.3, Knowledge v1.7.1, branch `codex/csp-thermal-v2` from verified remote base `5ba73d02917d8843f188fed7be6b52c58b2d28f1`.
 
 ## Completed software work
 
 - The post-run analyzer prefers valid literal AC laps 2–5 and can fail-safely rebase a fresh pit-start capture whose AC lap counter was reused. It reports relative and raw AC lap mappings plus the selection basis.
-- Ambiguous, mid-track, mixed, stale, compound-mismatched or physics-hash-mismatched captures remain `INCOMPLETE/UNRESOLVED`.
-- Missing pressure values remain null; they cannot produce artificial −32/−38 psi failures.
+- Pit/outlaps and partial laps cannot enter the decision window. Ambiguous, interrupted, mid-track, insufficient-moving-sample, mixed, stale, compound-mismatched or physics-hash-mismatched captures remain `INCOMPLETE/UNRESOLVED`.
+- Missing pressure values remain null and make the screen unresolved; they cannot produce artificial −32/−38 psi failures.
 - Per-lap distance is a current-tire-set lap span. Logger-cumulative, session, stint and tire-set distance bases remain separately labelled.
 - The TirePack handoff now carries stable canonical IDs where identity is proven, visible pressure role/ID/corrections, intent-completeness warnings and session-start lap advice.
 - Duplicate-start protection and `physicsHashMatch=true` fail-closed behavior remain mandatory.
@@ -19,7 +19,8 @@ No tire-physics, pressure/compliance, Thermal V2, wear, LUT or Knowledge numeric
 - Baseline A: `FAIL`.
 - Corrected B: `REVIEW` (staggered); LF/LR pass, RF/RR narrowly review. `04:48:54` is authoritative and `04:48:55` remains excluded as a duplicate.
 - The 30 psi front / 35 psi rear confirmation C uses literal AC laps 2–5 and returns `REVIEW`.
-- Independent C2 is a fresh capture whose AC counter began at lap 7. Raw lap 7 is excluded pit/out-lap, raw lap 8 is relative warm-up lap 1, and raw laps 9–12 are relative decision laps 2–5. It returns `REVIEW` and agrees with C within 0.023 psi.
+- Independent C2 is a fresh capture whose AC counter began at lap 7. Raw lap 7 is excluded pit/out-lap, raw lap 8 is relative warm-up lap 1, and raw laps 9–12 are relative decision laps 2–5. Raw lap 16 is partial and excluded; complete raw laps 12–15 are reported separately as the later-lap diagnostic. It returns `REVIEW` and agrees with C within 0.023 psi.
+- C2 records approximately 33.355/32.521/39.359/38.579 psi (LF/RF/LR/RR), all `REVIEW`, against 32F/38R ideal. Its sidecar role is `unclassified` with a blank TirePack ID and zero corrections; the setup clicks are therefore not independently sidecar-proven.
 - C/C2 prove 30F/35R is reproducibly high on the loaded left tires. The best balanced whole-psi-grid inference is 29F/34R at all axle corners, setup-only.
 - The 917K short-pressure phase is complete. Request no further 917K driving now. Thermal remains **UNRESOLVED** and wear remains **STORE, DO NOT FIT**.
 
@@ -38,7 +39,7 @@ The overnight M0–M5 and weakness-corpus outputs are inventoried in `docs/OVERN
 
 ## Next unfinished item
 
-Run the canonical Maserati 250F live card only after installing the certified v0.10.2 build and the canonical TirePack into the car. Exit AC completely, launch a fresh session, import the installed car, select AI_REFERENCE/baseline, verify `physicsHashMatch=true`, and collect the 24 psi all-corner short screen. Do not begin another 917K run.
+Run the canonical Maserati 250F live card only after installing the certified v0.10.3 application and the unchanged canonical v0.10.2 TirePack into the car. Exit AC completely, launch a fresh session, import the installed car, select AI_REFERENCE/baseline, verify `physicsHashMatch=true`, and collect the 24 psi all-corner short screen. Do not begin another 917K run.
 
 ## Guardrails
 

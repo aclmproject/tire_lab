@@ -15,6 +15,6 @@ Status: **COMPLETE.** Baseline A, staggered corrected B, 30F/35R confirmation C 
 - Lap 1: warm-up only
 - Decision window: complete laps 2–5
 
-The 30F/35R repeats recorded 33.362/32.529/39.381/38.596 psi and 33.355/32.521/39.359/38.579 psi in their session-relative decision windows. The loaded-left LF/LR corners were reproducibly high. The balanced whole-grid inference is 29F/34R at all four respective axle corners, setup-only.
+The 30F/35R repeats recorded 33.362/32.529/39.381/38.596 psi and 33.355/32.521/39.359/38.579 psi in their session-relative decision windows. For C2, raw lap 7 is excluded pit/outlap, raw lap 8 is warm-up, raw laps 9–12 are the decision window and raw lap 16 is excluded as partial; later complete laps remain separately reported. The loaded-left LF/LR corners were reproducibly high. The balanced whole-grid inference is 29F/34R at all four respective axle corners, setup-only.
 
 Do not request another 917K run now. Do not use this short screen to certify historical pressure, temperature or wear. C lacks intent fields and C2 records an unclassified role/blank TirePack ID, so retain those metadata limitations. The repaired logger makes future controlled runs explicit, but no further 917K driving is currently needed.

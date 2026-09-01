@@ -32,7 +32,9 @@ test("917K 30F/35R confirmation and independent repeat retain exact identity and
   assert.deepEqual(report.confirmationC.windowSelection.rawAcLaps, [2, 3, 4, 5]);
   assert.equal(report.confirmationC2.csvSha256, "76868db94ba76ecfb6fc51173e702cb76b577eeb2550f784b01aca0be95a6bf3");
   assert.equal(report.confirmationC2.manifestSha256, "f0e95dff7339b29a78f75e0b20f098837e5060d1f78772522f77e0b72d22ec38");
+  assert.deepEqual(report.confirmationC2.testState, { referenceDriver: "AI_REFERENCE", warmers: "OFF", freshTireSet: true, observedAirC: 25.9999981, observedRoadC: 36.9999962 });
   assert.equal(report.confirmationC2.windowSelection.basis, "SESSION_RELATIVE_REBASED");
+  assert.deepEqual(report.confirmationC2.windowSelection.excludedPartialRawAcLaps, [16]);
   assert.deepEqual(report.confirmationC2.windowSelection.rawAcLaps, [9, 10, 11, 12]);
   assert.deepEqual(report.confirmationC2.windowSelection.mapping, [
     { relativeLap: 1, rawAcLap: 8 },
@@ -52,6 +54,8 @@ test("917K C2 independently repeats C and closes the driving phase without a phy
     assert.ok(Math.abs(c.meanPsi - c2.meanPsi) < 0.023, wheel);
   }
   assert.equal(report.confirmationC2.intentMetadata.status, "UNCLASSIFIED_GENERIC_TELEMETRY");
+  assert.equal(report.confirmationC2.intentMetadata.role, "unclassified");
+  assert.equal(report.confirmationC2.intentMetadata.tirePackId, null);
   assert.match(report.decision, /29 psi front and 34 psi rear/);
   assert.match(report.decision, /Request no further 917K driving now/);
 });
