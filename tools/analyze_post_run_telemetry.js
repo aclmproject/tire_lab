@@ -63,6 +63,41 @@ function regression(points) {
   return { count: usable.length, slope: denominator ? usable.reduce((sum, [x, y]) => sum + (x - mx) * (y - my), 0) / denominator : null };
 }
 
+function classifyPressure(error) {
+  if (!Number.isFinite(error)) return "UNRESOLVED";
+  return Math.abs(error) <= 0.5 ? "PASS" : Math.abs(error) <= 1.5 ? "REVIEW" : "FAIL";
+}
+
+function overallPressureClassification(perWheel) {
+  const values = Object.values(perWheel || {}).map((item) => item.classification);
+  if (values.includes("FAIL")) return "FAIL / pressure model mismatch";
+  if (values.includes("REVIEW")) return "REVIEW";
+  if (values.length && values.every((value) => value === "PASS")) return "PASS";
+  return "UNRESOLVED";
+}
+
+function pressureWindowSummary(rows, lapWindow, idealFront, idealRear) {
+  const selected = rows.filter((row) => lapWindow.includes(number(row, "lap")));
+  const perWheel = Object.fromEntries(WHEELS.map((wheel) => {
+    const targetPsi = wheel.startsWith("f") ? idealFront : idealRear;
+    const meanPsi = mean(selected.map((row) => number(row, `pressure_psi_${wheel}`)));
+    const errorPsi = Number.isFinite(meanPsi) ? meanPsi - targetPsi : null;
+    return [wheel, { meanPsi, targetPsi, errorPsi, classification: classifyPressure(errorPsi) }];
+  }));
+  const frontPsi = mean([perWheel.fl.meanPsi, perWheel.fr.meanPsi]);
+  const rearPsi = mean([perWheel.rl.meanPsi, perWheel.rr.meanPsi]);
+  return {
+    lapWindow,
+    samples: selected.length,
+    perWheel,
+    axles: {
+      front: { meanPsi: frontPsi, targetPsi: idealFront, errorPsi: frontPsi - idealFront, classification: classifyPressure(frontPsi - idealFront) },
+      rear: { meanPsi: rearPsi, targetPsi: idealRear, errorPsi: rearPsi - idealRear, classification: classifyPressure(rearPsi - idealRear) }
+    },
+    overallClosureClassification: overallPressureClassification(perWheel)
+  };
+}
+
 function groupByLap(rows) {
   const groups = new Map();
   for (const row of rows) {
@@ -100,20 +135,26 @@ function resolveManifestIdentity(manifest, csvCompounds) {
   const activeHash = active?.tyresIniSha256 || manifest?.activeTyresIniSha256 || manifest?.tireFileSha256 || null;
   const generatedHash = manifest?.generatedConfiguration?.tireFileSha256 || null;
   const observedCompound = csvCompounds.length === 1 ? csvCompounds[0] : null;
-  const declaredCompound = active?.activeCompoundIdentity?.name || manifest?.activeSelectedCompound?.name || null;
+  const declared = active?.activeCompoundIdentity || manifest?.activeSelectedCompound || null;
+  const declaredCompound = declared?.name || null;
+  const declaredShortName = declared?.shortName || null;
+  const normalize = (value) => String(value || "").trim().toLowerCase();
+  const acceptedObservedNames = [declaredCompound, declaredShortName, declaredCompound && declaredShortName ? `${declaredCompound} (${declaredShortName})` : null].filter(Boolean).map(normalize);
   return {
     activeTyresIniSha256: activeHash,
     generatedTyresIniSha256: generatedHash,
     generatedVsActive: activeHash && generatedHash ? (activeHash === generatedHash ? "MATCH" : "STALE/HASH_MISMATCH") : "UNRESOLVED",
     observedCompound,
     declaredActiveCompound: declaredCompound,
-    compoundIdentity: observedCompound && declaredCompound ? (observedCompound === declaredCompound ? "MATCH" : "REVIEW") : "UNRESOLVED",
+    declaredActiveShortName: declaredShortName,
+    compoundIdentity: observedCompound && declaredCompound ? (acceptedObservedNames.includes(normalize(observedCompound)) ? "MATCH" : "REVIEW") : "UNRESOLVED",
     authority: activeHash ? "ACTIVE_INSTALLED_PHYSICS" : "MANIFEST_IDENTITY_INCOMPLETE"
   };
 }
 
 function renderMarkdown(report) {
   const f = (value, digits = 3) => Number.isFinite(value) ? value.toFixed(digits) : "null";
+  const screen = report.pressure.shortScreen;
   const lines = [
     `# ACLM post-run calibration report`, "",
     `- Fixture: ${report.fixtureId || "unassigned"}`,
@@ -124,14 +165,17 @@ function renderMarkdown(report) {
     `- Complete laps: ${report.laps.complete.join(", ") || "none"}`,
     `- Partial/invalid laps: ${report.laps.partialOrInvalid.join(", ") || "none"}`,
     `- Distance: ${f(report.session.distanceKm)} km`, "",
-    `## Pressure`, "",
-    `| Wheel | Start psi | Late psi | Target psi | Error psi | Result |`,
+    `## Canonical short pressure screen`, "",
+    `Complete laps ${screen.lapWindow.join("–")} are the decision window. Status: **${screen.status}**; closure: **${screen.overallClosureClassification}**.`, "",
+    `| Wheel | Start psi | Screen psi | Target psi | Error psi | Result |`,
     `|---|---:|---:|---:|---:|---|`,
     ...WHEELS.map((wheel) => {
-      const item = report.pressure.perWheel[wheel];
-      return `| ${wheel.toUpperCase()} | ${f(item.startPsi)} | ${f(item.latePsi)} | ${f(item.targetPsi)} | ${f(item.errorPsi)} | ${item.classification} |`;
+      const start = report.pressure.perWheel[wheel].startPsi;
+      const item = screen.perWheel[wheel];
+      return `| ${wheel.toUpperCase()} | ${f(start)} | ${f(item.meanPsi)} | ${f(item.targetPsi)} | ${f(item.errorPsi)} | ${item.classification} |`;
     }), "",
-    `Front axle: **${report.pressure.axles.front.classification}**, ${f(report.pressure.axles.front.errorPsi)} psi. Rear axle: **${report.pressure.axles.rear.classification}**, ${f(report.pressure.axles.rear.errorPsi)} psi.`, "",
+    `Front axle: **${screen.axles.front.classification}**, ${f(screen.axles.front.errorPsi)} psi. Rear axle: **${screen.axles.rear.classification}**, ${f(screen.axles.rear.errorPsi)} psi.`, "",
+    `The separate last-four-complete-lap diagnostic uses laps ${report.pressure.lateLapWindow.join("–")}; it does not replace the canonical short-screen window.`, "",
     `## Thermal`, "",
     `Engineering stability: **${report.thermal.engineeringStability}**. Historical thermal accuracy: **UNRESOLVED**.`, "",
     `| Wheel | Late core C | Core slope C/lap | Surface mean C | Surface p95 C | Surface max C | Surface-core delta C |`,
@@ -172,7 +216,7 @@ function analyzePostRun(csvFile, manifestFile, options = {}) {
   const laps = lapSummary(rows, completeLaps);
   const slopeLaps = completeLaps.slice(-10);
   const slopeLapRows = laps.filter((lap) => slopeLaps.includes(lap.lap));
-  const classify = (error) => Math.abs(error) <= 0.5 ? "PASS" : Math.abs(error) <= 1.5 ? "REVIEW" : "FAIL";
+  const classify = classifyPressure;
   const pressure = {};
   const thermal = {};
   const wear = {};
@@ -211,6 +255,10 @@ function analyzePostRun(csvFile, manifestFile, options = {}) {
   const incidentCandidates = rows.filter((row) => Math.abs(number(row, "accg_lat")) > 1.8 || Math.abs(number(row, "accg_long")) > 1.5 || WHEELS.some((wheel) => Math.abs(number(row, `wheel_slip_raw_${wheel}`)) > 10)).length;
   const completeLapTimes = laps.filter((lap) => lap.complete && lap.lapTimeMs > 0).map((lap) => lap.lapTimeMs / 1000);
   const identity = resolveManifestIdentity(manifest, csvCompounds);
+  const canonicalPressureLaps = [2, 3, 4, 5];
+  const canonicalPressureAvailable = canonicalPressureLaps.every((lap) => completeLaps.includes(lap));
+  const shortScreen = pressureWindowSummary(rows, canonicalPressureLaps, idealFront, idealRear);
+  shortScreen.status = canonicalPressureAvailable ? "AVAILABLE" : "INCOMPLETE";
   const report = {
     schema: "ACLM deterministic post-run calibration report 2.0",
     fixtureId: options.fixtureId || null,
@@ -218,12 +266,12 @@ function analyzePostRun(csvFile, manifestFile, options = {}) {
     identity,
     session: { car: rows[0].car || manifest.car || null, track: rows[0].track || manifest.track || null, startUtc: rows[0].timestamp_utc || null, endUtc: rows.at(-1).timestamp_utc || null, samples: rows.length, distanceKm: (number(rows.at(-1), "tire_set_distance_m") - number(rows[0], "tire_set_distance_m")) / 1000, requestedCondition: manifest.userRequestedCondition || manifest.requestedCondition || null, observedCondition: { airC: stats(rows.map((row) => number(row, "air_temp_c"))), roadC: stats(rows.map((row) => number(row, "road_temp_c"))), aidTireRate: [...new Set(finite(rows.map((row) => number(row, "aid_tire_rate"))))] } },
     laps: { complete: completeLaps, partialOrInvalid: laps.filter((lap) => !lap.complete).map((lap) => lap.lap), byLap: laps, consistency: { completeLapTimeSeconds: stats(completeLapTimes), coefficientOfVariation: completeLapTimes.length ? Math.sqrt(mean(completeLapTimes.map((value) => (value - mean(completeLapTimes)) ** 2))) / mean(completeLapTimes) : null } },
-    pressure: { lateLapWindow: lateComplete, perWheel: pressure, pressureSlopePsiPerLap: pressureSlope, axles: { front: { latePsi: frontLate, targetPsi: idealFront, errorPsi: frontLate - idealFront, classification: classify(frontLate - idealFront) }, rear: { latePsi: rearLate, targetPsi: idealRear, errorPsi: rearLate - idealRear, classification: classify(rearLate - idealRear) } } },
+    pressure: { shortScreen, lateLapWindow: lateComplete, perWheel: pressure, pressureSlopePsiPerLap: pressureSlope, axles: { front: { latePsi: frontLate, targetPsi: idealFront, errorPsi: frontLate - idealFront, classification: classify(frontLate - idealFront) }, rear: { latePsi: rearLate, targetPsi: idealRear, errorPsi: rearLate - idealRear, classification: classify(rearLate - idealRear) } } },
     thermal: { lateLapWindow: lateComplete, slopeLapWindow: slopeLaps, coreSlopeThresholdCPerLap: 0.10, pressureSlopeThresholdPsiPerLap: 0.03, coreStable, pressureStable, engineeringStability: coreStable && pressureStable ? "PASS" : "NOT_STABILIZED", historicalAccuracy: "UNRESOLVED", perWheel: thermal },
     wear: { status: "STORE, DO NOT FIT", perWheel: wear },
     dynamics: { wheelLoadN: loads, slipRatioActivity: slip, slipAngleActivity: headers.some((header) => /slip_angle/i.test(header)) ? "CHANNEL_PRESENT_NOT_YET_NORMALIZED" : null },
     contamination: { offTrackDefinition: "any dirty_raw wheel channel > 0", offTrackSamples: dirtySamples, offTrackFraction: dirtySamples / rows.length, incidentCandidateDefinition: "|lat g|>1.8 or |long g|>1.5 or |AC raw wheel slip|>10; review candidates, not automatic incident truth", incidentCandidateSamples: incidentCandidates, incidentCandidateFraction: incidentCandidates / rows.length },
-    protocol: { shortPressureScreen: { lapWindow: [2, 5], status: completeLaps.includes(2) && completeLaps.includes(5) ? "AVAILABLE" : "INCOMPLETE" }, extendedThermalObservation: { lapWindow: slopeLaps, status: slopeLaps.length >= 10 ? (coreStable && pressureStable ? "ENGINEERING_STABILITY_PASS" : "NOT_STABILIZED") : "INSUFFICIENT_COMPLETE_LAPS" }, historicalThermalAccuracy: "NOT_AUTOMATICALLY_DECLARED" }
+    protocol: { shortPressureScreen: { lapWindow: canonicalPressureLaps, status: canonicalPressureAvailable ? "AVAILABLE" : "INCOMPLETE", overallClosureClassification: shortScreen.overallClosureClassification }, extendedThermalObservation: { lapWindow: slopeLaps, status: slopeLaps.length >= 10 ? (coreStable && pressureStable ? "ENGINEERING_STABILITY_PASS" : "NOT_STABILIZED") : "INSUFFICIENT_COMPLETE_LAPS" }, historicalThermalAccuracy: "NOT_AUTOMATICALLY_DECLARED" }
   };
   report.markdown = renderMarkdown(report);
   return report;

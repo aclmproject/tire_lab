@@ -1,21 +1,20 @@
 # Porsche 917K — short pressure screen
 
-Status: ready after the clean Kunos `ks_porsche_917_k` data is unpacked and a current v0.10.2 CSP Thermal V2 TirePack is generated.
+Status: baseline A and pressure-corrected B completed on the clean unpacked Kunos host. Corrected B improved the canonical laps 2–5 result from `FAIL` to `REVIEW`; retain the TirePack and hold physics.
 
 - Tire Lab class/family: CLS035 / FAM035
+- Active tire SHA-256: `2a710b3333ddfc78acdac0b930959476b2cd0fe4950eab045c0e63da8a8742b4`
 - Supplier: General / unknown
-- Dry baseline: `Dry endurance specification`
-- Driver: AI reference
-- Track: Kunos Spa
+- Dry baseline: `Dry Endurance (D)` / internal `medium`
+- Driver metadata: `AI_REFERENCE`
+- Track: Kunos `ks_monza66`
 - Warmers: OFF
-- Tire wear: 1x
-- Fuel consumption: OFF
+- Tire wear request: 1×
+- Fuel consumption: OFF; observed fuel remained 30 L
 - Damage: OFF
-- Starting fuel: 60 L fixed; do not alter between runs
-- Setup pressures: unchanged generated axle recommendations
 - Lap 1: warm-up only
 - Decision window: complete laps 2–5
 
-Report starting pressure/core, per-lap pressure, late per-wheel pressure, axle means, and error from `PRESSURE_IDEAL`. Do not use this short screen to certify the historical thermal window.
+The corrected run recorded 32.365 / 32.529 psi front and 38.398 / 38.616 psi rear in the decision window against 32 / 38 psi ideals. LF/LR passed; RF/RR were REVIEW by +0.529 / +0.616 psi.
 
-Generation is deliberately blocked while the installed Kunos host exposes only `data.acd`; do not substitute a mod car or approximate profile.
+Do not repeat the baseline. Do not use this short screen to certify the historical thermal window. Before one final pressure confirmation, use a build that records A/B role and intended per-corner pressure adjustments in the sidecar; v0.10.2 preserved observed starts but not those intent fields.

@@ -1,0 +1,108 @@
+{
+  "schema": "ACLM pressure A/B evidence 1.0",
+  "fixtureId": "917K-MONZA66-AI-REFERENCE-PRESSURE-AB-001",
+  "status": "CORRECTED RUN IMPROVED TO REVIEW; HOLD PHYSICS",
+  "car": "ks_porsche_917_tires",
+  "track": "ks_monza66",
+  "referenceDriver": "AI_REFERENCE",
+  "activeTireIdentity": {
+    "physicsHashMatch": true,
+    "tyresIniSha256": "2a710b3333ddfc78acdac0b930959476b2cd0fe4950eab045c0e63da8a8742b4",
+    "compound": "Dry Endurance (D)",
+    "internalSlot": "medium",
+    "sameTireVerified": true
+  },
+  "conditions": {
+    "requestedAirC": 26,
+    "requestedRoadC": 26,
+    "observedAirC": 25.9999981,
+    "observedRoadC": 36.9999962,
+    "warmersRequested": false,
+    "wearMultiplierRequested": 1,
+    "rawAidTireRate": 0,
+    "rawAidTireRateInterpretation": "UNKNOWN; zero is not evidence that wear was disabled",
+    "fuelObservedL": 30
+  },
+  "decisionWindow": {
+    "definition": "complete laps 2-5; lap 1 is warm-up",
+    "pressureIdealPsi": {
+      "front": 32,
+      "rear": 38
+    },
+    "closureThresholdsPsi": {
+      "passAbsoluteErrorAtMost": 0.5,
+      "reviewAbsoluteErrorAtMost": 1.5,
+      "failAbsoluteErrorAbove": 1.5
+    }
+  },
+  "baselineA": {
+    "csvFile": "ACLM_AC_20260901_041719_ks_porsche_917_tires_ks_monza66.csv",
+    "csvSha256": "0b9bce41f565f2f8f7bf09f97eaa7e669fe3bd6e7a728ca0e55e8da27e70501f",
+    "manifestSha256": "49e3614403f5401b1782a010075b47835ea33fc2fdd3f15371c5830235ca5d3c",
+    "completeLaps": 13,
+    "canonicalWindow": {
+      "fl": { "meanPsi": 31.2851856773, "errorPsi": -0.7148143227, "classification": "REVIEW" },
+      "fr": { "meanPsi": 30.4116454483, "errorPsi": -1.5883545517, "classification": "FAIL" },
+      "rl": { "meanPsi": 37.2365180767, "errorPsi": -0.7634819233, "classification": "REVIEW" },
+      "rr": { "meanPsi": 36.4711386866, "errorPsi": -1.5288613134, "classification": "FAIL" }
+    },
+    "overallClosure": "FAIL / pressure model mismatch"
+  },
+  "correctedB": {
+    "csvFile": "ACLM_AC_20260901_044854_ks_porsche_917_tires_ks_monza66.csv",
+    "csvSha256": "b245006d3339a06eafce99ea65332199af8059044c07db19e995750387159734",
+    "manifestSha256": "a6c839bf15bf8fa49b12744af727046a02cdfd2d697d0c74537e2ac2bd1615fe",
+    "duplicateCapture": {
+      "csvFile": "ACLM_AC_20260901_044855_ks_porsche_917_tires_ks_monza66.csv",
+      "csvSha256": "270ae9e32720a015b9c3928874134bec667197124ff480297e86ab0bde8b27b0",
+      "classification": "same physical run recorded by a second logger process; exclude as duplicate"
+    },
+    "completeLaps": 7,
+    "observedStartingPressurePsi": {
+      "fl": 30.4445038,
+      "fr": 31.477066,
+      "rl": 35.6039,
+      "rr": 36.6371651
+    },
+    "canonicalWindow": {
+      "fl": { "meanPsi": 32.3649717158, "errorPsi": 0.3649717158, "classification": "PASS" },
+      "fr": { "meanPsi": 32.5286679153, "errorPsi": 0.5286679153, "classification": "REVIEW" },
+      "rl": { "meanPsi": 38.3981697408, "errorPsi": 0.3981697408, "classification": "PASS" },
+      "rr": { "meanPsi": 38.6157816882, "errorPsi": 0.6157816882, "classification": "REVIEW" }
+    },
+    "overallClosure": "REVIEW"
+  },
+  "comparison": {
+    "observedStartingPressureDeltaPsi": {
+      "fl": 1.9970238,
+      "fr": 3.5081024,
+      "rl": 1.58101,
+      "rr": 2.6142693
+    },
+    "canonicalHotPressureDeltaPsi": {
+      "fl": 1.0797860385,
+      "fr": 2.117022467,
+      "rl": 1.1616516641,
+      "rr": 2.1446430016
+    },
+    "absoluteClosureImprovementPsi": {
+      "fl": 0.3498426069,
+      "fr": 1.0596866364,
+      "rl": 0.3653121825,
+      "rr": 0.9130796251
+    },
+    "interpretation": "The corrected run materially improved all four corners. Exact AC setup selections were not persisted by v0.10.2, so the manifest proves observed starting-pressure deltas rather than the intended setup-click values."
+  },
+  "guardrails": {
+    "thermal": "UNRESOLVED; short pressure A/B does not certify historical temperature accuracy",
+    "wear": "STORE, DO NOT FIT",
+    "physicsCoefficientChangesAuthorized": false,
+    "crossPlyProgram": [
+      "Maserati 250F",
+      "Ford GT40",
+      "Porsche 917K",
+      "Ford Escort RS1600"
+    ]
+  },
+  "decision": "Preserve the canonical TirePack and all thermal/wear coefficients. Treat the B result as a successful pressure-only diagnostic improvement, but do not promote a final setup or generator correction until the intended per-corner setup adjustments are persisted and one same-condition confirmation run closes all four corners."
+}

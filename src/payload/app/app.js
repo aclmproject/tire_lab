@@ -18,6 +18,8 @@ function withCurrentRunMetadata(baseManifest){
  manifest.requestedTyreWearMultiplier=requestedCondition.wearMultiplier;manifest.requestedWearMultiplier=requestedCondition.wearMultiplier;manifest.fuelRate=requestedCondition.fuelRate;manifest.damageRate=requestedCondition.damageRate;manifest.startingFuel=requestedCondition.startingFuelLiters;manifest.requestedSessionBlanketsEnabled=requestedCondition.sessionBlanketsEnabled;manifest.sessionBlanketStatus={enabled:requestedCondition.sessionBlanketsEnabled,source:"user-requested session state; independent of BLANKETS_TEMP"};
  const selected={front:optionalNumber("pSelectedF")??null,rear:optionalNumber("pSelectedR")??null};
  for(const entry of manifest.pressureReference?.axleReport||[]){if(entry.axle in selected)entry.selectedSetupColdPressurePsi=selected[entry.axle];}
+ const pressureAB={role:$("pressureABRole")?.value||"unclassified",tirePackId:$("pressureABTireId")?.value?.trim()||"",coldPressureAdjustmentPsi:{fl:optionalNumber("pressureCorrectionFL")??0,fr:optionalNumber("pressureCorrectionFR")??0,rl:optionalNumber("pressureCorrectionRL")??0,rr:optionalNumber("pressureCorrectionRR")??0},unsafeBaseline:$("pressureUnsafeBaseline")?.checked===true,subjectiveFeedback:$("pressureSubjectiveFeedback")?.value?.trim()||""};
+ manifest.pressureAB=pressureAB;
  return manifest;
 }
 
@@ -1823,6 +1825,6 @@ window.ACLMCurrentTelemetryManifest=()=>{
   // Never reuse generatedFiles here: it may describe a car selected before the
   // current import/profile transition. Telemetry must receive a just-built identity.
   generatedFiles=build();const result=validate(generatedFiles);if(result.errors?.length)throw new Error("Generate/validation must pass before telemetry starts: "+result.errors.join(" "));renderValidation(result);renderFiles(generatedFiles);
-  const manifest=JSON.parse(generatedFiles["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]);if(!manifest?.appVersion)throw new Error("Generated telemetry manifest is incomplete.");return manifest;
+  const manifest=JSON.parse(generatedFiles["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]);if(!manifest?.appVersion)throw new Error("Generated telemetry manifest is incomplete.");return withCurrentRunMetadata(manifest);
  }catch(error){throw new Error("Telemetry manifest handoff failed: "+error.message);}
 };

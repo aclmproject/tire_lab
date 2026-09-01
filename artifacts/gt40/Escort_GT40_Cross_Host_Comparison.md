@@ -30,7 +30,7 @@ GT40 live fields intentionally remain pending until the controlled Monza AI CSV 
 | Thermal calibration status | UNRESOLVED | UNVALIDATED / descriptive run only |
 | Wear calibration status | UNRESOLVED | UNVALIDATED; 1x baseline only |
 
-Future decision gate: do not retune the shared cross-ply Thermal V2 network until clean AI telemetry exists for Escort, GT40 and Porsche 917K.
+Future decision gate: do not retune the shared cross-ply Thermal V2 network until coherent evidence can be compared across the Maserati 250F, Escort, GT40 and Porsche 917K. The 917K now has hash-matched Monza A/B evidence; the GT40 long run remains generated-vs-active `STALE/HASH_MISMATCH`, and the 250F still lacks an equivalent live host screen. Neither gap may be bypassed by promoting 917K results into shared coefficients.
 
 ## GT40 extended observation
 

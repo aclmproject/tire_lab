@@ -1,6 +1,13 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+Unreleased corrective work
+- Prevents rapid repeated Start clicks from launching duplicate native telemetry logger processes by publishing a server-owned starting state before child-process launch and adding a client-side pending guard.
+- Persists pressure A/B role, tire-pack ID, intended per-corner pressure adjustments and feedback in new telemetry manifest handoffs.
+- Makes the deterministic post-run analyzer report complete laps 2-5 as the canonical short-pressure decision window while retaining the last-four-lap diagnostic separately.
+- Accepts the AC compound display string `Name (Short)` as a match for the installed compound identity.
+- Adds the hash-matched Porsche 917K Monza pressure A/B evidence. Corrected B improved all four corners from baseline FAIL to overall REVIEW; physics, Thermal V2, wear curves and knowledge priors remain unchanged.
+
 2026-08-30 - v0.10.2
 - Makes the native logger hash the active installed car physics and referenced tire LUTs when a session starts.
 - Separates the generated TirePack configuration from the active installed physics and observed AC runtime state in each telemetry sidecar.

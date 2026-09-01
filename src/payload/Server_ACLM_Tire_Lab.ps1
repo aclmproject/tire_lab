@@ -119,12 +119,19 @@ function Start-Telemetry([int]$RateHz,$Manifest){
     Write-Utf8 $TelemetryManifestInput $manifestJson
     $manifestReceived=$true
   }
+  # Publish a server-owned starting state before launching the child process.
+  # The HTTP server is single threaded, so a queued second start request now
+  # observes this state instead of launching a duplicate logger while the
+  # child is still materializing its own status file.
+  $starting=@{state='starting';message='Logger process is starting.';pid=0;rate_hz=$RateHz;samples=0;file=$null;output_directory=$TelemetryOutput;manifest_received=$manifestReceived}
+  Write-Utf8 $TelemetryStatusPath ($starting|ConvertTo-Json -Depth 5)
   $exe=Join-Path $PSHOME 'powershell.exe';if(!(Test-Path $exe)){$exe='powershell.exe'}
   $args='-NoLogo -NoProfile -ExecutionPolicy Bypass -File "'+$TelemetryScript+'" -OutputDirectory "'+$TelemetryOutput+'" -RateHz '+$RateHz+' -StatusPath "'+$TelemetryStatusPath+'" -StopPath "'+$TelemetryStopPath+'"'
   if(Test-Path $TelemetryManifestInput -PathType Leaf){$args+=' -ManifestPath "'+$TelemetryManifestInput+'"'}
-  $proc=Start-Process -FilePath $exe -ArgumentList $args -WindowStyle Hidden -PassThru
+  try{$proc=Start-Process -FilePath $exe -ArgumentList $args -WindowStyle Hidden -PassThru}catch{Remove-Item $TelemetryStatusPath -Force -ErrorAction SilentlyContinue;throw}
   Start-Sleep -Milliseconds 300
-  $status=Read-TelemetryStatus;$status|Add-Member -NotePropertyName manifest_received -NotePropertyValue $manifestReceived -Force;if([string]$status.state -eq 'stopped'){return @{state='starting';message='Logger process is starting.';pid=$proc.Id;rate_hz=$RateHz;samples=0;output_directory=$TelemetryOutput;manifest_received=$manifestReceived}}
+  $status=Read-TelemetryStatus;$status|Add-Member -NotePropertyName manifest_received -NotePropertyValue $manifestReceived -Force
+  if([string]$status.state -eq 'starting' -and ![int]$status.pid){$status.pid=$proc.Id;Write-Utf8 $TelemetryStatusPath ($status|ConvertTo-Json -Depth 5)}
   return $status
 }
 function Stop-Telemetry{

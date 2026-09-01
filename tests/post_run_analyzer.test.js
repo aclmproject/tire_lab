@@ -44,3 +44,47 @@ test("deterministic analyzer reproduces the actual GT40 run", { skip: !fs.exists
   assert.equal(report.wear.status, "STORE, DO NOT FIT");
   assert.match(report.markdown, /does not automatically declare historical thermal accuracy/i);
 });
+
+test("post-run analyzer keeps the canonical laps 2-5 pressure screen separate from later laps", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "aclm-post-run-"));
+  const csv = path.join(directory, "screen.csv");
+  const manifest = path.join(directory, "screen.manifest.json");
+  const wheels = ["fl", "fr", "rl", "rr"];
+  const headers = ["timestamp_utc", "elapsed_ms", "car", "track", "compound", "lap", "lap_time_ms", "normalized_track_position", "tire_set_distance_m", "speed_kmh", "air_temp_c", "road_temp_c", "aid_tire_rate", "accg_lat", "accg_long"];
+  for (const wheel of wheels) headers.push(`pressure_psi_${wheel}`, `core_temp_c_${wheel}`, `temp_inner_c_${wheel}`, `temp_middle_c_${wheel}`, `temp_outer_c_${wheel}`, `wear_raw_${wheel}`, `wheel_load_n_${wheel}`, `wheel_slip_raw_${wheel}`, `dirty_raw_${wheel}`);
+  const rows = [];
+  let sample = 0;
+  for (let lap = 0; lap <= 6; lap += 1) {
+    for (let point = 0; point <= 100; point += 1) {
+      const base = { timestamp_utc: new Date(Date.UTC(2026, 8, 1, 0, 0, sample / 10)).toISOString(), elapsed_ms: sample * 100, car: "ks_porsche_917_tires", track: "ks_monza66", compound: "Dry Endurance (D)", lap, lap_time_ms: point * 900, normalized_track_position: point / 100, tire_set_distance_m: sample * 8, speed_kmh: lap ? 220 : 80, air_temp_c: 26, road_temp_c: 37, aid_tire_rate: 0, accg_lat: 0, accg_long: 0 };
+      for (const wheel of wheels) {
+        const ideal = wheel.startsWith("f") ? 32 : 38;
+        base[`pressure_psi_${wheel}`] = lap === 6 ? ideal + 4 : ideal;
+        base[`core_temp_c_${wheel}`] = 50;
+        base[`temp_inner_c_${wheel}`] = 55;
+        base[`temp_middle_c_${wheel}`] = 55;
+        base[`temp_outer_c_${wheel}`] = 55;
+        base[`wear_raw_${wheel}`] = 100;
+        base[`wheel_load_n_${wheel}`] = 2000;
+        base[`wheel_slip_raw_${wheel}`] = 0;
+        base[`dirty_raw_${wheel}`] = 0;
+      }
+      rows.push(headers.map((header) => base[header]).join(","));
+      sample += 1;
+    }
+  }
+  fs.writeFileSync(csv, `${headers.join(",")}\n${rows.join("\n")}\n`);
+  fs.writeFileSync(manifest, JSON.stringify({
+    activeInstalledPhysics: { tyresIniSha256: "same", activePressureIdealFrontPsi: 32, activePressureIdealRearPsi: 38, activeCompoundIdentity: { name: "Dry Endurance", shortName: "D" } },
+    generatedConfiguration: { tireFileSha256: "same" }
+  }));
+  const report = analyzePostRun(csv, manifest, { fixtureId: "SYNTHETIC-SCREEN" });
+  assert.equal(report.identity.compoundIdentity, "MATCH");
+  assert.deepEqual(report.pressure.shortScreen.lapWindow, [2, 3, 4, 5]);
+  assert.equal(report.pressure.shortScreen.status, "AVAILABLE");
+  assert.equal(report.pressure.shortScreen.overallClosureClassification, "PASS");
+  close(report.pressure.shortScreen.perWheel.fl.meanPsi, 32, 1e-9, "canonical FL pressure");
+  assert.notEqual(report.pressure.perWheel.fl.latePsi, report.pressure.shortScreen.perWheel.fl.meanPsi);
+  assert.match(report.markdown, /does not replace the canonical short-screen window/i);
+  fs.rmSync(directory, { recursive: true, force: true });
+});
