@@ -8,6 +8,19 @@ let importedPressureReference={};
 let importedTireReference={};
 let importedSetupPressureControls={};
 let lastThermalCalibrations=[];
+let verifiedImportedTelemetryHandoff=null;
+const TELEMETRY_HANDOFF_METADATA_IDS=new Set(["nativeTelemetryRate","pSelectedF","pSelectedR","telemetryRequestedAir","telemetryRequestedRoad","telemetryWearMultiplier","telemetryRequestedFuelRate","telemetryRequestedDamageRate","telemetryStartingFuel","telemetrySessionBlankets"]);
+
+function clearVerifiedImportedTelemetryHandoff(){verifiedImportedTelemetryHandoff=null;}
+function withCurrentRunMetadata(baseManifest){
+ const manifest=JSON.parse(JSON.stringify(baseManifest));
+ const requestedCondition={airTemperatureC:n("telemetryRequestedAir")||null,roadTemperatureC:n("telemetryRequestedRoad")||null,wearMultiplier:optionalNumber("telemetryWearMultiplier")??null,fuelRate:optionalNumber("telemetryRequestedFuelRate")??null,damageRate:optionalNumber("telemetryRequestedDamageRate")??null,startingFuelLiters:optionalNumber("telemetryStartingFuel")??null,sessionBlanketsEnabled:$("telemetrySessionBlankets")?.checked===true};
+ manifest.requestedCondition=requestedCondition;manifest.userRequestedCondition=requestedCondition;
+ manifest.requestedTyreWearMultiplier=requestedCondition.wearMultiplier;manifest.requestedWearMultiplier=requestedCondition.wearMultiplier;manifest.fuelRate=requestedCondition.fuelRate;manifest.damageRate=requestedCondition.damageRate;manifest.startingFuel=requestedCondition.startingFuelLiters;manifest.requestedSessionBlanketsEnabled=requestedCondition.sessionBlanketsEnabled;manifest.sessionBlanketStatus={enabled:requestedCondition.sessionBlanketsEnabled,source:"user-requested session state; independent of BLANKETS_TEMP"};
+ const selected={front:optionalNumber("pSelectedF")??null,rear:optionalNumber("pSelectedR")??null};
+ for(const entry of manifest.pressureReference?.axleReport||[]){if(entry.axle in selected)entry.selectedSetupColdPressurePsi=selected[entry.axle];}
+ return manifest;
+}
 
 const BASE_LAT=[1.98,1.88317305,1.7833464,1.68138135,1.5781392,1.47448125,1.3712688,1.26936315,1.1696256,1.07291745,0.9801,0.89203455,0.8095824,0.73360485,0.6649632,0.60451875];
 const BASE_LON=[1.9404,1.846916379,1.753112592,1.659541653,1.566756576,1.475310375,1.385756064,1.298646657,1.214535168,1.133974611,1.057518,0.985718349,0.919128672,0.858301983,0.803791296,0.756149625];
@@ -1299,6 +1312,16 @@ async function readFolderPhysics(fileList){
 function fileByBase(files,bn){const key=Object.keys(files).find(k=>basename(k)===bn.toLowerCase()); return key?{path:key,text:files[key]}:null;}
 function allByBase(files,bn){return Object.keys(files).filter(k=>basename(k)===bn.toLowerCase()).map(k=>({path:k,text:files[k]}));}
 function importedRow(label,value,source){return `<tr><td>${escapeHtml(label)}</td><td>${escapeHtml(value)}</td><td>${escapeHtml(source)}</td></tr>`;}
+function verifiedTelemetryHandoffFromImport(files){
+ const manifestFile=fileByBase(files,"ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"),tyreFile=fileByBase(files,"tyres.ini");
+ if(!manifestFile||!tyreFile)return null;
+ let manifest;
+ try{manifest=JSON.parse(manifestFile.text);}catch{throw new Error("Embedded telemetry manifest is not valid JSON.");}
+ if(manifest.schema!=="ACLM telemetry calibration manifest 1.1"||manifest.appVersion!==ACLM_APP_VERSION)throw new Error(`Embedded telemetry manifest is not compatible with Tire Lab v${ACLM_APP_VERSION}.`);
+ const actual=window.ACLMIntegrity.sha256(tyreFile.text),expected=String(manifest.tireFileSha256||"").toLowerCase();
+ if(!/^[a-f0-9]{64}$/.test(expected)||actual!==expected)throw new Error("Embedded telemetry manifest does not match the imported tyres.ini SHA-256.");
+ return {manifest:JSON.parse(JSON.stringify(manifest)),manifestPath:manifestFile.path,tyrePath:tyreFile.path,tireFileSha256:actual};
+}
 
 
 let lastImportLabel="";
@@ -1538,7 +1561,9 @@ function applyResearchChoices(){
 }
 
 function populateFromPhysics(files,label='import'){
- clearImportedMarks(); clearResearchChoices(); importedPhysics=files; importedPressureReference={}; importedTireReference={}; importedSetupPressureControls={}; lastImportLabel=label; const rows=[]; const notes=[]; let populated=0;
+ clearVerifiedImportedTelemetryHandoff();
+ clearImportedMarks(); clearResearchChoices(); importedPhysics=files; importedPressureReference={}; importedTireReference={}; importedSetupPressureControls={}; lastImportLabel=label; const rows=[]; const notes=[]; let populated=0; let importedTelemetryHandoff=null;
+ try{importedTelemetryHandoff=verifiedTelemetryHandoffFromImport(files);}catch(e){notes.push(`Telemetry handoff was not trusted: ${e.message}`);}
  $('preset').value='auto'; activeHistoricalContext=null; historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();updateHistoricalCompoundLabels(); renderHistoricalFamilySummary('Awaiting researched racing class.');
  // New car import must not inherit the previous car's historical profile.
  $('car').value='';
@@ -1619,19 +1644,29 @@ function populateFromPhysics(files,label='import'){
  $('importStatus').innerHTML=`<span class="ok"><b>Imported.</b></span> ${populated} direct Tire Lab values populated. Car/year identity is separated from historical class/supplier selection.`;
  updateOutputName();
  refreshSolvedPressures();
- // Rebuild preview immediately using imported values.
- try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
  if($('car').value && applyCuratedKnowledgeProfile(false)){
    $('researchStatus').innerHTML=`<span class="ok"><b>Car identified + curated knowledge applied:</b></span> ${escapeHtml(v('car'))}${v('year')?`, ${escapeHtml(v('year'))}`:''}.`;
  } else if(!$('year').value && $('car').value) setTimeout(()=>identifyImportedYear(),80);
  else if($('car').value) $('researchStatus').innerHTML=`<span class="ok"><b>Car identified:</b></span> ${escapeHtml(v('car'))}${v('year')?`, ${escapeHtml(v('year'))}`:''}. Class and supplier remain General/Unknown until researched.`;
+ // Curated identity can change the family, class, compounds and generated hash.
+ // Rebuild only after that transition so the preview cannot retain the prior car.
+ try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
+ if(importedTelemetryHandoff){
+   verifiedImportedTelemetryHandoff=importedTelemetryHandoff;
+   $('importStatus').innerHTML+=` <span class="ok"><b>Embedded telemetry identity verified:</b></span> tyres.ini SHA-256 ${escapeHtml(importedTelemetryHandoff.tireFileSha256.slice(0,12))}…`;
+ }
 }
 async function doZipImport(){const f=$('physicsZip').files?.[0]; if(!f){$('importStatus').innerHTML='<span class="warning">Choose a ZIP first.</span>';return;} $('importStatus').textContent='Reading ZIP…'; try{populateFromPhysics(await readZipPhysics(f),f.name);}catch(e){$('importStatus').innerHTML=`<span class="error">${escapeHtml(e.message)}</span>`;}}
 async function doFolderImport(){const fs=$('physicsFolder').files; if(!fs?.length){$('importStatus').innerHTML='<span class="warning">Choose a data/car folder first.</span>';return;} $('importStatus').textContent='Reading folder…'; try{populateFromPhysics(await readFolderPhysics(fs),'selected folder');}catch(e){$('importStatus').innerHTML=`<span class="error">${escapeHtml(e.message)}</span>`;}}
 $('importZip').addEventListener('click',doZipImport);$('importFolder').addEventListener('click',doFolderImport);
 $('researchProfile').addEventListener('click',()=>researchHistoricalProfile());
 $('applyResearchChoice').addEventListener('click',applyResearchChoices);
-$('clearImport').addEventListener('click',()=>{importedPhysics={};importedSetupPressureControls={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();renderHistoricalCoherence();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';});
+$('clearImport').addEventListener('click',()=>{clearVerifiedImportedTelemetryHandoff();importedPhysics={};importedSetupPressureControls={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();renderHistoricalCoherence();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';});
+
+// An embedded manifest is authoritative only for the unedited TirePack that supplied it.
+// Any physics/profile edit returns handoff to a fresh build; run metadata is overlaid safely.
+for(const eventName of ["input","change"]){document.addEventListener(eventName,event=>{if(!TELEMETRY_HANDOFF_METADATA_IDS.has(event.target?.id))clearVerifiedImportedTelemetryHandoff();},true);}
+for(const id of ["researchProfile","applyResearchChoice","resetCompoundNames","reset","applyTestProfile"]){$(id)?.addEventListener("click",clearVerifiedImportedTelemetryHandoff,true);}
 
 // Offline support only. Tire Lab uses one version-aware launcher and does not create additional browser-app shortcuts.
 if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
@@ -1786,7 +1821,10 @@ $("importKnowledge").addEventListener("click",importKnowledgePackage);
 setTimeout(loadCurrentKnowledge,250);
 window.ACLMCurrentTelemetryManifest=()=>{
  try{
-  if(!generatedFiles["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]){generatedFiles=build();const result=validate(generatedFiles);if(result.errors?.length)throw new Error("Generate/validation must pass before telemetry starts: "+result.errors.join(" "));renderValidation(result);renderFiles(generatedFiles);}
+  if(verifiedImportedTelemetryHandoff)return withCurrentRunMetadata(verifiedImportedTelemetryHandoff.manifest);
+  // Never reuse generatedFiles here: it may describe a car selected before the
+  // current import/profile transition. Telemetry must receive a just-built identity.
+  generatedFiles=build();const result=validate(generatedFiles);if(result.errors?.length)throw new Error("Generate/validation must pass before telemetry starts: "+result.errors.join(" "));renderValidation(result);renderFiles(generatedFiles);
   const manifest=JSON.parse(generatedFiles["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]);if(!manifest?.appVersion)throw new Error("Generated telemetry manifest is incomplete.");return manifest;
  }catch(error){throw new Error("Telemetry manifest handoff failed: "+error.message);}
 };
