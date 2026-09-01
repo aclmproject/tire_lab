@@ -1,48 +1,48 @@
 # ACLM Historical Tire Lab — current project checkpoint
 
-Checkpoint basis: application v0.10.2, Knowledge v1.7.1, branch `codex/csp-thermal-v2-handoff-persistence` tracking `origin/codex/csp-thermal-v2`.
+Checkpoint basis: application v0.10.2, Knowledge v1.7.1, branch `codex/csp-thermal-v2` from verified remote base `5ba73d02917d8843f188fed7be6b52c58b2d28f1`.
 
-## Repository state
+## Completed software work
 
-- Remote base: `27ab1b5` (`fix: fail closed on telemetry identity`).
-- Local feature commit: `12a4eb8` (`Preserve 917K pressure A/B and harden telemetry starts`).
-- The local branch is one commit ahead of the remote base before this documentation handoff.
-- The feature commit prevents duplicate native-logger starts, persists pressure A/B run intent, and preserves the 917K A/B evidence and canonical decision window.
-- No tire-physics, Thermal V2, wear, or Knowledge numerical coefficient changed.
-- This Linux workspace cannot authenticate to GitHub and cannot run the required PowerShell canonical-installer pipeline. The authenticated Windows Desktop must push and certify the replacement installer.
+- The post-run analyzer prefers valid literal AC laps 2–5 and can fail-safely rebase a fresh pit-start capture whose AC lap counter was reused. It reports relative and raw AC lap mappings plus the selection basis.
+- Ambiguous, mid-track, mixed, stale, compound-mismatched or physics-hash-mismatched captures remain `INCOMPLETE/UNRESOLVED`.
+- Missing pressure values remain null; they cannot produce artificial −32/−38 psi failures.
+- Per-lap distance is a current-tire-set lap span. Logger-cumulative, session, stint and tire-set distance bases remain separately labelled.
+- The TirePack handoff now carries stable canonical IDs where identity is proven, visible pressure role/ID/corrections, intent-completeness warnings and session-start lap advice.
+- Duplicate-start protection and `physicsHashMatch=true` fail-closed behavior remain mandatory.
+
+No tire-physics, pressure/compliance, Thermal V2, wear, LUT or Knowledge numerical value changed.
 
 ## Porsche 917K result
 
-- Generated-vs-active identity was resolved before driving; both accepted runs record active/generated `tyres.ini` SHA-256 `2a710b3333ddfc78acdac0b930959476b2cd0fe4950eab045c0e63da8a8742b4`.
-- Controlled AI-reference Monza 1966 baseline A and corrected B are complete.
-- Canonical decision window: complete laps 2–5; lap 1 warm-up.
+- Every accepted run uses active/generated `tyres.ini` SHA-256 `2a710b3333ddfc78acdac0b930959476b2cd0fe4950eab045c0e63da8a8742b4` with `physicsHashMatch=true`.
 - Baseline A: `FAIL`.
-- Corrected B: `REVIEW`; LF +0.365 psi and LR +0.398 psi pass, RF +0.529 psi and RR +0.616 psi review.
-- The duplicate `04:48:55` capture is excluded; `04:48:54` is authoritative for that physical run.
-- Preserve the canonical TirePack. Do not retune physics. A probable final confirmation setup is 30 psi front / 35 psi rear at all four respective axle corners, but confirmation must use the intent-persisting build.
-- Thermal remains unresolved; wear remains **STORE, DO NOT FIT**.
+- Corrected B: `REVIEW` (staggered); LF/LR pass, RF/RR narrowly review. `04:48:54` is authoritative and `04:48:55` remains excluded as a duplicate.
+- The 30 psi front / 35 psi rear confirmation C uses literal AC laps 2–5 and returns `REVIEW`.
+- Independent C2 is a fresh capture whose AC counter began at lap 7. Raw lap 7 is excluded pit/out-lap, raw lap 8 is relative warm-up lap 1, and raw laps 9–12 are relative decision laps 2–5. It returns `REVIEW` and agrees with C within 0.023 psi.
+- C/C2 prove 30F/35R is reproducibly high on the loaded left tires. The best balanced whole-psi-grid inference is 29F/34R at all axle corners, setup-only.
+- The 917K short-pressure phase is complete. Request no further 917K driving now. Thermal remains **UNRESOLVED** and wear remains **STORE, DO NOT FIT**.
 
 ## Four-host program
 
-The cross-ply set remains Maserati 250F + Ford GT40 Mk II + Porsche 917K + Ford Escort RS1600. See `docs/CROSS_PLY_FOUR_HOST_PROGRAM.md`.
+The fixed set remains Maserati 250F + Ford GT40 Mk II + Porsche 917K + Ford Escort RS1600.
 
-- 250F: CLS102/FAM002 taxonomy resolved; canonical pack verified; first hash-matched live baseline pending.
-- GT40: long-run data retained, but generated-vs-active `STALE/HASH_MISMATCH` blocks fitting or further interpretation.
-- 917K: hash-matched host-specific A/B complete; no shared retune.
+- 250F: CLS102/FAM002 canonical pack verified; the first hash-matched 24F/24R AI baseline is the next live test.
+- GT40: evidence retained, but generated-vs-active `STALE/HASH_MISMATCH` blocks fitting or new interpretation.
+- 917K: host-specific short-pressure phase complete; no shared retune.
 - Escort: same-tire A/B and AI fixture retained; thermal/wear unresolved.
 
-## Exact Desktop continuation
+## Research state
 
-1. Push the local handoff commit(s) to `origin/codex/csp-thermal-v2` without force.
-2. Run the complete Node suite in the authenticated checkout, including canonical ZIP tests.
-3. Run `tools/Build-CanonicalInstaller.ps1` and `tests/Test-CanonicalPackage.ps1` on Windows.
-4. Install that one replacement v0.10.2 build.
-5. Confirm the logger reports active installed physics hash `MATCH` before any driving.
-6. Next driving choice: one final 917K 30F/35R pressure confirmation, or the first 250F 24F/24R baseline. Do not start both without separately complete manifests.
+The overnight M0–M5 and weakness-corpus outputs are inventoried in `docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md`. Accepted material remains staged with stable provenance; abstract-only, incomplete and temporally unsafe material remains deferred or quarantined. Knowledge v1.7.1 and every production numeric collection remain frozen.
+
+## Next unfinished item
+
+Run the canonical Maserati 250F live card only after installing the certified v0.10.2 build and the canonical TirePack into the car. Exit AC completely, launch a fresh session, import the installed car, select AI_REFERENCE/baseline, verify `physicsHashMatch=true`, and collect the 24 psi all-corner short screen. Do not begin another 917K run.
 
 ## Guardrails
 
 - No driving or calibration use unless `physicsHashMatch=true`.
-- No thermal, wear, pressure-compliance, or production Knowledge numeric retune.
-- Preserve raw CSVs and manifests, requested versus observed conditions, tire identity, A/B role, intended corrections, and duplicate-capture exclusions.
+- No thermal, wear, pressure/compliance or production Knowledge numeric retune.
+- Preserve raw CSVs/manifests, requested versus observed conditions, identity, A/B role, corrections and duplicate exclusions.
 - Vehicle/year supplier evidence must not become a universal family/class supplier.

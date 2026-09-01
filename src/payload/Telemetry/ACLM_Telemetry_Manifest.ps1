@@ -72,6 +72,23 @@ function Get-ACLMActiveInstalledPhysics {
   }
 }
 
+function Get-ACLMPressureIntentAssessment {
+  param($PressureAB)
+  $role=if($PressureAB-and$PressureAB.role){[string]$PressureAB.role}else{'unclassified'}
+  $tirePackId=if($PressureAB-and$PressureAB.tirePackId){([string]$PressureAB.tirePackId).Trim()}else{''}
+  $hasCorrection=$false
+  foreach($wheel in @('fl','fr','rl','rr')){
+    try{if([Math]::Abs([double]$PressureAB.coldPressureAdjustmentPsi.$wheel)-gt 0.000000001){$hasCorrection=$true}}catch{}
+  }
+  if(@('unclassified','baseline','corrected') -notcontains $role){return [pscustomobject][ordered]@{status='INTENT_INCOMPLETE';warning='Unsupported pressure-test role.'}}
+  if($role-eq'unclassified'){
+    if($tirePackId-or$hasCorrection){return [pscustomobject][ordered]@{status='INTENT_INCOMPLETE';warning='A TirePack ID or pressure correction is present, but the controlled pressure-test role is unclassified.'}}
+    return [pscustomobject][ordered]@{status='UNCLASSIFIED_GENERIC_TELEMETRY';warning='Pressure-test role is unclassified. Generic telemetry is retained, but it cannot be promoted as a controlled pressure screen.'}
+  }
+  if(!$tirePackId){return [pscustomobject][ordered]@{status='INTENT_INCOMPLETE';warning='Controlled pressure role is declared, but the TirePack ID is blank.'}}
+  return [pscustomobject][ordered]@{status='COMPLETE';warning=$null}
+}
+
 function Merge-ACLMRunManifest {
   param($Generated,$ActiveInstalledPhysics,$Observed,$Runtime,[string]$FallbackVersion='0.10.2')
   if($null-eq$Generated){$Generated=Read-ACLMGeneratedManifest -FallbackVersion $FallbackVersion}
@@ -96,5 +113,7 @@ function Merge-ACLMRunManifest {
   if($Runtime.track){$result.track=$Runtime.track;$result.trackIdentitySource='LOGGER_RUNTIME_OBSERVED'}
   if($Observed.initialCoreTemperatureC){$result.observedStartingThermalState=[pscustomobject][ordered]@{temperatureC=$Observed.initialCoreTemperatureC;source='DIRECT_TELEMETRY';authority='recorded Assetto Corsa physics shared memory'}}
   if($null-ne$Observed.rawAidTireRate){$result.rawAidTireRate=$Observed.rawAidTireRate;$result.aidTireRateInterpretation='UNKNOWN';$result.aidTireRateMeaning='A raw value of 0 does not mean tire wear was disabled.'}
+  $intent=Get-ACLMPressureIntentAssessment $Generated.pressureAB
+  $result.pressureABIntentStatus=$intent.status;$result.pressureABIntentWarning=$intent.warning
   return [pscustomobject]$result
 }

@@ -30,6 +30,9 @@ test("250F live card fails closed and preserves the canonical pressure screen", 
   assert.match(card, /AI_REFERENCE/);
   assert.match(card, /complete laps 2–5/i);
   assert.match(card, /Warmers requested: OFF/);
+  assert.match(card, /Exit Assetto Corsa completely/);
+  assert.match(card, /fresh AC session/);
+  assert.match(card, /Import the newly installed `ks_maserati_250f_6c` car into Tire Lab/);
   assert.match(card, /Thermal and wear channels are \*\*STORE, DO NOT FIT\*\*/);
   assert.match(card, /0fa34b08f0f3c67f4f2fdf5542cddb42bbc7b348c14c7126b94d8a695456f10a/);
 });
@@ -51,8 +54,20 @@ test("durable checkpoints preserve completed 917K result and frozen Knowledge au
   assert.match(current, /Baseline A: `FAIL`/);
   assert.match(current, /Corrected B: `REVIEW`/);
   assert.match(current, /30 psi front \/ 35 psi rear/);
+  assert.match(current, /29F\/34R/);
+  assert.match(current, /Request no further 917K driving now/);
   assert.match(current, /No driving or calibration use unless `physicsHashMatch=true`/);
   assert.match(research, /Knowledge version: v1\.7\.1/);
   assert.match(research, /Families, generator priors, measurements, scaling rules, and all production numerical collections are frozen unchanged from v1\.7\.0/);
   assert.match(research, /250F \+ GT40 \+ 917K \+ Escort/);
+  assert.match(research, /OVERNIGHT_RESEARCH_INGEST_2026-09-01/);
+});
+
+test("overnight research ingest remains evidence-staged and numerically frozen", () => {
+  const ingest = read("docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md");
+  assert.match(ingest, /30 targeted full texts/);
+  assert.match(ingest, /10 measurements, 18 observations, 10 scaling rules and 8 methodology records/);
+  assert.match(ingest, /443 temporal-label conflicts/);
+  assert.match(ingest, /No candidate Knowledge release is created/);
+  assert.match(ingest, /Production families, classes, measurements, generator priors and scaling numerics are unchanged/);
 });

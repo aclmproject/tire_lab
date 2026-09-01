@@ -1,6 +1,6 @@
 # Porsche 917K — extended thermal observation
 
-Status: initial hash-matched observation completed. Thirteen complete timed laps were available; all four core and pressure slopes remained above the engineering stability thresholds. Classification: `NOT_STABILIZED / HISTORICAL THERMAL ACCURACY UNRESOLVED`.
+Status: **HOLD — no new 917K driving requested.** The initial hash-matched observation had thirteen complete timed laps; all four core and pressure slopes remained above the engineering stability thresholds. Classification: `NOT_STABILIZED / HISTORICAL THERMAL ACCURACY UNRESOLVED`.
 
 - Preserve the same generated tire, pressure role, AI driver, Kunos Monza 1966 track, weather, fixed 30 L starting fuel, fuel-consumption OFF, damage OFF, blankets OFF, and 1× wear settings.
 - Continue long enough to obtain at least ten complete late laps suitable for rolling-slope analysis.

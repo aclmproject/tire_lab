@@ -36,12 +36,22 @@ function loadCsv(file) {
 }
 
 function number(row, key) {
-  const value = Number(row?.[key]);
+  const raw = row?.[key];
+  if (raw === null || raw === undefined || String(raw).trim() === "") return null;
+  const value = Number(raw);
   return Number.isFinite(value) ? value : null;
 }
 
 function finite(values) { return values.filter(Number.isFinite); }
 function mean(values) { const a = finite(values); return a.length ? a.reduce((sum, value) => sum + value, 0) / a.length : null; }
+function difference(left, right) { return Number.isFinite(left) && Number.isFinite(right) ? left - right : null; }
+function coefficientOfVariation(values) {
+  const usable = finite(values);
+  if (!usable.length) return null;
+  const average = mean(usable);
+  if (!Number.isFinite(average) || average === 0) return null;
+  return Math.sqrt(mean(usable.map((value) => (value - average) ** 2))) / Math.abs(average);
+}
 function quantile(values, q) {
   const a = finite(values).sort((left, right) => left - right);
   if (!a.length) return null;
@@ -76,23 +86,29 @@ function overallPressureClassification(perWheel) {
   return "UNRESOLVED";
 }
 
-function pressureWindowSummary(rows, lapWindow, idealFront, idealRear) {
-  const selected = rows.filter((row) => lapWindow.includes(number(row, "lap")));
+function pressureWindowSummary(rows, rawAcLapWindow, idealFront, idealRear, selection = {}) {
+  const selected = rows.filter((row) => rawAcLapWindow.includes(number(row, "lap")));
   const perWheel = Object.fromEntries(WHEELS.map((wheel) => {
     const targetPsi = wheel.startsWith("f") ? idealFront : idealRear;
     const meanPsi = mean(selected.map((row) => number(row, `pressure_psi_${wheel}`)));
-    const errorPsi = Number.isFinite(meanPsi) ? meanPsi - targetPsi : null;
+    const errorPsi = difference(meanPsi, targetPsi);
     return [wheel, { meanPsi, targetPsi, errorPsi, classification: classifyPressure(errorPsi) }];
   }));
   const frontPsi = mean([perWheel.fl.meanPsi, perWheel.fr.meanPsi]);
   const rearPsi = mean([perWheel.rl.meanPsi, perWheel.rr.meanPsi]);
   return {
-    lapWindow,
+    lapWindow: selection.relativeLapWindow || rawAcLapWindow,
+    relativeLapWindow: selection.relativeLapWindow || rawAcLapWindow,
+    rawAcLapWindow,
+    selectionBasis: selection.selectionBasis || "UNRESOLVED",
+    lapMapping: selection.lapMapping || rawAcLapWindow.map((lap) => ({ relativeLap: lap, rawAcLap: lap })),
+    excludedRawAcLaps: selection.excludedRawAcLaps || [],
+    selectionReasons: selection.reasons || [],
     samples: selected.length,
     perWheel,
     axles: {
-      front: { meanPsi: frontPsi, targetPsi: idealFront, errorPsi: frontPsi - idealFront, classification: classifyPressure(frontPsi - idealFront) },
-      rear: { meanPsi: rearPsi, targetPsi: idealRear, errorPsi: rearPsi - idealRear, classification: classifyPressure(rearPsi - idealRear) }
+      front: { meanPsi: frontPsi, targetPsi: idealFront, errorPsi: difference(frontPsi, idealFront), classification: classifyPressure(difference(frontPsi, idealFront)) },
+      rear: { meanPsi: rearPsi, targetPsi: idealRear, errorPsi: difference(rearPsi, idealRear), classification: classifyPressure(difference(rearPsi, idealRear)) }
     },
     overallClosureClassification: overallPressureClassification(perWheel)
   };
@@ -115,19 +131,110 @@ function lapSummary(rows, completeLaps) {
   const complete = new Set(completeLaps);
   return [...groups.entries()].sort(([a], [b]) => a - b).map(([lap, samples]) => {
     const positions = finite(samples.map((row) => number(row, "normalized_track_position")));
+    const tireSetDistances = finite(samples.map((row) => number(row, "tire_set_distance_m")));
+    const sessionDistances = finite(samples.map((row) => number(row, "session_distance_m")));
+    const loggerDistances = finite(samples.map((row) => number(row, "logger_cumulative_distance_m")));
+    const lapDistanceKm = tireSetDistances.length ? (Math.max(...tireSetDistances) - Math.min(...tireSetDistances)) / 1000 : null;
     return {
       lap,
       complete: complete.has(lap),
       samples: samples.length,
       coverage: positions.length ? { min: Math.min(...positions), max: Math.max(...positions) } : null,
       lapTimeMs: Math.max(...finite(samples.map((row) => number(row, "lap_time_ms"))).concat([0])),
-      distanceKm: mean(samples.map((row) => number(row, "tire_set_distance_m"))) / 1000,
+      distanceKm: lapDistanceKm,
+      distanceMetric: "LAP_SPAN_FROM_CURRENT_TIRE_SET_DISTANCE",
+      lapDistanceKm,
+      tireSetDistanceAtLapStartKm: tireSetDistances.length ? tireSetDistances[0] / 1000 : null,
+      tireSetDistanceAtLapEndKm: tireSetDistances.length ? tireSetDistances.at(-1) / 1000 : null,
+      sessionDistanceAtLapStartKm: sessionDistances.length ? sessionDistances[0] / 1000 : null,
+      sessionDistanceAtLapEndKm: sessionDistances.length ? sessionDistances.at(-1) / 1000 : null,
+      loggerCumulativeAtLapStartKm: loggerDistances.length ? loggerDistances[0] / 1000 : null,
+      loggerCumulativeAtLapEndKm: loggerDistances.length ? loggerDistances.at(-1) / 1000 : null,
+      pitSamples: samples.filter((row) => number(row, "in_pit") === 1).length,
       speedKmh: stats(samples.map((row) => number(row, "speed_kmh"))),
       pressurePsi: Object.fromEntries(WHEELS.map((wheel) => [wheel, mean(samples.map((row) => number(row, `pressure_psi_${wheel}`)))])),
       coreC: Object.fromEntries(WHEELS.map((wheel) => [wheel, mean(samples.map((row) => number(row, `core_temp_c_${wheel}`)))])),
       wearRaw: Object.fromEntries(WHEELS.map((wheel) => [wheel, mean(samples.map((row) => number(row, `wear_raw_${wheel}`)))]))
     };
   });
+}
+
+function monotonicallyNondecreasing(rows, key, tolerance = 1) {
+  let previous = null;
+  for (const row of rows) {
+    const value = number(row, key);
+    if (!Number.isFinite(value)) return false;
+    if (Number.isFinite(previous) && value < previous - tolerance) return false;
+    previous = value;
+  }
+  return true;
+}
+
+function resolvePressureWindow(rows, laps, completeLaps, manifest, identity, csvCompounds) {
+  const relativeLapWindow = [2, 3, 4, 5];
+  const identityProven = manifest?.physicsHashMatch === true && identity.generatedVsActive === "MATCH" && identity.compoundIdentity === "MATCH";
+  const cars = [...new Set(rows.map((row) => String(row.car || "").trim()).filter(Boolean))];
+  const tracks = [...new Set(rows.map((row) => String(row.track || "").trim()).filter(Boolean))];
+  const activeCar = manifest?.activeInstalledPhysics?.carId || manifest?.observedRuntimeState?.car || null;
+  const coherentIdentity = identityProven && cars.length === 1 && tracks.length === 1 && csvCompounds.length === 1 && (!activeCar || activeCar === cars[0]);
+  const literalLaps = relativeLapWindow.map((lap) => laps.find((item) => item.lap === lap));
+  const literalAvailable = literalLaps.every((lap) => lap?.complete && lap.pitSamples === 0 && lap.lapTimeMs > 0 && Number.isFinite(lap.lapDistanceKm) && lap.lapDistanceKm > 0);
+  const literalTimeCv = coefficientOfVariation(literalLaps.map((lap) => lap?.lapTimeMs));
+  const literalDistanceCv = coefficientOfVariation(literalLaps.map((lap) => lap?.lapDistanceKm));
+  const literalCoherent = literalAvailable && Number.isFinite(literalTimeCv) && literalTimeCv <= 0.15 && Number.isFinite(literalDistanceCv) && literalDistanceCv <= 0.15;
+  if (literalCoherent && coherentIdentity) {
+    return {
+      available: true,
+      selectionBasis: "LITERAL_AC_LAPS",
+      relativeLapWindow,
+      rawAcLapWindow: relativeLapWindow,
+      lapMapping: relativeLapWindow.map((lap) => ({ relativeLap: lap, rawAcLap: lap })),
+      excludedRawAcLaps: [1],
+      reasons: ["Complete literal AC laps 2-5 are present and generated-vs-active identity is proven."]
+    };
+  }
+
+  const reasons = [];
+  if (!identityProven) reasons.push("physicsHashMatch=true plus matching generated/active tire and compound identity were not proven");
+  if (cars.length !== 1 || tracks.length !== 1 || csvCompounds.length !== 1) reasons.push("car, track or compound changes make the capture mixed-session or ambiguous");
+  if (activeCar && cars.length === 1 && activeCar !== cars[0]) reasons.push("manifest active car does not match the CSV car");
+  const firstRow = rows[0];
+  const rawStartLap = number(firstRow, "lap");
+  const firstLap = laps.find((lap) => lap.lap === rawStartLap);
+  const startInPit = number(firstRow, "in_pit") === 1;
+  const startStationary = Number.isFinite(number(firstRow, "speed_kmh")) && Math.abs(number(firstRow, "speed_kmh")) <= 5;
+  const startTireDistance = number(firstRow, "tire_set_distance_m");
+  const startSessionDistance = number(firstRow, "session_distance_m");
+  const distanceReset = Number.isFinite(startTireDistance) && Number.isFinite(startSessionDistance) && startTireDistance <= 50 && startSessionDistance <= 50;
+  if (!startInPit || !startStationary) reasons.push("logger did not demonstrably start stationary in the pits");
+  if (!distanceReset) reasons.push("fresh current-tire-set and session distance reset was not proven");
+  if (!Number.isInteger(rawStartLap) || rawStartLap <= 1) reasons.push("AC lap counter does not require a session-relative rebase");
+  if (!firstLap || firstLap.pitSamples < 1) reasons.push("first recorded AC lap is not a provable pit/out-lap segment");
+  if (!monotonicallyNondecreasing(rows, "session_distance_m") || !monotonicallyNondecreasing(rows, "tire_set_distance_m")) reasons.push("session or tire-set distance resets within the capture");
+
+  const useful = laps.filter((lap) => lap.complete && lap.lap > rawStartLap && lap.pitSamples === 0 && lap.lapTimeMs > 0 && Number.isFinite(lap.lapDistanceKm) && lap.lapDistanceKm > 0);
+  const firstFive = useful.slice(0, 5);
+  if (firstFive.length < 5) reasons.push("fewer than five complete pit-free timed laps remain after the out-lap");
+  if (firstFive.length === 5 && !firstFive.every((lap, index) => lap.lap === firstFive[0].lap + index)) reasons.push("the first five useful timed laps are not consecutive");
+  const timeCv = coefficientOfVariation(firstFive.map((lap) => lap.lapTimeMs));
+  const distanceCv = coefficientOfVariation(firstFive.map((lap) => lap.lapDistanceKm));
+  if (!Number.isFinite(timeCv) || timeCv > 0.15) reasons.push("timed-lap duration is not coherent enough for safe rebasing");
+  if (!Number.isFinite(distanceCv) || distanceCv > 0.15) reasons.push("timed-lap distance is not coherent enough for safe rebasing");
+
+  if (reasons.length || !coherentIdentity || firstFive.length < 5) {
+    return { available: false, selectionBasis: "UNRESOLVED", relativeLapWindow, rawAcLapWindow: [], lapMapping: [], excludedRawAcLaps: [], reasons };
+  }
+  const mapping = firstFive.map((lap, index) => ({ relativeLap: index + 1, rawAcLap: lap.lap }));
+  return {
+    available: true,
+    selectionBasis: "SESSION_RELATIVE_REBASED",
+    relativeLapWindow,
+    rawAcLapWindow: mapping.slice(1).map((item) => item.rawAcLap),
+    lapMapping: mapping,
+    excludedRawAcLaps: [rawStartLap],
+    warmupRawAcLap: mapping[0].rawAcLap,
+    reasons: ["Logger began stationary in the pits with fresh session/tire-set distances; the out-lap was excluded and five consecutive coherent full laps were proven."]
+  };
 }
 
 function resolveManifestIdentity(manifest, csvCompounds) {
@@ -166,7 +273,8 @@ function renderMarkdown(report) {
     `- Partial/invalid laps: ${report.laps.partialOrInvalid.join(", ") || "none"}`,
     `- Distance: ${f(report.session.distanceKm)} km`, "",
     `## Canonical short pressure screen`, "",
-    `Complete laps ${screen.lapWindow.join("–")} are the decision window. Status: **${screen.status}**; closure: **${screen.overallClosureClassification}**.`, "",
+    `Selection basis: **${screen.selectionBasis}**. Relative laps ${screen.relativeLapWindow.join("–")} map to original AC laps ${screen.rawAcLapWindow.join("–") || "unresolved"}. Status: **${screen.status}**; closure: **${screen.overallClosureClassification}**.`,
+    screen.selectionReasons.length ? `Selection audit: ${screen.selectionReasons.join(" ")}` : "", "",
     `| Wheel | Start psi | Screen psi | Target psi | Error psi | Result |`,
     `|---|---:|---:|---:|---:|---|`,
     ...WHEELS.map((wheel) => {
@@ -231,47 +339,56 @@ function analyzePostRun(csvFile, manifestFile, options = {}) {
     const firstWear = number(rows[0], `wear_raw_${wheel}`);
     const lastWear = number(rows.at(-1), `wear_raw_${wheel}`);
     const onset = rows.find((row) => number(row, `wear_raw_${wheel}`) < 99.999);
-    const distancePoints = rows.map((row) => [number(row, "tire_set_distance_m") / 1000, number(row, `wear_raw_${wheel}`)]);
-    const slipAbs = rows.map((row) => Math.abs(number(row, `wheel_slip_raw_${wheel}`)));
-    pressure[wheel] = { startPsi: number(rows[0], `pressure_psi_${wheel}`), byLap: Object.fromEntries(laps.map((lap) => [lap.lap, lap.pressurePsi[wheel]])), latePsi: latePressure, targetPsi: target, errorPsi: latePressure - target, classification: classify(latePressure - target) };
+    const distancePoints = rows.map((row) => { const distance = number(row, "tire_set_distance_m"); return [Number.isFinite(distance) ? distance / 1000 : null, number(row, `wear_raw_${wheel}`)]; });
+    const slipAbs = rows.map((row) => { const value = number(row, `wheel_slip_raw_${wheel}`); return Number.isFinite(value) ? Math.abs(value) : null; });
+    pressure[wheel] = { startPsi: number(rows[0], `pressure_psi_${wheel}`), byLap: Object.fromEntries(laps.map((lap) => [lap.lap, lap.pressurePsi[wheel]])), latePsi: latePressure, targetPsi: target, errorPsi: difference(latePressure, target), classification: classify(difference(latePressure, target)) };
     thermal[wheel] = {
       startCoreC: number(rows[0], `core_temp_c_${wheel}`),
       coreByLap: Object.fromEntries(laps.map((lap) => [lap.lap, lap.coreC[wheel]])),
       lateCoreC: lateCore,
       coreSlopeCPerLap: regression(slopeLapRows.map((lap) => [lap.lap, lap.coreC[wheel]])).slope,
       surface: { inner: stats(lateRows.map((row) => number(row, `temp_inner_c_${wheel}`))), middle: stats(lateRows.map((row) => number(row, `temp_middle_c_${wheel}`))), outer: stats(lateRows.map((row) => number(row, `temp_outer_c_${wheel}`))), ...surface },
-      surfaceCoreDeltaC: surface.mean - lateCore
+      surfaceCoreDeltaC: difference(surface.mean, lateCore)
     };
-    wear[wheel] = { start: firstWear, end: lastWear, delta: lastWear - firstWear, onsetKm: onset ? number(onset, "tire_set_distance_m") / 1000 : null, onsetLap: onset ? number(onset, "lap") : null, slopePerKm: regression(distancePoints).slope };
+    const onsetDistance = onset ? number(onset, "tire_set_distance_m") : null;
+    wear[wheel] = { start: firstWear, end: lastWear, delta: difference(lastWear, firstWear), onsetKm: Number.isFinite(onsetDistance) ? onsetDistance / 1000 : null, onsetLap: onset ? number(onset, "lap") : null, slopePerKm: regression(distancePoints).slope };
     loads[wheel] = stats(rows.map((row) => number(row, `wheel_load_n_${wheel}`)));
     slip[wheel] = { channel: `wheel_slip_raw_${wheel}`, units: "AC shared-memory raw; not normalized slip ratio", absolute: stats(slipAbs), activeFractionAbove1: finite(slipAbs).filter((value) => value > 1).length / Math.max(1, finite(slipAbs).length) };
   }
   const frontLate = mean([pressure.fl.latePsi, pressure.fr.latePsi]);
   const rearLate = mean([pressure.rl.latePsi, pressure.rr.latePsi]);
   const pressureSlope = Object.fromEntries(WHEELS.map((wheel) => [wheel, regression(slopeLapRows.map((lap) => [lap.lap, lap.pressurePsi[wheel]])).slope]));
-  const coreStable = WHEELS.every((wheel) => Math.abs(thermal[wheel].coreSlopeCPerLap) < 0.10);
-  const pressureStable = WHEELS.every((wheel) => Math.abs(pressureSlope[wheel]) < 0.03);
+  const coreStable = WHEELS.every((wheel) => Number.isFinite(thermal[wheel].coreSlopeCPerLap) && Math.abs(thermal[wheel].coreSlopeCPerLap) < 0.10);
+  const pressureStable = WHEELS.every((wheel) => Number.isFinite(pressureSlope[wheel]) && Math.abs(pressureSlope[wheel]) < 0.03);
   const dirtySamples = rows.filter((row) => WHEELS.some((wheel) => number(row, `dirty_raw_${wheel}`) > 0)).length;
   const incidentCandidates = rows.filter((row) => Math.abs(number(row, "accg_lat")) > 1.8 || Math.abs(number(row, "accg_long")) > 1.5 || WHEELS.some((wheel) => Math.abs(number(row, `wheel_slip_raw_${wheel}`)) > 10)).length;
   const completeLapTimes = laps.filter((lap) => lap.complete && lap.lapTimeMs > 0).map((lap) => lap.lapTimeMs / 1000);
   const identity = resolveManifestIdentity(manifest, csvCompounds);
-  const canonicalPressureLaps = [2, 3, 4, 5];
-  const canonicalPressureAvailable = canonicalPressureLaps.every((lap) => completeLaps.includes(lap));
-  const shortScreen = pressureWindowSummary(rows, canonicalPressureLaps, idealFront, idealRear);
-  shortScreen.status = canonicalPressureAvailable ? "AVAILABLE" : "INCOMPLETE";
+  const pressureWindow = resolvePressureWindow(rows, laps, completeLaps, manifest, identity, csvCompounds);
+  const shortScreen = pressureWindowSummary(rows, pressureWindow.rawAcLapWindow, idealFront, idealRear, pressureWindow);
+  shortScreen.status = pressureWindow.available ? "AVAILABLE" : "INCOMPLETE/UNRESOLVED";
+  const distanceValue = (key) => ({ startM: number(rows[0], key), endM: number(rows.at(-1), key), spanKm: difference(number(rows.at(-1), key), number(rows[0], key)) === null ? null : difference(number(rows.at(-1), key), number(rows[0], key)) / 1000 });
+  const pressureAB = manifest?.pressureAB || null;
+  const pressureIntent = {
+    role: pressureAB?.role || "unclassified",
+    tirePackId: pressureAB?.tirePackId || null,
+    coldPressureAdjustmentPsi: pressureAB?.coldPressureAdjustmentPsi || null,
+    status: manifest?.pressureABIntentStatus || pressureAB?.intentStatus || ((pressureAB?.role && pressureAB.role !== "unclassified") ? "DECLARED_WITHOUT_SERVER_ASSESSMENT" : "UNCLASSIFIED"),
+    warning: manifest?.pressureABIntentWarning || pressureAB?.intentWarning || ((pressureAB?.role && pressureAB.role !== "unclassified") ? null : "Pressure-test intent is unclassified; retain as simulator evidence with an intent-metadata limitation.")
+  };
   const report = {
     schema: "ACLM deterministic post-run calibration report 2.0",
     fixtureId: options.fixtureId || null,
     inputs: { csvFile: path.basename(csvFile), manifestFile: manifestFile ? path.basename(manifestFile) : null, csvSha256: crypto.createHash("sha256").update(text).digest("hex"), manifestSha256: manifestFile ? crypto.createHash("sha256").update(fs.readFileSync(manifestFile)).digest("hex") : null, loggerHeaders: headers },
     identity,
-    session: { car: rows[0].car || manifest.car || null, track: rows[0].track || manifest.track || null, startUtc: rows[0].timestamp_utc || null, endUtc: rows.at(-1).timestamp_utc || null, samples: rows.length, distanceKm: (number(rows.at(-1), "tire_set_distance_m") - number(rows[0], "tire_set_distance_m")) / 1000, requestedCondition: manifest.userRequestedCondition || manifest.requestedCondition || null, observedCondition: { airC: stats(rows.map((row) => number(row, "air_temp_c"))), roadC: stats(rows.map((row) => number(row, "road_temp_c"))), aidTireRate: [...new Set(finite(rows.map((row) => number(row, "aid_tire_rate"))))] } },
+    session: { car: rows[0].car || manifest.car || null, track: rows[0].track || manifest.track || null, startUtc: rows[0].timestamp_utc || null, endUtc: rows.at(-1).timestamp_utc || null, samples: rows.length, distanceKm: distanceValue("tire_set_distance_m").spanKm, distanceBasis: "CURRENT_TIRE_SET_DISTANCE", distanceBases: { loggerCumulative: distanceValue("logger_cumulative_distance_m"), session: distanceValue("session_distance_m"), stint: distanceValue("stint_distance_m"), currentTireSet: distanceValue("tire_set_distance_m") }, requestedCondition: manifest.userRequestedCondition || manifest.requestedCondition || null, observedCondition: { airC: stats(rows.map((row) => number(row, "air_temp_c"))), roadC: stats(rows.map((row) => number(row, "road_temp_c"))), aidTireRate: [...new Set(finite(rows.map((row) => number(row, "aid_tire_rate"))))] } },
     laps: { complete: completeLaps, partialOrInvalid: laps.filter((lap) => !lap.complete).map((lap) => lap.lap), byLap: laps, consistency: { completeLapTimeSeconds: stats(completeLapTimes), coefficientOfVariation: completeLapTimes.length ? Math.sqrt(mean(completeLapTimes.map((value) => (value - mean(completeLapTimes)) ** 2))) / mean(completeLapTimes) : null } },
-    pressure: { shortScreen, lateLapWindow: lateComplete, perWheel: pressure, pressureSlopePsiPerLap: pressureSlope, axles: { front: { latePsi: frontLate, targetPsi: idealFront, errorPsi: frontLate - idealFront, classification: classify(frontLate - idealFront) }, rear: { latePsi: rearLate, targetPsi: idealRear, errorPsi: rearLate - idealRear, classification: classify(rearLate - idealRear) } } },
+    pressure: { shortScreen, intent: pressureIntent, lateLapWindow: lateComplete, perWheel: pressure, pressureSlopePsiPerLap: pressureSlope, axles: { front: { latePsi: frontLate, targetPsi: idealFront, errorPsi: difference(frontLate, idealFront), classification: classify(difference(frontLate, idealFront)) }, rear: { latePsi: rearLate, targetPsi: idealRear, errorPsi: difference(rearLate, idealRear), classification: classify(difference(rearLate, idealRear)) } } },
     thermal: { lateLapWindow: lateComplete, slopeLapWindow: slopeLaps, coreSlopeThresholdCPerLap: 0.10, pressureSlopeThresholdPsiPerLap: 0.03, coreStable, pressureStable, engineeringStability: coreStable && pressureStable ? "PASS" : "NOT_STABILIZED", historicalAccuracy: "UNRESOLVED", perWheel: thermal },
     wear: { status: "STORE, DO NOT FIT", perWheel: wear },
     dynamics: { wheelLoadN: loads, slipRatioActivity: slip, slipAngleActivity: headers.some((header) => /slip_angle/i.test(header)) ? "CHANNEL_PRESENT_NOT_YET_NORMALIZED" : null },
     contamination: { offTrackDefinition: "any dirty_raw wheel channel > 0", offTrackSamples: dirtySamples, offTrackFraction: dirtySamples / rows.length, incidentCandidateDefinition: "|lat g|>1.8 or |long g|>1.5 or |AC raw wheel slip|>10; review candidates, not automatic incident truth", incidentCandidateSamples: incidentCandidates, incidentCandidateFraction: incidentCandidates / rows.length },
-    protocol: { shortPressureScreen: { lapWindow: canonicalPressureLaps, status: canonicalPressureAvailable ? "AVAILABLE" : "INCOMPLETE", overallClosureClassification: shortScreen.overallClosureClassification }, extendedThermalObservation: { lapWindow: slopeLaps, status: slopeLaps.length >= 10 ? (coreStable && pressureStable ? "ENGINEERING_STABILITY_PASS" : "NOT_STABILIZED") : "INSUFFICIENT_COMPLETE_LAPS" }, historicalThermalAccuracy: "NOT_AUTOMATICALLY_DECLARED" }
+    protocol: { shortPressureScreen: { relativeLapWindow: pressureWindow.relativeLapWindow, rawAcLapWindow: pressureWindow.rawAcLapWindow, selectionBasis: pressureWindow.selectionBasis, lapMapping: pressureWindow.lapMapping, status: pressureWindow.available ? "AVAILABLE" : "INCOMPLETE/UNRESOLVED", overallClosureClassification: shortScreen.overallClosureClassification }, extendedThermalObservation: { lapWindow: slopeLaps, status: slopeLaps.length >= 10 ? (coreStable && pressureStable ? "ENGINEERING_STABILITY_PASS" : "NOT_STABILIZED") : "INSUFFICIENT_COMPLETE_LAPS" }, historicalThermalAccuracy: "NOT_AUTOMATICALLY_DECLARED" }
   };
   report.markdown = renderMarkdown(report);
   return report;

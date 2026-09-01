@@ -11,6 +11,31 @@ let lastThermalCalibrations=[];
 let verifiedImportedTelemetryHandoff=null;
 
 function clearVerifiedImportedTelemetryHandoff(){verifiedImportedTelemetryHandoff=null;}
+const CANONICAL_TIREPACK_IDS={
+ "2a710b3333ddfc78acdac0b930959476b2cd0fe4950eab045c0e63da8a8742b4":"Porsche-917K-v0102-canonical",
+ "feac96a9b50367b49291a6f0cc16a4443043a7815f07d21c5167afc8996956fe":"Maserati-250F-v0102-canonical"
+};
+function stableTirePackIdFromHandoff(manifest){
+ const hash=String(manifest?.tireFileSha256||"").toLowerCase(),car=String(manifest?.car||"").trim();
+ if(!/^[a-f0-9]{64}$/.test(hash))return "";
+ if(CANONICAL_TIREPACK_IDS[hash])return CANONICAL_TIREPACK_IDS[hash];
+ if(!car)return "";
+ const slug=car.normalize("NFKD").replace(/[^A-Za-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ return slug?`ACLM-${slug}-${manifest?.year||"unknown"}-${hash.slice(0,12)}`:"";
+}
+function pressureABIntentAssessment(pressureAB){
+ const role=pressureAB?.role||"unclassified",id=String(pressureAB?.tirePackId||"").trim(),corrections=Object.values(pressureAB?.coldPressureAdjustmentPsi||{}).map(Number),hasCorrection=corrections.some(value=>Number.isFinite(value)&&Math.abs(value)>1e-9);
+ if(!["unclassified","baseline","corrected"].includes(role))return {status:"INTENT_INCOMPLETE",warning:"Unsupported pressure-test role."};
+ if(role==="unclassified")return id||hasCorrection?{status:"INTENT_INCOMPLETE",warning:"A TirePack ID or pressure correction is present, but the controlled pressure-test role is unclassified."}:{status:"UNCLASSIFIED_GENERIC_TELEMETRY",warning:"Pressure-test role is unclassified. Generic telemetry will be retained, but it cannot be promoted as a controlled pressure screen."};
+ if(!id)return {status:"INTENT_INCOMPLETE",warning:"Controlled pressure role is declared, but the TirePack ID is blank."};
+ return {status:"COMPLETE",warning:null};
+}
+function renderPressureABIntent(){
+ const el=$("pressureABIntentStatus");if(!el)return;
+ const pressureAB={role:$("pressureABRole")?.value||"unclassified",tirePackId:$("pressureABTireId")?.value?.trim()||"",coldPressureAdjustmentPsi:{fl:optionalNumber("pressureCorrectionFL")??0,fr:optionalNumber("pressureCorrectionFR")??0,rl:optionalNumber("pressureCorrectionRL")??0,rr:optionalNumber("pressureCorrectionRR")??0}};
+ const assessment=pressureABIntentAssessment(pressureAB),correction=Object.entries(pressureAB.coldPressureAdjustmentPsi).map(([wheel,value])=>`${wheel.toUpperCase()} ${Number(value).toFixed(1)}`).join(" / ");
+ el.className=`notice small ${assessment.status==="COMPLETE"?"ok":"warning"}`;el.innerHTML=`<b>Pressure intent: ${escapeHtml(assessment.status)}</b> · role ${escapeHtml(pressureAB.role)} · TirePack ${escapeHtml(pressureAB.tirePackId||"unresolved")} · corrections ${escapeHtml(correction)} psi${assessment.warning?`<br>${escapeHtml(assessment.warning)}`:""}`;
+}
 function withCurrentRunMetadata(baseManifest){
  const manifest=JSON.parse(JSON.stringify(baseManifest));
  const requestedCondition={airTemperatureC:n("telemetryRequestedAir")||null,roadTemperatureC:n("telemetryRequestedRoad")||null,wearMultiplier:optionalNumber("telemetryWearMultiplier")??null,fuelRate:optionalNumber("telemetryRequestedFuelRate")??null,damageRate:optionalNumber("telemetryRequestedDamageRate")??null,startingFuelLiters:optionalNumber("telemetryStartingFuel")??null,sessionBlanketsEnabled:$("telemetrySessionBlankets")?.checked===true};
@@ -18,8 +43,13 @@ function withCurrentRunMetadata(baseManifest){
  manifest.requestedTyreWearMultiplier=requestedCondition.wearMultiplier;manifest.requestedWearMultiplier=requestedCondition.wearMultiplier;manifest.fuelRate=requestedCondition.fuelRate;manifest.damageRate=requestedCondition.damageRate;manifest.startingFuel=requestedCondition.startingFuelLiters;manifest.requestedSessionBlanketsEnabled=requestedCondition.sessionBlanketsEnabled;manifest.sessionBlanketStatus={enabled:requestedCondition.sessionBlanketsEnabled,source:"user-requested session state; independent of BLANKETS_TEMP"};
  const selected={front:optionalNumber("pSelectedF")??null,rear:optionalNumber("pSelectedR")??null};
  for(const entry of manifest.pressureReference?.axleReport||[]){if(entry.axle in selected)entry.selectedSetupColdPressurePsi=selected[entry.axle];}
- const pressureAB={role:$("pressureABRole")?.value||"unclassified",tirePackId:$("pressureABTireId")?.value?.trim()||"",coldPressureAdjustmentPsi:{fl:optionalNumber("pressureCorrectionFL")??0,fr:optionalNumber("pressureCorrectionFR")??0,rl:optionalNumber("pressureCorrectionRL")??0,rr:optionalNumber("pressureCorrectionRR")??0},unsafeBaseline:$("pressureUnsafeBaseline")?.checked===true,subjectiveFeedback:$("pressureSubjectiveFeedback")?.value?.trim()||""};
+ const enteredId=$("pressureABTireId")?.value?.trim()||"",derivedId=verifiedImportedTelemetryHandoff?stableTirePackIdFromHandoff(baseManifest):"";
+ if(!enteredId&&derivedId)$("pressureABTireId").value=derivedId;
+ const pressureAB={role:$("pressureABRole")?.value||"unclassified",tirePackId:enteredId||derivedId,coldPressureAdjustmentPsi:{fl:optionalNumber("pressureCorrectionFL")??0,fr:optionalNumber("pressureCorrectionFR")??0,rl:optionalNumber("pressureCorrectionRL")??0,rr:optionalNumber("pressureCorrectionRR")??0},unsafeBaseline:$("pressureUnsafeBaseline")?.checked===true,subjectiveFeedback:$("pressureSubjectiveFeedback")?.value?.trim()||""};
+ const intent=pressureABIntentAssessment(pressureAB);pressureAB.intentStatus=intent.status;pressureAB.intentWarning=intent.warning;
  manifest.pressureAB=pressureAB;
+ manifest.pressureABIntentStatus=intent.status;manifest.pressureABIntentWarning=intent.warning;
+ renderPressureABIntent();
  return manifest;
 }
 
@@ -1652,17 +1682,23 @@ function populateFromPhysics(files,label='import'){
  // Curated identity can change the family, class, compounds and generated hash.
  // Rebuild only after that transition so the preview cannot retain the prior car.
  try{generatedFiles=build();const vr=validate(generatedFiles);renderValidation(vr);renderFiles(generatedFiles);}catch(e){}
- if(importedTelemetryHandoff){
-   verifiedImportedTelemetryHandoff=importedTelemetryHandoff;
-   $('importStatus').innerHTML+=` <span class="ok"><b>Embedded telemetry identity verified:</b></span> tyres.ini SHA-256 ${escapeHtml(importedTelemetryHandoff.tireFileSha256.slice(0,12))}…`;
- }
+  if(importedTelemetryHandoff){
+    verifiedImportedTelemetryHandoff=importedTelemetryHandoff;
+    const stableId=stableTirePackIdFromHandoff(importedTelemetryHandoff.manifest);
+    if(stableId)$('pressureABTireId').value=stableId;
+    renderPressureABIntent();
+    $('importStatus').innerHTML+=` <span class="ok"><b>Embedded telemetry identity verified:</b></span> tyres.ini SHA-256 ${escapeHtml(importedTelemetryHandoff.tireFileSha256.slice(0,12))}…${stableId?` Controlled-test TirePack ID: <b>${escapeHtml(stableId)}</b>.`:""}`;
+  }
 }
 async function doZipImport(){const f=$('physicsZip').files?.[0]; if(!f){$('importStatus').innerHTML='<span class="warning">Choose a ZIP first.</span>';return;} $('importStatus').textContent='Reading ZIP…'; try{populateFromPhysics(await readZipPhysics(f),f.name);}catch(e){$('importStatus').innerHTML=`<span class="error">${escapeHtml(e.message)}</span>`;}}
 async function doFolderImport(){const fs=$('physicsFolder').files; if(!fs?.length){$('importStatus').innerHTML='<span class="warning">Choose a data/car folder first.</span>';return;} $('importStatus').textContent='Reading folder…'; try{populateFromPhysics(await readFolderPhysics(fs),'selected folder');}catch(e){$('importStatus').innerHTML=`<span class="error">${escapeHtml(e.message)}</span>`;}}
 $('importZip').addEventListener('click',doZipImport);$('importFolder').addEventListener('click',doFolderImport);
 $('researchProfile').addEventListener('click',()=>researchHistoricalProfile());
 $('applyResearchChoice').addEventListener('click',applyResearchChoices);
-$('clearImport').addEventListener('click',()=>{clearVerifiedImportedTelemetryHandoff();importedPhysics={};importedSetupPressureControls={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();renderHistoricalCoherence();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';});
+$('clearImport').addEventListener('click',()=>{clearVerifiedImportedTelemetryHandoff();importedPhysics={};importedSetupPressureControls={};clearImportedMarks();clearResearchChoices();activeHistoricalContext=null;historicalProfileState=window.ACLMProfileState.create($("construction").value,window.ACLMProfileState.PROVENANCE.UNKNOWN_FALLBACK,GENERAL_UNKNOWN);setMenuValue("supplier",GENERAL_UNKNOWN);renderConstructionProvenance();renderSupplierProvenance();$('preset').value='auto';updateHistoricalCompoundLabels();renderHistoricalFamilySummary();renderHistoricalCoherence();$('importSummary').innerHTML='';$('importStatus').textContent='No car physics imported yet.';$('researchStatus').textContent='Class / supplier research has not run yet.';$('researchSources').innerHTML='';$('pressureABTireId').value='';renderPressureABIntent();});
+
+for(const id of ['pressureABRole','pressureABTireId','pressureCorrectionFL','pressureCorrectionFR','pressureCorrectionRL','pressureCorrectionRR'])$(id)?.addEventListener('change',renderPressureABIntent);
+renderPressureABIntent();
 
 // A verified imported manifest describes the installed TirePack under test, not the
 // generator preview. Keep it authoritative until another pack is imported or the

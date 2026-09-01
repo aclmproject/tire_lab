@@ -16,6 +16,16 @@ The curated 1957 Maserati 250F works/lightweight fixture resolves to CLS102/FAM0
 
 The 1970 Porsche 917K fixture remains CLS035/FAM035 bias/cross-ply with supplier General/unknown. Event-specific Firestone and Goodyear evidence must not become a universal 917K assignment.
 
+## Overnight corpus disposition — 2026-09-01
+
+The M0–M5 corpus and 10,000-target weakness pack were reconciled against v1.7.1. The exact inventory is in `docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md`.
+
+- Thirty Milestone-4 full texts produced 46 typed staging findings: 10 measurements, 18 observations, 10 scaling rules and 8 methodology records. They support coupled engineering architecture but do not close historical class-specific numeric priors.
+- Two hundred Milestone-3 documents and 525 derived candidates remain abstract-only; nine retrieved full texts remain unreviewed.
+- The weakness seed review resolved seven real documents and 13 staging candidates. Its principal useful result is vehicle/load-specific wet/intermediate menu applicability, not dry-tire numeric calibration.
+- The original 10,000 target rows remain quarantined/replaced non-destructively after 443 temporal conflicts and 140 partial overlaps were found.
+- No new finding closes absolute pressure or temperature for the 250F, GT40, 917K or Escort. No production Knowledge update is justified.
+
 ## Research guardrails
 
 - Simulator closure is engineering evidence, not historical proof.

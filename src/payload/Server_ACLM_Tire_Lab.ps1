@@ -105,13 +105,24 @@ function Read-TelemetryStatus{
   }catch{}
   return @{state='stopped';message='Logger is stopped.';rate_hz=10;samples=0;file=$null;output_directory=$TelemetryOutput}
 }
+function Get-TelemetryPressureIntent($Manifest){
+  $pressureAB=if($Manifest-and$Manifest.pressureAB){$Manifest.pressureAB}else{[pscustomobject][ordered]@{role='unclassified';tirePackId='';coldPressureAdjustmentPsi=[pscustomobject][ordered]@{fl=0;fr=0;rl=0;rr=0}}}
+  $role=if($pressureAB.role){[string]$pressureAB.role}else{'unclassified'};$id=if($pressureAB.tirePackId){([string]$pressureAB.tirePackId).Trim()}else{''};$hasCorrection=$false
+  foreach($wheel in @('fl','fr','rl','rr')){try{if([Math]::Abs([double]$pressureAB.coldPressureAdjustmentPsi.$wheel)-gt 0.000000001){$hasCorrection=$true}}catch{}}
+  if(@('unclassified','baseline','corrected')-notcontains $role){$status='INTENT_INCOMPLETE';$warning='Unsupported pressure-test role.'}
+  elseif($role-eq'unclassified'-and($id-or$hasCorrection)){$status='INTENT_INCOMPLETE';$warning='A TirePack ID or pressure correction is present, but the controlled pressure-test role is unclassified.'}
+  elseif($role-eq'unclassified'){$status='UNCLASSIFIED_GENERIC_TELEMETRY';$warning='Pressure-test role is unclassified. Generic telemetry is retained, but it cannot be promoted as a controlled pressure screen.'}
+  elseif(!$id){$status='INTENT_INCOMPLETE';$warning='Controlled pressure role is declared, but the TirePack ID is blank.'}
+  else{$status='COMPLETE';$warning=$null}
+  return [pscustomobject][ordered]@{pressureAB=$pressureAB;status=$status;warning=$warning}
+}
 function Start-Telemetry([int]$RateHz,$Manifest){
   if(@(10,20,50) -notcontains $RateHz){throw 'Sample rate must be 10, 20 or 50 Hz.'}
   if(!(Test-Path $TelemetryScript -PathType Leaf)){throw 'The native telemetry logger is missing from this installation.'}
   $current=Read-TelemetryStatus
   if(@('waiting','recording','starting')-contains [string]$current.state){return $current}
   Remove-Item $TelemetryStopPath,$TelemetryStatusPath,$TelemetryManifestInput -Force -ErrorAction SilentlyContinue
-  $manifestReceived=$false
+  $manifestReceived=$false;$intent=Get-TelemetryPressureIntent $Manifest
   if($null-ne$Manifest){
     if(!$Manifest.schema -or !$Manifest.appVersion -or !$Manifest.tireFileSha256){throw 'Generated telemetry manifest is incomplete; generate and validate the TirePack before starting the logger.'}
     $manifestJson=$Manifest|ConvertTo-Json -Depth 20
@@ -123,7 +134,7 @@ function Start-Telemetry([int]$RateHz,$Manifest){
   # The HTTP server is single threaded, so a queued second start request now
   # observes this state instead of launching a duplicate logger while the
   # child is still materializing its own status file.
-  $starting=@{state='starting';message='Logger process is starting.';pid=0;rate_hz=$RateHz;samples=0;file=$null;output_directory=$TelemetryOutput;manifest_received=$manifestReceived}
+  $starting=@{state='starting';message='Logger process is starting.';pid=0;rate_hz=$RateHz;samples=0;file=$null;output_directory=$TelemetryOutput;manifest_received=$manifestReceived;pressure_ab=$intent.pressureAB;pressure_intent_status=$intent.status;pressure_intent_warning=$intent.warning;initial_ac_lap=$null}
   Write-Utf8 $TelemetryStatusPath ($starting|ConvertTo-Json -Depth 5)
   $exe=Join-Path $PSHOME 'powershell.exe';if(!(Test-Path $exe)){$exe='powershell.exe'}
   $args='-NoLogo -NoProfile -ExecutionPolicy Bypass -File "'+$TelemetryScript+'" -OutputDirectory "'+$TelemetryOutput+'" -RateHz '+$RateHz+' -StatusPath "'+$TelemetryStatusPath+'" -StopPath "'+$TelemetryStopPath+'"'

@@ -4,7 +4,7 @@
 
 - Application: v0.10.2 (unchanged).
 - Knowledge: v1.7.1, a taxonomy-only successor to v1.7.0.
-- Working handoff branch: `codex/csp-thermal-v2-handoff-persistence`, targeting `codex/csp-thermal-v2`.
+- Working branch: `codex/csp-thermal-v2`.
 - No application release has been published from this working tree.
 
 ## Last completed task
@@ -34,8 +34,8 @@ The 1954–1958 Formula 1 / Grand Prix taxonomy gap was closed without renumberi
 ## Tests run and results
 
 - Original taxonomy/canonical-pack cutoff: focused suite **10 passed, 0 failed**; complete Node suite **59 passed, 0 failed, 0 skipped**.
-- Current Linux handoff validation: all runnable tests **70 passed, 0 failed, 1 intentional skip**.
-- The complete current invocation reports only two expected `ENOENT` failures because the ignored canonical 917K and 250F ZIP archives are absent from this transient checkout. The authenticated Desktop must run those archive tests with the canonical ZIPs restored before packaging.
+- Current Windows corrective validation with both canonical ZIPs present: complete Node suite **82 passed, 0 failed, 0 skipped**.
+- Native logger self-test passed with 84 columns, IEEE-754 wear precision and four distinct distance bases. PowerShell manifest merge/identity tests passed.
 - Browser generation validation passed for the 917K and 250F packs.
 - Both packs contain 19 files, `tyres.ini VERSION=10`, CSP Thermal V2, extended-2 metadata, provenance, pressure reports, and active/generated identity metadata.
 - The current knowledge package embedded-content SHA-256 was independently recomputed and matched.
@@ -76,23 +76,23 @@ The 1954–1958 Formula 1 / Grand Prix taxonomy gap was closed without renumberi
 
 ## Post-run analyzer status
 
-The post-run analyzer now keeps the canonical short pressure decision window (complete laps 2–5) separate from later-lap and last-four-lap observations. Hash-matched 917K A/B evidence has been ingested and preserved in `artifacts/porsche_917k/Porsche_917K_Monza_Pressure_AB_Report.md` and `.json`.
+The post-run analyzer keeps the canonical short-pressure window separate from later-lap and extended-thermal observations. Literal AC laps 2–5 remain preferred; a session-relative rebase is allowed only after pit start, fresh/coherent distances, hash/compound identity, explicit out-lap exclusion and five coherent full timed laps are proven. It reports both raw and relative lap mappings and fails unresolved rather than silently rebasing. Missing pressure stays null, and distance bases are explicitly separated.
 
 ## Protocol, dossier, audit, and research status
 
-- The 917K AI-reference baseline A and corrected B pressure screens are complete on matching active/generated physics.
-- Baseline A is `FAIL`; corrected B is `REVIEW`, with LF/LR passing and RF/RR narrowly outside the ±0.5 psi pass threshold.
+- The 917K AI-reference baseline A, staggered B, 30F/35R C and independent C2 screens are complete on matching active/generated physics.
+- Baseline A is `FAIL`; B, C and C2 are `REVIEW`. C2 safely maps raw AC laps 9–12 to session-relative laps 2–5 and repeats C within 0.023 psi.
+- 30F/35R is reproducibly high on the loaded left tires. The retained setup-only whole-grid inference is 29F/34R; no further 917K driving is requested.
 - The short screen does not start or certify historical thermal calibration; thermal remains unresolved and wear is store-only.
-- No new historical research sweep, dossier expansion, or numeric calibration audit was started in this pass.
+- The overnight M0–M5 and weakness corpus were inventoried. Accepted evidence remains staged; abstract-only, incomplete and temporally unsafe material remains deferred/quarantined. No Knowledge or numeric calibration promotion was made.
 - The prior GT40 analysis was not repeated.
 
 ## First unfinished item
 
-The authenticated Windows Desktop must push the local handoff commits, run the complete suite with both canonical ZIP fixtures present, build and certify one replacement v0.10.2 installer, and install it. Only after the logger reports active installed physics hash `MATCH` may driving resume. The next controlled run is either one final 917K 30F/35R confirmation with persisted intent metadata or the first 250F 24F/24R baseline in `docs/MASERATI_250F_LIVE_TEST_CARD_v0102.md`.
+After the software-only telemetry correction is fully tested, pushed and packaged, the next live test is the first canonical 250F 24F/24R baseline in `docs/MASERATI_250F_LIVE_TEST_CARD_v0102.md`. Exit AC completely and launch a fresh session. No driving is admissible until the logger reports `physicsHashMatch=true`. Do not request another 917K run now.
 
 ## Blockers
 
-- This Linux workspace lacks GitHub authentication and PowerShell; push and canonical installer certification require the authenticated Windows Desktop.
 - No physics or taxonomy blocker remains. Driving is blocked until the rebuilt installed logger reports `physicsHashMatch=true`.
 
 ## Guardrails preserved

@@ -38,6 +38,8 @@ The active `tyres.ini` SHA-256 is learned from the installed canonical pack and 
 
 ## Assetto Corsa / Content Manager session
 
+- Exit Assetto Corsa completely before setup. Install the TirePack into the car through Content Manager, then launch a **fresh AC session** so the AC lap counter and session state reset.
+- Import the newly installed `ks_maserati_250f_6c` car into Tire Lab before starting the logger.
 - Track: Kunos Monza 1966 (`ks_monza66`).
 - Driver: AI control for the entire recorded stint.
 - Setup: 24 psi at all four corners.
@@ -46,7 +48,7 @@ The active `tyres.ini` SHA-256 is learned from the installed canonical pack and 
 - Damage: OFF.
 - Tire wear: 1×.
 - Conditions: dry and fixed. Do not change setup or session controls after logging starts.
-- Logger: 10 Hz. Start it in the pits before releasing AI control.
+- Logger: 10 Hz. Start it in the pits before releasing AI control. If logger status says the AC session already appears beyond lap 1, exit AC and start a fresh session.
 
 ## Laps and decision window
 
