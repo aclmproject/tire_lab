@@ -2,12 +2,12 @@
   "product": "ACLM Tire Knowledge",
   "channel": "stable",
   "schema_version": "1.2.0",
-  "version": "1.7.1",
-  "file_name": "ACLM_Tire_Knowledge_v1.7.1.json",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v1.7.1",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/knowledge-v1.7.1/ACLM_Tire_Knowledge_v1.7.1.json",
-  "sha256": "ca0b0fcf498e8f4714354f22ffef269cca1c813b3b19eda8eb9d1b77f0dd8954",
-  "release_content_sha256": "14f92adf97786556ac3472f05496a469bdfd0713b2b49fd4c146e529912ff14f",
-  "published_utc": "2026-08-31T00:00:00Z",
-  "notes": "Taxonomy-only CLS102 / CAR022 correction; FAM002 numeric priors and all existing classes remain unchanged."
+  "version": "1.8.0",
+  "file_name": "ACLM_Tire_Knowledge_v1.8.0.json",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/knowledge-v1.8.0",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/knowledge-v1.8.0/ACLM_Tire_Knowledge_v1.8.0.json",
+  "sha256": "73cdc1cc8ba62383c6370adcac776a1f20f035b0bac481b2e4ba94d1d0ffb60c",
+  "release_content_sha256": "0f0835e652ec8b73ae184f10159483892603a9c51e8a03160c4398395d6c8216",
+  "published_utc": "2026-09-05T00:16:30Z",
+  "notes": "Full research-archive consolidation with structural/provenance additions only; production numeric collections remain frozen from v1.7.1."
 }

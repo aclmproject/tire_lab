@@ -57,10 +57,11 @@ test("durable checkpoints preserve completed 917K result and frozen Knowledge au
   assert.match(current, /29F\/34R/);
   assert.match(current, /Request no further 917K driving now/);
   assert.match(current, /No driving or calibration use unless `physicsHashMatch=true`/);
-  assert.match(research, /Knowledge version: v1\.7\.1/);
-  assert.match(research, /Families, generator priors, measurements, scaling rules, and all production numerical collections are frozen unchanged from v1\.7\.0/);
+  assert.match(research, /Knowledge version: v1\.8\.0/);
+  assert.match(research, /Generator priors, measurements, scaling rules, fitment overrides, classes and every production numerical collection are byte-semantically frozen unchanged from v1\.7\.1/);
   assert.match(research, /250F \+ GT40 \+ 917K \+ Escort/);
-  assert.match(research, /OVERNIGHT_RESEARCH_INGEST_2026-09-01/);
+  assert.match(research, /2,478 canonical records/);
+  assert.match(research, /UNRESOLVED_RESEARCH_QUEUE\.md/);
 });
 
 test("overnight research ingest remains evidence-staged and numerically frozen", () => {

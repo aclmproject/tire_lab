@@ -1,6 +1,6 @@
 # ACLM Historical Tire Lab — current project checkpoint
 
-Checkpoint basis: application v0.10.4, Knowledge v1.7.1, branch `codex/csp-thermal-v2`; handoff hotfix based on verified remote SHA `3b54b917afdbf902194aec01577d66d27d82a710`.
+Checkpoint basis: application v0.10.4, Knowledge v1.8.0, branch `codex/csp-thermal-v2`; handoff hotfix based on verified remote SHA `3b54b917afdbf902194aec01577d66d27d82a710`.
 
 ## Completed software work
 
@@ -36,7 +36,13 @@ The fixed set remains Maserati 250F + Ford GT40 Mk II + Porsche 917K + Ford Esco
 
 ## Research state
 
-The overnight M0–M5 and weakness-corpus outputs are inventoried in `docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md`. Accepted material remains staged with stable provenance; abstract-only, incomplete and temporally unsafe material remains deferred or quarantined. Knowledge v1.7.1 and every production numeric collection remain frozen.
+The full 2026-09-02 through 2026-09-04 research archive has been consolidated under `research_import/`: 74 supplied ZIPs plus one Calspan workbook, 100 recursive archive layers, 7,571 file occurrences, 766 unique payloads, 2,478 canonical evidence records, 1,304 canonical sources, 21 contradiction/supersession relationships, 1,616 classified numeric records and 316 unresolved trails. Exact and semantic duplicates are collapsed without losing original archive/member/hash provenance.
+
+Knowledge v1.8.0 adds only evidence architecture and one event-resolved 1970 Porsche 917K vehicle profile. Its generator priors, measurements, scaling rules, fitment overrides, classes and all production numerical collections are unchanged from v1.7.1. The release validation SHA-256 is `73cdc1cc8ba62383c6370adcac776a1f20f035b0bac481b2e4ba94d1d0ffb60c`; the content SHA-256 is `0f0835e652ec8b73ae184f10159483892603a9c51e8a03160c4398395d6c8216`.
+
+The pre-commit path guard found no changed `tyres.ini`, LUT, thermal, wear or physics file. All 93 repository tests and the dedicated research-import validator passed.
+
+The earlier M0–M5 and weakness-corpus inventory remains in `docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md`. Abstract-only, inaccessible, incomplete, OCR-unverified and temporally unsafe material remains deferred or quarantined in the new unresolved queue.
 
 ## Next unfinished item
 
@@ -46,5 +52,6 @@ Run the canonical Maserati 250F live card only after installing the certified v0
 
 - No driving or calibration use unless `physicsHashMatch=true`.
 - No thermal, wear, pressure/compliance or production Knowledge numeric retune.
+- Keep class-B Calspan OCR coefficients and every derived/reconstructed value out of production physics until source proof and controlled validation are complete.
 - Preserve raw CSVs/manifests, requested versus observed conditions, identity, A/B role, corrections and duplicate exclusions.
 - Vehicle/year supplier evidence must not become a universal family/class supplier.

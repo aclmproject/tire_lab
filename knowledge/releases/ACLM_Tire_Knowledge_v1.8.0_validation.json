@@ -1,0 +1,28 @@
+{
+  "version": "1.8.0",
+  "schemaVersion": "1.2.0",
+  "families": 85,
+  "classes": 102,
+  "profiles": 23,
+  "sources": 149,
+  "measurements": 184,
+  "sha256": "73cdc1cc8ba62383c6370adcac776a1f20f035b0bac481b2e4ba94d1d0ffb60c",
+  "contentSha256": "0f0835e652ec8b73ae184f10159483892603a9c51e8a03160c4398395d6c8216",
+  "frozenCollectionHashes": {
+    "generatorPriors": "73327d5ec59a0297974625a90c0cde052bd50c338e63f21b4ffabb32fd65642c",
+    "measurements": "0e84939894788abd33481962defe13b093c6a41bba27eee63125ee0385b7338d",
+    "scalingRules": "3b8dd4d4c49a65cb391ad5e21a82dc95b874680855649ca044805eaa7f96cd42",
+    "fitmentOverrides": "7ce792c300b7c597d00fe0db7e749b45f9fe485a1e7fbd3f95ee8285dd3d99b5",
+    "classes": "09c0db6efa8a4ec7be8f861a3463220dd3f7b642d2dbc81c05ec41cea29e5939"
+  },
+  "checks": {
+    "uniqueIds": true,
+    "references": true,
+    "priorCoverage": true,
+    "v1_7_1Lineage": true,
+    "productionNumericCollectionsUnchanged": true,
+    "classesUnchanged": true,
+    "researchArchiveLinked": true,
+    "car023SupplierScopeEventSpecific": true
+  }
+}
