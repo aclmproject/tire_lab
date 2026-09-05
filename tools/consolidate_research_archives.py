@@ -1125,7 +1125,7 @@ def write_report(
         "2. Obtain the 1957 Pirelli 250F carcass specification, especially cord material, ply count/angles and the event-specific 5.50x16 and 7.00x16 constructions; do not back-project the 1953 5.90-15 drawing.",
         "3. Resolve Porsche 917 wet/intermediate Firestone size strings and 1970 event-by-event supplier/chassis mappings from entry sheets, team records or period technical sheets.",
         "4. Recover full General/GenCorp, Goodyear D460G/P195/70R14 and Clemson/NTMP source documents behind the current document graph; prioritize force/moment tables, pressure conventions and specimen identity.",
-        "5. Target the scorecard's weakest families with primary force/moment, aligning-torque/pneumatic-trail, camber, degradation and failure data, beginning with FAM013, FAM023, FAM022, FAM021 and FAM020.",
+        "5. Target the scorecard's weakest families with primary force/moment, aligning-torque/pneumatic-trail, camber, degradation and failure data, beginning with FAM004, FAM005, FAM006, FAM008 and FAM009.",
         "6. Acquire period tire/rim technical sheets for Group 2/4/5/6, Group C and 1990s WSC/LMP event branches to close construction-generation and supplier ambiguity without merging event-specific tuples.", "",
         "## Knowledge architecture changes", "",
         "- Added a versioned consolidated evidence archive with canonical source IDs, contradiction links, numeric classes and complete archive/file lineage.",

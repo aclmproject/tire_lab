@@ -38,7 +38,7 @@ The authoritative outputs are under `research_import/`. `INGESTION_PROVENANCE.js
 
 Archive-search dead ends, access failures, abstract-only leads, missing pages, ambiguous product codes, unresolved pressure conventions and unevaluated OCR remain in `UNRESOLVED_RESEARCH_QUEUE.md`. Rejected claims are retained with reasons in `MASTER_EVIDENCE_LEDGER.csv`, and their relationships are explicit in `CONTRADICTIONS_AND_SUPERSESSIONS.csv`.
 
-The ten lowest-score families remain mostly reconstructed. Their recurring deficits are primary force/moment data, aligning torque/pneumatic trail, camber response, degradation and failure behavior. The first family targets are FAM013, FAM023, FAM022, FAM021 and FAM020; the complete 85-family matrix and P0/P1 gaps are in `TIRE_FAMILY_COVERAGE_SCORECARD.csv`.
+The ten lowest-score families remain mostly reconstructed. Their recurring deficits are primary force/moment data, aligning torque/pneumatic trail, camber response, degradation and failure behavior. In deterministic family-ID order, the first targets are FAM004, FAM005, FAM006, FAM008 and FAM009; the complete 85-family matrix and P0/P1 gaps are in `TIRE_FAMILY_COVERAGE_SCORECARD.csv`.
 
 ## Numeric evidence discipline
 
