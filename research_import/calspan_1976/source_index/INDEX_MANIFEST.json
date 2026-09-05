@@ -1,0 +1,176 @@
+{
+  "package_name": "ACLM_CALSPAN_1976_INDEX",
+  "created_for": "ACLM Historical Tire Lab",
+  "source_contract": "DOT-HS-4-00923",
+  "report_date": "November 1976",
+  "counts": {
+    "volumes": 9,
+    "pages": 3630,
+    "appendix_b_unique_tires": 380,
+    "data_package_starts": 358,
+    "unique_master_tires_mapped_to_packages": 306,
+    "measurement_pages": 708,
+    "cornering_coefficient_pages": 348,
+    "braking_coefficient_pages": 286,
+    "uniformity_pages": 321
+  },
+  "mapping_confidence_counts": {
+    "HIGH": 126,
+    "MEDIUM": 138,
+    "LOW": 94
+  },
+  "source_reported_procured_tire_count": 378,
+  "appendix_b_transcribed_unique_tire_count": 380,
+  "evidence_policy": {
+    "source_scans": "DIRECT PRIMARY",
+    "appendix_b_transcription": "DIRECT PRIMARY source / OCR-transcribed",
+    "package_master_mapping": "DERIVED / RECONSTRUCTED where OCR is weak",
+    "production_guardrail": "NO PRODUCTION NUMERIC CHANGES WITHOUT VALIDATION"
+  },
+  "sources": [
+    {
+      "volume": 1,
+      "pb_number": "PB263440",
+      "dot_report_no": "DOT HS-802 086",
+      "title": "Tire Parameter Determination - Volume I Summary",
+      "source_file": "PB263440.pdf",
+      "pdf_pages": 28,
+      "sha256": "a17e473a68ae85a9a9cb9e3caef604f027705bd684c19d5b71c36fb848c478cb",
+      "identification_packages": 0
+    },
+    {
+      "volume": 2,
+      "pb_number": "PB263441",
+      "dot_report_no": "DOT HS-802 087",
+      "title": "Tire Parameter Determination - Volume II Part I Test Methodology",
+      "source_file": "PB263441(1).pdf",
+      "pdf_pages": 300,
+      "sha256": "e742f3b0ed0bb9e0b0da0e9f64987d6e52164fd841b58616c1c137157f768275",
+      "identification_packages": 0
+    },
+    {
+      "volume": 3,
+      "pb_number": "PB263442",
+      "dot_report_no": "DOT HS-802 088",
+      "title": "Tire Parameter Determination - Volume III Part II (1 of 7) Tire Test Data",
+      "source_file": "PB263442(1).pdf",
+      "pdf_pages": 484,
+      "sha256": "a42b572ba9c11b1c7d7c079c841632eed703604421c597bae3fd25b50526a3d2",
+      "identification_packages": 50
+    },
+    {
+      "volume": 4,
+      "pb_number": "PB263443",
+      "dot_report_no": "DOT HS-802 089",
+      "title": "Tire Parameter Determination - Volume IV Part II (2 of 7) Tire Test Data",
+      "source_file": "PB263443(1).pdf",
+      "pdf_pages": 488,
+      "sha256": "ed8ed9e323c69ca27b2ce41078c90280053cc300865d6294fc1cad151363559c",
+      "identification_packages": 53
+    },
+    {
+      "volume": 5,
+      "pb_number": "PB263444",
+      "dot_report_no": "DOT HS-802 090",
+      "title": "Tire Parameter Determination - Volume V Part II (3 of 7) Tire Test Data",
+      "source_file": "PB263444(1).pdf",
+      "pdf_pages": 484,
+      "sha256": "aa4f2d4de7d1a3e84d839164a5d602038423b4efd26425970fbbfc48b25a1f3d",
+      "identification_packages": 45
+    },
+    {
+      "volume": 6,
+      "pb_number": "PB263445",
+      "dot_report_no": "DOT HS-802 091",
+      "title": "Tire Parameter Determination - Volume VI Part II (4 of 7) Tire Test Data",
+      "source_file": "PB263445(1).pdf",
+      "pdf_pages": 488,
+      "sha256": "b96e16e461c7f3b0b31d8a8e63da851ebd9209b0e04eadb13048424bc09bf4c6",
+      "identification_packages": 53
+    },
+    {
+      "volume": 7,
+      "pb_number": "PB263446",
+      "dot_report_no": "DOT HS-802 092",
+      "title": "Tire Parameter Determination - Volume VII Part II (5 of 7) Tire Test Data",
+      "source_file": "PB263446(1).pdf",
+      "pdf_pages": 474,
+      "sha256": "74a905a6c0ae5109d56742057c6671b009a8159bb2de9ed87b4bd4b0b37f9f29",
+      "identification_packages": 57
+    },
+    {
+      "volume": 8,
+      "pb_number": "PB263447",
+      "dot_report_no": "DOT HS-802 093",
+      "title": "Tire Parameter Determination - Volume VIII Part II (6 of 7) Tire Test Data",
+      "source_file": "PB263447(1).pdf",
+      "pdf_pages": 444,
+      "sha256": "df9b33e6144c2ce12a7040b324f65c8ab871131977f18076b062d56b7b30ba34",
+      "identification_packages": 57
+    },
+    {
+      "volume": 9,
+      "pb_number": "PB263448",
+      "dot_report_no": "DOT HS-802 094",
+      "title": "Tire Parameter Determination - Volume IX Part II (7 of 7) Tire Test Data",
+      "source_file": "PB263448(1).pdf",
+      "pdf_pages": 440,
+      "sha256": "a17415aafb26b665e6d3a64babcac9606d64e62b69de5c64fb4ba6f48e7097c6",
+      "identification_packages": 43
+    }
+  ],
+  "files": [
+    "ACLM_Calspan_1976_Corpus_Index.xlsx",
+    "calspan_1976_tire_master.csv",
+    "calspan_1976_data_packages.csv",
+    "calspan_1976_measurement_pages.csv",
+    "calspan_1976_page_index.csv",
+    "calspan_1976_full_page_text.jsonl.gz",
+    "calspan_1976_index.sqlite",
+    "calspan_1976_volumes.csv",
+    "README.md",
+    "INDEX_NOTES.md"
+  ],
+  "generated_files": {
+    "ACLM_Calspan_1976_Corpus_Index.xlsx": {
+      "bytes": 633824,
+      "sha256": "423b46cd1c051d6343d88e28317a5654220f7d1903ec8bfe8de142d811cbc186"
+    },
+    "calspan_1976_tire_master.csv": {
+      "bytes": 82155,
+      "sha256": "46ae782feb5f67712a1e7151a3cd38280803f22b77c20547d00c7207f74dbbfa"
+    },
+    "calspan_1976_data_packages.csv": {
+      "bytes": 114799,
+      "sha256": "429c802e5dbfa33dce5c4c80d63c5e9554824c59131a120437feb7106a60252e"
+    },
+    "calspan_1976_measurement_pages.csv": {
+      "bytes": 388461,
+      "sha256": "72704286156ed548d3371b3c4db22090c5d5585c58c2d5145aee29482a8bf5cc"
+    },
+    "calspan_1976_page_index.csv": {
+      "bytes": 546405,
+      "sha256": "ed5147f38c51e17f1c3902c0ac1ff87f194eaf8a408a4f909ccff617354e38bf"
+    },
+    "calspan_1976_full_page_text.jsonl.gz": {
+      "bytes": 1043040,
+      "sha256": "a8acffc6f5f00f016b85967e0fa0f4640f25a899f408e8bd514d8a25563afa89"
+    },
+    "calspan_1976_index.sqlite": {
+      "bytes": 5148672,
+      "sha256": "ac7110ed1f9fa38b07b91922fcff69e623cb5c61b8697f6b160c01259f59f8a1"
+    },
+    "calspan_1976_volumes.csv": {
+      "bytes": 1747,
+      "sha256": "e69553f133fae67306e8b323afa8080763e19487e89ef89431d52b5b438d5fc8"
+    },
+    "README.md": {
+      "bytes": 4865,
+      "sha256": "08b6a7558a75b0816f657456e2a5b00619511adc46128c27a37df063dd6fd5fc"
+    },
+    "INDEX_NOTES.md": {
+      "bytes": 2395,
+      "sha256": "f69c9a718bff228fcfab2a820b9ae1065ee9f3bca8e29620a5346275a255d3b8"
+    }
+  }
+}

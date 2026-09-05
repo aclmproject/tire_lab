@@ -1,0 +1,101 @@
+{
+  "schema": "ACLM Calspan 1976 corpus ingest 1.0",
+  "createdUtc": "2026-09-05T05:31:11.551687+00:00",
+  "sourceArchive": "ACLM_CALSPAN_1976_COMPLETE_INDEX.zip",
+  "scope": "Complete supplied retrieval index; original nine source PDF binaries are not present in the supplied archive.",
+  "counts": {
+    "sourceVolumes": 9,
+    "indexedPages": 3630,
+    "appendixBTireIds": 380,
+    "reportedProcuredTiresVolumeI": 378,
+    "identityCountDiscrepancy": 2,
+    "testPackages": 358,
+    "uniqueMappedMasterTires": 306,
+    "measurementPages": 708,
+    "measurementPageTypes": {
+      "test_data": 65,
+      "combined_interaction": 9,
+      "cornering_coefficients": 348,
+      "braking_coefficients": 286
+    },
+    "mappingConfidence": {
+      "HIGH": 126,
+      "MEDIUM": 138,
+      "LOW": 94
+    },
+    "fullyDigitizedForceCurvePointObservations": 0,
+    "masterSourcesIntroducedByCorpus": 9,
+    "masterEvidenceClaimsIntroducedByCorpus": 6,
+    "masterSourceRowsNewThisRun": 0,
+    "masterEvidenceRowsNewThisRun": 0
+  },
+  "evidenceBoundaries": [
+    "Raw OCR and transcription are preserved; malformed values are not silently repaired.",
+    "Only unambiguous numeric tokens are normalized, with raw fields retained beside them.",
+    "Measurement pages are locators, not digitized force curves.",
+    "Generic passenger-tire evidence defaults to MECHANISM_ONLY for racing families.",
+    "No generator numeric prior is promoted from this corpus without digitization, applicability review, and regression certification."
+  ],
+  "derivedArtifacts": [
+    "research_import/calspan_1976/CALSPAN_TIRE_SPECIMENS.csv",
+    "research_import/calspan_1976/CALSPAN_TEST_SERIES.csv",
+    "research_import/calspan_1976/CALSPAN_TEST_OBSERVATIONS.csv"
+  ],
+  "copiedSourceIndexFiles": [
+    {
+      "path": "research_import/calspan_1976/source_index/ACLM_Calspan_1976_Corpus_Index.xlsx",
+      "bytes": 633824,
+      "sha256": "423b46cd1c051d6343d88e28317a5654220f7d1903ec8bfe8de142d811cbc186"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_data_packages.csv",
+      "bytes": 114799,
+      "sha256": "429c802e5dbfa33dce5c4c80d63c5e9554824c59131a120437feb7106a60252e"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_full_page_text.jsonl.gz",
+      "bytes": 1043040,
+      "sha256": "a8acffc6f5f00f016b85967e0fa0f4640f25a899f408e8bd514d8a25563afa89"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_index.sqlite",
+      "bytes": 5148672,
+      "sha256": "ac7110ed1f9fa38b07b91922fcff69e623cb5c61b8697f6b160c01259f59f8a1"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_measurement_pages.csv",
+      "bytes": 388461,
+      "sha256": "72704286156ed548d3371b3c4db22090c5d5585c58c2d5145aee29482a8bf5cc"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_page_index.csv",
+      "bytes": 546405,
+      "sha256": "ed5147f38c51e17f1c3902c0ac1ff87f194eaf8a408a4f909ccff617354e38bf"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_tire_master.csv",
+      "bytes": 82155,
+      "sha256": "46ae782feb5f67712a1e7151a3cd38280803f22b77c20547d00c7207f74dbbfa"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/calspan_1976_volumes.csv",
+      "bytes": 1747,
+      "sha256": "e69553f133fae67306e8b323afa8080763e19487e89ef89431d52b5b438d5fc8"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/INDEX_MANIFEST.json",
+      "bytes": 6223,
+      "sha256": "31f432daff75c000dfae0e0f4ad11e2ce6be591cbc2f2853650618c21c814357"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/INDEX_NOTES.md",
+      "bytes": 2395,
+      "sha256": "f69c9a718bff228fcfab2a820b9ae1065ee9f3bca8e29620a5346275a255d3b8"
+    },
+    {
+      "path": "research_import/calspan_1976/source_index/README.md",
+      "bytes": 4865,
+      "sha256": "08b6a7558a75b0816f657456e2a5b00619511adc46128c27a37df063dd6fd5fc"
+    }
+  ]
+}
