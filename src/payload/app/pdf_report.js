@@ -75,7 +75,11 @@ function buildLines(d){
   (d.provenance||[]).forEach(x=>L.push({t:`- ${x}`,s:"body"}));
   L.push({t:"",s:"space"});
 
-  L.push({t:"7. Sources",s:"h1"});
+  L.push({t:"7. Evidence-to-model status",s:"h1"});
+  (d.evidenceModel||[]).forEach(r=>L.push({t:`${r.label}: ${r.value}`,s:"body"}));
+  L.push({t:"",s:"space"});
+
+  L.push({t:"8. Sources",s:"h1"});
   if((d.sources||[]).length){
     d.sources.forEach((x,i)=>{
       L.push({t:`[${i+1}] ${x.title||"Source"}`,s:"source"});
@@ -86,7 +90,7 @@ function buildLines(d){
   }
   L.push({t:"",s:"space"});
 
-  L.push({t:"8. Known limitations / next validation",s:"h1"});
+  L.push({t:"9. Known limitations / next validation",s:"h1"});
   (d.limitations||[]).forEach(x=>L.push({t:`- ${x}`,s:"body"}));
 
   return L;

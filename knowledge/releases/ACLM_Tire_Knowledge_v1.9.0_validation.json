@@ -1,0 +1,32 @@
+{
+  "version": "1.9.0",
+  "schemaVersion": "1.2.0",
+  "families": 85,
+  "classes": 102,
+  "profiles": 23,
+  "sources": 158,
+  "measurements": 184,
+  "calspanObservationLocators": 708,
+  "calspanDigitizedForceCurvePoints": 0,
+  "sha256": "29aeb92f2a1f10ccc752e7ce3d52a440befd40fcd2a7ed2f8654c6b449806fa2",
+  "contentSha256": "6b77f7d3807cfb30d9f1129652b6254c5e37d36a155a30db7e4d7379f24b90f0",
+  "frozenCollectionHashes": {
+    "generatorPriors": "73327d5ec59a0297974625a90c0cde052bd50c338e63f21b4ffabb32fd65642c",
+    "measurements": "0e84939894788abd33481962defe13b093c6a41bba27eee63125ee0385b7338d",
+    "scalingRules": "3b8dd4d4c49a65cb391ad5e21a82dc95b874680855649ca044805eaa7f96cd42",
+    "fitmentOverrides": "7ce792c300b7c597d00fe0db7e749b45f9fe485a1e7fbd3f95ee8285dd3d99b5",
+    "classes": "09c0db6efa8a4ec7be8f861a3463220dd3f7b642d2dbc81c05ec41cea29e5939"
+  },
+  "checks": {
+    "uniqueIds": true,
+    "references": true,
+    "priorCoverage": true,
+    "v1_8_0Lineage": true,
+    "productionNumericCollectionsUnchanged": true,
+    "classesUnchanged": true,
+    "calspanCorpusLinked": true,
+    "identityHierarchyPresent": true,
+    "promotionGatePresent": true,
+    "genericEvidenceCannotOverrideRacingEvidence": true
+  }
+}

@@ -841,7 +841,8 @@ function buildHistoricalReportData(comps){
    "Amber fields are historical research/inference and are retained as reviewable evidence rather than hidden assumptions.",
    "Unmarked values are user selections, defaults or Tire Lab reconstruction/calibration values.",
     "Thermal V2 coefficients are physical reconstruction priors derived from geometry, load, rate, rolling resistance, construction, pressure, drivetrain/brake duty and class evidence; they are not confidential supplier data.",
-    "CSP parameter meanings and obsolete-key handling follow the official CSP Tyre Thermal Models V1/V2 documentation."
+    "CSP parameter meanings and obsolete-key handling follow the official CSP Tyre Thermal Models V1/V2 documentation.",
+    "The Calspan 1976 corpus contributes page-level observation locators and mechanism evidence. It contributes zero digitized curve points and does not change this pack's racing-family numerical priors."
  ];
  const limitations=[
    "A generated AC tire can be structurally valid while exact supplier proprietary coefficients remain unavailable.",
@@ -905,6 +906,12 @@ function buildHistoricalReportData(comps){
      "This PDF is generated automatically and bundled with every Tire Lab ZIP export."
    ],
    provenance:provNotes,
+   evidenceModel:[
+     {label:"Identity hierarchy",value:"era -> discipline -> class -> supplier -> product family -> construction generation -> event/year -> size -> axle -> compound -> wet state"},
+     {label:"Calspan corpus",value:"9 volumes / 3,630 pages / 708 measurement-page locators / 0 digitized curve points"},
+     {label:"Calspan applicability",value:"MECHANISM_ONLY by default for racing families; promotion blocked pending digitization and controlled validation"},
+     {label:"Production behavior",value:"Existing AC v10 numeric generation retained; new manifests expose provenance and confidence"}
+   ],
    sources:sourcePages,
    limitations
  };
@@ -941,6 +948,21 @@ function assertLutIntegrity(files){
 
 function familyConstructionAudit(){
  return {schema:"ACLM family construction audit 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,knowledge:window.ACLMHistoricalCategories?.knowledgeInfo?.()||null,rows:window.ACLMProfileState.auditKnowledge({families:runtimeFamilies(),classes:runtimeClasses()})};
+}
+function evidenceArchitectureManifest(){
+ const target={familyId:activeHistoricalContext?.familyId||null,discipline:v("series")||null,construction:v("construction")||null};
+ const calspanApplicability=window.ACLMEvidenceModel.classifyApplicability({discipline:"passenger-road",construction:null,mechanismSupported:true},target);
+ return {schema:"ACLM generated tire evidence architecture 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,knowledge:window.ACLMHistoricalCategories?.knowledgeInfo?.()||null,identity:window.ACLMEvidenceModel.familyIdentity({era:n("year")||null,discipline:v("series")||null,class:activeHistoricalContext?.classId||null,supplier:v("supplier")||null,productFamily:activeHistoricalContext?.familyId||null,constructionGeneration:v("construction")||null,eventYear:n("year")||null,size:{front:`${n("fw")} x ${n("fr")*2}`,rear:`${n("rw")} x ${n("rr")*2}`},axle:"front/rear",compound:selectedCompounds(),wetState:"selected compound branch"}),architecture:window.ACLMEvidenceModel.architecture(),calspan:{...window.ACLMCalspan.summary(),applicabilityToGeneratedFamily:calspanApplicability,productionPromotion:window.ACLMEvidenceModel.promotionDecision({applicability:calspanApplicability,digitizedPointCount:0,mappingConfidence:"MIXED"})},compatibility:{tyresIniSchema:10,numericGeneratorBehaviorChanged:false}};
+}
+function parameterConfidenceManifest(compounds){
+ const E=window.ACLMEvidenceModel,records=[
+  E.parameterRecord("construction",v("construction"),{confidence:constructionProvenance().confidence,sourceIds:constructionProvenance().sourceIds,applicability:E.APPLICABILITY.SAME_FAMILY,known:constructionProvenance().provenance!=="UNKNOWN_FALLBACK",production:true}),
+  E.parameterRecord("pressure ideal",`${idealPressure("front")} F / ${idealPressure("rear")} R`,{unit:"psi",confidence:E.CONFIDENCE.INFERRED,sourceIds:[activeHistoricalContext?.familyId].filter(Boolean),applicability:E.APPLICABILITY.SAME_FAMILY,inferred:true,production:true}),
+  E.parameterRecord("Calspan force curves",null,{confidence:E.CONFIDENCE.UNRESOLVED,sourceIds:["SRC-CALSPAN-1976-V01","SRC-CALSPAN-1976-V09"],applicability:E.APPLICABILITY.MECHANISM_ONLY,known:false,production:false}),
+  E.parameterRecord("thermal state architecture","surface / carcass / contained air",{confidence:E.CONFIDENCE.DERIVED,sourceIds:[activeHistoricalContext?.familyId].filter(Boolean),applicability:E.APPLICABILITY.SAME_FAMILY,inferred:true,production:true}),
+  E.parameterRecord("wear interpretation","abrasion / degradation / service-stint / AC virtual km separated",{confidence:E.CONFIDENCE.DERIVED,sourceIds:[activeHistoricalContext?.familyId].filter(Boolean),applicability:E.APPLICABILITY.SAME_FAMILY,inferred:true,production:true})
+ ];
+ return {schema:"ACLM parameter confidence manifest 1.0",generatedBy:`ACLM Historical Tire Lab v${ACLM_APP_VERSION}`,compounds,records,policy:"Known, inferred, experimental and unresolved parameters remain explicit. Generic Calspan data cannot displace more specific racing evidence."};
 }
 function wearEvidenceManifest(compounds,files){
  const entries=[];
@@ -1046,6 +1068,8 @@ CAMBER_TEMP_SPREAD_K=${cspV2Enabled()?window.ACLMThermalV2.RAYS.camberTemperatur
  files["ACLM_FAMILY_CONSTRUCTION_AUDIT.json"]=JSON.stringify(familyConstructionAudit(),null,2)+"\n";
  files["ACLM_WEAR_EVIDENCE_AND_IMPLEMENTATION.json"]=JSON.stringify(wearEvidenceManifest(comps,files),null,2)+"\n";
  const provenanceManifest=engineeringProvenanceManifest(comps,pressureManifest);files["ACLM_ENGINEERING_PROVENANCE.json"]=JSON.stringify(provenanceManifest,null,2)+"\n";renderEngineeringProvenance(provenanceManifest);
+ const evidenceArchitecture=evidenceArchitectureManifest();files["ACLM_EVIDENCE_MODEL.json"]=JSON.stringify(evidenceArchitecture,null,2)+"\n";
+ files["ACLM_PARAMETER_CONFIDENCE.json"]=JSON.stringify(parameterConfidenceManifest(comps),null,2)+"\n";
  const requestedCondition={airTemperatureC:n("telemetryRequestedAir")||null,roadTemperatureC:n("telemetryRequestedRoad")||null,wearMultiplier:optionalNumber("telemetryWearMultiplier")??null,fuelRate:optionalNumber("telemetryRequestedFuelRate")??null,damageRate:optionalNumber("telemetryRequestedDamageRate")??null,startingFuelLiters:optionalNumber("telemetryStartingFuel")??null,sessionBlanketsEnabled:$("telemetrySessionBlankets")?.checked===true};
  const blanketCapabilityTemperatureC=n("blankets")||0,requestedSessionBlanketsEnabled=$("telemetrySessionBlankets")?.checked===true;
  files["ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"]=JSON.stringify({
@@ -1076,6 +1100,8 @@ CSP: ${cspV2Enabled()?"car.ini must use VERSION=extended-2":"not required by thi
 Thermal: ${cspV2Enabled()?"CSP Thermal Model V2 plus required Kunos THERMAL sections":"vanilla Kunos thermal model"}
 Extended contact rays: ${cspV2Enabled()?"2 lateral / 4 longitudinal per side, 60 degrees":"disabled"}
 Calibration manifest: ACLM_THERMAL_V2_CALIBRATION.json
+Evidence architecture: ACLM_EVIDENCE_MODEL.json
+Parameter confidence: ACLM_PARAMETER_CONFIDENCE.json
 Pressure closure report: ACLM_PRESSURE_CLOSURE_REPORT.json
 Pressure generation: ${$("autoSolvePressure")?.checked?`auto-solved from explicit/predicted AC initial core (${solvedPressureModel("medium","front")?.referenceColdC?.toFixed(1)??"?"} C; ${solvedPressureModel("medium","front")?.initialThermalState?.source||"unresolved"}) to reference-duty contained-air temperature`:"manual cold pressures"}
 Imported AC cold-pressure reference: ${importedPressureSummary() || "none"}
@@ -1166,7 +1192,7 @@ function validate(files){
  if(!files["ACLM_PRESSURE_CLOSURE_REPORT.json"])errors.push("Pressure closure report is missing.");
  else {try{const p=JSON.parse(files["ACLM_PRESSURE_CLOSURE_REPORT.json"]);if(!Array.isArray(p.entries)||p.entries.length!==fronts.length*2)errors.push("Pressure closure report does not cover every axle/compound.");}catch(e){errors.push("Pressure closure report is malformed JSON.");}}
  const coherence=currentHistoricalCoherence();if(!coherence.pass)errors.push("PROFILE COHERENCE FAIL blocks generation.");else for(const issue of coherence.issues)warnings.push(issue.code+": "+issue.message);
- for(const requiredManifest of ["ACLM_PROFILE_STATE.json","ACLM_FAMILY_CONSTRUCTION_AUDIT.json","ACLM_WEAR_EVIDENCE_AND_IMPLEMENTATION.json","ACLM_ENGINEERING_PROVENANCE.json","ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"])if(!files[requiredManifest])errors.push(requiredManifest+" is missing.");
+ for(const requiredManifest of ["ACLM_PROFILE_STATE.json","ACLM_FAMILY_CONSTRUCTION_AUDIT.json","ACLM_WEAR_EVIDENCE_AND_IMPLEMENTATION.json","ACLM_ENGINEERING_PROVENANCE.json","ACLM_EVIDENCE_MODEL.json","ACLM_PARAMETER_CONFIDENCE.json","ACLM_TELEMETRY_MANIFEST_TEMPLATE.json"])if(!files[requiredManifest])errors.push(requiredManifest+" is missing.");
  if(files["ACLM_PROFILE_STATE.json"]){try{const p=JSON.parse(files["ACLM_PROFILE_STATE.json"]);if(p.state?.construction?.value!==v("construction"))errors.push("Profile-state construction does not match generated tire construction.");if(p.state?.supplier?.value!==v("supplier"))errors.push("Profile-state supplier does not match generated supplier state.");if(p.profileCoherent===false)warnings.push("Generated profile uses a compatibility exception; review profile issues.");if(p.historicalEvidenceStatus!=="DIRECTLY SOURCED")warnings.push(`Historical evidence status is ${p.historicalEvidenceStatus||"UNKNOWN"}; profile coherence does not imply fully sourced physics.`);}catch(e){errors.push("Profile-state manifest is malformed JSON.");}}
  const generatedNames=fronts.map(s=>sec[s]?.NAME).filter(Boolean),generatedShorts=fronts.map(s=>sec[s]?.SHORT_NAME).filter(Boolean);
  if(new Set(generatedNames.map(x=>x.toLowerCase())).size!==generatedNames.length)errors.push("Compound full names must be unique.");
@@ -1771,7 +1797,7 @@ $("graphCompound").addEventListener("change",renderTireGraphs);
 window.addEventListener("resize",()=>{clearTimeout(window.__aclmGraphResize);window.__aclmGraphResize=setTimeout(renderTireGraphs,120);});
 setTimeout(renderTireGraphs,50);
 
-const ACLM_APP_VERSION="0.10.4";
+const ACLM_APP_VERSION="0.11.0";
 // Application updates use a permanent GitHub hyperlink in index.html; no remote version check.
 let onlineRequestActive=false;
 

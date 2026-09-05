@@ -45,6 +45,11 @@ def main() -> int:
     contradictions = read_csv("CONTRADICTIONS_AND_SUPERSESSIONS.csv")
     numeric = read_csv("NUMERIC_EVIDENCE_CLASSIFICATION.csv")
     coverage = read_csv("TIRE_FAMILY_COVERAGE_SCORECARD.csv")
+    calspan_observations = read_csv("calspan_1976/CALSPAN_TEST_OBSERVATIONS.csv")
+    calspan_series = read_csv("calspan_1976/CALSPAN_TEST_SERIES.csv")
+    calspan_specimens = read_csv("calspan_1976/CALSPAN_TIRE_SPECIMENS.csv")
+    calspan_scorecard = read_csv("calspan_1976/TIRE_FAMILY_CAPABILITY_SCORECARD_v1.9.0.csv")
+    calspan_manifest = json.loads((IMPORT / "calspan_1976" / "CALSPAN_CORPUS_MANIFEST.json").read_text(encoding="utf-8"))
     provenance = json.loads((IMPORT / "INGESTION_PROVENANCE.json").read_text(encoding="utf-8"))
 
     require(len(inventory) == 75, "Expected 74 ZIPs plus one workbook in the inventory.")
@@ -76,6 +81,12 @@ def main() -> int:
     require(len(fingerprints) == len(set(fingerprints)), "Duplicate canonical evidence fingerprint found.")
     require(len(coverage) == 85, "Coverage scorecard does not contain all 85 families.")
     require(len({row["family_id"] for row in coverage}) == 85, "Coverage scorecard family IDs are not unique.")
+    require(len(calspan_observations) == 708, "Calspan observation locator count changed.")
+    require(len(calspan_series) == 358, "Calspan test-series count changed.")
+    require(len(calspan_specimens) == 380, "Calspan specimen count changed.")
+    require(len(calspan_scorecard) == 85, "Calspan capability scorecard does not contain all 85 families.")
+    require(all(row["digitization_status"] == "PAGE_LOCATOR_ONLY_NO_XY_POINTS" and row["digitized_curve_point_count"] == "0" for row in calspan_observations), "A Calspan page locator was misrepresented as a digitized curve.")
+    require(calspan_manifest["counts"]["fullyDigitizedForceCurvePointObservations"] == 0, "Calspan manifest falsely claims digitized curve points.")
 
     corpus = "\n".join(norm(f"{row['topic']} {row['claim']} {row['applicability_limits']}") for row in evidence)
     required_trails = {
@@ -95,6 +106,7 @@ def main() -> int:
 
     v171 = json.loads((ROOT / "knowledge" / "releases" / "ACLM_Tire_Knowledge_v1.7.1.json").read_text(encoding="utf-8"))
     v180 = json.loads((ROOT / "knowledge" / "releases" / "ACLM_Tire_Knowledge_v1.8.0.json").read_text(encoding="utf-8"))
+    v190 = json.loads((ROOT / "knowledge" / "releases" / "ACLM_Tire_Knowledge_v1.9.0.json").read_text(encoding="utf-8"))
     require(v180["releaseVersion"] == "1.8.0", "Knowledge v1.8.0 release version missing.")
     for key in ("generatorPriors", "measurements", "scalingRules", "fitmentOverrides", "classes"):
         require(hash_object(v171[key]) == hash_object(v180[key]), f"Frozen collection changed: {key}")
@@ -102,6 +114,11 @@ def main() -> int:
     car023 = next((item for item in v180["profiles"] if item["id"] == "CAR023"), None)
     require(car023 is not None and car023["supplier"] is None, "CAR023 must remain supplier-neutral outside event evidence.")
     require(car023["productionNumericChangesRecommended"] is False, "CAR023 numeric guardrail missing.")
+    require(v190["releaseVersion"] == "1.9.0", "Knowledge v1.9.0 release version missing.")
+    for key in ("generatorPriors", "measurements", "scalingRules", "fitmentOverrides", "classes"):
+        require(hash_object(v180[key]) == hash_object(v190[key]), f"v1.9.0 frozen collection changed: {key}")
+    require(v190["calspanCorpus"]["digitizedForceCurvePointObservations"] == 0, "Knowledge falsely promotes Calspan curve points.")
+    require(len(v190["researchFamilyPriors"]) == 85, "Knowledge research-family prior coverage is incomplete.")
 
     summary = {
         "inventoryRows": len(inventory),
@@ -110,7 +127,9 @@ def main() -> int:
         "numericRows": len(numeric),
         "contradictionRows": len(contradictions),
         "coverageRows": len(coverage),
-        "knowledgeVersion": v180["releaseVersion"],
+        "knowledgeVersion": v190["releaseVersion"],
+        "calspanObservationLocators": len(calspan_observations),
+        "calspanDigitizedForceCurvePoints": 0,
         "frozenCollectionsVerified": ["generatorPriors", "measurements", "scalingRules", "fitmentOverrides", "classes"],
         "productionNumericChangesRecommended": False,
     }
