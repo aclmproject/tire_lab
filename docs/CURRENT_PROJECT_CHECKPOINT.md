@@ -1,6 +1,17 @@
 # ACLM Historical Tire Lab — current project checkpoint
 
-Checkpoint basis: application v0.10.4, Knowledge v1.8.0, branch `codex/csp-thermal-v2`; handoff hotfix based on verified remote SHA `3b54b917afdbf902194aec01577d66d27d82a710`.
+Checkpoint basis: application v0.11.0, Knowledge v1.9.0, branch `codex/calspan-architecture-v011`.
+
+## 2026-09-04 Calspan architecture update
+
+- Fully ingested the supplied 9-volume Calspan retrieval index: 3,630 pages, 380 Appendix B IDs, 358 test packages and 708 measurement-page locators.
+- Preserved the Volume I 378-procured versus Appendix B 380-indexed discrepancy; no silent reconciliation.
+- Added hierarchical identity, four-class applicability, a six-stage evidence-to-production pipeline, construction-generation and force/moment/transient/pressure/thermal/geometry/wet/wear relationship architecture.
+- Added per-pack `ACLM_EVIDENCE_MODEL.json` and `ACLM_PARAMETER_CONFIDENCE.json`; the PDF report exposes evidence/model status.
+- Calspan contributes zero digitized force-curve points and no production numerical changes. Generic evidence cannot override racing-family/event evidence.
+- Knowledge v1.9.0: 85 families, 102 classes, 23 profiles, 158 sources and 184 production measurements. Release SHA-256 `29aeb92f2a1f10ccc752e7ce3d52a440befd40fcd2a7ed2f8654c6b449806fa2`; content SHA-256 `6b77f7d3807cfb30d9f1129652b6254c5e37d36a155a30db7e4d7379f24b90f0`.
+- Canonical research totals are now 2,484 evidence records and 1,313 sources.
+- All 100 tests pass; all six milestone fixture file hashes are unchanged.
 
 ## Completed software work
 
@@ -36,11 +47,11 @@ The fixed set remains Maserati 250F + Ford GT40 Mk II + Porsche 917K + Ford Esco
 
 ## Research state
 
-The full 2026-09-02 through 2026-09-04 research archive has been consolidated under `research_import/`: 74 supplied ZIPs plus one Calspan workbook, 100 recursive archive layers, 7,571 file occurrences, 766 unique payloads, 2,478 canonical evidence records, 1,304 canonical sources, 21 contradiction/supersession relationships, 1,616 classified numeric records and 316 unresolved trails. Exact and semantic duplicates are collapsed without losing original archive/member/hash provenance.
+The full 2026-09-02 through 2026-09-04 research archive and the new Calspan complete index are consolidated under `research_import/`: 2,484 canonical evidence records and 1,313 canonical sources. The Calspan layer additionally preserves 3,630 page records, 380 identity rows, 358 packages and 708 observation locators without promoting them into production measurements.
 
-Knowledge v1.8.0 adds only evidence architecture and one event-resolved 1970 Porsche 917K vehicle profile. Its generator priors, measurements, scaling rules, fitment overrides, classes and all production numerical collections are unchanged from v1.7.1. The release validation SHA-256 is `73cdc1cc8ba62383c6370adcac776a1f20f035b0bac481b2e4ba94d1d0ffb60c`; the content SHA-256 is `0f0835e652ec8b73ae184f10159483892603a9c51e8a03160c4398395d6c8216`.
+Knowledge v1.9.0 adds the Calspan corpus, hierarchical identity and executable evidence/model architecture. Its generator priors, measurements, scaling rules, fitment overrides, classes and all production numerical collections are unchanged from v1.8.0. Release SHA-256 is `29aeb92f2a1f10ccc752e7ce3d52a440befd40fcd2a7ed2f8654c6b449806fa2`; content SHA-256 is `6b77f7d3807cfb30d9f1129652b6254c5e37d36a155a30db7e4d7379f24b90f0`.
 
-The pre-commit path guard found no changed `tyres.ini`, LUT, thermal, wear or physics file. All 93 repository tests and the dedicated research-import validator passed.
+The canonical fixture hash gate found no generated `tyres.ini`, LUT, thermal or wear drift. All 100 repository tests passed.
 
 The earlier M0–M5 and weakness-corpus inventory remains in `docs/OVERNIGHT_RESEARCH_INGEST_2026-09-01.md`. Abstract-only, inaccessible, incomplete, OCR-unverified and temporally unsafe material remains deferred or quarantined in the new unresolved queue.
 

@@ -1,33 +1,31 @@
 {
   "product": "ACLM Historical Tire Lab",
   "channel": "stable",
-  "version": "0.10.2",
-  "knowledge_version": "1.7.0",
-  "file_name": "ACLM_Tire_Lab_Setup_v0.10.2.zip",
-  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.10.2",
-  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.10.2/ACLM_Tire_Lab_Setup_v0.10.2.zip",
-  "release_status": "canonical local corrective artifact built and validated; GitHub publication not performed",
-  "sha256": "2a5c227f8604c27f2cb715098efdcfd040ea64c03accfc9be95c2ac9997249e0",
-  "bytes": 411353,
-  "built_utc": "2026-08-31T04:43:48.4999533Z",
+  "version": "0.11.0",
+  "knowledge_version": "1.9.0",
+  "file_name": "ACLM_Tire_Lab_Setup_v0.11.0.zip",
+  "release_page": "https://github.com/aclmproject/tire_lab/releases/tag/v0.11.0",
+  "download_url": "https://github.com/aclmproject/tire_lab/releases/download/v0.11.0/ACLM_Tire_Lab_Setup_v0.11.0.zip",
+  "release_status": "canonical local architecture artifact built and validated; GitHub release publication not performed",
+  "sha256": "5497f4f63fbabdd6ed8f4e9e406dfa7a3ed7564764f0e644da3ea740c121e6ff",
+  "bytes": 453308,
+  "built_utc": "2026-09-05T05:30:07.7455947Z",
   "published_utc": null,
   "source_revision": {
-    "baseline_commit": "fbf502d5fae024bd8618361bba376b80b13b0e19",
-    "working_tree": "uncommitted Milestone 5 plus v0.10.1 and v0.10.2 integrity changes; exact artifact integrity is the installer SHA-256"
+    "branch": "codex/calspan-architecture-v011",
+    "baseline_commit": "7216fc9",
+    "working_tree": "Calspan 1976 complete-index ingestion and additive evidence/model architecture"
   },
-  "knowledge_sha256": "9a74deaec72b09b92ec08b79abcf1f9f7db139402e13e6d80feddfae117f9200",
+  "knowledge_sha256": "29aeb92f2a1f10ccc752e7ce3d52a440befd40fcd2a7ed2f8654c6b449806fa2",
+  "knowledge_content_sha256": "6b77f7d3807cfb30d9f1129652b6254c5e37d36a155a30db7e4d7379f24b90f0",
   "test_summary": {
-    "node_tap_tests": 49,
-    "logger_schema_self_test": "PASS — schema 1.2, 84 columns",
-    "runtime_manifest_merge_test": "PASS — MATCH and STALE/HASH_MISMATCH paths preserve generated, active and observed states",
-    "canonical_package_test": "PASS — 39 files, version/path/inventory checks",
-    "in_app_browser_gates": [
-      "1984 plus CLS022/FAM023 blocks; explicit override is visible and non-authoritative",
-      "Kunos-style Escort setup.ini import exposes general MIN/MAX/STEP quantization and displays 23.94 -> 24 psi front and 24.42 -> 24 psi rear",
-      "browser logger start materializes and posts the current v0.10.2 TirePack manifest with app/knowledge/profile/hash fields",
-      "blanket capability/recommendation/session state and requested/observed conditions remain separate"
-    ],
-    "unexplained_failures": 0
+    "node_tap_tests": 100,
+    "passed": 100,
+    "failed": 0,
+    "canonical_fixture_hashes_unchanged": 6,
+    "calspan_observation_locators": 708,
+    "calspan_digitized_force_curve_points": 0,
+    "production_numeric_changes": 0
   },
-  "notes": "v0.10.2 hashes active installed loose physics and referenced LUTs, separates generated configuration from active installed and observed runtime state, reports stale handoffs explicitly, and separates short pressure screening from extended thermal observation. The GT40 long-run wear trace is stored but not fitted. Thermal V2 coefficients, wear curves, VIRTUALKM and production Tire Knowledge v1.7.0 numerical priors are unchanged."
+  "notes": "v0.11.0 adds hierarchical tire identity, applicability classes, evidence-to-model promotion gates and explicit force/moment, transient, pressure, geometry, thermal, wet and wear relationships. The complete supplied Calspan index is preserved as retrieval/observation evidence. No generic Calspan value is promoted into racing physics; existing production numerical collections and canonical fixture outputs are unchanged."
 }

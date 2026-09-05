@@ -1,6 +1,16 @@
 # ACLM Historical Tire Lab — research and Knowledge checkpoint
 
-## Frozen authority
+## Current authority — 2026-09-04 Calspan pass
+
+- Application v0.11.0; Knowledge v1.9.0.
+- Release SHA-256: `29aeb92f2a1f10ccc752e7ce3d52a440befd40fcd2a7ed2f8654c6b449806fa2`.
+- Content SHA-256: `6b77f7d3807cfb30d9f1129652b6254c5e37d36a155a30db7e4d7379f24b90f0`.
+- Counts: 85 families, 102 classes, 23 profiles, 158 Knowledge sources and 184 production measurements.
+- Calspan layer: 9 volumes, 3,630 pages, 380 indexed identities, 358 packages, 708 observation locators and 0 digitized force-curve points.
+- Canonical research totals: 2,484 evidence records and 1,313 sources.
+- Generator priors, measurements, scaling rules, fitment overrides and classes retain their exact v1.8.0 canonical hashes.
+
+## Previous v1.8.0 authority
 
 - Knowledge version: v1.8.0.
 - Release SHA-256: `73cdc1cc8ba62383c6370adcac776a1f20f035b0bac481b2e4ba94d1d0ffb60c`.

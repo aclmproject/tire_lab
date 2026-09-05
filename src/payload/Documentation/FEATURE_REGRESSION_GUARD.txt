@@ -9,6 +9,9 @@ Future changes must preserve unless explicitly removed:
 - automatic pressure solver; imported PRESSURE_STATIC is reference only
 - evidence-driven wear + terminal failure/puncture cliff
 - mandatory historical accuracy PDF report
+- evidence/model and parameter-confidence manifests in every generated pack
+- generic evidence cannot override more specific family/chassis/event/supplier evidence
+- a page locator cannot be represented as a digitized numerical curve
 - car-specific ZIP: ACLM_<Car_Name>_TirePack.zip
 - car-specific PDF report name
 - stable canonical setup filename

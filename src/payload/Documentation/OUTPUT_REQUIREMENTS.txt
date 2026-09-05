@@ -56,6 +56,11 @@ EXTERNAL FILES
 - front camber LUT
 - rear camber LUT
 
+EVIDENCE SIDECARS
+- ACLM_EVIDENCE_MODEL.json: hierarchical identity, applicability, relationships and promotion status
+- ACLM_PARAMETER_CONFIDENCE.json: known/inferred/experimental/unresolved parameter state
+- Calspan and other generic evidence must report digitization and applicability explicitly
+
 WET / INTERMEDIATE WHEN APPLICABLE
 - TYPE_HINT appropriate to treaded/rain tire
 - TREAD_DEPTH

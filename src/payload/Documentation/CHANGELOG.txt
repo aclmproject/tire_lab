@@ -1,6 +1,14 @@
 ACLM HISTORICAL TIRE LAB - CHANGELOG
 ====================================
 
+2026-09-04 - v0.11.0
+- Adds a hierarchical tire identity, four-class evidence applicability and a six-stage evidence-to-production promotion gate.
+- Preserves the complete supplied Calspan 1976 retrieval index and exposes 708 measurement-page locators without mislabeling them as digitized force curves.
+- Adds force/moment, transient, pressure, geometry, thermal, wet, wear, failure, hysteresis and inertia relationship architecture.
+- Exports ACLM_EVIDENCE_MODEL.json and ACLM_PARAMETER_CONFIDENCE.json in every generated pack and reports evidence/model status in the PDF.
+- Bundles Knowledge v1.9.0 with nine Calspan volume sources and 85 nonnumeric research-family prior records.
+- Leaves all production numerical collections and six canonical fixture outputs unchanged; 100 tests pass.
+
 2026-09-01 - v0.10.4
 - Accepts the certified v0.10.2 telemetry-manifest schema 1.1 embedded in the unchanged canonical Maserati 250F and Porsche 917K TirePacks.
 - Keeps exact imported `tyres.ini` SHA-256 and telemetry-schema validation mandatory.
